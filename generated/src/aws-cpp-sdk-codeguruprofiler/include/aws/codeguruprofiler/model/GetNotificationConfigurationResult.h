@@ -39,53 +39,27 @@ namespace Model
     AWS_CODEGURUPROFILER_API GetNotificationConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current notification configuration for this profiling group.</p>
      */
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
-
-    /**
-     * <p>The current notification configuration for this profiling group.</p>
-     */
     inline void SetNotificationConfiguration(const NotificationConfiguration& value) { m_notificationConfiguration = value; }
-
-    /**
-     * <p>The current notification configuration for this profiling group.</p>
-     */
     inline void SetNotificationConfiguration(NotificationConfiguration&& value) { m_notificationConfiguration = std::move(value); }
-
-    /**
-     * <p>The current notification configuration for this profiling group.</p>
-     */
     inline GetNotificationConfigurationResult& WithNotificationConfiguration(const NotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-
-    /**
-     * <p>The current notification configuration for this profiling group.</p>
-     */
     inline GetNotificationConfigurationResult& WithNotificationConfiguration(NotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetNotificationConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetNotificationConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetNotificationConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     NotificationConfiguration m_notificationConfiguration;

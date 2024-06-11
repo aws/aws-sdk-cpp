@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteLocalGatewayRouteTableVpcAssociationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the association.</p>
      */
     inline const LocalGatewayRouteTableVpcAssociation& GetLocalGatewayRouteTableVpcAssociation() const{ return m_localGatewayRouteTableVpcAssociation; }
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline void SetLocalGatewayRouteTableVpcAssociation(const LocalGatewayRouteTableVpcAssociation& value) { m_localGatewayRouteTableVpcAssociation = value; }
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline void SetLocalGatewayRouteTableVpcAssociation(LocalGatewayRouteTableVpcAssociation&& value) { m_localGatewayRouteTableVpcAssociation = std::move(value); }
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline DeleteLocalGatewayRouteTableVpcAssociationResponse& WithLocalGatewayRouteTableVpcAssociation(const LocalGatewayRouteTableVpcAssociation& value) { SetLocalGatewayRouteTableVpcAssociation(value); return *this;}
-
-    /**
-     * <p>Information about the association.</p>
-     */
     inline DeleteLocalGatewayRouteTableVpcAssociationResponse& WithLocalGatewayRouteTableVpcAssociation(LocalGatewayRouteTableVpcAssociation&& value) { SetLocalGatewayRouteTableVpcAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteLocalGatewayRouteTableVpcAssociationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteLocalGatewayRouteTableVpcAssociationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LocalGatewayRouteTableVpcAssociation m_localGatewayRouteTableVpcAssociation;

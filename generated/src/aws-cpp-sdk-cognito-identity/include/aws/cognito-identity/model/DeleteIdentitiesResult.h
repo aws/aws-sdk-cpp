@@ -40,70 +40,30 @@ namespace Model
     AWS_COGNITOIDENTITY_API DeleteIdentitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of UnprocessedIdentityId objects, each of which contains an
      * ErrorCode and IdentityId.</p>
      */
     inline const Aws::Vector<UnprocessedIdentityId>& GetUnprocessedIdentityIds() const{ return m_unprocessedIdentityIds; }
-
-    /**
-     * <p>An array of UnprocessedIdentityId objects, each of which contains an
-     * ErrorCode and IdentityId.</p>
-     */
     inline void SetUnprocessedIdentityIds(const Aws::Vector<UnprocessedIdentityId>& value) { m_unprocessedIdentityIds = value; }
-
-    /**
-     * <p>An array of UnprocessedIdentityId objects, each of which contains an
-     * ErrorCode and IdentityId.</p>
-     */
     inline void SetUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { m_unprocessedIdentityIds = std::move(value); }
-
-    /**
-     * <p>An array of UnprocessedIdentityId objects, each of which contains an
-     * ErrorCode and IdentityId.</p>
-     */
     inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(const Aws::Vector<UnprocessedIdentityId>& value) { SetUnprocessedIdentityIds(value); return *this;}
-
-    /**
-     * <p>An array of UnprocessedIdentityId objects, each of which contains an
-     * ErrorCode and IdentityId.</p>
-     */
     inline DeleteIdentitiesResult& WithUnprocessedIdentityIds(Aws::Vector<UnprocessedIdentityId>&& value) { SetUnprocessedIdentityIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of UnprocessedIdentityId objects, each of which contains an
-     * ErrorCode and IdentityId.</p>
-     */
     inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(const UnprocessedIdentityId& value) { m_unprocessedIdentityIds.push_back(value); return *this; }
-
-    /**
-     * <p>An array of UnprocessedIdentityId objects, each of which contains an
-     * ErrorCode and IdentityId.</p>
-     */
     inline DeleteIdentitiesResult& AddUnprocessedIdentityIds(UnprocessedIdentityId&& value) { m_unprocessedIdentityIds.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteIdentitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteIdentitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteIdentitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UnprocessedIdentityId> m_unprocessedIdentityIds;

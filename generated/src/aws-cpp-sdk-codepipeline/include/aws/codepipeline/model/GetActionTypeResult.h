@@ -33,58 +33,28 @@ namespace Model
     AWS_CODEPIPELINE_API GetActionTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The action type information for the requested action type, such as the action
      * type ID.</p>
      */
     inline const ActionTypeDeclaration& GetActionType() const{ return m_actionType; }
-
-    /**
-     * <p>The action type information for the requested action type, such as the action
-     * type ID.</p>
-     */
     inline void SetActionType(const ActionTypeDeclaration& value) { m_actionType = value; }
-
-    /**
-     * <p>The action type information for the requested action type, such as the action
-     * type ID.</p>
-     */
     inline void SetActionType(ActionTypeDeclaration&& value) { m_actionType = std::move(value); }
-
-    /**
-     * <p>The action type information for the requested action type, such as the action
-     * type ID.</p>
-     */
     inline GetActionTypeResult& WithActionType(const ActionTypeDeclaration& value) { SetActionType(value); return *this;}
-
-    /**
-     * <p>The action type information for the requested action type, such as the action
-     * type ID.</p>
-     */
     inline GetActionTypeResult& WithActionType(ActionTypeDeclaration&& value) { SetActionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetActionTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetActionTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetActionTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ActionTypeDeclaration m_actionType;

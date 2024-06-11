@@ -37,77 +37,31 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Start import request client token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline StartImportRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline StartImportRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Start import request client token.</p>
-     */
     inline StartImportRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Start import request s3 bucket source.</p>
      */
     inline const S3BucketSource& GetS3BucketSource() const{ return m_s3BucketSource; }
-
-    /**
-     * <p>Start import request s3 bucket source.</p>
-     */
     inline bool S3BucketSourceHasBeenSet() const { return m_s3BucketSourceHasBeenSet; }
-
-    /**
-     * <p>Start import request s3 bucket source.</p>
-     */
     inline void SetS3BucketSource(const S3BucketSource& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = value; }
-
-    /**
-     * <p>Start import request s3 bucket source.</p>
-     */
     inline void SetS3BucketSource(S3BucketSource&& value) { m_s3BucketSourceHasBeenSet = true; m_s3BucketSource = std::move(value); }
-
-    /**
-     * <p>Start import request s3 bucket source.</p>
-     */
     inline StartImportRequest& WithS3BucketSource(const S3BucketSource& value) { SetS3BucketSource(value); return *this;}
-
-    /**
-     * <p>Start import request s3 bucket source.</p>
-     */
     inline StartImportRequest& WithS3BucketSource(S3BucketSource&& value) { SetS3BucketSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

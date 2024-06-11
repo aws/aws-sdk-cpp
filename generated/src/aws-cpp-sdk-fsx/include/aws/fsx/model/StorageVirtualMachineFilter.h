@@ -42,91 +42,33 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name for this filter.</p>
      */
     inline const StorageVirtualMachineFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name for this filter.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name for this filter.</p>
-     */
     inline void SetName(const StorageVirtualMachineFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name for this filter.</p>
-     */
     inline void SetName(StorageVirtualMachineFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name for this filter.</p>
-     */
     inline StorageVirtualMachineFilter& WithName(const StorageVirtualMachineFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name for this filter.</p>
-     */
     inline StorageVirtualMachineFilter& WithName(StorageVirtualMachineFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values of the filter. These are all the values for any of the applied
      * filters.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline StorageVirtualMachineFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline StorageVirtualMachineFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline StorageVirtualMachineFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline StorageVirtualMachineFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The values of the filter. These are all the values for any of the applied
-     * filters.</p>
-     */
     inline StorageVirtualMachineFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     StorageVirtualMachineFilterName m_name;

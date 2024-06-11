@@ -37,42 +37,18 @@ namespace Model
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
      * after the route is created. </p>
      */
     inline const RouteActivationState& GetActivationState() const{ return m_activationState; }
-
-    /**
-     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
-     * after the route is created. </p>
-     */
     inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
-
-    /**
-     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
-     * after the route is created. </p>
-     */
     inline void SetActivationState(const RouteActivationState& value) { m_activationStateHasBeenSet = true; m_activationState = value; }
-
-    /**
-     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
-     * after the route is created. </p>
-     */
     inline void SetActivationState(RouteActivationState&& value) { m_activationStateHasBeenSet = true; m_activationState = std::move(value); }
-
-    /**
-     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
-     * after the route is created. </p>
-     */
     inline DefaultRouteInput& WithActivationState(const RouteActivationState& value) { SetActivationState(value); return *this;}
-
-    /**
-     * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
-     * after the route is created. </p>
-     */
     inline DefaultRouteInput& WithActivationState(RouteActivationState&& value) { SetActivationState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RouteActivationState m_activationState;

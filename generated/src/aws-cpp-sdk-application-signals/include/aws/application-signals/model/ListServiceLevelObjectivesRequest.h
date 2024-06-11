@@ -39,6 +39,7 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>You can use this optional field to specify which services you want to
      * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
@@ -57,350 +58,59 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetKeyAttributes() const{ return m_keyAttributes; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline bool KeyAttributesHasBeenSet() const { return m_keyAttributesHasBeenSet; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = value; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline void SetKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes = std::move(value); }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& WithKeyAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetKeyAttributes(value); return *this;}
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& WithKeyAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetKeyAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const Aws::String& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(Aws::String&& key, const Aws::String& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const Aws::String& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(Aws::String&& key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const char* key, Aws::String&& value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(Aws::String&& key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>You can use this optional field to specify which services you want to
-     * retrieve SLO information for.</p> <p>This is a string-to-string map. It can
-     * include the following fields.</p> <ul> <li> <p> <code>Type</code> designates the
-     * type of object this is.</p> </li> <li> <p> <code>ResourceType</code> specifies
-     * the type of the resource. This field is used only when the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Name</code> specifies the
-     * name of the object. This is used only if the value of the <code>Type</code>
-     * field is <code>Service</code>, <code>RemoteService</code>, or
-     * <code>AWS::Service</code>.</p> </li> <li> <p> <code>Identifier</code> identifies
-     * the resource objects of this resource. This is used only if the value of the
-     * <code>Type</code> field is <code>Resource</code> or
-     * <code>AWS::Resource</code>.</p> </li> <li> <p> <code>Environment</code>
-     * specifies the location where this object is hosted, or what it belongs to.</p>
-     * </li> </ul>
-     */
     inline ListServiceLevelObjectivesRequest& AddKeyAttributes(const char* key, const char* value) { m_keyAttributesHasBeenSet = true; m_keyAttributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the operation that this SLO is associated with.</p>
      */
     inline const Aws::String& GetOperationName() const{ return m_operationName; }
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the operation that this SLO is associated with.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithOperationName(const char* value) { SetOperationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in one operation. If you omit this
      * parameter, the default of 50 is used.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in one operation. If you omit this
-     * parameter, the default of 50 is used.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in one operation. If you omit this
-     * parameter, the default of 50 is used.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in one operation. If you omit this
-     * parameter, the default of 50 is used.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Include this value, if it was returned by the previous operation, to get the
      * next set of service level objectives.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Include this value, if it was returned by the previous operation, to get the
-     * next set of service level objectives.</p>
-     */
     inline ListServiceLevelObjectivesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_keyAttributes;

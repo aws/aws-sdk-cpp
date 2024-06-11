@@ -32,79 +32,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
      * subscription.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline UpdatePublicSharingSettingsRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline UpdatePublicSharingSettingsRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with your Amazon QuickSight
-     * subscription.</p>
-     */
     inline UpdatePublicSharingSettingsRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value that indicates whether public sharing is turned on for an
      * Amazon QuickSight account.</p>
      */
     inline bool GetPublicSharingEnabled() const{ return m_publicSharingEnabled; }
-
-    /**
-     * <p>A Boolean value that indicates whether public sharing is turned on for an
-     * Amazon QuickSight account.</p>
-     */
     inline bool PublicSharingEnabledHasBeenSet() const { return m_publicSharingEnabledHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that indicates whether public sharing is turned on for an
-     * Amazon QuickSight account.</p>
-     */
     inline void SetPublicSharingEnabled(bool value) { m_publicSharingEnabledHasBeenSet = true; m_publicSharingEnabled = value; }
-
-    /**
-     * <p>A Boolean value that indicates whether public sharing is turned on for an
-     * Amazon QuickSight account.</p>
-     */
     inline UpdatePublicSharingSettingsRequest& WithPublicSharingEnabled(bool value) { SetPublicSharingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

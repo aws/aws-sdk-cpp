@@ -41,6 +41,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
      * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
@@ -48,63 +49,14 @@ namespace Model
      * <code>bedrock.amazonaws.com</code> as a service principal.</p>
      */
     inline const Aws::String& GetAmazonBedrockRoleArn() const{ return m_amazonBedrockRoleArn; }
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline bool AmazonBedrockRoleArnHasBeenSet() const { return m_amazonBedrockRoleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline void SetAmazonBedrockRoleArn(const Aws::String& value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn = value; }
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline void SetAmazonBedrockRoleArn(Aws::String&& value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline void SetAmazonBedrockRoleArn(const char* value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn.assign(value); }
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline GenerativeAiSettings& WithAmazonBedrockRoleArn(const Aws::String& value) { SetAmazonBedrockRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline GenerativeAiSettings& WithAmazonBedrockRoleArn(Aws::String&& value) { SetAmazonBedrockRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an Amazon Web Services IAM role that allows fine-tuning of large
-     * language models (LLMs) in Amazon Bedrock. The IAM role should have Amazon S3
-     * read and write permissions, as well as a trust relationship that establishes
-     * <code>bedrock.amazonaws.com</code> as a service principal.</p>
-     */
     inline GenerativeAiSettings& WithAmazonBedrockRoleArn(const char* value) { SetAmazonBedrockRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_amazonBedrockRoleArn;

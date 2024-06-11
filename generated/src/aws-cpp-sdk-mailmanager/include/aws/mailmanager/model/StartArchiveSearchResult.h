@@ -37,63 +37,29 @@ namespace Model
     AWS_MAILMANAGER_API StartArchiveSearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the initiated search job.</p>
      */
     inline const Aws::String& GetSearchId() const{ return m_searchId; }
-
-    /**
-     * <p>The unique identifier for the initiated search job.</p>
-     */
     inline void SetSearchId(const Aws::String& value) { m_searchId = value; }
-
-    /**
-     * <p>The unique identifier for the initiated search job.</p>
-     */
     inline void SetSearchId(Aws::String&& value) { m_searchId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the initiated search job.</p>
-     */
     inline void SetSearchId(const char* value) { m_searchId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the initiated search job.</p>
-     */
     inline StartArchiveSearchResult& WithSearchId(const Aws::String& value) { SetSearchId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the initiated search job.</p>
-     */
     inline StartArchiveSearchResult& WithSearchId(Aws::String&& value) { SetSearchId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the initiated search job.</p>
-     */
     inline StartArchiveSearchResult& WithSearchId(const char* value) { SetSearchId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartArchiveSearchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartArchiveSearchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartArchiveSearchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_searchId;

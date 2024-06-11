@@ -37,87 +37,32 @@ namespace Model
     AWS_MQ_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
      * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
      * encrypt your data.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline EncryptionOptions& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline EncryptionOptions& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The customer master key (CMK) to use for the A KMS (KMS). This key is used to
-     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to
-     * encrypt your data.</p>
-     */
     inline EncryptionOptions& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to
      * true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
      */
     inline bool GetUseAwsOwnedKey() const{ return m_useAwsOwnedKey; }
-
-    /**
-     * <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to
-     * true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
-     */
     inline bool UseAwsOwnedKeyHasBeenSet() const { return m_useAwsOwnedKeyHasBeenSet; }
-
-    /**
-     * <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to
-     * true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
-     */
     inline void SetUseAwsOwnedKey(bool value) { m_useAwsOwnedKeyHasBeenSet = true; m_useAwsOwnedKey = value; }
-
-    /**
-     * <p>Enables the use of an Amazon Web Services owned CMK using KMS (KMS). Set to
-     * true by default, if no value is provided, for example, for RabbitMQ brokers.</p>
-     */
     inline EncryptionOptions& WithUseAwsOwnedKey(bool value) { SetUseAwsOwnedKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

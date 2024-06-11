@@ -41,121 +41,37 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The response that was received after the endpoint data was accepted.</p>
      */
     inline const EndpointItemResponse& GetEndpointItemResponse() const{ return m_endpointItemResponse; }
-
-    /**
-     * <p>The response that was received after the endpoint data was accepted.</p>
-     */
     inline bool EndpointItemResponseHasBeenSet() const { return m_endpointItemResponseHasBeenSet; }
-
-    /**
-     * <p>The response that was received after the endpoint data was accepted.</p>
-     */
     inline void SetEndpointItemResponse(const EndpointItemResponse& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = value; }
-
-    /**
-     * <p>The response that was received after the endpoint data was accepted.</p>
-     */
     inline void SetEndpointItemResponse(EndpointItemResponse&& value) { m_endpointItemResponseHasBeenSet = true; m_endpointItemResponse = std::move(value); }
-
-    /**
-     * <p>The response that was received after the endpoint data was accepted.</p>
-     */
     inline ItemResponse& WithEndpointItemResponse(const EndpointItemResponse& value) { SetEndpointItemResponse(value); return *this;}
-
-    /**
-     * <p>The response that was received after the endpoint data was accepted.</p>
-     */
     inline ItemResponse& WithEndpointItemResponse(EndpointItemResponse&& value) { SetEndpointItemResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A multipart response object that contains a key and a value for each event in
      * the request. In each object, the event ID is the key and an EventItemResponse
      * object is the value.</p>
      */
     inline const Aws::Map<Aws::String, EventItemResponse>& GetEventsItemResponse() const{ return m_eventsItemResponse; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline bool EventsItemResponseHasBeenSet() const { return m_eventsItemResponseHasBeenSet; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline void SetEventsItemResponse(const Aws::Map<Aws::String, EventItemResponse>& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = value; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline void SetEventsItemResponse(Aws::Map<Aws::String, EventItemResponse>&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse = std::move(value); }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& WithEventsItemResponse(const Aws::Map<Aws::String, EventItemResponse>& value) { SetEventsItemResponse(value); return *this;}
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& WithEventsItemResponse(Aws::Map<Aws::String, EventItemResponse>&& value) { SetEventsItemResponse(std::move(value)); return *this;}
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& AddEventsItemResponse(const Aws::String& key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, value); return *this; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& AddEventsItemResponse(Aws::String&& key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& AddEventsItemResponse(const Aws::String& key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& AddEventsItemResponse(Aws::String&& key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& AddEventsItemResponse(const char* key, EventItemResponse&& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A multipart response object that contains a key and a value for each event in
-     * the request. In each object, the event ID is the key and an EventItemResponse
-     * object is the value.</p>
-     */
     inline ItemResponse& AddEventsItemResponse(const char* key, const EventItemResponse& value) { m_eventsItemResponseHasBeenSet = true; m_eventsItemResponse.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     EndpointItemResponse m_endpointItemResponse;

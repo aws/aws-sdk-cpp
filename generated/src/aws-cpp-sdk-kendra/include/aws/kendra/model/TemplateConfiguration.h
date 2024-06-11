@@ -38,6 +38,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The template schema used for the data source, where templates schemas are
      * supported.</p> <p>See <a
@@ -45,47 +46,12 @@ namespace Model
      * template schemas</a>.</p>
      */
     inline Aws::Utils::DocumentView GetTemplate() const{ return m_template; }
-
-    /**
-     * <p>The template schema used for the data source, where templates schemas are
-     * supported.</p> <p>See <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
-     * template schemas</a>.</p>
-     */
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-
-    /**
-     * <p>The template schema used for the data source, where templates schemas are
-     * supported.</p> <p>See <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
-     * template schemas</a>.</p>
-     */
     inline void SetTemplate(const Aws::Utils::Document& value) { m_templateHasBeenSet = true; m_template = value; }
-
-    /**
-     * <p>The template schema used for the data source, where templates schemas are
-     * supported.</p> <p>See <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
-     * template schemas</a>.</p>
-     */
     inline void SetTemplate(Aws::Utils::Document&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-
-    /**
-     * <p>The template schema used for the data source, where templates schemas are
-     * supported.</p> <p>See <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
-     * template schemas</a>.</p>
-     */
     inline TemplateConfiguration& WithTemplate(const Aws::Utils::Document& value) { SetTemplate(value); return *this;}
-
-    /**
-     * <p>The template schema used for the data source, where templates schemas are
-     * supported.</p> <p>See <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/ds-schemas.html">Data source
-     * template schemas</a>.</p>
-     */
     inline TemplateConfiguration& WithTemplate(Aws::Utils::Document&& value) { SetTemplate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Document m_template;

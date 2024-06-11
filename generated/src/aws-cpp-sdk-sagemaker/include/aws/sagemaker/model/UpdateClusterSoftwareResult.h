@@ -32,70 +32,30 @@ namespace Model
     AWS_SAGEMAKER_API UpdateClusterSoftwareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
      * updated for security patching.</p>
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
-     * updated for security patching.</p>
-     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
-     * updated for security patching.</p>
-     */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
-     * updated for security patching.</p>
-     */
     inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
-     * updated for security patching.</p>
-     */
     inline UpdateClusterSoftwareResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
-     * updated for security patching.</p>
-     */
     inline UpdateClusterSoftwareResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SageMaker HyperPod cluster being
-     * updated for security patching.</p>
-     */
     inline UpdateClusterSoftwareResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateClusterSoftwareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateClusterSoftwareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateClusterSoftwareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterArn;

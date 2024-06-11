@@ -32,103 +32,35 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
      * the ARN of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline DescribeViewRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline DescribeViewRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instanceId in
-     * the ARN of the instance.</p>
-     */
     inline DescribeViewRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
      * views.</p>
      */
     inline const Aws::String& GetViewId() const{ return m_viewId; }
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline bool ViewIdHasBeenSet() const { return m_viewIdHasBeenSet; }
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline void SetViewId(const Aws::String& value) { m_viewIdHasBeenSet = true; m_viewId = value; }
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline void SetViewId(Aws::String&& value) { m_viewIdHasBeenSet = true; m_viewId = std::move(value); }
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline void SetViewId(const char* value) { m_viewIdHasBeenSet = true; m_viewId.assign(value); }
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline DescribeViewRequest& WithViewId(const Aws::String& value) { SetViewId(value); return *this;}
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline DescribeViewRequest& WithViewId(Aws::String&& value) { SetViewId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ViewId of the view. This must be an ARN for Amazon Web Services managed
-     * views.</p>
-     */
     inline DescribeViewRequest& WithViewId(const char* value) { SetViewId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

@@ -34,70 +34,30 @@ namespace Model
     AWS_LIGHTSAIL_API GetContainerImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of objects that describe container images that are registered to the
      * container service.</p>
      */
     inline const Aws::Vector<ContainerImage>& GetContainerImages() const{ return m_containerImages; }
-
-    /**
-     * <p>An array of objects that describe container images that are registered to the
-     * container service.</p>
-     */
     inline void SetContainerImages(const Aws::Vector<ContainerImage>& value) { m_containerImages = value; }
-
-    /**
-     * <p>An array of objects that describe container images that are registered to the
-     * container service.</p>
-     */
     inline void SetContainerImages(Aws::Vector<ContainerImage>&& value) { m_containerImages = std::move(value); }
-
-    /**
-     * <p>An array of objects that describe container images that are registered to the
-     * container service.</p>
-     */
     inline GetContainerImagesResult& WithContainerImages(const Aws::Vector<ContainerImage>& value) { SetContainerImages(value); return *this;}
-
-    /**
-     * <p>An array of objects that describe container images that are registered to the
-     * container service.</p>
-     */
     inline GetContainerImagesResult& WithContainerImages(Aws::Vector<ContainerImage>&& value) { SetContainerImages(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects that describe container images that are registered to the
-     * container service.</p>
-     */
     inline GetContainerImagesResult& AddContainerImages(const ContainerImage& value) { m_containerImages.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects that describe container images that are registered to the
-     * container service.</p>
-     */
     inline GetContainerImagesResult& AddContainerImages(ContainerImage&& value) { m_containerImages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetContainerImagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetContainerImagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetContainerImagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ContainerImage> m_containerImages;

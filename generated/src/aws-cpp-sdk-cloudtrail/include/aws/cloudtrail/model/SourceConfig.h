@@ -39,71 +39,30 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies whether the channel applies to a single Region or to all
      * Regions.</p>
      */
     inline bool GetApplyToAllRegions() const{ return m_applyToAllRegions; }
-
-    /**
-     * <p> Specifies whether the channel applies to a single Region or to all
-     * Regions.</p>
-     */
     inline bool ApplyToAllRegionsHasBeenSet() const { return m_applyToAllRegionsHasBeenSet; }
-
-    /**
-     * <p> Specifies whether the channel applies to a single Region or to all
-     * Regions.</p>
-     */
     inline void SetApplyToAllRegions(bool value) { m_applyToAllRegionsHasBeenSet = true; m_applyToAllRegions = value; }
-
-    /**
-     * <p> Specifies whether the channel applies to a single Region or to all
-     * Regions.</p>
-     */
     inline SourceConfig& WithApplyToAllRegions(bool value) { SetApplyToAllRegions(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The advanced event selectors that are configured for the channel.</p>
      */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline SourceConfig& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline SourceConfig& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline SourceConfig& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
-
-    /**
-     * <p> The advanced event selectors that are configured for the channel.</p>
-     */
     inline SourceConfig& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_applyToAllRegions;

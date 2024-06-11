@@ -36,63 +36,23 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
      * namespace's admin credentials secret. You can only use this parameter if
      * <code>manageAdminPassword</code> is true.</p>
      */
     inline const Aws::String& GetAdminPasswordSecretKmsKeyId() const{ return m_adminPasswordSecretKmsKeyId; }
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline bool AdminPasswordSecretKmsKeyIdHasBeenSet() const { return m_adminPasswordSecretKmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline void SetAdminPasswordSecretKmsKeyId(const Aws::String& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = value; }
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline void SetAdminPasswordSecretKmsKeyId(Aws::String&& value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId = std::move(value); }
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline void SetAdminPasswordSecretKmsKeyId(const char* value) { m_adminPasswordSecretKmsKeyIdHasBeenSet = true; m_adminPasswordSecretKmsKeyId.assign(value); }
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline UpdateNamespaceRequest& WithAdminPasswordSecretKmsKeyId(const Aws::String& value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline UpdateNamespaceRequest& WithAdminPasswordSecretKmsKeyId(Aws::String&& value) { SetAdminPasswordSecretKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Key Management Service (KMS) key used to encrypt and store the
-     * namespace's admin credentials secret. You can only use this parameter if
-     * <code>manageAdminPassword</code> is true.</p>
-     */
     inline UpdateNamespaceRequest& WithAdminPasswordSecretKmsKeyId(const char* value) { SetAdminPasswordSecretKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The password of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
@@ -100,339 +60,95 @@ namespace Model
      * if <code>manageAdminPassword</code> is true. </p>
      */
     inline const Aws::String& GetAdminUserPassword() const{ return m_adminUserPassword; }
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline bool AdminUserPasswordHasBeenSet() const { return m_adminUserPasswordHasBeenSet; }
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline void SetAdminUserPassword(const Aws::String& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = value; }
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline void SetAdminUserPassword(Aws::String&& value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword = std::move(value); }
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline void SetAdminUserPassword(const char* value) { m_adminUserPasswordHasBeenSet = true; m_adminUserPassword.assign(value); }
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline UpdateNamespaceRequest& WithAdminUserPassword(const Aws::String& value) { SetAdminUserPassword(value); return *this;}
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline UpdateNamespaceRequest& WithAdminUserPassword(Aws::String&& value) { SetAdminUserPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The password of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUsername</code>.</p> <p>You can't use <code>adminUserPassword</code>
-     * if <code>manageAdminPassword</code> is true. </p>
-     */
     inline UpdateNamespaceRequest& WithAdminUserPassword(const char* value) { SetAdminUserPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The username of the administrator for the first database created in the
      * namespace. This parameter must be updated together with
      * <code>adminUserPassword</code>.</p>
      */
     inline const Aws::String& GetAdminUsername() const{ return m_adminUsername; }
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline bool AdminUsernameHasBeenSet() const { return m_adminUsernameHasBeenSet; }
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline void SetAdminUsername(const Aws::String& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = value; }
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline void SetAdminUsername(Aws::String&& value) { m_adminUsernameHasBeenSet = true; m_adminUsername = std::move(value); }
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline void SetAdminUsername(const char* value) { m_adminUsernameHasBeenSet = true; m_adminUsername.assign(value); }
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithAdminUsername(const Aws::String& value) { SetAdminUsername(value); return *this;}
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithAdminUsername(Aws::String&& value) { SetAdminUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>The username of the administrator for the first database created in the
-     * namespace. This parameter must be updated together with
-     * <code>adminUserPassword</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithAdminUsername(const char* value) { SetAdminUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
      * namespace. This parameter must be updated together with
      * <code>iamRoles</code>.</p>
      */
     inline const Aws::String& GetDefaultIamRoleArn() const{ return m_defaultIamRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline bool DefaultIamRoleArnHasBeenSet() const { return m_defaultIamRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline void SetDefaultIamRoleArn(const Aws::String& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline void SetDefaultIamRoleArn(Aws::String&& value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline void SetDefaultIamRoleArn(const char* value) { m_defaultIamRoleArnHasBeenSet = true; m_defaultIamRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithDefaultIamRoleArn(const Aws::String& value) { SetDefaultIamRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithDefaultIamRoleArn(Aws::String&& value) { SetDefaultIamRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IAM role to set as a default in the
-     * namespace. This parameter must be updated together with
-     * <code>iamRoles</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithDefaultIamRoleArn(const char* value) { SetDefaultIamRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of IAM roles to associate with the namespace. This parameter must be
      * updated together with <code>defaultIamRoleArn</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIamRoles() const{ return m_iamRoles; }
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline bool IamRolesHasBeenSet() const { return m_iamRolesHasBeenSet; }
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline void SetIamRoles(const Aws::Vector<Aws::String>& value) { m_iamRolesHasBeenSet = true; m_iamRoles = value; }
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline void SetIamRoles(Aws::Vector<Aws::String>&& value) { m_iamRolesHasBeenSet = true; m_iamRoles = std::move(value); }
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithIamRoles(const Aws::Vector<Aws::String>& value) { SetIamRoles(value); return *this;}
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithIamRoles(Aws::Vector<Aws::String>&& value) { SetIamRoles(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline UpdateNamespaceRequest& AddIamRoles(const Aws::String& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline UpdateNamespaceRequest& AddIamRoles(Aws::String&& value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of IAM roles to associate with the namespace. This parameter must be
-     * updated together with <code>defaultIamRoleArn</code>.</p>
-     */
     inline UpdateNamespaceRequest& AddIamRoles(const char* value) { m_iamRolesHasBeenSet = true; m_iamRoles.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
      * your data.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline UpdateNamespaceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline UpdateNamespaceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services Key Management Service key used to encrypt
-     * your data.</p>
-     */
     inline UpdateNamespaceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The types of logs the namespace can export. The export types are
      * <code>userlog</code>, <code>connectionlog</code>, and
      * <code>useractivitylog</code>.</p>
      */
     inline const Aws::Vector<LogExport>& GetLogExports() const{ return m_logExports; }
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline bool LogExportsHasBeenSet() const { return m_logExportsHasBeenSet; }
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline void SetLogExports(const Aws::Vector<LogExport>& value) { m_logExportsHasBeenSet = true; m_logExports = value; }
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline void SetLogExports(Aws::Vector<LogExport>&& value) { m_logExportsHasBeenSet = true; m_logExports = std::move(value); }
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithLogExports(const Aws::Vector<LogExport>& value) { SetLogExports(value); return *this;}
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline UpdateNamespaceRequest& WithLogExports(Aws::Vector<LogExport>&& value) { SetLogExports(std::move(value)); return *this;}
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline UpdateNamespaceRequest& AddLogExports(const LogExport& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(value); return *this; }
-
-    /**
-     * <p>The types of logs the namespace can export. The export types are
-     * <code>userlog</code>, <code>connectionlog</code>, and
-     * <code>useractivitylog</code>.</p>
-     */
     inline UpdateNamespaceRequest& AddLogExports(LogExport&& value) { m_logExportsHasBeenSet = true; m_logExports.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
      * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
@@ -441,83 +157,25 @@ namespace Model
      * admin user account's password. </p>
      */
     inline bool GetManageAdminPassword() const{ return m_manageAdminPassword; }
-
-    /**
-     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
-     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
-     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
-     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
-     * admin user account's password. </p>
-     */
     inline bool ManageAdminPasswordHasBeenSet() const { return m_manageAdminPasswordHasBeenSet; }
-
-    /**
-     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
-     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
-     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
-     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
-     * admin user account's password. </p>
-     */
     inline void SetManageAdminPassword(bool value) { m_manageAdminPasswordHasBeenSet = true; m_manageAdminPassword = value; }
-
-    /**
-     * <p>If <code>true</code>, Amazon Redshift uses Secrets Manager to manage the
-     * namespace's admin credentials. You can't use <code>adminUserPassword</code> if
-     * <code>manageAdminPassword</code> is true. If <code>manageAdminPassword</code> is
-     * false or not set, Amazon Redshift uses <code>adminUserPassword</code> for the
-     * admin user account's password. </p>
-     */
     inline UpdateNamespaceRequest& WithManageAdminPassword(bool value) { SetManageAdminPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the namespace to update. You can't update the name of a namespace
      * once it is created.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline UpdateNamespaceRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline UpdateNamespaceRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the namespace to update. You can't update the name of a namespace
-     * once it is created.</p>
-     */
     inline UpdateNamespaceRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_adminPasswordSecretKmsKeyId;

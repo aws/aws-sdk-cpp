@@ -39,73 +39,30 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
      * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
      * EC2 instance in the cluster.</p>
      */
     inline const VolumeSpecification& GetVolumeSpecification() const{ return m_volumeSpecification; }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline bool VolumeSpecificationHasBeenSet() const { return m_volumeSpecificationHasBeenSet; }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline void SetVolumeSpecification(VolumeSpecification&& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = std::move(value); }
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline EbsBlockDeviceConfig& WithVolumeSpecification(const VolumeSpecification& value) { SetVolumeSpecification(value); return *this;}
-
-    /**
-     * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-     * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
-     * EC2 instance in the cluster.</p>
-     */
     inline EbsBlockDeviceConfig& WithVolumeSpecification(VolumeSpecification&& value) { SetVolumeSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of EBS volumes with a specific volume configuration that are
      * associated with every instance in the instance group</p>
      */
     inline int GetVolumesPerInstance() const{ return m_volumesPerInstance; }
-
-    /**
-     * <p>Number of EBS volumes with a specific volume configuration that are
-     * associated with every instance in the instance group</p>
-     */
     inline bool VolumesPerInstanceHasBeenSet() const { return m_volumesPerInstanceHasBeenSet; }
-
-    /**
-     * <p>Number of EBS volumes with a specific volume configuration that are
-     * associated with every instance in the instance group</p>
-     */
     inline void SetVolumesPerInstance(int value) { m_volumesPerInstanceHasBeenSet = true; m_volumesPerInstance = value; }
-
-    /**
-     * <p>Number of EBS volumes with a specific volume configuration that are
-     * associated with every instance in the instance group</p>
-     */
     inline EbsBlockDeviceConfig& WithVolumesPerInstance(int value) { SetVolumesPerInstance(value); return *this;}
-
+    ///@}
   private:
 
     VolumeSpecification m_volumeSpecification;

@@ -39,108 +39,43 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the CustomImage. Must be unique to your account.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline CustomImage& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline CustomImage& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the CustomImage. Must be unique to your account.</p>
-     */
     inline CustomImage& WithImageName(const char* value) { SetImageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the CustomImage.</p>
      */
     inline int GetImageVersionNumber() const{ return m_imageVersionNumber; }
-
-    /**
-     * <p>The version number of the CustomImage.</p>
-     */
     inline bool ImageVersionNumberHasBeenSet() const { return m_imageVersionNumberHasBeenSet; }
-
-    /**
-     * <p>The version number of the CustomImage.</p>
-     */
     inline void SetImageVersionNumber(int value) { m_imageVersionNumberHasBeenSet = true; m_imageVersionNumber = value; }
-
-    /**
-     * <p>The version number of the CustomImage.</p>
-     */
     inline CustomImage& WithImageVersionNumber(int value) { SetImageVersionNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the AppImageConfig.</p>
      */
     inline const Aws::String& GetAppImageConfigName() const{ return m_appImageConfigName; }
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline bool AppImageConfigNameHasBeenSet() const { return m_appImageConfigNameHasBeenSet; }
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline void SetAppImageConfigName(const Aws::String& value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName = value; }
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline void SetAppImageConfigName(Aws::String&& value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName = std::move(value); }
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline void SetAppImageConfigName(const char* value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName.assign(value); }
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline CustomImage& WithAppImageConfigName(const Aws::String& value) { SetAppImageConfigName(value); return *this;}
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline CustomImage& WithAppImageConfigName(Aws::String&& value) { SetAppImageConfigName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the AppImageConfig.</p>
-     */
     inline CustomImage& WithAppImageConfigName(const char* value) { SetAppImageConfigName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageName;

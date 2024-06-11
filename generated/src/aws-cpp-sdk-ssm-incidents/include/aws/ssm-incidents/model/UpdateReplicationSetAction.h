@@ -38,79 +38,31 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the Amazon Web Services Region that you're adding to the
      * replication set.</p>
      */
     inline const AddRegionAction& GetAddRegionAction() const{ return m_addRegionAction; }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're adding to the
-     * replication set.</p>
-     */
     inline bool AddRegionActionHasBeenSet() const { return m_addRegionActionHasBeenSet; }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're adding to the
-     * replication set.</p>
-     */
     inline void SetAddRegionAction(const AddRegionAction& value) { m_addRegionActionHasBeenSet = true; m_addRegionAction = value; }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're adding to the
-     * replication set.</p>
-     */
     inline void SetAddRegionAction(AddRegionAction&& value) { m_addRegionActionHasBeenSet = true; m_addRegionAction = std::move(value); }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're adding to the
-     * replication set.</p>
-     */
     inline UpdateReplicationSetAction& WithAddRegionAction(const AddRegionAction& value) { SetAddRegionAction(value); return *this;}
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're adding to the
-     * replication set.</p>
-     */
     inline UpdateReplicationSetAction& WithAddRegionAction(AddRegionAction&& value) { SetAddRegionAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about the Amazon Web Services Region that you're deleting to the
      * replication set.</p>
      */
     inline const DeleteRegionAction& GetDeleteRegionAction() const{ return m_deleteRegionAction; }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're deleting to the
-     * replication set.</p>
-     */
     inline bool DeleteRegionActionHasBeenSet() const { return m_deleteRegionActionHasBeenSet; }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're deleting to the
-     * replication set.</p>
-     */
     inline void SetDeleteRegionAction(const DeleteRegionAction& value) { m_deleteRegionActionHasBeenSet = true; m_deleteRegionAction = value; }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're deleting to the
-     * replication set.</p>
-     */
     inline void SetDeleteRegionAction(DeleteRegionAction&& value) { m_deleteRegionActionHasBeenSet = true; m_deleteRegionAction = std::move(value); }
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're deleting to the
-     * replication set.</p>
-     */
     inline UpdateReplicationSetAction& WithDeleteRegionAction(const DeleteRegionAction& value) { SetDeleteRegionAction(value); return *this;}
-
-    /**
-     * <p>Details about the Amazon Web Services Region that you're deleting to the
-     * replication set.</p>
-     */
     inline UpdateReplicationSetAction& WithDeleteRegionAction(DeleteRegionAction&& value) { SetDeleteRegionAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AddRegionAction m_addRegionAction;

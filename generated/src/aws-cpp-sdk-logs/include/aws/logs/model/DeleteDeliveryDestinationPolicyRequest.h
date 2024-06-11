@@ -34,54 +34,20 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the delivery destination that you want to delete the policy
      * for.</p>
      */
     inline const Aws::String& GetDeliveryDestinationName() const{ return m_deliveryDestinationName; }
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline bool DeliveryDestinationNameHasBeenSet() const { return m_deliveryDestinationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline void SetDeliveryDestinationName(const Aws::String& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = value; }
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline void SetDeliveryDestinationName(Aws::String&& value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName = std::move(value); }
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline void SetDeliveryDestinationName(const char* value) { m_deliveryDestinationNameHasBeenSet = true; m_deliveryDestinationName.assign(value); }
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline DeleteDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(const Aws::String& value) { SetDeliveryDestinationName(value); return *this;}
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline DeleteDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(Aws::String&& value) { SetDeliveryDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the delivery destination that you want to delete the policy
-     * for.</p>
-     */
     inline DeleteDeliveryDestinationPolicyRequest& WithDeliveryDestinationName(const char* value) { SetDeliveryDestinationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deliveryDestinationName;

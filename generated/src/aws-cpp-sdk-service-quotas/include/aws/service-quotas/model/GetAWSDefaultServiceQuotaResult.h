@@ -33,53 +33,27 @@ namespace Model
     AWS_SERVICEQUOTAS_API GetAWSDefaultServiceQuotaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the quota.</p>
      */
     inline const ServiceQuota& GetQuota() const{ return m_quota; }
-
-    /**
-     * <p>Information about the quota.</p>
-     */
     inline void SetQuota(const ServiceQuota& value) { m_quota = value; }
-
-    /**
-     * <p>Information about the quota.</p>
-     */
     inline void SetQuota(ServiceQuota&& value) { m_quota = std::move(value); }
-
-    /**
-     * <p>Information about the quota.</p>
-     */
     inline GetAWSDefaultServiceQuotaResult& WithQuota(const ServiceQuota& value) { SetQuota(value); return *this;}
-
-    /**
-     * <p>Information about the quota.</p>
-     */
     inline GetAWSDefaultServiceQuotaResult& WithQuota(ServiceQuota&& value) { SetQuota(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAWSDefaultServiceQuotaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAWSDefaultServiceQuotaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAWSDefaultServiceQuotaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceQuota m_quota;

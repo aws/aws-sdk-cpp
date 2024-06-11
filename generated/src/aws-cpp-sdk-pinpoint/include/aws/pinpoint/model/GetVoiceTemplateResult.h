@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetVoiceTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const VoiceTemplateResponse& GetVoiceTemplateResponse() const{ return m_voiceTemplateResponse; }
-
-    
     inline void SetVoiceTemplateResponse(const VoiceTemplateResponse& value) { m_voiceTemplateResponse = value; }
-
-    
     inline void SetVoiceTemplateResponse(VoiceTemplateResponse&& value) { m_voiceTemplateResponse = std::move(value); }
-
-    
     inline GetVoiceTemplateResult& WithVoiceTemplateResponse(const VoiceTemplateResponse& value) { SetVoiceTemplateResponse(value); return *this;}
-
-    
     inline GetVoiceTemplateResult& WithVoiceTemplateResponse(VoiceTemplateResponse&& value) { SetVoiceTemplateResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetVoiceTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetVoiceTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetVoiceTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VoiceTemplateResponse m_voiceTemplateResponse;

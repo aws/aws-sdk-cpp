@@ -39,113 +39,44 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the widget status.</p>
      */
     inline const WidgetStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Determines the widget status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Determines the widget status.</p>
-     */
     inline void SetStatus(const WidgetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Determines the widget status.</p>
-     */
     inline void SetStatus(WidgetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Determines the widget status.</p>
-     */
     inline RowAlternateColorOptions& WithStatus(const WidgetStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Determines the widget status.</p>
-     */
     inline RowAlternateColorOptions& WithStatus(WidgetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines the list of row alternate colors.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRowAlternateColors() const{ return m_rowAlternateColors; }
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline bool RowAlternateColorsHasBeenSet() const { return m_rowAlternateColorsHasBeenSet; }
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline void SetRowAlternateColors(const Aws::Vector<Aws::String>& value) { m_rowAlternateColorsHasBeenSet = true; m_rowAlternateColors = value; }
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline void SetRowAlternateColors(Aws::Vector<Aws::String>&& value) { m_rowAlternateColorsHasBeenSet = true; m_rowAlternateColors = std::move(value); }
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline RowAlternateColorOptions& WithRowAlternateColors(const Aws::Vector<Aws::String>& value) { SetRowAlternateColors(value); return *this;}
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline RowAlternateColorOptions& WithRowAlternateColors(Aws::Vector<Aws::String>&& value) { SetRowAlternateColors(std::move(value)); return *this;}
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline RowAlternateColorOptions& AddRowAlternateColors(const Aws::String& value) { m_rowAlternateColorsHasBeenSet = true; m_rowAlternateColors.push_back(value); return *this; }
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline RowAlternateColorOptions& AddRowAlternateColors(Aws::String&& value) { m_rowAlternateColorsHasBeenSet = true; m_rowAlternateColors.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Determines the list of row alternate colors.</p>
-     */
     inline RowAlternateColorOptions& AddRowAlternateColors(const char* value) { m_rowAlternateColorsHasBeenSet = true; m_rowAlternateColors.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The primary background color options for alternate rows.</p>
      */
     inline const WidgetStatus& GetUsePrimaryBackgroundColor() const{ return m_usePrimaryBackgroundColor; }
-
-    /**
-     * <p>The primary background color options for alternate rows.</p>
-     */
     inline bool UsePrimaryBackgroundColorHasBeenSet() const { return m_usePrimaryBackgroundColorHasBeenSet; }
-
-    /**
-     * <p>The primary background color options for alternate rows.</p>
-     */
     inline void SetUsePrimaryBackgroundColor(const WidgetStatus& value) { m_usePrimaryBackgroundColorHasBeenSet = true; m_usePrimaryBackgroundColor = value; }
-
-    /**
-     * <p>The primary background color options for alternate rows.</p>
-     */
     inline void SetUsePrimaryBackgroundColor(WidgetStatus&& value) { m_usePrimaryBackgroundColorHasBeenSet = true; m_usePrimaryBackgroundColor = std::move(value); }
-
-    /**
-     * <p>The primary background color options for alternate rows.</p>
-     */
     inline RowAlternateColorOptions& WithUsePrimaryBackgroundColor(const WidgetStatus& value) { SetUsePrimaryBackgroundColor(value); return *this;}
-
-    /**
-     * <p>The primary background color options for alternate rows.</p>
-     */
     inline RowAlternateColorOptions& WithUsePrimaryBackgroundColor(WidgetStatus&& value) { SetUsePrimaryBackgroundColor(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WidgetStatus m_status;

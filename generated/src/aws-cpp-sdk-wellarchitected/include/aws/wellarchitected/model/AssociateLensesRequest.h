@@ -36,58 +36,30 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline AssociateLensesRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline AssociateLensesRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline AssociateLensesRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<Aws::String>& GetLensAliases() const{ return m_lensAliases; }
-
-    
     inline bool LensAliasesHasBeenSet() const { return m_lensAliasesHasBeenSet; }
-
-    
     inline void SetLensAliases(const Aws::Vector<Aws::String>& value) { m_lensAliasesHasBeenSet = true; m_lensAliases = value; }
-
-    
     inline void SetLensAliases(Aws::Vector<Aws::String>&& value) { m_lensAliasesHasBeenSet = true; m_lensAliases = std::move(value); }
-
-    
     inline AssociateLensesRequest& WithLensAliases(const Aws::Vector<Aws::String>& value) { SetLensAliases(value); return *this;}
-
-    
     inline AssociateLensesRequest& WithLensAliases(Aws::Vector<Aws::String>&& value) { SetLensAliases(std::move(value)); return *this;}
-
-    
     inline AssociateLensesRequest& AddLensAliases(const Aws::String& value) { m_lensAliasesHasBeenSet = true; m_lensAliases.push_back(value); return *this; }
-
-    
     inline AssociateLensesRequest& AddLensAliases(Aws::String&& value) { m_lensAliasesHasBeenSet = true; m_lensAliases.push_back(std::move(value)); return *this; }
-
-    
     inline AssociateLensesRequest& AddLensAliases(const char* value) { m_lensAliasesHasBeenSet = true; m_lensAliases.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

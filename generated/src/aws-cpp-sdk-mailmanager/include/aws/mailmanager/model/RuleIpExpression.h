@@ -41,68 +41,31 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IP address to evaluate in this condition.</p>
      */
     inline const RuleIpToEvaluate& GetEvaluate() const{ return m_evaluate; }
-
-    /**
-     * <p>The IP address to evaluate in this condition.</p>
-     */
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-
-    /**
-     * <p>The IP address to evaluate in this condition.</p>
-     */
     inline void SetEvaluate(const RuleIpToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-
-    /**
-     * <p>The IP address to evaluate in this condition.</p>
-     */
     inline void SetEvaluate(RuleIpToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-
-    /**
-     * <p>The IP address to evaluate in this condition.</p>
-     */
     inline RuleIpExpression& WithEvaluate(const RuleIpToEvaluate& value) { SetEvaluate(value); return *this;}
-
-    /**
-     * <p>The IP address to evaluate in this condition.</p>
-     */
     inline RuleIpExpression& WithEvaluate(RuleIpToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operator to evaluate the IP address.</p>
      */
     inline const RuleIpOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The operator to evaluate the IP address.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The operator to evaluate the IP address.</p>
-     */
     inline void SetOperator(const RuleIpOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The operator to evaluate the IP address.</p>
-     */
     inline void SetOperator(RuleIpOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The operator to evaluate the IP address.</p>
-     */
     inline RuleIpExpression& WithOperator(const RuleIpOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The operator to evaluate the IP address.</p>
-     */
     inline RuleIpExpression& WithOperator(RuleIpOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
      * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
@@ -112,87 +75,15 @@ namespace Model
      * match if the IP address is not contained in any of the given CIDR ranges.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline RuleIpExpression& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline RuleIpExpression& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline RuleIpExpression& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline RuleIpExpression& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IP CIDR blocks in format "x.y.z.w/n" (eg 10.0.0.0/8) to match with the
-     * email's IP address. For the operator CIDR_MATCHES, if multiple values are given,
-     * they are evaluated as an OR. That is, if the IP address is contained within any
-     * of the given CIDR ranges, the condition is deemed to match. For
-     * NOT_CIDR_MATCHES, if multiple CIDR ranges are given, the condition is deemed to
-     * match if the IP address is not contained in any of the given CIDR ranges.</p>
-     */
     inline RuleIpExpression& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     RuleIpToEvaluate m_evaluate;

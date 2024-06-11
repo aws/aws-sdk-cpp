@@ -35,106 +35,43 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current application version ID. You can use the <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
      * operation to get this value.</p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
-
-    /**
-     * <p>The current application version ID. You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get this value.</p>
-     */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>The current application version ID. You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get this value.</p>
-     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
-
-    /**
-     * <p>The current application version ID. You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get this value.</p>
-     */
     inline UpdateApplicationRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes application updates.</p>
      */
     inline const ApplicationUpdate& GetApplicationUpdate() const{ return m_applicationUpdate; }
-
-    /**
-     * <p>Describes application updates.</p>
-     */
     inline bool ApplicationUpdateHasBeenSet() const { return m_applicationUpdateHasBeenSet; }
-
-    /**
-     * <p>Describes application updates.</p>
-     */
     inline void SetApplicationUpdate(const ApplicationUpdate& value) { m_applicationUpdateHasBeenSet = true; m_applicationUpdate = value; }
-
-    /**
-     * <p>Describes application updates.</p>
-     */
     inline void SetApplicationUpdate(ApplicationUpdate&& value) { m_applicationUpdateHasBeenSet = true; m_applicationUpdate = std::move(value); }
-
-    /**
-     * <p>Describes application updates.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationUpdate(const ApplicationUpdate& value) { SetApplicationUpdate(value); return *this;}
-
-    /**
-     * <p>Describes application updates.</p>
-     */
     inline UpdateApplicationRequest& WithApplicationUpdate(ApplicationUpdate&& value) { SetApplicationUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

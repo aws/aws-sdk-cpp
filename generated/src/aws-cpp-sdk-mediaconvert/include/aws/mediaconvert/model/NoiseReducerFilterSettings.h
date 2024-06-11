@@ -35,30 +35,16 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Relative strength of noise reducing filter. Higher values produce stronger
      * filtering.
      */
     inline int GetStrength() const{ return m_strength; }
-
-    /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering.
-     */
     inline bool StrengthHasBeenSet() const { return m_strengthHasBeenSet; }
-
-    /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering.
-     */
     inline void SetStrength(int value) { m_strengthHasBeenSet = true; m_strength = value; }
-
-    /**
-     * Relative strength of noise reducing filter. Higher values produce stronger
-     * filtering.
-     */
     inline NoiseReducerFilterSettings& WithStrength(int value) { SetStrength(value); return *this;}
-
+    ///@}
   private:
 
     int m_strength;

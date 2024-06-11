@@ -33,53 +33,27 @@ namespace Model
     AWS_MTURK_API GetQualificationTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The returned Qualification Type</p>
      */
     inline const QualificationType& GetQualificationType() const{ return m_qualificationType; }
-
-    /**
-     * <p> The returned Qualification Type</p>
-     */
     inline void SetQualificationType(const QualificationType& value) { m_qualificationType = value; }
-
-    /**
-     * <p> The returned Qualification Type</p>
-     */
     inline void SetQualificationType(QualificationType&& value) { m_qualificationType = std::move(value); }
-
-    /**
-     * <p> The returned Qualification Type</p>
-     */
     inline GetQualificationTypeResult& WithQualificationType(const QualificationType& value) { SetQualificationType(value); return *this;}
-
-    /**
-     * <p> The returned Qualification Type</p>
-     */
     inline GetQualificationTypeResult& WithQualificationType(QualificationType&& value) { SetQualificationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetQualificationTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetQualificationTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetQualificationTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     QualificationType m_qualificationType;

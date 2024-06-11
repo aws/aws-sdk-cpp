@@ -36,30 +36,16 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
      * enabled Windows AMI.</p>
      */
     inline int GetTargetResourceCount() const{ return m_targetResourceCount; }
-
-    /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
-     */
     inline bool TargetResourceCountHasBeenSet() const { return m_targetResourceCountHasBeenSet; }
-
-    /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
-     */
     inline void SetTargetResourceCount(int value) { m_targetResourceCountHasBeenSet = true; m_targetResourceCount = value; }
-
-    /**
-     * <p>The number of pre-provisioned snapshots to keep on hand for a fast-launch
-     * enabled Windows AMI.</p>
-     */
     inline FastLaunchSnapshotConfiguration& WithTargetResourceCount(int value) { SetTargetResourceCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_targetResourceCount;

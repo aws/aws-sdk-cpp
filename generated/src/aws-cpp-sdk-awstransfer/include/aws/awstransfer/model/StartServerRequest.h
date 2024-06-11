@@ -34,46 +34,19 @@ namespace Model
     AWS_TRANSFER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A system-assigned unique identifier for a server that you start.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline StartServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline StartServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server that you start.</p>
-     */
     inline StartServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverId;

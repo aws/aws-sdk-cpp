@@ -39,55 +39,27 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The feature that generated the usage cost.</p>
      */
     inline const UsageFeature& GetFeature() const{ return m_feature; }
-
-    /**
-     * <p>The feature that generated the usage cost.</p>
-     */
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-
-    /**
-     * <p>The feature that generated the usage cost.</p>
-     */
     inline void SetFeature(const UsageFeature& value) { m_featureHasBeenSet = true; m_feature = value; }
-
-    /**
-     * <p>The feature that generated the usage cost.</p>
-     */
     inline void SetFeature(UsageFeature&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-
-    /**
-     * <p>The feature that generated the usage cost.</p>
-     */
     inline UsageFeatureResult& WithFeature(const UsageFeature& value) { SetFeature(value); return *this;}
-
-    /**
-     * <p>The feature that generated the usage cost.</p>
-     */
     inline UsageFeatureResult& WithFeature(UsageFeature&& value) { SetFeature(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Total& GetTotal() const{ return m_total; }
-
-    
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    
     inline void SetTotal(const Total& value) { m_totalHasBeenSet = true; m_total = value; }
-
-    
     inline void SetTotal(Total&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-
-    
     inline UsageFeatureResult& WithTotal(const Total& value) { SetTotal(value); return *this;}
-
-    
     inline UsageFeatureResult& WithTotal(Total&& value) { SetTotal(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UsageFeature m_feature;

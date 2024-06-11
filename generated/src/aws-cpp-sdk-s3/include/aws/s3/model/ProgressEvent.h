@@ -38,36 +38,17 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The Progress event details.</p>
      */
     inline const Progress& GetDetails() const{ return m_details; }
-
-    /**
-     * <p>The Progress event details.</p>
-     */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-
-    /**
-     * <p>The Progress event details.</p>
-     */
     inline void SetDetails(const Progress& value) { m_detailsHasBeenSet = true; m_details = value; }
-
-    /**
-     * <p>The Progress event details.</p>
-     */
     inline void SetDetails(Progress&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-
-    /**
-     * <p>The Progress event details.</p>
-     */
     inline ProgressEvent& WithDetails(const Progress& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p>The Progress event details.</p>
-     */
     inline ProgressEvent& WithDetails(Progress&& value) { SetDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Progress m_details;

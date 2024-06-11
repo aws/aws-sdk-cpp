@@ -33,106 +33,42 @@ namespace Model
     AWS_IVS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Filters the stream list to match the specified criterion.</p>
      */
     inline const StreamFilters& GetFilterBy() const{ return m_filterBy; }
-
-    /**
-     * <p>Filters the stream list to match the specified criterion.</p>
-     */
     inline bool FilterByHasBeenSet() const { return m_filterByHasBeenSet; }
-
-    /**
-     * <p>Filters the stream list to match the specified criterion.</p>
-     */
     inline void SetFilterBy(const StreamFilters& value) { m_filterByHasBeenSet = true; m_filterBy = value; }
-
-    /**
-     * <p>Filters the stream list to match the specified criterion.</p>
-     */
     inline void SetFilterBy(StreamFilters&& value) { m_filterByHasBeenSet = true; m_filterBy = std::move(value); }
-
-    /**
-     * <p>Filters the stream list to match the specified criterion.</p>
-     */
     inline ListStreamsRequest& WithFilterBy(const StreamFilters& value) { SetFilterBy(value); return *this;}
-
-    /**
-     * <p>Filters the stream list to match the specified criterion.</p>
-     */
     inline ListStreamsRequest& WithFilterBy(StreamFilters&& value) { SetFilterBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of streams to return. Default: 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of streams to return. Default: 100.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of streams to return. Default: 100.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of streams to return. Default: 100.</p>
-     */
     inline ListStreamsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The first stream to retrieve. This is used for pagination; see the
      * <code>nextToken</code> response field.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline ListStreamsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline ListStreamsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The first stream to retrieve. This is used for pagination; see the
-     * <code>nextToken</code> response field.</p>
-     */
     inline ListStreamsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     StreamFilters m_filterBy;

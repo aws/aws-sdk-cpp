@@ -42,67 +42,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the metric.</p>
      */
     inline const CurrentMetricName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetName(const CurrentMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline void SetName(CurrentMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline CurrentMetric& WithName(const CurrentMetricName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the metric.</p>
-     */
     inline CurrentMetric& WithName(CurrentMetricName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit for the metric.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline CurrentMetric& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit for the metric.</p>
-     */
     inline CurrentMetric& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CurrentMetricName m_name;

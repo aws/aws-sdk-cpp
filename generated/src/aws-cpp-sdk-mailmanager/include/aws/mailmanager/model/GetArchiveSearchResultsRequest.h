@@ -38,46 +38,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the completed search job.</p>
      */
     inline const Aws::String& GetSearchId() const{ return m_searchId; }
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline bool SearchIdHasBeenSet() const { return m_searchIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline void SetSearchId(const Aws::String& value) { m_searchIdHasBeenSet = true; m_searchId = value; }
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline void SetSearchId(Aws::String&& value) { m_searchIdHasBeenSet = true; m_searchId = std::move(value); }
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline void SetSearchId(const char* value) { m_searchIdHasBeenSet = true; m_searchId.assign(value); }
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline GetArchiveSearchResultsRequest& WithSearchId(const Aws::String& value) { SetSearchId(value); return *this;}
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline GetArchiveSearchResultsRequest& WithSearchId(Aws::String&& value) { SetSearchId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the completed search job.</p>
-     */
     inline GetArchiveSearchResultsRequest& WithSearchId(const char* value) { SetSearchId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_searchId;

@@ -41,99 +41,34 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
      * job. The TargetArn of the selected ruleset should be the same as the Amazon
      * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
      */
     inline const Aws::String& GetRulesetArn() const{ return m_rulesetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline bool RulesetArnHasBeenSet() const { return m_rulesetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline void SetRulesetArn(const Aws::String& value) { m_rulesetArnHasBeenSet = true; m_rulesetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline void SetRulesetArn(Aws::String&& value) { m_rulesetArnHasBeenSet = true; m_rulesetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline void SetRulesetArn(const char* value) { m_rulesetArnHasBeenSet = true; m_rulesetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline ValidationConfiguration& WithRulesetArn(const Aws::String& value) { SetRulesetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline ValidationConfiguration& WithRulesetArn(Aws::String&& value) { SetRulesetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the ruleset to be validated in the profile
-     * job. The TargetArn of the selected ruleset should be the same as the Amazon
-     * Resource Name (ARN) of the dataset that is associated with the profile job.</p>
-     */
     inline ValidationConfiguration& WithRulesetArn(const char* value) { SetRulesetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies
      * all rules defined in the selected ruleset.</p>
      */
     inline const ValidationMode& GetValidationMode() const{ return m_validationMode; }
-
-    /**
-     * <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies
-     * all rules defined in the selected ruleset.</p>
-     */
     inline bool ValidationModeHasBeenSet() const { return m_validationModeHasBeenSet; }
-
-    /**
-     * <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies
-     * all rules defined in the selected ruleset.</p>
-     */
     inline void SetValidationMode(const ValidationMode& value) { m_validationModeHasBeenSet = true; m_validationMode = value; }
-
-    /**
-     * <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies
-     * all rules defined in the selected ruleset.</p>
-     */
     inline void SetValidationMode(ValidationMode&& value) { m_validationModeHasBeenSet = true; m_validationMode = std::move(value); }
-
-    /**
-     * <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies
-     * all rules defined in the selected ruleset.</p>
-     */
     inline ValidationConfiguration& WithValidationMode(const ValidationMode& value) { SetValidationMode(value); return *this;}
-
-    /**
-     * <p>Mode of data quality validation. Default mode is “CHECK_ALL” which verifies
-     * all rules defined in the selected ruleset.</p>
-     */
     inline ValidationConfiguration& WithValidationMode(ValidationMode&& value) { SetValidationMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rulesetArn;

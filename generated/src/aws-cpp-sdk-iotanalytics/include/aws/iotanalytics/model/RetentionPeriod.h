@@ -35,51 +35,26 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If true, message data is kept indefinitely.</p>
      */
     inline bool GetUnlimited() const{ return m_unlimited; }
-
-    /**
-     * <p>If true, message data is kept indefinitely.</p>
-     */
     inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
-
-    /**
-     * <p>If true, message data is kept indefinitely.</p>
-     */
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
-
-    /**
-     * <p>If true, message data is kept indefinitely.</p>
-     */
     inline RetentionPeriod& WithUnlimited(bool value) { SetUnlimited(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of days that message data is kept. The <code>unlimited</code>
      * parameter must be false.</p>
      */
     inline int GetNumberOfDays() const{ return m_numberOfDays; }
-
-    /**
-     * <p>The number of days that message data is kept. The <code>unlimited</code>
-     * parameter must be false.</p>
-     */
     inline bool NumberOfDaysHasBeenSet() const { return m_numberOfDaysHasBeenSet; }
-
-    /**
-     * <p>The number of days that message data is kept. The <code>unlimited</code>
-     * parameter must be false.</p>
-     */
     inline void SetNumberOfDays(int value) { m_numberOfDaysHasBeenSet = true; m_numberOfDays = value; }
-
-    /**
-     * <p>The number of days that message data is kept. The <code>unlimited</code>
-     * parameter must be false.</p>
-     */
     inline RetentionPeriod& WithNumberOfDays(int value) { SetNumberOfDays(value); return *this;}
-
+    ///@}
   private:
 
     bool m_unlimited;

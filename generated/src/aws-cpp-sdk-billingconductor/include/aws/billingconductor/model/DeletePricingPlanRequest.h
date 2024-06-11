@@ -32,46 +32,19 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline DeletePricingPlanRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline DeletePricingPlanRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the pricing plan that you're deleting. </p>
-     */
     inline DeletePricingPlanRequest& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

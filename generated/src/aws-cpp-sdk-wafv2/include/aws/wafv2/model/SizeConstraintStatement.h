@@ -53,93 +53,42 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The part of the web request that you want WAF to inspect. </p>
      */
     inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
     inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
     inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
     inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
     inline SizeConstraintStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
     inline SizeConstraintStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operator to use to compare the request part to the size setting. </p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
-
-    /**
-     * <p>The operator to use to compare the request part to the size setting. </p>
-     */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-
-    /**
-     * <p>The operator to use to compare the request part to the size setting. </p>
-     */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-
-    /**
-     * <p>The operator to use to compare the request part to the size setting. </p>
-     */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-
-    /**
-     * <p>The operator to use to compare the request part to the size setting. </p>
-     */
     inline SizeConstraintStatement& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-
-    /**
-     * <p>The operator to use to compare the request part to the size setting. </p>
-     */
     inline SizeConstraintStatement& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size, in byte, to compare to the request part, after any
      * transformations.</p>
      */
     inline long long GetSize() const{ return m_size; }
-
-    /**
-     * <p>The size, in byte, to compare to the request part, after any
-     * transformations.</p>
-     */
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    /**
-     * <p>The size, in byte, to compare to the request part, after any
-     * transformations.</p>
-     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    /**
-     * <p>The size, in byte, to compare to the request part, after any
-     * transformations.</p>
-     */
     inline SizeConstraintStatement& WithSize(long long value) { SetSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
      * use in web requests in an effort to bypass detection. Text transformations are
@@ -151,91 +100,14 @@ namespace Model
      * priority setting, and then uses the transformed component contents. </p>
      */
     inline const Aws::Vector<TextTransformation>& GetTextTransformations() const{ return m_textTransformations; }
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline bool TextTransformationsHasBeenSet() const { return m_textTransformationsHasBeenSet; }
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline void SetTextTransformations(const Aws::Vector<TextTransformation>& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = value; }
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline void SetTextTransformations(Aws::Vector<TextTransformation>&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations = std::move(value); }
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline SizeConstraintStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline SizeConstraintStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline SizeConstraintStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
-
-    /**
-     * <p>Text transformations eliminate some of the unusual formatting that attackers
-     * use in web requests in an effort to bypass detection. Text transformations are
-     * used in rule match statements, to transform the <code>FieldToMatch</code>
-     * request component before inspecting it, and they're used in rate-based rule
-     * statements, to transform request components before using them as custom
-     * aggregation keys. If you specify one or more transformations to apply, WAF
-     * performs all transformations on the specified content, starting from the lowest
-     * priority setting, and then uses the transformed component contents. </p>
-     */
     inline SizeConstraintStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     FieldToMatch m_fieldToMatch;

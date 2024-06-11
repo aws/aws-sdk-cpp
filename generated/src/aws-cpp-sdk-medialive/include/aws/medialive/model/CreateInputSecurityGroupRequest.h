@@ -39,112 +39,38 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * A collection of key-value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * A collection of key-value pairs.
-     */
     inline CreateInputSecurityGroupRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * List of IPv4 CIDR addresses to whitelist
      */
     inline const Aws::Vector<InputWhitelistRuleCidr>& GetWhitelistRules() const{ return m_whitelistRules; }
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline bool WhitelistRulesHasBeenSet() const { return m_whitelistRulesHasBeenSet; }
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline void SetWhitelistRules(const Aws::Vector<InputWhitelistRuleCidr>& value) { m_whitelistRulesHasBeenSet = true; m_whitelistRules = value; }
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline void SetWhitelistRules(Aws::Vector<InputWhitelistRuleCidr>&& value) { m_whitelistRulesHasBeenSet = true; m_whitelistRules = std::move(value); }
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline CreateInputSecurityGroupRequest& WithWhitelistRules(const Aws::Vector<InputWhitelistRuleCidr>& value) { SetWhitelistRules(value); return *this;}
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline CreateInputSecurityGroupRequest& WithWhitelistRules(Aws::Vector<InputWhitelistRuleCidr>&& value) { SetWhitelistRules(std::move(value)); return *this;}
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline CreateInputSecurityGroupRequest& AddWhitelistRules(const InputWhitelistRuleCidr& value) { m_whitelistRulesHasBeenSet = true; m_whitelistRules.push_back(value); return *this; }
-
-    /**
-     * List of IPv4 CIDR addresses to whitelist
-     */
     inline CreateInputSecurityGroupRequest& AddWhitelistRules(InputWhitelistRuleCidr&& value) { m_whitelistRulesHasBeenSet = true; m_whitelistRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_tags;

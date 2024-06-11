@@ -38,6 +38,7 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether the audience size is defined in absolute terms or as a percentage.
      * You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out
@@ -46,73 +47,22 @@ namespace Model
      * 1-100 percent.</p>
      */
     inline const AudienceSizeType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Whether the audience size is defined in absolute terms or as a percentage.
-     * You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out
-     * audience sizes using the count of identifiers in the output. You can use the
-     * <code>Percentage</code> <a>AudienceSize</a> to configure sizes in the range
-     * 1-100 percent.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Whether the audience size is defined in absolute terms or as a percentage.
-     * You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out
-     * audience sizes using the count of identifiers in the output. You can use the
-     * <code>Percentage</code> <a>AudienceSize</a> to configure sizes in the range
-     * 1-100 percent.</p>
-     */
     inline void SetType(const AudienceSizeType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Whether the audience size is defined in absolute terms or as a percentage.
-     * You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out
-     * audience sizes using the count of identifiers in the output. You can use the
-     * <code>Percentage</code> <a>AudienceSize</a> to configure sizes in the range
-     * 1-100 percent.</p>
-     */
     inline void SetType(AudienceSizeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Whether the audience size is defined in absolute terms or as a percentage.
-     * You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out
-     * audience sizes using the count of identifiers in the output. You can use the
-     * <code>Percentage</code> <a>AudienceSize</a> to configure sizes in the range
-     * 1-100 percent.</p>
-     */
     inline AudienceSize& WithType(const AudienceSizeType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Whether the audience size is defined in absolute terms or as a percentage.
-     * You can use the <code>ABSOLUTE</code> <a>AudienceSize</a> to configure out
-     * audience sizes using the count of identifiers in the output. You can use the
-     * <code>Percentage</code> <a>AudienceSize</a> to configure sizes in the range
-     * 1-100 percent.</p>
-     */
     inline AudienceSize& WithType(AudienceSizeType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify an audience size value.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>Specify an audience size value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Specify an audience size value.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Specify an audience size value.</p>
-     */
     inline AudienceSize& WithValue(int value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     AudienceSizeType m_type;

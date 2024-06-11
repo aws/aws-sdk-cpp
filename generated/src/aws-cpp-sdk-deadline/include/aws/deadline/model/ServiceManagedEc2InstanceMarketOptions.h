@@ -38,36 +38,17 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon EC2 instance type.</p>
      */
     inline const Ec2MarketType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The Amazon EC2 instance type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The Amazon EC2 instance type.</p>
-     */
     inline void SetType(const Ec2MarketType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The Amazon EC2 instance type.</p>
-     */
     inline void SetType(Ec2MarketType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The Amazon EC2 instance type.</p>
-     */
     inline ServiceManagedEc2InstanceMarketOptions& WithType(const Ec2MarketType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The Amazon EC2 instance type.</p>
-     */
     inline ServiceManagedEc2InstanceMarketOptions& WithType(Ec2MarketType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Ec2MarketType m_type;

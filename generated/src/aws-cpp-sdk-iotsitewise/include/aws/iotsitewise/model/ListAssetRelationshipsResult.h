@@ -34,106 +34,43 @@ namespace Model
     AWS_IOTSITEWISE_API ListAssetRelationshipsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that summarizes each asset relationship.</p>
      */
     inline const Aws::Vector<AssetRelationshipSummary>& GetAssetRelationshipSummaries() const{ return m_assetRelationshipSummaries; }
-
-    /**
-     * <p>A list that summarizes each asset relationship.</p>
-     */
     inline void SetAssetRelationshipSummaries(const Aws::Vector<AssetRelationshipSummary>& value) { m_assetRelationshipSummaries = value; }
-
-    /**
-     * <p>A list that summarizes each asset relationship.</p>
-     */
     inline void SetAssetRelationshipSummaries(Aws::Vector<AssetRelationshipSummary>&& value) { m_assetRelationshipSummaries = std::move(value); }
-
-    /**
-     * <p>A list that summarizes each asset relationship.</p>
-     */
     inline ListAssetRelationshipsResult& WithAssetRelationshipSummaries(const Aws::Vector<AssetRelationshipSummary>& value) { SetAssetRelationshipSummaries(value); return *this;}
-
-    /**
-     * <p>A list that summarizes each asset relationship.</p>
-     */
     inline ListAssetRelationshipsResult& WithAssetRelationshipSummaries(Aws::Vector<AssetRelationshipSummary>&& value) { SetAssetRelationshipSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that summarizes each asset relationship.</p>
-     */
     inline ListAssetRelationshipsResult& AddAssetRelationshipSummaries(const AssetRelationshipSummary& value) { m_assetRelationshipSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list that summarizes each asset relationship.</p>
-     */
     inline ListAssetRelationshipsResult& AddAssetRelationshipSummaries(AssetRelationshipSummary&& value) { m_assetRelationshipSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetRelationshipsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetRelationshipsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListAssetRelationshipsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAssetRelationshipsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAssetRelationshipsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAssetRelationshipsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AssetRelationshipSummary> m_assetRelationshipSummaries;

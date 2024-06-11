@@ -37,36 +37,17 @@ namespace Model
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The document containing the translated content.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The document containing the translated content.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The document containing the translated content.</p>
-     */
     inline void SetContent(const Aws::Utils::CryptoBuffer& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The document containing the translated content.</p>
-     */
     inline void SetContent(Aws::Utils::CryptoBuffer&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The document containing the translated content.</p>
-     */
     inline TranslatedDocument& WithContent(const Aws::Utils::CryptoBuffer& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The document containing the translated content.</p>
-     */
     inline TranslatedDocument& WithContent(Aws::Utils::CryptoBuffer&& value) { SetContent(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::CryptoBuffer m_content;

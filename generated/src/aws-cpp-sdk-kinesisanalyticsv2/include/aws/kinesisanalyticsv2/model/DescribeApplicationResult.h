@@ -33,58 +33,28 @@ namespace Model
     AWS_KINESISANALYTICSV2_API DescribeApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Provides a description of the application, such as the application's Amazon
      * Resource Name (ARN), status, and latest version.</p>
      */
     inline const ApplicationDetail& GetApplicationDetail() const{ return m_applicationDetail; }
-
-    /**
-     * <p>Provides a description of the application, such as the application's Amazon
-     * Resource Name (ARN), status, and latest version.</p>
-     */
     inline void SetApplicationDetail(const ApplicationDetail& value) { m_applicationDetail = value; }
-
-    /**
-     * <p>Provides a description of the application, such as the application's Amazon
-     * Resource Name (ARN), status, and latest version.</p>
-     */
     inline void SetApplicationDetail(ApplicationDetail&& value) { m_applicationDetail = std::move(value); }
-
-    /**
-     * <p>Provides a description of the application, such as the application's Amazon
-     * Resource Name (ARN), status, and latest version.</p>
-     */
     inline DescribeApplicationResult& WithApplicationDetail(const ApplicationDetail& value) { SetApplicationDetail(value); return *this;}
-
-    /**
-     * <p>Provides a description of the application, such as the application's Amazon
-     * Resource Name (ARN), status, and latest version.</p>
-     */
     inline DescribeApplicationResult& WithApplicationDetail(ApplicationDetail&& value) { SetApplicationDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApplicationDetail m_applicationDetail;

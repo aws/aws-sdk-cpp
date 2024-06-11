@@ -38,34 +38,17 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>SASL/SCRAM authentication is enabled or not.</p>
          
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * 
-            <p>SASL/SCRAM authentication is enabled or not.</p>
-         
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * 
-            <p>SASL/SCRAM authentication is enabled or not.</p>
-         
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * 
-            <p>SASL/SCRAM authentication is enabled or not.</p>
-         
-     */
     inline Scram& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

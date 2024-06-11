@@ -39,58 +39,28 @@ namespace Model
     AWS_ROUTE53_API GetHealthCheckResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains information about one health check that is
      * associated with the current Amazon Web Services account.</p>
      */
     inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
-
-    /**
-     * <p>A complex type that contains information about one health check that is
-     * associated with the current Amazon Web Services account.</p>
-     */
     inline void SetHealthCheck(const HealthCheck& value) { m_healthCheck = value; }
-
-    /**
-     * <p>A complex type that contains information about one health check that is
-     * associated with the current Amazon Web Services account.</p>
-     */
     inline void SetHealthCheck(HealthCheck&& value) { m_healthCheck = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about one health check that is
-     * associated with the current Amazon Web Services account.</p>
-     */
     inline GetHealthCheckResult& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about one health check that is
-     * associated with the current Amazon Web Services account.</p>
-     */
     inline GetHealthCheckResult& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetHealthCheckResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetHealthCheckResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetHealthCheckResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     HealthCheck m_healthCheck;

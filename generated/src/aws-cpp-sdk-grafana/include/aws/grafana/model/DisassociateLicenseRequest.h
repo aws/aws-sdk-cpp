@@ -33,77 +33,31 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The type of license to remove from the workspace.</p>
      */
     inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
-
-    /**
-     * <p>The type of license to remove from the workspace.</p>
-     */
     inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-
-    /**
-     * <p>The type of license to remove from the workspace.</p>
-     */
     inline void SetLicenseType(const LicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
-
-    /**
-     * <p>The type of license to remove from the workspace.</p>
-     */
     inline void SetLicenseType(LicenseType&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
-
-    /**
-     * <p>The type of license to remove from the workspace.</p>
-     */
     inline DisassociateLicenseRequest& WithLicenseType(const LicenseType& value) { SetLicenseType(value); return *this;}
-
-    /**
-     * <p>The type of license to remove from the workspace.</p>
-     */
     inline DisassociateLicenseRequest& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline DisassociateLicenseRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline DisassociateLicenseRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace to remove the Grafana Enterprise license from.</p>
-     */
     inline DisassociateLicenseRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
+    ///@}
   private:
 
     LicenseType m_licenseType;

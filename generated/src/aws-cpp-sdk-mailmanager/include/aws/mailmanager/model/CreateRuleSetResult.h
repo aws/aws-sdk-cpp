@@ -32,63 +32,29 @@ namespace Model
     AWS_MAILMANAGER_API CreateRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the created rule set.</p>
      */
     inline const Aws::String& GetRuleSetId() const{ return m_ruleSetId; }
-
-    /**
-     * <p>The identifier of the created rule set.</p>
-     */
     inline void SetRuleSetId(const Aws::String& value) { m_ruleSetId = value; }
-
-    /**
-     * <p>The identifier of the created rule set.</p>
-     */
     inline void SetRuleSetId(Aws::String&& value) { m_ruleSetId = std::move(value); }
-
-    /**
-     * <p>The identifier of the created rule set.</p>
-     */
     inline void SetRuleSetId(const char* value) { m_ruleSetId.assign(value); }
-
-    /**
-     * <p>The identifier of the created rule set.</p>
-     */
     inline CreateRuleSetResult& WithRuleSetId(const Aws::String& value) { SetRuleSetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the created rule set.</p>
-     */
     inline CreateRuleSetResult& WithRuleSetId(Aws::String&& value) { SetRuleSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the created rule set.</p>
-     */
     inline CreateRuleSetResult& WithRuleSetId(const char* value) { SetRuleSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRuleSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRuleSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRuleSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleSetId;

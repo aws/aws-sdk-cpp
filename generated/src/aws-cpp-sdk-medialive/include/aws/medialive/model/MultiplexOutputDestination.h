@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Multiplex MediaConnect output destination settings.
      */
     inline const MultiplexMediaConnectOutputDestinationSettings& GetMediaConnectSettings() const{ return m_mediaConnectSettings; }
-
-    /**
-     * Multiplex MediaConnect output destination settings.
-     */
     inline bool MediaConnectSettingsHasBeenSet() const { return m_mediaConnectSettingsHasBeenSet; }
-
-    /**
-     * Multiplex MediaConnect output destination settings.
-     */
     inline void SetMediaConnectSettings(const MultiplexMediaConnectOutputDestinationSettings& value) { m_mediaConnectSettingsHasBeenSet = true; m_mediaConnectSettings = value; }
-
-    /**
-     * Multiplex MediaConnect output destination settings.
-     */
     inline void SetMediaConnectSettings(MultiplexMediaConnectOutputDestinationSettings&& value) { m_mediaConnectSettingsHasBeenSet = true; m_mediaConnectSettings = std::move(value); }
-
-    /**
-     * Multiplex MediaConnect output destination settings.
-     */
     inline MultiplexOutputDestination& WithMediaConnectSettings(const MultiplexMediaConnectOutputDestinationSettings& value) { SetMediaConnectSettings(value); return *this;}
-
-    /**
-     * Multiplex MediaConnect output destination settings.
-     */
     inline MultiplexOutputDestination& WithMediaConnectSettings(MultiplexMediaConnectOutputDestinationSettings&& value) { SetMediaConnectSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MultiplexMediaConnectOutputDestinationSettings m_mediaConnectSettings;

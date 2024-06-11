@@ -55,121 +55,51 @@ namespace Model
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The health event threshold percentage set for availability scores.</p>
      */
     inline double GetAvailabilityScoreThreshold() const{ return m_availabilityScoreThreshold; }
-
-    /**
-     * <p>The health event threshold percentage set for availability scores.</p>
-     */
     inline bool AvailabilityScoreThresholdHasBeenSet() const { return m_availabilityScoreThresholdHasBeenSet; }
-
-    /**
-     * <p>The health event threshold percentage set for availability scores.</p>
-     */
     inline void SetAvailabilityScoreThreshold(double value) { m_availabilityScoreThresholdHasBeenSet = true; m_availabilityScoreThreshold = value; }
-
-    /**
-     * <p>The health event threshold percentage set for availability scores.</p>
-     */
     inline HealthEventsConfig& WithAvailabilityScoreThreshold(double value) { SetAvailabilityScoreThreshold(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The health event threshold percentage set for performance scores.</p>
      */
     inline double GetPerformanceScoreThreshold() const{ return m_performanceScoreThreshold; }
-
-    /**
-     * <p>The health event threshold percentage set for performance scores.</p>
-     */
     inline bool PerformanceScoreThresholdHasBeenSet() const { return m_performanceScoreThresholdHasBeenSet; }
-
-    /**
-     * <p>The health event threshold percentage set for performance scores.</p>
-     */
     inline void SetPerformanceScoreThreshold(double value) { m_performanceScoreThresholdHasBeenSet = true; m_performanceScoreThreshold = value; }
-
-    /**
-     * <p>The health event threshold percentage set for performance scores.</p>
-     */
     inline HealthEventsConfig& WithPerformanceScoreThreshold(double value) { SetPerformanceScoreThreshold(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration that determines the threshold and other conditions for when
      * Internet Monitor creates a health event for a local availability issue.</p>
      */
     inline const LocalHealthEventsConfig& GetAvailabilityLocalHealthEventsConfig() const{ return m_availabilityLocalHealthEventsConfig; }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local availability issue.</p>
-     */
     inline bool AvailabilityLocalHealthEventsConfigHasBeenSet() const { return m_availabilityLocalHealthEventsConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local availability issue.</p>
-     */
     inline void SetAvailabilityLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { m_availabilityLocalHealthEventsConfigHasBeenSet = true; m_availabilityLocalHealthEventsConfig = value; }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local availability issue.</p>
-     */
     inline void SetAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { m_availabilityLocalHealthEventsConfigHasBeenSet = true; m_availabilityLocalHealthEventsConfig = std::move(value); }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local availability issue.</p>
-     */
     inline HealthEventsConfig& WithAvailabilityLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { SetAvailabilityLocalHealthEventsConfig(value); return *this;}
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local availability issue.</p>
-     */
     inline HealthEventsConfig& WithAvailabilityLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { SetAvailabilityLocalHealthEventsConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration that determines the threshold and other conditions for when
      * Internet Monitor creates a health event for a local performance issue.</p>
      */
     inline const LocalHealthEventsConfig& GetPerformanceLocalHealthEventsConfig() const{ return m_performanceLocalHealthEventsConfig; }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local performance issue.</p>
-     */
     inline bool PerformanceLocalHealthEventsConfigHasBeenSet() const { return m_performanceLocalHealthEventsConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local performance issue.</p>
-     */
     inline void SetPerformanceLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { m_performanceLocalHealthEventsConfigHasBeenSet = true; m_performanceLocalHealthEventsConfig = value; }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local performance issue.</p>
-     */
     inline void SetPerformanceLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { m_performanceLocalHealthEventsConfigHasBeenSet = true; m_performanceLocalHealthEventsConfig = std::move(value); }
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local performance issue.</p>
-     */
     inline HealthEventsConfig& WithPerformanceLocalHealthEventsConfig(const LocalHealthEventsConfig& value) { SetPerformanceLocalHealthEventsConfig(value); return *this;}
-
-    /**
-     * <p>The configuration that determines the threshold and other conditions for when
-     * Internet Monitor creates a health event for a local performance issue.</p>
-     */
     inline HealthEventsConfig& WithPerformanceLocalHealthEventsConfig(LocalHealthEventsConfig&& value) { SetPerformanceLocalHealthEventsConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_availabilityScoreThreshold;

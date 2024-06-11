@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API DescribeJobExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the job execution.</p>
      */
     inline const JobExecution& GetExecution() const{ return m_execution; }
-
-    /**
-     * <p>Information about the job execution.</p>
-     */
     inline void SetExecution(const JobExecution& value) { m_execution = value; }
-
-    /**
-     * <p>Information about the job execution.</p>
-     */
     inline void SetExecution(JobExecution&& value) { m_execution = std::move(value); }
-
-    /**
-     * <p>Information about the job execution.</p>
-     */
     inline DescribeJobExecutionResult& WithExecution(const JobExecution& value) { SetExecution(value); return *this;}
-
-    /**
-     * <p>Information about the job execution.</p>
-     */
     inline DescribeJobExecutionResult& WithExecution(JobExecution&& value) { SetExecution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeJobExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeJobExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeJobExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobExecution m_execution;

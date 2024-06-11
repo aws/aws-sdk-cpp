@@ -33,155 +33,57 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can find the instance ID
      * in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can find the instance ID
-     * in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results. Use the value returned in the previous
      * response in the next request to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results. Use the value returned in the previous
-     * response in the next request to retrieve the next set of results.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return per page.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return per page.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return per page.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The search criteria to be used to return predefined attributes.</p>
      */
     inline const PredefinedAttributeSearchCriteria& GetSearchCriteria() const{ return m_searchCriteria; }
-
-    /**
-     * <p>The search criteria to be used to return predefined attributes.</p>
-     */
     inline bool SearchCriteriaHasBeenSet() const { return m_searchCriteriaHasBeenSet; }
-
-    /**
-     * <p>The search criteria to be used to return predefined attributes.</p>
-     */
     inline void SetSearchCriteria(const PredefinedAttributeSearchCriteria& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = value; }
-
-    /**
-     * <p>The search criteria to be used to return predefined attributes.</p>
-     */
     inline void SetSearchCriteria(PredefinedAttributeSearchCriteria&& value) { m_searchCriteriaHasBeenSet = true; m_searchCriteria = std::move(value); }
-
-    /**
-     * <p>The search criteria to be used to return predefined attributes.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithSearchCriteria(const PredefinedAttributeSearchCriteria& value) { SetSearchCriteria(value); return *this;}
-
-    /**
-     * <p>The search criteria to be used to return predefined attributes.</p>
-     */
     inline SearchPredefinedAttributesRequest& WithSearchCriteria(PredefinedAttributeSearchCriteria&& value) { SetSearchCriteria(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

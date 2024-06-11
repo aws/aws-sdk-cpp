@@ -39,49 +39,21 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The user pool trigger version of the request that Amazon Cognito sends to
      * your Lambda function. Higher-numbered versions add fields that support new
      * features.</p>
      */
     inline const PreTokenGenerationLambdaVersionType& GetLambdaVersion() const{ return m_lambdaVersion; }
-
-    /**
-     * <p>The user pool trigger version of the request that Amazon Cognito sends to
-     * your Lambda function. Higher-numbered versions add fields that support new
-     * features.</p>
-     */
     inline bool LambdaVersionHasBeenSet() const { return m_lambdaVersionHasBeenSet; }
-
-    /**
-     * <p>The user pool trigger version of the request that Amazon Cognito sends to
-     * your Lambda function. Higher-numbered versions add fields that support new
-     * features.</p>
-     */
     inline void SetLambdaVersion(const PreTokenGenerationLambdaVersionType& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
-
-    /**
-     * <p>The user pool trigger version of the request that Amazon Cognito sends to
-     * your Lambda function. Higher-numbered versions add fields that support new
-     * features.</p>
-     */
     inline void SetLambdaVersion(PreTokenGenerationLambdaVersionType&& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = std::move(value); }
-
-    /**
-     * <p>The user pool trigger version of the request that Amazon Cognito sends to
-     * your Lambda function. Higher-numbered versions add fields that support new
-     * features.</p>
-     */
     inline PreTokenGenerationVersionConfigType& WithLambdaVersion(const PreTokenGenerationLambdaVersionType& value) { SetLambdaVersion(value); return *this;}
-
-    /**
-     * <p>The user pool trigger version of the request that Amazon Cognito sends to
-     * your Lambda function. Higher-numbered versions add fields that support new
-     * features.</p>
-     */
     inline PreTokenGenerationVersionConfigType& WithLambdaVersion(PreTokenGenerationLambdaVersionType&& value) { SetLambdaVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
      * your Lambda trigger.</p> <p>This parameter and the
@@ -90,70 +62,14 @@ namespace Model
      * <code>LambdaArn</code>.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline PreTokenGenerationVersionConfigType& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline PreTokenGenerationVersionConfigType& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
-     * your Lambda trigger.</p> <p>This parameter and the
-     * <code>PreTokenGeneration</code> property of <code>LambdaConfig</code> have the
-     * same value. For new instances of pre token generation triggers, set
-     * <code>LambdaArn</code>.</p>
-     */
     inline PreTokenGenerationVersionConfigType& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
-
+    ///@}
   private:
 
     PreTokenGenerationLambdaVersionType m_lambdaVersion;

@@ -33,141 +33,49 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
      * from.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline UntagStreamRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline UntagStreamRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream that you want to remove tags
-     * from.</p>
-     */
     inline UntagStreamRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the stream that you want to remove tags from.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline UntagStreamRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline UntagStreamRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stream that you want to remove tags from.</p>
-     */
     inline UntagStreamRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the keys of the tags that you want to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline void SetTagKeyList(const Aws::Vector<Aws::String>& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = value; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline void SetTagKeyList(Aws::Vector<Aws::String>&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList = std::move(value); }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagStreamRequest& WithTagKeyList(const Aws::Vector<Aws::String>& value) { SetTagKeyList(value); return *this;}
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagStreamRequest& WithTagKeyList(Aws::Vector<Aws::String>&& value) { SetTagKeyList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagStreamRequest& AddTagKeyList(const Aws::String& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagStreamRequest& AddTagKeyList(Aws::String&& value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of the keys of the tags that you want to remove.</p>
-     */
     inline UntagStreamRequest& AddTagKeyList(const char* value) { m_tagKeyListHasBeenSet = true; m_tagKeyList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_streamARN;

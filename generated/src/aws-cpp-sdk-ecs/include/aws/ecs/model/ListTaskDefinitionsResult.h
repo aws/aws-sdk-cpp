@@ -33,55 +33,22 @@ namespace Model
     AWS_ECS_API ListTaskDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of task definition Amazon Resource Name (ARN) entries for the
      * <code>ListTaskDefinitions</code> request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTaskDefinitionArns() const{ return m_taskDefinitionArns; }
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline void SetTaskDefinitionArns(const Aws::Vector<Aws::String>& value) { m_taskDefinitionArns = value; }
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline void SetTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { m_taskDefinitionArns = std::move(value); }
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline ListTaskDefinitionsResult& WithTaskDefinitionArns(const Aws::Vector<Aws::String>& value) { SetTaskDefinitionArns(value); return *this;}
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline ListTaskDefinitionsResult& WithTaskDefinitionArns(Aws::Vector<Aws::String>&& value) { SetTaskDefinitionArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(const Aws::String& value) { m_taskDefinitionArns.push_back(value); return *this; }
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(Aws::String&& value) { m_taskDefinitionArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of task definition Amazon Resource Name (ARN) entries for the
-     * <code>ListTaskDefinitions</code> request.</p>
-     */
     inline ListTaskDefinitionsResult& AddTaskDefinitionArns(const char* value) { m_taskDefinitionArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> value to include in a future
      * <code>ListTaskDefinitions</code> request. When the results of a
@@ -90,83 +57,24 @@ namespace Model
      * <code>null</code> when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListTaskDefinitions</code> request. When the results of a
-     * <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListTaskDefinitions</code> request. When the results of a
-     * <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListTaskDefinitions</code> request. When the results of a
-     * <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListTaskDefinitions</code> request. When the results of a
-     * <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline ListTaskDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListTaskDefinitions</code> request. When the results of a
-     * <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline ListTaskDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value to include in a future
-     * <code>ListTaskDefinitions</code> request. When the results of a
-     * <code>ListTaskDefinitions</code> request exceed <code>maxResults</code>, this
-     * value can be used to retrieve the next page of results. This value is
-     * <code>null</code> when there are no more results to return.</p>
-     */
     inline ListTaskDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTaskDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTaskDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTaskDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_taskDefinitionArns;

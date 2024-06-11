@@ -35,34 +35,17 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The maximum time delay for time-shifted viewing. The minimum allowed maximum
      * time delay is 0 seconds, and the maximum allowed maximum time delay is 21600
      * seconds (6 hours). </p>
      */
     inline int GetMaxTimeDelaySeconds() const{ return m_maxTimeDelaySeconds; }
-
-    /**
-     * <p> The maximum time delay for time-shifted viewing. The minimum allowed maximum
-     * time delay is 0 seconds, and the maximum allowed maximum time delay is 21600
-     * seconds (6 hours). </p>
-     */
     inline bool MaxTimeDelaySecondsHasBeenSet() const { return m_maxTimeDelaySecondsHasBeenSet; }
-
-    /**
-     * <p> The maximum time delay for time-shifted viewing. The minimum allowed maximum
-     * time delay is 0 seconds, and the maximum allowed maximum time delay is 21600
-     * seconds (6 hours). </p>
-     */
     inline void SetMaxTimeDelaySeconds(int value) { m_maxTimeDelaySecondsHasBeenSet = true; m_maxTimeDelaySeconds = value; }
-
-    /**
-     * <p> The maximum time delay for time-shifted viewing. The minimum allowed maximum
-     * time delay is 0 seconds, and the maximum allowed maximum time delay is 21600
-     * seconds (6 hours). </p>
-     */
     inline TimeShiftConfiguration& WithMaxTimeDelaySeconds(int value) { SetMaxTimeDelaySeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxTimeDelaySeconds;

@@ -41,118 +41,45 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the intent.</p>
      */
     inline const UserTurnIntentOutput& GetIntent() const{ return m_intent; }
-
-    /**
-     * <p>Contains information about the intent.</p>
-     */
     inline bool IntentHasBeenSet() const { return m_intentHasBeenSet; }
-
-    /**
-     * <p>Contains information about the intent.</p>
-     */
     inline void SetIntent(const UserTurnIntentOutput& value) { m_intentHasBeenSet = true; m_intent = value; }
-
-    /**
-     * <p>Contains information about the intent.</p>
-     */
     inline void SetIntent(UserTurnIntentOutput&& value) { m_intentHasBeenSet = true; m_intent = std::move(value); }
-
-    /**
-     * <p>Contains information about the intent.</p>
-     */
     inline UserTurnOutputSpecification& WithIntent(const UserTurnIntentOutput& value) { SetIntent(value); return *this;}
-
-    /**
-     * <p>Contains information about the intent.</p>
-     */
     inline UserTurnOutputSpecification& WithIntent(UserTurnIntentOutput&& value) { SetIntent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The contexts that are active in the turn.</p>
      */
     inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline bool ActiveContextsHasBeenSet() const { return m_activeContextsHasBeenSet; }
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContextsHasBeenSet = true; m_activeContexts = value; }
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::move(value); }
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline UserTurnOutputSpecification& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline UserTurnOutputSpecification& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline UserTurnOutputSpecification& AddActiveContexts(const ActiveContext& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(value); return *this; }
-
-    /**
-     * <p>The contexts that are active in the turn.</p>
-     */
     inline UserTurnOutputSpecification& AddActiveContexts(ActiveContext&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The transcript that is output for the user turn by the test execution.</p>
      */
     inline const Aws::String& GetTranscript() const{ return m_transcript; }
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline void SetTranscript(const Aws::String& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline void SetTranscript(Aws::String&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline void SetTranscript(const char* value) { m_transcriptHasBeenSet = true; m_transcript.assign(value); }
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline UserTurnOutputSpecification& WithTranscript(const Aws::String& value) { SetTranscript(value); return *this;}
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline UserTurnOutputSpecification& WithTranscript(Aws::String&& value) { SetTranscript(std::move(value)); return *this;}
-
-    /**
-     * <p>The transcript that is output for the user turn by the test execution.</p>
-     */
     inline UserTurnOutputSpecification& WithTranscript(const char* value) { SetTranscript(value); return *this;}
-
+    ///@}
   private:
 
     UserTurnIntentOutput m_intent;

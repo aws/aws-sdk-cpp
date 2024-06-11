@@ -41,91 +41,33 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>Public access control for brokers.</p>
          
      */
     inline const PublicAccess& GetPublicAccess() const{ return m_publicAccess; }
-
-    /**
-     * 
-            <p>Public access control for brokers.</p>
-         
-     */
     inline bool PublicAccessHasBeenSet() const { return m_publicAccessHasBeenSet; }
-
-    /**
-     * 
-            <p>Public access control for brokers.</p>
-         
-     */
     inline void SetPublicAccess(const PublicAccess& value) { m_publicAccessHasBeenSet = true; m_publicAccess = value; }
-
-    /**
-     * 
-            <p>Public access control for brokers.</p>
-         
-     */
     inline void SetPublicAccess(PublicAccess&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::move(value); }
-
-    /**
-     * 
-            <p>Public access control for brokers.</p>
-         
-     */
     inline ConnectivityInfo& WithPublicAccess(const PublicAccess& value) { SetPublicAccess(value); return *this;}
-
-    /**
-     * 
-            <p>Public access control for brokers.</p>
-         
-     */
     inline ConnectivityInfo& WithPublicAccess(PublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>VPC connectivity access control for brokers.</p>
          
      */
     inline const VpcConnectivity& GetVpcConnectivity() const{ return m_vpcConnectivity; }
-
-    /**
-     * 
-            <p>VPC connectivity access control for brokers.</p>
-         
-     */
     inline bool VpcConnectivityHasBeenSet() const { return m_vpcConnectivityHasBeenSet; }
-
-    /**
-     * 
-            <p>VPC connectivity access control for brokers.</p>
-         
-     */
     inline void SetVpcConnectivity(const VpcConnectivity& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = value; }
-
-    /**
-     * 
-            <p>VPC connectivity access control for brokers.</p>
-         
-     */
     inline void SetVpcConnectivity(VpcConnectivity&& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = std::move(value); }
-
-    /**
-     * 
-            <p>VPC connectivity access control for brokers.</p>
-         
-     */
     inline ConnectivityInfo& WithVpcConnectivity(const VpcConnectivity& value) { SetVpcConnectivity(value); return *this;}
-
-    /**
-     * 
-            <p>VPC connectivity access control for brokers.</p>
-         
-     */
     inline ConnectivityInfo& WithVpcConnectivity(VpcConnectivity&& value) { SetVpcConnectivity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PublicAccess m_publicAccess;

@@ -33,60 +33,21 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetAutomationRulesArns() const{ return m_automationRulesArns; }
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline bool AutomationRulesArnsHasBeenSet() const { return m_automationRulesArnsHasBeenSet; }
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline void SetAutomationRulesArns(const Aws::Vector<Aws::String>& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns = value; }
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline void SetAutomationRulesArns(Aws::Vector<Aws::String>&& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns = std::move(value); }
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline BatchDeleteAutomationRulesRequest& WithAutomationRulesArns(const Aws::Vector<Aws::String>& value) { SetAutomationRulesArns(value); return *this;}
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline BatchDeleteAutomationRulesRequest& WithAutomationRulesArns(Aws::Vector<Aws::String>&& value) { SetAutomationRulesArns(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(const Aws::String& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.push_back(value); return *this; }
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(Aws::String&& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
-     * </p>
-     */
     inline BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(const char* value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_automationRulesArns;

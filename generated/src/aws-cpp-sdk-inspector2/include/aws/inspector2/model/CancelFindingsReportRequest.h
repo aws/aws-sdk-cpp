@@ -32,46 +32,19 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the report to be canceled.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline CancelFindingsReportRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline CancelFindingsReportRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the report to be canceled.</p>
-     */
     inline CancelFindingsReportRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

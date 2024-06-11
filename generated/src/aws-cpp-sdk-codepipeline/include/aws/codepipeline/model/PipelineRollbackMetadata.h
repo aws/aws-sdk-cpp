@@ -38,46 +38,19 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The pipeline execution ID to which the stage will be rolled back.</p>
      */
     inline const Aws::String& GetRollbackTargetPipelineExecutionId() const{ return m_rollbackTargetPipelineExecutionId; }
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline bool RollbackTargetPipelineExecutionIdHasBeenSet() const { return m_rollbackTargetPipelineExecutionIdHasBeenSet; }
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline void SetRollbackTargetPipelineExecutionId(const Aws::String& value) { m_rollbackTargetPipelineExecutionIdHasBeenSet = true; m_rollbackTargetPipelineExecutionId = value; }
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline void SetRollbackTargetPipelineExecutionId(Aws::String&& value) { m_rollbackTargetPipelineExecutionIdHasBeenSet = true; m_rollbackTargetPipelineExecutionId = std::move(value); }
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline void SetRollbackTargetPipelineExecutionId(const char* value) { m_rollbackTargetPipelineExecutionIdHasBeenSet = true; m_rollbackTargetPipelineExecutionId.assign(value); }
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline PipelineRollbackMetadata& WithRollbackTargetPipelineExecutionId(const Aws::String& value) { SetRollbackTargetPipelineExecutionId(value); return *this;}
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline PipelineRollbackMetadata& WithRollbackTargetPipelineExecutionId(Aws::String&& value) { SetRollbackTargetPipelineExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The pipeline execution ID to which the stage will be rolled back.</p>
-     */
     inline PipelineRollbackMetadata& WithRollbackTargetPipelineExecutionId(const char* value) { SetRollbackTargetPipelineExecutionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rollbackTargetPipelineExecutionId;

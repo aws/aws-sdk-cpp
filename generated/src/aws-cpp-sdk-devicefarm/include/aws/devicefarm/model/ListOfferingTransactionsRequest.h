@@ -38,54 +38,20 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline ListOfferingTransactionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline ListOfferingTransactionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline ListOfferingTransactionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

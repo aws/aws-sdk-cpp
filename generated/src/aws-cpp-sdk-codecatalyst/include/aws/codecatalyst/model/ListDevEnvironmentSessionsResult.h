@@ -34,106 +34,43 @@ namespace Model
     AWS_CODECATALYST_API ListDevEnvironmentSessionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about each session retrieved in the list.</p>
      */
     inline const Aws::Vector<DevEnvironmentSessionSummary>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>Information about each session retrieved in the list.</p>
-     */
     inline void SetItems(const Aws::Vector<DevEnvironmentSessionSummary>& value) { m_items = value; }
-
-    /**
-     * <p>Information about each session retrieved in the list.</p>
-     */
     inline void SetItems(Aws::Vector<DevEnvironmentSessionSummary>&& value) { m_items = std::move(value); }
-
-    /**
-     * <p>Information about each session retrieved in the list.</p>
-     */
     inline ListDevEnvironmentSessionsResult& WithItems(const Aws::Vector<DevEnvironmentSessionSummary>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>Information about each session retrieved in the list.</p>
-     */
     inline ListDevEnvironmentSessionsResult& WithItems(Aws::Vector<DevEnvironmentSessionSummary>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about each session retrieved in the list.</p>
-     */
     inline ListDevEnvironmentSessionsResult& AddItems(const DevEnvironmentSessionSummary& value) { m_items.push_back(value); return *this; }
-
-    /**
-     * <p>Information about each session retrieved in the list.</p>
-     */
     inline ListDevEnvironmentSessionsResult& AddItems(DevEnvironmentSessionSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token returned from a call to this API to indicate the next batch of
      * results to return, if any.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline ListDevEnvironmentSessionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline ListDevEnvironmentSessionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline ListDevEnvironmentSessionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDevEnvironmentSessionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDevEnvironmentSessionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDevEnvironmentSessionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DevEnvironmentSessionSummary> m_items;

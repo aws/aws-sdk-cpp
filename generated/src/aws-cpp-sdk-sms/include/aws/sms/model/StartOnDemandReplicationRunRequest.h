@@ -34,87 +34,33 @@ namespace Model
     AWS_SMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the replication job.</p>
      */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the replication run.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline StartOnDemandReplicationRunRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline StartOnDemandReplicationRunRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the replication run.</p>
-     */
     inline StartOnDemandReplicationRunRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationJobId;

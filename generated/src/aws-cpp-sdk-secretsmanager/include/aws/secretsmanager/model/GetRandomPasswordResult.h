@@ -32,63 +32,29 @@ namespace Model
     AWS_SECRETSMANAGER_API GetRandomPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A string with the password.</p>
      */
     inline const Aws::String& GetRandomPassword() const{ return m_randomPassword; }
-
-    /**
-     * <p>A string with the password.</p>
-     */
     inline void SetRandomPassword(const Aws::String& value) { m_randomPassword = value; }
-
-    /**
-     * <p>A string with the password.</p>
-     */
     inline void SetRandomPassword(Aws::String&& value) { m_randomPassword = std::move(value); }
-
-    /**
-     * <p>A string with the password.</p>
-     */
     inline void SetRandomPassword(const char* value) { m_randomPassword.assign(value); }
-
-    /**
-     * <p>A string with the password.</p>
-     */
     inline GetRandomPasswordResult& WithRandomPassword(const Aws::String& value) { SetRandomPassword(value); return *this;}
-
-    /**
-     * <p>A string with the password.</p>
-     */
     inline GetRandomPasswordResult& WithRandomPassword(Aws::String&& value) { SetRandomPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>A string with the password.</p>
-     */
     inline GetRandomPasswordResult& WithRandomPassword(const char* value) { SetRandomPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRandomPasswordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRandomPasswordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRandomPasswordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_randomPassword;

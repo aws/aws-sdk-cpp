@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ID of the logger definition.
      */
     inline const Aws::String& GetLoggerDefinitionId() const{ return m_loggerDefinitionId; }
-
-    /**
-     * The ID of the logger definition.
-     */
     inline bool LoggerDefinitionIdHasBeenSet() const { return m_loggerDefinitionIdHasBeenSet; }
-
-    /**
-     * The ID of the logger definition.
-     */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
-
-    /**
-     * The ID of the logger definition.
-     */
     inline void SetLoggerDefinitionId(Aws::String&& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = std::move(value); }
-
-    /**
-     * The ID of the logger definition.
-     */
     inline void SetLoggerDefinitionId(const char* value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId.assign(value); }
-
-    /**
-     * The ID of the logger definition.
-     */
     inline DeleteLoggerDefinitionRequest& WithLoggerDefinitionId(const Aws::String& value) { SetLoggerDefinitionId(value); return *this;}
-
-    /**
-     * The ID of the logger definition.
-     */
     inline DeleteLoggerDefinitionRequest& WithLoggerDefinitionId(Aws::String&& value) { SetLoggerDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the logger definition.
-     */
     inline DeleteLoggerDefinitionRequest& WithLoggerDefinitionId(const char* value) { SetLoggerDefinitionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loggerDefinitionId;

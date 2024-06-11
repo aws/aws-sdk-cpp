@@ -32,63 +32,29 @@ namespace Model
     AWS_PERSONALIZE_API CreateSchemaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the created schema.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created schema.</p>
-     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created schema.</p>
-     */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created schema.</p>
-     */
     inline void SetSchemaArn(const char* value) { m_schemaArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created schema.</p>
-     */
     inline CreateSchemaResult& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created schema.</p>
-     */
     inline CreateSchemaResult& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created schema.</p>
-     */
     inline CreateSchemaResult& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSchemaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSchemaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSchemaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schemaArn;

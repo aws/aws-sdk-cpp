@@ -40,85 +40,32 @@ namespace Model
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The package origin configuration that determines if new versions of the
      * package can be published directly to the repository.</p>
      */
     inline const AllowPublish& GetPublish() const{ return m_publish; }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be published directly to the repository.</p>
-     */
     inline bool PublishHasBeenSet() const { return m_publishHasBeenSet; }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be published directly to the repository.</p>
-     */
     inline void SetPublish(const AllowPublish& value) { m_publishHasBeenSet = true; m_publish = value; }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be published directly to the repository.</p>
-     */
     inline void SetPublish(AllowPublish&& value) { m_publishHasBeenSet = true; m_publish = std::move(value); }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be published directly to the repository.</p>
-     */
     inline PackageOriginRestrictions& WithPublish(const AllowPublish& value) { SetPublish(value); return *this;}
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be published directly to the repository.</p>
-     */
     inline PackageOriginRestrictions& WithPublish(AllowPublish&& value) { SetPublish(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The package origin configuration that determines if new versions of the
      * package can be added to the repository from an external connection or upstream
      * source.</p>
      */
     inline const AllowUpstream& GetUpstream() const{ return m_upstream; }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be added to the repository from an external connection or upstream
-     * source.</p>
-     */
     inline bool UpstreamHasBeenSet() const { return m_upstreamHasBeenSet; }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be added to the repository from an external connection or upstream
-     * source.</p>
-     */
     inline void SetUpstream(const AllowUpstream& value) { m_upstreamHasBeenSet = true; m_upstream = value; }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be added to the repository from an external connection or upstream
-     * source.</p>
-     */
     inline void SetUpstream(AllowUpstream&& value) { m_upstreamHasBeenSet = true; m_upstream = std::move(value); }
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be added to the repository from an external connection or upstream
-     * source.</p>
-     */
     inline PackageOriginRestrictions& WithUpstream(const AllowUpstream& value) { SetUpstream(value); return *this;}
-
-    /**
-     * <p>The package origin configuration that determines if new versions of the
-     * package can be added to the repository from an external connection or upstream
-     * source.</p>
-     */
     inline PackageOriginRestrictions& WithUpstream(AllowUpstream&& value) { SetUpstream(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AllowPublish m_publish;

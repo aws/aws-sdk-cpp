@@ -37,6 +37,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * ID of the channel in MediaPackage that is the destination for this output group.
      * You do not need to specify the individual inputs in MediaPackage; MediaLive will
@@ -45,70 +46,14 @@ namespace Model
      * region.
      */
     inline const Aws::String& GetChannelId() const{ return m_channelId; }
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline void SetChannelId(Aws::String&& value) { m_channelIdHasBeenSet = true; m_channelId = std::move(value); }
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline void SetChannelId(const char* value) { m_channelIdHasBeenSet = true; m_channelId.assign(value); }
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline MediaPackageOutputDestinationSettings& WithChannelId(const Aws::String& value) { SetChannelId(value); return *this;}
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline MediaPackageOutputDestinationSettings& WithChannelId(Aws::String&& value) { SetChannelId(std::move(value)); return *this;}
-
-    /**
-     * ID of the channel in MediaPackage that is the destination for this output group.
-     * You do not need to specify the individual inputs in MediaPackage; MediaLive will
-     * handle the connection of the two MediaLive pipelines to the two MediaPackage
-     * inputs. The MediaPackage channel and MediaLive channel must be in the same
-     * region.
-     */
     inline MediaPackageOutputDestinationSettings& WithChannelId(const char* value) { SetChannelId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelId;

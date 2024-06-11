@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API GetConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns information about a core network Connect peer.</p>
      */
     inline const ConnectPeer& GetConnectPeer() const{ return m_connectPeer; }
-
-    /**
-     * <p>Returns information about a core network Connect peer.</p>
-     */
     inline void SetConnectPeer(const ConnectPeer& value) { m_connectPeer = value; }
-
-    /**
-     * <p>Returns information about a core network Connect peer.</p>
-     */
     inline void SetConnectPeer(ConnectPeer&& value) { m_connectPeer = std::move(value); }
-
-    /**
-     * <p>Returns information about a core network Connect peer.</p>
-     */
     inline GetConnectPeerResult& WithConnectPeer(const ConnectPeer& value) { SetConnectPeer(value); return *this;}
-
-    /**
-     * <p>Returns information about a core network Connect peer.</p>
-     */
     inline GetConnectPeerResult& WithConnectPeer(ConnectPeer&& value) { SetConnectPeer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetConnectPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetConnectPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetConnectPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConnectPeer m_connectPeer;

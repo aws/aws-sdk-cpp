@@ -36,55 +36,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
      * encryption keys, and Amazon S3 object information.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the ACM certificate for which to view the associated IAM roles,
-     * encryption keys, and Amazon S3 object information.</p>
-     */
     inline GetAssociatedEnclaveCertificateIamRolesRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -92,31 +59,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline GetAssociatedEnclaveCertificateIamRolesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateArn;

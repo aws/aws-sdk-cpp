@@ -38,57 +38,27 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the UserID metadata.</p>
      */
     inline double GetSimilarity() const{ return m_similarity; }
-
-    /**
-     * <p> Describes the UserID metadata.</p>
-     */
     inline bool SimilarityHasBeenSet() const { return m_similarityHasBeenSet; }
-
-    /**
-     * <p> Describes the UserID metadata.</p>
-     */
     inline void SetSimilarity(double value) { m_similarityHasBeenSet = true; m_similarity = value; }
-
-    /**
-     * <p> Describes the UserID metadata.</p>
-     */
     inline UserMatch& WithSimilarity(double value) { SetSimilarity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Confidence in the match of this UserID with the input face. </p>
      */
     inline const MatchedUser& GetUser() const{ return m_user; }
-
-    /**
-     * <p> Confidence in the match of this UserID with the input face. </p>
-     */
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-
-    /**
-     * <p> Confidence in the match of this UserID with the input face. </p>
-     */
     inline void SetUser(const MatchedUser& value) { m_userHasBeenSet = true; m_user = value; }
-
-    /**
-     * <p> Confidence in the match of this UserID with the input face. </p>
-     */
     inline void SetUser(MatchedUser&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-
-    /**
-     * <p> Confidence in the match of this UserID with the input face. </p>
-     */
     inline UserMatch& WithUser(const MatchedUser& value) { SetUser(value); return *this;}
-
-    /**
-     * <p> Confidence in the match of this UserID with the input face. </p>
-     */
     inline UserMatch& WithUser(MatchedUser&& value) { SetUser(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     double m_similarity;

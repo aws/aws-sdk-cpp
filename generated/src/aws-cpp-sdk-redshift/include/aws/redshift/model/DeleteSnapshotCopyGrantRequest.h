@@ -40,46 +40,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the snapshot copy grant to delete.</p>
      */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline void SetSnapshotCopyGrantName(Aws::String&& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = std::move(value); }
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline void SetSnapshotCopyGrantName(const char* value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName.assign(value); }
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const Aws::String& value) { SetSnapshotCopyGrantName(value); return *this;}
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(Aws::String&& value) { SetSnapshotCopyGrantName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the snapshot copy grant to delete.</p>
-     */
     inline DeleteSnapshotCopyGrantRequest& WithSnapshotCopyGrantName(const char* value) { SetSnapshotCopyGrantName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotCopyGrantName;

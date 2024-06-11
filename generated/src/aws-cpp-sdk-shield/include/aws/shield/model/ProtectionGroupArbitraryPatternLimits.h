@@ -36,30 +36,16 @@ namespace Model
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of resources you can specify for a single arbitrary
      * pattern in a protection group.</p>
      */
     inline long long GetMaxMembers() const{ return m_maxMembers; }
-
-    /**
-     * <p>The maximum number of resources you can specify for a single arbitrary
-     * pattern in a protection group.</p>
-     */
     inline bool MaxMembersHasBeenSet() const { return m_maxMembersHasBeenSet; }
-
-    /**
-     * <p>The maximum number of resources you can specify for a single arbitrary
-     * pattern in a protection group.</p>
-     */
     inline void SetMaxMembers(long long value) { m_maxMembersHasBeenSet = true; m_maxMembers = value; }
-
-    /**
-     * <p>The maximum number of resources you can specify for a single arbitrary
-     * pattern in a protection group.</p>
-     */
     inline ProtectionGroupArbitraryPatternLimits& WithMaxMembers(long long value) { SetMaxMembers(value); return *this;}
-
+    ///@}
   private:
 
     long long m_maxMembers;

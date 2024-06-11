@@ -35,30 +35,17 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetConnectInstanceId() const{ return m_connectInstanceId; }
-
-    
     inline bool ConnectInstanceIdHasBeenSet() const { return m_connectInstanceIdHasBeenSet; }
-
-    
     inline void SetConnectInstanceId(const Aws::String& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = value; }
-
-    
     inline void SetConnectInstanceId(Aws::String&& value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId = std::move(value); }
-
-    
     inline void SetConnectInstanceId(const char* value) { m_connectInstanceIdHasBeenSet = true; m_connectInstanceId.assign(value); }
-
-    
     inline GetConnectInstanceConfigRequest& WithConnectInstanceId(const Aws::String& value) { SetConnectInstanceId(value); return *this;}
-
-    
     inline GetConnectInstanceConfigRequest& WithConnectInstanceId(Aws::String&& value) { SetConnectInstanceId(std::move(value)); return *this;}
-
-    
     inline GetConnectInstanceConfigRequest& WithConnectInstanceId(const char* value) { SetConnectInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectInstanceId;

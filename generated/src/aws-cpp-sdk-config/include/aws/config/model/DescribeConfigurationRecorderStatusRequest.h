@@ -39,69 +39,22 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name(s) of the configuration recorder. If the name is not specified, the
      * action returns the current status of all the configuration recorders associated
      * with the account.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationRecorderNames() const{ return m_configurationRecorderNames; }
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline bool ConfigurationRecorderNamesHasBeenSet() const { return m_configurationRecorderNamesHasBeenSet; }
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline void SetConfigurationRecorderNames(const Aws::Vector<Aws::String>& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames = value; }
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline void SetConfigurationRecorderNames(Aws::Vector<Aws::String>&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames = std::move(value); }
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline DescribeConfigurationRecorderStatusRequest& WithConfigurationRecorderNames(const Aws::Vector<Aws::String>& value) { SetConfigurationRecorderNames(value); return *this;}
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline DescribeConfigurationRecorderStatusRequest& WithConfigurationRecorderNames(Aws::Vector<Aws::String>&& value) { SetConfigurationRecorderNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline DescribeConfigurationRecorderStatusRequest& AddConfigurationRecorderNames(const Aws::String& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(value); return *this; }
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline DescribeConfigurationRecorderStatusRequest& AddConfigurationRecorderNames(Aws::String&& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The name(s) of the configuration recorder. If the name is not specified, the
-     * action returns the current status of all the configuration recorders associated
-     * with the account.</p>
-     */
     inline DescribeConfigurationRecorderStatusRequest& AddConfigurationRecorderNames(const char* value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_configurationRecorderNames;

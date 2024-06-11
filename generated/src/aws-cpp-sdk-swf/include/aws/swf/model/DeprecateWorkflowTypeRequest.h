@@ -35,77 +35,31 @@ namespace Model
     AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline DeprecateWorkflowTypeRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline DeprecateWorkflowTypeRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain in which the workflow type is registered.</p>
-     */
     inline DeprecateWorkflowTypeRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The workflow type to deprecate.</p>
      */
     inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
-
-    /**
-     * <p>The workflow type to deprecate.</p>
-     */
     inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
-
-    /**
-     * <p>The workflow type to deprecate.</p>
-     */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
-
-    /**
-     * <p>The workflow type to deprecate.</p>
-     */
     inline void SetWorkflowType(WorkflowType&& value) { m_workflowTypeHasBeenSet = true; m_workflowType = std::move(value); }
-
-    /**
-     * <p>The workflow type to deprecate.</p>
-     */
     inline DeprecateWorkflowTypeRequest& WithWorkflowType(const WorkflowType& value) { SetWorkflowType(value); return *this;}
-
-    /**
-     * <p>The workflow type to deprecate.</p>
-     */
     inline DeprecateWorkflowTypeRequest& WithWorkflowType(WorkflowType&& value) { SetWorkflowType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

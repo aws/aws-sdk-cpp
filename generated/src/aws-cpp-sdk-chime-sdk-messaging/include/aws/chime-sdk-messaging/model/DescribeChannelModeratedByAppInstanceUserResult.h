@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API DescribeChannelModeratedByAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The moderated channel.</p>
      */
     inline const ChannelModeratedByAppInstanceUserSummary& GetChannel() const{ return m_channel; }
-
-    /**
-     * <p>The moderated channel.</p>
-     */
     inline void SetChannel(const ChannelModeratedByAppInstanceUserSummary& value) { m_channel = value; }
-
-    /**
-     * <p>The moderated channel.</p>
-     */
     inline void SetChannel(ChannelModeratedByAppInstanceUserSummary&& value) { m_channel = std::move(value); }
-
-    /**
-     * <p>The moderated channel.</p>
-     */
     inline DescribeChannelModeratedByAppInstanceUserResult& WithChannel(const ChannelModeratedByAppInstanceUserSummary& value) { SetChannel(value); return *this;}
-
-    /**
-     * <p>The moderated channel.</p>
-     */
     inline DescribeChannelModeratedByAppInstanceUserResult& WithChannel(ChannelModeratedByAppInstanceUserSummary&& value) { SetChannel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeChannelModeratedByAppInstanceUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeChannelModeratedByAppInstanceUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeChannelModeratedByAppInstanceUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChannelModeratedByAppInstanceUserSummary m_channel;

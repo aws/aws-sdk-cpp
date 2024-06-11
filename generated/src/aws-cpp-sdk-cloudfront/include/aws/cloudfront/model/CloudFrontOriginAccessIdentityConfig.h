@@ -39,6 +39,7 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A unique value (for example, a date-time stamp) that ensures that the request
      * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
@@ -55,175 +56,29 @@ namespace Model
      * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique value (for example, a date-time stamp) that ensures that the request
-     * can't be replayed.</p> <p>If the value of <code>CallerReference</code> is new
-     * (regardless of the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> object), a new origin access
-     * identity is created.</p> <p>If the <code>CallerReference</code> is a value
-     * already sent in a previous identity request, and the content of the
-     * <code>CloudFrontOriginAccessIdentityConfig</code> is identical to the original
-     * request (ignoring white space), the response includes the same information
-     * returned to the original request.</p> <p>If the <code>CallerReference</code> is
-     * a value you already sent in a previous request to create an identity, but the
-     * content of the <code>CloudFrontOriginAccessIdentityConfig</code> is different
-     * from the original request, CloudFront returns a
-     * <code>CloudFrontOriginAccessIdentityAlreadyExists</code> error. </p>
-     */
     inline CloudFrontOriginAccessIdentityConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A comment to describe the origin access identity. The comment cannot be
      * longer than 128 characters.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline CloudFrontOriginAccessIdentityConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline CloudFrontOriginAccessIdentityConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-
-    /**
-     * <p>A comment to describe the origin access identity. The comment cannot be
-     * longer than 128 characters.</p>
-     */
     inline CloudFrontOriginAccessIdentityConfig& WithComment(const char* value) { SetComment(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_callerReference;

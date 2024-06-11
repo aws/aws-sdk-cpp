@@ -37,87 +37,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The ARN of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityArn() const{ return m_groupCertificateAuthorityArn; }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline bool GroupCertificateAuthorityArnHasBeenSet() const { return m_groupCertificateAuthorityArnHasBeenSet; }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityArn(const Aws::String& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = value; }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityArn(Aws::String&& value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn = std::move(value); }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityArn(const char* value) { m_groupCertificateAuthorityArnHasBeenSet = true; m_groupCertificateAuthorityArn.assign(value); }
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(const Aws::String& value) { SetGroupCertificateAuthorityArn(value); return *this;}
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(Aws::String&& value) { SetGroupCertificateAuthorityArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the certificate authority for the group.
-     */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityArn(const char* value) { SetGroupCertificateAuthorityArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the certificate authority for the group.
      */
     inline const Aws::String& GetGroupCertificateAuthorityId() const{ return m_groupCertificateAuthorityId; }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline bool GroupCertificateAuthorityIdHasBeenSet() const { return m_groupCertificateAuthorityIdHasBeenSet; }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityId(const Aws::String& value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId = value; }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityId(Aws::String&& value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId = std::move(value); }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline void SetGroupCertificateAuthorityId(const char* value) { m_groupCertificateAuthorityIdHasBeenSet = true; m_groupCertificateAuthorityId.assign(value); }
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(const Aws::String& value) { SetGroupCertificateAuthorityId(value); return *this;}
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(Aws::String&& value) { SetGroupCertificateAuthorityId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the certificate authority for the group.
-     */
     inline GroupCertificateAuthorityProperties& WithGroupCertificateAuthorityId(const char* value) { SetGroupCertificateAuthorityId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupCertificateAuthorityArn;

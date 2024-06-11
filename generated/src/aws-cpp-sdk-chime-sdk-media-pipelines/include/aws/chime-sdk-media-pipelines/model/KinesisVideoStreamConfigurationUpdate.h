@@ -36,26 +36,15 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The updated time that data is retained.</p>
      */
     inline int GetDataRetentionInHours() const{ return m_dataRetentionInHours; }
-
-    /**
-     * <p>The updated time that data is retained.</p>
-     */
     inline bool DataRetentionInHoursHasBeenSet() const { return m_dataRetentionInHoursHasBeenSet; }
-
-    /**
-     * <p>The updated time that data is retained.</p>
-     */
     inline void SetDataRetentionInHours(int value) { m_dataRetentionInHoursHasBeenSet = true; m_dataRetentionInHours = value; }
-
-    /**
-     * <p>The updated time that data is retained.</p>
-     */
     inline KinesisVideoStreamConfigurationUpdate& WithDataRetentionInHours(int value) { SetDataRetentionInHours(value); return *this;}
-
+    ///@}
   private:
 
     int m_dataRetentionInHours;

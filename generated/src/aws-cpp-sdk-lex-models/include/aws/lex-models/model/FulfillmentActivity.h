@@ -51,73 +51,30 @@ namespace Model
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> How the intent should be fulfilled, either by running a Lambda function or
      * by returning the slot data to the client application. </p>
      */
     inline const FulfillmentActivityType& GetType() const{ return m_type; }
-
-    /**
-     * <p> How the intent should be fulfilled, either by running a Lambda function or
-     * by returning the slot data to the client application. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p> How the intent should be fulfilled, either by running a Lambda function or
-     * by returning the slot data to the client application. </p>
-     */
     inline void SetType(const FulfillmentActivityType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p> How the intent should be fulfilled, either by running a Lambda function or
-     * by returning the slot data to the client application. </p>
-     */
     inline void SetType(FulfillmentActivityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p> How the intent should be fulfilled, either by running a Lambda function or
-     * by returning the slot data to the client application. </p>
-     */
     inline FulfillmentActivity& WithType(const FulfillmentActivityType& value) { SetType(value); return *this;}
-
-    /**
-     * <p> How the intent should be fulfilled, either by running a Lambda function or
-     * by returning the slot data to the client application. </p>
-     */
     inline FulfillmentActivity& WithType(FulfillmentActivityType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A description of the Lambda function that is run to fulfill the intent. </p>
      */
     inline const CodeHook& GetCodeHook() const{ return m_codeHook; }
-
-    /**
-     * <p> A description of the Lambda function that is run to fulfill the intent. </p>
-     */
     inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
-
-    /**
-     * <p> A description of the Lambda function that is run to fulfill the intent. </p>
-     */
     inline void SetCodeHook(const CodeHook& value) { m_codeHookHasBeenSet = true; m_codeHook = value; }
-
-    /**
-     * <p> A description of the Lambda function that is run to fulfill the intent. </p>
-     */
     inline void SetCodeHook(CodeHook&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::move(value); }
-
-    /**
-     * <p> A description of the Lambda function that is run to fulfill the intent. </p>
-     */
     inline FulfillmentActivity& WithCodeHook(const CodeHook& value) { SetCodeHook(value); return *this;}
-
-    /**
-     * <p> A description of the Lambda function that is run to fulfill the intent. </p>
-     */
     inline FulfillmentActivity& WithCodeHook(CodeHook&& value) { SetCodeHook(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FulfillmentActivityType m_type;

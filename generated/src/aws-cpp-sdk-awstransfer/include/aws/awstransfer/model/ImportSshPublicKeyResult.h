@@ -39,142 +39,56 @@ namespace Model
     AWS_TRANSFER_API ImportSshPublicKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A system-assigned unique identifier for a server.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server.</p>
-     */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-
-    /**
-     * <p>A system-assigned unique identifier for a server.</p>
-     */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server.</p>
-     */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
-
-    /**
-     * <p>A system-assigned unique identifier for a server.</p>
-     */
     inline ImportSshPublicKeyResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server.</p>
-     */
     inline ImportSshPublicKeyResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-
-    /**
-     * <p>A system-assigned unique identifier for a server.</p>
-     */
     inline ImportSshPublicKeyResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name given to a public key by the system that was imported.</p>
      */
     inline const Aws::String& GetSshPublicKeyId() const{ return m_sshPublicKeyId; }
-
-    /**
-     * <p>The name given to a public key by the system that was imported.</p>
-     */
     inline void SetSshPublicKeyId(const Aws::String& value) { m_sshPublicKeyId = value; }
-
-    /**
-     * <p>The name given to a public key by the system that was imported.</p>
-     */
     inline void SetSshPublicKeyId(Aws::String&& value) { m_sshPublicKeyId = std::move(value); }
-
-    /**
-     * <p>The name given to a public key by the system that was imported.</p>
-     */
     inline void SetSshPublicKeyId(const char* value) { m_sshPublicKeyId.assign(value); }
-
-    /**
-     * <p>The name given to a public key by the system that was imported.</p>
-     */
     inline ImportSshPublicKeyResult& WithSshPublicKeyId(const Aws::String& value) { SetSshPublicKeyId(value); return *this;}
-
-    /**
-     * <p>The name given to a public key by the system that was imported.</p>
-     */
     inline ImportSshPublicKeyResult& WithSshPublicKeyId(Aws::String&& value) { SetSshPublicKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The name given to a public key by the system that was imported.</p>
-     */
     inline ImportSshPublicKeyResult& WithSshPublicKeyId(const char* value) { SetSshPublicKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user name assigned to the <code>ServerID</code> value that you
      * specified.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>A user name assigned to the <code>ServerID</code> value that you
-     * specified.</p>
-     */
     inline void SetUserName(const Aws::String& value) { m_userName = value; }
-
-    /**
-     * <p>A user name assigned to the <code>ServerID</code> value that you
-     * specified.</p>
-     */
     inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
-
-    /**
-     * <p>A user name assigned to the <code>ServerID</code> value that you
-     * specified.</p>
-     */
     inline void SetUserName(const char* value) { m_userName.assign(value); }
-
-    /**
-     * <p>A user name assigned to the <code>ServerID</code> value that you
-     * specified.</p>
-     */
     inline ImportSshPublicKeyResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>A user name assigned to the <code>ServerID</code> value that you
-     * specified.</p>
-     */
     inline ImportSshPublicKeyResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>A user name assigned to the <code>ServerID</code> value that you
-     * specified.</p>
-     */
     inline ImportSshPublicKeyResult& WithUserName(const char* value) { SetUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ImportSshPublicKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ImportSshPublicKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ImportSshPublicKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverId;

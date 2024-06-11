@@ -38,42 +38,18 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The payment responsibilities accepted by the collaboration member for query
      * compute costs.</p>
      */
     inline const MembershipQueryComputePaymentConfig& GetQueryCompute() const{ return m_queryCompute; }
-
-    /**
-     * <p>The payment responsibilities accepted by the collaboration member for query
-     * compute costs.</p>
-     */
     inline bool QueryComputeHasBeenSet() const { return m_queryComputeHasBeenSet; }
-
-    /**
-     * <p>The payment responsibilities accepted by the collaboration member for query
-     * compute costs.</p>
-     */
     inline void SetQueryCompute(const MembershipQueryComputePaymentConfig& value) { m_queryComputeHasBeenSet = true; m_queryCompute = value; }
-
-    /**
-     * <p>The payment responsibilities accepted by the collaboration member for query
-     * compute costs.</p>
-     */
     inline void SetQueryCompute(MembershipQueryComputePaymentConfig&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::move(value); }
-
-    /**
-     * <p>The payment responsibilities accepted by the collaboration member for query
-     * compute costs.</p>
-     */
     inline MembershipPaymentConfiguration& WithQueryCompute(const MembershipQueryComputePaymentConfig& value) { SetQueryCompute(value); return *this;}
-
-    /**
-     * <p>The payment responsibilities accepted by the collaboration member for query
-     * compute costs.</p>
-     */
     inline MembershipPaymentConfiguration& WithQueryCompute(MembershipQueryComputePaymentConfig&& value) { SetQueryCompute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MembershipQueryComputePaymentConfig m_queryCompute;

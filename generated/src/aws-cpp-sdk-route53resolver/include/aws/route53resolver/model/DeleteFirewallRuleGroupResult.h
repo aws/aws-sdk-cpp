@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53RESOLVER_API DeleteFirewallRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A collection of rules used to filter DNS network traffic. </p>
      */
     inline const FirewallRuleGroup& GetFirewallRuleGroup() const{ return m_firewallRuleGroup; }
-
-    /**
-     * <p>A collection of rules used to filter DNS network traffic. </p>
-     */
     inline void SetFirewallRuleGroup(const FirewallRuleGroup& value) { m_firewallRuleGroup = value; }
-
-    /**
-     * <p>A collection of rules used to filter DNS network traffic. </p>
-     */
     inline void SetFirewallRuleGroup(FirewallRuleGroup&& value) { m_firewallRuleGroup = std::move(value); }
-
-    /**
-     * <p>A collection of rules used to filter DNS network traffic. </p>
-     */
     inline DeleteFirewallRuleGroupResult& WithFirewallRuleGroup(const FirewallRuleGroup& value) { SetFirewallRuleGroup(value); return *this;}
-
-    /**
-     * <p>A collection of rules used to filter DNS network traffic. </p>
-     */
     inline DeleteFirewallRuleGroupResult& WithFirewallRuleGroup(FirewallRuleGroup&& value) { SetFirewallRuleGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteFirewallRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteFirewallRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteFirewallRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FirewallRuleGroup m_firewallRuleGroup;

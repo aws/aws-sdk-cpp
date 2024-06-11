@@ -38,54 +38,20 @@ namespace Model
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
      * structure.</p>
      */
     inline const Aws::String& GetIonText() const{ return m_ionText; }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline bool IonTextHasBeenSet() const { return m_ionTextHasBeenSet; }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonText(const Aws::String& value) { m_ionTextHasBeenSet = true; m_ionText = value; }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonText(Aws::String&& value) { m_ionTextHasBeenSet = true; m_ionText = std::move(value); }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline void SetIonText(const char* value) { m_ionTextHasBeenSet = true; m_ionText.assign(value); }
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonText(const Aws::String& value) { SetIonText(value); return *this;}
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonText(Aws::String&& value) { SetIonText(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Ion plaintext value contained in a <code>ValueHolder</code>
-     * structure.</p>
-     */
     inline ValueHolder& WithIonText(const char* value) { SetIonText(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ionText;

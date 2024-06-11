@@ -35,68 +35,35 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Export task summary applications count.</p>
      */
     inline long long GetApplicationsCount() const{ return m_applicationsCount; }
-
-    /**
-     * <p>Export task summary applications count.</p>
-     */
     inline bool ApplicationsCountHasBeenSet() const { return m_applicationsCountHasBeenSet; }
-
-    /**
-     * <p>Export task summary applications count.</p>
-     */
     inline void SetApplicationsCount(long long value) { m_applicationsCountHasBeenSet = true; m_applicationsCount = value; }
-
-    /**
-     * <p>Export task summary applications count.</p>
-     */
     inline ExportTaskSummary& WithApplicationsCount(long long value) { SetApplicationsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Export task summary servers count.</p>
      */
     inline long long GetServersCount() const{ return m_serversCount; }
-
-    /**
-     * <p>Export task summary servers count.</p>
-     */
     inline bool ServersCountHasBeenSet() const { return m_serversCountHasBeenSet; }
-
-    /**
-     * <p>Export task summary servers count.</p>
-     */
     inline void SetServersCount(long long value) { m_serversCountHasBeenSet = true; m_serversCount = value; }
-
-    /**
-     * <p>Export task summary servers count.</p>
-     */
     inline ExportTaskSummary& WithServersCount(long long value) { SetServersCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Export task summary waves count.</p>
      */
     inline long long GetWavesCount() const{ return m_wavesCount; }
-
-    /**
-     * <p>Export task summary waves count.</p>
-     */
     inline bool WavesCountHasBeenSet() const { return m_wavesCountHasBeenSet; }
-
-    /**
-     * <p>Export task summary waves count.</p>
-     */
     inline void SetWavesCount(long long value) { m_wavesCountHasBeenSet = true; m_wavesCount = value; }
-
-    /**
-     * <p>Export task summary waves count.</p>
-     */
     inline ExportTaskSummary& WithWavesCount(long long value) { SetWavesCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_applicationsCount;

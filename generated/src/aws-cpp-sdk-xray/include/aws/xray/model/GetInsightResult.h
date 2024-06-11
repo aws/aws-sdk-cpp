@@ -33,53 +33,27 @@ namespace Model
     AWS_XRAY_API GetInsightResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The summary information of an insight.</p>
      */
     inline const Insight& GetInsight() const{ return m_insight; }
-
-    /**
-     * <p>The summary information of an insight.</p>
-     */
     inline void SetInsight(const Insight& value) { m_insight = value; }
-
-    /**
-     * <p>The summary information of an insight.</p>
-     */
     inline void SetInsight(Insight&& value) { m_insight = std::move(value); }
-
-    /**
-     * <p>The summary information of an insight.</p>
-     */
     inline GetInsightResult& WithInsight(const Insight& value) { SetInsight(value); return *this;}
-
-    /**
-     * <p>The summary information of an insight.</p>
-     */
     inline GetInsightResult& WithInsight(Insight&& value) { SetInsight(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInsightResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInsightResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInsightResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Insight m_insight;

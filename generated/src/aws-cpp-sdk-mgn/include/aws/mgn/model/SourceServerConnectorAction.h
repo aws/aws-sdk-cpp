@@ -37,87 +37,33 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Source Server connector action connector arn.</p>
      */
     inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline SourceServerConnectorAction& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline SourceServerConnectorAction& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Source Server connector action connector arn.</p>
-     */
     inline SourceServerConnectorAction& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Source Server connector action credentials secret arn.</p>
      */
     inline const Aws::String& GetCredentialsSecretArn() const{ return m_credentialsSecretArn; }
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline bool CredentialsSecretArnHasBeenSet() const { return m_credentialsSecretArnHasBeenSet; }
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline void SetCredentialsSecretArn(const Aws::String& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = value; }
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline void SetCredentialsSecretArn(Aws::String&& value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn = std::move(value); }
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline void SetCredentialsSecretArn(const char* value) { m_credentialsSecretArnHasBeenSet = true; m_credentialsSecretArn.assign(value); }
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline SourceServerConnectorAction& WithCredentialsSecretArn(const Aws::String& value) { SetCredentialsSecretArn(value); return *this;}
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline SourceServerConnectorAction& WithCredentialsSecretArn(Aws::String&& value) { SetCredentialsSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Source Server connector action credentials secret arn.</p>
-     */
     inline SourceServerConnectorAction& WithCredentialsSecretArn(const char* value) { SetCredentialsSecretArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_connectorArn;

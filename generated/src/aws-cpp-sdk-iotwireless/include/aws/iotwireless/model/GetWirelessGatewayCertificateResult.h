@@ -32,106 +32,43 @@ namespace Model
     AWS_IOTWIRELESS_API GetWirelessGatewayCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the certificate associated with the wireless gateway.</p>
      */
     inline const Aws::String& GetIotCertificateId() const{ return m_iotCertificateId; }
-
-    /**
-     * <p>The ID of the certificate associated with the wireless gateway.</p>
-     */
     inline void SetIotCertificateId(const Aws::String& value) { m_iotCertificateId = value; }
-
-    /**
-     * <p>The ID of the certificate associated with the wireless gateway.</p>
-     */
     inline void SetIotCertificateId(Aws::String&& value) { m_iotCertificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the certificate associated with the wireless gateway.</p>
-     */
     inline void SetIotCertificateId(const char* value) { m_iotCertificateId.assign(value); }
-
-    /**
-     * <p>The ID of the certificate associated with the wireless gateway.</p>
-     */
     inline GetWirelessGatewayCertificateResult& WithIotCertificateId(const Aws::String& value) { SetIotCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the certificate associated with the wireless gateway.</p>
-     */
     inline GetWirelessGatewayCertificateResult& WithIotCertificateId(Aws::String&& value) { SetIotCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the certificate associated with the wireless gateway.</p>
-     */
     inline GetWirelessGatewayCertificateResult& WithIotCertificateId(const char* value) { SetIotCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the certificate that is associated with the wireless gateway and
      * used for the LoRaWANNetworkServer endpoint.</p>
      */
     inline const Aws::String& GetLoRaWANNetworkServerCertificateId() const{ return m_loRaWANNetworkServerCertificateId; }
-
-    /**
-     * <p>The ID of the certificate that is associated with the wireless gateway and
-     * used for the LoRaWANNetworkServer endpoint.</p>
-     */
     inline void SetLoRaWANNetworkServerCertificateId(const Aws::String& value) { m_loRaWANNetworkServerCertificateId = value; }
-
-    /**
-     * <p>The ID of the certificate that is associated with the wireless gateway and
-     * used for the LoRaWANNetworkServer endpoint.</p>
-     */
     inline void SetLoRaWANNetworkServerCertificateId(Aws::String&& value) { m_loRaWANNetworkServerCertificateId = std::move(value); }
-
-    /**
-     * <p>The ID of the certificate that is associated with the wireless gateway and
-     * used for the LoRaWANNetworkServer endpoint.</p>
-     */
     inline void SetLoRaWANNetworkServerCertificateId(const char* value) { m_loRaWANNetworkServerCertificateId.assign(value); }
-
-    /**
-     * <p>The ID of the certificate that is associated with the wireless gateway and
-     * used for the LoRaWANNetworkServer endpoint.</p>
-     */
     inline GetWirelessGatewayCertificateResult& WithLoRaWANNetworkServerCertificateId(const Aws::String& value) { SetLoRaWANNetworkServerCertificateId(value); return *this;}
-
-    /**
-     * <p>The ID of the certificate that is associated with the wireless gateway and
-     * used for the LoRaWANNetworkServer endpoint.</p>
-     */
     inline GetWirelessGatewayCertificateResult& WithLoRaWANNetworkServerCertificateId(Aws::String&& value) { SetLoRaWANNetworkServerCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the certificate that is associated with the wireless gateway and
-     * used for the LoRaWANNetworkServer endpoint.</p>
-     */
     inline GetWirelessGatewayCertificateResult& WithLoRaWANNetworkServerCertificateId(const char* value) { SetLoRaWANNetworkServerCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWirelessGatewayCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWirelessGatewayCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWirelessGatewayCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iotCertificateId;

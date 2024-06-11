@@ -36,46 +36,19 @@ namespace Model
     AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID for an artifact. </p>
      */
     inline const Aws::String& GetArtifactId() const{ return m_artifactId; }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline bool ArtifactIdHasBeenSet() const { return m_artifactIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline void SetArtifactId(const Aws::String& value) { m_artifactIdHasBeenSet = true; m_artifactId = value; }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline void SetArtifactId(Aws::String&& value) { m_artifactIdHasBeenSet = true; m_artifactId = std::move(value); }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline void SetArtifactId(const char* value) { m_artifactIdHasBeenSet = true; m_artifactId.assign(value); }
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline GetArtifactUrlRequest& WithArtifactId(const Aws::String& value) { SetArtifactId(value); return *this;}
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline GetArtifactUrlRequest& WithArtifactId(Aws::String&& value) { SetArtifactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for an artifact. </p>
-     */
     inline GetArtifactUrlRequest& WithArtifactId(const char* value) { SetArtifactId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_artifactId;

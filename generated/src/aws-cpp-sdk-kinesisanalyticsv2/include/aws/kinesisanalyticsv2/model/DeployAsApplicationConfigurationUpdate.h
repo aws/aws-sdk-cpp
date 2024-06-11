@@ -39,42 +39,18 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Updates to the location that holds the data required to specify an Amazon
      * Data Analytics application.</p>
      */
     inline const S3ContentBaseLocationUpdate& GetS3ContentLocationUpdate() const{ return m_s3ContentLocationUpdate; }
-
-    /**
-     * <p>Updates to the location that holds the data required to specify an Amazon
-     * Data Analytics application.</p>
-     */
     inline bool S3ContentLocationUpdateHasBeenSet() const { return m_s3ContentLocationUpdateHasBeenSet; }
-
-    /**
-     * <p>Updates to the location that holds the data required to specify an Amazon
-     * Data Analytics application.</p>
-     */
     inline void SetS3ContentLocationUpdate(const S3ContentBaseLocationUpdate& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = value; }
-
-    /**
-     * <p>Updates to the location that holds the data required to specify an Amazon
-     * Data Analytics application.</p>
-     */
     inline void SetS3ContentLocationUpdate(S3ContentBaseLocationUpdate&& value) { m_s3ContentLocationUpdateHasBeenSet = true; m_s3ContentLocationUpdate = std::move(value); }
-
-    /**
-     * <p>Updates to the location that holds the data required to specify an Amazon
-     * Data Analytics application.</p>
-     */
     inline DeployAsApplicationConfigurationUpdate& WithS3ContentLocationUpdate(const S3ContentBaseLocationUpdate& value) { SetS3ContentLocationUpdate(value); return *this;}
-
-    /**
-     * <p>Updates to the location that holds the data required to specify an Amazon
-     * Data Analytics application.</p>
-     */
     inline DeployAsApplicationConfigurationUpdate& WithS3ContentLocationUpdate(S3ContentBaseLocationUpdate&& value) { SetS3ContentLocationUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ContentBaseLocationUpdate m_s3ContentLocationUpdate;

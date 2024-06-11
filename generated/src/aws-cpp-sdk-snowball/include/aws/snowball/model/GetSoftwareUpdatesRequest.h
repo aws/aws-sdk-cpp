@@ -34,54 +34,20 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID for a job that you want to get the software update file for, for
      * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline GetSoftwareUpdatesRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline GetSoftwareUpdatesRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for a job that you want to get the software update file for, for
-     * example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
-     */
     inline GetSoftwareUpdatesRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

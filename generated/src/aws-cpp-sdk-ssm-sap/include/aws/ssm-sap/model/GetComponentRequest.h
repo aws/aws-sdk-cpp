@@ -32,87 +32,33 @@ namespace Model
     AWS_SSMSAP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetComponentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetComponentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the application.</p>
-     */
     inline GetComponentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the component.</p>
      */
     inline const Aws::String& GetComponentId() const{ return m_componentId; }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline GetComponentRequest& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline GetComponentRequest& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the component.</p>
-     */
     inline GetComponentRequest& WithComponentId(const char* value) { SetComponentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

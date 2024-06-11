@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetImageArn() const{ return m_imageArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetImageArn(Aws::String&& value) { m_imageArnHasBeenSet = true; m_imageArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline void SetImageArn(const char* value) { m_imageArnHasBeenSet = true; m_imageArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline GetImagePolicyRequest& WithImageArn(const Aws::String& value) { SetImageArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline GetImagePolicyRequest& WithImageArn(Aws::String&& value) { SetImageArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the image whose policy you want to
-     * retrieve.</p>
-     */
     inline GetImagePolicyRequest& WithImageArn(const char* value) { SetImageArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageArn;

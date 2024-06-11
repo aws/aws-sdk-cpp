@@ -34,63 +34,29 @@ namespace Model
     AWS_DLM_API GetLifecyclePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Summary information about the lifecycle policies.</p>
      */
     inline const Aws::Vector<LifecyclePolicySummary>& GetPolicies() const{ return m_policies; }
-
-    /**
-     * <p>Summary information about the lifecycle policies.</p>
-     */
     inline void SetPolicies(const Aws::Vector<LifecyclePolicySummary>& value) { m_policies = value; }
-
-    /**
-     * <p>Summary information about the lifecycle policies.</p>
-     */
     inline void SetPolicies(Aws::Vector<LifecyclePolicySummary>&& value) { m_policies = std::move(value); }
-
-    /**
-     * <p>Summary information about the lifecycle policies.</p>
-     */
     inline GetLifecyclePoliciesResult& WithPolicies(const Aws::Vector<LifecyclePolicySummary>& value) { SetPolicies(value); return *this;}
-
-    /**
-     * <p>Summary information about the lifecycle policies.</p>
-     */
     inline GetLifecyclePoliciesResult& WithPolicies(Aws::Vector<LifecyclePolicySummary>&& value) { SetPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>Summary information about the lifecycle policies.</p>
-     */
     inline GetLifecyclePoliciesResult& AddPolicies(const LifecyclePolicySummary& value) { m_policies.push_back(value); return *this; }
-
-    /**
-     * <p>Summary information about the lifecycle policies.</p>
-     */
     inline GetLifecyclePoliciesResult& AddPolicies(LifecyclePolicySummary&& value) { m_policies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLifecyclePoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLifecyclePoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLifecyclePoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LifecyclePolicySummary> m_policies;

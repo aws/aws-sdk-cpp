@@ -47,175 +47,61 @@ namespace Model
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration currently associated with the group and in effect.</p>
      */
     inline const Aws::Vector<GroupConfigurationItem>& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline void SetConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline void SetConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline GroupConfiguration& WithConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline GroupConfiguration& WithConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { SetConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline GroupConfiguration& AddConfiguration(const GroupConfigurationItem& value) { m_configurationHasBeenSet = true; m_configuration.push_back(value); return *this; }
-
-    /**
-     * <p>The configuration currently associated with the group and in effect.</p>
-     */
     inline GroupConfiguration& AddConfiguration(GroupConfigurationItem&& value) { m_configurationHasBeenSet = true; m_configuration.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If present, the new configuration that is in the process of being applied to
      * the group.</p>
      */
     inline const Aws::Vector<GroupConfigurationItem>& GetProposedConfiguration() const{ return m_proposedConfiguration; }
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline bool ProposedConfigurationHasBeenSet() const { return m_proposedConfigurationHasBeenSet; }
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline void SetProposedConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration = value; }
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline void SetProposedConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration = std::move(value); }
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline GroupConfiguration& WithProposedConfiguration(const Aws::Vector<GroupConfigurationItem>& value) { SetProposedConfiguration(value); return *this;}
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline GroupConfiguration& WithProposedConfiguration(Aws::Vector<GroupConfigurationItem>&& value) { SetProposedConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline GroupConfiguration& AddProposedConfiguration(const GroupConfigurationItem& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration.push_back(value); return *this; }
-
-    /**
-     * <p>If present, the new configuration that is in the process of being applied to
-     * the group.</p>
-     */
     inline GroupConfiguration& AddProposedConfiguration(GroupConfigurationItem&& value) { m_proposedConfigurationHasBeenSet = true; m_proposedConfiguration.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of an attempt to update the group configuration.</p>
      */
     inline const GroupConfigurationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of an attempt to update the group configuration.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of an attempt to update the group configuration.</p>
-     */
     inline void SetStatus(const GroupConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of an attempt to update the group configuration.</p>
-     */
     inline void SetStatus(GroupConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of an attempt to update the group configuration.</p>
-     */
     inline GroupConfiguration& WithStatus(const GroupConfigurationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of an attempt to update the group configuration.</p>
-     */
     inline GroupConfiguration& WithStatus(GroupConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If present, the reason why a request to update the group configuration
      * failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline GroupConfiguration& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline GroupConfiguration& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    /**
-     * <p>If present, the reason why a request to update the group configuration
-     * failed.</p>
-     */
     inline GroupConfiguration& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GroupConfigurationItem> m_configuration;

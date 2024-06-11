@@ -38,36 +38,17 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
      */
     inline const PublicDnsPropertiesMutableChange& GetDnsProperties() const{ return m_dnsProperties; }
-
-    /**
-     * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-     */
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-
-    /**
-     * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-     */
     inline void SetDnsProperties(const PublicDnsPropertiesMutableChange& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
-
-    /**
-     * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-     */
     inline void SetDnsProperties(PublicDnsPropertiesMutableChange&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
-
-    /**
-     * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-     */
     inline PublicDnsNamespacePropertiesChange& WithDnsProperties(const PublicDnsPropertiesMutableChange& value) { SetDnsProperties(value); return *this;}
-
-    /**
-     * <p>Updated DNS properties for the hosted zone for the public DNS namespace.</p>
-     */
     inline PublicDnsNamespacePropertiesChange& WithDnsProperties(PublicDnsPropertiesMutableChange&& value) { SetDnsProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PublicDnsPropertiesMutableChange m_dnsProperties;

@@ -32,46 +32,19 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Network instance ID.</p>
      */
     inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline bool NsInstanceIdHasBeenSet() const { return m_nsInstanceIdHasBeenSet; }
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = value; }
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::move(value); }
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline void SetNsInstanceId(const char* value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId.assign(value); }
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline DeleteSolNetworkInstanceRequest& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline DeleteSolNetworkInstanceRequest& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>Network instance ID.</p>
-     */
     inline DeleteSolNetworkInstanceRequest& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nsInstanceId;

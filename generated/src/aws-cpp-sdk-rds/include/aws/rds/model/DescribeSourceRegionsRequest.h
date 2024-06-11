@@ -41,63 +41,23 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The source Amazon Web Services Region name. For example,
      * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
      * valid Amazon Web Services Region name.</p> </li> </ul>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline DescribeSourceRegionsRequest& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline DescribeSourceRegionsRequest& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The source Amazon Web Services Region name. For example,
-     * <code>us-east-1</code>.</p> <p>Constraints:</p> <ul> <li> <p>Must specify a
-     * valid Amazon Web Services Region name.</p> </li> </ul>
-     */
     inline DescribeSourceRegionsRequest& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -105,32 +65,12 @@ namespace Model
      * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p>The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so you can retrieve the remaining
-     * results.</p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
     inline DescribeSourceRegionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional pagination token provided by a previous
      * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
@@ -138,104 +78,28 @@ namespace Model
      * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline DescribeSourceRegionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline DescribeSourceRegionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>An optional pagination token provided by a previous
-     * <code>DescribeSourceRegions</code> request. If this parameter is specified, the
-     * response includes only records beyond the marker, up to the value specified by
-     * <code>MaxRecords</code>.</p>
-     */
     inline DescribeSourceRegionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This parameter isn't currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeSourceRegionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeSourceRegionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeSourceRegionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>This parameter isn't currently supported.</p>
-     */
     inline DescribeSourceRegionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_regionName;

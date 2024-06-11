@@ -36,96 +36,36 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the Client VPN endpoint from which to disassociate the target
      * network.</p>
      */
     inline const Aws::String& GetClientVpnEndpointId() const{ return m_clientVpnEndpointId; }
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline void SetClientVpnEndpointId(Aws::String&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::move(value); }
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline void SetClientVpnEndpointId(const char* value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId.assign(value); }
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithClientVpnEndpointId(const Aws::String& value) { SetClientVpnEndpointId(value); return *this;}
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithClientVpnEndpointId(Aws::String&& value) { SetClientVpnEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Client VPN endpoint from which to disassociate the target
-     * network.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithClientVpnEndpointId(const char* value) { SetClientVpnEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the target network association.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the target network association.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -133,31 +73,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DisassociateClientVpnTargetNetworkRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientVpnEndpointId;

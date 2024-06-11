@@ -39,109 +39,36 @@ namespace Model
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
      * Name (ARN).</p>
      */
     inline const Aws::String& GetSNSTopic() const{ return m_sNSTopic; }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline bool SNSTopicHasBeenSet() const { return m_sNSTopicHasBeenSet; }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline void SetSNSTopic(const Aws::String& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = value; }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline void SetSNSTopic(Aws::String&& value) { m_sNSTopicHasBeenSet = true; m_sNSTopic = std::move(value); }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline void SetSNSTopic(const char* value) { m_sNSTopicHasBeenSet = true; m_sNSTopic.assign(value); }
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline VaultNotificationConfig& WithSNSTopic(const Aws::String& value) { SetSNSTopic(value); return *this;}
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline VaultNotificationConfig& WithSNSTopic(Aws::String&& value) { SetSNSTopic(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Simple Notification Service (Amazon SNS) topic Amazon Resource
-     * Name (ARN).</p>
-     */
     inline VaultNotificationConfig& WithSNSTopic(const char* value) { SetSNSTopic(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of one or more events for which Amazon S3 Glacier will send a
      * notification to the specified Amazon SNS topic.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline void SetEvents(const Aws::Vector<Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline void SetEvents(Aws::Vector<Aws::String>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline VaultNotificationConfig& WithEvents(const Aws::Vector<Aws::String>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline VaultNotificationConfig& WithEvents(Aws::Vector<Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline VaultNotificationConfig& AddEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline VaultNotificationConfig& AddEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of one or more events for which Amazon S3 Glacier will send a
-     * notification to the specified Amazon SNS topic.</p>
-     */
     inline VaultNotificationConfig& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_sNSTopic;

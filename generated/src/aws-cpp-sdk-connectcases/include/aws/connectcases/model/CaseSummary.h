@@ -37,87 +37,33 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier of the case.</p>
      */
     inline const Aws::String& GetCaseId() const{ return m_caseId; }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline CaseSummary& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline CaseSummary& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of the case.</p>
-     */
     inline CaseSummary& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier of a template.</p>
      */
     inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline bool TemplateIdHasBeenSet() const { return m_templateIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline void SetTemplateId(const Aws::String& value) { m_templateIdHasBeenSet = true; m_templateId = value; }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline void SetTemplateId(Aws::String&& value) { m_templateIdHasBeenSet = true; m_templateId = std::move(value); }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline void SetTemplateId(const char* value) { m_templateIdHasBeenSet = true; m_templateId.assign(value); }
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline CaseSummary& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline CaseSummary& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of a template.</p>
-     */
     inline CaseSummary& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_caseId;

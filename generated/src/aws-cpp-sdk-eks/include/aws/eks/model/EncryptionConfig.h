@@ -39,97 +39,34 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the resources to be encrypted. The only supported value is
      * <code>secrets</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline EncryptionConfig& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline EncryptionConfig& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline EncryptionConfig& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline EncryptionConfig& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies the resources to be encrypted. The only supported value is
-     * <code>secrets</code>.</p>
-     */
     inline EncryptionConfig& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
      * used.</p>
      */
     inline const Provider& GetProvider() const{ return m_provider; }
-
-    /**
-     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
-     * used.</p>
-     */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-
-    /**
-     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
-     * used.</p>
-     */
     inline void SetProvider(const Provider& value) { m_providerHasBeenSet = true; m_provider = value; }
-
-    /**
-     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
-     * used.</p>
-     */
     inline void SetProvider(Provider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-
-    /**
-     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
-     * used.</p>
-     */
     inline EncryptionConfig& WithProvider(const Provider& value) { SetProvider(value); return *this;}
-
-    /**
-     * <p>Key Management Service (KMS) key. Either the ARN or the alias can be
-     * used.</p>
-     */
     inline EncryptionConfig& WithProvider(Provider&& value) { SetProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resources;

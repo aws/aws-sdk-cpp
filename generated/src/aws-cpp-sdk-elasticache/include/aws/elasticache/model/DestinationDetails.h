@@ -41,67 +41,29 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The configuration details of the CloudWatch Logs destination.</p>
      */
     inline const CloudWatchLogsDestinationDetails& GetCloudWatchLogsDetails() const{ return m_cloudWatchLogsDetails; }
-
-    /**
-     * <p>The configuration details of the CloudWatch Logs destination.</p>
-     */
     inline bool CloudWatchLogsDetailsHasBeenSet() const { return m_cloudWatchLogsDetailsHasBeenSet; }
-
-    /**
-     * <p>The configuration details of the CloudWatch Logs destination.</p>
-     */
     inline void SetCloudWatchLogsDetails(const CloudWatchLogsDestinationDetails& value) { m_cloudWatchLogsDetailsHasBeenSet = true; m_cloudWatchLogsDetails = value; }
-
-    /**
-     * <p>The configuration details of the CloudWatch Logs destination.</p>
-     */
     inline void SetCloudWatchLogsDetails(CloudWatchLogsDestinationDetails&& value) { m_cloudWatchLogsDetailsHasBeenSet = true; m_cloudWatchLogsDetails = std::move(value); }
-
-    /**
-     * <p>The configuration details of the CloudWatch Logs destination.</p>
-     */
     inline DestinationDetails& WithCloudWatchLogsDetails(const CloudWatchLogsDestinationDetails& value) { SetCloudWatchLogsDetails(value); return *this;}
-
-    /**
-     * <p>The configuration details of the CloudWatch Logs destination.</p>
-     */
     inline DestinationDetails& WithCloudWatchLogsDetails(CloudWatchLogsDestinationDetails&& value) { SetCloudWatchLogsDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration details of the Kinesis Data Firehose destination.</p>
      */
     inline const KinesisFirehoseDestinationDetails& GetKinesisFirehoseDetails() const{ return m_kinesisFirehoseDetails; }
-
-    /**
-     * <p>The configuration details of the Kinesis Data Firehose destination.</p>
-     */
     inline bool KinesisFirehoseDetailsHasBeenSet() const { return m_kinesisFirehoseDetailsHasBeenSet; }
-
-    /**
-     * <p>The configuration details of the Kinesis Data Firehose destination.</p>
-     */
     inline void SetKinesisFirehoseDetails(const KinesisFirehoseDestinationDetails& value) { m_kinesisFirehoseDetailsHasBeenSet = true; m_kinesisFirehoseDetails = value; }
-
-    /**
-     * <p>The configuration details of the Kinesis Data Firehose destination.</p>
-     */
     inline void SetKinesisFirehoseDetails(KinesisFirehoseDestinationDetails&& value) { m_kinesisFirehoseDetailsHasBeenSet = true; m_kinesisFirehoseDetails = std::move(value); }
-
-    /**
-     * <p>The configuration details of the Kinesis Data Firehose destination.</p>
-     */
     inline DestinationDetails& WithKinesisFirehoseDetails(const KinesisFirehoseDestinationDetails& value) { SetKinesisFirehoseDetails(value); return *this;}
-
-    /**
-     * <p>The configuration details of the Kinesis Data Firehose destination.</p>
-     */
     inline DestinationDetails& WithKinesisFirehoseDetails(KinesisFirehoseDestinationDetails&& value) { SetKinesisFirehoseDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogsDestinationDetails m_cloudWatchLogsDetails;

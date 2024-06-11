@@ -43,6 +43,7 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
      * information, see <a
@@ -50,140 +51,48 @@ namespace Model
      * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
      */
     inline const EbsOptimizedSupport& GetEbsOptimizedSupport() const{ return m_ebsOptimizedSupport; }
-
-    /**
-     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-     */
     inline bool EbsOptimizedSupportHasBeenSet() const { return m_ebsOptimizedSupportHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-     */
     inline void SetEbsOptimizedSupport(const EbsOptimizedSupport& value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = value; }
-
-    /**
-     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-     */
     inline void SetEbsOptimizedSupport(EbsOptimizedSupport&& value) { m_ebsOptimizedSupportHasBeenSet = true; m_ebsOptimizedSupport = std::move(value); }
-
-    /**
-     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-     */
     inline EbsInfo& WithEbsOptimizedSupport(const EbsOptimizedSupport& value) { SetEbsOptimizedSupport(value); return *this;}
-
-    /**
-     * <p>Indicates whether the instance type is Amazon EBS-optimized. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSOptimized.html">Amazon
-     * EBS-optimized instances</a> in <i>Amazon EC2 User Guide</i>.</p>
-     */
     inline EbsInfo& WithEbsOptimizedSupport(EbsOptimizedSupport&& value) { SetEbsOptimizedSupport(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether Amazon EBS encryption is supported.</p>
      */
     inline const EbsEncryptionSupport& GetEncryptionSupport() const{ return m_encryptionSupport; }
-
-    /**
-     * <p>Indicates whether Amazon EBS encryption is supported.</p>
-     */
     inline bool EncryptionSupportHasBeenSet() const { return m_encryptionSupportHasBeenSet; }
-
-    /**
-     * <p>Indicates whether Amazon EBS encryption is supported.</p>
-     */
     inline void SetEncryptionSupport(const EbsEncryptionSupport& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = value; }
-
-    /**
-     * <p>Indicates whether Amazon EBS encryption is supported.</p>
-     */
     inline void SetEncryptionSupport(EbsEncryptionSupport&& value) { m_encryptionSupportHasBeenSet = true; m_encryptionSupport = std::move(value); }
-
-    /**
-     * <p>Indicates whether Amazon EBS encryption is supported.</p>
-     */
     inline EbsInfo& WithEncryptionSupport(const EbsEncryptionSupport& value) { SetEncryptionSupport(value); return *this;}
-
-    /**
-     * <p>Indicates whether Amazon EBS encryption is supported.</p>
-     */
     inline EbsInfo& WithEncryptionSupport(EbsEncryptionSupport&& value) { SetEncryptionSupport(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the optimized EBS performance for the instance type.</p>
      */
     inline const EbsOptimizedInfo& GetEbsOptimizedInfo() const{ return m_ebsOptimizedInfo; }
-
-    /**
-     * <p>Describes the optimized EBS performance for the instance type.</p>
-     */
     inline bool EbsOptimizedInfoHasBeenSet() const { return m_ebsOptimizedInfoHasBeenSet; }
-
-    /**
-     * <p>Describes the optimized EBS performance for the instance type.</p>
-     */
     inline void SetEbsOptimizedInfo(const EbsOptimizedInfo& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = value; }
-
-    /**
-     * <p>Describes the optimized EBS performance for the instance type.</p>
-     */
     inline void SetEbsOptimizedInfo(EbsOptimizedInfo&& value) { m_ebsOptimizedInfoHasBeenSet = true; m_ebsOptimizedInfo = std::move(value); }
-
-    /**
-     * <p>Describes the optimized EBS performance for the instance type.</p>
-     */
     inline EbsInfo& WithEbsOptimizedInfo(const EbsOptimizedInfo& value) { SetEbsOptimizedInfo(value); return *this;}
-
-    /**
-     * <p>Describes the optimized EBS performance for the instance type.</p>
-     */
     inline EbsInfo& WithEbsOptimizedInfo(EbsOptimizedInfo&& value) { SetEbsOptimizedInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
      */
     inline const EbsNvmeSupport& GetNvmeSupport() const{ return m_nvmeSupport; }
-
-    /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-     */
     inline bool NvmeSupportHasBeenSet() const { return m_nvmeSupportHasBeenSet; }
-
-    /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-     */
     inline void SetNvmeSupport(const EbsNvmeSupport& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = value; }
-
-    /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-     */
     inline void SetNvmeSupport(EbsNvmeSupport&& value) { m_nvmeSupportHasBeenSet = true; m_nvmeSupport = std::move(value); }
-
-    /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-     */
     inline EbsInfo& WithNvmeSupport(const EbsNvmeSupport& value) { SetNvmeSupport(value); return *this;}
-
-    /**
-     * <p>Indicates whether non-volatile memory express (NVMe) is supported.</p>
-     */
     inline EbsInfo& WithNvmeSupport(EbsNvmeSupport&& value) { SetNvmeSupport(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EbsOptimizedSupport m_ebsOptimizedSupport;

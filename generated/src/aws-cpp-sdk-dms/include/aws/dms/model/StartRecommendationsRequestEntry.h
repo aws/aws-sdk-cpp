@@ -40,77 +40,31 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the source database.</p>
      */
     inline const Aws::String& GetDatabaseId() const{ return m_databaseId; }
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline bool DatabaseIdHasBeenSet() const { return m_databaseIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline void SetDatabaseId(const Aws::String& value) { m_databaseIdHasBeenSet = true; m_databaseId = value; }
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline void SetDatabaseId(Aws::String&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::move(value); }
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline void SetDatabaseId(const char* value) { m_databaseIdHasBeenSet = true; m_databaseId.assign(value); }
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline StartRecommendationsRequestEntry& WithDatabaseId(const Aws::String& value) { SetDatabaseId(value); return *this;}
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline StartRecommendationsRequestEntry& WithDatabaseId(Aws::String&& value) { SetDatabaseId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the source database.</p>
-     */
     inline StartRecommendationsRequestEntry& WithDatabaseId(const char* value) { SetDatabaseId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The required target engine settings.</p>
      */
     inline const RecommendationSettings& GetSettings() const{ return m_settings; }
-
-    /**
-     * <p>The required target engine settings.</p>
-     */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-
-    /**
-     * <p>The required target engine settings.</p>
-     */
     inline void SetSettings(const RecommendationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-
-    /**
-     * <p>The required target engine settings.</p>
-     */
     inline void SetSettings(RecommendationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-
-    /**
-     * <p>The required target engine settings.</p>
-     */
     inline StartRecommendationsRequestEntry& WithSettings(const RecommendationSettings& value) { SetSettings(value); return *this;}
-
-    /**
-     * <p>The required target engine settings.</p>
-     */
     inline StartRecommendationsRequestEntry& WithSettings(RecommendationSettings&& value) { SetSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_databaseId;

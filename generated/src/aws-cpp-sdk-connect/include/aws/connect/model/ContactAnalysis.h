@@ -38,42 +38,18 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
      * Lens.</p>
      */
     inline const Transcript& GetTranscript() const{ return m_transcript; }
-
-    /**
-     * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
-     * Lens.</p>
-     */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-
-    /**
-     * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
-     * Lens.</p>
-     */
     inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-
-    /**
-     * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
-     * Lens.</p>
-     */
     inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-
-    /**
-     * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
-     * Lens.</p>
-     */
     inline ContactAnalysis& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
-
-    /**
-     * <p>Search criteria based on transcript analyzed by Amazon Connect Contact
-     * Lens.</p>
-     */
     inline ContactAnalysis& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Transcript m_transcript;

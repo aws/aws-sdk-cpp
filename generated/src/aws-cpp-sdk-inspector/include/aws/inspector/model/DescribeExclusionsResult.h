@@ -35,150 +35,51 @@ namespace Model
     AWS_INSPECTOR_API DescribeExclusionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the exclusions.</p>
      */
     inline const Aws::Map<Aws::String, Exclusion>& GetExclusions() const{ return m_exclusions; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline void SetExclusions(const Aws::Map<Aws::String, Exclusion>& value) { m_exclusions = value; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline void SetExclusions(Aws::Map<Aws::String, Exclusion>&& value) { m_exclusions = std::move(value); }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& WithExclusions(const Aws::Map<Aws::String, Exclusion>& value) { SetExclusions(value); return *this;}
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& WithExclusions(Aws::Map<Aws::String, Exclusion>&& value) { SetExclusions(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& AddExclusions(const Aws::String& key, const Exclusion& value) { m_exclusions.emplace(key, value); return *this; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& AddExclusions(Aws::String&& key, const Exclusion& value) { m_exclusions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& AddExclusions(const Aws::String& key, Exclusion&& value) { m_exclusions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& AddExclusions(Aws::String&& key, Exclusion&& value) { m_exclusions.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& AddExclusions(const char* key, Exclusion&& value) { m_exclusions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the exclusions.</p>
-     */
     inline DescribeExclusionsResult& AddExclusions(const char* key, const Exclusion& value) { m_exclusions.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Exclusion details that cannot be described. An error code is provided for
      * each failed item.</p>
      */
     inline const Aws::Map<Aws::String, FailedItemDetails>& GetFailedItems() const{ return m_failedItems; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline void SetFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { m_failedItems = value; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline void SetFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { m_failedItems = std::move(value); }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& WithFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { SetFailedItems(value); return *this;}
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& WithFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { SetFailedItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& AddFailedItems(const Aws::String& key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& AddFailedItems(Aws::String&& key, const FailedItemDetails& value) { m_failedItems.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& AddFailedItems(const Aws::String& key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& AddFailedItems(Aws::String&& key, FailedItemDetails&& value) { m_failedItems.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& AddFailedItems(const char* key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Exclusion details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeExclusionsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeExclusionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeExclusionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeExclusionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Exclusion> m_exclusions;

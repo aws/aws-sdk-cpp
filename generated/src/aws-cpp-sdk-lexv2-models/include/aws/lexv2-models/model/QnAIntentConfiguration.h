@@ -39,61 +39,28 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains details about the configuration of the data source used for the
      * <code>AMAZON.QnAIntent</code>.</p>
      */
     inline const DataSourceConfiguration& GetDataSourceConfiguration() const{ return m_dataSourceConfiguration; }
-
-    /**
-     * <p>Contains details about the configuration of the data source used for the
-     * <code>AMAZON.QnAIntent</code>.</p>
-     */
     inline bool DataSourceConfigurationHasBeenSet() const { return m_dataSourceConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains details about the configuration of the data source used for the
-     * <code>AMAZON.QnAIntent</code>.</p>
-     */
     inline void SetDataSourceConfiguration(const DataSourceConfiguration& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = value; }
-
-    /**
-     * <p>Contains details about the configuration of the data source used for the
-     * <code>AMAZON.QnAIntent</code>.</p>
-     */
     inline void SetDataSourceConfiguration(DataSourceConfiguration&& value) { m_dataSourceConfigurationHasBeenSet = true; m_dataSourceConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains details about the configuration of the data source used for the
-     * <code>AMAZON.QnAIntent</code>.</p>
-     */
     inline QnAIntentConfiguration& WithDataSourceConfiguration(const DataSourceConfiguration& value) { SetDataSourceConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains details about the configuration of the data source used for the
-     * <code>AMAZON.QnAIntent</code>.</p>
-     */
     inline QnAIntentConfiguration& WithDataSourceConfiguration(DataSourceConfiguration&& value) { SetDataSourceConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BedrockModelSpecification& GetBedrockModelConfiguration() const{ return m_bedrockModelConfiguration; }
-
-    
     inline bool BedrockModelConfigurationHasBeenSet() const { return m_bedrockModelConfigurationHasBeenSet; }
-
-    
     inline void SetBedrockModelConfiguration(const BedrockModelSpecification& value) { m_bedrockModelConfigurationHasBeenSet = true; m_bedrockModelConfiguration = value; }
-
-    
     inline void SetBedrockModelConfiguration(BedrockModelSpecification&& value) { m_bedrockModelConfigurationHasBeenSet = true; m_bedrockModelConfiguration = std::move(value); }
-
-    
     inline QnAIntentConfiguration& WithBedrockModelConfiguration(const BedrockModelSpecification& value) { SetBedrockModelConfiguration(value); return *this;}
-
-    
     inline QnAIntentConfiguration& WithBedrockModelConfiguration(BedrockModelSpecification&& value) { SetBedrockModelConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSourceConfiguration m_dataSourceConfiguration;

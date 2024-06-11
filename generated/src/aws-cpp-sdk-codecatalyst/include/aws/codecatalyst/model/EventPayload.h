@@ -38,87 +38,33 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of content in the event payload.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline EventPayload& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline EventPayload& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of content in the event payload.</p>
-     */
     inline EventPayload& WithContentType(const char* value) { SetContentType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data included in the event payload.</p>
      */
     inline const Aws::String& GetData() const{ return m_data; }
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline EventPayload& WithData(const Aws::String& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline EventPayload& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-
-    /**
-     * <p>The data included in the event payload.</p>
-     */
     inline EventPayload& WithData(const char* value) { SetData(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contentType;

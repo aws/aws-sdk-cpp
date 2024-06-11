@@ -33,53 +33,27 @@ namespace Model
     AWS_OPSWORKSCM_API CreateServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The server that is created by the request. </p>
      */
     inline const Server& GetServer() const{ return m_server; }
-
-    /**
-     * <p>The server that is created by the request. </p>
-     */
     inline void SetServer(const Server& value) { m_server = value; }
-
-    /**
-     * <p>The server that is created by the request. </p>
-     */
     inline void SetServer(Server&& value) { m_server = std::move(value); }
-
-    /**
-     * <p>The server that is created by the request. </p>
-     */
     inline CreateServerResult& WithServer(const Server& value) { SetServer(value); return *this;}
-
-    /**
-     * <p>The server that is created by the request. </p>
-     */
     inline CreateServerResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateServerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateServerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateServerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Server m_server;

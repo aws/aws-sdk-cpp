@@ -40,128 +40,47 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field identifier.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline Field& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline Field& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The field identifier.</p>
-     */
     inline Field& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field value, expressed as a String.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline Field& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline Field& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The field value, expressed as a String.</p>
-     */
     inline Field& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field value, expressed as the identifier of another object.</p>
      */
     inline const Aws::String& GetRefValue() const{ return m_refValue; }
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline bool RefValueHasBeenSet() const { return m_refValueHasBeenSet; }
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline void SetRefValue(const Aws::String& value) { m_refValueHasBeenSet = true; m_refValue = value; }
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline void SetRefValue(Aws::String&& value) { m_refValueHasBeenSet = true; m_refValue = std::move(value); }
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline void SetRefValue(const char* value) { m_refValueHasBeenSet = true; m_refValue.assign(value); }
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline Field& WithRefValue(const Aws::String& value) { SetRefValue(value); return *this;}
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline Field& WithRefValue(Aws::String&& value) { SetRefValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The field value, expressed as the identifier of another object.</p>
-     */
     inline Field& WithRefValue(const char* value) { SetRefValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

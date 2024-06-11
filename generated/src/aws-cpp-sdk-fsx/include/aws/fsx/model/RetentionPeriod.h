@@ -41,6 +41,7 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the type of time for the retention period of an FSx for ONTAP
      * SnapLock volume. Set it to one of the valid types. If you set it to
@@ -49,53 +50,14 @@ namespace Model
      * retention period. </p>
      */
     inline const RetentionPeriodType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Defines the type of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. Set it to one of the valid types. If you set it to
-     * <code>INFINITE</code>, the files are retained forever. If you set it to
-     * <code>UNSPECIFIED</code>, the files are retained until you set an explicit
-     * retention period. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Defines the type of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. Set it to one of the valid types. If you set it to
-     * <code>INFINITE</code>, the files are retained forever. If you set it to
-     * <code>UNSPECIFIED</code>, the files are retained until you set an explicit
-     * retention period. </p>
-     */
     inline void SetType(const RetentionPeriodType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Defines the type of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. Set it to one of the valid types. If you set it to
-     * <code>INFINITE</code>, the files are retained forever. If you set it to
-     * <code>UNSPECIFIED</code>, the files are retained until you set an explicit
-     * retention period. </p>
-     */
     inline void SetType(RetentionPeriodType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Defines the type of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. Set it to one of the valid types. If you set it to
-     * <code>INFINITE</code>, the files are retained forever. If you set it to
-     * <code>UNSPECIFIED</code>, the files are retained until you set an explicit
-     * retention period. </p>
-     */
     inline RetentionPeriod& WithType(const RetentionPeriodType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Defines the type of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. Set it to one of the valid types. If you set it to
-     * <code>INFINITE</code>, the files are retained forever. If you set it to
-     * <code>UNSPECIFIED</code>, the files are retained until you set an explicit
-     * retention period. </p>
-     */
     inline RetentionPeriod& WithType(RetentionPeriodType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the amount of time for the retention period of an FSx for ONTAP
      * SnapLock volume. You can't set a value for <code>INFINITE</code> or
@@ -107,43 +69,10 @@ namespace Model
      * </li> </ul>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>Defines the amount of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. You can't set a value for <code>INFINITE</code> or
-     * <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:
-     * </p> <ul> <li> <p> <code>Seconds</code>: 0 - 65,535</p> </li> <li> <p>
-     * <code>Minutes</code>: 0 - 65,535</p> </li> <li> <p> <code>Hours</code>: 0 -
-     * 24</p> </li> <li> <p> <code>Days</code>: 0 - 365</p> </li> <li> <p>
-     * <code>Months</code>: 0 - 12</p> </li> <li> <p> <code>Years</code>: 0 - 100</p>
-     * </li> </ul>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Defines the amount of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. You can't set a value for <code>INFINITE</code> or
-     * <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:
-     * </p> <ul> <li> <p> <code>Seconds</code>: 0 - 65,535</p> </li> <li> <p>
-     * <code>Minutes</code>: 0 - 65,535</p> </li> <li> <p> <code>Hours</code>: 0 -
-     * 24</p> </li> <li> <p> <code>Days</code>: 0 - 365</p> </li> <li> <p>
-     * <code>Months</code>: 0 - 12</p> </li> <li> <p> <code>Years</code>: 0 - 100</p>
-     * </li> </ul>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Defines the amount of time for the retention period of an FSx for ONTAP
-     * SnapLock volume. You can't set a value for <code>INFINITE</code> or
-     * <code>UNSPECIFIED</code>. For all other options, the following ranges are valid:
-     * </p> <ul> <li> <p> <code>Seconds</code>: 0 - 65,535</p> </li> <li> <p>
-     * <code>Minutes</code>: 0 - 65,535</p> </li> <li> <p> <code>Hours</code>: 0 -
-     * 24</p> </li> <li> <p> <code>Days</code>: 0 - 365</p> </li> <li> <p>
-     * <code>Months</code>: 0 - 12</p> </li> <li> <p> <code>Years</code>: 0 - 100</p>
-     * </li> </ul>
-     */
     inline RetentionPeriod& WithValue(int value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     RetentionPeriodType m_type;

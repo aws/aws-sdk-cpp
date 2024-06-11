@@ -32,106 +32,43 @@ namespace Model
     AWS_EFS_API DescribeFileSystemPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
      * applies.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
-     * applies.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemId = value; }
-
-    /**
-     * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
-     * applies.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
-     * applies.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemId.assign(value); }
-
-    /**
-     * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
-     * applies.</p>
-     */
     inline DescribeFileSystemPolicyResult& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
-     * applies.</p>
-     */
     inline DescribeFileSystemPolicyResult& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the EFS file system to which the <code>FileSystemPolicy</code>
-     * applies.</p>
-     */
     inline DescribeFileSystemPolicyResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-
-    /**
-     * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
-
-    /**
-     * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-     */
     inline DescribeFileSystemPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-     */
     inline DescribeFileSystemPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON formatted <code>FileSystemPolicy</code> for the EFS file system.</p>
-     */
     inline DescribeFileSystemPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeFileSystemPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeFileSystemPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeFileSystemPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

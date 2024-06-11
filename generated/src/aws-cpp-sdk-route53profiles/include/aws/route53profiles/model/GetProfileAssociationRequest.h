@@ -32,46 +32,19 @@ namespace Model
     AWS_ROUTE53PROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The identifier of the association you want to get information about. </p>
      */
     inline const Aws::String& GetProfileAssociationId() const{ return m_profileAssociationId; }
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline bool ProfileAssociationIdHasBeenSet() const { return m_profileAssociationIdHasBeenSet; }
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline void SetProfileAssociationId(const Aws::String& value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId = value; }
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline void SetProfileAssociationId(Aws::String&& value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId = std::move(value); }
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline void SetProfileAssociationId(const char* value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId.assign(value); }
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline GetProfileAssociationRequest& WithProfileAssociationId(const Aws::String& value) { SetProfileAssociationId(value); return *this;}
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline GetProfileAssociationRequest& WithProfileAssociationId(Aws::String&& value) { SetProfileAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier of the association you want to get information about. </p>
-     */
     inline GetProfileAssociationRequest& WithProfileAssociationId(const char* value) { SetProfileAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileAssociationId;

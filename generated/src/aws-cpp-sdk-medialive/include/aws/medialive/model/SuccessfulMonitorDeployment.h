@@ -39,65 +39,29 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * URI associated with a signal map's monitor deployment.
      */
     inline const Aws::String& GetDetailsUri() const{ return m_detailsUri; }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline bool DetailsUriHasBeenSet() const { return m_detailsUriHasBeenSet; }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline void SetDetailsUri(const Aws::String& value) { m_detailsUriHasBeenSet = true; m_detailsUri = value; }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline void SetDetailsUri(Aws::String&& value) { m_detailsUriHasBeenSet = true; m_detailsUri = std::move(value); }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline void SetDetailsUri(const char* value) { m_detailsUriHasBeenSet = true; m_detailsUri.assign(value); }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline SuccessfulMonitorDeployment& WithDetailsUri(const Aws::String& value) { SetDetailsUri(value); return *this;}
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline SuccessfulMonitorDeployment& WithDetailsUri(Aws::String&& value) { SetDetailsUri(std::move(value)); return *this;}
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline SuccessfulMonitorDeployment& WithDetailsUri(const char* value) { SetDetailsUri(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SignalMapMonitorDeploymentStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const SignalMapMonitorDeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(SignalMapMonitorDeploymentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline SuccessfulMonitorDeployment& WithStatus(const SignalMapMonitorDeploymentStatus& value) { SetStatus(value); return *this;}
-
-    
     inline SuccessfulMonitorDeployment& WithStatus(SignalMapMonitorDeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detailsUri;

@@ -45,57 +45,27 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The numeric value for the validity period.</p>
      */
     inline long long GetPeriod() const{ return m_period; }
-
-    /**
-     * <p>The numeric value for the validity period.</p>
-     */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-
-    /**
-     * <p>The numeric value for the validity period.</p>
-     */
     inline void SetPeriod(long long value) { m_periodHasBeenSet = true; m_period = value; }
-
-    /**
-     * <p>The numeric value for the validity period.</p>
-     */
     inline ValidityPeriod& WithPeriod(long long value) { SetPeriod(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
      */
     inline const ValidityPeriodType& GetPeriodType() const{ return m_periodType; }
-
-    /**
-     * <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-     */
     inline bool PeriodTypeHasBeenSet() const { return m_periodTypeHasBeenSet; }
-
-    /**
-     * <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-     */
     inline void SetPeriodType(const ValidityPeriodType& value) { m_periodTypeHasBeenSet = true; m_periodType = value; }
-
-    /**
-     * <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-     */
     inline void SetPeriodType(ValidityPeriodType&& value) { m_periodTypeHasBeenSet = true; m_periodType = std::move(value); }
-
-    /**
-     * <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-     */
     inline ValidityPeriod& WithPeriodType(const ValidityPeriodType& value) { SetPeriodType(value); return *this;}
-
-    /**
-     * <p>The unit of time. You can select hours, days, weeks, months, and years.</p>
-     */
     inline ValidityPeriod& WithPeriodType(ValidityPeriodType&& value) { SetPeriodType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_period;

@@ -35,51 +35,20 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN that specifies the resource group that you want to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceGroupArns() const{ return m_resourceGroupArns; }
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline bool ResourceGroupArnsHasBeenSet() const { return m_resourceGroupArnsHasBeenSet; }
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline void SetResourceGroupArns(const Aws::Vector<Aws::String>& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns = value; }
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline void SetResourceGroupArns(Aws::Vector<Aws::String>&& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns = std::move(value); }
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline DescribeResourceGroupsRequest& WithResourceGroupArns(const Aws::Vector<Aws::String>& value) { SetResourceGroupArns(value); return *this;}
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline DescribeResourceGroupsRequest& WithResourceGroupArns(Aws::Vector<Aws::String>&& value) { SetResourceGroupArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline DescribeResourceGroupsRequest& AddResourceGroupArns(const Aws::String& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline DescribeResourceGroupsRequest& AddResourceGroupArns(Aws::String&& value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARN that specifies the resource group that you want to describe.</p>
-     */
     inline DescribeResourceGroupsRequest& AddResourceGroupArns(const char* value) { m_resourceGroupArnsHasBeenSet = true; m_resourceGroupArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceGroupArns;

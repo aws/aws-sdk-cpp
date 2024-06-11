@@ -39,42 +39,18 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the Amazon S3 location where the source code files provided
      * with the project request are stored. </p>
      */
     inline const S3Location& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>Information about the Amazon S3 location where the source code files provided
-     * with the project request are stored. </p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>Information about the Amazon S3 location where the source code files provided
-     * with the project request are stored. </p>
-     */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>Information about the Amazon S3 location where the source code files provided
-     * with the project request are stored. </p>
-     */
     inline void SetS3(S3Location&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>Information about the Amazon S3 location where the source code files provided
-     * with the project request are stored. </p>
-     */
     inline CodeSource& WithS3(const S3Location& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>Information about the Amazon S3 location where the source code files provided
-     * with the project request are stored. </p>
-     */
     inline CodeSource& WithS3(S3Location&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_s3;

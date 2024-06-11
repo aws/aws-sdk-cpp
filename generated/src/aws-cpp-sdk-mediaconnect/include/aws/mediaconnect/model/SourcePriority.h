@@ -38,46 +38,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The name of the source you choose as the primary source for this flow.
      */
     inline const Aws::String& GetPrimarySource() const{ return m_primarySource; }
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline bool PrimarySourceHasBeenSet() const { return m_primarySourceHasBeenSet; }
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline void SetPrimarySource(const Aws::String& value) { m_primarySourceHasBeenSet = true; m_primarySource = value; }
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline void SetPrimarySource(Aws::String&& value) { m_primarySourceHasBeenSet = true; m_primarySource = std::move(value); }
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline void SetPrimarySource(const char* value) { m_primarySourceHasBeenSet = true; m_primarySource.assign(value); }
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline SourcePriority& WithPrimarySource(const Aws::String& value) { SetPrimarySource(value); return *this;}
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline SourcePriority& WithPrimarySource(Aws::String&& value) { SetPrimarySource(std::move(value)); return *this;}
-
-    /**
-     * The name of the source you choose as the primary source for this flow.
-     */
     inline SourcePriority& WithPrimarySource(const char* value) { SetPrimarySource(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_primarySource;

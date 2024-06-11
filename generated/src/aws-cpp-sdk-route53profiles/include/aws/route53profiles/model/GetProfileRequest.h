@@ -32,46 +32,19 @@ namespace Model
     AWS_ROUTE53PROFILES_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> ID of the Profile. </p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline GetProfileRequest& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline GetProfileRequest& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p> ID of the Profile. </p>
-     */
     inline GetProfileRequest& WithProfileId(const char* value) { SetProfileId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileId;

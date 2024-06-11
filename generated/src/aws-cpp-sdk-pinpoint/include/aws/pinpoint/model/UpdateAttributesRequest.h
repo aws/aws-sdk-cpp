@@ -39,6 +39,7 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of the attributes to remove from all the endpoints that are
      * associated with the application. The array can specify the complete, exact name
@@ -46,71 +47,15 @@ namespace Model
      * name must match in order for the attribute to be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBlacklist() const{ return m_blacklist; }
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline bool BlacklistHasBeenSet() const { return m_blacklistHasBeenSet; }
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline void SetBlacklist(const Aws::Vector<Aws::String>& value) { m_blacklistHasBeenSet = true; m_blacklist = value; }
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline void SetBlacklist(Aws::Vector<Aws::String>&& value) { m_blacklistHasBeenSet = true; m_blacklist = std::move(value); }
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline UpdateAttributesRequest& WithBlacklist(const Aws::Vector<Aws::String>& value) { SetBlacklist(value); return *this;}
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline UpdateAttributesRequest& WithBlacklist(Aws::Vector<Aws::String>&& value) { SetBlacklist(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline UpdateAttributesRequest& AddBlacklist(const Aws::String& value) { m_blacklistHasBeenSet = true; m_blacklist.push_back(value); return *this; }
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline UpdateAttributesRequest& AddBlacklist(Aws::String&& value) { m_blacklistHasBeenSet = true; m_blacklist.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of the attributes to remove from all the endpoints that are
-     * associated with the application. The array can specify the complete, exact name
-     * of each attribute to remove or it can specify a glob pattern that an attribute
-     * name must match in order for the attribute to be removed.</p>
-     */
     inline UpdateAttributesRequest& AddBlacklist(const char* value) { m_blacklistHasBeenSet = true; m_blacklist.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_blacklist;

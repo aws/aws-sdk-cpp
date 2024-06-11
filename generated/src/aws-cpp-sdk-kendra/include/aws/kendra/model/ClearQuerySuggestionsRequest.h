@@ -34,46 +34,19 @@ namespace Model
     AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the index you want to clear query suggestions from.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline ClearQuerySuggestionsRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline ClearQuerySuggestionsRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index you want to clear query suggestions from.</p>
-     */
     inline ClearQuerySuggestionsRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexId;

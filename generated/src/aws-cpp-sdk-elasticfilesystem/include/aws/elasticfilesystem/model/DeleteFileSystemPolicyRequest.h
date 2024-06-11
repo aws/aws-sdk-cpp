@@ -32,54 +32,20 @@ namespace Model
     AWS_EFS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the EFS file system for which to delete the
      * <code>FileSystemPolicy</code>.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline DeleteFileSystemPolicyRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline DeleteFileSystemPolicyRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the EFS file system for which to delete the
-     * <code>FileSystemPolicy</code>.</p>
-     */
     inline DeleteFileSystemPolicyRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

@@ -37,103 +37,35 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A short string that's appended to the endpoint URL. The manifest name creates
      * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
      * the default manifest name, index. </p>
      */
     inline const Aws::String& GetManifestName() const{ return m_manifestName; }
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline ListDashManifestConfiguration& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline ListDashManifestConfiguration& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-
-    /**
-     * <p>A short string that's appended to the endpoint URL. The manifest name creates
-     * a unique path to this endpoint. If you don't enter a value, MediaPackage uses
-     * the default manifest name, index. </p>
-     */
     inline ListDashManifestConfiguration& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The egress domain URL for stream delivery from MediaPackage.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline ListDashManifestConfiguration& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline ListDashManifestConfiguration& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The egress domain URL for stream delivery from MediaPackage.</p>
-     */
     inline ListDashManifestConfiguration& WithUrl(const char* value) { SetUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_manifestName;

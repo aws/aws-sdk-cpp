@@ -32,54 +32,20 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (arn) of the world template you want to
      * describe.</p>
      */
     inline const Aws::String& GetTemplate() const{ return m_template; }
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline void SetTemplate(const Aws::String& value) { m_templateHasBeenSet = true; m_template = value; }
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline void SetTemplate(Aws::String&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline void SetTemplate(const char* value) { m_templateHasBeenSet = true; m_template.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline DescribeWorldTemplateRequest& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline DescribeWorldTemplateRequest& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (arn) of the world template you want to
-     * describe.</p>
-     */
     inline DescribeWorldTemplateRequest& WithTemplate(const char* value) { SetTemplate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_template;

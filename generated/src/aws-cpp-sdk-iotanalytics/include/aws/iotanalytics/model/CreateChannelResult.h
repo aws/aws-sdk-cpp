@@ -33,125 +33,53 @@ namespace Model
     AWS_IOTANALYTICS_API CreateChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the channel.</p>
      */
     inline const Aws::String& GetChannelName() const{ return m_channelName; }
-
-    /**
-     * <p>The name of the channel.</p>
-     */
     inline void SetChannelName(const Aws::String& value) { m_channelName = value; }
-
-    /**
-     * <p>The name of the channel.</p>
-     */
     inline void SetChannelName(Aws::String&& value) { m_channelName = std::move(value); }
-
-    /**
-     * <p>The name of the channel.</p>
-     */
     inline void SetChannelName(const char* value) { m_channelName.assign(value); }
-
-    /**
-     * <p>The name of the channel.</p>
-     */
     inline CreateChannelResult& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-
-    /**
-     * <p>The name of the channel.</p>
-     */
     inline CreateChannelResult& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the channel.</p>
-     */
     inline CreateChannelResult& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the channel.</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArn = value; }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArn.assign(value); }
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline CreateChannelResult& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline CreateChannelResult& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the channel.</p>
-     */
     inline CreateChannelResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>How long, in days, message data is kept for the channel.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
-
-    /**
-     * <p>How long, in days, message data is kept for the channel.</p>
-     */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriod = value; }
-
-    /**
-     * <p>How long, in days, message data is kept for the channel.</p>
-     */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriod = std::move(value); }
-
-    /**
-     * <p>How long, in days, message data is kept for the channel.</p>
-     */
     inline CreateChannelResult& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-
-    /**
-     * <p>How long, in days, message data is kept for the channel.</p>
-     */
     inline CreateChannelResult& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelName;

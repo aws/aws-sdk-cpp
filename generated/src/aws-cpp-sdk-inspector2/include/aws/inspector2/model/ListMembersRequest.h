@@ -32,6 +32,7 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of results the response can return. If your request would
      * return more than the maximum the response will return a <code>nextToken</code>
@@ -39,32 +40,12 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results the response can return. If your request would
-     * return more than the maximum the response will return a <code>nextToken</code>
-     * value, use this value when you call the action again to get the remaining
-     * results.</p>
-     */
     inline ListMembersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token to use for paginating results that are returned in the response. Set
      * the value of this parameter to null for the first request to a list action. If
@@ -74,106 +55,26 @@ namespace Model
      * listing results after the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline ListMembersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline ListMembersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token to use for paginating results that are returned in the response. Set
-     * the value of this parameter to null for the first request to a list action. If
-     * your response returns more than the <code>maxResults</code> maximum value it
-     * will also return a <code>nextToken</code> value. For subsequent calls, use the
-     * <code>nextToken</code> value returned from the previous request to continue
-     * listing results after the first page.</p>
-     */
     inline ListMembersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to list only currently associated members if
      * <code>True</code> or to list all members within the organization if
      * <code>False</code>.</p>
      */
     inline bool GetOnlyAssociated() const{ return m_onlyAssociated; }
-
-    /**
-     * <p>Specifies whether to list only currently associated members if
-     * <code>True</code> or to list all members within the organization if
-     * <code>False</code>.</p>
-     */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to list only currently associated members if
-     * <code>True</code> or to list all members within the organization if
-     * <code>False</code>.</p>
-     */
     inline void SetOnlyAssociated(bool value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
-
-    /**
-     * <p>Specifies whether to list only currently associated members if
-     * <code>True</code> or to list all members within the organization if
-     * <code>False</code>.</p>
-     */
     inline ListMembersRequest& WithOnlyAssociated(bool value) { SetOnlyAssociated(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

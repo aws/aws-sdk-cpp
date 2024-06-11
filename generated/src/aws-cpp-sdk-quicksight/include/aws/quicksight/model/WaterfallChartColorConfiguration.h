@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The color configuration for individual groups within a waterfall visual.</p>
      */
     inline const WaterfallChartGroupColorConfiguration& GetGroupColorConfiguration() const{ return m_groupColorConfiguration; }
-
-    /**
-     * <p>The color configuration for individual groups within a waterfall visual.</p>
-     */
     inline bool GroupColorConfigurationHasBeenSet() const { return m_groupColorConfigurationHasBeenSet; }
-
-    /**
-     * <p>The color configuration for individual groups within a waterfall visual.</p>
-     */
     inline void SetGroupColorConfiguration(const WaterfallChartGroupColorConfiguration& value) { m_groupColorConfigurationHasBeenSet = true; m_groupColorConfiguration = value; }
-
-    /**
-     * <p>The color configuration for individual groups within a waterfall visual.</p>
-     */
     inline void SetGroupColorConfiguration(WaterfallChartGroupColorConfiguration&& value) { m_groupColorConfigurationHasBeenSet = true; m_groupColorConfiguration = std::move(value); }
-
-    /**
-     * <p>The color configuration for individual groups within a waterfall visual.</p>
-     */
     inline WaterfallChartColorConfiguration& WithGroupColorConfiguration(const WaterfallChartGroupColorConfiguration& value) { SetGroupColorConfiguration(value); return *this;}
-
-    /**
-     * <p>The color configuration for individual groups within a waterfall visual.</p>
-     */
     inline WaterfallChartColorConfiguration& WithGroupColorConfiguration(WaterfallChartGroupColorConfiguration&& value) { SetGroupColorConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WaterfallChartGroupColorConfiguration m_groupColorConfiguration;

@@ -41,118 +41,45 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The message describing the <code>ValidationException</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message describing the <code>ValidationException</code>.</p>
-     */
     inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the <code>ValidationException</code>.</p>
      */
     inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason for the <code>ValidationException</code>.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the <code>ValidationException</code>.</p>
-     */
     inline void SetReason(const ValidationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason for the <code>ValidationException</code>.</p>
-     */
     inline void SetReason(ValidationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason for the <code>ValidationException</code>.</p>
-     */
     inline ValidationException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason for the <code>ValidationException</code>.</p>
-     */
     inline ValidationException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The input field(s) that failed validation.</p>
      */
     inline const Aws::Vector<ValidationExceptionField>& GetFields() const{ return m_fields; }
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline void SetFields(const Aws::Vector<ValidationExceptionField>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline void SetFields(Aws::Vector<ValidationExceptionField>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline ValidationException& WithFields(const Aws::Vector<ValidationExceptionField>& value) { SetFields(value); return *this;}
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline ValidationException& WithFields(Aws::Vector<ValidationExceptionField>&& value) { SetFields(std::move(value)); return *this;}
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline ValidationException& AddFields(const ValidationExceptionField& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-
-    /**
-     * <p>The input field(s) that failed validation.</p>
-     */
     inline ValidationException& AddFields(ValidationExceptionField&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

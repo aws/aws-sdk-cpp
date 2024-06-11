@@ -34,99 +34,42 @@ namespace Model
     AWS_DEVICEFARM_API ListTestGridSessionActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The action taken by the session.</p>
      */
     inline const Aws::Vector<TestGridSessionAction>& GetActions() const{ return m_actions; }
-
-    /**
-     * <p>The action taken by the session.</p>
-     */
     inline void SetActions(const Aws::Vector<TestGridSessionAction>& value) { m_actions = value; }
-
-    /**
-     * <p>The action taken by the session.</p>
-     */
     inline void SetActions(Aws::Vector<TestGridSessionAction>&& value) { m_actions = std::move(value); }
-
-    /**
-     * <p>The action taken by the session.</p>
-     */
     inline ListTestGridSessionActionsResult& WithActions(const Aws::Vector<TestGridSessionAction>& value) { SetActions(value); return *this;}
-
-    /**
-     * <p>The action taken by the session.</p>
-     */
     inline ListTestGridSessionActionsResult& WithActions(Aws::Vector<TestGridSessionAction>&& value) { SetActions(std::move(value)); return *this;}
-
-    /**
-     * <p>The action taken by the session.</p>
-     */
     inline ListTestGridSessionActionsResult& AddActions(const TestGridSessionAction& value) { m_actions.push_back(value); return *this; }
-
-    /**
-     * <p>The action taken by the session.</p>
-     */
     inline ListTestGridSessionActionsResult& AddActions(TestGridSessionAction&& value) { m_actions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline ListTestGridSessionActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline ListTestGridSessionActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token.</p>
-     */
     inline ListTestGridSessionActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTestGridSessionActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTestGridSessionActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTestGridSessionActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TestGridSessionAction> m_actions;

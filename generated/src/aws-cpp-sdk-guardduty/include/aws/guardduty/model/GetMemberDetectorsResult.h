@@ -35,113 +35,44 @@ namespace Model
     AWS_GUARDDUTY_API GetMemberDetectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that describes which data sources are enabled for a member
      * account.</p>
      */
     inline const Aws::Vector<MemberDataSourceConfiguration>& GetMemberDataSourceConfigurations() const{ return m_memberDataSourceConfigurations; }
-
-    /**
-     * <p>An object that describes which data sources are enabled for a member
-     * account.</p>
-     */
     inline void SetMemberDataSourceConfigurations(const Aws::Vector<MemberDataSourceConfiguration>& value) { m_memberDataSourceConfigurations = value; }
-
-    /**
-     * <p>An object that describes which data sources are enabled for a member
-     * account.</p>
-     */
     inline void SetMemberDataSourceConfigurations(Aws::Vector<MemberDataSourceConfiguration>&& value) { m_memberDataSourceConfigurations = std::move(value); }
-
-    /**
-     * <p>An object that describes which data sources are enabled for a member
-     * account.</p>
-     */
     inline GetMemberDetectorsResult& WithMemberDataSourceConfigurations(const Aws::Vector<MemberDataSourceConfiguration>& value) { SetMemberDataSourceConfigurations(value); return *this;}
-
-    /**
-     * <p>An object that describes which data sources are enabled for a member
-     * account.</p>
-     */
     inline GetMemberDetectorsResult& WithMemberDataSourceConfigurations(Aws::Vector<MemberDataSourceConfiguration>&& value) { SetMemberDataSourceConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that describes which data sources are enabled for a member
-     * account.</p>
-     */
     inline GetMemberDetectorsResult& AddMemberDataSourceConfigurations(const MemberDataSourceConfiguration& value) { m_memberDataSourceConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>An object that describes which data sources are enabled for a member
-     * account.</p>
-     */
     inline GetMemberDetectorsResult& AddMemberDataSourceConfigurations(MemberDataSourceConfiguration&& value) { m_memberDataSourceConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of member account IDs that were unable to be processed along with an
      * explanation for why they were not processed.</p>
      */
     inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
-
-    /**
-     * <p>A list of member account IDs that were unable to be processed along with an
-     * explanation for why they were not processed.</p>
-     */
     inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
-
-    /**
-     * <p>A list of member account IDs that were unable to be processed along with an
-     * explanation for why they were not processed.</p>
-     */
     inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
-
-    /**
-     * <p>A list of member account IDs that were unable to be processed along with an
-     * explanation for why they were not processed.</p>
-     */
     inline GetMemberDetectorsResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
-
-    /**
-     * <p>A list of member account IDs that were unable to be processed along with an
-     * explanation for why they were not processed.</p>
-     */
     inline GetMemberDetectorsResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of member account IDs that were unable to be processed along with an
-     * explanation for why they were not processed.</p>
-     */
     inline GetMemberDetectorsResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
-
-    /**
-     * <p>A list of member account IDs that were unable to be processed along with an
-     * explanation for why they were not processed.</p>
-     */
     inline GetMemberDetectorsResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMemberDetectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMemberDetectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMemberDetectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MemberDataSourceConfiguration> m_memberDataSourceConfigurations;

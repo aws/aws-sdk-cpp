@@ -34,42 +34,20 @@ namespace Model
     AWS_ROBOMAKER_API ListWorldsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Summary information for worlds.</p>
      */
     inline const Aws::Vector<WorldSummary>& GetWorldSummaries() const{ return m_worldSummaries; }
-
-    /**
-     * <p>Summary information for worlds.</p>
-     */
     inline void SetWorldSummaries(const Aws::Vector<WorldSummary>& value) { m_worldSummaries = value; }
-
-    /**
-     * <p>Summary information for worlds.</p>
-     */
     inline void SetWorldSummaries(Aws::Vector<WorldSummary>&& value) { m_worldSummaries = std::move(value); }
-
-    /**
-     * <p>Summary information for worlds.</p>
-     */
     inline ListWorldsResult& WithWorldSummaries(const Aws::Vector<WorldSummary>& value) { SetWorldSummaries(value); return *this;}
-
-    /**
-     * <p>Summary information for worlds.</p>
-     */
     inline ListWorldsResult& WithWorldSummaries(Aws::Vector<WorldSummary>&& value) { SetWorldSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Summary information for worlds.</p>
-     */
     inline ListWorldsResult& AddWorldSummaries(const WorldSummary& value) { m_worldSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Summary information for worlds.</p>
-     */
     inline ListWorldsResult& AddWorldSummaries(WorldSummary&& value) { m_worldSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous paginated request did not return all of the remaining
      * results, the response object's <code>nextToken</code> parameter value is set to
@@ -79,89 +57,24 @@ namespace Model
      * parameter is set to null. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous paginated request did not return all of the remaining
-     * results, the response object's <code>nextToken</code> parameter value is set to
-     * a token. To retrieve the next set of results, call <code>ListWorlds</code> again
-     * and assign that token to the request object's <code>nextToken</code> parameter.
-     * If there are no remaining results, the previous response object's NextToken
-     * parameter is set to null. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the previous paginated request did not return all of the remaining
-     * results, the response object's <code>nextToken</code> parameter value is set to
-     * a token. To retrieve the next set of results, call <code>ListWorlds</code> again
-     * and assign that token to the request object's <code>nextToken</code> parameter.
-     * If there are no remaining results, the previous response object's NextToken
-     * parameter is set to null. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous paginated request did not return all of the remaining
-     * results, the response object's <code>nextToken</code> parameter value is set to
-     * a token. To retrieve the next set of results, call <code>ListWorlds</code> again
-     * and assign that token to the request object's <code>nextToken</code> parameter.
-     * If there are no remaining results, the previous response object's NextToken
-     * parameter is set to null. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous paginated request did not return all of the remaining
-     * results, the response object's <code>nextToken</code> parameter value is set to
-     * a token. To retrieve the next set of results, call <code>ListWorlds</code> again
-     * and assign that token to the request object's <code>nextToken</code> parameter.
-     * If there are no remaining results, the previous response object's NextToken
-     * parameter is set to null. </p>
-     */
     inline ListWorldsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous paginated request did not return all of the remaining
-     * results, the response object's <code>nextToken</code> parameter value is set to
-     * a token. To retrieve the next set of results, call <code>ListWorlds</code> again
-     * and assign that token to the request object's <code>nextToken</code> parameter.
-     * If there are no remaining results, the previous response object's NextToken
-     * parameter is set to null. </p>
-     */
     inline ListWorldsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous paginated request did not return all of the remaining
-     * results, the response object's <code>nextToken</code> parameter value is set to
-     * a token. To retrieve the next set of results, call <code>ListWorlds</code> again
-     * and assign that token to the request object's <code>nextToken</code> parameter.
-     * If there are no remaining results, the previous response object's NextToken
-     * parameter is set to null. </p>
-     */
     inline ListWorldsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListWorldsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListWorldsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListWorldsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<WorldSummary> m_worldSummaries;

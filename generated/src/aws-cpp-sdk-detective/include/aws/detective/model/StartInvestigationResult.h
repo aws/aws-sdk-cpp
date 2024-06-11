@@ -32,63 +32,29 @@ namespace Model
     AWS_DETECTIVE_API StartInvestigationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The investigation ID of the investigation report.</p>
      */
     inline const Aws::String& GetInvestigationId() const{ return m_investigationId; }
-
-    /**
-     * <p>The investigation ID of the investigation report.</p>
-     */
     inline void SetInvestigationId(const Aws::String& value) { m_investigationId = value; }
-
-    /**
-     * <p>The investigation ID of the investigation report.</p>
-     */
     inline void SetInvestigationId(Aws::String&& value) { m_investigationId = std::move(value); }
-
-    /**
-     * <p>The investigation ID of the investigation report.</p>
-     */
     inline void SetInvestigationId(const char* value) { m_investigationId.assign(value); }
-
-    /**
-     * <p>The investigation ID of the investigation report.</p>
-     */
     inline StartInvestigationResult& WithInvestigationId(const Aws::String& value) { SetInvestigationId(value); return *this;}
-
-    /**
-     * <p>The investigation ID of the investigation report.</p>
-     */
     inline StartInvestigationResult& WithInvestigationId(Aws::String&& value) { SetInvestigationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The investigation ID of the investigation report.</p>
-     */
     inline StartInvestigationResult& WithInvestigationId(const char* value) { SetInvestigationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartInvestigationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartInvestigationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartInvestigationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_investigationId;

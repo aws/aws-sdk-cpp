@@ -37,46 +37,19 @@ namespace Model
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of a dimension.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline DimensionDetail& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline DimensionDetail& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of a dimension.</p>
-     */
     inline DimensionDetail& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

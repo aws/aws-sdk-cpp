@@ -39,87 +39,33 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The query with the suggested spell corrections.</p>
      */
     inline const Aws::String& GetSuggestedQueryText() const{ return m_suggestedQueryText; }
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline bool SuggestedQueryTextHasBeenSet() const { return m_suggestedQueryTextHasBeenSet; }
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline void SetSuggestedQueryText(const Aws::String& value) { m_suggestedQueryTextHasBeenSet = true; m_suggestedQueryText = value; }
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline void SetSuggestedQueryText(Aws::String&& value) { m_suggestedQueryTextHasBeenSet = true; m_suggestedQueryText = std::move(value); }
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline void SetSuggestedQueryText(const char* value) { m_suggestedQueryTextHasBeenSet = true; m_suggestedQueryText.assign(value); }
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline SpellCorrectedQuery& WithSuggestedQueryText(const Aws::String& value) { SetSuggestedQueryText(value); return *this;}
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline SpellCorrectedQuery& WithSuggestedQueryText(Aws::String&& value) { SetSuggestedQueryText(std::move(value)); return *this;}
-
-    /**
-     * <p>The query with the suggested spell corrections.</p>
-     */
     inline SpellCorrectedQuery& WithSuggestedQueryText(const char* value) { SetSuggestedQueryText(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The corrected misspelled word or words in a query.</p>
      */
     inline const Aws::Vector<Correction>& GetCorrections() const{ return m_corrections; }
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline bool CorrectionsHasBeenSet() const { return m_correctionsHasBeenSet; }
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline void SetCorrections(const Aws::Vector<Correction>& value) { m_correctionsHasBeenSet = true; m_corrections = value; }
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline void SetCorrections(Aws::Vector<Correction>&& value) { m_correctionsHasBeenSet = true; m_corrections = std::move(value); }
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline SpellCorrectedQuery& WithCorrections(const Aws::Vector<Correction>& value) { SetCorrections(value); return *this;}
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline SpellCorrectedQuery& WithCorrections(Aws::Vector<Correction>&& value) { SetCorrections(std::move(value)); return *this;}
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline SpellCorrectedQuery& AddCorrections(const Correction& value) { m_correctionsHasBeenSet = true; m_corrections.push_back(value); return *this; }
-
-    /**
-     * <p>The corrected misspelled word or words in a query.</p>
-     */
     inline SpellCorrectedQuery& AddCorrections(Correction&& value) { m_correctionsHasBeenSet = true; m_corrections.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_suggestedQueryText;

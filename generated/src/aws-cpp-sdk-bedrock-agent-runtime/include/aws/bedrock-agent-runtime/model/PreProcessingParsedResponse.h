@@ -38,87 +38,32 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether the user input is valid or not. If <code>false</code>, the agent
      * doesn't proceed to orchestration.</p>
      */
     inline bool GetIsValid() const{ return m_isValid; }
-
-    /**
-     * <p>Whether the user input is valid or not. If <code>false</code>, the agent
-     * doesn't proceed to orchestration.</p>
-     */
     inline bool IsValidHasBeenSet() const { return m_isValidHasBeenSet; }
-
-    /**
-     * <p>Whether the user input is valid or not. If <code>false</code>, the agent
-     * doesn't proceed to orchestration.</p>
-     */
     inline void SetIsValid(bool value) { m_isValidHasBeenSet = true; m_isValid = value; }
-
-    /**
-     * <p>Whether the user input is valid or not. If <code>false</code>, the agent
-     * doesn't proceed to orchestration.</p>
-     */
     inline PreProcessingParsedResponse& WithIsValid(bool value) { SetIsValid(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text returned by the parsing of the pre-processing step, explaining the
      * steps that the agent plans to take in orchestration, if the user input is
      * valid.</p>
      */
     inline const Aws::String& GetRationale() const{ return m_rationale; }
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline bool RationaleHasBeenSet() const { return m_rationaleHasBeenSet; }
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline void SetRationale(const Aws::String& value) { m_rationaleHasBeenSet = true; m_rationale = value; }
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline void SetRationale(Aws::String&& value) { m_rationaleHasBeenSet = true; m_rationale = std::move(value); }
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline void SetRationale(const char* value) { m_rationaleHasBeenSet = true; m_rationale.assign(value); }
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline PreProcessingParsedResponse& WithRationale(const Aws::String& value) { SetRationale(value); return *this;}
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline PreProcessingParsedResponse& WithRationale(Aws::String&& value) { SetRationale(std::move(value)); return *this;}
-
-    /**
-     * <p>The text returned by the parsing of the pre-processing step, explaining the
-     * steps that the agent plans to take in orchestration, if the user input is
-     * valid.</p>
-     */
     inline PreProcessingParsedResponse& WithRationale(const char* value) { SetRationale(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isValid;

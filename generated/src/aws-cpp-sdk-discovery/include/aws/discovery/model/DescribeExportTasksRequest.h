@@ -36,110 +36,38 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>One or more unique identifiers used to query the status of an export
      * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExportIds() const{ return m_exportIds; }
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline bool ExportIdsHasBeenSet() const { return m_exportIdsHasBeenSet; }
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline void SetExportIds(const Aws::Vector<Aws::String>& value) { m_exportIdsHasBeenSet = true; m_exportIds = value; }
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline void SetExportIds(Aws::Vector<Aws::String>&& value) { m_exportIdsHasBeenSet = true; m_exportIds = std::move(value); }
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline DescribeExportTasksRequest& WithExportIds(const Aws::Vector<Aws::String>& value) { SetExportIds(value); return *this;}
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline DescribeExportTasksRequest& WithExportIds(Aws::Vector<Aws::String>&& value) { SetExportIds(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline DescribeExportTasksRequest& AddExportIds(const Aws::String& value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(value); return *this; }
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline DescribeExportTasksRequest& AddExportIds(Aws::String&& value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more unique identifiers used to query the status of an export
-     * request.</p>
-     */
     inline DescribeExportTasksRequest& AddExportIds(const char* value) { m_exportIdsHasBeenSet = true; m_exportIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
      * whose collected data will be exported</p> </li> </ul>
      */
     inline const Aws::Vector<ExportFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline void SetFilters(const Aws::Vector<ExportFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline void SetFilters(Aws::Vector<ExportFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline DescribeExportTasksRequest& WithFilters(const Aws::Vector<ExportFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline DescribeExportTasksRequest& WithFilters(Aws::Vector<ExportFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline DescribeExportTasksRequest& AddFilters(const ExportFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
-     * whose collected data will be exported</p> </li> </ul>
-     */
     inline DescribeExportTasksRequest& AddFilters(ExportFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of volume results returned by
      * <code>DescribeExportTasks</code> in paginated output. When this parameter is
@@ -148,35 +76,12 @@ namespace Model
      * element.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of volume results returned by
-     * <code>DescribeExportTasks</code> in paginated output. When this parameter is
-     * used, <code>DescribeExportTasks</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response
-     * element.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of volume results returned by
-     * <code>DescribeExportTasks</code> in paginated output. When this parameter is
-     * used, <code>DescribeExportTasks</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response
-     * element.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of volume results returned by
-     * <code>DescribeExportTasks</code> in paginated output. When this parameter is
-     * used, <code>DescribeExportTasks</code> only returns <code>maxResults</code>
-     * results in a single page along with a <code>nextToken</code> response
-     * element.</p>
-     */
     inline DescribeExportTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
      * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
@@ -185,70 +90,14 @@ namespace Model
      * This value is null when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline DescribeExportTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline DescribeExportTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>nextToken</code> value returned from a previous paginated
-     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
-     * and the results exceeded the value of that parameter. Pagination continues from
-     * the end of the previous results that returned the <code>nextToken</code> value.
-     * This value is null when there are no more results to return.</p>
-     */
     inline DescribeExportTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_exportIds;

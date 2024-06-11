@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Redshift-managed VPC endpoint to delete.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline DeleteEndpointAccessRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline DeleteEndpointAccessRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Redshift-managed VPC endpoint to delete.</p>
-     */
     inline DeleteEndpointAccessRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_endpointName;

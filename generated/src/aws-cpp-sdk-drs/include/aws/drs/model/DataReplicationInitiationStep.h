@@ -38,67 +38,29 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the step.</p>
      */
     inline const DataReplicationInitiationStepName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the step.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the step.</p>
-     */
     inline void SetName(const DataReplicationInitiationStepName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the step.</p>
-     */
     inline void SetName(DataReplicationInitiationStepName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the step.</p>
-     */
     inline DataReplicationInitiationStep& WithName(const DataReplicationInitiationStepName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the step.</p>
-     */
     inline DataReplicationInitiationStep& WithName(DataReplicationInitiationStepName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the step.</p>
      */
     inline const DataReplicationInitiationStepStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the step.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the step.</p>
-     */
     inline void SetStatus(const DataReplicationInitiationStepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the step.</p>
-     */
     inline void SetStatus(DataReplicationInitiationStepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the step.</p>
-     */
     inline DataReplicationInitiationStep& WithStatus(const DataReplicationInitiationStepStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the step.</p>
-     */
     inline DataReplicationInitiationStep& WithStatus(DataReplicationInitiationStepStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataReplicationInitiationStepName m_name;

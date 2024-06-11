@@ -34,63 +34,29 @@ namespace Model
     AWS_WORKMAIL_API ListAccessControlRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The access control rules.</p>
      */
     inline const Aws::Vector<AccessControlRule>& GetRules() const{ return m_rules; }
-
-    /**
-     * <p>The access control rules.</p>
-     */
     inline void SetRules(const Aws::Vector<AccessControlRule>& value) { m_rules = value; }
-
-    /**
-     * <p>The access control rules.</p>
-     */
     inline void SetRules(Aws::Vector<AccessControlRule>&& value) { m_rules = std::move(value); }
-
-    /**
-     * <p>The access control rules.</p>
-     */
     inline ListAccessControlRulesResult& WithRules(const Aws::Vector<AccessControlRule>& value) { SetRules(value); return *this;}
-
-    /**
-     * <p>The access control rules.</p>
-     */
     inline ListAccessControlRulesResult& WithRules(Aws::Vector<AccessControlRule>&& value) { SetRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The access control rules.</p>
-     */
     inline ListAccessControlRulesResult& AddRules(const AccessControlRule& value) { m_rules.push_back(value); return *this; }
-
-    /**
-     * <p>The access control rules.</p>
-     */
     inline ListAccessControlRulesResult& AddRules(AccessControlRule&& value) { m_rules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAccessControlRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAccessControlRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAccessControlRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AccessControlRule> m_rules;

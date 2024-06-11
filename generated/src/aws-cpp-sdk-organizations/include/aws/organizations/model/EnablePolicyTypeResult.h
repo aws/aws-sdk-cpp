@@ -33,58 +33,28 @@ namespace Model
     AWS_ORGANIZATIONS_API EnablePolicyTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that shows the root with the updated list of enabled policy
      * types.</p>
      */
     inline const Root& GetRoot() const{ return m_root; }
-
-    /**
-     * <p>A structure that shows the root with the updated list of enabled policy
-     * types.</p>
-     */
     inline void SetRoot(const Root& value) { m_root = value; }
-
-    /**
-     * <p>A structure that shows the root with the updated list of enabled policy
-     * types.</p>
-     */
     inline void SetRoot(Root&& value) { m_root = std::move(value); }
-
-    /**
-     * <p>A structure that shows the root with the updated list of enabled policy
-     * types.</p>
-     */
     inline EnablePolicyTypeResult& WithRoot(const Root& value) { SetRoot(value); return *this;}
-
-    /**
-     * <p>A structure that shows the root with the updated list of enabled policy
-     * types.</p>
-     */
     inline EnablePolicyTypeResult& WithRoot(Root&& value) { SetRoot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline EnablePolicyTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline EnablePolicyTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline EnablePolicyTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Root m_root;

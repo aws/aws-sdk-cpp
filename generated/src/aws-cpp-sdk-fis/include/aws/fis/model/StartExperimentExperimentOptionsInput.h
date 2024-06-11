@@ -38,36 +38,17 @@ namespace Model
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the actions mode for experiment options.</p>
      */
     inline const ActionsMode& GetActionsMode() const{ return m_actionsMode; }
-
-    /**
-     * <p>Specifies the actions mode for experiment options.</p>
-     */
     inline bool ActionsModeHasBeenSet() const { return m_actionsModeHasBeenSet; }
-
-    /**
-     * <p>Specifies the actions mode for experiment options.</p>
-     */
     inline void SetActionsMode(const ActionsMode& value) { m_actionsModeHasBeenSet = true; m_actionsMode = value; }
-
-    /**
-     * <p>Specifies the actions mode for experiment options.</p>
-     */
     inline void SetActionsMode(ActionsMode&& value) { m_actionsModeHasBeenSet = true; m_actionsMode = std::move(value); }
-
-    /**
-     * <p>Specifies the actions mode for experiment options.</p>
-     */
     inline StartExperimentExperimentOptionsInput& WithActionsMode(const ActionsMode& value) { SetActionsMode(value); return *this;}
-
-    /**
-     * <p>Specifies the actions mode for experiment options.</p>
-     */
     inline StartExperimentExperimentOptionsInput& WithActionsMode(ActionsMode&& value) { SetActionsMode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ActionsMode m_actionsMode;

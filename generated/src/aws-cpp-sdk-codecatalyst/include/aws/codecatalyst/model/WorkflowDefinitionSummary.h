@@ -37,54 +37,20 @@ namespace Model
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path to the workflow definition file stored in the source repository for
      * the project, including the file name.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline WorkflowDefinitionSummary& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline WorkflowDefinitionSummary& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path to the workflow definition file stored in the source repository for
-     * the project, including the file name.</p>
-     */
     inline WorkflowDefinitionSummary& WithPath(const char* value) { SetPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_path;

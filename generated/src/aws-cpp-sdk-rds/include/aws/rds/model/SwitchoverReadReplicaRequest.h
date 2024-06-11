@@ -36,62 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The DB instance identifier of the current standby database. This value is
      * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
      * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline SwitchoverReadReplicaRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline SwitchoverReadReplicaRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The DB instance identifier of the current standby database. This value is
-     * stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must match
-     * the identiﬁer of an existing Oracle read replica DB instance.</p> </li> </ul>
-     */
     inline SwitchoverReadReplicaRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBInstanceIdentifier;

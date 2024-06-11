@@ -41,101 +41,35 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of included evaluations. When the list is undefined, all supported
      * evaluations will be included.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIncludedStatistics() const{ return m_includedStatistics; }
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline bool IncludedStatisticsHasBeenSet() const { return m_includedStatisticsHasBeenSet; }
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline void SetIncludedStatistics(const Aws::Vector<Aws::String>& value) { m_includedStatisticsHasBeenSet = true; m_includedStatistics = value; }
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline void SetIncludedStatistics(Aws::Vector<Aws::String>&& value) { m_includedStatisticsHasBeenSet = true; m_includedStatistics = std::move(value); }
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline StatisticsConfiguration& WithIncludedStatistics(const Aws::Vector<Aws::String>& value) { SetIncludedStatistics(value); return *this;}
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline StatisticsConfiguration& WithIncludedStatistics(Aws::Vector<Aws::String>&& value) { SetIncludedStatistics(std::move(value)); return *this;}
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline StatisticsConfiguration& AddIncludedStatistics(const Aws::String& value) { m_includedStatisticsHasBeenSet = true; m_includedStatistics.push_back(value); return *this; }
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline StatisticsConfiguration& AddIncludedStatistics(Aws::String&& value) { m_includedStatisticsHasBeenSet = true; m_includedStatistics.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List of included evaluations. When the list is undefined, all supported
-     * evaluations will be included.</p>
-     */
     inline StatisticsConfiguration& AddIncludedStatistics(const char* value) { m_includedStatisticsHasBeenSet = true; m_includedStatistics.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of overrides for evaluations.</p>
      */
     inline const Aws::Vector<StatisticOverride>& GetOverrides() const{ return m_overrides; }
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline void SetOverrides(const Aws::Vector<StatisticOverride>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline void SetOverrides(Aws::Vector<StatisticOverride>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline StatisticsConfiguration& WithOverrides(const Aws::Vector<StatisticOverride>& value) { SetOverrides(value); return *this;}
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline StatisticsConfiguration& WithOverrides(Aws::Vector<StatisticOverride>&& value) { SetOverrides(std::move(value)); return *this;}
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline StatisticsConfiguration& AddOverrides(const StatisticOverride& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-
-    /**
-     * <p>List of overrides for evaluations.</p>
-     */
     inline StatisticsConfiguration& AddOverrides(StatisticOverride&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_includedStatistics;

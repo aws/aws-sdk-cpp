@@ -39,24 +39,15 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const NfsMountOptions& GetMountOptions() const{ return m_mountOptions; }
-
-    
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
-
-    
     inline void SetMountOptions(const NfsMountOptions& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
-
-    
     inline void SetMountOptions(NfsMountOptions&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
-
-    
     inline FsxProtocolNfs& WithMountOptions(const NfsMountOptions& value) { SetMountOptions(value); return *this;}
-
-    
     inline FsxProtocolNfs& WithMountOptions(NfsMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NfsMountOptions m_mountOptions;

@@ -39,46 +39,26 @@ namespace Model
     AWS_ROUTE53_API GetTrafficPolicyInstanceCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The number of traffic policy instances that are associated with the current
      * Amazon Web Services account.</p>
      */
     inline int GetTrafficPolicyInstanceCount() const{ return m_trafficPolicyInstanceCount; }
-
-    /**
-     * <p>The number of traffic policy instances that are associated with the current
-     * Amazon Web Services account.</p>
-     */
     inline void SetTrafficPolicyInstanceCount(int value) { m_trafficPolicyInstanceCount = value; }
-
-    /**
-     * <p>The number of traffic policy instances that are associated with the current
-     * Amazon Web Services account.</p>
-     */
     inline GetTrafficPolicyInstanceCountResult& WithTrafficPolicyInstanceCount(int value) { SetTrafficPolicyInstanceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTrafficPolicyInstanceCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTrafficPolicyInstanceCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTrafficPolicyInstanceCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_trafficPolicyInstanceCount;

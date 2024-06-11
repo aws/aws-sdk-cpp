@@ -34,106 +34,43 @@ namespace Model
     AWS_SAGEMAKER_API ListMonitoringAlertHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An alert history for a model monitoring schedule.</p>
      */
     inline const Aws::Vector<MonitoringAlertHistorySummary>& GetMonitoringAlertHistory() const{ return m_monitoringAlertHistory; }
-
-    /**
-     * <p>An alert history for a model monitoring schedule.</p>
-     */
     inline void SetMonitoringAlertHistory(const Aws::Vector<MonitoringAlertHistorySummary>& value) { m_monitoringAlertHistory = value; }
-
-    /**
-     * <p>An alert history for a model monitoring schedule.</p>
-     */
     inline void SetMonitoringAlertHistory(Aws::Vector<MonitoringAlertHistorySummary>&& value) { m_monitoringAlertHistory = std::move(value); }
-
-    /**
-     * <p>An alert history for a model monitoring schedule.</p>
-     */
     inline ListMonitoringAlertHistoryResult& WithMonitoringAlertHistory(const Aws::Vector<MonitoringAlertHistorySummary>& value) { SetMonitoringAlertHistory(value); return *this;}
-
-    /**
-     * <p>An alert history for a model monitoring schedule.</p>
-     */
     inline ListMonitoringAlertHistoryResult& WithMonitoringAlertHistory(Aws::Vector<MonitoringAlertHistorySummary>&& value) { SetMonitoringAlertHistory(std::move(value)); return *this;}
-
-    /**
-     * <p>An alert history for a model monitoring schedule.</p>
-     */
     inline ListMonitoringAlertHistoryResult& AddMonitoringAlertHistory(const MonitoringAlertHistorySummary& value) { m_monitoringAlertHistory.push_back(value); return *this; }
-
-    /**
-     * <p>An alert history for a model monitoring schedule.</p>
-     */
     inline ListMonitoringAlertHistoryResult& AddMonitoringAlertHistory(MonitoringAlertHistorySummary&& value) { m_monitoringAlertHistory.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response is truncated, SageMaker returns this token. To retrieve the
      * next set of alerts, use it in the subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of alerts, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of alerts, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of alerts, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of alerts, use it in the subsequent request.</p>
-     */
     inline ListMonitoringAlertHistoryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of alerts, use it in the subsequent request.</p>
-     */
     inline ListMonitoringAlertHistoryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of alerts, use it in the subsequent request.</p>
-     */
     inline ListMonitoringAlertHistoryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMonitoringAlertHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMonitoringAlertHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMonitoringAlertHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MonitoringAlertHistorySummary> m_monitoringAlertHistory;

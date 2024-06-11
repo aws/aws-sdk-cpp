@@ -40,6 +40,7 @@ namespace Model
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This property corresponds to the content of the same name for the <i>AWS
      * CloudFormation <a
@@ -48,71 +49,16 @@ namespace Model
      * </i> Data Type.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline RollbackTrigger& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline RollbackTrigger& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline RollbackTrigger& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This property corresponds to the content of the same name for the <i>AWS
      * CloudFormation <a
@@ -121,70 +67,14 @@ namespace Model
      * </i> Data Type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline RollbackTrigger& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline RollbackTrigger& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>This property corresponds to the content of the same name for the <i>AWS
-     * CloudFormation <a
-     * href="https://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/RollbackTrigger">RollbackTrigger</a>
-
-     * </i> Data Type.</p>
-     */
     inline RollbackTrigger& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

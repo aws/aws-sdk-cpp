@@ -44,76 +44,32 @@ namespace Model
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ServiceQuotaExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ServiceQuotaExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ServiceQuotaExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of resource that has exceeded the service quota.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline ServiceQuotaExceededException& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline ServiceQuotaExceededException& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline ServiceQuotaExceededException& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline ServiceQuotaExceededException& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The type of resource that has exceeded the service quota.</p>
-     */
     inline ServiceQuotaExceededException& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

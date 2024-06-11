@@ -40,6 +40,7 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains <code>Results</code>, which contains a set of transcription results
      * from one or more audio segments, along with additional information per your
@@ -48,52 +49,12 @@ namespace Model
      * identification, and other transcription-related data.</p>
      */
     inline const MedicalTranscript& GetTranscript() const{ return m_transcript; }
-
-    /**
-     * <p>Contains <code>Results</code>, which contains a set of transcription results
-     * from one or more audio segments, along with additional information per your
-     * request parameters. This can include information relating to alternative
-     * transcriptions, channel identification, partial result stabilization, language
-     * identification, and other transcription-related data.</p>
-     */
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-
-    /**
-     * <p>Contains <code>Results</code>, which contains a set of transcription results
-     * from one or more audio segments, along with additional information per your
-     * request parameters. This can include information relating to alternative
-     * transcriptions, channel identification, partial result stabilization, language
-     * identification, and other transcription-related data.</p>
-     */
     inline void SetTranscript(const MedicalTranscript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-
-    /**
-     * <p>Contains <code>Results</code>, which contains a set of transcription results
-     * from one or more audio segments, along with additional information per your
-     * request parameters. This can include information relating to alternative
-     * transcriptions, channel identification, partial result stabilization, language
-     * identification, and other transcription-related data.</p>
-     */
     inline void SetTranscript(MedicalTranscript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-
-    /**
-     * <p>Contains <code>Results</code>, which contains a set of transcription results
-     * from one or more audio segments, along with additional information per your
-     * request parameters. This can include information relating to alternative
-     * transcriptions, channel identification, partial result stabilization, language
-     * identification, and other transcription-related data.</p>
-     */
     inline MedicalTranscriptEvent& WithTranscript(const MedicalTranscript& value) { SetTranscript(value); return *this;}
-
-    /**
-     * <p>Contains <code>Results</code>, which contains a set of transcription results
-     * from one or more audio segments, along with additional information per your
-     * request parameters. This can include information relating to alternative
-     * transcriptions, channel identification, partial result stabilization, language
-     * identification, and other transcription-related data.</p>
-     */
     inline MedicalTranscriptEvent& WithTranscript(MedicalTranscript&& value) { SetTranscript(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MedicalTranscript m_transcript;

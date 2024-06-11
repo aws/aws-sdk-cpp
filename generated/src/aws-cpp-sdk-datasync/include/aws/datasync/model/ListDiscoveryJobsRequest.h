@@ -34,132 +34,46 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
      * Use this parameter if you only want to list the discovery jobs that are
      * associated with a specific storage system.</p>
      */
     inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline bool StorageSystemArnHasBeenSet() const { return m_storageSystemArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline void SetStorageSystemArn(const char* value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline ListDiscoveryJobsRequest& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline ListDiscoveryJobsRequest& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of an on-premises storage system.
-     * Use this parameter if you only want to list the discovery jobs that are
-     * associated with a specific storage system.</p>
-     */
     inline ListDiscoveryJobsRequest& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies how many results you want in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Specifies how many results you want in the response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Specifies how many results you want in the response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Specifies how many results you want in the response.</p>
-     */
     inline ListDiscoveryJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies an opaque string that indicates the position to begin the next list
      * of results in the response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline ListDiscoveryJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline ListDiscoveryJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies an opaque string that indicates the position to begin the next list
-     * of results in the response.</p>
-     */
     inline ListDiscoveryJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_storageSystemArn;

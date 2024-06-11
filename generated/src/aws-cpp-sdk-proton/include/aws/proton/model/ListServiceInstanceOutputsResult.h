@@ -34,106 +34,43 @@ namespace Model
     AWS_PROTON_API ListServiceInstanceOutputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A token that indicates the location of the next output in the array of
      * outputs, after the current requested list of outputs.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that indicates the location of the next output in the array of
-     * outputs, after the current requested list of outputs.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that indicates the location of the next output in the array of
-     * outputs, after the current requested list of outputs.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that indicates the location of the next output in the array of
-     * outputs, after the current requested list of outputs.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that indicates the location of the next output in the array of
-     * outputs, after the current requested list of outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that indicates the location of the next output in the array of
-     * outputs, after the current requested list of outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that indicates the location of the next output in the array of
-     * outputs, after the current requested list of outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
      */
     inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
-
-    /**
-     * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-     */
     inline void SetOutputs(const Aws::Vector<Output>& value) { m_outputs = value; }
-
-    /**
-     * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-     */
     inline void SetOutputs(Aws::Vector<Output>&& value) { m_outputs = std::move(value); }
-
-    /**
-     * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& WithOutputs(const Aws::Vector<Output>& value) { SetOutputs(value); return *this;}
-
-    /**
-     * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& WithOutputs(Aws::Vector<Output>&& value) { SetOutputs(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& AddOutputs(const Output& value) { m_outputs.push_back(value); return *this; }
-
-    /**
-     * <p>An array of service instance Infrastructure as Code (IaC) outputs.</p>
-     */
     inline ListServiceInstanceOutputsResult& AddOutputs(Output&& value) { m_outputs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListServiceInstanceOutputsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListServiceInstanceOutputsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListServiceInstanceOutputsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

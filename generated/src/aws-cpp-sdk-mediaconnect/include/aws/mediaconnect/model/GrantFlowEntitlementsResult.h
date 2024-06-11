@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIACONNECT_API GrantFlowEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The entitlements that were just granted.
      */
     inline const Aws::Vector<Entitlement>& GetEntitlements() const{ return m_entitlements; }
-
-    /**
-     * The entitlements that were just granted.
-     */
     inline void SetEntitlements(const Aws::Vector<Entitlement>& value) { m_entitlements = value; }
-
-    /**
-     * The entitlements that were just granted.
-     */
     inline void SetEntitlements(Aws::Vector<Entitlement>&& value) { m_entitlements = std::move(value); }
-
-    /**
-     * The entitlements that were just granted.
-     */
     inline GrantFlowEntitlementsResult& WithEntitlements(const Aws::Vector<Entitlement>& value) { SetEntitlements(value); return *this;}
-
-    /**
-     * The entitlements that were just granted.
-     */
     inline GrantFlowEntitlementsResult& WithEntitlements(Aws::Vector<Entitlement>&& value) { SetEntitlements(std::move(value)); return *this;}
-
-    /**
-     * The entitlements that were just granted.
-     */
     inline GrantFlowEntitlementsResult& AddEntitlements(const Entitlement& value) { m_entitlements.push_back(value); return *this; }
-
-    /**
-     * The entitlements that were just granted.
-     */
     inline GrantFlowEntitlementsResult& AddEntitlements(Entitlement&& value) { m_entitlements.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * The ARN of the flow that these entitlements were granted to.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The ARN of the flow that these entitlements were granted to.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-
-    /**
-     * The ARN of the flow that these entitlements were granted to.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-
-    /**
-     * The ARN of the flow that these entitlements were granted to.
-     */
     inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-
-    /**
-     * The ARN of the flow that these entitlements were granted to.
-     */
     inline GrantFlowEntitlementsResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The ARN of the flow that these entitlements were granted to.
-     */
     inline GrantFlowEntitlementsResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the flow that these entitlements were granted to.
-     */
     inline GrantFlowEntitlementsResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GrantFlowEntitlementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GrantFlowEntitlementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GrantFlowEntitlementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Entitlement> m_entitlements;

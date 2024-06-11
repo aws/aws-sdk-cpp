@@ -39,77 +39,31 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The finding attribute used to sort findings.</p>
      */
     inline const Aws::String& GetField() const{ return m_field; }
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline SortCriterion& WithField(const Aws::String& value) { SetField(value); return *this;}
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline SortCriterion& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-
-    /**
-     * <p>The finding attribute used to sort findings.</p>
-     */
     inline SortCriterion& WithField(const char* value) { SetField(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order used to sort findings.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The order used to sort findings.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The order used to sort findings.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The order used to sort findings.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The order used to sort findings.</p>
-     */
     inline SortCriterion& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The order used to sort findings.</p>
-     */
     inline SortCriterion& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_field;

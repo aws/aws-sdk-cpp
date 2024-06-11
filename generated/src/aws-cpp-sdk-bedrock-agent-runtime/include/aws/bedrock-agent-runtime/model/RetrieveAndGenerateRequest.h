@@ -35,37 +35,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Contains the query to be made to the knowledge base.</p>
      */
     inline const RetrieveAndGenerateInput& GetInput() const{ return m_input; }
-
-    /**
-     * <p>Contains the query to be made to the knowledge base.</p>
-     */
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-
-    /**
-     * <p>Contains the query to be made to the knowledge base.</p>
-     */
     inline void SetInput(const RetrieveAndGenerateInput& value) { m_inputHasBeenSet = true; m_input = value; }
-
-    /**
-     * <p>Contains the query to be made to the knowledge base.</p>
-     */
     inline void SetInput(RetrieveAndGenerateInput&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-
-    /**
-     * <p>Contains the query to be made to the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithInput(const RetrieveAndGenerateInput& value) { SetInput(value); return *this;}
-
-    /**
-     * <p>Contains the query to be made to the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithInput(RetrieveAndGenerateInput&& value) { SetInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains configurations for the knowledge base query and retrieval process.
      * For more information, see <a
@@ -73,127 +55,39 @@ namespace Model
      * configurations</a>.</p>
      */
     inline const RetrieveAndGenerateConfiguration& GetRetrieveAndGenerateConfiguration() const{ return m_retrieveAndGenerateConfiguration; }
-
-    /**
-     * <p>Contains configurations for the knowledge base query and retrieval process.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline bool RetrieveAndGenerateConfigurationHasBeenSet() const { return m_retrieveAndGenerateConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains configurations for the knowledge base query and retrieval process.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline void SetRetrieveAndGenerateConfiguration(const RetrieveAndGenerateConfiguration& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = value; }
-
-    /**
-     * <p>Contains configurations for the knowledge base query and retrieval process.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline void SetRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfiguration&& value) { m_retrieveAndGenerateConfigurationHasBeenSet = true; m_retrieveAndGenerateConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains configurations for the knowledge base query and retrieval process.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline RetrieveAndGenerateRequest& WithRetrieveAndGenerateConfiguration(const RetrieveAndGenerateConfiguration& value) { SetRetrieveAndGenerateConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains configurations for the knowledge base query and retrieval process.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline RetrieveAndGenerateRequest& WithRetrieveAndGenerateConfiguration(RetrieveAndGenerateConfiguration&& value) { SetRetrieveAndGenerateConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains details about the session with the knowledge base.</p>
      */
     inline const RetrieveAndGenerateSessionConfiguration& GetSessionConfiguration() const{ return m_sessionConfiguration; }
-
-    /**
-     * <p>Contains details about the session with the knowledge base.</p>
-     */
     inline bool SessionConfigurationHasBeenSet() const { return m_sessionConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains details about the session with the knowledge base.</p>
-     */
     inline void SetSessionConfiguration(const RetrieveAndGenerateSessionConfiguration& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = value; }
-
-    /**
-     * <p>Contains details about the session with the knowledge base.</p>
-     */
     inline void SetSessionConfiguration(RetrieveAndGenerateSessionConfiguration&& value) { m_sessionConfigurationHasBeenSet = true; m_sessionConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains details about the session with the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithSessionConfiguration(const RetrieveAndGenerateSessionConfiguration& value) { SetSessionConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains details about the session with the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithSessionConfiguration(RetrieveAndGenerateSessionConfiguration&& value) { SetSessionConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the session. Reuse the same value to continue the
      * same session with the knowledge base.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the session. Reuse the same value to continue the
-     * same session with the knowledge base.</p>
-     */
     inline RetrieveAndGenerateRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
-
+    ///@}
   private:
 
     RetrieveAndGenerateInput m_input;

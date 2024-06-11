@@ -35,51 +35,20 @@ namespace Model
     AWS_FRAUDDETECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The list of variable names to get.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline BatchGetVariableRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline BatchGetVariableRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline BatchGetVariableRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline BatchGetVariableRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of variable names to get.</p>
-     */
     inline BatchGetVariableRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_names;

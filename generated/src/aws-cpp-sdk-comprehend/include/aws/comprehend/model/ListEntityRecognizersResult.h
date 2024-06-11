@@ -34,99 +34,42 @@ namespace Model
     AWS_COMPREHEND_API ListEntityRecognizersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of properties of an entity recognizer.</p>
      */
     inline const Aws::Vector<EntityRecognizerProperties>& GetEntityRecognizerPropertiesList() const{ return m_entityRecognizerPropertiesList; }
-
-    /**
-     * <p>The list of properties of an entity recognizer.</p>
-     */
     inline void SetEntityRecognizerPropertiesList(const Aws::Vector<EntityRecognizerProperties>& value) { m_entityRecognizerPropertiesList = value; }
-
-    /**
-     * <p>The list of properties of an entity recognizer.</p>
-     */
     inline void SetEntityRecognizerPropertiesList(Aws::Vector<EntityRecognizerProperties>&& value) { m_entityRecognizerPropertiesList = std::move(value); }
-
-    /**
-     * <p>The list of properties of an entity recognizer.</p>
-     */
     inline ListEntityRecognizersResult& WithEntityRecognizerPropertiesList(const Aws::Vector<EntityRecognizerProperties>& value) { SetEntityRecognizerPropertiesList(value); return *this;}
-
-    /**
-     * <p>The list of properties of an entity recognizer.</p>
-     */
     inline ListEntityRecognizersResult& WithEntityRecognizerPropertiesList(Aws::Vector<EntityRecognizerProperties>&& value) { SetEntityRecognizerPropertiesList(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of properties of an entity recognizer.</p>
-     */
     inline ListEntityRecognizersResult& AddEntityRecognizerPropertiesList(const EntityRecognizerProperties& value) { m_entityRecognizerPropertiesList.push_back(value); return *this; }
-
-    /**
-     * <p>The list of properties of an entity recognizer.</p>
-     */
     inline ListEntityRecognizersResult& AddEntityRecognizerPropertiesList(EntityRecognizerProperties&& value) { m_entityRecognizerPropertiesList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline ListEntityRecognizersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline ListEntityRecognizersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifies the next page of results to return.</p>
-     */
     inline ListEntityRecognizersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListEntityRecognizersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListEntityRecognizersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListEntityRecognizersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EntityRecognizerProperties> m_entityRecognizerPropertiesList;

@@ -33,53 +33,27 @@ namespace Model
     AWS_SSM_API GetParameterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about a parameter.</p>
      */
     inline const Parameter& GetParameter() const{ return m_parameter; }
-
-    /**
-     * <p>Information about a parameter.</p>
-     */
     inline void SetParameter(const Parameter& value) { m_parameter = value; }
-
-    /**
-     * <p>Information about a parameter.</p>
-     */
     inline void SetParameter(Parameter&& value) { m_parameter = std::move(value); }
-
-    /**
-     * <p>Information about a parameter.</p>
-     */
     inline GetParameterResult& WithParameter(const Parameter& value) { SetParameter(value); return *this;}
-
-    /**
-     * <p>Information about a parameter.</p>
-     */
     inline GetParameterResult& WithParameter(Parameter&& value) { SetParameter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetParameterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetParameterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetParameterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Parameter m_parameter;

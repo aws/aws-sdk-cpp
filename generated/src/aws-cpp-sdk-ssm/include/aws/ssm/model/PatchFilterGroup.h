@@ -39,46 +39,19 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The set of patch filters that make up the group.</p>
      */
     inline const Aws::Vector<PatchFilter>& GetPatchFilters() const{ return m_patchFilters; }
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline bool PatchFiltersHasBeenSet() const { return m_patchFiltersHasBeenSet; }
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline void SetPatchFilters(const Aws::Vector<PatchFilter>& value) { m_patchFiltersHasBeenSet = true; m_patchFilters = value; }
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline void SetPatchFilters(Aws::Vector<PatchFilter>&& value) { m_patchFiltersHasBeenSet = true; m_patchFilters = std::move(value); }
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline PatchFilterGroup& WithPatchFilters(const Aws::Vector<PatchFilter>& value) { SetPatchFilters(value); return *this;}
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline PatchFilterGroup& WithPatchFilters(Aws::Vector<PatchFilter>&& value) { SetPatchFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline PatchFilterGroup& AddPatchFilters(const PatchFilter& value) { m_patchFiltersHasBeenSet = true; m_patchFilters.push_back(value); return *this; }
-
-    /**
-     * <p>The set of patch filters that make up the group.</p>
-     */
     inline PatchFilterGroup& AddPatchFilters(PatchFilter&& value) { m_patchFiltersHasBeenSet = true; m_patchFilters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PatchFilter> m_patchFilters;

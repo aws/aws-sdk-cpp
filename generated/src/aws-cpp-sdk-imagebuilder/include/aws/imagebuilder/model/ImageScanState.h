@@ -39,77 +39,31 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current state of vulnerability scans for the image.</p>
      */
     inline const ImageScanStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current state of vulnerability scans for the image.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current state of vulnerability scans for the image.</p>
-     */
     inline void SetStatus(const ImageScanStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current state of vulnerability scans for the image.</p>
-     */
     inline void SetStatus(ImageScanStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current state of vulnerability scans for the image.</p>
-     */
     inline ImageScanState& WithStatus(const ImageScanStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current state of vulnerability scans for the image.</p>
-     */
     inline ImageScanState& WithStatus(ImageScanStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the scan status for the image.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline ImageScanState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline ImageScanState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the scan status for the image.</p>
-     */
     inline ImageScanState& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     ImageScanStatus m_status;

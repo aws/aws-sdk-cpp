@@ -38,36 +38,17 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The recommendation of a target Amazon RDS database engine.</p>
      */
     inline const RdsRecommendation& GetRdsEngine() const{ return m_rdsEngine; }
-
-    /**
-     * <p>The recommendation of a target Amazon RDS database engine.</p>
-     */
     inline bool RdsEngineHasBeenSet() const { return m_rdsEngineHasBeenSet; }
-
-    /**
-     * <p>The recommendation of a target Amazon RDS database engine.</p>
-     */
     inline void SetRdsEngine(const RdsRecommendation& value) { m_rdsEngineHasBeenSet = true; m_rdsEngine = value; }
-
-    /**
-     * <p>The recommendation of a target Amazon RDS database engine.</p>
-     */
     inline void SetRdsEngine(RdsRecommendation&& value) { m_rdsEngineHasBeenSet = true; m_rdsEngine = std::move(value); }
-
-    /**
-     * <p>The recommendation of a target Amazon RDS database engine.</p>
-     */
     inline RecommendationData& WithRdsEngine(const RdsRecommendation& value) { SetRdsEngine(value); return *this;}
-
-    /**
-     * <p>The recommendation of a target Amazon RDS database engine.</p>
-     */
     inline RecommendationData& WithRdsEngine(RdsRecommendation&& value) { SetRdsEngine(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RdsRecommendation m_rdsEngine;

@@ -39,77 +39,31 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A provided ID for the UserID. Unique within the collection.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline MatchedUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline MatchedUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>A provided ID for the UserID. Unique within the collection.</p>
-     */
     inline MatchedUser& WithUserId(const char* value) { SetUserId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the user matched to a provided FaceID.</p>
      */
     inline const UserStatus& GetUserStatus() const{ return m_userStatus; }
-
-    /**
-     * <p>The status of the user matched to a provided FaceID.</p>
-     */
     inline bool UserStatusHasBeenSet() const { return m_userStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the user matched to a provided FaceID.</p>
-     */
     inline void SetUserStatus(const UserStatus& value) { m_userStatusHasBeenSet = true; m_userStatus = value; }
-
-    /**
-     * <p>The status of the user matched to a provided FaceID.</p>
-     */
     inline void SetUserStatus(UserStatus&& value) { m_userStatusHasBeenSet = true; m_userStatus = std::move(value); }
-
-    /**
-     * <p>The status of the user matched to a provided FaceID.</p>
-     */
     inline MatchedUser& WithUserStatus(const UserStatus& value) { SetUserStatus(value); return *this;}
-
-    /**
-     * <p>The status of the user matched to a provided FaceID.</p>
-     */
     inline MatchedUser& WithUserStatus(UserStatus&& value) { SetUserStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userId;

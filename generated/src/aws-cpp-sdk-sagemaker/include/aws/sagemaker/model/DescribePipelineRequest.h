@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
      */
     inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline DescribePipelineRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline DescribePipelineRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the pipeline to describe.</p>
-     */
     inline DescribePipelineRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pipelineName;

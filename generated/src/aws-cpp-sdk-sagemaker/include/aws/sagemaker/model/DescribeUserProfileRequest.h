@@ -34,87 +34,33 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The domain ID.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline DescribeUserProfileRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline DescribeUserProfileRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain ID.</p>
-     */
     inline DescribeUserProfileRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user profile name. This value is not case sensitive.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline DescribeUserProfileRequest& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline DescribeUserProfileRequest& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The user profile name. This value is not case sensitive.</p>
-     */
     inline DescribeUserProfileRequest& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

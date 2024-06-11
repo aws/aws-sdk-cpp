@@ -41,62 +41,28 @@ namespace Model
     AWS_CLOUDSEARCH_API IndexDocumentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The names of the fields that are currently being indexed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFieldNames() const{ return m_fieldNames; }
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline void SetFieldNames(const Aws::Vector<Aws::String>& value) { m_fieldNames = value; }
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline void SetFieldNames(Aws::Vector<Aws::String>&& value) { m_fieldNames = std::move(value); }
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline IndexDocumentsResult& WithFieldNames(const Aws::Vector<Aws::String>& value) { SetFieldNames(value); return *this;}
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline IndexDocumentsResult& WithFieldNames(Aws::Vector<Aws::String>&& value) { SetFieldNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline IndexDocumentsResult& AddFieldNames(const Aws::String& value) { m_fieldNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline IndexDocumentsResult& AddFieldNames(Aws::String&& value) { m_fieldNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the fields that are currently being indexed.</p>
-     */
     inline IndexDocumentsResult& AddFieldNames(const char* value) { m_fieldNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline IndexDocumentsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline IndexDocumentsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_fieldNames;

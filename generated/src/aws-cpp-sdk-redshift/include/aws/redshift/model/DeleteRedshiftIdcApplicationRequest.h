@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
      */
     inline const Aws::String& GetRedshiftIdcApplicationArn() const{ return m_redshiftIdcApplicationArn; }
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline bool RedshiftIdcApplicationArnHasBeenSet() const { return m_redshiftIdcApplicationArnHasBeenSet; }
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline void SetRedshiftIdcApplicationArn(const Aws::String& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = value; }
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline void SetRedshiftIdcApplicationArn(Aws::String&& value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn = std::move(value); }
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline void SetRedshiftIdcApplicationArn(const char* value) { m_redshiftIdcApplicationArnHasBeenSet = true; m_redshiftIdcApplicationArn.assign(value); }
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline DeleteRedshiftIdcApplicationRequest& WithRedshiftIdcApplicationArn(const Aws::String& value) { SetRedshiftIdcApplicationArn(value); return *this;}
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline DeleteRedshiftIdcApplicationRequest& WithRedshiftIdcApplicationArn(Aws::String&& value) { SetRedshiftIdcApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for a deleted Amazon Redshift IAM Identity Center application.</p>
-     */
     inline DeleteRedshiftIdcApplicationRequest& WithRedshiftIdcApplicationArn(const char* value) { SetRedshiftIdcApplicationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_redshiftIdcApplicationArn;

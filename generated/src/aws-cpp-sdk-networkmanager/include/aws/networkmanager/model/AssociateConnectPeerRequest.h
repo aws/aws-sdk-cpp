@@ -32,169 +32,61 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of your global network.</p>
      */
     inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline AssociateConnectPeerRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline AssociateConnectPeerRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of your global network.</p>
-     */
     inline AssociateConnectPeerRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Connect peer.</p>
      */
     inline const Aws::String& GetConnectPeerId() const{ return m_connectPeerId; }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline bool ConnectPeerIdHasBeenSet() const { return m_connectPeerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline void SetConnectPeerId(const Aws::String& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = value; }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline void SetConnectPeerId(Aws::String&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::move(value); }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline void SetConnectPeerId(const char* value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId.assign(value); }
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline AssociateConnectPeerRequest& WithConnectPeerId(const Aws::String& value) { SetConnectPeerId(value); return *this;}
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline AssociateConnectPeerRequest& WithConnectPeerId(Aws::String&& value) { SetConnectPeerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Connect peer.</p>
-     */
     inline AssociateConnectPeerRequest& WithConnectPeerId(const char* value) { SetConnectPeerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline AssociateConnectPeerRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline AssociateConnectPeerRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the device.</p>
-     */
     inline AssociateConnectPeerRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the link.</p>
      */
     inline const Aws::String& GetLinkId() const{ return m_linkId; }
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline bool LinkIdHasBeenSet() const { return m_linkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline void SetLinkId(const Aws::String& value) { m_linkIdHasBeenSet = true; m_linkId = value; }
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline void SetLinkId(Aws::String&& value) { m_linkIdHasBeenSet = true; m_linkId = std::move(value); }
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline void SetLinkId(const char* value) { m_linkIdHasBeenSet = true; m_linkId.assign(value); }
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline AssociateConnectPeerRequest& WithLinkId(const Aws::String& value) { SetLinkId(value); return *this;}
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline AssociateConnectPeerRequest& WithLinkId(Aws::String&& value) { SetLinkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the link.</p>
-     */
     inline AssociateConnectPeerRequest& WithLinkId(const char* value) { SetLinkId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalNetworkId;

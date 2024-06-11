@@ -41,88 +41,39 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The recommended CPU size for the Amazon ECS service. </p>
      */
     inline int GetRecommendedCpuUnits() const{ return m_recommendedCpuUnits; }
-
-    /**
-     * <p> The recommended CPU size for the Amazon ECS service. </p>
-     */
     inline bool RecommendedCpuUnitsHasBeenSet() const { return m_recommendedCpuUnitsHasBeenSet; }
-
-    /**
-     * <p> The recommended CPU size for the Amazon ECS service. </p>
-     */
     inline void SetRecommendedCpuUnits(int value) { m_recommendedCpuUnitsHasBeenSet = true; m_recommendedCpuUnits = value; }
-
-    /**
-     * <p> The recommended CPU size for the Amazon ECS service. </p>
-     */
     inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedCpuUnits(int value) { SetRecommendedCpuUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The recommended memory size for the Amazon ECS service. </p>
      */
     inline int GetRecommendedMemorySize() const{ return m_recommendedMemorySize; }
-
-    /**
-     * <p> The recommended memory size for the Amazon ECS service. </p>
-     */
     inline bool RecommendedMemorySizeHasBeenSet() const { return m_recommendedMemorySizeHasBeenSet; }
-
-    /**
-     * <p> The recommended memory size for the Amazon ECS service. </p>
-     */
     inline void SetRecommendedMemorySize(int value) { m_recommendedMemorySizeHasBeenSet = true; m_recommendedMemorySize = value; }
-
-    /**
-     * <p> The recommended memory size for the Amazon ECS service. </p>
-     */
     inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedMemorySize(int value) { SetRecommendedMemorySize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An array of objects that describe the projected metric. </p>
      */
     inline const Aws::Vector<ECSServiceProjectedMetric>& GetProjectedMetrics() const{ return m_projectedMetrics; }
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline bool ProjectedMetricsHasBeenSet() const { return m_projectedMetricsHasBeenSet; }
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline void SetProjectedMetrics(const Aws::Vector<ECSServiceProjectedMetric>& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = value; }
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline void SetProjectedMetrics(Aws::Vector<ECSServiceProjectedMetric>&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::move(value); }
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline ECSServiceRecommendedOptionProjectedMetric& WithProjectedMetrics(const Aws::Vector<ECSServiceProjectedMetric>& value) { SetProjectedMetrics(value); return *this;}
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline ECSServiceRecommendedOptionProjectedMetric& WithProjectedMetrics(Aws::Vector<ECSServiceProjectedMetric>&& value) { SetProjectedMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline ECSServiceRecommendedOptionProjectedMetric& AddProjectedMetrics(const ECSServiceProjectedMetric& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(value); return *this; }
-
-    /**
-     * <p> An array of objects that describe the projected metric. </p>
-     */
     inline ECSServiceRecommendedOptionProjectedMetric& AddProjectedMetrics(ECSServiceProjectedMetric&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_recommendedCpuUnits;

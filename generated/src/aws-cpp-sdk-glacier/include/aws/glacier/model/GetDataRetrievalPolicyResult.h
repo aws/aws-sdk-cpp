@@ -39,53 +39,27 @@ namespace Model
     AWS_GLACIER_API GetDataRetrievalPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the returned data retrieval policy in JSON format.</p>
      */
     inline const DataRetrievalPolicy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>Contains the returned data retrieval policy in JSON format.</p>
-     */
     inline void SetPolicy(const DataRetrievalPolicy& value) { m_policy = value; }
-
-    /**
-     * <p>Contains the returned data retrieval policy in JSON format.</p>
-     */
     inline void SetPolicy(DataRetrievalPolicy&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>Contains the returned data retrieval policy in JSON format.</p>
-     */
     inline GetDataRetrievalPolicyResult& WithPolicy(const DataRetrievalPolicy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>Contains the returned data retrieval policy in JSON format.</p>
-     */
     inline GetDataRetrievalPolicyResult& WithPolicy(DataRetrievalPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDataRetrievalPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDataRetrievalPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDataRetrievalPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DataRetrievalPolicy m_policy;

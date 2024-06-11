@@ -38,6 +38,7 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum number of read request units for the specified table.</p> <p>To
      * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
@@ -46,35 +47,12 @@ namespace Model
      * the value of <code>MaxReadRequestUnits</code> to -1.</p>
      */
     inline long long GetMaxReadRequestUnits() const{ return m_maxReadRequestUnits; }
-
-    /**
-     * <p>Maximum number of read request units for the specified table.</p> <p>To
-     * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
-     * of <code>MaxReadRequestUnits</code> as greater than or equal to 1. To remove the
-     * maximum <code>OnDemandThroughput</code> that is currently set on your table, set
-     * the value of <code>MaxReadRequestUnits</code> to -1.</p>
-     */
     inline bool MaxReadRequestUnitsHasBeenSet() const { return m_maxReadRequestUnitsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of read request units for the specified table.</p> <p>To
-     * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
-     * of <code>MaxReadRequestUnits</code> as greater than or equal to 1. To remove the
-     * maximum <code>OnDemandThroughput</code> that is currently set on your table, set
-     * the value of <code>MaxReadRequestUnits</code> to -1.</p>
-     */
     inline void SetMaxReadRequestUnits(long long value) { m_maxReadRequestUnitsHasBeenSet = true; m_maxReadRequestUnits = value; }
-
-    /**
-     * <p>Maximum number of read request units for the specified table.</p> <p>To
-     * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
-     * of <code>MaxReadRequestUnits</code> as greater than or equal to 1. To remove the
-     * maximum <code>OnDemandThroughput</code> that is currently set on your table, set
-     * the value of <code>MaxReadRequestUnits</code> to -1.</p>
-     */
     inline OnDemandThroughput& WithMaxReadRequestUnits(long long value) { SetMaxReadRequestUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of write request units for the specified table.</p> <p>To
      * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
@@ -83,34 +61,10 @@ namespace Model
      * set the value of <code>MaxWriteRequestUnits</code> to -1.</p>
      */
     inline long long GetMaxWriteRequestUnits() const{ return m_maxWriteRequestUnits; }
-
-    /**
-     * <p>Maximum number of write request units for the specified table.</p> <p>To
-     * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
-     * of <code>MaxWriteRequestUnits</code> as greater than or equal to 1. To remove
-     * the maximum <code>OnDemandThroughput</code> that is currently set on your table,
-     * set the value of <code>MaxWriteRequestUnits</code> to -1.</p>
-     */
     inline bool MaxWriteRequestUnitsHasBeenSet() const { return m_maxWriteRequestUnitsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of write request units for the specified table.</p> <p>To
-     * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
-     * of <code>MaxWriteRequestUnits</code> as greater than or equal to 1. To remove
-     * the maximum <code>OnDemandThroughput</code> that is currently set on your table,
-     * set the value of <code>MaxWriteRequestUnits</code> to -1.</p>
-     */
     inline void SetMaxWriteRequestUnits(long long value) { m_maxWriteRequestUnitsHasBeenSet = true; m_maxWriteRequestUnits = value; }
-
-    /**
-     * <p>Maximum number of write request units for the specified table.</p> <p>To
-     * specify a maximum <code>OnDemandThroughput</code> on your table, set the value
-     * of <code>MaxWriteRequestUnits</code> as greater than or equal to 1. To remove
-     * the maximum <code>OnDemandThroughput</code> that is currently set on your table,
-     * set the value of <code>MaxWriteRequestUnits</code> to -1.</p>
-     */
     inline OnDemandThroughput& WithMaxWriteRequestUnits(long long value) { SetMaxWriteRequestUnits(value); return *this;}
-
+    ///@}
   private:
 
     long long m_maxReadRequestUnits;

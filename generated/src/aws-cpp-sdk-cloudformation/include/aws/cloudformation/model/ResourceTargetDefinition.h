@@ -44,98 +44,36 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates which resource attribute is triggering this update, such as a
      * change in the resource attribute's <code>Metadata</code>,
      * <code>Properties</code>, or <code>Tags</code>.</p>
      */
     inline const ResourceAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>Indicates which resource attribute is triggering this update, such as a
-     * change in the resource attribute's <code>Metadata</code>,
-     * <code>Properties</code>, or <code>Tags</code>.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>Indicates which resource attribute is triggering this update, such as a
-     * change in the resource attribute's <code>Metadata</code>,
-     * <code>Properties</code>, or <code>Tags</code>.</p>
-     */
     inline void SetAttribute(const ResourceAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>Indicates which resource attribute is triggering this update, such as a
-     * change in the resource attribute's <code>Metadata</code>,
-     * <code>Properties</code>, or <code>Tags</code>.</p>
-     */
     inline void SetAttribute(ResourceAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>Indicates which resource attribute is triggering this update, such as a
-     * change in the resource attribute's <code>Metadata</code>,
-     * <code>Properties</code>, or <code>Tags</code>.</p>
-     */
     inline ResourceTargetDefinition& WithAttribute(const ResourceAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>Indicates which resource attribute is triggering this update, such as a
-     * change in the resource attribute's <code>Metadata</code>,
-     * <code>Properties</code>, or <code>Tags</code>.</p>
-     */
     inline ResourceTargetDefinition& WithAttribute(ResourceAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
      * the property. For all other attributes, the value is null.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline ResourceTargetDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline ResourceTargetDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, the name of
-     * the property. For all other attributes, the value is null.</p>
-     */
     inline ResourceTargetDefinition& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
      * whether a change to this property causes the resource to be recreated. The value
@@ -146,202 +84,58 @@ namespace Model
      * in the <i>CloudFormation User Guide</i>.</p>
      */
     inline const RequiresRecreation& GetRequiresRecreation() const{ return m_requiresRecreation; }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
-     * whether a change to this property causes the resource to be recreated. The value
-     * can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>.
-     * To determine the conditions for a <code>Conditionally</code> recreation, see the
-     * update behavior for that <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the <i>CloudFormation User Guide</i>.</p>
-     */
     inline bool RequiresRecreationHasBeenSet() const { return m_requiresRecreationHasBeenSet; }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
-     * whether a change to this property causes the resource to be recreated. The value
-     * can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>.
-     * To determine the conditions for a <code>Conditionally</code> recreation, see the
-     * update behavior for that <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the <i>CloudFormation User Guide</i>.</p>
-     */
     inline void SetRequiresRecreation(const RequiresRecreation& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = value; }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
-     * whether a change to this property causes the resource to be recreated. The value
-     * can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>.
-     * To determine the conditions for a <code>Conditionally</code> recreation, see the
-     * update behavior for that <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the <i>CloudFormation User Guide</i>.</p>
-     */
     inline void SetRequiresRecreation(RequiresRecreation&& value) { m_requiresRecreationHasBeenSet = true; m_requiresRecreation = std::move(value); }
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
-     * whether a change to this property causes the resource to be recreated. The value
-     * can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>.
-     * To determine the conditions for a <code>Conditionally</code> recreation, see the
-     * update behavior for that <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the <i>CloudFormation User Guide</i>.</p>
-     */
     inline ResourceTargetDefinition& WithRequiresRecreation(const RequiresRecreation& value) { SetRequiresRecreation(value); return *this;}
-
-    /**
-     * <p>If the <code>Attribute</code> value is <code>Properties</code>, indicates
-     * whether a change to this property causes the resource to be recreated. The value
-     * can be <code>Never</code>, <code>Always</code>, or <code>Conditionally</code>.
-     * To determine the conditions for a <code>Conditionally</code> recreation, see the
-     * update behavior for that <a
-     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">property</a>
-     * in the <i>CloudFormation User Guide</i>.</p>
-     */
     inline ResourceTargetDefinition& WithRequiresRecreation(RequiresRecreation&& value) { SetRequiresRecreation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The property path of the property.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline ResourceTargetDefinition& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline ResourceTargetDefinition& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The property path of the property.</p>
-     */
     inline ResourceTargetDefinition& WithPath(const char* value) { SetPath(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the property before the change is executed. Large values can be
      * truncated.</p>
      */
     inline const Aws::String& GetBeforeValue() const{ return m_beforeValue; }
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline void SetBeforeValue(const Aws::String& value) { m_beforeValueHasBeenSet = true; m_beforeValue = value; }
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline void SetBeforeValue(Aws::String&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::move(value); }
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline void SetBeforeValue(const char* value) { m_beforeValueHasBeenSet = true; m_beforeValue.assign(value); }
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline ResourceTargetDefinition& WithBeforeValue(const Aws::String& value) { SetBeforeValue(value); return *this;}
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline ResourceTargetDefinition& WithBeforeValue(Aws::String&& value) { SetBeforeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the property before the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline ResourceTargetDefinition& WithBeforeValue(const char* value) { SetBeforeValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the property after the change is executed. Large values can be
      * truncated.</p>
      */
     inline const Aws::String& GetAfterValue() const{ return m_afterValue; }
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline void SetAfterValue(const Aws::String& value) { m_afterValueHasBeenSet = true; m_afterValue = value; }
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline void SetAfterValue(Aws::String&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::move(value); }
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline void SetAfterValue(const char* value) { m_afterValueHasBeenSet = true; m_afterValue.assign(value); }
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline ResourceTargetDefinition& WithAfterValue(const Aws::String& value) { SetAfterValue(value); return *this;}
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline ResourceTargetDefinition& WithAfterValue(Aws::String&& value) { SetAfterValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the property after the change is executed. Large values can be
-     * truncated.</p>
-     */
     inline ResourceTargetDefinition& WithAfterValue(const char* value) { SetAfterValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of change to be made to the property if the change is executed.</p>
      * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
@@ -349,47 +143,12 @@ namespace Model
      * <code>Modify</code> The item will be modified.</p> </li> </ul>
      */
     inline const AttributeChangeType& GetAttributeChangeType() const{ return m_attributeChangeType; }
-
-    /**
-     * <p>The type of change to be made to the property if the change is executed.</p>
-     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
-     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
-     * <code>Modify</code> The item will be modified.</p> </li> </ul>
-     */
     inline bool AttributeChangeTypeHasBeenSet() const { return m_attributeChangeTypeHasBeenSet; }
-
-    /**
-     * <p>The type of change to be made to the property if the change is executed.</p>
-     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
-     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
-     * <code>Modify</code> The item will be modified.</p> </li> </ul>
-     */
     inline void SetAttributeChangeType(const AttributeChangeType& value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = value; }
-
-    /**
-     * <p>The type of change to be made to the property if the change is executed.</p>
-     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
-     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
-     * <code>Modify</code> The item will be modified.</p> </li> </ul>
-     */
     inline void SetAttributeChangeType(AttributeChangeType&& value) { m_attributeChangeTypeHasBeenSet = true; m_attributeChangeType = std::move(value); }
-
-    /**
-     * <p>The type of change to be made to the property if the change is executed.</p>
-     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
-     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
-     * <code>Modify</code> The item will be modified.</p> </li> </ul>
-     */
     inline ResourceTargetDefinition& WithAttributeChangeType(const AttributeChangeType& value) { SetAttributeChangeType(value); return *this;}
-
-    /**
-     * <p>The type of change to be made to the property if the change is executed.</p>
-     * <ul> <li> <p> <code>Add</code> The item will be added.</p> </li> <li> <p>
-     * <code>Remove</code> The item will be removed.</p> </li> <li> <p>
-     * <code>Modify</code> The item will be modified.</p> </li> </ul>
-     */
     inline ResourceTargetDefinition& WithAttributeChangeType(AttributeChangeType&& value) { SetAttributeChangeType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceAttribute m_attribute;

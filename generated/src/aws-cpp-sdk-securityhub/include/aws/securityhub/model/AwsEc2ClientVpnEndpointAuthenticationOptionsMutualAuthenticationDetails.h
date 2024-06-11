@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
      */
     inline const Aws::String& GetClientRootCertificateChain() const{ return m_clientRootCertificateChain; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline bool ClientRootCertificateChainHasBeenSet() const { return m_clientRootCertificateChainHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline void SetClientRootCertificateChain(const Aws::String& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline void SetClientRootCertificateChain(Aws::String&& value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline void SetClientRootCertificateChain(const char* value) { m_clientRootCertificateChainHasBeenSet = true; m_clientRootCertificateChain.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& WithClientRootCertificateChain(const Aws::String& value) { SetClientRootCertificateChain(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& WithClientRootCertificateChain(Aws::String&& value) { SetClientRootCertificateChain(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the client certificate. </p>
-     */
     inline AwsEc2ClientVpnEndpointAuthenticationOptionsMutualAuthenticationDetails& WithClientRootCertificateChain(const char* value) { SetClientRootCertificateChain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientRootCertificateChain;

@@ -34,70 +34,30 @@ namespace Model
     AWS_EFS_API PutLifecycleConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of lifecycle management policies. EFS supports a maximum of one
      * policy per file system.</p>
      */
     inline const Aws::Vector<LifecyclePolicy>& GetLifecyclePolicies() const{ return m_lifecyclePolicies; }
-
-    /**
-     * <p>An array of lifecycle management policies. EFS supports a maximum of one
-     * policy per file system.</p>
-     */
     inline void SetLifecyclePolicies(const Aws::Vector<LifecyclePolicy>& value) { m_lifecyclePolicies = value; }
-
-    /**
-     * <p>An array of lifecycle management policies. EFS supports a maximum of one
-     * policy per file system.</p>
-     */
     inline void SetLifecyclePolicies(Aws::Vector<LifecyclePolicy>&& value) { m_lifecyclePolicies = std::move(value); }
-
-    /**
-     * <p>An array of lifecycle management policies. EFS supports a maximum of one
-     * policy per file system.</p>
-     */
     inline PutLifecycleConfigurationResult& WithLifecyclePolicies(const Aws::Vector<LifecyclePolicy>& value) { SetLifecyclePolicies(value); return *this;}
-
-    /**
-     * <p>An array of lifecycle management policies. EFS supports a maximum of one
-     * policy per file system.</p>
-     */
     inline PutLifecycleConfigurationResult& WithLifecyclePolicies(Aws::Vector<LifecyclePolicy>&& value) { SetLifecyclePolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of lifecycle management policies. EFS supports a maximum of one
-     * policy per file system.</p>
-     */
     inline PutLifecycleConfigurationResult& AddLifecyclePolicies(const LifecyclePolicy& value) { m_lifecyclePolicies.push_back(value); return *this; }
-
-    /**
-     * <p>An array of lifecycle management policies. EFS supports a maximum of one
-     * policy per file system.</p>
-     */
     inline PutLifecycleConfigurationResult& AddLifecyclePolicies(LifecyclePolicy&& value) { m_lifecyclePolicies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutLifecycleConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutLifecycleConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutLifecycleConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LifecyclePolicy> m_lifecyclePolicies;

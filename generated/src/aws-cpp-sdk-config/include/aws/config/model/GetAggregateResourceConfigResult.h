@@ -33,53 +33,27 @@ namespace Model
     AWS_CONFIGSERVICE_API GetAggregateResourceConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns a <code>ConfigurationItem</code> object.</p>
      */
     inline const ConfigurationItem& GetConfigurationItem() const{ return m_configurationItem; }
-
-    /**
-     * <p>Returns a <code>ConfigurationItem</code> object.</p>
-     */
     inline void SetConfigurationItem(const ConfigurationItem& value) { m_configurationItem = value; }
-
-    /**
-     * <p>Returns a <code>ConfigurationItem</code> object.</p>
-     */
     inline void SetConfigurationItem(ConfigurationItem&& value) { m_configurationItem = std::move(value); }
-
-    /**
-     * <p>Returns a <code>ConfigurationItem</code> object.</p>
-     */
     inline GetAggregateResourceConfigResult& WithConfigurationItem(const ConfigurationItem& value) { SetConfigurationItem(value); return *this;}
-
-    /**
-     * <p>Returns a <code>ConfigurationItem</code> object.</p>
-     */
     inline GetAggregateResourceConfigResult& WithConfigurationItem(ConfigurationItem&& value) { SetConfigurationItem(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAggregateResourceConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAggregateResourceConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAggregateResourceConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConfigurationItem m_configurationItem;

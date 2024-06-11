@@ -37,54 +37,20 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The set of arrays which define the polygon. A polygon can have between 4 and
      * 1000 vertices.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const{ return m_polygon; }
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline void SetPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline void SetPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline TrackingFilterGeometry& WithPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { SetPolygon(value); return *this;}
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline TrackingFilterGeometry& WithPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { SetPolygon(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline TrackingFilterGeometry& AddPolygon(const Aws::Vector<Aws::Vector<double>>& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-
-    /**
-     * <p>The set of arrays which define the polygon. A polygon can have between 4 and
-     * 1000 vertices.</p>
-     */
     inline TrackingFilterGeometry& AddPolygon(Aws::Vector<Aws::Vector<double>>&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::Vector<Aws::Vector<double>>> m_polygon;

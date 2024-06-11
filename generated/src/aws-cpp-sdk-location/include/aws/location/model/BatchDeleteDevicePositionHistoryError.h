@@ -38,65 +38,29 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the device for this position.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline BatchDeleteDevicePositionHistoryError& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline BatchDeleteDevicePositionHistoryError& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the device for this position.</p>
-     */
     inline BatchDeleteDevicePositionHistoryError& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BatchItemError& GetError() const{ return m_error; }
-
-    
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    
     inline void SetError(const BatchItemError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    
     inline void SetError(BatchItemError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    
     inline BatchDeleteDevicePositionHistoryError& WithError(const BatchItemError& value) { SetError(value); return *this;}
-
-    
     inline BatchDeleteDevicePositionHistoryError& WithError(BatchItemError&& value) { SetError(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

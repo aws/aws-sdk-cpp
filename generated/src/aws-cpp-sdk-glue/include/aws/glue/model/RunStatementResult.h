@@ -32,43 +32,25 @@ namespace Model
     AWS_GLUE_API RunStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the Id of the statement that was run.</p>
      */
     inline int GetId() const{ return m_id; }
-
-    /**
-     * <p>Returns the Id of the statement that was run.</p>
-     */
     inline void SetId(int value) { m_id = value; }
-
-    /**
-     * <p>Returns the Id of the statement that was run.</p>
-     */
     inline RunStatementResult& WithId(int value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RunStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RunStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RunStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_id;

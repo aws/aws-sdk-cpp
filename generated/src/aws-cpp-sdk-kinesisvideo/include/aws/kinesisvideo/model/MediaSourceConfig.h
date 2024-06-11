@@ -40,97 +40,34 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
      * the camera, or a local media file location.</p>
      */
     inline const Aws::String& GetMediaUriSecretArn() const{ return m_mediaUriSecretArn; }
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline bool MediaUriSecretArnHasBeenSet() const { return m_mediaUriSecretArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline void SetMediaUriSecretArn(const Aws::String& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = value; }
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline void SetMediaUriSecretArn(Aws::String&& value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline void SetMediaUriSecretArn(const char* value) { m_mediaUriSecretArnHasBeenSet = true; m_mediaUriSecretArn.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline MediaSourceConfig& WithMediaUriSecretArn(const Aws::String& value) { SetMediaUriSecretArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline MediaSourceConfig& WithMediaUriSecretArn(Aws::String&& value) { SetMediaUriSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Secrets Manager ARN for the username and password of
-     * the camera, or a local media file location.</p>
-     */
     inline MediaSourceConfig& WithMediaUriSecretArn(const char* value) { SetMediaUriSecretArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
      * can be used to stream local media files.</p>  <p>Preview only supports the
      * <code>RTSP_URI</code> media source URI format .</p> 
      */
     inline const MediaUriType& GetMediaUriType() const{ return m_mediaUriType; }
-
-    /**
-     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>  <p>Preview only supports the
-     * <code>RTSP_URI</code> media source URI format .</p> 
-     */
     inline bool MediaUriTypeHasBeenSet() const { return m_mediaUriTypeHasBeenSet; }
-
-    /**
-     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>  <p>Preview only supports the
-     * <code>RTSP_URI</code> media source URI format .</p> 
-     */
     inline void SetMediaUriType(const MediaUriType& value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = value; }
-
-    /**
-     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>  <p>Preview only supports the
-     * <code>RTSP_URI</code> media source URI format .</p> 
-     */
     inline void SetMediaUriType(MediaUriType&& value) { m_mediaUriTypeHasBeenSet = true; m_mediaUriType = std::move(value); }
-
-    /**
-     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>  <p>Preview only supports the
-     * <code>RTSP_URI</code> media source URI format .</p> 
-     */
     inline MediaSourceConfig& WithMediaUriType(const MediaUriType& value) { SetMediaUriType(value); return *this;}
-
-    /**
-     * <p>The Uniform Resource Identifier (URI) type. The <code>FILE_URI</code> value
-     * can be used to stream local media files.</p>  <p>Preview only supports the
-     * <code>RTSP_URI</code> media source URI format .</p> 
-     */
     inline MediaSourceConfig& WithMediaUriType(MediaUriType&& value) { SetMediaUriType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mediaUriSecretArn;

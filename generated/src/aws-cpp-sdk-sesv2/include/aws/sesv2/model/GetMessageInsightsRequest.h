@@ -36,54 +36,20 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> A <code>MessageId</code> is a unique identifier for a message, and is
      * returned when sending emails through Amazon SES. </p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline GetMessageInsightsRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline GetMessageInsightsRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p> A <code>MessageId</code> is a unique identifier for a message, and is
-     * returned when sending emails through Amazon SES. </p>
-     */
     inline GetMessageInsightsRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

@@ -37,87 +37,33 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The public key.</p>
      */
     inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
-
-    /**
-     * <p>The public key.</p>
-     */
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-
-    /**
-     * <p>The public key.</p>
-     */
     inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-
-    /**
-     * <p>The public key.</p>
-     */
     inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-
-    /**
-     * <p>The public key.</p>
-     */
     inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
-
-    /**
-     * <p>The public key.</p>
-     */
     inline KeyPair& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
-
-    /**
-     * <p>The public key.</p>
-     */
     inline KeyPair& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The public key.</p>
-     */
     inline KeyPair& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The private key.</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
-
-    /**
-     * <p>The private key.</p>
-     */
     inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
-
-    /**
-     * <p>The private key.</p>
-     */
     inline void SetPrivateKey(const Aws::String& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
-
-    /**
-     * <p>The private key.</p>
-     */
     inline void SetPrivateKey(Aws::String&& value) { m_privateKeyHasBeenSet = true; m_privateKey = std::move(value); }
-
-    /**
-     * <p>The private key.</p>
-     */
     inline void SetPrivateKey(const char* value) { m_privateKeyHasBeenSet = true; m_privateKey.assign(value); }
-
-    /**
-     * <p>The private key.</p>
-     */
     inline KeyPair& WithPrivateKey(const Aws::String& value) { SetPrivateKey(value); return *this;}
-
-    /**
-     * <p>The private key.</p>
-     */
     inline KeyPair& WithPrivateKey(Aws::String&& value) { SetPrivateKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The private key.</p>
-     */
     inline KeyPair& WithPrivateKey(const char* value) { SetPrivateKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_publicKey;

@@ -40,73 +40,30 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the type of access that generated the finding.</p>
      */
     inline const FindingSourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
     inline void SetType(const FindingSourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
     inline void SetType(FindingSourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
     inline FindingSource& WithType(const FindingSourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Indicates the type of access that generated the finding.</p>
-     */
     inline FindingSource& WithType(FindingSourceType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Includes details about how the access that generated the finding is granted.
      * This is populated for Amazon S3 bucket findings.</p>
      */
     inline const FindingSourceDetail& GetDetail() const{ return m_detail; }
-
-    /**
-     * <p>Includes details about how the access that generated the finding is granted.
-     * This is populated for Amazon S3 bucket findings.</p>
-     */
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-
-    /**
-     * <p>Includes details about how the access that generated the finding is granted.
-     * This is populated for Amazon S3 bucket findings.</p>
-     */
     inline void SetDetail(const FindingSourceDetail& value) { m_detailHasBeenSet = true; m_detail = value; }
-
-    /**
-     * <p>Includes details about how the access that generated the finding is granted.
-     * This is populated for Amazon S3 bucket findings.</p>
-     */
     inline void SetDetail(FindingSourceDetail&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-
-    /**
-     * <p>Includes details about how the access that generated the finding is granted.
-     * This is populated for Amazon S3 bucket findings.</p>
-     */
     inline FindingSource& WithDetail(const FindingSourceDetail& value) { SetDetail(value); return *this;}
-
-    /**
-     * <p>Includes details about how the access that generated the finding is granted.
-     * This is populated for Amazon S3 bucket findings.</p>
-     */
     inline FindingSource& WithDetail(FindingSourceDetail&& value) { SetDetail(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FindingSourceType m_type;

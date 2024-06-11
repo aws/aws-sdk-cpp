@@ -35,54 +35,20 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
      * to update cost allocation tags status for this request. </p>
      */
     inline const Aws::Vector<CostAllocationTagStatusEntry>& GetCostAllocationTagsStatus() const{ return m_costAllocationTagsStatus; }
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline bool CostAllocationTagsStatusHasBeenSet() const { return m_costAllocationTagsStatusHasBeenSet; }
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline void SetCostAllocationTagsStatus(const Aws::Vector<CostAllocationTagStatusEntry>& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus = value; }
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline void SetCostAllocationTagsStatus(Aws::Vector<CostAllocationTagStatusEntry>&& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus = std::move(value); }
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline UpdateCostAllocationTagsStatusRequest& WithCostAllocationTagsStatus(const Aws::Vector<CostAllocationTagStatusEntry>& value) { SetCostAllocationTagsStatus(value); return *this;}
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline UpdateCostAllocationTagsStatusRequest& WithCostAllocationTagsStatus(Aws::Vector<CostAllocationTagStatusEntry>&& value) { SetCostAllocationTagsStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline UpdateCostAllocationTagsStatusRequest& AddCostAllocationTagsStatus(const CostAllocationTagStatusEntry& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus.push_back(value); return *this; }
-
-    /**
-     * <p>The list of <code>CostAllocationTagStatusEntry</code> objects that are used
-     * to update cost allocation tags status for this request. </p>
-     */
     inline UpdateCostAllocationTagsStatusRequest& AddCostAllocationTagsStatus(CostAllocationTagStatusEntry&& value) { m_costAllocationTagsStatusHasBeenSet = true; m_costAllocationTagsStatus.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CostAllocationTagStatusEntry> m_costAllocationTagsStatus;

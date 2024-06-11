@@ -39,67 +39,29 @@ namespace Model
     AWS_TRUSTEDADVISOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the Recommendation Resource</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline RecommendationResourceExclusion& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline RecommendationResourceExclusion& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Recommendation Resource</p>
-     */
     inline RecommendationResourceExclusion& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The exclusion status</p>
      */
     inline bool GetIsExcluded() const{ return m_isExcluded; }
-
-    /**
-     * <p>The exclusion status</p>
-     */
     inline bool IsExcludedHasBeenSet() const { return m_isExcludedHasBeenSet; }
-
-    /**
-     * <p>The exclusion status</p>
-     */
     inline void SetIsExcluded(bool value) { m_isExcludedHasBeenSet = true; m_isExcluded = value; }
-
-    /**
-     * <p>The exclusion status</p>
-     */
     inline RecommendationResourceExclusion& WithIsExcluded(bool value) { SetIsExcluded(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

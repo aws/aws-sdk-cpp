@@ -35,34 +35,17 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the total number of CIDR blocks currently in use by the IP set
      * references in a firewall. To determine how many CIDR blocks are available for
      * you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
      */
     inline int GetResolvedCIDRCount() const{ return m_resolvedCIDRCount; }
-
-    /**
-     * <p>Describes the total number of CIDR blocks currently in use by the IP set
-     * references in a firewall. To determine how many CIDR blocks are available for
-     * you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
-     */
     inline bool ResolvedCIDRCountHasBeenSet() const { return m_resolvedCIDRCountHasBeenSet; }
-
-    /**
-     * <p>Describes the total number of CIDR blocks currently in use by the IP set
-     * references in a firewall. To determine how many CIDR blocks are available for
-     * you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
-     */
     inline void SetResolvedCIDRCount(int value) { m_resolvedCIDRCountHasBeenSet = true; m_resolvedCIDRCount = value; }
-
-    /**
-     * <p>Describes the total number of CIDR blocks currently in use by the IP set
-     * references in a firewall. To determine how many CIDR blocks are available for
-     * you to use in a firewall, you can call <code>AvailableCIDRCount</code>.</p>
-     */
     inline IPSetMetadata& WithResolvedCIDRCount(int value) { SetResolvedCIDRCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_resolvedCIDRCount;

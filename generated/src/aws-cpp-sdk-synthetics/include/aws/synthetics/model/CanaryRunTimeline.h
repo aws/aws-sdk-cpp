@@ -38,67 +38,29 @@ namespace Model
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The start time of the run.</p>
      */
     inline const Aws::Utils::DateTime& GetStarted() const{ return m_started; }
-
-    /**
-     * <p>The start time of the run.</p>
-     */
     inline bool StartedHasBeenSet() const { return m_startedHasBeenSet; }
-
-    /**
-     * <p>The start time of the run.</p>
-     */
     inline void SetStarted(const Aws::Utils::DateTime& value) { m_startedHasBeenSet = true; m_started = value; }
-
-    /**
-     * <p>The start time of the run.</p>
-     */
     inline void SetStarted(Aws::Utils::DateTime&& value) { m_startedHasBeenSet = true; m_started = std::move(value); }
-
-    /**
-     * <p>The start time of the run.</p>
-     */
     inline CanaryRunTimeline& WithStarted(const Aws::Utils::DateTime& value) { SetStarted(value); return *this;}
-
-    /**
-     * <p>The start time of the run.</p>
-     */
     inline CanaryRunTimeline& WithStarted(Aws::Utils::DateTime&& value) { SetStarted(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end time of the run.</p>
      */
     inline const Aws::Utils::DateTime& GetCompleted() const{ return m_completed; }
-
-    /**
-     * <p>The end time of the run.</p>
-     */
     inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
-
-    /**
-     * <p>The end time of the run.</p>
-     */
     inline void SetCompleted(const Aws::Utils::DateTime& value) { m_completedHasBeenSet = true; m_completed = value; }
-
-    /**
-     * <p>The end time of the run.</p>
-     */
     inline void SetCompleted(Aws::Utils::DateTime&& value) { m_completedHasBeenSet = true; m_completed = std::move(value); }
-
-    /**
-     * <p>The end time of the run.</p>
-     */
     inline CanaryRunTimeline& WithCompleted(const Aws::Utils::DateTime& value) { SetCompleted(value); return *this;}
-
-    /**
-     * <p>The end time of the run.</p>
-     */
     inline CanaryRunTimeline& WithCompleted(Aws::Utils::DateTime&& value) { SetCompleted(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_started;

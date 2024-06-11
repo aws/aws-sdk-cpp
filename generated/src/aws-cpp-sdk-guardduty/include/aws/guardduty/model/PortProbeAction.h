@@ -39,71 +39,30 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
      * ACL.</p>
      */
     inline bool GetBlocked() const{ return m_blocked; }
-
-    /**
-     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
-     * ACL.</p>
-     */
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
-
-    /**
-     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
-     * ACL.</p>
-     */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
-
-    /**
-     * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
-     * ACL.</p>
-     */
     inline PortProbeAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of objects related to port probe details.</p>
      */
     inline const Aws::Vector<PortProbeDetail>& GetPortProbeDetails() const{ return m_portProbeDetails; }
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline bool PortProbeDetailsHasBeenSet() const { return m_portProbeDetailsHasBeenSet; }
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline void SetPortProbeDetails(const Aws::Vector<PortProbeDetail>& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = value; }
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline void SetPortProbeDetails(Aws::Vector<PortProbeDetail>&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = std::move(value); }
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline PortProbeAction& WithPortProbeDetails(const Aws::Vector<PortProbeDetail>& value) { SetPortProbeDetails(value); return *this;}
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline PortProbeAction& WithPortProbeDetails(Aws::Vector<PortProbeDetail>&& value) { SetPortProbeDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline PortProbeAction& AddPortProbeDetails(const PortProbeDetail& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects related to port probe details.</p>
-     */
     inline PortProbeAction& AddPortProbeDetails(PortProbeDetail&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     bool m_blocked;

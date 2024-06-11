@@ -32,46 +32,19 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Gremlin explain query string.</p>
      */
     inline const Aws::String& GetGremlinQuery() const{ return m_gremlinQuery; }
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline bool GremlinQueryHasBeenSet() const { return m_gremlinQueryHasBeenSet; }
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline void SetGremlinQuery(const Aws::String& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = value; }
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline void SetGremlinQuery(Aws::String&& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = std::move(value); }
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline void SetGremlinQuery(const char* value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery.assign(value); }
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline ExecuteGremlinExplainQueryRequest& WithGremlinQuery(const Aws::String& value) { SetGremlinQuery(value); return *this;}
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline ExecuteGremlinExplainQueryRequest& WithGremlinQuery(Aws::String&& value) { SetGremlinQuery(std::move(value)); return *this;}
-
-    /**
-     * <p>The Gremlin explain query string.</p>
-     */
     inline ExecuteGremlinExplainQueryRequest& WithGremlinQuery(const char* value) { SetGremlinQuery(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gremlinQuery;

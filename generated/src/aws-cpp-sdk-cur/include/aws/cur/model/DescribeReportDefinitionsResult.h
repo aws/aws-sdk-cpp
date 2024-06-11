@@ -40,85 +40,40 @@ namespace Model
     AWS_COSTANDUSAGEREPORTSERVICE_API DescribeReportDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
      */
     inline const Aws::Vector<ReportDefinition>& GetReportDefinitions() const{ return m_reportDefinitions; }
-
-    /**
-     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
-     */
     inline void SetReportDefinitions(const Aws::Vector<ReportDefinition>& value) { m_reportDefinitions = value; }
-
-    /**
-     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
-     */
     inline void SetReportDefinitions(Aws::Vector<ReportDefinition>&& value) { m_reportDefinitions = std::move(value); }
-
-    /**
-     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
-     */
     inline DescribeReportDefinitionsResult& WithReportDefinitions(const Aws::Vector<ReportDefinition>& value) { SetReportDefinitions(value); return *this;}
-
-    /**
-     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
-     */
     inline DescribeReportDefinitionsResult& WithReportDefinitions(Aws::Vector<ReportDefinition>&& value) { SetReportDefinitions(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
-     */
     inline DescribeReportDefinitionsResult& AddReportDefinitions(const ReportDefinition& value) { m_reportDefinitions.push_back(value); return *this; }
-
-    /**
-     * <p>An Amazon Web Services Cost and Usage Report list owned by the account.</p>
-     */
     inline DescribeReportDefinitionsResult& AddReportDefinitions(ReportDefinition&& value) { m_reportDefinitions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    
     inline DescribeReportDefinitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline DescribeReportDefinitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline DescribeReportDefinitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeReportDefinitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeReportDefinitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeReportDefinitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ReportDefinition> m_reportDefinitions;

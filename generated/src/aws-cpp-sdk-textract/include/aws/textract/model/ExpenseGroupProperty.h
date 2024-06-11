@@ -40,92 +40,34 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Informs you on whether the expense group is a name or an address.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline ExpenseGroupProperty& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline ExpenseGroupProperty& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline ExpenseGroupProperty& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline ExpenseGroupProperty& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Informs you on whether the expense group is a name or an address.</p>
-     */
     inline ExpenseGroupProperty& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides a group Id number, which will be the same for each in the group.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline ExpenseGroupProperty& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline ExpenseGroupProperty& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides a group Id number, which will be the same for each in the group.</p>
-     */
     inline ExpenseGroupProperty& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_types;

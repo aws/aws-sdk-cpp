@@ -39,83 +39,32 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
      */
     inline const Aws::String& GetSourceSheetControlId() const{ return m_sourceSheetControlId; }
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline bool SourceSheetControlIdHasBeenSet() const { return m_sourceSheetControlIdHasBeenSet; }
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline void SetSourceSheetControlId(const Aws::String& value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId = value; }
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline void SetSourceSheetControlId(Aws::String&& value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId = std::move(value); }
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline void SetSourceSheetControlId(const char* value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId.assign(value); }
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline CascadingControlSource& WithSourceSheetControlId(const Aws::String& value) { SetSourceSheetControlId(value); return *this;}
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline CascadingControlSource& WithSourceSheetControlId(Aws::String&& value) { SetSourceSheetControlId(std::move(value)); return *this;}
-
-    /**
-     * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
-     */
     inline CascadingControlSource& WithSourceSheetControlId(const char* value) { SetSourceSheetControlId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The column identifier that determines which column to look up for the source
      * sheet control.</p>
      */
     inline const ColumnIdentifier& GetColumnToMatch() const{ return m_columnToMatch; }
-
-    /**
-     * <p>The column identifier that determines which column to look up for the source
-     * sheet control.</p>
-     */
     inline bool ColumnToMatchHasBeenSet() const { return m_columnToMatchHasBeenSet; }
-
-    /**
-     * <p>The column identifier that determines which column to look up for the source
-     * sheet control.</p>
-     */
     inline void SetColumnToMatch(const ColumnIdentifier& value) { m_columnToMatchHasBeenSet = true; m_columnToMatch = value; }
-
-    /**
-     * <p>The column identifier that determines which column to look up for the source
-     * sheet control.</p>
-     */
     inline void SetColumnToMatch(ColumnIdentifier&& value) { m_columnToMatchHasBeenSet = true; m_columnToMatch = std::move(value); }
-
-    /**
-     * <p>The column identifier that determines which column to look up for the source
-     * sheet control.</p>
-     */
     inline CascadingControlSource& WithColumnToMatch(const ColumnIdentifier& value) { SetColumnToMatch(value); return *this;}
-
-    /**
-     * <p>The column identifier that determines which column to look up for the source
-     * sheet control.</p>
-     */
     inline CascadingControlSource& WithColumnToMatch(ColumnIdentifier&& value) { SetColumnToMatch(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceSheetControlId;

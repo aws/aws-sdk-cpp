@@ -39,58 +39,28 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API ForgotPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The code delivery details returned by the server in response to the request
      * to reset a password.</p>
      */
     inline const CodeDeliveryDetailsType& GetCodeDeliveryDetails() const{ return m_codeDeliveryDetails; }
-
-    /**
-     * <p>The code delivery details returned by the server in response to the request
-     * to reset a password.</p>
-     */
     inline void SetCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { m_codeDeliveryDetails = value; }
-
-    /**
-     * <p>The code delivery details returned by the server in response to the request
-     * to reset a password.</p>
-     */
     inline void SetCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { m_codeDeliveryDetails = std::move(value); }
-
-    /**
-     * <p>The code delivery details returned by the server in response to the request
-     * to reset a password.</p>
-     */
     inline ForgotPasswordResult& WithCodeDeliveryDetails(const CodeDeliveryDetailsType& value) { SetCodeDeliveryDetails(value); return *this;}
-
-    /**
-     * <p>The code delivery details returned by the server in response to the request
-     * to reset a password.</p>
-     */
     inline ForgotPasswordResult& WithCodeDeliveryDetails(CodeDeliveryDetailsType&& value) { SetCodeDeliveryDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ForgotPasswordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ForgotPasswordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ForgotPasswordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CodeDeliveryDetailsType m_codeDeliveryDetails;

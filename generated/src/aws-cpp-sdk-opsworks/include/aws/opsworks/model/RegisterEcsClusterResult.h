@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API RegisterEcsClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The cluster's ARN.</p>
      */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
-
-    /**
-     * <p>The cluster's ARN.</p>
-     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArn = value; }
-
-    /**
-     * <p>The cluster's ARN.</p>
-     */
     inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArn = std::move(value); }
-
-    /**
-     * <p>The cluster's ARN.</p>
-     */
     inline void SetEcsClusterArn(const char* value) { m_ecsClusterArn.assign(value); }
-
-    /**
-     * <p>The cluster's ARN.</p>
-     */
     inline RegisterEcsClusterResult& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
-
-    /**
-     * <p>The cluster's ARN.</p>
-     */
     inline RegisterEcsClusterResult& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster's ARN.</p>
-     */
     inline RegisterEcsClusterResult& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterEcsClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterEcsClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterEcsClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ecsClusterArn;

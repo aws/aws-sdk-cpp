@@ -41,91 +41,33 @@ namespace Model
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
      * methods for user authentication.</p>
      */
     inline const Aws::Vector<AuthenticationProviderTypes>& GetProviders() const{ return m_providers; }
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline bool ProvidersHasBeenSet() const { return m_providersHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline void SetProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { m_providersHasBeenSet = true; m_providers = value; }
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline void SetProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { m_providersHasBeenSet = true; m_providers = std::move(value); }
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline AuthenticationSummary& WithProviders(const Aws::Vector<AuthenticationProviderTypes>& value) { SetProviders(value); return *this;}
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline AuthenticationSummary& WithProviders(Aws::Vector<AuthenticationProviderTypes>&& value) { SetProviders(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline AuthenticationSummary& AddProviders(const AuthenticationProviderTypes& value) { m_providersHasBeenSet = true; m_providers.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies whether the workspace uses SAML, IAM Identity Center, or both
-     * methods for user authentication.</p>
-     */
     inline AuthenticationSummary& AddProviders(AuthenticationProviderTypes&& value) { m_providersHasBeenSet = true; m_providers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the workplace's user authentication method is fully
      * configured.</p>
      */
     inline const SamlConfigurationStatus& GetSamlConfigurationStatus() const{ return m_samlConfigurationStatus; }
-
-    /**
-     * <p>Specifies whether the workplace's user authentication method is fully
-     * configured.</p>
-     */
     inline bool SamlConfigurationStatusHasBeenSet() const { return m_samlConfigurationStatusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the workplace's user authentication method is fully
-     * configured.</p>
-     */
     inline void SetSamlConfigurationStatus(const SamlConfigurationStatus& value) { m_samlConfigurationStatusHasBeenSet = true; m_samlConfigurationStatus = value; }
-
-    /**
-     * <p>Specifies whether the workplace's user authentication method is fully
-     * configured.</p>
-     */
     inline void SetSamlConfigurationStatus(SamlConfigurationStatus&& value) { m_samlConfigurationStatusHasBeenSet = true; m_samlConfigurationStatus = std::move(value); }
-
-    /**
-     * <p>Specifies whether the workplace's user authentication method is fully
-     * configured.</p>
-     */
     inline AuthenticationSummary& WithSamlConfigurationStatus(const SamlConfigurationStatus& value) { SetSamlConfigurationStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether the workplace's user authentication method is fully
-     * configured.</p>
-     */
     inline AuthenticationSummary& WithSamlConfigurationStatus(SamlConfigurationStatus&& value) { SetSamlConfigurationStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AuthenticationProviderTypes> m_providers;

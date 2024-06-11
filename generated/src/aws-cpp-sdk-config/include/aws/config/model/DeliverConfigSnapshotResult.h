@@ -38,63 +38,29 @@ namespace Model
     AWS_CONFIGSERVICE_API DeliverConfigSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the snapshot that is being created.</p>
      */
     inline const Aws::String& GetConfigSnapshotId() const{ return m_configSnapshotId; }
-
-    /**
-     * <p>The ID of the snapshot that is being created.</p>
-     */
     inline void SetConfigSnapshotId(const Aws::String& value) { m_configSnapshotId = value; }
-
-    /**
-     * <p>The ID of the snapshot that is being created.</p>
-     */
     inline void SetConfigSnapshotId(Aws::String&& value) { m_configSnapshotId = std::move(value); }
-
-    /**
-     * <p>The ID of the snapshot that is being created.</p>
-     */
     inline void SetConfigSnapshotId(const char* value) { m_configSnapshotId.assign(value); }
-
-    /**
-     * <p>The ID of the snapshot that is being created.</p>
-     */
     inline DeliverConfigSnapshotResult& WithConfigSnapshotId(const Aws::String& value) { SetConfigSnapshotId(value); return *this;}
-
-    /**
-     * <p>The ID of the snapshot that is being created.</p>
-     */
     inline DeliverConfigSnapshotResult& WithConfigSnapshotId(Aws::String&& value) { SetConfigSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the snapshot that is being created.</p>
-     */
     inline DeliverConfigSnapshotResult& WithConfigSnapshotId(const char* value) { SetConfigSnapshotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeliverConfigSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeliverConfigSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeliverConfigSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configSnapshotId;

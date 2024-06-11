@@ -33,52 +33,26 @@ namespace Model
     AWS_REDSHIFT_API ModifyAquaConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>This parameter is retired. Amazon Redshift automatically determines whether
      * to use AQUA (Advanced Query Accelerator). </p>
      */
     inline const AquaConfiguration& GetAquaConfiguration() const{ return m_aquaConfiguration; }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator). </p>
-     */
     inline void SetAquaConfiguration(const AquaConfiguration& value) { m_aquaConfiguration = value; }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator). </p>
-     */
     inline void SetAquaConfiguration(AquaConfiguration&& value) { m_aquaConfiguration = std::move(value); }
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator). </p>
-     */
     inline ModifyAquaConfigurationResult& WithAquaConfiguration(const AquaConfiguration& value) { SetAquaConfiguration(value); return *this;}
-
-    /**
-     * <p>This parameter is retired. Amazon Redshift automatically determines whether
-     * to use AQUA (Advanced Query Accelerator). </p>
-     */
     inline ModifyAquaConfigurationResult& WithAquaConfiguration(AquaConfiguration&& value) { SetAquaConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyAquaConfigurationResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyAquaConfigurationResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AquaConfiguration m_aquaConfiguration;

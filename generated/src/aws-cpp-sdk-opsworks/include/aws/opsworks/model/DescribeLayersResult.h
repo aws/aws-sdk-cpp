@@ -40,63 +40,29 @@ namespace Model
     AWS_OPSWORKS_API DescribeLayersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of <code>Layer</code> objects that describe the layers.</p>
      */
     inline const Aws::Vector<Layer>& GetLayers() const{ return m_layers; }
-
-    /**
-     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
-     */
     inline void SetLayers(const Aws::Vector<Layer>& value) { m_layers = value; }
-
-    /**
-     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
-     */
     inline void SetLayers(Aws::Vector<Layer>&& value) { m_layers = std::move(value); }
-
-    /**
-     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
-     */
     inline DescribeLayersResult& WithLayers(const Aws::Vector<Layer>& value) { SetLayers(value); return *this;}
-
-    /**
-     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
-     */
     inline DescribeLayersResult& WithLayers(Aws::Vector<Layer>&& value) { SetLayers(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
-     */
     inline DescribeLayersResult& AddLayers(const Layer& value) { m_layers.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>Layer</code> objects that describe the layers.</p>
-     */
     inline DescribeLayersResult& AddLayers(Layer&& value) { m_layers.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeLayersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeLayersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeLayersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Layer> m_layers;

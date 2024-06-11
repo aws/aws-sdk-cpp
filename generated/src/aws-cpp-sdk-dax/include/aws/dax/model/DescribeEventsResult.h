@@ -34,99 +34,42 @@ namespace Model
     AWS_DAX_API DescribeEventsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeEventsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeEventsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeEventsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of events. Each element in the array represents one event.</p>
      */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>An array of events. Each element in the array represents one event.</p>
-     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_events = value; }
-
-    /**
-     * <p>An array of events. Each element in the array represents one event.</p>
-     */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_events = std::move(value); }
-
-    /**
-     * <p>An array of events. Each element in the array represents one event.</p>
-     */
     inline DescribeEventsResult& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>An array of events. Each element in the array represents one event.</p>
-     */
     inline DescribeEventsResult& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of events. Each element in the array represents one event.</p>
-     */
     inline DescribeEventsResult& AddEvents(const Event& value) { m_events.push_back(value); return *this; }
-
-    /**
-     * <p>An array of events. Each element in the array represents one event.</p>
-     */
     inline DescribeEventsResult& AddEvents(Event&& value) { m_events.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeEventsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeEventsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeEventsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

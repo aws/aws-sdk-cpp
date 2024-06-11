@@ -38,36 +38,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Failover condition type-specific settings.
      */
     inline const FailoverConditionSettings& GetFailoverConditionSettings() const{ return m_failoverConditionSettings; }
-
-    /**
-     * Failover condition type-specific settings.
-     */
     inline bool FailoverConditionSettingsHasBeenSet() const { return m_failoverConditionSettingsHasBeenSet; }
-
-    /**
-     * Failover condition type-specific settings.
-     */
     inline void SetFailoverConditionSettings(const FailoverConditionSettings& value) { m_failoverConditionSettingsHasBeenSet = true; m_failoverConditionSettings = value; }
-
-    /**
-     * Failover condition type-specific settings.
-     */
     inline void SetFailoverConditionSettings(FailoverConditionSettings&& value) { m_failoverConditionSettingsHasBeenSet = true; m_failoverConditionSettings = std::move(value); }
-
-    /**
-     * Failover condition type-specific settings.
-     */
     inline FailoverCondition& WithFailoverConditionSettings(const FailoverConditionSettings& value) { SetFailoverConditionSettings(value); return *this;}
-
-    /**
-     * Failover condition type-specific settings.
-     */
     inline FailoverCondition& WithFailoverConditionSettings(FailoverConditionSettings&& value) { SetFailoverConditionSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FailoverConditionSettings m_failoverConditionSettings;

@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the user whose password you want to update.</p> <p>This parameter
      * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
@@ -44,71 +45,16 @@ namespace Model
      * _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline UpdateLoginProfileRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline UpdateLoginProfileRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the user whose password you want to update.</p> <p>This parameter
-     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
-     * a string of characters consisting of upper and lowercase alphanumeric characters
-     * with no spaces. You can also include any of the following characters:
-     * _+=,.@-</p>
-     */
     inline UpdateLoginProfileRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new password for the specified IAM user.</p> <p>The <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
@@ -124,144 +70,25 @@ namespace Model
      * <a>UpdateAccountPasswordPolicy</a>.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline UpdateLoginProfileRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline UpdateLoginProfileRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The new password for the specified IAM user.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this
-     * parameter is a string of characters consisting of the following:</p> <ul> <li>
-     * <p>Any printable ASCII character ranging from the space character
-     * (<code>\u0020</code>) through the end of the ASCII character range</p> </li>
-     * <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
-     * character set (through <code>\u00FF</code>)</p> </li> <li> <p>The special
-     * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
-     * carriage return (<code>\u000D</code>)</p> </li> </ul> <p>However, the format can
-     * be further restricted by the account administrator by setting a password policy
-     * on the Amazon Web Services account. For more information, see
-     * <a>UpdateAccountPasswordPolicy</a>.</p>
-     */
     inline UpdateLoginProfileRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows this new password to be used only once by requiring the specified IAM
      * user to set a new password on next sign-in.</p>
      */
     inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
-
-    /**
-     * <p>Allows this new password to be used only once by requiring the specified IAM
-     * user to set a new password on next sign-in.</p>
-     */
     inline bool PasswordResetRequiredHasBeenSet() const { return m_passwordResetRequiredHasBeenSet; }
-
-    /**
-     * <p>Allows this new password to be used only once by requiring the specified IAM
-     * user to set a new password on next sign-in.</p>
-     */
     inline void SetPasswordResetRequired(bool value) { m_passwordResetRequiredHasBeenSet = true; m_passwordResetRequired = value; }
-
-    /**
-     * <p>Allows this new password to be used only once by requiring the specified IAM
-     * user to set a new password on next sign-in.</p>
-     */
     inline UpdateLoginProfileRequest& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userName;

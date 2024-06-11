@@ -39,42 +39,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field wells of a combo chart. Combo charts only have
      * aggregated field wells. Columns in a combo chart are aggregated by category.</p>
      */
     inline const ComboChartAggregatedFieldWells& GetComboChartAggregatedFieldWells() const{ return m_comboChartAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field wells of a combo chart. Combo charts only have
-     * aggregated field wells. Columns in a combo chart are aggregated by category.</p>
-     */
     inline bool ComboChartAggregatedFieldWellsHasBeenSet() const { return m_comboChartAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field wells of a combo chart. Combo charts only have
-     * aggregated field wells. Columns in a combo chart are aggregated by category.</p>
-     */
     inline void SetComboChartAggregatedFieldWells(const ComboChartAggregatedFieldWells& value) { m_comboChartAggregatedFieldWellsHasBeenSet = true; m_comboChartAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field wells of a combo chart. Combo charts only have
-     * aggregated field wells. Columns in a combo chart are aggregated by category.</p>
-     */
     inline void SetComboChartAggregatedFieldWells(ComboChartAggregatedFieldWells&& value) { m_comboChartAggregatedFieldWellsHasBeenSet = true; m_comboChartAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field wells of a combo chart. Combo charts only have
-     * aggregated field wells. Columns in a combo chart are aggregated by category.</p>
-     */
     inline ComboChartFieldWells& WithComboChartAggregatedFieldWells(const ComboChartAggregatedFieldWells& value) { SetComboChartAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field wells of a combo chart. Combo charts only have
-     * aggregated field wells. Columns in a combo chart are aggregated by category.</p>
-     */
     inline ComboChartFieldWells& WithComboChartAggregatedFieldWells(ComboChartAggregatedFieldWells&& value) { SetComboChartAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ComboChartAggregatedFieldWells m_comboChartAggregatedFieldWells;

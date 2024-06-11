@@ -37,128 +37,47 @@ namespace Model
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A contains type match.</p>
      */
     inline const Aws::String& GetContains() const{ return m_contains; }
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline void SetContains(const Aws::String& value) { m_containsHasBeenSet = true; m_contains = value; }
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline void SetContains(Aws::String&& value) { m_containsHasBeenSet = true; m_contains = std::move(value); }
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline void SetContains(const char* value) { m_containsHasBeenSet = true; m_contains.assign(value); }
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline HeaderMatchType& WithContains(const Aws::String& value) { SetContains(value); return *this;}
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline HeaderMatchType& WithContains(Aws::String&& value) { SetContains(std::move(value)); return *this;}
-
-    /**
-     * <p>A contains type match.</p>
-     */
     inline HeaderMatchType& WithContains(const char* value) { SetContains(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An exact type match.</p>
      */
     inline const Aws::String& GetExact() const{ return m_exact; }
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline HeaderMatchType& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline HeaderMatchType& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-
-    /**
-     * <p>An exact type match.</p>
-     */
     inline HeaderMatchType& WithExact(const char* value) { SetExact(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A prefix type match. Matches the value with the prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline HeaderMatchType& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline HeaderMatchType& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>A prefix type match. Matches the value with the prefix.</p>
-     */
     inline HeaderMatchType& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contains;

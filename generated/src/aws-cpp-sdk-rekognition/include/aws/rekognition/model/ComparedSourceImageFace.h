@@ -41,57 +41,27 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Bounding box of the face.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
-
-    /**
-     * <p>Bounding box of the face.</p>
-     */
     inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
-
-    /**
-     * <p>Bounding box of the face.</p>
-     */
     inline void SetBoundingBox(const BoundingBox& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = value; }
-
-    /**
-     * <p>Bounding box of the face.</p>
-     */
     inline void SetBoundingBox(BoundingBox&& value) { m_boundingBoxHasBeenSet = true; m_boundingBox = std::move(value); }
-
-    /**
-     * <p>Bounding box of the face.</p>
-     */
     inline ComparedSourceImageFace& WithBoundingBox(const BoundingBox& value) { SetBoundingBox(value); return *this;}
-
-    /**
-     * <p>Bounding box of the face.</p>
-     */
     inline ComparedSourceImageFace& WithBoundingBox(BoundingBox&& value) { SetBoundingBox(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Confidence level that the selected bounding box contains a face.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>Confidence level that the selected bounding box contains a face.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>Confidence level that the selected bounding box contains a face.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>Confidence level that the selected bounding box contains a face.</p>
-     */
     inline ComparedSourceImageFace& WithConfidence(double value) { SetConfidence(value); return *this;}
-
+    ///@}
   private:
 
     BoundingBox m_boundingBox;

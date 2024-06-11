@@ -38,36 +38,17 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A recommended step for an unused permissions finding.</p>
      */
     inline const UnusedPermissionsRecommendedStep& GetUnusedPermissionsRecommendedStep() const{ return m_unusedPermissionsRecommendedStep; }
-
-    /**
-     * <p>A recommended step for an unused permissions finding.</p>
-     */
     inline bool UnusedPermissionsRecommendedStepHasBeenSet() const { return m_unusedPermissionsRecommendedStepHasBeenSet; }
-
-    /**
-     * <p>A recommended step for an unused permissions finding.</p>
-     */
     inline void SetUnusedPermissionsRecommendedStep(const UnusedPermissionsRecommendedStep& value) { m_unusedPermissionsRecommendedStepHasBeenSet = true; m_unusedPermissionsRecommendedStep = value; }
-
-    /**
-     * <p>A recommended step for an unused permissions finding.</p>
-     */
     inline void SetUnusedPermissionsRecommendedStep(UnusedPermissionsRecommendedStep&& value) { m_unusedPermissionsRecommendedStepHasBeenSet = true; m_unusedPermissionsRecommendedStep = std::move(value); }
-
-    /**
-     * <p>A recommended step for an unused permissions finding.</p>
-     */
     inline RecommendedStep& WithUnusedPermissionsRecommendedStep(const UnusedPermissionsRecommendedStep& value) { SetUnusedPermissionsRecommendedStep(value); return *this;}
-
-    /**
-     * <p>A recommended step for an unused permissions finding.</p>
-     */
     inline RecommendedStep& WithUnusedPermissionsRecommendedStep(UnusedPermissionsRecommendedStep&& value) { SetUnusedPermissionsRecommendedStep(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UnusedPermissionsRecommendedStep m_unusedPermissionsRecommendedStep;

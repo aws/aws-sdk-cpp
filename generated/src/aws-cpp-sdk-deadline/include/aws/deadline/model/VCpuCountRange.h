@@ -36,47 +36,25 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum amount of vCPU.</p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum amount of vCPU.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum amount of vCPU.</p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum amount of vCPU.</p>
-     */
     inline VCpuCountRange& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum amount of vCPU.</p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p>The minimum amount of vCPU.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The minimum amount of vCPU.</p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The minimum amount of vCPU.</p>
-     */
     inline VCpuCountRange& WithMin(int value) { SetMin(value); return *this;}
-
+    ///@}
   private:
 
     int m_max;

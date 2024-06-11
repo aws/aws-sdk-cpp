@@ -39,60 +39,21 @@ namespace Model
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>App launch commands and command line parameters that override the launch
      * command configured in the simulation schema.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLaunchCommands() const{ return m_launchCommands; }
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline bool LaunchCommandsHasBeenSet() const { return m_launchCommandsHasBeenSet; }
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline void SetLaunchCommands(const Aws::Vector<Aws::String>& value) { m_launchCommandsHasBeenSet = true; m_launchCommands = value; }
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline void SetLaunchCommands(Aws::Vector<Aws::String>&& value) { m_launchCommandsHasBeenSet = true; m_launchCommands = std::move(value); }
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline LaunchOverrides& WithLaunchCommands(const Aws::Vector<Aws::String>& value) { SetLaunchCommands(value); return *this;}
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline LaunchOverrides& WithLaunchCommands(Aws::Vector<Aws::String>&& value) { SetLaunchCommands(std::move(value)); return *this;}
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline LaunchOverrides& AddLaunchCommands(const Aws::String& value) { m_launchCommandsHasBeenSet = true; m_launchCommands.push_back(value); return *this; }
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline LaunchOverrides& AddLaunchCommands(Aws::String&& value) { m_launchCommandsHasBeenSet = true; m_launchCommands.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>App launch commands and command line parameters that override the launch
-     * command configured in the simulation schema.</p>
-     */
     inline LaunchOverrides& AddLaunchCommands(const char* value) { m_launchCommandsHasBeenSet = true; m_launchCommands.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_launchCommands;

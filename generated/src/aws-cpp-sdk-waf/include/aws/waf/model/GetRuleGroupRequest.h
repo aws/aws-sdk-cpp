@@ -34,62 +34,21 @@ namespace Model
     AWS_WAF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
      * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
      * <a>ListRuleGroups</a>.</p>
      */
     inline const Aws::String& GetRuleGroupId() const{ return m_ruleGroupId; }
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline void SetRuleGroupId(Aws::String&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::move(value); }
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline void SetRuleGroupId(const char* value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId.assign(value); }
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline GetRuleGroupRequest& WithRuleGroupId(const Aws::String& value) { SetRuleGroupId(value); return *this;}
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline GetRuleGroupRequest& WithRuleGroupId(Aws::String&& value) { SetRuleGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to get.
-     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
-     * <a>ListRuleGroups</a>.</p>
-     */
     inline GetRuleGroupRequest& WithRuleGroupId(const char* value) { SetRuleGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleGroupId;

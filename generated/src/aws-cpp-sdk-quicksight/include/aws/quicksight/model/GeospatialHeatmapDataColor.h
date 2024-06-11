@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The hex color to be used in the heatmap point style.</p>
      */
     inline const Aws::String& GetColor() const{ return m_color; }
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline GeospatialHeatmapDataColor& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline GeospatialHeatmapDataColor& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-
-    /**
-     * <p>The hex color to be used in the heatmap point style.</p>
-     */
     inline GeospatialHeatmapDataColor& WithColor(const char* value) { SetColor(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_color;

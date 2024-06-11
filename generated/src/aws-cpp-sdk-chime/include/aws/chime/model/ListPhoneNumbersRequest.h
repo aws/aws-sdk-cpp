@@ -41,201 +41,79 @@ namespace Model
     AWS_CHIME_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The phone number status.</p>
      */
     inline const PhoneNumberStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The phone number status.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The phone number status.</p>
-     */
     inline void SetStatus(const PhoneNumberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The phone number status.</p>
-     */
     inline void SetStatus(PhoneNumberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The phone number status.</p>
-     */
     inline ListPhoneNumbersRequest& WithStatus(const PhoneNumberStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The phone number status.</p>
-     */
     inline ListPhoneNumbersRequest& WithStatus(PhoneNumberStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The phone number product type.</p>
      */
     inline const PhoneNumberProductType& GetProductType() const{ return m_productType; }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline void SetProductType(const PhoneNumberProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline void SetProductType(PhoneNumberProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline ListPhoneNumbersRequest& WithProductType(const PhoneNumberProductType& value) { SetProductType(value); return *this;}
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline ListPhoneNumbersRequest& WithProductType(PhoneNumberProductType&& value) { SetProductType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filter to use to limit the number of results.</p>
      */
     inline const PhoneNumberAssociationName& GetFilterName() const{ return m_filterName; }
-
-    /**
-     * <p>The filter to use to limit the number of results.</p>
-     */
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
-
-    /**
-     * <p>The filter to use to limit the number of results.</p>
-     */
     inline void SetFilterName(const PhoneNumberAssociationName& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
-
-    /**
-     * <p>The filter to use to limit the number of results.</p>
-     */
     inline void SetFilterName(PhoneNumberAssociationName&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
-
-    /**
-     * <p>The filter to use to limit the number of results.</p>
-     */
     inline ListPhoneNumbersRequest& WithFilterName(const PhoneNumberAssociationName& value) { SetFilterName(value); return *this;}
-
-    /**
-     * <p>The filter to use to limit the number of results.</p>
-     */
     inline ListPhoneNumbersRequest& WithFilterName(PhoneNumberAssociationName&& value) { SetFilterName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value to use for the filter.</p>
      */
     inline const Aws::String& GetFilterValue() const{ return m_filterValue; }
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline bool FilterValueHasBeenSet() const { return m_filterValueHasBeenSet; }
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline void SetFilterValue(const Aws::String& value) { m_filterValueHasBeenSet = true; m_filterValue = value; }
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline void SetFilterValue(Aws::String&& value) { m_filterValueHasBeenSet = true; m_filterValue = std::move(value); }
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline void SetFilterValue(const char* value) { m_filterValueHasBeenSet = true; m_filterValue.assign(value); }
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline ListPhoneNumbersRequest& WithFilterValue(const Aws::String& value) { SetFilterValue(value); return *this;}
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline ListPhoneNumbersRequest& WithFilterValue(Aws::String&& value) { SetFilterValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value to use for the filter.</p>
-     */
     inline ListPhoneNumbersRequest& WithFilterValue(const char* value) { SetFilterValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in a single call.</p>
-     */
     inline ListPhoneNumbersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline ListPhoneNumbersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline ListPhoneNumbersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to retrieve the next page of results.</p>
-     */
     inline ListPhoneNumbersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     PhoneNumberStatus m_status;

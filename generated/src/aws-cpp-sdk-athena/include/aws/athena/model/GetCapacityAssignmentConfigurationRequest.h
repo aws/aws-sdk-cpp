@@ -34,54 +34,20 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the capacity reservation to retrieve the capacity assignment
      * configuration for.</p>
      */
     inline const Aws::String& GetCapacityReservationName() const{ return m_capacityReservationName; }
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline bool CapacityReservationNameHasBeenSet() const { return m_capacityReservationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline void SetCapacityReservationName(const Aws::String& value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName = value; }
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline void SetCapacityReservationName(Aws::String&& value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName = std::move(value); }
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline void SetCapacityReservationName(const char* value) { m_capacityReservationNameHasBeenSet = true; m_capacityReservationName.assign(value); }
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(const Aws::String& value) { SetCapacityReservationName(value); return *this;}
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(Aws::String&& value) { SetCapacityReservationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the capacity reservation to retrieve the capacity assignment
-     * configuration for.</p>
-     */
     inline GetCapacityAssignmentConfigurationRequest& WithCapacityReservationName(const char* value) { SetCapacityReservationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capacityReservationName;

@@ -40,6 +40,7 @@ namespace Model
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The frequency that scans are performed at for a private registry. When the
      * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
@@ -49,106 +50,27 @@ namespace Model
      * <code>MANUAL</code> scan frequency is set by default.</p>
      */
     inline const ScanFrequency& GetScanFrequency() const{ return m_scanFrequency; }
-
-    /**
-     * <p>The frequency that scans are performed at for a private registry. When the
-     * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
-     * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
-     * frequency is supported. If scan on push is not specified, then the
-     * <code>MANUAL</code> scan frequency is set by default.</p>
-     */
     inline bool ScanFrequencyHasBeenSet() const { return m_scanFrequencyHasBeenSet; }
-
-    /**
-     * <p>The frequency that scans are performed at for a private registry. When the
-     * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
-     * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
-     * frequency is supported. If scan on push is not specified, then the
-     * <code>MANUAL</code> scan frequency is set by default.</p>
-     */
     inline void SetScanFrequency(const ScanFrequency& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = value; }
-
-    /**
-     * <p>The frequency that scans are performed at for a private registry. When the
-     * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
-     * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
-     * frequency is supported. If scan on push is not specified, then the
-     * <code>MANUAL</code> scan frequency is set by default.</p>
-     */
     inline void SetScanFrequency(ScanFrequency&& value) { m_scanFrequencyHasBeenSet = true; m_scanFrequency = std::move(value); }
-
-    /**
-     * <p>The frequency that scans are performed at for a private registry. When the
-     * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
-     * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
-     * frequency is supported. If scan on push is not specified, then the
-     * <code>MANUAL</code> scan frequency is set by default.</p>
-     */
     inline RegistryScanningRule& WithScanFrequency(const ScanFrequency& value) { SetScanFrequency(value); return *this;}
-
-    /**
-     * <p>The frequency that scans are performed at for a private registry. When the
-     * <code>ENHANCED</code> scan type is specified, the supported scan frequencies are
-     * <code>CONTINUOUS_SCAN</code> and <code>SCAN_ON_PUSH</code>. When the
-     * <code>BASIC</code> scan type is specified, the <code>SCAN_ON_PUSH</code> scan
-     * frequency is supported. If scan on push is not specified, then the
-     * <code>MANUAL</code> scan frequency is set by default.</p>
-     */
     inline RegistryScanningRule& WithScanFrequency(ScanFrequency&& value) { SetScanFrequency(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The repository filters associated with the scanning configuration for a
      * private registry.</p>
      */
     inline const Aws::Vector<ScanningRepositoryFilter>& GetRepositoryFilters() const{ return m_repositoryFilters; }
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline bool RepositoryFiltersHasBeenSet() const { return m_repositoryFiltersHasBeenSet; }
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline void SetRepositoryFilters(const Aws::Vector<ScanningRepositoryFilter>& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = value; }
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline void SetRepositoryFilters(Aws::Vector<ScanningRepositoryFilter>&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters = std::move(value); }
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline RegistryScanningRule& WithRepositoryFilters(const Aws::Vector<ScanningRepositoryFilter>& value) { SetRepositoryFilters(value); return *this;}
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline RegistryScanningRule& WithRepositoryFilters(Aws::Vector<ScanningRepositoryFilter>&& value) { SetRepositoryFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline RegistryScanningRule& AddRepositoryFilters(const ScanningRepositoryFilter& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.push_back(value); return *this; }
-
-    /**
-     * <p>The repository filters associated with the scanning configuration for a
-     * private registry.</p>
-     */
     inline RegistryScanningRule& AddRepositoryFilters(ScanningRepositoryFilter&& value) { m_repositoryFiltersHasBeenSet = true; m_repositoryFilters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ScanFrequency m_scanFrequency;

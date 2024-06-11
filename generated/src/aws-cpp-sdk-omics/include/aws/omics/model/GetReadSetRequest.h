@@ -39,139 +39,55 @@ namespace Model
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The read set's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline GetReadSetRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline GetReadSetRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's ID.</p>
-     */
     inline GetReadSetRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The read set's sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline GetReadSetRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline GetReadSetRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
     inline GetReadSetRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file to retrieve.</p>
      */
     inline const ReadSetFile& GetFile() const{ return m_file; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
     inline void SetFile(const ReadSetFile& value) { m_fileHasBeenSet = true; m_file = value; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
     inline void SetFile(ReadSetFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
     inline GetReadSetRequest& WithFile(const ReadSetFile& value) { SetFile(value); return *this;}
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
     inline GetReadSetRequest& WithFile(ReadSetFile&& value) { SetFile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The part number to retrieve.</p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
-
-    /**
-     * <p>The part number to retrieve.</p>
-     */
     inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
-
-    /**
-     * <p>The part number to retrieve.</p>
-     */
     inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
-
-    /**
-     * <p>The part number to retrieve.</p>
-     */
     inline GetReadSetRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

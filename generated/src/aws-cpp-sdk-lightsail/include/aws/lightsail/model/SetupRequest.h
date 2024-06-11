@@ -41,132 +41,47 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Lightsail instance.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline SetupRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline SetupRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Lightsail instance.</p>
-     */
     inline SetupRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the domain and subdomains that the SSL/TLS certificate
      * secures.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline SetupRequest& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline SetupRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline SetupRequest& AddDomainNames(const Aws::String& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline SetupRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The name of the domain and subdomains that the SSL/TLS certificate
-     * secures.</p>
-     */
     inline SetupRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
      */
     inline const CertificateProvider& GetCertificateProvider() const{ return m_certificateProvider; }
-
-    /**
-     * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
-     */
     inline bool CertificateProviderHasBeenSet() const { return m_certificateProviderHasBeenSet; }
-
-    /**
-     * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
-     */
     inline void SetCertificateProvider(const CertificateProvider& value) { m_certificateProviderHasBeenSet = true; m_certificateProvider = value; }
-
-    /**
-     * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
-     */
     inline void SetCertificateProvider(CertificateProvider&& value) { m_certificateProviderHasBeenSet = true; m_certificateProvider = std::move(value); }
-
-    /**
-     * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
-     */
     inline SetupRequest& WithCertificateProvider(const CertificateProvider& value) { SetCertificateProvider(value); return *this;}
-
-    /**
-     * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
-     */
     inline SetupRequest& WithCertificateProvider(CertificateProvider&& value) { SetCertificateProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceName;

@@ -38,63 +38,29 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API GetSigningCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The signing certificate.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>The signing certificate.</p>
-     */
     inline void SetCertificate(const Aws::String& value) { m_certificate = value; }
-
-    /**
-     * <p>The signing certificate.</p>
-     */
     inline void SetCertificate(Aws::String&& value) { m_certificate = std::move(value); }
-
-    /**
-     * <p>The signing certificate.</p>
-     */
     inline void SetCertificate(const char* value) { m_certificate.assign(value); }
-
-    /**
-     * <p>The signing certificate.</p>
-     */
     inline GetSigningCertificateResult& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>The signing certificate.</p>
-     */
     inline GetSigningCertificateResult& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The signing certificate.</p>
-     */
     inline GetSigningCertificateResult& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSigningCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSigningCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSigningCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificate;

@@ -36,6 +36,7 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
@@ -45,58 +46,14 @@ namespace Model
      * Rekognition developer guide.</p>
      */
     inline const Image& GetImage() const{ return m_image; }
-
-    /**
-     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
-     * you might not need to base64-encode image bytes passed using the
-     * <code>Bytes</code> field. For more information, see Images in the Amazon
-     * Rekognition developer guide.</p>
-     */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-
-    /**
-     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
-     * you might not need to base64-encode image bytes passed using the
-     * <code>Bytes</code> field. For more information, see Images in the Amazon
-     * Rekognition developer guide.</p>
-     */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
-
-    /**
-     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
-     * you might not need to base64-encode image bytes passed using the
-     * <code>Bytes</code> field. For more information, see Images in the Amazon
-     * Rekognition developer guide.</p>
-     */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-
-    /**
-     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
-     * you might not need to base64-encode image bytes passed using the
-     * <code>Bytes</code> field. For more information, see Images in the Amazon
-     * Rekognition developer guide.</p>
-     */
     inline DetectFacesRequest& WithImage(const Image& value) { SetImage(value); return *this;}
-
-    /**
-     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
-     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
-     * you might not need to base64-encode image bytes passed using the
-     * <code>Bytes</code> field. For more information, see Images in the Amazon
-     * Rekognition developer guide.</p>
-     */
     inline DetectFacesRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
      * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
@@ -113,126 +70,14 @@ namespace Model
      * <code>GetFaceDetection</code>.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline DetectFacesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline DetectFacesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline DetectFacesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of facial attributes you want to be returned. A <code>DEFAULT</code>
-     * subset of facial attributes - <code>BoundingBox</code>, <code>Confidence</code>,
-     * <code>Pose</code>, <code>Quality</code>, and <code>Landmarks</code> - will
-     * always be returned. You can request for specific facial attributes (in addition
-     * to the default list) - by using [<code>"DEFAULT", "FACE_OCCLUDED"</code>] or
-     * just [<code>"FACE_OCCLUDED"</code>]. You can request for all facial attributes
-     * by using [<code>"ALL"]</code>. Requesting more attributes may increase response
-     * time.</p> <p>If you provide both, <code>["ALL", "DEFAULT"]</code>, the service
-     * uses a logical "AND" operator to determine which attributes to return (in this
-     * case, all attributes). </p> <p>Note that while the FaceOccluded and EyeDirection
-     * attributes are supported when using <code>DetectFaces</code>, they aren't
-     * supported when analyzing videos with <code>StartFaceDetection</code> and
-     * <code>GetFaceDetection</code>.</p>
-     */
     inline DetectFacesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Image m_image;

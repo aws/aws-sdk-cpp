@@ -33,52 +33,26 @@ namespace Model
     AWS_EC2_API DisableImageBlockPublicAccessResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Returns <code>unblocked</code> if the request succeeds; otherwise, it returns
      * an error.</p>
      */
     inline const ImageBlockPublicAccessDisabledState& GetImageBlockPublicAccessState() const{ return m_imageBlockPublicAccessState; }
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds; otherwise, it returns
-     * an error.</p>
-     */
     inline void SetImageBlockPublicAccessState(const ImageBlockPublicAccessDisabledState& value) { m_imageBlockPublicAccessState = value; }
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds; otherwise, it returns
-     * an error.</p>
-     */
     inline void SetImageBlockPublicAccessState(ImageBlockPublicAccessDisabledState&& value) { m_imageBlockPublicAccessState = std::move(value); }
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds; otherwise, it returns
-     * an error.</p>
-     */
     inline DisableImageBlockPublicAccessResponse& WithImageBlockPublicAccessState(const ImageBlockPublicAccessDisabledState& value) { SetImageBlockPublicAccessState(value); return *this;}
-
-    /**
-     * <p>Returns <code>unblocked</code> if the request succeeds; otherwise, it returns
-     * an error.</p>
-     */
     inline DisableImageBlockPublicAccessResponse& WithImageBlockPublicAccessState(ImageBlockPublicAccessDisabledState&& value) { SetImageBlockPublicAccessState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DisableImageBlockPublicAccessResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DisableImageBlockPublicAccessResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ImageBlockPublicAccessDisabledState m_imageBlockPublicAccessState;

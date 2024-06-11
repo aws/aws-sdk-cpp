@@ -32,87 +32,33 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The budget ID.</p>
      */
     inline const Aws::String& GetBudgetId() const{ return m_budgetId; }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline bool BudgetIdHasBeenSet() const { return m_budgetIdHasBeenSet; }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline void SetBudgetId(const Aws::String& value) { m_budgetIdHasBeenSet = true; m_budgetId = value; }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline void SetBudgetId(Aws::String&& value) { m_budgetIdHasBeenSet = true; m_budgetId = std::move(value); }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline void SetBudgetId(const char* value) { m_budgetIdHasBeenSet = true; m_budgetId.assign(value); }
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline GetBudgetRequest& WithBudgetId(const Aws::String& value) { SetBudgetId(value); return *this;}
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline GetBudgetRequest& WithBudgetId(Aws::String&& value) { SetBudgetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The budget ID.</p>
-     */
     inline GetBudgetRequest& WithBudgetId(const char* value) { SetBudgetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The farm ID of the farm connected to the budget.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline GetBudgetRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline GetBudgetRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID of the farm connected to the budget.</p>
-     */
     inline GetBudgetRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_budgetId;

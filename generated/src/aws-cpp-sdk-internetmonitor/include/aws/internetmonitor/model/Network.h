@@ -38,67 +38,29 @@ namespace Model
     AWS_INTERNETMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the internet service provider (ISP) or network (ASN).</p>
      */
     inline const Aws::String& GetASName() const{ return m_aSName; }
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline bool ASNameHasBeenSet() const { return m_aSNameHasBeenSet; }
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline void SetASName(const Aws::String& value) { m_aSNameHasBeenSet = true; m_aSName = value; }
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline void SetASName(Aws::String&& value) { m_aSNameHasBeenSet = true; m_aSName = std::move(value); }
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline void SetASName(const char* value) { m_aSNameHasBeenSet = true; m_aSName.assign(value); }
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline Network& WithASName(const Aws::String& value) { SetASName(value); return *this;}
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline Network& WithASName(Aws::String&& value) { SetASName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the internet service provider (ISP) or network (ASN).</p>
-     */
     inline Network& WithASName(const char* value) { SetASName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
      */
     inline long long GetASNumber() const{ return m_aSNumber; }
-
-    /**
-     * <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
-     */
     inline bool ASNumberHasBeenSet() const { return m_aSNumberHasBeenSet; }
-
-    /**
-     * <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
-     */
     inline void SetASNumber(long long value) { m_aSNumberHasBeenSet = true; m_aSNumber = value; }
-
-    /**
-     * <p>The Autonomous System Number (ASN) of the internet provider or network.</p>
-     */
     inline Network& WithASNumber(long long value) { SetASNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aSName;

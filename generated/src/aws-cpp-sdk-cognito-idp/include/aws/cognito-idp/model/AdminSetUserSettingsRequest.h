@@ -40,55 +40,22 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the user pool that contains the user whose options you're
      * setting.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline AdminSetUserSettingsRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the user pool that contains the user whose options you're
-     * setting.</p>
-     */
     inline AdminSetUserSettingsRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The username of the user that you want to query or modify. The value of this
      * parameter is typically your user's username, but it can be any of their alias
@@ -97,119 +64,29 @@ namespace Model
      * user from a third-party IdP.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminSetUserSettingsRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminSetUserSettingsRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-
-    /**
-     * <p>The username of the user that you want to query or modify. The value of this
-     * parameter is typically your user's username, but it can be any of their alias
-     * attributes. If <code>username</code> isn't an alias attribute in your user pool,
-     * this value must be the <code>sub</code> of a local user or the username of a
-     * user from a third-party IdP.</p>
-     */
     inline AdminSetUserSettingsRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>You can use this parameter only to set an SMS configuration that uses SMS for
      * delivery.</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline void SetMFAOptions(const Aws::Vector<MFAOptionType>& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = value; }
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline void SetMFAOptions(Aws::Vector<MFAOptionType>&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions = std::move(value); }
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline AdminSetUserSettingsRequest& WithMFAOptions(const Aws::Vector<MFAOptionType>& value) { SetMFAOptions(value); return *this;}
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline AdminSetUserSettingsRequest& WithMFAOptions(Aws::Vector<MFAOptionType>&& value) { SetMFAOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline AdminSetUserSettingsRequest& AddMFAOptions(const MFAOptionType& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(value); return *this; }
-
-    /**
-     * <p>You can use this parameter only to set an SMS configuration that uses SMS for
-     * delivery.</p>
-     */
     inline AdminSetUserSettingsRequest& AddMFAOptions(MFAOptionType&& value) { m_mFAOptionsHasBeenSet = true; m_mFAOptions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_userPoolId;

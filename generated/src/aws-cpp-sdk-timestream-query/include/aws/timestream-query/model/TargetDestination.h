@@ -38,36 +38,17 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Query result destination details for Timestream data source.</p>
      */
     inline const TimestreamDestination& GetTimestreamDestination() const{ return m_timestreamDestination; }
-
-    /**
-     * <p>Query result destination details for Timestream data source.</p>
-     */
     inline bool TimestreamDestinationHasBeenSet() const { return m_timestreamDestinationHasBeenSet; }
-
-    /**
-     * <p>Query result destination details for Timestream data source.</p>
-     */
     inline void SetTimestreamDestination(const TimestreamDestination& value) { m_timestreamDestinationHasBeenSet = true; m_timestreamDestination = value; }
-
-    /**
-     * <p>Query result destination details for Timestream data source.</p>
-     */
     inline void SetTimestreamDestination(TimestreamDestination&& value) { m_timestreamDestinationHasBeenSet = true; m_timestreamDestination = std::move(value); }
-
-    /**
-     * <p>Query result destination details for Timestream data source.</p>
-     */
     inline TargetDestination& WithTimestreamDestination(const TimestreamDestination& value) { SetTimestreamDestination(value); return *this;}
-
-    /**
-     * <p>Query result destination details for Timestream data source.</p>
-     */
     inline TargetDestination& WithTimestreamDestination(TimestreamDestination&& value) { SetTimestreamDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TimestreamDestination m_timestreamDestination;

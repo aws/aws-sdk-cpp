@@ -38,6 +38,7 @@ namespace Model
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email identity type. The identity type can be one of the following:</p>
      * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
@@ -46,94 +47,28 @@ namespace Model
      * AWS.</p> </li> </ul>
      */
     inline const IdentityType& GetIdentityType() const{ return m_identityType; }
-
-    /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
-     */
     inline bool IdentityTypeHasBeenSet() const { return m_identityTypeHasBeenSet; }
-
-    /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
-     */
     inline void SetIdentityType(const IdentityType& value) { m_identityTypeHasBeenSet = true; m_identityType = value; }
-
-    /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
-     */
     inline void SetIdentityType(IdentityType&& value) { m_identityTypeHasBeenSet = true; m_identityType = std::move(value); }
-
-    /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
-     */
     inline IdentityInfo& WithIdentityType(const IdentityType& value) { SetIdentityType(value); return *this;}
-
-    /**
-     * <p>The email identity type. The identity type can be one of the following:</p>
-     * <ul> <li> <p> <code>EMAIL_ADDRESS</code> – The identity is an email address.</p>
-     * </li> <li> <p> <code>DOMAIN</code> – The identity is a domain.</p> </li> <li>
-     * <p> <code>MANAGED_DOMAIN</code> – The identity is a domain that is managed by
-     * AWS.</p> </li> </ul>
-     */
     inline IdentityInfo& WithIdentityType(IdentityType&& value) { SetIdentityType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The address or domain of the identity.</p>
      */
     inline const Aws::String& GetIdentityName() const{ return m_identityName; }
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline bool IdentityNameHasBeenSet() const { return m_identityNameHasBeenSet; }
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline void SetIdentityName(const Aws::String& value) { m_identityNameHasBeenSet = true; m_identityName = value; }
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline void SetIdentityName(Aws::String&& value) { m_identityNameHasBeenSet = true; m_identityName = std::move(value); }
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline void SetIdentityName(const char* value) { m_identityNameHasBeenSet = true; m_identityName.assign(value); }
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline IdentityInfo& WithIdentityName(const Aws::String& value) { SetIdentityName(value); return *this;}
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline IdentityInfo& WithIdentityName(Aws::String&& value) { SetIdentityName(std::move(value)); return *this;}
-
-    /**
-     * <p>The address or domain of the identity.</p>
-     */
     inline IdentityInfo& WithIdentityName(const char* value) { SetIdentityName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether or not you can send email from the identity.</p> <p>In
      * Amazon Pinpoint, an identity is an email address or domain that you send email
@@ -142,34 +77,10 @@ namespace Model
      * that identity.</p>
      */
     inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
-
-    /**
-     * <p>Indicates whether or not you can send email from the identity.</p> <p>In
-     * Amazon Pinpoint, an identity is an email address or domain that you send email
-     * from. Before you can send email from an identity, you have to demostrate that
-     * you own the identity, and that you authorize Amazon Pinpoint to send email from
-     * that identity.</p>
-     */
     inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
-
-    /**
-     * <p>Indicates whether or not you can send email from the identity.</p> <p>In
-     * Amazon Pinpoint, an identity is an email address or domain that you send email
-     * from. Before you can send email from an identity, you have to demostrate that
-     * you own the identity, and that you authorize Amazon Pinpoint to send email from
-     * that identity.</p>
-     */
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
-
-    /**
-     * <p>Indicates whether or not you can send email from the identity.</p> <p>In
-     * Amazon Pinpoint, an identity is an email address or domain that you send email
-     * from. Before you can send email from an identity, you have to demostrate that
-     * you own the identity, and that you authorize Amazon Pinpoint to send email from
-     * that identity.</p>
-     */
     inline IdentityInfo& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     IdentityType m_identityType;

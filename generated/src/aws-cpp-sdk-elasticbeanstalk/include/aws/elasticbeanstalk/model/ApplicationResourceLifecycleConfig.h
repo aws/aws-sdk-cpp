@@ -44,6 +44,7 @@ namespace Model
     AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
      * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
@@ -56,129 +57,26 @@ namespace Model
      * it in subsequent calls to change the Service Role to another value.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::move(value); }
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline void SetServiceRole(const char* value) { m_serviceRoleHasBeenSet = true; m_serviceRole.assign(value); }
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline ApplicationResourceLifecycleConfig& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline ApplicationResourceLifecycleConfig& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of an IAM service role that Elastic Beanstalk has permission to
-     * assume.</p> <p>The <code>ServiceRole</code> property is required the first time
-     * that you provide a <code>VersionLifecycleConfig</code> for the application in
-     * one of the supporting calls (<code>CreateApplication</code> or
-     * <code>UpdateApplicationResourceLifecycle</code>). After you provide it once, in
-     * either one of the calls, Elastic Beanstalk persists the Service Role with the
-     * application, and you don't need to specify it again in subsequent
-     * <code>UpdateApplicationResourceLifecycle</code> calls. You can, however, specify
-     * it in subsequent calls to change the Service Role to another value.</p>
-     */
     inline ApplicationResourceLifecycleConfig& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines lifecycle settings for application versions.</p>
      */
     inline const ApplicationVersionLifecycleConfig& GetVersionLifecycleConfig() const{ return m_versionLifecycleConfig; }
-
-    /**
-     * <p>Defines lifecycle settings for application versions.</p>
-     */
     inline bool VersionLifecycleConfigHasBeenSet() const { return m_versionLifecycleConfigHasBeenSet; }
-
-    /**
-     * <p>Defines lifecycle settings for application versions.</p>
-     */
     inline void SetVersionLifecycleConfig(const ApplicationVersionLifecycleConfig& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = value; }
-
-    /**
-     * <p>Defines lifecycle settings for application versions.</p>
-     */
     inline void SetVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { m_versionLifecycleConfigHasBeenSet = true; m_versionLifecycleConfig = std::move(value); }
-
-    /**
-     * <p>Defines lifecycle settings for application versions.</p>
-     */
     inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(const ApplicationVersionLifecycleConfig& value) { SetVersionLifecycleConfig(value); return *this;}
-
-    /**
-     * <p>Defines lifecycle settings for application versions.</p>
-     */
     inline ApplicationResourceLifecycleConfig& WithVersionLifecycleConfig(ApplicationVersionLifecycleConfig&& value) { SetVersionLifecycleConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceRole;

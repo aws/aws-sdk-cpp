@@ -33,89 +33,40 @@ namespace Model
     AWS_BRAKET_API CancelQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the cancellation request.</p>
      */
     inline const CancellationStatus& GetCancellationStatus() const{ return m_cancellationStatus; }
-
-    /**
-     * <p>The status of the cancellation request.</p>
-     */
     inline void SetCancellationStatus(const CancellationStatus& value) { m_cancellationStatus = value; }
-
-    /**
-     * <p>The status of the cancellation request.</p>
-     */
     inline void SetCancellationStatus(CancellationStatus&& value) { m_cancellationStatus = std::move(value); }
-
-    /**
-     * <p>The status of the cancellation request.</p>
-     */
     inline CancelQuantumTaskResult& WithCancellationStatus(const CancellationStatus& value) { SetCancellationStatus(value); return *this;}
-
-    /**
-     * <p>The status of the cancellation request.</p>
-     */
     inline CancelQuantumTaskResult& WithCancellationStatus(CancellationStatus&& value) { SetCancellationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the task.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const{ return m_quantumTaskArn; }
-
-    /**
-     * <p>The ARN of the task.</p>
-     */
     inline void SetQuantumTaskArn(const Aws::String& value) { m_quantumTaskArn = value; }
-
-    /**
-     * <p>The ARN of the task.</p>
-     */
     inline void SetQuantumTaskArn(Aws::String&& value) { m_quantumTaskArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the task.</p>
-     */
     inline void SetQuantumTaskArn(const char* value) { m_quantumTaskArn.assign(value); }
-
-    /**
-     * <p>The ARN of the task.</p>
-     */
     inline CancelQuantumTaskResult& WithQuantumTaskArn(const Aws::String& value) { SetQuantumTaskArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the task.</p>
-     */
     inline CancelQuantumTaskResult& WithQuantumTaskArn(Aws::String&& value) { SetQuantumTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the task.</p>
-     */
     inline CancelQuantumTaskResult& WithQuantumTaskArn(const char* value) { SetQuantumTaskArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelQuantumTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelQuantumTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelQuantumTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CancellationStatus m_cancellationStatus;

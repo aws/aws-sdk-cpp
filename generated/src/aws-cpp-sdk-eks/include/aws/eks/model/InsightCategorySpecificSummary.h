@@ -40,54 +40,20 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The summary information about deprecated resource usage for an insight check
      * in the <code>UPGRADE_READINESS</code> category.</p>
      */
     inline const Aws::Vector<DeprecationDetail>& GetDeprecationDetails() const{ return m_deprecationDetails; }
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline bool DeprecationDetailsHasBeenSet() const { return m_deprecationDetailsHasBeenSet; }
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline void SetDeprecationDetails(const Aws::Vector<DeprecationDetail>& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails = value; }
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline void SetDeprecationDetails(Aws::Vector<DeprecationDetail>&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails = std::move(value); }
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline InsightCategorySpecificSummary& WithDeprecationDetails(const Aws::Vector<DeprecationDetail>& value) { SetDeprecationDetails(value); return *this;}
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline InsightCategorySpecificSummary& WithDeprecationDetails(Aws::Vector<DeprecationDetail>&& value) { SetDeprecationDetails(std::move(value)); return *this;}
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline InsightCategorySpecificSummary& AddDeprecationDetails(const DeprecationDetail& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.push_back(value); return *this; }
-
-    /**
-     * <p>The summary information about deprecated resource usage for an insight check
-     * in the <code>UPGRADE_READINESS</code> category.</p>
-     */
     inline InsightCategorySpecificSummary& AddDeprecationDetails(DeprecationDetail&& value) { m_deprecationDetailsHasBeenSet = true; m_deprecationDetails.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DeprecationDetail> m_deprecationDetails;

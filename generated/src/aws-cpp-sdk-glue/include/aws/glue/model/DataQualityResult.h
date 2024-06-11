@@ -43,144 +43,58 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique result ID for the data quality result.</p>
      */
     inline const Aws::String& GetResultId() const{ return m_resultId; }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline DataQualityResult& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline DataQualityResult& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique result ID for the data quality result.</p>
-     */
     inline DataQualityResult& WithResultId(const char* value) { SetResultId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An aggregate data quality score. Represents the ratio of rules that passed to
      * the total number of rules.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>An aggregate data quality score. Represents the ratio of rules that passed to
-     * the total number of rules.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>An aggregate data quality score. Represents the ratio of rules that passed to
-     * the total number of rules.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>An aggregate data quality score. Represents the ratio of rules that passed to
-     * the total number of rules.</p>
-     */
     inline DataQualityResult& WithScore(double value) { SetScore(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The table associated with the data quality result, if any.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>The table associated with the data quality result, if any.</p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>The table associated with the data quality result, if any.</p>
-     */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>The table associated with the data quality result, if any.</p>
-     */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>The table associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>The table associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the ruleset associated with the data quality result.</p>
      */
     inline const Aws::String& GetRulesetName() const{ return m_rulesetName; }
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline bool RulesetNameHasBeenSet() const { return m_rulesetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline void SetRulesetName(const Aws::String& value) { m_rulesetNameHasBeenSet = true; m_rulesetName = value; }
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline void SetRulesetName(Aws::String&& value) { m_rulesetNameHasBeenSet = true; m_rulesetName = std::move(value); }
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline void SetRulesetName(const char* value) { m_rulesetNameHasBeenSet = true; m_rulesetName.assign(value); }
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline DataQualityResult& WithRulesetName(const Aws::String& value) { SetRulesetName(value); return *this;}
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline DataQualityResult& WithRulesetName(Aws::String&& value) { SetRulesetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the ruleset associated with the data quality result.</p>
-     */
     inline DataQualityResult& WithRulesetName(const char* value) { SetRulesetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>In the context of a job in Glue Studio, each node in the canvas is typically
      * assigned some sort of name and data quality nodes will have names. In the case
@@ -188,403 +102,126 @@ namespace Model
      * nodes.</p>
      */
     inline const Aws::String& GetEvaluationContext() const{ return m_evaluationContext; }
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline bool EvaluationContextHasBeenSet() const { return m_evaluationContextHasBeenSet; }
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline void SetEvaluationContext(const Aws::String& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = value; }
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline void SetEvaluationContext(Aws::String&& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = std::move(value); }
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline void SetEvaluationContext(const char* value) { m_evaluationContextHasBeenSet = true; m_evaluationContext.assign(value); }
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline DataQualityResult& WithEvaluationContext(const Aws::String& value) { SetEvaluationContext(value); return *this;}
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline DataQualityResult& WithEvaluationContext(Aws::String&& value) { SetEvaluationContext(std::move(value)); return *this;}
-
-    /**
-     * <p>In the context of a job in Glue Studio, each node in the canvas is typically
-     * assigned some sort of name and data quality nodes will have names. In the case
-     * of multiple nodes, the <code>evaluationContext</code> can differentiate the
-     * nodes.</p>
-     */
     inline DataQualityResult& WithEvaluationContext(const char* value) { SetEvaluationContext(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when this data quality run started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
-
-    /**
-     * <p>The date and time when this data quality run started.</p>
-     */
     inline bool StartedOnHasBeenSet() const { return m_startedOnHasBeenSet; }
-
-    /**
-     * <p>The date and time when this data quality run started.</p>
-     */
     inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOnHasBeenSet = true; m_startedOn = value; }
-
-    /**
-     * <p>The date and time when this data quality run started.</p>
-     */
     inline void SetStartedOn(Aws::Utils::DateTime&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::move(value); }
-
-    /**
-     * <p>The date and time when this data quality run started.</p>
-     */
     inline DataQualityResult& WithStartedOn(const Aws::Utils::DateTime& value) { SetStartedOn(value); return *this;}
-
-    /**
-     * <p>The date and time when this data quality run started.</p>
-     */
     inline DataQualityResult& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when this data quality run completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
-
-    /**
-     * <p>The date and time when this data quality run completed.</p>
-     */
     inline bool CompletedOnHasBeenSet() const { return m_completedOnHasBeenSet; }
-
-    /**
-     * <p>The date and time when this data quality run completed.</p>
-     */
     inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOnHasBeenSet = true; m_completedOn = value; }
-
-    /**
-     * <p>The date and time when this data quality run completed.</p>
-     */
     inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::move(value); }
-
-    /**
-     * <p>The date and time when this data quality run completed.</p>
-     */
     inline DataQualityResult& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
-
-    /**
-     * <p>The date and time when this data quality run completed.</p>
-     */
     inline DataQualityResult& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job name associated with the data quality result, if any.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The job name associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job run ID associated with the data quality result, if any.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job run ID associated with the data quality result, if any.</p>
-     */
     inline DataQualityResult& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique run ID for the ruleset evaluation for this data quality
      * result.</p>
      */
     inline const Aws::String& GetRulesetEvaluationRunId() const{ return m_rulesetEvaluationRunId; }
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline bool RulesetEvaluationRunIdHasBeenSet() const { return m_rulesetEvaluationRunIdHasBeenSet; }
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline void SetRulesetEvaluationRunId(const Aws::String& value) { m_rulesetEvaluationRunIdHasBeenSet = true; m_rulesetEvaluationRunId = value; }
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline void SetRulesetEvaluationRunId(Aws::String&& value) { m_rulesetEvaluationRunIdHasBeenSet = true; m_rulesetEvaluationRunId = std::move(value); }
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline void SetRulesetEvaluationRunId(const char* value) { m_rulesetEvaluationRunIdHasBeenSet = true; m_rulesetEvaluationRunId.assign(value); }
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline DataQualityResult& WithRulesetEvaluationRunId(const Aws::String& value) { SetRulesetEvaluationRunId(value); return *this;}
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline DataQualityResult& WithRulesetEvaluationRunId(Aws::String&& value) { SetRulesetEvaluationRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique run ID for the ruleset evaluation for this data quality
-     * result.</p>
-     */
     inline DataQualityResult& WithRulesetEvaluationRunId(const char* value) { SetRulesetEvaluationRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
      * for each rule. </p>
      */
     inline const Aws::Vector<DataQualityRuleResult>& GetRuleResults() const{ return m_ruleResults; }
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline bool RuleResultsHasBeenSet() const { return m_ruleResultsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline void SetRuleResults(const Aws::Vector<DataQualityRuleResult>& value) { m_ruleResultsHasBeenSet = true; m_ruleResults = value; }
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline void SetRuleResults(Aws::Vector<DataQualityRuleResult>&& value) { m_ruleResultsHasBeenSet = true; m_ruleResults = std::move(value); }
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline DataQualityResult& WithRuleResults(const Aws::Vector<DataQualityRuleResult>& value) { SetRuleResults(value); return *this;}
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline DataQualityResult& WithRuleResults(Aws::Vector<DataQualityRuleResult>&& value) { SetRuleResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline DataQualityResult& AddRuleResults(const DataQualityRuleResult& value) { m_ruleResultsHasBeenSet = true; m_ruleResults.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>DataQualityRuleResult</code> objects representing the results
-     * for each rule. </p>
-     */
     inline DataQualityResult& AddRuleResults(DataQualityRuleResult&& value) { m_ruleResultsHasBeenSet = true; m_ruleResults.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
      * results for each analyzer. </p>
      */
     inline const Aws::Vector<DataQualityAnalyzerResult>& GetAnalyzerResults() const{ return m_analyzerResults; }
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline bool AnalyzerResultsHasBeenSet() const { return m_analyzerResultsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline void SetAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults = value; }
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline void SetAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults = std::move(value); }
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline DataQualityResult& WithAnalyzerResults(const Aws::Vector<DataQualityAnalyzerResult>& value) { SetAnalyzerResults(value); return *this;}
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline DataQualityResult& WithAnalyzerResults(Aws::Vector<DataQualityAnalyzerResult>&& value) { SetAnalyzerResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline DataQualityResult& AddAnalyzerResults(const DataQualityAnalyzerResult& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>DataQualityAnalyzerResult</code> objects representing the
-     * results for each analyzer. </p>
-     */
     inline DataQualityResult& AddAnalyzerResults(DataQualityAnalyzerResult&& value) { m_analyzerResultsHasBeenSet = true; m_analyzerResults.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>DataQualityObservation</code> objects representing the
      * observations generated after evaluating the rules and analyzers. </p>
      */
     inline const Aws::Vector<DataQualityObservation>& GetObservations() const{ return m_observations; }
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline bool ObservationsHasBeenSet() const { return m_observationsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline void SetObservations(const Aws::Vector<DataQualityObservation>& value) { m_observationsHasBeenSet = true; m_observations = value; }
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline void SetObservations(Aws::Vector<DataQualityObservation>&& value) { m_observationsHasBeenSet = true; m_observations = std::move(value); }
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline DataQualityResult& WithObservations(const Aws::Vector<DataQualityObservation>& value) { SetObservations(value); return *this;}
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline DataQualityResult& WithObservations(Aws::Vector<DataQualityObservation>&& value) { SetObservations(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline DataQualityResult& AddObservations(const DataQualityObservation& value) { m_observationsHasBeenSet = true; m_observations.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>DataQualityObservation</code> objects representing the
-     * observations generated after evaluating the rules and analyzers. </p>
-     */
     inline DataQualityResult& AddObservations(DataQualityObservation&& value) { m_observationsHasBeenSet = true; m_observations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resultId;

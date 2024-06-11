@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the data stream.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline KinesisStreamConfig& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline KinesisStreamConfig& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the data stream.</p>
-     */
     inline KinesisStreamConfig& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamArn;

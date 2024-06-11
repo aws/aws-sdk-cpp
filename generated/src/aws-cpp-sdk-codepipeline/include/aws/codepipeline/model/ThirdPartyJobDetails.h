@@ -39,134 +39,47 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier used to identify the job details in CodePipeline.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline ThirdPartyJobDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline ThirdPartyJobDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier used to identify the job details in CodePipeline.</p>
-     */
     inline ThirdPartyJobDetails& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data to be returned by the third party job worker.</p>
      */
     inline const ThirdPartyJobData& GetData() const{ return m_data; }
-
-    /**
-     * <p>The data to be returned by the third party job worker.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The data to be returned by the third party job worker.</p>
-     */
     inline void SetData(const ThirdPartyJobData& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The data to be returned by the third party job worker.</p>
-     */
     inline void SetData(ThirdPartyJobData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The data to be returned by the third party job worker.</p>
-     */
     inline ThirdPartyJobDetails& WithData(const ThirdPartyJobData& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The data to be returned by the third party job worker.</p>
-     */
     inline ThirdPartyJobDetails& WithData(ThirdPartyJobData&& value) { SetData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A system-generated random number that CodePipeline uses to ensure that the
      * job is being worked on by only one job worker. Use this number in an
      * <a>AcknowledgeThirdPartyJob</a> request.</p>
      */
     inline const Aws::String& GetNonce() const{ return m_nonce; }
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline void SetNonce(const Aws::String& value) { m_nonceHasBeenSet = true; m_nonce = value; }
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = std::move(value); }
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline void SetNonce(const char* value) { m_nonceHasBeenSet = true; m_nonce.assign(value); }
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline ThirdPartyJobDetails& WithNonce(const Aws::String& value) { SetNonce(value); return *this;}
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline ThirdPartyJobDetails& WithNonce(Aws::String&& value) { SetNonce(std::move(value)); return *this;}
-
-    /**
-     * <p>A system-generated random number that CodePipeline uses to ensure that the
-     * job is being worked on by only one job worker. Use this number in an
-     * <a>AcknowledgeThirdPartyJob</a> request.</p>
-     */
     inline ThirdPartyJobDetails& WithNonce(const char* value) { SetNonce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

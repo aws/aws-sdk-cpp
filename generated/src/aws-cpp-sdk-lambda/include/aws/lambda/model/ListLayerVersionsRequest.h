@@ -40,6 +40,7 @@ namespace Model
     AWS_LAMBDA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
      * list includes deprecated runtimes. For more information, see <a
@@ -47,193 +48,64 @@ namespace Model
      * deprecation policy</a>.</p>
      */
     inline const Runtime& GetCompatibleRuntime() const{ return m_compatibleRuntime; }
-
-    /**
-     * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
-     * list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
-     */
     inline bool CompatibleRuntimeHasBeenSet() const { return m_compatibleRuntimeHasBeenSet; }
-
-    /**
-     * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
-     * list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
-     */
     inline void SetCompatibleRuntime(const Runtime& value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = value; }
-
-    /**
-     * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
-     * list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
-     */
     inline void SetCompatibleRuntime(Runtime&& value) { m_compatibleRuntimeHasBeenSet = true; m_compatibleRuntime = std::move(value); }
-
-    /**
-     * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
-     * list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
-     */
     inline ListLayerVersionsRequest& WithCompatibleRuntime(const Runtime& value) { SetCompatibleRuntime(value); return *this;}
-
-    /**
-     * <p>A runtime identifier. For example, <code>java21</code>.</p> <p>The following
-     * list includes deprecated runtimes. For more information, see <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
-     * deprecation policy</a>.</p>
-     */
     inline ListLayerVersionsRequest& WithCompatibleRuntime(Runtime&& value) { SetCompatibleRuntime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline const Aws::String& GetLayerName() const{ return m_layerName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline void SetLayerName(Aws::String&& value) { m_layerNameHasBeenSet = true; m_layerName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline void SetLayerName(const char* value) { m_layerNameHasBeenSet = true; m_layerName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline ListLayerVersionsRequest& WithLayerName(const Aws::String& value) { SetLayerName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline ListLayerVersionsRequest& WithLayerName(Aws::String&& value) { SetLayerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline ListLayerVersionsRequest& WithLayerName(const char* value) { SetLayerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token returned by a previous call.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline ListLayerVersionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline ListLayerVersionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token returned by a previous call.</p>
-     */
     inline ListLayerVersionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of versions to return.</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p>The maximum number of versions to return.</p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of versions to return.</p>
-     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p>The maximum number of versions to return.</p>
-     */
     inline ListLayerVersionsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The compatible <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
      * set architecture</a>.</p>
      */
     inline const Architecture& GetCompatibleArchitecture() const{ return m_compatibleArchitecture; }
-
-    /**
-     * <p>The compatible <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-     * set architecture</a>.</p>
-     */
     inline bool CompatibleArchitectureHasBeenSet() const { return m_compatibleArchitectureHasBeenSet; }
-
-    /**
-     * <p>The compatible <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-     * set architecture</a>.</p>
-     */
     inline void SetCompatibleArchitecture(const Architecture& value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = value; }
-
-    /**
-     * <p>The compatible <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-     * set architecture</a>.</p>
-     */
     inline void SetCompatibleArchitecture(Architecture&& value) { m_compatibleArchitectureHasBeenSet = true; m_compatibleArchitecture = std::move(value); }
-
-    /**
-     * <p>The compatible <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-     * set architecture</a>.</p>
-     */
     inline ListLayerVersionsRequest& WithCompatibleArchitecture(const Architecture& value) { SetCompatibleArchitecture(value); return *this;}
-
-    /**
-     * <p>The compatible <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction
-     * set architecture</a>.</p>
-     */
     inline ListLayerVersionsRequest& WithCompatibleArchitecture(Architecture&& value) { SetCompatibleArchitecture(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Runtime m_compatibleRuntime;

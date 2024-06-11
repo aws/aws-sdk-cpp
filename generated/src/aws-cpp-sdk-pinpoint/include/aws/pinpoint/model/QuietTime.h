@@ -38,6 +38,7 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The specific time when quiet time ends. This value has to use 24-hour
      * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
@@ -45,64 +46,16 @@ namespace Model
      * or 14:30 to represent 2:30 PM.</p>
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline void SetEnd(const Aws::String& value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline void SetEnd(Aws::String&& value) { m_endHasBeenSet = true; m_end = std::move(value); }
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline void SetEnd(const char* value) { m_endHasBeenSet = true; m_end.assign(value); }
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline QuietTime& WithEnd(const Aws::String& value) { SetEnd(value); return *this;}
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline QuietTime& WithEnd(Aws::String&& value) { SetEnd(std::move(value)); return *this;}
-
-    /**
-     * <p>The specific time when quiet time ends. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline QuietTime& WithEnd(const char* value) { SetEnd(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The specific time when quiet time begins. This value has to use 24-hour
      * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
@@ -110,63 +63,14 @@ namespace Model
      * or 14:30 to represent 2:30 PM.</p>
      */
     inline const Aws::String& GetStart() const{ return m_start; }
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline QuietTime& WithStart(const Aws::String& value) { SetStart(value); return *this;}
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline QuietTime& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
-
-    /**
-     * <p>The specific time when quiet time begins. This value has to use 24-hour
-     * notation and be in HH:MM format, where HH is the hour (with a leading zero, if
-     * applicable) and MM is the minutes. For example, use 02:30 to represent 2:30 AM,
-     * or 14:30 to represent 2:30 PM.</p>
-     */
     inline QuietTime& WithStart(const char* value) { SetStart(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_end;

@@ -41,73 +41,30 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parameters required for creating a replica on an existing global
      * table.</p>
      */
     inline const CreateReplicaAction& GetCreate() const{ return m_create; }
-
-    /**
-     * <p>The parameters required for creating a replica on an existing global
-     * table.</p>
-     */
     inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
-
-    /**
-     * <p>The parameters required for creating a replica on an existing global
-     * table.</p>
-     */
     inline void SetCreate(const CreateReplicaAction& value) { m_createHasBeenSet = true; m_create = value; }
-
-    /**
-     * <p>The parameters required for creating a replica on an existing global
-     * table.</p>
-     */
     inline void SetCreate(CreateReplicaAction&& value) { m_createHasBeenSet = true; m_create = std::move(value); }
-
-    /**
-     * <p>The parameters required for creating a replica on an existing global
-     * table.</p>
-     */
     inline ReplicaUpdate& WithCreate(const CreateReplicaAction& value) { SetCreate(value); return *this;}
-
-    /**
-     * <p>The parameters required for creating a replica on an existing global
-     * table.</p>
-     */
     inline ReplicaUpdate& WithCreate(CreateReplicaAction&& value) { SetCreate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the existing replica to be removed.</p>
      */
     inline const DeleteReplicaAction& GetDelete() const{ return m_delete; }
-
-    /**
-     * <p>The name of the existing replica to be removed.</p>
-     */
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
-
-    /**
-     * <p>The name of the existing replica to be removed.</p>
-     */
     inline void SetDelete(const DeleteReplicaAction& value) { m_deleteHasBeenSet = true; m_delete = value; }
-
-    /**
-     * <p>The name of the existing replica to be removed.</p>
-     */
     inline void SetDelete(DeleteReplicaAction&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
-
-    /**
-     * <p>The name of the existing replica to be removed.</p>
-     */
     inline ReplicaUpdate& WithDelete(const DeleteReplicaAction& value) { SetDelete(value); return *this;}
-
-    /**
-     * <p>The name of the existing replica to be removed.</p>
-     */
     inline ReplicaUpdate& WithDelete(DeleteReplicaAction&& value) { SetDelete(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreateReplicaAction m_create;

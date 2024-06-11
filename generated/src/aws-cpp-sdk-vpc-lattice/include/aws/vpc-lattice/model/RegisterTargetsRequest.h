@@ -34,87 +34,33 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
      */
     inline const Aws::String& GetTargetGroupIdentifier() const{ return m_targetGroupIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline bool TargetGroupIdentifierHasBeenSet() const { return m_targetGroupIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(const Aws::String& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(Aws::String&& value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline void SetTargetGroupIdentifier(const char* value) { m_targetGroupIdentifierHasBeenSet = true; m_targetGroupIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline RegisterTargetsRequest& WithTargetGroupIdentifier(const Aws::String& value) { SetTargetGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline RegisterTargetsRequest& WithTargetGroupIdentifier(Aws::String&& value) { SetTargetGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the target group.</p>
-     */
     inline RegisterTargetsRequest& WithTargetGroupIdentifier(const char* value) { SetTargetGroupIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The targets.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
-
-    /**
-     * <p>The targets.</p>
-     */
     inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
-
-    /**
-     * <p>The targets.</p>
-     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
-
-    /**
-     * <p>The targets.</p>
-     */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
-
-    /**
-     * <p>The targets.</p>
-     */
     inline RegisterTargetsRequest& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
-
-    /**
-     * <p>The targets.</p>
-     */
     inline RegisterTargetsRequest& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The targets.</p>
-     */
     inline RegisterTargetsRequest& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
-
-    /**
-     * <p>The targets.</p>
-     */
     inline RegisterTargetsRequest& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_targetGroupIdentifier;

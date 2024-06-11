@@ -37,31 +37,18 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of objects that are encrypted with customer-provided keys.
      * The objects use server-side encryption with customer-provided keys (SSE-C).</p>
      */
     inline long long GetCustomerManaged() const{ return m_customerManaged; }
-
-    /**
-     * <p>The total number of objects that are encrypted with customer-provided keys.
-     * The objects use server-side encryption with customer-provided keys (SSE-C).</p>
-     */
     inline bool CustomerManagedHasBeenSet() const { return m_customerManagedHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that are encrypted with customer-provided keys.
-     * The objects use server-side encryption with customer-provided keys (SSE-C).</p>
-     */
     inline void SetCustomerManaged(long long value) { m_customerManagedHasBeenSet = true; m_customerManaged = value; }
-
-    /**
-     * <p>The total number of objects that are encrypted with customer-provided keys.
-     * The objects use server-side encryption with customer-provided keys (SSE-C).</p>
-     */
     inline ObjectCountByEncryptionType& WithCustomerManaged(long long value) { SetCustomerManaged(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects that are encrypted with KMS keys, either Amazon
      * Web Services managed keys or customer managed keys. The objects use dual-layer
@@ -69,110 +56,44 @@ namespace Model
      * SSE-KMS).</p>
      */
     inline long long GetKmsManaged() const{ return m_kmsManaged; }
-
-    /**
-     * <p>The total number of objects that are encrypted with KMS keys, either Amazon
-     * Web Services managed keys or customer managed keys. The objects use dual-layer
-     * server-side encryption or server-side encryption with KMS keys (DSSE-KMS or
-     * SSE-KMS).</p>
-     */
     inline bool KmsManagedHasBeenSet() const { return m_kmsManagedHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that are encrypted with KMS keys, either Amazon
-     * Web Services managed keys or customer managed keys. The objects use dual-layer
-     * server-side encryption or server-side encryption with KMS keys (DSSE-KMS or
-     * SSE-KMS).</p>
-     */
     inline void SetKmsManaged(long long value) { m_kmsManagedHasBeenSet = true; m_kmsManaged = value; }
-
-    /**
-     * <p>The total number of objects that are encrypted with KMS keys, either Amazon
-     * Web Services managed keys or customer managed keys. The objects use dual-layer
-     * server-side encryption or server-side encryption with KMS keys (DSSE-KMS or
-     * SSE-KMS).</p>
-     */
     inline ObjectCountByEncryptionType& WithKmsManaged(long long value) { SetKmsManaged(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects that are encrypted with Amazon S3 managed keys.
      * The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
      */
     inline long long GetS3Managed() const{ return m_s3Managed; }
-
-    /**
-     * <p>The total number of objects that are encrypted with Amazon S3 managed keys.
-     * The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
-     */
     inline bool S3ManagedHasBeenSet() const { return m_s3ManagedHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that are encrypted with Amazon S3 managed keys.
-     * The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
-     */
     inline void SetS3Managed(long long value) { m_s3ManagedHasBeenSet = true; m_s3Managed = value; }
-
-    /**
-     * <p>The total number of objects that are encrypted with Amazon S3 managed keys.
-     * The objects use server-side encryption with Amazon S3 managed keys (SSE-S3).</p>
-     */
     inline ObjectCountByEncryptionType& WithS3Managed(long long value) { SetS3Managed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects that use client-side encryption or aren't
      * encrypted.</p>
      */
     inline long long GetUnencrypted() const{ return m_unencrypted; }
-
-    /**
-     * <p>The total number of objects that use client-side encryption or aren't
-     * encrypted.</p>
-     */
     inline bool UnencryptedHasBeenSet() const { return m_unencryptedHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that use client-side encryption or aren't
-     * encrypted.</p>
-     */
     inline void SetUnencrypted(long long value) { m_unencryptedHasBeenSet = true; m_unencrypted = value; }
-
-    /**
-     * <p>The total number of objects that use client-side encryption or aren't
-     * encrypted.</p>
-     */
     inline ObjectCountByEncryptionType& WithUnencrypted(long long value) { SetUnencrypted(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of objects that Amazon Macie doesn't have current encryption
      * metadata for. Macie can't provide current data about the encryption settings for
      * these objects.</p>
      */
     inline long long GetUnknown() const{ return m_unknown; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie doesn't have current encryption
-     * metadata for. Macie can't provide current data about the encryption settings for
-     * these objects.</p>
-     */
     inline bool UnknownHasBeenSet() const { return m_unknownHasBeenSet; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie doesn't have current encryption
-     * metadata for. Macie can't provide current data about the encryption settings for
-     * these objects.</p>
-     */
     inline void SetUnknown(long long value) { m_unknownHasBeenSet = true; m_unknown = value; }
-
-    /**
-     * <p>The total number of objects that Amazon Macie doesn't have current encryption
-     * metadata for. Macie can't provide current data about the encryption settings for
-     * these objects.</p>
-     */
     inline ObjectCountByEncryptionType& WithUnknown(long long value) { SetUnknown(value); return *this;}
-
+    ///@}
   private:
 
     long long m_customerManaged;

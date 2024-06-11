@@ -33,53 +33,27 @@ namespace Model
     AWS_TIMESTREAMQUERY_API DescribeScheduledQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The scheduled query.</p>
      */
     inline const ScheduledQueryDescription& GetScheduledQuery() const{ return m_scheduledQuery; }
-
-    /**
-     * <p>The scheduled query.</p>
-     */
     inline void SetScheduledQuery(const ScheduledQueryDescription& value) { m_scheduledQuery = value; }
-
-    /**
-     * <p>The scheduled query.</p>
-     */
     inline void SetScheduledQuery(ScheduledQueryDescription&& value) { m_scheduledQuery = std::move(value); }
-
-    /**
-     * <p>The scheduled query.</p>
-     */
     inline DescribeScheduledQueryResult& WithScheduledQuery(const ScheduledQueryDescription& value) { SetScheduledQuery(value); return *this;}
-
-    /**
-     * <p>The scheduled query.</p>
-     */
     inline DescribeScheduledQueryResult& WithScheduledQuery(ScheduledQueryDescription&& value) { SetScheduledQuery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeScheduledQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeScheduledQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeScheduledQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ScheduledQueryDescription m_scheduledQuery;

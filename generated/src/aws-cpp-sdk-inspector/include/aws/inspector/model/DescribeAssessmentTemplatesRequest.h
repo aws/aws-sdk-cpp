@@ -35,33 +35,18 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::Vector<Aws::String>& GetAssessmentTemplateArns() const{ return m_assessmentTemplateArns; }
-
-    
     inline bool AssessmentTemplateArnsHasBeenSet() const { return m_assessmentTemplateArnsHasBeenSet; }
-
-    
     inline void SetAssessmentTemplateArns(const Aws::Vector<Aws::String>& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns = value; }
-
-    
     inline void SetAssessmentTemplateArns(Aws::Vector<Aws::String>&& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns = std::move(value); }
-
-    
     inline DescribeAssessmentTemplatesRequest& WithAssessmentTemplateArns(const Aws::Vector<Aws::String>& value) { SetAssessmentTemplateArns(value); return *this;}
-
-    
     inline DescribeAssessmentTemplatesRequest& WithAssessmentTemplateArns(Aws::Vector<Aws::String>&& value) { SetAssessmentTemplateArns(std::move(value)); return *this;}
-
-    
     inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(const Aws::String& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(value); return *this; }
-
-    
     inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(Aws::String&& value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(std::move(value)); return *this; }
-
-    
     inline DescribeAssessmentTemplatesRequest& AddAssessmentTemplateArns(const char* value) { m_assessmentTemplateArnsHasBeenSet = true; m_assessmentTemplateArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_assessmentTemplateArns;

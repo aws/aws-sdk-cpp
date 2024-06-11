@@ -38,54 +38,20 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
      * resource.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * resource.</p>
-     */
     inline ServerSideEncryptionConfiguration& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyArn;

@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the disk (<code>my-disk</code>).</p>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline GetDiskRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline GetDiskRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the disk (<code>my-disk</code>).</p>
-     */
     inline GetDiskRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_diskName;

@@ -38,6 +38,7 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the column (such as user_id) that contains the unique identifier
      * of your users whose privacy you want to protect. If you want to turn on
@@ -45,63 +46,14 @@ namespace Model
      * the same column as the user identiﬁer column in both analysis rules.</p>
      */
     inline const Aws::Vector<DifferentialPrivacyColumn>& GetColumns() const{ return m_columns; }
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline void SetColumns(const Aws::Vector<DifferentialPrivacyColumn>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline void SetColumns(Aws::Vector<DifferentialPrivacyColumn>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline DifferentialPrivacyConfiguration& WithColumns(const Aws::Vector<DifferentialPrivacyColumn>& value) { SetColumns(value); return *this;}
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline DifferentialPrivacyConfiguration& WithColumns(Aws::Vector<DifferentialPrivacyColumn>&& value) { SetColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline DifferentialPrivacyConfiguration& AddColumns(const DifferentialPrivacyColumn& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-
-    /**
-     * <p>The name of the column (such as user_id) that contains the unique identifier
-     * of your users whose privacy you want to protect. If you want to turn on
-     * diﬀerential privacy for two or more tables in a collaboration, you must conﬁgure
-     * the same column as the user identiﬁer column in both analysis rules.</p>
-     */
     inline DifferentialPrivacyConfiguration& AddColumns(DifferentialPrivacyColumn&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<DifferentialPrivacyColumn> m_columns;

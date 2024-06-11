@@ -38,63 +38,23 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
      * <p>Can't be the same as an existing blue/green deployment name in the same
      * account and Amazon Web Services Region.</p> </li> </ul>
      */
     inline const Aws::String& GetBlueGreenDeploymentName() const{ return m_blueGreenDeploymentName; }
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline bool BlueGreenDeploymentNameHasBeenSet() const { return m_blueGreenDeploymentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline void SetBlueGreenDeploymentName(const Aws::String& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = value; }
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline void SetBlueGreenDeploymentName(Aws::String&& value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName = std::move(value); }
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline void SetBlueGreenDeploymentName(const char* value) { m_blueGreenDeploymentNameHasBeenSet = true; m_blueGreenDeploymentName.assign(value); }
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(const Aws::String& value) { SetBlueGreenDeploymentName(value); return *this;}
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(Aws::String&& value) { SetBlueGreenDeploymentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the blue/green deployment.</p> <p>Constraints:</p> <ul> <li>
-     * <p>Can't be the same as an existing blue/green deployment name in the same
-     * account and Amazon Web Services Region.</p> </li> </ul>
-     */
     inline CreateBlueGreenDeploymentRequest& WithBlueGreenDeploymentName(const char* value) { SetBlueGreenDeploymentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the source production database.</p>
      * <p>Specify the database that you want to clone. The blue/green deployment
@@ -104,184 +64,47 @@ namespace Model
      * production database.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the source production database.</p>
-     * <p>Specify the database that you want to clone. The blue/green deployment
-     * creates this database in the green environment. You can make updates to the
-     * database in the green environment, such as an engine version upgrade. When you
-     * are ready, you can switch the database in the green environment to be the
-     * production database.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The engine version of the database in the green environment.</p> <p>Specify
      * the engine version to upgrade to in the green environment.</p>
      */
     inline const Aws::String& GetTargetEngineVersion() const{ return m_targetEngineVersion; }
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline bool TargetEngineVersionHasBeenSet() const { return m_targetEngineVersionHasBeenSet; }
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline void SetTargetEngineVersion(const Aws::String& value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion = value; }
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline void SetTargetEngineVersion(Aws::String&& value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion = std::move(value); }
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline void SetTargetEngineVersion(const char* value) { m_targetEngineVersionHasBeenSet = true; m_targetEngineVersion.assign(value); }
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(const Aws::String& value) { SetTargetEngineVersion(value); return *this;}
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(Aws::String&& value) { SetTargetEngineVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The engine version of the database in the green environment.</p> <p>Specify
-     * the engine version to upgrade to in the green environment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetEngineVersion(const char* value) { SetTargetEngineVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The DB parameter group associated with the DB instance in the green
      * environment.</p> <p>To test parameter changes, specify a DB parameter group that
      * is different from the one associated with the source DB instance.</p>
      */
     inline const Aws::String& GetTargetDBParameterGroupName() const{ return m_targetDBParameterGroupName; }
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline bool TargetDBParameterGroupNameHasBeenSet() const { return m_targetDBParameterGroupNameHasBeenSet; }
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline void SetTargetDBParameterGroupName(const Aws::String& value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName = value; }
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline void SetTargetDBParameterGroupName(Aws::String&& value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName = std::move(value); }
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline void SetTargetDBParameterGroupName(const char* value) { m_targetDBParameterGroupNameHasBeenSet = true; m_targetDBParameterGroupName.assign(value); }
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(const Aws::String& value) { SetTargetDBParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(Aws::String&& value) { SetTargetDBParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The DB parameter group associated with the DB instance in the green
-     * environment.</p> <p>To test parameter changes, specify a DB parameter group that
-     * is different from the one associated with the source DB instance.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBParameterGroupName(const char* value) { SetTargetDBParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
      * green environment.</p> <p>To test parameter changes, specify a DB cluster
@@ -289,105 +112,30 @@ namespace Model
      * cluster.</p>
      */
     inline const Aws::String& GetTargetDBClusterParameterGroupName() const{ return m_targetDBClusterParameterGroupName; }
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline bool TargetDBClusterParameterGroupNameHasBeenSet() const { return m_targetDBClusterParameterGroupNameHasBeenSet; }
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline void SetTargetDBClusterParameterGroupName(const Aws::String& value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName = value; }
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline void SetTargetDBClusterParameterGroupName(Aws::String&& value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName = std::move(value); }
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline void SetTargetDBClusterParameterGroupName(const char* value) { m_targetDBClusterParameterGroupNameHasBeenSet = true; m_targetDBClusterParameterGroupName.assign(value); }
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(const Aws::String& value) { SetTargetDBClusterParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(Aws::String&& value) { SetTargetDBClusterParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The DB cluster parameter group associated with the Aurora DB cluster in the
-     * green environment.</p> <p>To test parameter changes, specify a DB cluster
-     * parameter group that is different from the one associated with the source DB
-     * cluster.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBClusterParameterGroupName(const char* value) { SetTargetDBClusterParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tags to assign to the blue/green deployment.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Tags to assign to the blue/green deployment.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify the DB instance class for the databases in the green environment.</p>
      * <p>This parameter only applies to RDS DB instances, because DB instances within
@@ -397,78 +145,16 @@ namespace Model
      * the instance classes of the DB instances within the green DB cluster.</p>
      */
     inline const Aws::String& GetTargetDBInstanceClass() const{ return m_targetDBInstanceClass; }
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline bool TargetDBInstanceClassHasBeenSet() const { return m_targetDBInstanceClassHasBeenSet; }
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline void SetTargetDBInstanceClass(const Aws::String& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = value; }
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline void SetTargetDBInstanceClass(Aws::String&& value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass = std::move(value); }
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline void SetTargetDBInstanceClass(const char* value) { m_targetDBInstanceClassHasBeenSet = true; m_targetDBInstanceClass.assign(value); }
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const Aws::String& value) { SetTargetDBInstanceClass(value); return *this;}
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(Aws::String&& value) { SetTargetDBInstanceClass(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the DB instance class for the databases in the green environment.</p>
-     * <p>This parameter only applies to RDS DB instances, because DB instances within
-     * an Aurora DB cluster can have multiple different instance classes. If you're
-     * creating a blue/green deployment from an Aurora DB cluster, don't specify this
-     * parameter. After the green environment is created, you can individually modify
-     * the instance classes of the DB instances within the green DB cluster.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithTargetDBInstanceClass(const char* value) { SetTargetDBInstanceClass(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to upgrade the storage file system configuration on the green
      * database. This option migrates the green DB instance from the older 32-bit file
@@ -477,34 +163,10 @@ namespace Model
      * the storage file system for a DB instance</a>.</p>
      */
     inline bool GetUpgradeTargetStorageConfig() const{ return m_upgradeTargetStorageConfig; }
-
-    /**
-     * <p>Whether to upgrade the storage file system configuration on the green
-     * database. This option migrates the green DB instance from the older 32-bit file
-     * system to the preferred configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
-     * the storage file system for a DB instance</a>.</p>
-     */
     inline bool UpgradeTargetStorageConfigHasBeenSet() const { return m_upgradeTargetStorageConfigHasBeenSet; }
-
-    /**
-     * <p>Whether to upgrade the storage file system configuration on the green
-     * database. This option migrates the green DB instance from the older 32-bit file
-     * system to the preferred configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
-     * the storage file system for a DB instance</a>.</p>
-     */
     inline void SetUpgradeTargetStorageConfig(bool value) { m_upgradeTargetStorageConfigHasBeenSet = true; m_upgradeTargetStorageConfig = value; }
-
-    /**
-     * <p>Whether to upgrade the storage file system configuration on the green
-     * database. This option migrates the green DB instance from the older 32-bit file
-     * system to the preferred configuration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.UpgradeFileSystem">Upgrading
-     * the storage file system for a DB instance</a>.</p>
-     */
     inline CreateBlueGreenDeploymentRequest& WithUpgradeTargetStorageConfig(bool value) { SetUpgradeTargetStorageConfig(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_blueGreenDeploymentName;

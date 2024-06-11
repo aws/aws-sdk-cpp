@@ -38,77 +38,31 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of ID.</p>
      */
     inline const ArtifactSourceIdType& GetSourceIdType() const{ return m_sourceIdType; }
-
-    /**
-     * <p>The type of ID.</p>
-     */
     inline bool SourceIdTypeHasBeenSet() const { return m_sourceIdTypeHasBeenSet; }
-
-    /**
-     * <p>The type of ID.</p>
-     */
     inline void SetSourceIdType(const ArtifactSourceIdType& value) { m_sourceIdTypeHasBeenSet = true; m_sourceIdType = value; }
-
-    /**
-     * <p>The type of ID.</p>
-     */
     inline void SetSourceIdType(ArtifactSourceIdType&& value) { m_sourceIdTypeHasBeenSet = true; m_sourceIdType = std::move(value); }
-
-    /**
-     * <p>The type of ID.</p>
-     */
     inline ArtifactSourceType& WithSourceIdType(const ArtifactSourceIdType& value) { SetSourceIdType(value); return *this;}
-
-    /**
-     * <p>The type of ID.</p>
-     */
     inline ArtifactSourceType& WithSourceIdType(ArtifactSourceIdType&& value) { SetSourceIdType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The ID.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The ID.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The ID.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The ID.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The ID.</p>
-     */
     inline ArtifactSourceType& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The ID.</p>
-     */
     inline ArtifactSourceType& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID.</p>
-     */
     inline ArtifactSourceType& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     ArtifactSourceIdType m_sourceIdType;

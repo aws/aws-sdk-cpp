@@ -39,89 +39,33 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A policy that states what to do in the case of failure. The action will fail
      * if there are configuration errors. For example, the specified archive has been
      * deleted.</p>
      */
     inline const ActionFailurePolicy& GetActionFailurePolicy() const{ return m_actionFailurePolicy; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified archive has been
-     * deleted.</p>
-     */
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified archive has been
-     * deleted.</p>
-     */
     inline void SetActionFailurePolicy(const ActionFailurePolicy& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified archive has been
-     * deleted.</p>
-     */
     inline void SetActionFailurePolicy(ActionFailurePolicy&& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = std::move(value); }
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified archive has been
-     * deleted.</p>
-     */
     inline ArchiveAction& WithActionFailurePolicy(const ActionFailurePolicy& value) { SetActionFailurePolicy(value); return *this;}
-
-    /**
-     * <p>A policy that states what to do in the case of failure. The action will fail
-     * if there are configuration errors. For example, the specified archive has been
-     * deleted.</p>
-     */
     inline ArchiveAction& WithActionFailurePolicy(ActionFailurePolicy&& value) { SetActionFailurePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the archive to send the email to.</p>
      */
     inline const Aws::String& GetTargetArchive() const{ return m_targetArchive; }
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline bool TargetArchiveHasBeenSet() const { return m_targetArchiveHasBeenSet; }
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline void SetTargetArchive(const Aws::String& value) { m_targetArchiveHasBeenSet = true; m_targetArchive = value; }
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline void SetTargetArchive(Aws::String&& value) { m_targetArchiveHasBeenSet = true; m_targetArchive = std::move(value); }
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline void SetTargetArchive(const char* value) { m_targetArchiveHasBeenSet = true; m_targetArchive.assign(value); }
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline ArchiveAction& WithTargetArchive(const Aws::String& value) { SetTargetArchive(value); return *this;}
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline ArchiveAction& WithTargetArchive(Aws::String&& value) { SetTargetArchive(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the archive to send the email to.</p>
-     */
     inline ArchiveAction& WithTargetArchive(const char* value) { SetTargetArchive(value); return *this;}
-
+    ///@}
   private:
 
     ActionFailurePolicy m_actionFailurePolicy;

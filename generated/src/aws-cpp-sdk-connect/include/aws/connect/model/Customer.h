@@ -38,55 +38,27 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information regarding Customer’s device.</p>
      */
     inline const DeviceInfo& GetDeviceInfo() const{ return m_deviceInfo; }
-
-    /**
-     * <p>Information regarding Customer’s device.</p>
-     */
     inline bool DeviceInfoHasBeenSet() const { return m_deviceInfoHasBeenSet; }
-
-    /**
-     * <p>Information regarding Customer’s device.</p>
-     */
     inline void SetDeviceInfo(const DeviceInfo& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = value; }
-
-    /**
-     * <p>Information regarding Customer’s device.</p>
-     */
     inline void SetDeviceInfo(DeviceInfo&& value) { m_deviceInfoHasBeenSet = true; m_deviceInfo = std::move(value); }
-
-    /**
-     * <p>Information regarding Customer’s device.</p>
-     */
     inline Customer& WithDeviceInfo(const DeviceInfo& value) { SetDeviceInfo(value); return *this;}
-
-    /**
-     * <p>Information regarding Customer’s device.</p>
-     */
     inline Customer& WithDeviceInfo(DeviceInfo&& value) { SetDeviceInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ParticipantCapabilities& GetCapabilities() const{ return m_capabilities; }
-
-    
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-
-    
     inline void SetCapabilities(const ParticipantCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-
-    
     inline void SetCapabilities(ParticipantCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-
-    
     inline Customer& WithCapabilities(const ParticipantCapabilities& value) { SetCapabilities(value); return *this;}
-
-    
     inline Customer& WithCapabilities(ParticipantCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeviceInfo m_deviceInfo;

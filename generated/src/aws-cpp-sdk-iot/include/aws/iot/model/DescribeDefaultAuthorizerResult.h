@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API DescribeDefaultAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The default authorizer's description.</p>
      */
     inline const AuthorizerDescription& GetAuthorizerDescription() const{ return m_authorizerDescription; }
-
-    /**
-     * <p>The default authorizer's description.</p>
-     */
     inline void SetAuthorizerDescription(const AuthorizerDescription& value) { m_authorizerDescription = value; }
-
-    /**
-     * <p>The default authorizer's description.</p>
-     */
     inline void SetAuthorizerDescription(AuthorizerDescription&& value) { m_authorizerDescription = std::move(value); }
-
-    /**
-     * <p>The default authorizer's description.</p>
-     */
     inline DescribeDefaultAuthorizerResult& WithAuthorizerDescription(const AuthorizerDescription& value) { SetAuthorizerDescription(value); return *this;}
-
-    /**
-     * <p>The default authorizer's description.</p>
-     */
     inline DescribeDefaultAuthorizerResult& WithAuthorizerDescription(AuthorizerDescription&& value) { SetAuthorizerDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDefaultAuthorizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDefaultAuthorizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDefaultAuthorizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AuthorizerDescription m_authorizerDescription;

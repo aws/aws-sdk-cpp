@@ -40,63 +40,29 @@ namespace Model
     AWS_SUPPORT_API DescribeServicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A JSON-formatted list of Amazon Web Services services.</p>
      */
     inline const Aws::Vector<Service>& GetServices() const{ return m_services; }
-
-    /**
-     * <p>A JSON-formatted list of Amazon Web Services services.</p>
-     */
     inline void SetServices(const Aws::Vector<Service>& value) { m_services = value; }
-
-    /**
-     * <p>A JSON-formatted list of Amazon Web Services services.</p>
-     */
     inline void SetServices(Aws::Vector<Service>&& value) { m_services = std::move(value); }
-
-    /**
-     * <p>A JSON-formatted list of Amazon Web Services services.</p>
-     */
     inline DescribeServicesResult& WithServices(const Aws::Vector<Service>& value) { SetServices(value); return *this;}
-
-    /**
-     * <p>A JSON-formatted list of Amazon Web Services services.</p>
-     */
     inline DescribeServicesResult& WithServices(Aws::Vector<Service>&& value) { SetServices(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON-formatted list of Amazon Web Services services.</p>
-     */
     inline DescribeServicesResult& AddServices(const Service& value) { m_services.push_back(value); return *this; }
-
-    /**
-     * <p>A JSON-formatted list of Amazon Web Services services.</p>
-     */
     inline DescribeServicesResult& AddServices(Service&& value) { m_services.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeServicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeServicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeServicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Service> m_services;

@@ -39,96 +39,36 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the DMS event subscription to be described.</p>
      */
     inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DMS event subscription to be described.</p>
-     */
     inline DescribeEventSubscriptionsRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
      * event-subscription-arn | event-subscription-id </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline DescribeEventSubscriptionsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline DescribeEventSubscriptionsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline DescribeEventSubscriptionsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>Filters applied to event subscriptions.</p> <p>Valid filter names:
-     * event-subscription-arn | event-subscription-id </p>
-     */
     inline DescribeEventSubscriptionsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The maximum number of records to include in the response. If more records
      * exist than the specified <code>MaxRecords</code> value, a pagination token
@@ -136,88 +76,26 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p> The maximum number of records to include in the response. If more records
-     * exist than the specified <code>MaxRecords</code> value, a pagination token
-     * called a marker is included in the response so that the remaining results can be
-     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
-     */
     inline DescribeEventSubscriptionsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An optional pagination token provided by a previous request. If this
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline DescribeEventSubscriptionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline DescribeEventSubscriptionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p> An optional pagination token provided by a previous request. If this
-     * parameter is specified, the response includes only records beyond the marker, up
-     * to the value specified by <code>MaxRecords</code>. </p>
-     */
     inline DescribeEventSubscriptionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subscriptionName;

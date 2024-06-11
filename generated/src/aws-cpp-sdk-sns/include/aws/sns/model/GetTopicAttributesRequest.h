@@ -39,46 +39,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the topic whose properties you want to get.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline GetTopicAttributesRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline GetTopicAttributesRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the topic whose properties you want to get.</p>
-     */
     inline GetTopicAttributesRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

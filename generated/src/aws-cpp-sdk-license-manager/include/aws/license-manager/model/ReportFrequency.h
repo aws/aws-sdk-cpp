@@ -38,67 +38,29 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Number of times within the frequency period that a report is generated. The
      * only supported value is <code>1</code>.</p>
      */
     inline int GetValue() const{ return m_value; }
-
-    /**
-     * <p>Number of times within the frequency period that a report is generated. The
-     * only supported value is <code>1</code>.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Number of times within the frequency period that a report is generated. The
-     * only supported value is <code>1</code>.</p>
-     */
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Number of times within the frequency period that a report is generated. The
-     * only supported value is <code>1</code>.</p>
-     */
     inline ReportFrequency& WithValue(int value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Time period between each report. The period can be daily, weekly, or
      * monthly.</p>
      */
     inline const ReportFrequencyType& GetPeriod() const{ return m_period; }
-
-    /**
-     * <p>Time period between each report. The period can be daily, weekly, or
-     * monthly.</p>
-     */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-
-    /**
-     * <p>Time period between each report. The period can be daily, weekly, or
-     * monthly.</p>
-     */
     inline void SetPeriod(const ReportFrequencyType& value) { m_periodHasBeenSet = true; m_period = value; }
-
-    /**
-     * <p>Time period between each report. The period can be daily, weekly, or
-     * monthly.</p>
-     */
     inline void SetPeriod(ReportFrequencyType&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
-
-    /**
-     * <p>Time period between each report. The period can be daily, weekly, or
-     * monthly.</p>
-     */
     inline ReportFrequency& WithPeriod(const ReportFrequencyType& value) { SetPeriod(value); return *this;}
-
-    /**
-     * <p>Time period between each report. The period can be daily, weekly, or
-     * monthly.</p>
-     */
     inline ReportFrequency& WithPeriod(ReportFrequencyType&& value) { SetPeriod(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_value;

@@ -38,58 +38,28 @@ namespace Model
     AWS_ACCESSANALYZER_API GetAnalyzedResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An <code>AnalyzedResource</code> object that contains information that IAM
      * Access Analyzer found when it analyzed the resource.</p>
      */
     inline const AnalyzedResource& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>An <code>AnalyzedResource</code> object that contains information that IAM
-     * Access Analyzer found when it analyzed the resource.</p>
-     */
     inline void SetResource(const AnalyzedResource& value) { m_resource = value; }
-
-    /**
-     * <p>An <code>AnalyzedResource</code> object that contains information that IAM
-     * Access Analyzer found when it analyzed the resource.</p>
-     */
     inline void SetResource(AnalyzedResource&& value) { m_resource = std::move(value); }
-
-    /**
-     * <p>An <code>AnalyzedResource</code> object that contains information that IAM
-     * Access Analyzer found when it analyzed the resource.</p>
-     */
     inline GetAnalyzedResourceResult& WithResource(const AnalyzedResource& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>An <code>AnalyzedResource</code> object that contains information that IAM
-     * Access Analyzer found when it analyzed the resource.</p>
-     */
     inline GetAnalyzedResourceResult& WithResource(AnalyzedResource&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAnalyzedResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAnalyzedResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAnalyzedResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AnalyzedResource m_resource;

@@ -38,46 +38,19 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline RedshiftDataShareAssetSourceEntry& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline RedshiftDataShareAssetSourceEntry& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare asset.</p>
-     */
     inline RedshiftDataShareAssetSourceEntry& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataShareArn;

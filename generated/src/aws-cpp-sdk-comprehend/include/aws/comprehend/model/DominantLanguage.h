@@ -39,87 +39,32 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The RFC 5646 language code for the dominant language. For more information
      * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
      * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline DominantLanguage& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline DominantLanguage& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The RFC 5646 language code for the dominant language. For more information
-     * about RFC 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for
-     * Identifying Languages</a> on the <i>IETF Tools</i> web site.</p>
-     */
     inline DominantLanguage& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
      * detection.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
-     * detection.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
-     * detection.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
-     * detection.</p>
-     */
     inline DominantLanguage& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_languageCode;

@@ -40,46 +40,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */
     inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline bool ReservedInstancesListingIdHasBeenSet() const { return m_reservedInstancesListingIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Reserved Instance listing.</p>
-     */
     inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reservedInstancesListingId;

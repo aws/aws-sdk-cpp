@@ -34,99 +34,42 @@ namespace Model
     AWS_CLOUDDIRECTORY_API ListAttachedIndicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The indices attached to the specified object.</p>
      */
     inline const Aws::Vector<IndexAttachment>& GetIndexAttachments() const{ return m_indexAttachments; }
-
-    /**
-     * <p>The indices attached to the specified object.</p>
-     */
     inline void SetIndexAttachments(const Aws::Vector<IndexAttachment>& value) { m_indexAttachments = value; }
-
-    /**
-     * <p>The indices attached to the specified object.</p>
-     */
     inline void SetIndexAttachments(Aws::Vector<IndexAttachment>&& value) { m_indexAttachments = std::move(value); }
-
-    /**
-     * <p>The indices attached to the specified object.</p>
-     */
     inline ListAttachedIndicesResult& WithIndexAttachments(const Aws::Vector<IndexAttachment>& value) { SetIndexAttachments(value); return *this;}
-
-    /**
-     * <p>The indices attached to the specified object.</p>
-     */
     inline ListAttachedIndicesResult& WithIndexAttachments(Aws::Vector<IndexAttachment>&& value) { SetIndexAttachments(std::move(value)); return *this;}
-
-    /**
-     * <p>The indices attached to the specified object.</p>
-     */
     inline ListAttachedIndicesResult& AddIndexAttachments(const IndexAttachment& value) { m_indexAttachments.push_back(value); return *this; }
-
-    /**
-     * <p>The indices attached to the specified object.</p>
-     */
     inline ListAttachedIndicesResult& AddIndexAttachments(IndexAttachment&& value) { m_indexAttachments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListAttachedIndicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListAttachedIndicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token.</p>
-     */
     inline ListAttachedIndicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAttachedIndicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAttachedIndicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAttachedIndicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IndexAttachment> m_indexAttachments;

@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The default outbound calling name for the account.</p>
      */
     inline const Aws::String& GetCallingName() const{ return m_callingName; }
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline bool CallingNameHasBeenSet() const { return m_callingNameHasBeenSet; }
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline void SetCallingName(const Aws::String& value) { m_callingNameHasBeenSet = true; m_callingName = value; }
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline void SetCallingName(Aws::String&& value) { m_callingNameHasBeenSet = true; m_callingName = std::move(value); }
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline void SetCallingName(const char* value) { m_callingNameHasBeenSet = true; m_callingName.assign(value); }
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline UpdatePhoneNumberSettingsRequest& WithCallingName(const Aws::String& value) { SetCallingName(value); return *this;}
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline UpdatePhoneNumberSettingsRequest& WithCallingName(Aws::String&& value) { SetCallingName(std::move(value)); return *this;}
-
-    /**
-     * <p>The default outbound calling name for the account.</p>
-     */
     inline UpdatePhoneNumberSettingsRequest& WithCallingName(const char* value) { SetCallingName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_callingName;

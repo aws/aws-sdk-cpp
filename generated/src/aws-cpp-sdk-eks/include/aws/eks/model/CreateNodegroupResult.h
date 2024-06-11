@@ -33,53 +33,27 @@ namespace Model
     AWS_EKS_API CreateNodegroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The full description of your new node group.</p>
      */
     inline const Nodegroup& GetNodegroup() const{ return m_nodegroup; }
-
-    /**
-     * <p>The full description of your new node group.</p>
-     */
     inline void SetNodegroup(const Nodegroup& value) { m_nodegroup = value; }
-
-    /**
-     * <p>The full description of your new node group.</p>
-     */
     inline void SetNodegroup(Nodegroup&& value) { m_nodegroup = std::move(value); }
-
-    /**
-     * <p>The full description of your new node group.</p>
-     */
     inline CreateNodegroupResult& WithNodegroup(const Nodegroup& value) { SetNodegroup(value); return *this;}
-
-    /**
-     * <p>The full description of your new node group.</p>
-     */
     inline CreateNodegroupResult& WithNodegroup(Nodegroup&& value) { SetNodegroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateNodegroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateNodegroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateNodegroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Nodegroup m_nodegroup;

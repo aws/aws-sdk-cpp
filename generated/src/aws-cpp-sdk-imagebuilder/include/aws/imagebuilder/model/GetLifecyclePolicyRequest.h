@@ -38,54 +38,20 @@ namespace Model
     AWS_IMAGEBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
      * resource to get.</p>
      */
     inline const Aws::String& GetLifecyclePolicyArn() const{ return m_lifecyclePolicyArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline bool LifecyclePolicyArnHasBeenSet() const { return m_lifecyclePolicyArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline void SetLifecyclePolicyArn(const Aws::String& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline void SetLifecyclePolicyArn(Aws::String&& value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline void SetLifecyclePolicyArn(const char* value) { m_lifecyclePolicyArnHasBeenSet = true; m_lifecyclePolicyArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline GetLifecyclePolicyRequest& WithLifecyclePolicyArn(const Aws::String& value) { SetLifecyclePolicyArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline GetLifecyclePolicyRequest& WithLifecyclePolicyArn(Aws::String&& value) { SetLifecyclePolicyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the image lifecycle policy
-     * resource to get.</p>
-     */
     inline GetLifecyclePolicyRequest& WithLifecyclePolicyArn(const char* value) { SetLifecyclePolicyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lifecyclePolicyArn;

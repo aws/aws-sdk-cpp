@@ -38,48 +38,19 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The definition of a CloudWatch metric alarm. When the defined alarm
      * conditions are met along with other trigger parameters, scaling activity
      * begins.</p>
      */
     inline const CloudWatchAlarmDefinition& GetCloudWatchAlarmDefinition() const{ return m_cloudWatchAlarmDefinition; }
-
-    /**
-     * <p>The definition of a CloudWatch metric alarm. When the defined alarm
-     * conditions are met along with other trigger parameters, scaling activity
-     * begins.</p>
-     */
     inline bool CloudWatchAlarmDefinitionHasBeenSet() const { return m_cloudWatchAlarmDefinitionHasBeenSet; }
-
-    /**
-     * <p>The definition of a CloudWatch metric alarm. When the defined alarm
-     * conditions are met along with other trigger parameters, scaling activity
-     * begins.</p>
-     */
     inline void SetCloudWatchAlarmDefinition(const CloudWatchAlarmDefinition& value) { m_cloudWatchAlarmDefinitionHasBeenSet = true; m_cloudWatchAlarmDefinition = value; }
-
-    /**
-     * <p>The definition of a CloudWatch metric alarm. When the defined alarm
-     * conditions are met along with other trigger parameters, scaling activity
-     * begins.</p>
-     */
     inline void SetCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { m_cloudWatchAlarmDefinitionHasBeenSet = true; m_cloudWatchAlarmDefinition = std::move(value); }
-
-    /**
-     * <p>The definition of a CloudWatch metric alarm. When the defined alarm
-     * conditions are met along with other trigger parameters, scaling activity
-     * begins.</p>
-     */
     inline ScalingTrigger& WithCloudWatchAlarmDefinition(const CloudWatchAlarmDefinition& value) { SetCloudWatchAlarmDefinition(value); return *this;}
-
-    /**
-     * <p>The definition of a CloudWatch metric alarm. When the defined alarm
-     * conditions are met along with other trigger parameters, scaling activity
-     * begins.</p>
-     */
     inline ScalingTrigger& WithCloudWatchAlarmDefinition(CloudWatchAlarmDefinition&& value) { SetCloudWatchAlarmDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchAlarmDefinition m_cloudWatchAlarmDefinition;

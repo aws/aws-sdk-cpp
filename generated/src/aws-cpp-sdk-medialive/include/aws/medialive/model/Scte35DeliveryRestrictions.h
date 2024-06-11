@@ -43,129 +43,53 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Corresponds to SCTE-35 archive_allowed_flag.
      */
     inline const Scte35ArchiveAllowedFlag& GetArchiveAllowedFlag() const{ return m_archiveAllowedFlag; }
-
-    /**
-     * Corresponds to SCTE-35 archive_allowed_flag.
-     */
     inline bool ArchiveAllowedFlagHasBeenSet() const { return m_archiveAllowedFlagHasBeenSet; }
-
-    /**
-     * Corresponds to SCTE-35 archive_allowed_flag.
-     */
     inline void SetArchiveAllowedFlag(const Scte35ArchiveAllowedFlag& value) { m_archiveAllowedFlagHasBeenSet = true; m_archiveAllowedFlag = value; }
-
-    /**
-     * Corresponds to SCTE-35 archive_allowed_flag.
-     */
     inline void SetArchiveAllowedFlag(Scte35ArchiveAllowedFlag&& value) { m_archiveAllowedFlagHasBeenSet = true; m_archiveAllowedFlag = std::move(value); }
-
-    /**
-     * Corresponds to SCTE-35 archive_allowed_flag.
-     */
     inline Scte35DeliveryRestrictions& WithArchiveAllowedFlag(const Scte35ArchiveAllowedFlag& value) { SetArchiveAllowedFlag(value); return *this;}
-
-    /**
-     * Corresponds to SCTE-35 archive_allowed_flag.
-     */
     inline Scte35DeliveryRestrictions& WithArchiveAllowedFlag(Scte35ArchiveAllowedFlag&& value) { SetArchiveAllowedFlag(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Corresponds to SCTE-35 device_restrictions parameter.
      */
     inline const Scte35DeviceRestrictions& GetDeviceRestrictions() const{ return m_deviceRestrictions; }
-
-    /**
-     * Corresponds to SCTE-35 device_restrictions parameter.
-     */
     inline bool DeviceRestrictionsHasBeenSet() const { return m_deviceRestrictionsHasBeenSet; }
-
-    /**
-     * Corresponds to SCTE-35 device_restrictions parameter.
-     */
     inline void SetDeviceRestrictions(const Scte35DeviceRestrictions& value) { m_deviceRestrictionsHasBeenSet = true; m_deviceRestrictions = value; }
-
-    /**
-     * Corresponds to SCTE-35 device_restrictions parameter.
-     */
     inline void SetDeviceRestrictions(Scte35DeviceRestrictions&& value) { m_deviceRestrictionsHasBeenSet = true; m_deviceRestrictions = std::move(value); }
-
-    /**
-     * Corresponds to SCTE-35 device_restrictions parameter.
-     */
     inline Scte35DeliveryRestrictions& WithDeviceRestrictions(const Scte35DeviceRestrictions& value) { SetDeviceRestrictions(value); return *this;}
-
-    /**
-     * Corresponds to SCTE-35 device_restrictions parameter.
-     */
     inline Scte35DeliveryRestrictions& WithDeviceRestrictions(Scte35DeviceRestrictions&& value) { SetDeviceRestrictions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
      */
     inline const Scte35NoRegionalBlackoutFlag& GetNoRegionalBlackoutFlag() const{ return m_noRegionalBlackoutFlag; }
-
-    /**
-     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-     */
     inline bool NoRegionalBlackoutFlagHasBeenSet() const { return m_noRegionalBlackoutFlagHasBeenSet; }
-
-    /**
-     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-     */
     inline void SetNoRegionalBlackoutFlag(const Scte35NoRegionalBlackoutFlag& value) { m_noRegionalBlackoutFlagHasBeenSet = true; m_noRegionalBlackoutFlag = value; }
-
-    /**
-     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-     */
     inline void SetNoRegionalBlackoutFlag(Scte35NoRegionalBlackoutFlag&& value) { m_noRegionalBlackoutFlagHasBeenSet = true; m_noRegionalBlackoutFlag = std::move(value); }
-
-    /**
-     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-     */
     inline Scte35DeliveryRestrictions& WithNoRegionalBlackoutFlag(const Scte35NoRegionalBlackoutFlag& value) { SetNoRegionalBlackoutFlag(value); return *this;}
-
-    /**
-     * Corresponds to SCTE-35 no_regional_blackout_flag parameter.
-     */
     inline Scte35DeliveryRestrictions& WithNoRegionalBlackoutFlag(Scte35NoRegionalBlackoutFlag&& value) { SetNoRegionalBlackoutFlag(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
      */
     inline const Scte35WebDeliveryAllowedFlag& GetWebDeliveryAllowedFlag() const{ return m_webDeliveryAllowedFlag; }
-
-    /**
-     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-     */
     inline bool WebDeliveryAllowedFlagHasBeenSet() const { return m_webDeliveryAllowedFlagHasBeenSet; }
-
-    /**
-     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-     */
     inline void SetWebDeliveryAllowedFlag(const Scte35WebDeliveryAllowedFlag& value) { m_webDeliveryAllowedFlagHasBeenSet = true; m_webDeliveryAllowedFlag = value; }
-
-    /**
-     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-     */
     inline void SetWebDeliveryAllowedFlag(Scte35WebDeliveryAllowedFlag&& value) { m_webDeliveryAllowedFlagHasBeenSet = true; m_webDeliveryAllowedFlag = std::move(value); }
-
-    /**
-     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-     */
     inline Scte35DeliveryRestrictions& WithWebDeliveryAllowedFlag(const Scte35WebDeliveryAllowedFlag& value) { SetWebDeliveryAllowedFlag(value); return *this;}
-
-    /**
-     * Corresponds to SCTE-35 web_delivery_allowed_flag parameter.
-     */
     inline Scte35DeliveryRestrictions& WithWebDeliveryAllowedFlag(Scte35WebDeliveryAllowedFlag&& value) { SetWebDeliveryAllowedFlag(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Scte35ArchiveAllowedFlag m_archiveAllowedFlag;

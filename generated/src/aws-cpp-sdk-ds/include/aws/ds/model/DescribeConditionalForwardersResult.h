@@ -40,63 +40,29 @@ namespace Model
     AWS_DIRECTORYSERVICE_API DescribeConditionalForwardersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of conditional forwarders that have been created.</p>
      */
     inline const Aws::Vector<ConditionalForwarder>& GetConditionalForwarders() const{ return m_conditionalForwarders; }
-
-    /**
-     * <p>The list of conditional forwarders that have been created.</p>
-     */
     inline void SetConditionalForwarders(const Aws::Vector<ConditionalForwarder>& value) { m_conditionalForwarders = value; }
-
-    /**
-     * <p>The list of conditional forwarders that have been created.</p>
-     */
     inline void SetConditionalForwarders(Aws::Vector<ConditionalForwarder>&& value) { m_conditionalForwarders = std::move(value); }
-
-    /**
-     * <p>The list of conditional forwarders that have been created.</p>
-     */
     inline DescribeConditionalForwardersResult& WithConditionalForwarders(const Aws::Vector<ConditionalForwarder>& value) { SetConditionalForwarders(value); return *this;}
-
-    /**
-     * <p>The list of conditional forwarders that have been created.</p>
-     */
     inline DescribeConditionalForwardersResult& WithConditionalForwarders(Aws::Vector<ConditionalForwarder>&& value) { SetConditionalForwarders(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of conditional forwarders that have been created.</p>
-     */
     inline DescribeConditionalForwardersResult& AddConditionalForwarders(const ConditionalForwarder& value) { m_conditionalForwarders.push_back(value); return *this; }
-
-    /**
-     * <p>The list of conditional forwarders that have been created.</p>
-     */
     inline DescribeConditionalForwardersResult& AddConditionalForwarders(ConditionalForwarder&& value) { m_conditionalForwarders.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeConditionalForwardersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeConditionalForwardersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeConditionalForwardersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConditionalForwarder> m_conditionalForwarders;

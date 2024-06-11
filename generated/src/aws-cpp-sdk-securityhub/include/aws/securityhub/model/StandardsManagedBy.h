@@ -38,111 +38,36 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An identifier for the company that manages a specific security standard. For
      * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
      */
     inline const Aws::String& GetCompany() const{ return m_company; }
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline bool CompanyHasBeenSet() const { return m_companyHasBeenSet; }
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline void SetCompany(const Aws::String& value) { m_companyHasBeenSet = true; m_company = value; }
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline void SetCompany(Aws::String&& value) { m_companyHasBeenSet = true; m_company = std::move(value); }
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline void SetCompany(const char* value) { m_companyHasBeenSet = true; m_company.assign(value); }
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline StandardsManagedBy& WithCompany(const Aws::String& value) { SetCompany(value); return *this;}
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline StandardsManagedBy& WithCompany(Aws::String&& value) { SetCompany(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier for the company that manages a specific security standard. For
-     * existing standards, the value is equal to <code>Amazon Web Services</code>.</p>
-     */
     inline StandardsManagedBy& WithCompany(const char* value) { SetCompany(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An identifier for the product that manages a specific security standard. For
      * existing standards, the value is equal to the Amazon Web Services service that
      * manages the standard.</p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline StandardsManagedBy& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline StandardsManagedBy& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier for the product that manages a specific security standard. For
-     * existing standards, the value is equal to the Amazon Web Services service that
-     * manages the standard.</p>
-     */
     inline StandardsManagedBy& WithProduct(const char* value) { SetProduct(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_company;

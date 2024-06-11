@@ -35,198 +35,78 @@ namespace Model
     AWS_REDSHIFT_API RejectDataShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
      * use.</p>
      */
     inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
-     * use.</p>
-     */
     inline void SetDataShareArn(const Aws::String& value) { m_dataShareArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
-     * use.</p>
-     */
     inline void SetDataShareArn(Aws::String&& value) { m_dataShareArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
-     * use.</p>
-     */
     inline void SetDataShareArn(const char* value) { m_dataShareArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
-     * use.</p>
-     */
     inline RejectDataShareResult& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
-     * use.</p>
-     */
     inline RejectDataShareResult& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the datashare that the consumer is to
-     * use.</p>
-     */
     inline RejectDataShareResult& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
      */
     inline const Aws::String& GetProducerArn() const{ return m_producerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
-     */
     inline void SetProducerArn(const Aws::String& value) { m_producerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
-     */
     inline void SetProducerArn(Aws::String&& value) { m_producerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
-     */
     inline void SetProducerArn(const char* value) { m_producerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
-     */
     inline RejectDataShareResult& WithProducerArn(const Aws::String& value) { SetProducerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
-     */
     inline RejectDataShareResult& WithProducerArn(Aws::String&& value) { SetProducerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the producer namespace.</p>
-     */
     inline RejectDataShareResult& WithProducerArn(const char* value) { SetProducerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A value that specifies whether the datashare can be shared to a publicly
      * accessible cluster.</p>
      */
     inline bool GetAllowPubliclyAccessibleConsumers() const{ return m_allowPubliclyAccessibleConsumers; }
-
-    /**
-     * <p>A value that specifies whether the datashare can be shared to a publicly
-     * accessible cluster.</p>
-     */
     inline void SetAllowPubliclyAccessibleConsumers(bool value) { m_allowPubliclyAccessibleConsumers = value; }
-
-    /**
-     * <p>A value that specifies whether the datashare can be shared to a publicly
-     * accessible cluster.</p>
-     */
     inline RejectDataShareResult& WithAllowPubliclyAccessibleConsumers(bool value) { SetAllowPubliclyAccessibleConsumers(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A value that specifies when the datashare has an association between producer
      * and data consumers.</p>
      */
     inline const Aws::Vector<DataShareAssociation>& GetDataShareAssociations() const{ return m_dataShareAssociations; }
-
-    /**
-     * <p>A value that specifies when the datashare has an association between producer
-     * and data consumers.</p>
-     */
     inline void SetDataShareAssociations(const Aws::Vector<DataShareAssociation>& value) { m_dataShareAssociations = value; }
-
-    /**
-     * <p>A value that specifies when the datashare has an association between producer
-     * and data consumers.</p>
-     */
     inline void SetDataShareAssociations(Aws::Vector<DataShareAssociation>&& value) { m_dataShareAssociations = std::move(value); }
-
-    /**
-     * <p>A value that specifies when the datashare has an association between producer
-     * and data consumers.</p>
-     */
     inline RejectDataShareResult& WithDataShareAssociations(const Aws::Vector<DataShareAssociation>& value) { SetDataShareAssociations(value); return *this;}
-
-    /**
-     * <p>A value that specifies when the datashare has an association between producer
-     * and data consumers.</p>
-     */
     inline RejectDataShareResult& WithDataShareAssociations(Aws::Vector<DataShareAssociation>&& value) { SetDataShareAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>A value that specifies when the datashare has an association between producer
-     * and data consumers.</p>
-     */
     inline RejectDataShareResult& AddDataShareAssociations(const DataShareAssociation& value) { m_dataShareAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>A value that specifies when the datashare has an association between producer
-     * and data consumers.</p>
-     */
     inline RejectDataShareResult& AddDataShareAssociations(DataShareAssociation&& value) { m_dataShareAssociations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of a datashare to show its managing entity.</p>
      */
     inline const Aws::String& GetManagedBy() const{ return m_managedBy; }
-
-    /**
-     * <p>The identifier of a datashare to show its managing entity.</p>
-     */
     inline void SetManagedBy(const Aws::String& value) { m_managedBy = value; }
-
-    /**
-     * <p>The identifier of a datashare to show its managing entity.</p>
-     */
     inline void SetManagedBy(Aws::String&& value) { m_managedBy = std::move(value); }
-
-    /**
-     * <p>The identifier of a datashare to show its managing entity.</p>
-     */
     inline void SetManagedBy(const char* value) { m_managedBy.assign(value); }
-
-    /**
-     * <p>The identifier of a datashare to show its managing entity.</p>
-     */
     inline RejectDataShareResult& WithManagedBy(const Aws::String& value) { SetManagedBy(value); return *this;}
-
-    /**
-     * <p>The identifier of a datashare to show its managing entity.</p>
-     */
     inline RejectDataShareResult& WithManagedBy(Aws::String&& value) { SetManagedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of a datashare to show its managing entity.</p>
-     */
     inline RejectDataShareResult& WithManagedBy(const char* value) { SetManagedBy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline RejectDataShareResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline RejectDataShareResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataShareArn;

@@ -38,280 +38,113 @@ namespace Model
     AWS_ACCESSANALYZER_API GetFindingRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The time at which the retrieval of the finding recommendation was
      * started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * started.</p>
-     */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAt = value; }
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * started.</p>
-     */
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAt = std::move(value); }
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * started.</p>
-     */
     inline GetFindingRecommendationResult& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * started.</p>
-     */
     inline GetFindingRecommendationResult& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which the retrieval of the finding recommendation was
      * completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * completed.</p>
-     */
     inline void SetCompletedAt(const Aws::Utils::DateTime& value) { m_completedAt = value; }
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * completed.</p>
-     */
     inline void SetCompletedAt(Aws::Utils::DateTime&& value) { m_completedAt = std::move(value); }
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * completed.</p>
-     */
     inline GetFindingRecommendationResult& WithCompletedAt(const Aws::Utils::DateTime& value) { SetCompletedAt(value); return *this;}
-
-    /**
-     * <p>The time at which the retrieval of the finding recommendation was
-     * completed.</p>
-     */
     inline GetFindingRecommendationResult& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline GetFindingRecommendationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline GetFindingRecommendationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline GetFindingRecommendationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Detailed information about the reason that the retrieval of a recommendation
      * for the finding failed.</p>
      */
     inline const RecommendationError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Detailed information about the reason that the retrieval of a recommendation
-     * for the finding failed.</p>
-     */
     inline void SetError(const RecommendationError& value) { m_error = value; }
-
-    /**
-     * <p>Detailed information about the reason that the retrieval of a recommendation
-     * for the finding failed.</p>
-     */
     inline void SetError(RecommendationError&& value) { m_error = std::move(value); }
-
-    /**
-     * <p>Detailed information about the reason that the retrieval of a recommendation
-     * for the finding failed.</p>
-     */
     inline GetFindingRecommendationResult& WithError(const RecommendationError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Detailed information about the reason that the retrieval of a recommendation
-     * for the finding failed.</p>
-     */
     inline GetFindingRecommendationResult& WithError(RecommendationError&& value) { SetError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the resource of the finding.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the resource of the finding.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the resource of the finding.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource of the finding.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource of the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource of the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource of the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A group of recommended steps for the finding.</p>
      */
     inline const Aws::Vector<RecommendedStep>& GetRecommendedSteps() const{ return m_recommendedSteps; }
-
-    /**
-     * <p>A group of recommended steps for the finding.</p>
-     */
     inline void SetRecommendedSteps(const Aws::Vector<RecommendedStep>& value) { m_recommendedSteps = value; }
-
-    /**
-     * <p>A group of recommended steps for the finding.</p>
-     */
     inline void SetRecommendedSteps(Aws::Vector<RecommendedStep>&& value) { m_recommendedSteps = std::move(value); }
-
-    /**
-     * <p>A group of recommended steps for the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithRecommendedSteps(const Aws::Vector<RecommendedStep>& value) { SetRecommendedSteps(value); return *this;}
-
-    /**
-     * <p>A group of recommended steps for the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithRecommendedSteps(Aws::Vector<RecommendedStep>&& value) { SetRecommendedSteps(std::move(value)); return *this;}
-
-    /**
-     * <p>A group of recommended steps for the finding.</p>
-     */
     inline GetFindingRecommendationResult& AddRecommendedSteps(const RecommendedStep& value) { m_recommendedSteps.push_back(value); return *this; }
-
-    /**
-     * <p>A group of recommended steps for the finding.</p>
-     */
     inline GetFindingRecommendationResult& AddRecommendedSteps(RecommendedStep&& value) { m_recommendedSteps.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of recommendation for the finding.</p>
      */
     inline const RecommendationType& GetRecommendationType() const{ return m_recommendationType; }
-
-    /**
-     * <p>The type of recommendation for the finding.</p>
-     */
     inline void SetRecommendationType(const RecommendationType& value) { m_recommendationType = value; }
-
-    /**
-     * <p>The type of recommendation for the finding.</p>
-     */
     inline void SetRecommendationType(RecommendationType&& value) { m_recommendationType = std::move(value); }
-
-    /**
-     * <p>The type of recommendation for the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithRecommendationType(const RecommendationType& value) { SetRecommendationType(value); return *this;}
-
-    /**
-     * <p>The type of recommendation for the finding.</p>
-     */
     inline GetFindingRecommendationResult& WithRecommendationType(RecommendationType&& value) { SetRecommendationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the retrieval of the finding recommendation.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the retrieval of the finding recommendation.</p>
-     */
     inline void SetStatus(const Status& value) { m_status = value; }
-
-    /**
-     * <p>The status of the retrieval of the finding recommendation.</p>
-     */
     inline void SetStatus(Status&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the retrieval of the finding recommendation.</p>
-     */
     inline GetFindingRecommendationResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the retrieval of the finding recommendation.</p>
-     */
     inline GetFindingRecommendationResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFindingRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFindingRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFindingRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startedAt;

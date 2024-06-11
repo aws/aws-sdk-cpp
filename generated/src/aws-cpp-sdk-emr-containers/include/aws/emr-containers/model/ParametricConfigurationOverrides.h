@@ -41,77 +41,31 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The configurations for the application running by the job run.</p>
      */
     inline const Aws::Vector<Configuration>& GetApplicationConfiguration() const{ return m_applicationConfiguration; }
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline bool ApplicationConfigurationHasBeenSet() const { return m_applicationConfigurationHasBeenSet; }
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline void SetApplicationConfiguration(const Aws::Vector<Configuration>& value) { m_applicationConfigurationHasBeenSet = true; m_applicationConfiguration = value; }
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline void SetApplicationConfiguration(Aws::Vector<Configuration>&& value) { m_applicationConfigurationHasBeenSet = true; m_applicationConfiguration = std::move(value); }
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline ParametricConfigurationOverrides& WithApplicationConfiguration(const Aws::Vector<Configuration>& value) { SetApplicationConfiguration(value); return *this;}
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline ParametricConfigurationOverrides& WithApplicationConfiguration(Aws::Vector<Configuration>&& value) { SetApplicationConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline ParametricConfigurationOverrides& AddApplicationConfiguration(const Configuration& value) { m_applicationConfigurationHasBeenSet = true; m_applicationConfiguration.push_back(value); return *this; }
-
-    /**
-     * <p> The configurations for the application running by the job run.</p>
-     */
     inline ParametricConfigurationOverrides& AddApplicationConfiguration(Configuration&& value) { m_applicationConfigurationHasBeenSet = true; m_applicationConfiguration.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The configurations for monitoring. </p>
      */
     inline const ParametricMonitoringConfiguration& GetMonitoringConfiguration() const{ return m_monitoringConfiguration; }
-
-    /**
-     * <p> The configurations for monitoring. </p>
-     */
     inline bool MonitoringConfigurationHasBeenSet() const { return m_monitoringConfigurationHasBeenSet; }
-
-    /**
-     * <p> The configurations for monitoring. </p>
-     */
     inline void SetMonitoringConfiguration(const ParametricMonitoringConfiguration& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = value; }
-
-    /**
-     * <p> The configurations for monitoring. </p>
-     */
     inline void SetMonitoringConfiguration(ParametricMonitoringConfiguration&& value) { m_monitoringConfigurationHasBeenSet = true; m_monitoringConfiguration = std::move(value); }
-
-    /**
-     * <p> The configurations for monitoring. </p>
-     */
     inline ParametricConfigurationOverrides& WithMonitoringConfiguration(const ParametricMonitoringConfiguration& value) { SetMonitoringConfiguration(value); return *this;}
-
-    /**
-     * <p> The configurations for monitoring. </p>
-     */
     inline ParametricConfigurationOverrides& WithMonitoringConfiguration(ParametricMonitoringConfiguration&& value) { SetMonitoringConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Configuration> m_applicationConfiguration;

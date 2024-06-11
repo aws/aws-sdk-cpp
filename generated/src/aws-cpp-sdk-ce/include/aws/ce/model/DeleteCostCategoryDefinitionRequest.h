@@ -34,46 +34,19 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for your Cost Category. </p>
      */
     inline const Aws::String& GetCostCategoryArn() const{ return m_costCategoryArn; }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline void SetCostCategoryArn(const Aws::String& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = value; }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline void SetCostCategoryArn(Aws::String&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline void SetCostCategoryArn(const char* value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn.assign(value); }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline DeleteCostCategoryDefinitionRequest& WithCostCategoryArn(const Aws::String& value) { SetCostCategoryArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline DeleteCostCategoryDefinitionRequest& WithCostCategoryArn(Aws::String&& value) { SetCostCategoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline DeleteCostCategoryDefinitionRequest& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_costCategoryArn;

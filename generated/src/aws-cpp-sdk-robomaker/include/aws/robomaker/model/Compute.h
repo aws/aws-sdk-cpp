@@ -37,6 +37,7 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The simulation unit limit. Your simulation is allocated CPU and memory
      * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
@@ -44,87 +45,33 @@ namespace Model
      * the maximum value provided. The default is 15. </p>
      */
     inline int GetSimulationUnitLimit() const{ return m_simulationUnitLimit; }
-
-    /**
-     * <p>The simulation unit limit. Your simulation is allocated CPU and memory
-     * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
-     * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximum value provided. The default is 15. </p>
-     */
     inline bool SimulationUnitLimitHasBeenSet() const { return m_simulationUnitLimitHasBeenSet; }
-
-    /**
-     * <p>The simulation unit limit. Your simulation is allocated CPU and memory
-     * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
-     * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximum value provided. The default is 15. </p>
-     */
     inline void SetSimulationUnitLimit(int value) { m_simulationUnitLimitHasBeenSet = true; m_simulationUnitLimit = value; }
-
-    /**
-     * <p>The simulation unit limit. Your simulation is allocated CPU and memory
-     * proportional to the supplied simulation unit limit. A simulation unit is 1 vcpu
-     * and 2GB of memory. You are only billed for the SU utilization you consume up to
-     * the maximum value provided. The default is 15. </p>
-     */
     inline Compute& WithSimulationUnitLimit(int value) { SetSimulationUnitLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Compute type information for the simulation job.</p>
      */
     inline const ComputeType& GetComputeType() const{ return m_computeType; }
-
-    /**
-     * <p>Compute type information for the simulation job.</p>
-     */
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
-
-    /**
-     * <p>Compute type information for the simulation job.</p>
-     */
     inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
-
-    /**
-     * <p>Compute type information for the simulation job.</p>
-     */
     inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
-
-    /**
-     * <p>Compute type information for the simulation job.</p>
-     */
     inline Compute& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
-
-    /**
-     * <p>Compute type information for the simulation job.</p>
-     */
     inline Compute& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Compute GPU unit limit for the simulation job. It is the same as the number
      * of GPUs allocated to the SimulationJob.</p>
      */
     inline int GetGpuUnitLimit() const{ return m_gpuUnitLimit; }
-
-    /**
-     * <p>Compute GPU unit limit for the simulation job. It is the same as the number
-     * of GPUs allocated to the SimulationJob.</p>
-     */
     inline bool GpuUnitLimitHasBeenSet() const { return m_gpuUnitLimitHasBeenSet; }
-
-    /**
-     * <p>Compute GPU unit limit for the simulation job. It is the same as the number
-     * of GPUs allocated to the SimulationJob.</p>
-     */
     inline void SetGpuUnitLimit(int value) { m_gpuUnitLimitHasBeenSet = true; m_gpuUnitLimit = value; }
-
-    /**
-     * <p>Compute GPU unit limit for the simulation job. It is the same as the number
-     * of GPUs allocated to the SimulationJob.</p>
-     */
     inline Compute& WithGpuUnitLimit(int value) { SetGpuUnitLimit(value); return *this;}
-
+    ///@}
   private:
 
     int m_simulationUnitLimit;

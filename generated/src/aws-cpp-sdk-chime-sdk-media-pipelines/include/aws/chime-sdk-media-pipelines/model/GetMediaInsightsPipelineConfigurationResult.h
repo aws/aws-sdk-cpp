@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API GetMediaInsightsPipelineConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The requested media insights pipeline configuration.</p>
      */
     inline const MediaInsightsPipelineConfiguration& GetMediaInsightsPipelineConfiguration() const{ return m_mediaInsightsPipelineConfiguration; }
-
-    /**
-     * <p>The requested media insights pipeline configuration.</p>
-     */
     inline void SetMediaInsightsPipelineConfiguration(const MediaInsightsPipelineConfiguration& value) { m_mediaInsightsPipelineConfiguration = value; }
-
-    /**
-     * <p>The requested media insights pipeline configuration.</p>
-     */
     inline void SetMediaInsightsPipelineConfiguration(MediaInsightsPipelineConfiguration&& value) { m_mediaInsightsPipelineConfiguration = std::move(value); }
-
-    /**
-     * <p>The requested media insights pipeline configuration.</p>
-     */
     inline GetMediaInsightsPipelineConfigurationResult& WithMediaInsightsPipelineConfiguration(const MediaInsightsPipelineConfiguration& value) { SetMediaInsightsPipelineConfiguration(value); return *this;}
-
-    /**
-     * <p>The requested media insights pipeline configuration.</p>
-     */
     inline GetMediaInsightsPipelineConfigurationResult& WithMediaInsightsPipelineConfiguration(MediaInsightsPipelineConfiguration&& value) { SetMediaInsightsPipelineConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMediaInsightsPipelineConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMediaInsightsPipelineConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMediaInsightsPipelineConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MediaInsightsPipelineConfiguration m_mediaInsightsPipelineConfiguration;

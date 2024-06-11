@@ -39,118 +39,45 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The last modification date of the rule set.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModificationDate() const{ return m_lastModificationDate; }
-
-    /**
-     * <p>The last modification date of the rule set.</p>
-     */
     inline bool LastModificationDateHasBeenSet() const { return m_lastModificationDateHasBeenSet; }
-
-    /**
-     * <p>The last modification date of the rule set.</p>
-     */
     inline void SetLastModificationDate(const Aws::Utils::DateTime& value) { m_lastModificationDateHasBeenSet = true; m_lastModificationDate = value; }
-
-    /**
-     * <p>The last modification date of the rule set.</p>
-     */
     inline void SetLastModificationDate(Aws::Utils::DateTime&& value) { m_lastModificationDateHasBeenSet = true; m_lastModificationDate = std::move(value); }
-
-    /**
-     * <p>The last modification date of the rule set.</p>
-     */
     inline RuleSet& WithLastModificationDate(const Aws::Utils::DateTime& value) { SetLastModificationDate(value); return *this;}
-
-    /**
-     * <p>The last modification date of the rule set.</p>
-     */
     inline RuleSet& WithLastModificationDate(Aws::Utils::DateTime&& value) { SetLastModificationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the rule set.</p>
      */
     inline const Aws::String& GetRuleSetId() const{ return m_ruleSetId; }
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline bool RuleSetIdHasBeenSet() const { return m_ruleSetIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline void SetRuleSetId(const Aws::String& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = value; }
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline void SetRuleSetId(Aws::String&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::move(value); }
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline void SetRuleSetId(const char* value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId.assign(value); }
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline RuleSet& WithRuleSetId(const Aws::String& value) { SetRuleSetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline RuleSet& WithRuleSetId(Aws::String&& value) { SetRuleSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the rule set.</p>
-     */
     inline RuleSet& WithRuleSetId(const char* value) { SetRuleSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-friendly name for the rule set.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline RuleSet& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline RuleSet& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-friendly name for the rule set.</p>
-     */
     inline RuleSet& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_lastModificationDate;

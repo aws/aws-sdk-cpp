@@ -39,104 +39,42 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the rule in the sentiment configuration.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline SentimentConfiguration& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline SentimentConfiguration& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the rule in the sentiment configuration.</p>
-     */
     inline SentimentConfiguration& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
      * <code>NEUTRAL</code>.</p>
      */
     inline const SentimentType& GetSentimentType() const{ return m_sentimentType; }
-
-    /**
-     * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
-     * <code>NEUTRAL</code>.</p>
-     */
     inline bool SentimentTypeHasBeenSet() const { return m_sentimentTypeHasBeenSet; }
-
-    /**
-     * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
-     * <code>NEUTRAL</code>.</p>
-     */
     inline void SetSentimentType(const SentimentType& value) { m_sentimentTypeHasBeenSet = true; m_sentimentType = value; }
-
-    /**
-     * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
-     * <code>NEUTRAL</code>.</p>
-     */
     inline void SetSentimentType(SentimentType&& value) { m_sentimentTypeHasBeenSet = true; m_sentimentType = std::move(value); }
-
-    /**
-     * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
-     * <code>NEUTRAL</code>.</p>
-     */
     inline SentimentConfiguration& WithSentimentType(const SentimentType& value) { SetSentimentType(value); return *this;}
-
-    /**
-     * <p>The type of sentiment, <code>POSITIVE</code>, <code>NEGATIVE</code>, or
-     * <code>NEUTRAL</code>.</p>
-     */
     inline SentimentConfiguration& WithSentimentType(SentimentType&& value) { SetSentimentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the analysis interval.</p>
      */
     inline int GetTimePeriod() const{ return m_timePeriod; }
-
-    /**
-     * <p>Specifies the analysis interval.</p>
-     */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-
-    /**
-     * <p>Specifies the analysis interval.</p>
-     */
     inline void SetTimePeriod(int value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-
-    /**
-     * <p>Specifies the analysis interval.</p>
-     */
     inline SentimentConfiguration& WithTimePeriod(int value) { SetTimePeriod(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleName;

@@ -33,58 +33,28 @@ namespace Model
     AWS_RESILIENCEHUB_API CreateResiliencyPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The type of resiliency policy that was created, including the recovery time
      * objective (RTO) and recovery point objective (RPO) in seconds.</p>
      */
     inline const ResiliencyPolicy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The type of resiliency policy that was created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
-     */
     inline void SetPolicy(const ResiliencyPolicy& value) { m_policy = value; }
-
-    /**
-     * <p>The type of resiliency policy that was created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
-     */
     inline void SetPolicy(ResiliencyPolicy&& value) { m_policy = std::move(value); }
-
-    /**
-     * <p>The type of resiliency policy that was created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
-     */
     inline CreateResiliencyPolicyResult& WithPolicy(const ResiliencyPolicy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The type of resiliency policy that was created, including the recovery time
-     * objective (RTO) and recovery point objective (RPO) in seconds.</p>
-     */
     inline CreateResiliencyPolicyResult& WithPolicy(ResiliencyPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateResiliencyPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateResiliencyPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateResiliencyPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResiliencyPolicy m_policy;

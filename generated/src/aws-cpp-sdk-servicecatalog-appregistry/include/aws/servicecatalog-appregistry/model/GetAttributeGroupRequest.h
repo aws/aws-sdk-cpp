@@ -32,54 +32,20 @@ namespace Model
     AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The name, ID, or ARN of the attribute group that holds the attributes to
      * describe the application. </p>
      */
     inline const Aws::String& GetAttributeGroup() const{ return m_attributeGroup; }
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline bool AttributeGroupHasBeenSet() const { return m_attributeGroupHasBeenSet; }
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline void SetAttributeGroup(const Aws::String& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = value; }
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline void SetAttributeGroup(Aws::String&& value) { m_attributeGroupHasBeenSet = true; m_attributeGroup = std::move(value); }
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline void SetAttributeGroup(const char* value) { m_attributeGroupHasBeenSet = true; m_attributeGroup.assign(value); }
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline GetAttributeGroupRequest& WithAttributeGroup(const Aws::String& value) { SetAttributeGroup(value); return *this;}
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline GetAttributeGroupRequest& WithAttributeGroup(Aws::String&& value) { SetAttributeGroup(std::move(value)); return *this;}
-
-    /**
-     * <p> The name, ID, or ARN of the attribute group that holds the attributes to
-     * describe the application. </p>
-     */
     inline GetAttributeGroupRequest& WithAttributeGroup(const char* value) { SetAttributeGroup(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attributeGroup;

@@ -37,46 +37,19 @@ namespace Model
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the datum.</p>
      */
     inline const Aws::String& GetVarCharValue() const{ return m_varCharValue; }
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline bool VarCharValueHasBeenSet() const { return m_varCharValueHasBeenSet; }
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline void SetVarCharValue(const Aws::String& value) { m_varCharValueHasBeenSet = true; m_varCharValue = value; }
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline void SetVarCharValue(Aws::String&& value) { m_varCharValueHasBeenSet = true; m_varCharValue = std::move(value); }
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline void SetVarCharValue(const char* value) { m_varCharValueHasBeenSet = true; m_varCharValue.assign(value); }
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline Datum& WithVarCharValue(const Aws::String& value) { SetVarCharValue(value); return *this;}
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline Datum& WithVarCharValue(Aws::String&& value) { SetVarCharValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the datum.</p>
-     */
     inline Datum& WithVarCharValue(const char* value) { SetVarCharValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_varCharValue;

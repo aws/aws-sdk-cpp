@@ -38,58 +38,28 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted
      * assessment run.</p>
      */
     inline const ReplicationTaskAssessmentRun& GetReplicationTaskAssessmentRun() const{ return m_replicationTaskAssessmentRun; }
-
-    /**
-     * <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted
-     * assessment run.</p>
-     */
     inline void SetReplicationTaskAssessmentRun(const ReplicationTaskAssessmentRun& value) { m_replicationTaskAssessmentRun = value; }
-
-    /**
-     * <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted
-     * assessment run.</p>
-     */
     inline void SetReplicationTaskAssessmentRun(ReplicationTaskAssessmentRun&& value) { m_replicationTaskAssessmentRun = std::move(value); }
-
-    /**
-     * <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted
-     * assessment run.</p>
-     */
     inline DeleteReplicationTaskAssessmentRunResult& WithReplicationTaskAssessmentRun(const ReplicationTaskAssessmentRun& value) { SetReplicationTaskAssessmentRun(value); return *this;}
-
-    /**
-     * <p>The <code>ReplicationTaskAssessmentRun</code> object for the deleted
-     * assessment run.</p>
-     */
     inline DeleteReplicationTaskAssessmentRunResult& WithReplicationTaskAssessmentRun(ReplicationTaskAssessmentRun&& value) { SetReplicationTaskAssessmentRun(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteReplicationTaskAssessmentRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteReplicationTaskAssessmentRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteReplicationTaskAssessmentRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReplicationTaskAssessmentRun m_replicationTaskAssessmentRun;

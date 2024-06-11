@@ -38,75 +38,43 @@ namespace Model
     AWS_APPCONFIG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline PayloadTooLargeException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline PayloadTooLargeException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline PayloadTooLargeException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BytesMeasure& GetMeasure() const{ return m_measure; }
-
-    
     inline bool MeasureHasBeenSet() const { return m_measureHasBeenSet; }
-
-    
     inline void SetMeasure(const BytesMeasure& value) { m_measureHasBeenSet = true; m_measure = value; }
-
-    
     inline void SetMeasure(BytesMeasure&& value) { m_measureHasBeenSet = true; m_measure = std::move(value); }
-
-    
     inline PayloadTooLargeException& WithMeasure(const BytesMeasure& value) { SetMeasure(value); return *this;}
-
-    
     inline PayloadTooLargeException& WithMeasure(BytesMeasure&& value) { SetMeasure(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline double GetLimit() const{ return m_limit; }
-
-    
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    
     inline void SetLimit(double value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    
     inline PayloadTooLargeException& WithLimit(double value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline double GetSize() const{ return m_size; }
-
-    
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-
-    
     inline void SetSize(double value) { m_sizeHasBeenSet = true; m_size = value; }
-
-    
     inline PayloadTooLargeException& WithSize(double value) { SetSize(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

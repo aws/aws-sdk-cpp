@@ -37,6 +37,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * If you will configure a WebVTT caption description that references this caption
      * selector, use this field to
@@ -44,76 +45,24 @@ provide the language to consider when translating
      * the image-based source to text.
      */
     inline const DvbSubOcrLanguage& GetOcrLanguage() const{ return m_ocrLanguage; }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline bool OcrLanguageHasBeenSet() const { return m_ocrLanguageHasBeenSet; }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline void SetOcrLanguage(const DvbSubOcrLanguage& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = value; }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline void SetOcrLanguage(DvbSubOcrLanguage&& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = std::move(value); }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline DvbSubSourceSettings& WithOcrLanguage(const DvbSubOcrLanguage& value) { SetOcrLanguage(value); return *this;}
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline DvbSubSourceSettings& WithOcrLanguage(DvbSubOcrLanguage&& value) { SetOcrLanguage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source
      * content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through,
      * regardless of selectors.
      */
     inline int GetPid() const{ return m_pid; }
-
-    /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source
-     * content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through,
-     * regardless of selectors.
-     */
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
-
-    /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source
-     * content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through,
-     * regardless of selectors.
-     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
-
-    /**
-     * When using DVB-Sub with Burn-In or SMPTE-TT, use this PID for the source
-     * content. Unused for DVB-Sub passthrough. All DVB-Sub content is passed through,
-     * regardless of selectors.
-     */
     inline DvbSubSourceSettings& WithPid(int value) { SetPid(value); return *this;}
-
+    ///@}
   private:
 
     DvbSubOcrLanguage m_ocrLanguage;

@@ -35,26 +35,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
      */
     inline long long GetSpliceEventId() const{ return m_spliceEventId; }
-
-    /**
-     * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-     */
     inline bool SpliceEventIdHasBeenSet() const { return m_spliceEventIdHasBeenSet; }
-
-    /**
-     * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-     */
     inline void SetSpliceEventId(long long value) { m_spliceEventIdHasBeenSet = true; m_spliceEventId = value; }
-
-    /**
-     * The splice_event_id for the SCTE-35 splice_insert, as defined in SCTE-35.
-     */
     inline Scte35ReturnToNetworkScheduleActionSettings& WithSpliceEventId(long long value) { SetSpliceEventId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_spliceEventId;

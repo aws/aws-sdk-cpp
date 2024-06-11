@@ -40,130 +40,59 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The index of the network card.</p>
      */
     inline int GetNetworkCardIndex() const{ return m_networkCardIndex; }
-
-    /**
-     * <p>The index of the network card.</p>
-     */
     inline bool NetworkCardIndexHasBeenSet() const { return m_networkCardIndexHasBeenSet; }
-
-    /**
-     * <p>The index of the network card.</p>
-     */
     inline void SetNetworkCardIndex(int value) { m_networkCardIndexHasBeenSet = true; m_networkCardIndex = value; }
-
-    /**
-     * <p>The index of the network card.</p>
-     */
     inline NetworkCardInfo& WithNetworkCardIndex(int value) { SetNetworkCardIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network performance of the network card.</p>
      */
     inline const Aws::String& GetNetworkPerformance() const{ return m_networkPerformance; }
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline bool NetworkPerformanceHasBeenSet() const { return m_networkPerformanceHasBeenSet; }
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline void SetNetworkPerformance(const Aws::String& value) { m_networkPerformanceHasBeenSet = true; m_networkPerformance = value; }
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline void SetNetworkPerformance(Aws::String&& value) { m_networkPerformanceHasBeenSet = true; m_networkPerformance = std::move(value); }
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline void SetNetworkPerformance(const char* value) { m_networkPerformanceHasBeenSet = true; m_networkPerformance.assign(value); }
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline NetworkCardInfo& WithNetworkPerformance(const Aws::String& value) { SetNetworkPerformance(value); return *this;}
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline NetworkCardInfo& WithNetworkPerformance(Aws::String&& value) { SetNetworkPerformance(std::move(value)); return *this;}
-
-    /**
-     * <p>The network performance of the network card.</p>
-     */
     inline NetworkCardInfo& WithNetworkPerformance(const char* value) { SetNetworkPerformance(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of network interfaces for the network card.</p>
      */
     inline int GetMaximumNetworkInterfaces() const{ return m_maximumNetworkInterfaces; }
-
-    /**
-     * <p>The maximum number of network interfaces for the network card.</p>
-     */
     inline bool MaximumNetworkInterfacesHasBeenSet() const { return m_maximumNetworkInterfacesHasBeenSet; }
-
-    /**
-     * <p>The maximum number of network interfaces for the network card.</p>
-     */
     inline void SetMaximumNetworkInterfaces(int value) { m_maximumNetworkInterfacesHasBeenSet = true; m_maximumNetworkInterfaces = value; }
-
-    /**
-     * <p>The maximum number of network interfaces for the network card.</p>
-     */
     inline NetworkCardInfo& WithMaximumNetworkInterfaces(int value) { SetMaximumNetworkInterfaces(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The baseline network performance of the network card, in Gbps.</p>
      */
     inline double GetBaselineBandwidthInGbps() const{ return m_baselineBandwidthInGbps; }
-
-    /**
-     * <p>The baseline network performance of the network card, in Gbps.</p>
-     */
     inline bool BaselineBandwidthInGbpsHasBeenSet() const { return m_baselineBandwidthInGbpsHasBeenSet; }
-
-    /**
-     * <p>The baseline network performance of the network card, in Gbps.</p>
-     */
     inline void SetBaselineBandwidthInGbps(double value) { m_baselineBandwidthInGbpsHasBeenSet = true; m_baselineBandwidthInGbps = value; }
-
-    /**
-     * <p>The baseline network performance of the network card, in Gbps.</p>
-     */
     inline NetworkCardInfo& WithBaselineBandwidthInGbps(double value) { SetBaselineBandwidthInGbps(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The peak (burst) network performance of the network card, in Gbps.</p>
      */
     inline double GetPeakBandwidthInGbps() const{ return m_peakBandwidthInGbps; }
-
-    /**
-     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
-     */
     inline bool PeakBandwidthInGbpsHasBeenSet() const { return m_peakBandwidthInGbpsHasBeenSet; }
-
-    /**
-     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
-     */
     inline void SetPeakBandwidthInGbps(double value) { m_peakBandwidthInGbpsHasBeenSet = true; m_peakBandwidthInGbps = value; }
-
-    /**
-     * <p>The peak (burst) network performance of the network card, in Gbps.</p>
-     */
     inline NetworkCardInfo& WithPeakBandwidthInGbps(double value) { SetPeakBandwidthInGbps(value); return *this;}
-
+    ///@}
   private:
 
     int m_networkCardIndex;

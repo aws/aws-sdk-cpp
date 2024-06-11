@@ -36,67 +36,29 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the traffic policy that you want to delete.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline DeleteTrafficPolicyRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline DeleteTrafficPolicyRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the traffic policy that you want to delete.</p>
-     */
     inline DeleteTrafficPolicyRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the traffic policy that you want to delete.</p>
      */
     inline int GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version number of the traffic policy that you want to delete.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version number of the traffic policy that you want to delete.</p>
-     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version number of the traffic policy that you want to delete.</p>
-     */
     inline DeleteTrafficPolicyRequest& WithVersion(int value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

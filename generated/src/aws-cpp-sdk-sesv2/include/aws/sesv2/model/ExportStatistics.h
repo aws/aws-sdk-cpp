@@ -36,55 +36,27 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of records that were processed to generate the final export
      * file.</p>
      */
     inline int GetProcessedRecordsCount() const{ return m_processedRecordsCount; }
-
-    /**
-     * <p>The number of records that were processed to generate the final export
-     * file.</p>
-     */
     inline bool ProcessedRecordsCountHasBeenSet() const { return m_processedRecordsCountHasBeenSet; }
-
-    /**
-     * <p>The number of records that were processed to generate the final export
-     * file.</p>
-     */
     inline void SetProcessedRecordsCount(int value) { m_processedRecordsCountHasBeenSet = true; m_processedRecordsCount = value; }
-
-    /**
-     * <p>The number of records that were processed to generate the final export
-     * file.</p>
-     */
     inline ExportStatistics& WithProcessedRecordsCount(int value) { SetProcessedRecordsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of records that were exported to the final export file.</p>
      * <p>This value might not be available for all export source types</p>
      */
     inline int GetExportedRecordsCount() const{ return m_exportedRecordsCount; }
-
-    /**
-     * <p>The number of records that were exported to the final export file.</p>
-     * <p>This value might not be available for all export source types</p>
-     */
     inline bool ExportedRecordsCountHasBeenSet() const { return m_exportedRecordsCountHasBeenSet; }
-
-    /**
-     * <p>The number of records that were exported to the final export file.</p>
-     * <p>This value might not be available for all export source types</p>
-     */
     inline void SetExportedRecordsCount(int value) { m_exportedRecordsCountHasBeenSet = true; m_exportedRecordsCount = value; }
-
-    /**
-     * <p>The number of records that were exported to the final export file.</p>
-     * <p>This value might not be available for all export source types</p>
-     */
     inline ExportStatistics& WithExportedRecordsCount(int value) { SetExportedRecordsCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_processedRecordsCount;

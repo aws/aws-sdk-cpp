@@ -41,30 +41,17 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline IndexDocumentsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline IndexDocumentsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline IndexDocumentsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

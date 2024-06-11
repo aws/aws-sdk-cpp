@@ -37,70 +37,30 @@ namespace Model
     AWS_STORAGEGATEWAY_API RemoveTagsFromResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
      * from.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
-     * from.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
-     * from.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
-     * from.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
-     * from.</p>
-     */
     inline RemoveTagsFromResourceResult& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
-     * from.</p>
-     */
     inline RemoveTagsFromResourceResult& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource that the tags were removed
-     * from.</p>
-     */
     inline RemoveTagsFromResourceResult& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RemoveTagsFromResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RemoveTagsFromResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RemoveTagsFromResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

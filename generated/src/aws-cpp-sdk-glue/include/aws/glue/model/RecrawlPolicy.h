@@ -41,6 +41,7 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether to crawl the entire dataset again or to crawl only folders
      * that were added since the last crawler run.</p> <p>A value of
@@ -51,62 +52,12 @@ namespace Model
      * Amazon S3 events.</p>
      */
     inline const RecrawlBehavior& GetRecrawlBehavior() const{ return m_recrawlBehavior; }
-
-    /**
-     * <p>Specifies whether to crawl the entire dataset again or to crawl only folders
-     * that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-     * <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only
-     * folders that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by
-     * Amazon S3 events.</p>
-     */
     inline bool RecrawlBehaviorHasBeenSet() const { return m_recrawlBehaviorHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to crawl the entire dataset again or to crawl only folders
-     * that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-     * <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only
-     * folders that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by
-     * Amazon S3 events.</p>
-     */
     inline void SetRecrawlBehavior(const RecrawlBehavior& value) { m_recrawlBehaviorHasBeenSet = true; m_recrawlBehavior = value; }
-
-    /**
-     * <p>Specifies whether to crawl the entire dataset again or to crawl only folders
-     * that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-     * <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only
-     * folders that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by
-     * Amazon S3 events.</p>
-     */
     inline void SetRecrawlBehavior(RecrawlBehavior&& value) { m_recrawlBehaviorHasBeenSet = true; m_recrawlBehavior = std::move(value); }
-
-    /**
-     * <p>Specifies whether to crawl the entire dataset again or to crawl only folders
-     * that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-     * <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only
-     * folders that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by
-     * Amazon S3 events.</p>
-     */
     inline RecrawlPolicy& WithRecrawlBehavior(const RecrawlBehavior& value) { SetRecrawlBehavior(value); return *this;}
-
-    /**
-     * <p>Specifies whether to crawl the entire dataset again or to crawl only folders
-     * that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p>
-     * <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only
-     * folders that were added since the last crawler run.</p> <p>A value of
-     * <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by
-     * Amazon S3 events.</p>
-     */
     inline RecrawlPolicy& WithRecrawlBehavior(RecrawlBehavior&& value) { SetRecrawlBehavior(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RecrawlBehavior m_recrawlBehavior;

@@ -38,87 +38,33 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline TestSetImportInputLocation& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline TestSetImportInputLocation& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline TestSetImportInputLocation& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
      */
     inline const Aws::String& GetS3Path() const{ return m_s3Path; }
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline void SetS3Path(const Aws::String& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline void SetS3Path(Aws::String&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline void SetS3Path(const char* value) { m_s3PathHasBeenSet = true; m_s3Path.assign(value); }
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline TestSetImportInputLocation& WithS3Path(const Aws::String& value) { SetS3Path(value); return *this;}
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline TestSetImportInputLocation& WithS3Path(Aws::String&& value) { SetS3Path(std::move(value)); return *this;}
-
-    /**
-     * <p>The path inside the Amazon S3 bucket pointing to the test-set CSV file.</p>
-     */
     inline TestSetImportInputLocation& WithS3Path(const char* value) { SetS3Path(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3BucketName;

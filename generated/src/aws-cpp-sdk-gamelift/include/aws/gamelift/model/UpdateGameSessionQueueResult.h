@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API UpdateGameSessionQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that describes the newly updated game session queue.</p>
      */
     inline const GameSessionQueue& GetGameSessionQueue() const{ return m_gameSessionQueue; }
-
-    /**
-     * <p>An object that describes the newly updated game session queue.</p>
-     */
     inline void SetGameSessionQueue(const GameSessionQueue& value) { m_gameSessionQueue = value; }
-
-    /**
-     * <p>An object that describes the newly updated game session queue.</p>
-     */
     inline void SetGameSessionQueue(GameSessionQueue&& value) { m_gameSessionQueue = std::move(value); }
-
-    /**
-     * <p>An object that describes the newly updated game session queue.</p>
-     */
     inline UpdateGameSessionQueueResult& WithGameSessionQueue(const GameSessionQueue& value) { SetGameSessionQueue(value); return *this;}
-
-    /**
-     * <p>An object that describes the newly updated game session queue.</p>
-     */
     inline UpdateGameSessionQueueResult& WithGameSessionQueue(GameSessionQueue&& value) { SetGameSessionQueue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateGameSessionQueueResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateGameSessionQueueResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateGameSessionQueueResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GameSessionQueue m_gameSessionQueue;

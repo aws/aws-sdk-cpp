@@ -38,46 +38,19 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Version of the installed GuardDuty security agent.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline AgentDetails& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline AgentDetails& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>Version of the installed GuardDuty security agent.</p>
-     */
     inline AgentDetails& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_version;

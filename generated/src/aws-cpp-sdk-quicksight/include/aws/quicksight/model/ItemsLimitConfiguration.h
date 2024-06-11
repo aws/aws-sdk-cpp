@@ -38,73 +38,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The limit on how many items of a field are showed in the chart. For example,
      * the number of slices that are displayed in a pie chart.</p>
      */
     inline long long GetItemsLimit() const{ return m_itemsLimit; }
-
-    /**
-     * <p>The limit on how many items of a field are showed in the chart. For example,
-     * the number of slices that are displayed in a pie chart.</p>
-     */
     inline bool ItemsLimitHasBeenSet() const { return m_itemsLimitHasBeenSet; }
-
-    /**
-     * <p>The limit on how many items of a field are showed in the chart. For example,
-     * the number of slices that are displayed in a pie chart.</p>
-     */
     inline void SetItemsLimit(long long value) { m_itemsLimitHasBeenSet = true; m_itemsLimit = value; }
-
-    /**
-     * <p>The limit on how many items of a field are showed in the chart. For example,
-     * the number of slices that are displayed in a pie chart.</p>
-     */
     inline ItemsLimitConfiguration& WithItemsLimit(long long value) { SetItemsLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>Show other</code> of an axis in the chart. Choose one of the
      * following options:</p> <ul> <li> <p> <code>INCLUDE</code> </p> </li> <li> <p>
      * <code>EXCLUDE</code> </p> </li> </ul>
      */
     inline const OtherCategories& GetOtherCategories() const{ return m_otherCategories; }
-
-    /**
-     * <p>The <code>Show other</code> of an axis in the chart. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>INCLUDE</code> </p> </li> <li> <p>
-     * <code>EXCLUDE</code> </p> </li> </ul>
-     */
     inline bool OtherCategoriesHasBeenSet() const { return m_otherCategoriesHasBeenSet; }
-
-    /**
-     * <p>The <code>Show other</code> of an axis in the chart. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>INCLUDE</code> </p> </li> <li> <p>
-     * <code>EXCLUDE</code> </p> </li> </ul>
-     */
     inline void SetOtherCategories(const OtherCategories& value) { m_otherCategoriesHasBeenSet = true; m_otherCategories = value; }
-
-    /**
-     * <p>The <code>Show other</code> of an axis in the chart. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>INCLUDE</code> </p> </li> <li> <p>
-     * <code>EXCLUDE</code> </p> </li> </ul>
-     */
     inline void SetOtherCategories(OtherCategories&& value) { m_otherCategoriesHasBeenSet = true; m_otherCategories = std::move(value); }
-
-    /**
-     * <p>The <code>Show other</code> of an axis in the chart. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>INCLUDE</code> </p> </li> <li> <p>
-     * <code>EXCLUDE</code> </p> </li> </ul>
-     */
     inline ItemsLimitConfiguration& WithOtherCategories(const OtherCategories& value) { SetOtherCategories(value); return *this;}
-
-    /**
-     * <p>The <code>Show other</code> of an axis in the chart. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>INCLUDE</code> </p> </li> <li> <p>
-     * <code>EXCLUDE</code> </p> </li> </ul>
-     */
     inline ItemsLimitConfiguration& WithOtherCategories(OtherCategories&& value) { SetOtherCategories(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_itemsLimit;

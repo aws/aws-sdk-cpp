@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Job ID of the job to be cancelled.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline CancelJobRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline CancelJobRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The Job ID of the job to be cancelled.
-     */
     inline CancelJobRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

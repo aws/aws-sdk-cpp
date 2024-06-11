@@ -37,63 +37,29 @@ namespace Model
     AWS_DATAPIPELINE_API EvaluateExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The evaluated expression.</p>
      */
     inline const Aws::String& GetEvaluatedExpression() const{ return m_evaluatedExpression; }
-
-    /**
-     * <p>The evaluated expression.</p>
-     */
     inline void SetEvaluatedExpression(const Aws::String& value) { m_evaluatedExpression = value; }
-
-    /**
-     * <p>The evaluated expression.</p>
-     */
     inline void SetEvaluatedExpression(Aws::String&& value) { m_evaluatedExpression = std::move(value); }
-
-    /**
-     * <p>The evaluated expression.</p>
-     */
     inline void SetEvaluatedExpression(const char* value) { m_evaluatedExpression.assign(value); }
-
-    /**
-     * <p>The evaluated expression.</p>
-     */
     inline EvaluateExpressionResult& WithEvaluatedExpression(const Aws::String& value) { SetEvaluatedExpression(value); return *this;}
-
-    /**
-     * <p>The evaluated expression.</p>
-     */
     inline EvaluateExpressionResult& WithEvaluatedExpression(Aws::String&& value) { SetEvaluatedExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>The evaluated expression.</p>
-     */
     inline EvaluateExpressionResult& WithEvaluatedExpression(const char* value) { SetEvaluatedExpression(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline EvaluateExpressionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline EvaluateExpressionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline EvaluateExpressionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_evaluatedExpression;

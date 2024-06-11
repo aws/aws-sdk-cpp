@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IPV6 address.</p>
      */
     inline const Aws::String& GetIpV6Address() const{ return m_ipV6Address; }
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline bool IpV6AddressHasBeenSet() const { return m_ipV6AddressHasBeenSet; }
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline void SetIpV6Address(const Aws::String& value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address = value; }
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline void SetIpV6Address(Aws::String&& value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address = std::move(value); }
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline void SetIpV6Address(const char* value) { m_ipV6AddressHasBeenSet = true; m_ipV6Address.assign(value); }
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(const Aws::String& value) { SetIpV6Address(value); return *this;}
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(Aws::String&& value) { SetIpV6Address(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPV6 address.</p>
-     */
     inline AwsEc2NetworkInterfaceIpV6AddressDetail& WithIpV6Address(const char* value) { SetIpV6Address(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipV6Address;

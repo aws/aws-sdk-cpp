@@ -40,57 +40,27 @@ namespace Model
     AWS_RDS_API ModifyDBParameterGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The name of the DB parameter group.</p>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
-
-    /**
-     * <p>The name of the DB parameter group.</p>
-     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupName = value; }
-
-    /**
-     * <p>The name of the DB parameter group.</p>
-     */
     inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the DB parameter group.</p>
-     */
     inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupName.assign(value); }
-
-    /**
-     * <p>The name of the DB parameter group.</p>
-     */
     inline ModifyDBParameterGroupResult& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the DB parameter group.</p>
-     */
     inline ModifyDBParameterGroupResult& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DB parameter group.</p>
-     */
     inline ModifyDBParameterGroupResult& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyDBParameterGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyDBParameterGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBParameterGroupName;

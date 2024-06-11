@@ -41,327 +41,123 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the classifier.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline CreateCsvClassifierRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline CreateCsvClassifierRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the classifier.</p>
-     */
     inline CreateCsvClassifierRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A custom symbol to denote what separates each column entry in the row.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline CreateCsvClassifierRequest& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline CreateCsvClassifierRequest& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-
-    /**
-     * <p>A custom symbol to denote what separates each column entry in the row.</p>
-     */
     inline CreateCsvClassifierRequest& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A custom symbol to denote what combines content into a single column value.
      * Must be different from the column delimiter.</p>
      */
     inline const Aws::String& GetQuoteSymbol() const{ return m_quoteSymbol; }
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline bool QuoteSymbolHasBeenSet() const { return m_quoteSymbolHasBeenSet; }
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline void SetQuoteSymbol(const Aws::String& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = value; }
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline void SetQuoteSymbol(Aws::String&& value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol = std::move(value); }
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline void SetQuoteSymbol(const char* value) { m_quoteSymbolHasBeenSet = true; m_quoteSymbol.assign(value); }
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline CreateCsvClassifierRequest& WithQuoteSymbol(const Aws::String& value) { SetQuoteSymbol(value); return *this;}
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline CreateCsvClassifierRequest& WithQuoteSymbol(Aws::String&& value) { SetQuoteSymbol(std::move(value)); return *this;}
-
-    /**
-     * <p>A custom symbol to denote what combines content into a single column value.
-     * Must be different from the column delimiter.</p>
-     */
     inline CreateCsvClassifierRequest& WithQuoteSymbol(const char* value) { SetQuoteSymbol(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the CSV file contains a header.</p>
      */
     inline const CsvHeaderOption& GetContainsHeader() const{ return m_containsHeader; }
-
-    /**
-     * <p>Indicates whether the CSV file contains a header.</p>
-     */
     inline bool ContainsHeaderHasBeenSet() const { return m_containsHeaderHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the CSV file contains a header.</p>
-     */
     inline void SetContainsHeader(const CsvHeaderOption& value) { m_containsHeaderHasBeenSet = true; m_containsHeader = value; }
-
-    /**
-     * <p>Indicates whether the CSV file contains a header.</p>
-     */
     inline void SetContainsHeader(CsvHeaderOption&& value) { m_containsHeaderHasBeenSet = true; m_containsHeader = std::move(value); }
-
-    /**
-     * <p>Indicates whether the CSV file contains a header.</p>
-     */
     inline CreateCsvClassifierRequest& WithContainsHeader(const CsvHeaderOption& value) { SetContainsHeader(value); return *this;}
-
-    /**
-     * <p>Indicates whether the CSV file contains a header.</p>
-     */
     inline CreateCsvClassifierRequest& WithContainsHeader(CsvHeaderOption&& value) { SetContainsHeader(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of strings representing column names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHeader() const{ return m_header; }
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline void SetHeader(const Aws::Vector<Aws::String>& value) { m_headerHasBeenSet = true; m_header = value; }
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline void SetHeader(Aws::Vector<Aws::String>&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline CreateCsvClassifierRequest& WithHeader(const Aws::Vector<Aws::String>& value) { SetHeader(value); return *this;}
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline CreateCsvClassifierRequest& WithHeader(Aws::Vector<Aws::String>&& value) { SetHeader(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline CreateCsvClassifierRequest& AddHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header.push_back(value); return *this; }
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline CreateCsvClassifierRequest& AddHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of strings representing column names.</p>
-     */
     inline CreateCsvClassifierRequest& AddHeader(const char* value) { m_headerHasBeenSet = true; m_header.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies not to trim values before identifying the type of column values.
      * The default value is true.</p>
      */
     inline bool GetDisableValueTrimming() const{ return m_disableValueTrimming; }
-
-    /**
-     * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
-     */
     inline bool DisableValueTrimmingHasBeenSet() const { return m_disableValueTrimmingHasBeenSet; }
-
-    /**
-     * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
-     */
     inline void SetDisableValueTrimming(bool value) { m_disableValueTrimmingHasBeenSet = true; m_disableValueTrimming = value; }
-
-    /**
-     * <p>Specifies not to trim values before identifying the type of column values.
-     * The default value is true.</p>
-     */
     inline CreateCsvClassifierRequest& WithDisableValueTrimming(bool value) { SetDisableValueTrimming(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables the processing of files that contain only one column.</p>
      */
     inline bool GetAllowSingleColumn() const{ return m_allowSingleColumn; }
-
-    /**
-     * <p>Enables the processing of files that contain only one column.</p>
-     */
     inline bool AllowSingleColumnHasBeenSet() const { return m_allowSingleColumnHasBeenSet; }
-
-    /**
-     * <p>Enables the processing of files that contain only one column.</p>
-     */
     inline void SetAllowSingleColumn(bool value) { m_allowSingleColumnHasBeenSet = true; m_allowSingleColumn = value; }
-
-    /**
-     * <p>Enables the processing of files that contain only one column.</p>
-     */
     inline CreateCsvClassifierRequest& WithAllowSingleColumn(bool value) { SetAllowSingleColumn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables the configuration of custom datatypes.</p>
      */
     inline bool GetCustomDatatypeConfigured() const{ return m_customDatatypeConfigured; }
-
-    /**
-     * <p>Enables the configuration of custom datatypes.</p>
-     */
     inline bool CustomDatatypeConfiguredHasBeenSet() const { return m_customDatatypeConfiguredHasBeenSet; }
-
-    /**
-     * <p>Enables the configuration of custom datatypes.</p>
-     */
     inline void SetCustomDatatypeConfigured(bool value) { m_customDatatypeConfiguredHasBeenSet = true; m_customDatatypeConfigured = value; }
-
-    /**
-     * <p>Enables the configuration of custom datatypes.</p>
-     */
     inline CreateCsvClassifierRequest& WithCustomDatatypeConfigured(bool value) { SetCustomDatatypeConfigured(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Creates a list of supported custom datatypes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCustomDatatypes() const{ return m_customDatatypes; }
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline bool CustomDatatypesHasBeenSet() const { return m_customDatatypesHasBeenSet; }
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline void SetCustomDatatypes(const Aws::Vector<Aws::String>& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = value; }
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline void SetCustomDatatypes(Aws::Vector<Aws::String>&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes = std::move(value); }
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline CreateCsvClassifierRequest& WithCustomDatatypes(const Aws::Vector<Aws::String>& value) { SetCustomDatatypes(value); return *this;}
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline CreateCsvClassifierRequest& WithCustomDatatypes(Aws::Vector<Aws::String>&& value) { SetCustomDatatypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline CreateCsvClassifierRequest& AddCustomDatatypes(const Aws::String& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline CreateCsvClassifierRequest& AddCustomDatatypes(Aws::String&& value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Creates a list of supported custom datatypes.</p>
-     */
     inline CreateCsvClassifierRequest& AddCustomDatatypes(const char* value) { m_customDatatypesHasBeenSet = true; m_customDatatypes.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
      * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
@@ -369,47 +165,12 @@ namespace Model
      * <code>None</code> value when you want the crawler to do the detection.</p>
      */
     inline const CsvSerdeOption& GetSerde() const{ return m_serde; }
-
-    /**
-     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
-     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
-     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
-     * <code>None</code> value when you want the crawler to do the detection.</p>
-     */
     inline bool SerdeHasBeenSet() const { return m_serdeHasBeenSet; }
-
-    /**
-     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
-     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
-     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
-     * <code>None</code> value when you want the crawler to do the detection.</p>
-     */
     inline void SetSerde(const CsvSerdeOption& value) { m_serdeHasBeenSet = true; m_serde = value; }
-
-    /**
-     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
-     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
-     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
-     * <code>None</code> value when you want the crawler to do the detection.</p>
-     */
     inline void SetSerde(CsvSerdeOption&& value) { m_serdeHasBeenSet = true; m_serde = std::move(value); }
-
-    /**
-     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
-     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
-     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
-     * <code>None</code> value when you want the crawler to do the detection.</p>
-     */
     inline CreateCsvClassifierRequest& WithSerde(const CsvSerdeOption& value) { SetSerde(value); return *this;}
-
-    /**
-     * <p>Sets the SerDe for processing CSV in the classifier, which will be applied in
-     * the Data Catalog. Valid values are <code>OpenCSVSerDe</code>,
-     * <code>LazySimpleSerDe</code>, and <code>None</code>. You can specify the
-     * <code>None</code> value when you want the crawler to do the detection.</p>
-     */
     inline CreateCsvClassifierRequest& WithSerde(CsvSerdeOption&& value) { SetSerde(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

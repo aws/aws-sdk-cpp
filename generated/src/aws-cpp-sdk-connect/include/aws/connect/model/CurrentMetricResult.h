@@ -40,77 +40,31 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The dimensions for the metrics.</p>
      */
     inline const Dimensions& GetDimensions() const{ return m_dimensions; }
-
-    /**
-     * <p>The dimensions for the metrics.</p>
-     */
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-
-    /**
-     * <p>The dimensions for the metrics.</p>
-     */
     inline void SetDimensions(const Dimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-
-    /**
-     * <p>The dimensions for the metrics.</p>
-     */
     inline void SetDimensions(Dimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-
-    /**
-     * <p>The dimensions for the metrics.</p>
-     */
     inline CurrentMetricResult& WithDimensions(const Dimensions& value) { SetDimensions(value); return *this;}
-
-    /**
-     * <p>The dimensions for the metrics.</p>
-     */
     inline CurrentMetricResult& WithDimensions(Dimensions&& value) { SetDimensions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The set of metrics.</p>
      */
     inline const Aws::Vector<CurrentMetricData>& GetCollections() const{ return m_collections; }
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline bool CollectionsHasBeenSet() const { return m_collectionsHasBeenSet; }
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline void SetCollections(const Aws::Vector<CurrentMetricData>& value) { m_collectionsHasBeenSet = true; m_collections = value; }
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline void SetCollections(Aws::Vector<CurrentMetricData>&& value) { m_collectionsHasBeenSet = true; m_collections = std::move(value); }
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline CurrentMetricResult& WithCollections(const Aws::Vector<CurrentMetricData>& value) { SetCollections(value); return *this;}
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline CurrentMetricResult& WithCollections(Aws::Vector<CurrentMetricData>&& value) { SetCollections(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline CurrentMetricResult& AddCollections(const CurrentMetricData& value) { m_collectionsHasBeenSet = true; m_collections.push_back(value); return *this; }
-
-    /**
-     * <p>The set of metrics.</p>
-     */
     inline CurrentMetricResult& AddCollections(CurrentMetricData&& value) { m_collectionsHasBeenSet = true; m_collections.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Dimensions m_dimensions;

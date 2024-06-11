@@ -59,99 +59,43 @@ namespace Model
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 logging configuration settings for the pipe.</p>
      */
     inline const S3LogDestinationParameters& GetS3LogDestination() const{ return m_s3LogDestination; }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
     inline bool S3LogDestinationHasBeenSet() const { return m_s3LogDestinationHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
     inline void SetS3LogDestination(const S3LogDestinationParameters& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = value; }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
     inline void SetS3LogDestination(S3LogDestinationParameters&& value) { m_s3LogDestinationHasBeenSet = true; m_s3LogDestination = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
     inline PipeLogConfigurationParameters& WithS3LogDestination(const S3LogDestinationParameters& value) { SetS3LogDestination(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 logging configuration settings for the pipe.</p>
-     */
     inline PipeLogConfigurationParameters& WithS3LogDestination(S3LogDestinationParameters&& value) { SetS3LogDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
      */
     inline const FirehoseLogDestinationParameters& GetFirehoseLogDestination() const{ return m_firehoseLogDestination; }
-
-    /**
-     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
-     */
     inline bool FirehoseLogDestinationHasBeenSet() const { return m_firehoseLogDestinationHasBeenSet; }
-
-    /**
-     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
-     */
     inline void SetFirehoseLogDestination(const FirehoseLogDestinationParameters& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = value; }
-
-    /**
-     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
-     */
     inline void SetFirehoseLogDestination(FirehoseLogDestinationParameters&& value) { m_firehoseLogDestinationHasBeenSet = true; m_firehoseLogDestination = std::move(value); }
-
-    /**
-     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
-     */
     inline PipeLogConfigurationParameters& WithFirehoseLogDestination(const FirehoseLogDestinationParameters& value) { SetFirehoseLogDestination(value); return *this;}
-
-    /**
-     * <p>The Amazon Data Firehose logging configuration settings for the pipe.</p>
-     */
     inline PipeLogConfigurationParameters& WithFirehoseLogDestination(FirehoseLogDestinationParameters&& value) { SetFirehoseLogDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
      */
     inline const CloudwatchLogsLogDestinationParameters& GetCloudwatchLogsLogDestination() const{ return m_cloudwatchLogsLogDestination; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
-     */
     inline bool CloudwatchLogsLogDestinationHasBeenSet() const { return m_cloudwatchLogsLogDestinationHasBeenSet; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
-     */
     inline void SetCloudwatchLogsLogDestination(const CloudwatchLogsLogDestinationParameters& value) { m_cloudwatchLogsLogDestinationHasBeenSet = true; m_cloudwatchLogsLogDestination = value; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
-     */
     inline void SetCloudwatchLogsLogDestination(CloudwatchLogsLogDestinationParameters&& value) { m_cloudwatchLogsLogDestinationHasBeenSet = true; m_cloudwatchLogsLogDestination = std::move(value); }
-
-    /**
-     * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
-     */
     inline PipeLogConfigurationParameters& WithCloudwatchLogsLogDestination(const CloudwatchLogsLogDestinationParameters& value) { SetCloudwatchLogsLogDestination(value); return *this;}
-
-    /**
-     * <p>The Amazon CloudWatch Logs logging configuration settings for the pipe.</p>
-     */
     inline PipeLogConfigurationParameters& WithCloudwatchLogsLogDestination(CloudwatchLogsLogDestinationParameters&& value) { SetCloudwatchLogsLogDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of logging detail to include. This applies to all log destinations
      * for the pipe.</p> <p>For more information, see <a
@@ -159,48 +103,14 @@ namespace Model
      * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
     inline const LogLevel& GetLevel() const{ return m_level; }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying
-     * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     */
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying
-     * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     */
     inline void SetLevel(const LogLevel& value) { m_levelHasBeenSet = true; m_level = value; }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying
-     * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     */
     inline void SetLevel(LogLevel&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying
-     * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     */
     inline PipeLogConfigurationParameters& WithLevel(const LogLevel& value) { SetLevel(value); return *this;}
-
-    /**
-     * <p>The level of logging detail to include. This applies to all log destinations
-     * for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-level">Specifying
-     * EventBridge Pipes log level</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     */
     inline PipeLogConfigurationParameters& WithLevel(LogLevel&& value) { SetLevel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify <code>ALL</code> to include the execution data (specifically, the
      * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
@@ -211,84 +121,14 @@ namespace Model
      * <p>By default, execution data is not included.</p>
      */
     inline const Aws::Vector<IncludeExecutionDataOption>& GetIncludeExecutionData() const{ return m_includeExecutionData; }
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline void SetIncludeExecutionData(const Aws::Vector<IncludeExecutionDataOption>& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline void SetIncludeExecutionData(Aws::Vector<IncludeExecutionDataOption>&& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = std::move(value); }
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline PipeLogConfigurationParameters& WithIncludeExecutionData(const Aws::Vector<IncludeExecutionDataOption>& value) { SetIncludeExecutionData(value); return *this;}
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline PipeLogConfigurationParameters& WithIncludeExecutionData(Aws::Vector<IncludeExecutionDataOption>&& value) { SetIncludeExecutionData(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline PipeLogConfigurationParameters& AddIncludeExecutionData(const IncludeExecutionDataOption& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData.push_back(value); return *this; }
-
-    /**
-     * <p>Specify <code>ALL</code> to include the execution data (specifically, the
-     * <code>payload</code>, <code>awsRequest</code>, and <code>awsResponse</code>
-     * fields) in the log messages for this pipe.</p> <p>This applies to all log
-     * destinations for the pipe.</p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes-logs.html#eb-pipes-logs-execution-data">Including
-     * execution data in logs</a> in the <i>Amazon EventBridge User Guide</i>.</p>
-     * <p>By default, execution data is not included.</p>
-     */
     inline PipeLogConfigurationParameters& AddIncludeExecutionData(IncludeExecutionDataOption&& value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     S3LogDestinationParameters m_s3LogDestination;

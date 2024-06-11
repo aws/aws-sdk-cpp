@@ -40,67 +40,29 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date that the resource was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline ListSolNetworkInstanceMetadata& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The date that the resource was created.</p>
-     */
     inline ListSolNetworkInstanceMetadata& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date that the resource was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline void SetLastModified(Aws::Utils::DateTime&& value) { m_lastModifiedHasBeenSet = true; m_lastModified = std::move(value); }
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline ListSolNetworkInstanceMetadata& WithLastModified(const Aws::Utils::DateTime& value) { SetLastModified(value); return *this;}
-
-    /**
-     * <p>The date that the resource was last modified.</p>
-     */
     inline ListSolNetworkInstanceMetadata& WithLastModified(Aws::Utils::DateTime&& value) { SetLastModified(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_createdAt;

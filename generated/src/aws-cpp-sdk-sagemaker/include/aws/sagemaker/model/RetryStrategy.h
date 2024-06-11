@@ -40,30 +40,16 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of times to retry the job. When the job is retried, it's
      * <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
-
-    /**
-     * <p>The number of times to retry the job. When the job is retried, it's
-     * <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-     */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
-
-    /**
-     * <p>The number of times to retry the job. When the job is retried, it's
-     * <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-     */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
-
-    /**
-     * <p>The number of times to retry the job. When the job is retried, it's
-     * <code>SecondaryStatus</code> is changed to <code>STARTING</code>.</p>
-     */
     inline RetryStrategy& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
-
+    ///@}
   private:
 
     int m_maximumRetryAttempts;

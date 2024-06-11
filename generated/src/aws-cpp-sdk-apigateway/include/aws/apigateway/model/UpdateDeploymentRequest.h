@@ -38,152 +38,50 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
     inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline UpdateDeploymentRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline UpdateDeploymentRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-
-    /**
-     * <p>The string identifier of the associated RestApi.</p>
-     */
     inline UpdateDeploymentRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The replacement identifier for the Deployment resource to change information
      * about.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline UpdateDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline UpdateDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The replacement identifier for the Deployment resource to change information
-     * about.</p>
-     */
     inline UpdateDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>For more information about supported patch operations, see <a
      * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
      * Operations</a>.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateDeploymentRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateDeploymentRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateDeploymentRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
-
-    /**
-     * <p>For more information about supported patch operations, see <a
-     * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
-     * Operations</a>.</p>
-     */
     inline UpdateDeploymentRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_restApiId;

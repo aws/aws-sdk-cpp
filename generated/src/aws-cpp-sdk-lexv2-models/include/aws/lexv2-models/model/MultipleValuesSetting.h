@@ -36,6 +36,7 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether a slot can return multiple values. When <code>true</code>,
      * the slot may return more than one value in a response. When <code>false</code>,
@@ -46,40 +47,10 @@ namespace Model
      * <code>false</code>.</p>
      */
     inline bool GetAllowMultipleValues() const{ return m_allowMultipleValues; }
-
-    /**
-     * <p>Indicates whether a slot can return multiple values. When <code>true</code>,
-     * the slot may return more than one value in a response. When <code>false</code>,
-     * the slot returns only a single value.</p> <p>Multi-value slots are only
-     * available in the en-US locale. If you set this value to <code>true</code> in any
-     * other locale, Amazon Lex throws a <code>ValidationException</code>.</p> <p>If
-     * the <code>allowMutlipleValues</code> is not set, the default value is
-     * <code>false</code>.</p>
-     */
     inline bool AllowMultipleValuesHasBeenSet() const { return m_allowMultipleValuesHasBeenSet; }
-
-    /**
-     * <p>Indicates whether a slot can return multiple values. When <code>true</code>,
-     * the slot may return more than one value in a response. When <code>false</code>,
-     * the slot returns only a single value.</p> <p>Multi-value slots are only
-     * available in the en-US locale. If you set this value to <code>true</code> in any
-     * other locale, Amazon Lex throws a <code>ValidationException</code>.</p> <p>If
-     * the <code>allowMutlipleValues</code> is not set, the default value is
-     * <code>false</code>.</p>
-     */
     inline void SetAllowMultipleValues(bool value) { m_allowMultipleValuesHasBeenSet = true; m_allowMultipleValues = value; }
-
-    /**
-     * <p>Indicates whether a slot can return multiple values. When <code>true</code>,
-     * the slot may return more than one value in a response. When <code>false</code>,
-     * the slot returns only a single value.</p> <p>Multi-value slots are only
-     * available in the en-US locale. If you set this value to <code>true</code> in any
-     * other locale, Amazon Lex throws a <code>ValidationException</code>.</p> <p>If
-     * the <code>allowMutlipleValues</code> is not set, the default value is
-     * <code>false</code>.</p>
-     */
     inline MultipleValuesSetting& WithAllowMultipleValues(bool value) { SetAllowMultipleValues(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowMultipleValues;

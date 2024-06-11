@@ -32,46 +32,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the test set discrepancy report.</p>
      */
     inline const Aws::String& GetTestSetDiscrepancyReportId() const{ return m_testSetDiscrepancyReportId; }
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline bool TestSetDiscrepancyReportIdHasBeenSet() const { return m_testSetDiscrepancyReportIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline void SetTestSetDiscrepancyReportId(const Aws::String& value) { m_testSetDiscrepancyReportIdHasBeenSet = true; m_testSetDiscrepancyReportId = value; }
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline void SetTestSetDiscrepancyReportId(Aws::String&& value) { m_testSetDiscrepancyReportIdHasBeenSet = true; m_testSetDiscrepancyReportId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline void SetTestSetDiscrepancyReportId(const char* value) { m_testSetDiscrepancyReportIdHasBeenSet = true; m_testSetDiscrepancyReportId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline DescribeTestSetDiscrepancyReportRequest& WithTestSetDiscrepancyReportId(const Aws::String& value) { SetTestSetDiscrepancyReportId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline DescribeTestSetDiscrepancyReportRequest& WithTestSetDiscrepancyReportId(Aws::String&& value) { SetTestSetDiscrepancyReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the test set discrepancy report.</p>
-     */
     inline DescribeTestSetDiscrepancyReportRequest& WithTestSetDiscrepancyReportId(const char* value) { SetTestSetDiscrepancyReportId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_testSetDiscrepancyReportId;

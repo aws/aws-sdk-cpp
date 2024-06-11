@@ -40,6 +40,7 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to enable an off-peak window.</p> <p>This option is only available
      * when modifying a domain created prior to February 16, 2023, not when creating a
@@ -48,65 +49,22 @@ namespace Model
      * domain.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 16, 2023, not when creating a
-     * new domain. All domains created after this date have the off-peak window enabled
-     * by default. You can't disable the off-peak window after it's enabled for a
-     * domain.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 16, 2023, not when creating a
-     * new domain. All domains created after this date have the off-peak window enabled
-     * by default. You can't disable the off-peak window after it's enabled for a
-     * domain.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 16, 2023, not when creating a
-     * new domain. All domains created after this date have the off-peak window enabled
-     * by default. You can't disable the off-peak window after it's enabled for a
-     * domain.</p>
-     */
     inline OffPeakWindowOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Off-peak window settings for the domain.</p>
      */
     inline const OffPeakWindow& GetOffPeakWindow() const{ return m_offPeakWindow; }
-
-    /**
-     * <p>Off-peak window settings for the domain.</p>
-     */
     inline bool OffPeakWindowHasBeenSet() const { return m_offPeakWindowHasBeenSet; }
-
-    /**
-     * <p>Off-peak window settings for the domain.</p>
-     */
     inline void SetOffPeakWindow(const OffPeakWindow& value) { m_offPeakWindowHasBeenSet = true; m_offPeakWindow = value; }
-
-    /**
-     * <p>Off-peak window settings for the domain.</p>
-     */
     inline void SetOffPeakWindow(OffPeakWindow&& value) { m_offPeakWindowHasBeenSet = true; m_offPeakWindow = std::move(value); }
-
-    /**
-     * <p>Off-peak window settings for the domain.</p>
-     */
     inline OffPeakWindowOptions& WithOffPeakWindow(const OffPeakWindow& value) { SetOffPeakWindow(value); return *this;}
-
-    /**
-     * <p>Off-peak window settings for the domain.</p>
-     */
     inline OffPeakWindowOptions& WithOffPeakWindow(OffPeakWindow&& value) { SetOffPeakWindow(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

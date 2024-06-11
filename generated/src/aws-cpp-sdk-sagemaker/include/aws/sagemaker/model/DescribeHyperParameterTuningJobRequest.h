@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the tuning job.</p>
      */
     inline const Aws::String& GetHyperParameterTuningJobName() const{ return m_hyperParameterTuningJobName; }
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline void SetHyperParameterTuningJobName(Aws::String&& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = std::move(value); }
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline void SetHyperParameterTuningJobName(const char* value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName.assign(value); }
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline DescribeHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const Aws::String& value) { SetHyperParameterTuningJobName(value); return *this;}
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline DescribeHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(Aws::String&& value) { SetHyperParameterTuningJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the tuning job.</p>
-     */
     inline DescribeHyperParameterTuningJobRequest& WithHyperParameterTuningJobName(const char* value) { SetHyperParameterTuningJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hyperParameterTuningJobName;

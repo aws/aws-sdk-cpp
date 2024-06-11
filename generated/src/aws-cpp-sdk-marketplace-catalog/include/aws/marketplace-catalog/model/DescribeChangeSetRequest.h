@@ -38,103 +38,35 @@ namespace Model
     AWS_MARKETPLACECATALOG_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Required. The catalog related to the request. Fixed value:
      * <code>AWSMarketplace</code> </p>
      */
     inline const Aws::String& GetCatalog() const{ return m_catalog; }
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline DescribeChangeSetRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline DescribeChangeSetRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. The catalog related to the request. Fixed value:
-     * <code>AWSMarketplace</code> </p>
-     */
     inline DescribeChangeSetRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
      * that you want to describe the details for.</p>
      */
     inline const Aws::String& GetChangeSetId() const{ return m_changeSetId; }
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline bool ChangeSetIdHasBeenSet() const { return m_changeSetIdHasBeenSet; }
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline void SetChangeSetId(Aws::String&& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = std::move(value); }
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline void SetChangeSetId(const char* value) { m_changeSetIdHasBeenSet = true; m_changeSetId.assign(value); }
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline DescribeChangeSetRequest& WithChangeSetId(const Aws::String& value) { SetChangeSetId(value); return *this;}
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline DescribeChangeSetRequest& WithChangeSetId(Aws::String&& value) { SetChangeSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>Required. The unique identifier for the <code>StartChangeSet</code> request
-     * that you want to describe the details for.</p>
-     */
     inline DescribeChangeSetRequest& WithChangeSetId(const char* value) { SetChangeSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_catalog;

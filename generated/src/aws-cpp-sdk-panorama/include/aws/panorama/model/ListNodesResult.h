@@ -34,99 +34,42 @@ namespace Model
     AWS_PANORAMA_API ListNodesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListNodesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListNodesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
     inline ListNodesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of nodes.</p>
      */
     inline const Aws::Vector<Node>& GetNodes() const{ return m_nodes; }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
     inline void SetNodes(const Aws::Vector<Node>& value) { m_nodes = value; }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
     inline void SetNodes(Aws::Vector<Node>&& value) { m_nodes = std::move(value); }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
     inline ListNodesResult& WithNodes(const Aws::Vector<Node>& value) { SetNodes(value); return *this;}
-
-    /**
-     * <p>A list of nodes.</p>
-     */
     inline ListNodesResult& WithNodes(Aws::Vector<Node>&& value) { SetNodes(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of nodes.</p>
-     */
     inline ListNodesResult& AddNodes(const Node& value) { m_nodes.push_back(value); return *this; }
-
-    /**
-     * <p>A list of nodes.</p>
-     */
     inline ListNodesResult& AddNodes(Node&& value) { m_nodes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListNodesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListNodesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListNodesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

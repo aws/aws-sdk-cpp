@@ -40,144 +40,49 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the notification trigger.</p>
      */
     inline const Aws::String& GetTriggerName() const{ return m_triggerName; }
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline bool TriggerNameHasBeenSet() const { return m_triggerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline void SetTriggerName(Aws::String&& value) { m_triggerNameHasBeenSet = true; m_triggerName = std::move(value); }
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline void SetTriggerName(const char* value) { m_triggerNameHasBeenSet = true; m_triggerName.assign(value); }
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline TriggerConfig& WithTriggerName(const Aws::String& value) { SetTriggerName(value); return *this;}
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline TriggerConfig& WithTriggerName(Aws::String&& value) { SetTriggerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the notification trigger.</p>
-     */
     inline TriggerConfig& WithTriggerName(const char* value) { SetTriggerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
      * topic through which notifications about deployment or instance events are
      * sent.</p>
      */
     inline const Aws::String& GetTriggerTargetArn() const{ return m_triggerTargetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline bool TriggerTargetArnHasBeenSet() const { return m_triggerTargetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline void SetTriggerTargetArn(const Aws::String& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline void SetTriggerTargetArn(Aws::String&& value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline void SetTriggerTargetArn(const char* value) { m_triggerTargetArnHasBeenSet = true; m_triggerTargetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline TriggerConfig& WithTriggerTargetArn(const Aws::String& value) { SetTriggerTargetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline TriggerConfig& WithTriggerTargetArn(Aws::String&& value) { SetTriggerTargetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
-     * topic through which notifications about deployment or instance events are
-     * sent.</p>
-     */
     inline TriggerConfig& WithTriggerTargetArn(const char* value) { SetTriggerTargetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The event type or types for which notifications are triggered.</p>
      */
     inline const Aws::Vector<TriggerEventType>& GetTriggerEvents() const{ return m_triggerEvents; }
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline bool TriggerEventsHasBeenSet() const { return m_triggerEventsHasBeenSet; }
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline void SetTriggerEvents(const Aws::Vector<TriggerEventType>& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = value; }
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline void SetTriggerEvents(Aws::Vector<TriggerEventType>&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents = std::move(value); }
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline TriggerConfig& WithTriggerEvents(const Aws::Vector<TriggerEventType>& value) { SetTriggerEvents(value); return *this;}
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline TriggerConfig& WithTriggerEvents(Aws::Vector<TriggerEventType>&& value) { SetTriggerEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline TriggerConfig& AddTriggerEvents(const TriggerEventType& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(value); return *this; }
-
-    /**
-     * <p>The event type or types for which notifications are triggered.</p>
-     */
     inline TriggerConfig& AddTriggerEvents(TriggerEventType&& value) { m_triggerEventsHasBeenSet = true; m_triggerEvents.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_triggerName;

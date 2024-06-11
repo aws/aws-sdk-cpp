@@ -39,54 +39,20 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of strings that each specifies the name of an Amazon Web Services
      * service.</p>
      */
     inline const Aws::Vector<ServiceName>& GetServiceNames() const{ return m_serviceNames; }
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline bool ServiceNamesHasBeenSet() const { return m_serviceNamesHasBeenSet; }
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline void SetServiceNames(const Aws::Vector<ServiceName>& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = value; }
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline void SetServiceNames(Aws::Vector<ServiceName>&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames = std::move(value); }
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline ServiceCollection& WithServiceNames(const Aws::Vector<ServiceName>& value) { SetServiceNames(value); return *this;}
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline ServiceCollection& WithServiceNames(Aws::Vector<ServiceName>&& value) { SetServiceNames(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline ServiceCollection& AddServiceNames(const ServiceName& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(value); return *this; }
-
-    /**
-     * <p>An array of strings that each specifies the name of an Amazon Web Services
-     * service.</p>
-     */
     inline ServiceCollection& AddServiceNames(ServiceName&& value) { m_serviceNamesHasBeenSet = true; m_serviceNames.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ServiceName> m_serviceNames;

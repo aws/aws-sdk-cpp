@@ -35,71 +35,31 @@ namespace Model
     AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    
     inline DeleteStorageVirtualMachineRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    
     inline DeleteStorageVirtualMachineRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    
     inline DeleteStorageVirtualMachineRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the SVM that you want to delete.</p>
      */
     inline const Aws::String& GetStorageVirtualMachineId() const{ return m_storageVirtualMachineId; }
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline bool StorageVirtualMachineIdHasBeenSet() const { return m_storageVirtualMachineIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline void SetStorageVirtualMachineId(const Aws::String& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = value; }
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline void SetStorageVirtualMachineId(Aws::String&& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = std::move(value); }
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline void SetStorageVirtualMachineId(const char* value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId.assign(value); }
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline DeleteStorageVirtualMachineRequest& WithStorageVirtualMachineId(const Aws::String& value) { SetStorageVirtualMachineId(value); return *this;}
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline DeleteStorageVirtualMachineRequest& WithStorageVirtualMachineId(Aws::String&& value) { SetStorageVirtualMachineId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the SVM that you want to delete.</p>
-     */
     inline DeleteStorageVirtualMachineRequest& WithStorageVirtualMachineId(const char* value) { SetStorageVirtualMachineId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientRequestToken;

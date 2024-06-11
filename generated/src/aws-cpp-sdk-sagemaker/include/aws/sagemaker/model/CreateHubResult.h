@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateHubResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the hub.</p>
      */
     inline const Aws::String& GetHubArn() const{ return m_hubArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hub.</p>
-     */
     inline void SetHubArn(const Aws::String& value) { m_hubArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hub.</p>
-     */
     inline void SetHubArn(Aws::String&& value) { m_hubArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hub.</p>
-     */
     inline void SetHubArn(const char* value) { m_hubArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hub.</p>
-     */
     inline CreateHubResult& WithHubArn(const Aws::String& value) { SetHubArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hub.</p>
-     */
     inline CreateHubResult& WithHubArn(Aws::String&& value) { SetHubArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the hub.</p>
-     */
     inline CreateHubResult& WithHubArn(const char* value) { SetHubArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateHubResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateHubResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateHubResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hubArn;

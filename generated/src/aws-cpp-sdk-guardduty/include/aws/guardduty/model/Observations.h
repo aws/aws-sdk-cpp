@@ -39,51 +39,20 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The text that was unusual.</p>
      */
     inline const Aws::Vector<Aws::String>& GetText() const{ return m_text; }
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline void SetText(const Aws::Vector<Aws::String>& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline void SetText(Aws::Vector<Aws::String>&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline Observations& WithText(const Aws::Vector<Aws::String>& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline Observations& WithText(Aws::Vector<Aws::String>&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline Observations& AddText(const Aws::String& value) { m_textHasBeenSet = true; m_text.push_back(value); return *this; }
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline Observations& AddText(Aws::String&& value) { m_textHasBeenSet = true; m_text.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The text that was unusual.</p>
-     */
     inline Observations& AddText(const char* value) { m_textHasBeenSet = true; m_text.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_text;

@@ -39,6 +39,7 @@ namespace Model
     AWS_WAF_API GetXssMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <a>XssMatchSet</a> that you specified in the
      * <code>GetXssMatchSet</code> request. For more information, see the following
@@ -50,77 +51,22 @@ namespace Model
      * <code>Type</code> </p> </li> </ul>
      */
     inline const XssMatchSet& GetXssMatchSet() const{ return m_xssMatchSet; }
-
-    /**
-     * <p>Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the following
-     * topics:</p> <ul> <li> <p> <a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</p> </li> <li> <p> <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code>
-     * object contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-     * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline void SetXssMatchSet(const XssMatchSet& value) { m_xssMatchSet = value; }
-
-    /**
-     * <p>Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the following
-     * topics:</p> <ul> <li> <p> <a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</p> </li> <li> <p> <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code>
-     * object contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-     * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline void SetXssMatchSet(XssMatchSet&& value) { m_xssMatchSet = std::move(value); }
-
-    /**
-     * <p>Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the following
-     * topics:</p> <ul> <li> <p> <a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</p> </li> <li> <p> <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code>
-     * object contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-     * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline GetXssMatchSetResult& WithXssMatchSet(const XssMatchSet& value) { SetXssMatchSet(value); return *this;}
-
-    /**
-     * <p>Information about the <a>XssMatchSet</a> that you specified in the
-     * <code>GetXssMatchSet</code> request. For more information, see the following
-     * topics:</p> <ul> <li> <p> <a>XssMatchSet</a>: Contains <code>Name</code>,
-     * <code>XssMatchSetId</code>, and an array of <code>XssMatchTuple</code>
-     * objects</p> </li> <li> <p> <a>XssMatchTuple</a>: Each <code>XssMatchTuple</code>
-     * object contains <code>FieldToMatch</code> and <code>TextTransformation</code>
-     * </p> </li> <li> <p> <a>FieldToMatch</a>: Contains <code>Data</code> and
-     * <code>Type</code> </p> </li> </ul>
-     */
     inline GetXssMatchSetResult& WithXssMatchSet(XssMatchSet&& value) { SetXssMatchSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetXssMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetXssMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetXssMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     XssMatchSet m_xssMatchSet;

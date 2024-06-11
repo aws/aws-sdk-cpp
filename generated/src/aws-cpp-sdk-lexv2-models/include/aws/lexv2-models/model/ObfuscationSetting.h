@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Value that determines whether Amazon Lex obscures slot values in conversation
      * logs. The default is to obscure the values.</p>
      */
     inline const ObfuscationSettingType& GetObfuscationSettingType() const{ return m_obfuscationSettingType; }
-
-    /**
-     * <p>Value that determines whether Amazon Lex obscures slot values in conversation
-     * logs. The default is to obscure the values.</p>
-     */
     inline bool ObfuscationSettingTypeHasBeenSet() const { return m_obfuscationSettingTypeHasBeenSet; }
-
-    /**
-     * <p>Value that determines whether Amazon Lex obscures slot values in conversation
-     * logs. The default is to obscure the values.</p>
-     */
     inline void SetObfuscationSettingType(const ObfuscationSettingType& value) { m_obfuscationSettingTypeHasBeenSet = true; m_obfuscationSettingType = value; }
-
-    /**
-     * <p>Value that determines whether Amazon Lex obscures slot values in conversation
-     * logs. The default is to obscure the values.</p>
-     */
     inline void SetObfuscationSettingType(ObfuscationSettingType&& value) { m_obfuscationSettingTypeHasBeenSet = true; m_obfuscationSettingType = std::move(value); }
-
-    /**
-     * <p>Value that determines whether Amazon Lex obscures slot values in conversation
-     * logs. The default is to obscure the values.</p>
-     */
     inline ObfuscationSetting& WithObfuscationSettingType(const ObfuscationSettingType& value) { SetObfuscationSettingType(value); return *this;}
-
-    /**
-     * <p>Value that determines whether Amazon Lex obscures slot values in conversation
-     * logs. The default is to obscure the values.</p>
-     */
     inline ObfuscationSetting& WithObfuscationSettingType(ObfuscationSettingType&& value) { SetObfuscationSettingType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObfuscationSettingType m_obfuscationSettingType;

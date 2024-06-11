@@ -39,142 +39,55 @@ namespace Model
     AWS_SQS_API ListQueuesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of queue URLs, up to 1,000 entries, or the value of
      * <code>MaxResults</code> that you sent in the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetQueueUrls() const{ return m_queueUrls; }
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline void SetQueueUrls(const Aws::Vector<Aws::String>& value) { m_queueUrls = value; }
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline void SetQueueUrls(Aws::Vector<Aws::String>&& value) { m_queueUrls = std::move(value); }
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline ListQueuesResult& WithQueueUrls(const Aws::Vector<Aws::String>& value) { SetQueueUrls(value); return *this;}
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline ListQueuesResult& WithQueueUrls(Aws::Vector<Aws::String>&& value) { SetQueueUrls(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline ListQueuesResult& AddQueueUrls(const Aws::String& value) { m_queueUrls.push_back(value); return *this; }
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline ListQueuesResult& AddQueueUrls(Aws::String&& value) { m_queueUrls.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of queue URLs, up to 1,000 entries, or the value of
-     * <code>MaxResults</code> that you sent in the request.</p>
-     */
     inline ListQueuesResult& AddQueueUrls(const char* value) { m_queueUrls.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Pagination token to include in the next request. Token value is
      * <code>null</code> if there are no additional results to request, or if you did
      * not set <code>MaxResults</code> in the request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Pagination token to include in the next request. Token value is
-     * <code>null</code> if there are no additional results to request, or if you did
-     * not set <code>MaxResults</code> in the request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Pagination token to include in the next request. Token value is
-     * <code>null</code> if there are no additional results to request, or if you did
-     * not set <code>MaxResults</code> in the request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Pagination token to include in the next request. Token value is
-     * <code>null</code> if there are no additional results to request, or if you did
-     * not set <code>MaxResults</code> in the request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Pagination token to include in the next request. Token value is
-     * <code>null</code> if there are no additional results to request, or if you did
-     * not set <code>MaxResults</code> in the request.</p>
-     */
     inline ListQueuesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Pagination token to include in the next request. Token value is
-     * <code>null</code> if there are no additional results to request, or if you did
-     * not set <code>MaxResults</code> in the request.</p>
-     */
     inline ListQueuesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Pagination token to include in the next request. Token value is
-     * <code>null</code> if there are no additional results to request, or if you did
-     * not set <code>MaxResults</code> in the request.</p>
-     */
     inline ListQueuesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListQueuesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListQueuesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListQueuesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ListQueuesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ListQueuesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_queueUrls;

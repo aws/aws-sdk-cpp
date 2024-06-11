@@ -38,46 +38,19 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The contract or wallet address.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline OwnerFilter& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline OwnerFilter& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The contract or wallet address.</p>
-     */
     inline OwnerFilter& WithAddress(const char* value) { SetAddress(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_address;

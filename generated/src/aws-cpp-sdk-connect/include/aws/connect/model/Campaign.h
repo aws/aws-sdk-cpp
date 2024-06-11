@@ -37,46 +37,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for a campaign.</p>
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline Campaign& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline Campaign& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for a campaign.</p>
-     */
     inline Campaign& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_campaignId;

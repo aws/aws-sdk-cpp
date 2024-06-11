@@ -37,47 +37,21 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A unique identifier for the container.</p>
      */
     inline const Aws::String& GetContainerName() const{ return m_containerName; }
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline TaskContainerDependency& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline TaskContainerDependency& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the container.</p>
-     */
     inline TaskContainerDependency& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The dependency condition of the container. The following are the available
      * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
@@ -92,112 +66,14 @@ namespace Model
      * can't be set on an essential container. </p> </li> </ul>
      */
     inline const Aws::String& GetCondition() const{ return m_condition; }
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline TaskContainerDependency& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline TaskContainerDependency& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-
-    /**
-     * <p>The dependency condition of the container. The following are the available
-     * conditions and their behavior:</p> <ul> <li> <p> <code>START</code> - This
-     * condition emulates the behavior of links and volumes today. It validates that a
-     * dependent container is started before permitting other containers to start. </p>
-     * </li> <li> <p> <code>COMPLETE</code> - This condition validates that a dependent
-     * container runs to completion (exits) before permitting other containers to
-     * start. This can be useful for nonessential containers that run a script and then
-     * exit. This condition can't be set on an essential container. </p> </li> <li> <p>
-     * <code>SUCCESS</code> - This condition is the same as <code>COMPLETE</code>, but
-     * it also requires that the container exits with a zero status. This condition
-     * can't be set on an essential container. </p> </li> </ul>
-     */
     inline TaskContainerDependency& WithCondition(const char* value) { SetCondition(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_containerName;

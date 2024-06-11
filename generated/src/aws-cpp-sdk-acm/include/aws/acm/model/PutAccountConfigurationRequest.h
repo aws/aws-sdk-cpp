@@ -35,37 +35,19 @@ namespace Model
     AWS_ACM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies expiration events associated with an account.</p>
      */
     inline const ExpiryEventsConfiguration& GetExpiryEvents() const{ return m_expiryEvents; }
-
-    /**
-     * <p>Specifies expiration events associated with an account.</p>
-     */
     inline bool ExpiryEventsHasBeenSet() const { return m_expiryEventsHasBeenSet; }
-
-    /**
-     * <p>Specifies expiration events associated with an account.</p>
-     */
     inline void SetExpiryEvents(const ExpiryEventsConfiguration& value) { m_expiryEventsHasBeenSet = true; m_expiryEvents = value; }
-
-    /**
-     * <p>Specifies expiration events associated with an account.</p>
-     */
     inline void SetExpiryEvents(ExpiryEventsConfiguration&& value) { m_expiryEventsHasBeenSet = true; m_expiryEvents = std::move(value); }
-
-    /**
-     * <p>Specifies expiration events associated with an account.</p>
-     */
     inline PutAccountConfigurationRequest& WithExpiryEvents(const ExpiryEventsConfiguration& value) { SetExpiryEvents(value); return *this;}
-
-    /**
-     * <p>Specifies expiration events associated with an account.</p>
-     */
     inline PutAccountConfigurationRequest& WithExpiryEvents(ExpiryEventsConfiguration&& value) { SetExpiryEvents(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Customer-chosen string used to distinguish between calls to
      * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
@@ -75,77 +57,14 @@ namespace Model
      * treats each call as a new request.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline PutAccountConfigurationRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline PutAccountConfigurationRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Customer-chosen string used to distinguish between calls to
-     * <code>PutAccountConfiguration</code>. Idempotency tokens time out after one
-     * hour. If you call <code>PutAccountConfiguration</code> multiple times with the
-     * same unexpired idempotency token, ACM treats it as the same request and returns
-     * the original result. If you change the idempotency token for each call, ACM
-     * treats each call as a new request.</p>
-     */
     inline PutAccountConfigurationRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
-
+    ///@}
   private:
 
     ExpiryEventsConfiguration m_expiryEvents;

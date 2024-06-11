@@ -40,82 +40,32 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The billing method for the remote access session.</p>
      */
     inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
-
-    /**
-     * <p>The billing method for the remote access session.</p>
-     */
     inline bool BillingMethodHasBeenSet() const { return m_billingMethodHasBeenSet; }
-
-    /**
-     * <p>The billing method for the remote access session.</p>
-     */
     inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
-
-    /**
-     * <p>The billing method for the remote access session.</p>
-     */
     inline void SetBillingMethod(BillingMethod&& value) { m_billingMethodHasBeenSet = true; m_billingMethod = std::move(value); }
-
-    /**
-     * <p>The billing method for the remote access session.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(const BillingMethod& value) { SetBillingMethod(value); return *this;}
-
-    /**
-     * <p>The billing method for the remote access session.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& WithBillingMethod(BillingMethod&& value) { SetBillingMethod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of ARNs included in the VPC endpoint configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const{ return m_vpceConfigurationArns; }
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline bool VpceConfigurationArnsHasBeenSet() const { return m_vpceConfigurationArnsHasBeenSet; }
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline void SetVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = value; }
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline void SetVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns = std::move(value); }
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(const Aws::Vector<Aws::String>& value) { SetVpceConfigurationArns(value); return *this;}
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& WithVpceConfigurationArns(Aws::Vector<Aws::String>&& value) { SetVpceConfigurationArns(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const Aws::String& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(Aws::String&& value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of ARNs included in the VPC endpoint configuration.</p>
-     */
     inline CreateRemoteAccessSessionConfiguration& AddVpceConfigurationArns(const char* value) { m_vpceConfigurationArnsHasBeenSet = true; m_vpceConfigurationArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     BillingMethod m_billingMethod;

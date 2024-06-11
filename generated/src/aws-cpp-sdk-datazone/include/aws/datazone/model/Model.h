@@ -37,46 +37,19 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the smithy model of the API.</p>
      */
     inline const Aws::String& GetSmithy() const{ return m_smithy; }
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline bool SmithyHasBeenSet() const { return m_smithyHasBeenSet; }
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline void SetSmithy(const Aws::String& value) { m_smithyHasBeenSet = true; m_smithy = value; }
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline void SetSmithy(Aws::String&& value) { m_smithyHasBeenSet = true; m_smithy = std::move(value); }
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline void SetSmithy(const char* value) { m_smithyHasBeenSet = true; m_smithy.assign(value); }
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline Model& WithSmithy(const Aws::String& value) { SetSmithy(value); return *this;}
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline Model& WithSmithy(Aws::String&& value) { SetSmithy(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the smithy model of the API.</p>
-     */
     inline Model& WithSmithy(const char* value) { SetSmithy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_smithy;

@@ -41,118 +41,44 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
      * information about the snapshot that is generated. This list can hold a maximum
      * of 6 <code>FileGroup</code> configurations.</p>
      */
     inline const Aws::Vector<SnapshotFileGroup>& GetFileGroups() const{ return m_fileGroups; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline bool FileGroupsHasBeenSet() const { return m_fileGroupsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline void SetFileGroups(const Aws::Vector<SnapshotFileGroup>& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = value; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline void SetFileGroups(Aws::Vector<SnapshotFileGroup>&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups = std::move(value); }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline SnapshotConfiguration& WithFileGroups(const Aws::Vector<SnapshotFileGroup>& value) { SetFileGroups(value); return *this;}
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline SnapshotConfiguration& WithFileGroups(Aws::Vector<SnapshotFileGroup>&& value) { SetFileGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline SnapshotConfiguration& AddFileGroups(const SnapshotFileGroup& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>SnapshotJobResultFileGroup</code> objects that contain
-     * information about the snapshot that is generated. This list can hold a maximum
-     * of 6 <code>FileGroup</code> configurations.</p>
-     */
     inline SnapshotConfiguration& AddFileGroups(SnapshotFileGroup&& value) { m_fileGroupsHasBeenSet = true; m_fileGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure that contains information on the Amazon S3 bucket that the
      * generated snapshot is stored in.</p>
      */
     inline const SnapshotDestinationConfiguration& GetDestinationConfiguration() const{ return m_destinationConfiguration; }
-
-    /**
-     * <p>A structure that contains information on the Amazon S3 bucket that the
-     * generated snapshot is stored in.</p>
-     */
     inline bool DestinationConfigurationHasBeenSet() const { return m_destinationConfigurationHasBeenSet; }
-
-    /**
-     * <p>A structure that contains information on the Amazon S3 bucket that the
-     * generated snapshot is stored in.</p>
-     */
     inline void SetDestinationConfiguration(const SnapshotDestinationConfiguration& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = value; }
-
-    /**
-     * <p>A structure that contains information on the Amazon S3 bucket that the
-     * generated snapshot is stored in.</p>
-     */
     inline void SetDestinationConfiguration(SnapshotDestinationConfiguration&& value) { m_destinationConfigurationHasBeenSet = true; m_destinationConfiguration = std::move(value); }
-
-    /**
-     * <p>A structure that contains information on the Amazon S3 bucket that the
-     * generated snapshot is stored in.</p>
-     */
     inline SnapshotConfiguration& WithDestinationConfiguration(const SnapshotDestinationConfiguration& value) { SetDestinationConfiguration(value); return *this;}
-
-    /**
-     * <p>A structure that contains information on the Amazon S3 bucket that the
-     * generated snapshot is stored in.</p>
-     */
     inline SnapshotConfiguration& WithDestinationConfiguration(SnapshotDestinationConfiguration&& value) { SetDestinationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Parameters& GetParameters() const{ return m_parameters; }
-
-    
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    
     inline void SetParameters(const Parameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    
     inline void SetParameters(Parameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    
     inline SnapshotConfiguration& WithParameters(const Parameters& value) { SetParameters(value); return *this;}
-
-    
     inline SnapshotConfiguration& WithParameters(Parameters&& value) { SetParameters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SnapshotFileGroup> m_fileGroups;

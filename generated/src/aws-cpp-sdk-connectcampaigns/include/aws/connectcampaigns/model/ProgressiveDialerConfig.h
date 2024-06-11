@@ -35,31 +35,21 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline double GetBandwidthAllocation() const{ return m_bandwidthAllocation; }
-
-    
     inline bool BandwidthAllocationHasBeenSet() const { return m_bandwidthAllocationHasBeenSet; }
-
-    
     inline void SetBandwidthAllocation(double value) { m_bandwidthAllocationHasBeenSet = true; m_bandwidthAllocation = value; }
-
-    
     inline ProgressiveDialerConfig& WithBandwidthAllocation(double value) { SetBandwidthAllocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline double GetDialingCapacity() const{ return m_dialingCapacity; }
-
-    
     inline bool DialingCapacityHasBeenSet() const { return m_dialingCapacityHasBeenSet; }
-
-    
     inline void SetDialingCapacity(double value) { m_dialingCapacityHasBeenSet = true; m_dialingCapacity = value; }
-
-    
     inline ProgressiveDialerConfig& WithDialingCapacity(double value) { SetDialingCapacity(value); return *this;}
-
+    ///@}
   private:
 
     double m_bandwidthAllocation;

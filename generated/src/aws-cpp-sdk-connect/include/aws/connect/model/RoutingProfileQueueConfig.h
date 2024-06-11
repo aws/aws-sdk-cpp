@@ -38,37 +38,19 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about a queue resource.</p>
      */
     inline const RoutingProfileQueueReference& GetQueueReference() const{ return m_queueReference; }
-
-    /**
-     * <p>Contains information about a queue resource.</p>
-     */
     inline bool QueueReferenceHasBeenSet() const { return m_queueReferenceHasBeenSet; }
-
-    /**
-     * <p>Contains information about a queue resource.</p>
-     */
     inline void SetQueueReference(const RoutingProfileQueueReference& value) { m_queueReferenceHasBeenSet = true; m_queueReference = value; }
-
-    /**
-     * <p>Contains information about a queue resource.</p>
-     */
     inline void SetQueueReference(RoutingProfileQueueReference&& value) { m_queueReferenceHasBeenSet = true; m_queueReference = std::move(value); }
-
-    /**
-     * <p>Contains information about a queue resource.</p>
-     */
     inline RoutingProfileQueueConfig& WithQueueReference(const RoutingProfileQueueReference& value) { SetQueueReference(value); return *this;}
-
-    /**
-     * <p>Contains information about a queue resource.</p>
-     */
     inline RoutingProfileQueueConfig& WithQueueReference(RoutingProfileQueueReference&& value) { SetQueueReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order in which contacts are to be handled for the queue. For more
      * information, see <a
@@ -76,32 +58,12 @@ namespace Model
      * priority and delay</a>.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>The order in which contacts are to be handled for the queue. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-     * priority and delay</a>.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>The order in which contacts are to be handled for the queue. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-     * priority and delay</a>.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>The order in which contacts are to be handled for the queue. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-     * priority and delay</a>.</p>
-     */
     inline RoutingProfileQueueConfig& WithPriority(int value) { SetPriority(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The delay, in seconds, a contact should be in the queue before they are
      * routed to an available agent. For more information, see <a
@@ -109,31 +71,10 @@ namespace Model
      * priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
     inline int GetDelay() const{ return m_delay; }
-
-    /**
-     * <p>The delay, in seconds, a contact should be in the queue before they are
-     * routed to an available agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-     * priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-     */
     inline bool DelayHasBeenSet() const { return m_delayHasBeenSet; }
-
-    /**
-     * <p>The delay, in seconds, a contact should be in the queue before they are
-     * routed to an available agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-     * priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-     */
     inline void SetDelay(int value) { m_delayHasBeenSet = true; m_delay = value; }
-
-    /**
-     * <p>The delay, in seconds, a contact should be in the queue before they are
-     * routed to an available agent. For more information, see <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
-     * priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-     */
     inline RoutingProfileQueueConfig& WithDelay(int value) { SetDelay(value); return *this;}
-
+    ///@}
   private:
 
     RoutingProfileQueueReference m_queueReference;

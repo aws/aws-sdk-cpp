@@ -39,73 +39,30 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Reference that identifies the policy object.</p>
      */
     inline const ObjectReference& GetPolicyReference() const{ return m_policyReference; }
-
-    /**
-     * <p>Reference that identifies the policy object.</p>
-     */
     inline bool PolicyReferenceHasBeenSet() const { return m_policyReferenceHasBeenSet; }
-
-    /**
-     * <p>Reference that identifies the policy object.</p>
-     */
     inline void SetPolicyReference(const ObjectReference& value) { m_policyReferenceHasBeenSet = true; m_policyReference = value; }
-
-    /**
-     * <p>Reference that identifies the policy object.</p>
-     */
     inline void SetPolicyReference(ObjectReference&& value) { m_policyReferenceHasBeenSet = true; m_policyReference = std::move(value); }
-
-    /**
-     * <p>Reference that identifies the policy object.</p>
-     */
     inline BatchDetachPolicy& WithPolicyReference(const ObjectReference& value) { SetPolicyReference(value); return *this;}
-
-    /**
-     * <p>Reference that identifies the policy object.</p>
-     */
     inline BatchDetachPolicy& WithPolicyReference(ObjectReference&& value) { SetPolicyReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Reference that identifies the object whose policy object will be
      * detached.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
-
-    /**
-     * <p>Reference that identifies the object whose policy object will be
-     * detached.</p>
-     */
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-
-    /**
-     * <p>Reference that identifies the object whose policy object will be
-     * detached.</p>
-     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-
-    /**
-     * <p>Reference that identifies the object whose policy object will be
-     * detached.</p>
-     */
     inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-
-    /**
-     * <p>Reference that identifies the object whose policy object will be
-     * detached.</p>
-     */
     inline BatchDetachPolicy& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-
-    /**
-     * <p>Reference that identifies the object whose policy object will be
-     * detached.</p>
-     */
     inline BatchDetachPolicy& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ObjectReference m_policyReference;

@@ -41,103 +41,35 @@ namespace Model
     AWS_ACCESSANALYZER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
      * of the analyzer</a> to retrieve information from.</p>
      */
     inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-getting-started.html#permission-resources">ARN
-     * of the analyzer</a> to retrieve information from.</p>
-     */
     inline GetAnalyzedResourceRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the resource to retrieve information about.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline GetAnalyzedResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline GetAnalyzedResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the resource to retrieve information about.</p>
-     */
     inline GetAnalyzedResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analyzerArn;

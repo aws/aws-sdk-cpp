@@ -41,149 +41,57 @@ namespace Model
     AWS_STORAGEGATEWAY_API ListVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-
-    
     inline ListVolumesResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline ListVolumesResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline ListVolumesResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
      * If there are no more volumes to list, this field does not appear in the response
      * body.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
-     * If there are no more volumes to list, this field does not appear in the response
-     * body.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
-     * If there are no more volumes to list, this field does not appear in the response
-     * body.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
-     * If there are no more volumes to list, this field does not appear in the response
-     * body.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
-     * If there are no more volumes to list, this field does not appear in the response
-     * body.</p>
-     */
     inline ListVolumesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
-     * If there are no more volumes to list, this field does not appear in the response
-     * body.</p>
-     */
     inline ListVolumesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>Use the marker in your next request to continue pagination of iSCSI volumes.
-     * If there are no more volumes to list, this field does not appear in the response
-     * body.</p>
-     */
     inline ListVolumesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
      * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
      * is an empty array "[]".</p>
      */
     inline const Aws::Vector<VolumeInfo>& GetVolumeInfos() const{ return m_volumeInfos; }
-
-    /**
-     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
-     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
-     * is an empty array "[]".</p>
-     */
     inline void SetVolumeInfos(const Aws::Vector<VolumeInfo>& value) { m_volumeInfos = value; }
-
-    /**
-     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
-     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
-     * is an empty array "[]".</p>
-     */
     inline void SetVolumeInfos(Aws::Vector<VolumeInfo>&& value) { m_volumeInfos = std::move(value); }
-
-    /**
-     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
-     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
-     * is an empty array "[]".</p>
-     */
     inline ListVolumesResult& WithVolumeInfos(const Aws::Vector<VolumeInfo>& value) { SetVolumeInfos(value); return *this;}
-
-    /**
-     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
-     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
-     * is an empty array "[]".</p>
-     */
     inline ListVolumesResult& WithVolumeInfos(Aws::Vector<VolumeInfo>&& value) { SetVolumeInfos(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
-     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
-     * is an empty array "[]".</p>
-     */
     inline ListVolumesResult& AddVolumeInfos(const VolumeInfo& value) { m_volumeInfos.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <a>VolumeInfo</a> objects, where each object describes an iSCSI
-     * volume. If no volumes are defined for the gateway, then <code>VolumeInfos</code>
-     * is an empty array "[]".</p>
-     */
     inline ListVolumesResult& AddVolumeInfos(VolumeInfo&& value) { m_volumeInfos.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListVolumesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListVolumesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListVolumesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

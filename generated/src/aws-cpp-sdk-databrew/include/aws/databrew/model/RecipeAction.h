@@ -41,112 +41,38 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline RecipeAction& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline RecipeAction& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a valid DataBrew transformation to be performed on the data.</p>
-     */
     inline RecipeAction& WithOperation(const char* value) { SetOperation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contextual parameters for the transformation.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Contextual parameters for the transformation.</p>
-     */
     inline RecipeAction& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_operation;

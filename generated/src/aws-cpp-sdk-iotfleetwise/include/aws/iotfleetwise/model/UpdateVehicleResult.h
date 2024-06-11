@@ -32,99 +32,42 @@ namespace Model
     AWS_IOTFLEETWISE_API UpdateVehicleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the updated vehicle.</p>
      */
     inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
-
-    /**
-     * <p>The ID of the updated vehicle.</p>
-     */
     inline void SetVehicleName(const Aws::String& value) { m_vehicleName = value; }
-
-    /**
-     * <p>The ID of the updated vehicle.</p>
-     */
     inline void SetVehicleName(Aws::String&& value) { m_vehicleName = std::move(value); }
-
-    /**
-     * <p>The ID of the updated vehicle.</p>
-     */
     inline void SetVehicleName(const char* value) { m_vehicleName.assign(value); }
-
-    /**
-     * <p>The ID of the updated vehicle.</p>
-     */
     inline UpdateVehicleResult& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-
-    /**
-     * <p>The ID of the updated vehicle.</p>
-     */
     inline UpdateVehicleResult& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the updated vehicle.</p>
-     */
     inline UpdateVehicleResult& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the updated vehicle.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the updated vehicle.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The ARN of the updated vehicle.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the updated vehicle.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the updated vehicle.</p>
-     */
     inline UpdateVehicleResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the updated vehicle.</p>
-     */
     inline UpdateVehicleResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the updated vehicle.</p>
-     */
     inline UpdateVehicleResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVehicleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVehicleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVehicleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vehicleName;

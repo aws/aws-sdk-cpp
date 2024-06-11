@@ -35,47 +35,25 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The number of pixels in the height of the video frame.
      */
     inline int GetFrameHeight() const{ return m_frameHeight; }
-
-    /**
-     * The number of pixels in the height of the video frame.
-     */
     inline bool FrameHeightHasBeenSet() const { return m_frameHeightHasBeenSet; }
-
-    /**
-     * The number of pixels in the height of the video frame.
-     */
     inline void SetFrameHeight(int value) { m_frameHeightHasBeenSet = true; m_frameHeight = value; }
-
-    /**
-     * The number of pixels in the height of the video frame.
-     */
     inline FrameResolution& WithFrameHeight(int value) { SetFrameHeight(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The number of pixels in the width of the video frame.
      */
     inline int GetFrameWidth() const{ return m_frameWidth; }
-
-    /**
-     * The number of pixels in the width of the video frame.
-     */
     inline bool FrameWidthHasBeenSet() const { return m_frameWidthHasBeenSet; }
-
-    /**
-     * The number of pixels in the width of the video frame.
-     */
     inline void SetFrameWidth(int value) { m_frameWidthHasBeenSet = true; m_frameWidth = value; }
-
-    /**
-     * The number of pixels in the width of the video frame.
-     */
     inline FrameResolution& WithFrameWidth(int value) { SetFrameWidth(value); return *this;}
-
+    ///@}
   private:
 
     int m_frameHeight;

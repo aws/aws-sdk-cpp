@@ -34,92 +34,34 @@ namespace Model
     AWS_INSPECTOR2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline DisableRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline DisableRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline DisableRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline DisableRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of account IDs you want to disable Amazon Inspector scans for.</p>
-     */
     inline DisableRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource scan types you want to disable.</p>
      */
     inline const Aws::Vector<ResourceScanType>& GetResourceTypes() const{ return m_resourceTypes; }
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline void SetResourceTypes(const Aws::Vector<ResourceScanType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline void SetResourceTypes(Aws::Vector<ResourceScanType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline DisableRequest& WithResourceTypes(const Aws::Vector<ResourceScanType>& value) { SetResourceTypes(value); return *this;}
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline DisableRequest& WithResourceTypes(Aws::Vector<ResourceScanType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline DisableRequest& AddResourceTypes(const ResourceScanType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The resource scan types you want to disable.</p>
-     */
     inline DisableRequest& AddResourceTypes(ResourceScanType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_accountIds;

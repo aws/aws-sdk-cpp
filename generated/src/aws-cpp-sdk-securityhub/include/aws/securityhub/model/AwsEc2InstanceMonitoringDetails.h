@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
      * monitoring is turned on. </p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline AwsEc2InstanceMonitoringDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline AwsEc2InstanceMonitoringDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p> Indicates whether detailed monitoring is turned on. Otherwise, basic
-     * monitoring is turned on. </p>
-     */
     inline AwsEc2InstanceMonitoringDetails& WithState(const char* value) { SetState(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_state;

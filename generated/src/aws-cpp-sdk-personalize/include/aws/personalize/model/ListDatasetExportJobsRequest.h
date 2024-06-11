@@ -34,124 +34,45 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
      * for.</p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline ListDatasetExportJobsRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline ListDatasetExportJobsRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the dataset to list the dataset export jobs
-     * for.</p>
-     */
     inline ListDatasetExportJobsRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
      * for getting the next set of dataset export jobs (if they exist).</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline ListDatasetExportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline ListDatasetExportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token returned from the previous call to <code>ListDatasetExportJobs</code>
-     * for getting the next set of dataset export jobs (if they exist).</p>
-     */
     inline ListDatasetExportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of dataset export jobs to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of dataset export jobs to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of dataset export jobs to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of dataset export jobs to return.</p>
-     */
     inline ListDatasetExportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetArn;

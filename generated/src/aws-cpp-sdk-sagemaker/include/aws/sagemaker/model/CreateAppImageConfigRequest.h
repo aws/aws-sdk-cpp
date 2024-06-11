@@ -39,131 +39,49 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the AppImageConfig. Must be unique to your account.</p>
      */
     inline const Aws::String& GetAppImageConfigName() const{ return m_appImageConfigName; }
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline bool AppImageConfigNameHasBeenSet() const { return m_appImageConfigNameHasBeenSet; }
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline void SetAppImageConfigName(const Aws::String& value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName = value; }
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline void SetAppImageConfigName(Aws::String&& value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName = std::move(value); }
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline void SetAppImageConfigName(const char* value) { m_appImageConfigNameHasBeenSet = true; m_appImageConfigName.assign(value); }
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline CreateAppImageConfigRequest& WithAppImageConfigName(const Aws::String& value) { SetAppImageConfigName(value); return *this;}
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline CreateAppImageConfigRequest& WithAppImageConfigName(Aws::String&& value) { SetAppImageConfigName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the AppImageConfig. Must be unique to your account.</p>
-     */
     inline CreateAppImageConfigRequest& WithAppImageConfigName(const char* value) { SetAppImageConfigName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags to apply to the AppImageConfig.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline CreateAppImageConfigRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline CreateAppImageConfigRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline CreateAppImageConfigRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags to apply to the AppImageConfig.</p>
-     */
     inline CreateAppImageConfigRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
      * AppImageConfig API. This kernel will be shown to users before the image starts.
      * Once the image runs, all kernels are visible in JupyterLab.</p>
      */
     inline const KernelGatewayImageConfig& GetKernelGatewayImageConfig() const{ return m_kernelGatewayImageConfig; }
-
-    /**
-     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
-     * AppImageConfig API. This kernel will be shown to users before the image starts.
-     * Once the image runs, all kernels are visible in JupyterLab.</p>
-     */
     inline bool KernelGatewayImageConfigHasBeenSet() const { return m_kernelGatewayImageConfigHasBeenSet; }
-
-    /**
-     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
-     * AppImageConfig API. This kernel will be shown to users before the image starts.
-     * Once the image runs, all kernels are visible in JupyterLab.</p>
-     */
     inline void SetKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { m_kernelGatewayImageConfigHasBeenSet = true; m_kernelGatewayImageConfig = value; }
-
-    /**
-     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
-     * AppImageConfig API. This kernel will be shown to users before the image starts.
-     * Once the image runs, all kernels are visible in JupyterLab.</p>
-     */
     inline void SetKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { m_kernelGatewayImageConfigHasBeenSet = true; m_kernelGatewayImageConfig = std::move(value); }
-
-    /**
-     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
-     * AppImageConfig API. This kernel will be shown to users before the image starts.
-     * Once the image runs, all kernels are visible in JupyterLab.</p>
-     */
     inline CreateAppImageConfigRequest& WithKernelGatewayImageConfig(const KernelGatewayImageConfig& value) { SetKernelGatewayImageConfig(value); return *this;}
-
-    /**
-     * <p>The KernelGatewayImageConfig. You can only specify one image kernel in the
-     * AppImageConfig API. This kernel will be shown to users before the image starts.
-     * Once the image runs, all kernels are visible in JupyterLab.</p>
-     */
     inline CreateAppImageConfigRequest& WithKernelGatewayImageConfig(KernelGatewayImageConfig&& value) { SetKernelGatewayImageConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
      * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
@@ -171,90 +89,26 @@ namespace Model
      * JupyterLab.</p>
      */
     inline const JupyterLabAppImageConfig& GetJupyterLabAppImageConfig() const{ return m_jupyterLabAppImageConfig; }
-
-    /**
-     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
-     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
-     * before the image starts. After the image runs, all kernels are visible in
-     * JupyterLab.</p>
-     */
     inline bool JupyterLabAppImageConfigHasBeenSet() const { return m_jupyterLabAppImageConfigHasBeenSet; }
-
-    /**
-     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
-     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
-     * before the image starts. After the image runs, all kernels are visible in
-     * JupyterLab.</p>
-     */
     inline void SetJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { m_jupyterLabAppImageConfigHasBeenSet = true; m_jupyterLabAppImageConfig = value; }
-
-    /**
-     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
-     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
-     * before the image starts. After the image runs, all kernels are visible in
-     * JupyterLab.</p>
-     */
     inline void SetJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { m_jupyterLabAppImageConfigHasBeenSet = true; m_jupyterLabAppImageConfig = std::move(value); }
-
-    /**
-     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
-     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
-     * before the image starts. After the image runs, all kernels are visible in
-     * JupyterLab.</p>
-     */
     inline CreateAppImageConfigRequest& WithJupyterLabAppImageConfig(const JupyterLabAppImageConfig& value) { SetJupyterLabAppImageConfig(value); return *this;}
-
-    /**
-     * <p>The <code>JupyterLabAppImageConfig</code>. You can only specify one image
-     * kernel in the <code>AppImageConfig</code> API. This kernel is shown to users
-     * before the image starts. After the image runs, all kernels are visible in
-     * JupyterLab.</p>
-     */
     inline CreateAppImageConfigRequest& WithJupyterLabAppImageConfig(JupyterLabAppImageConfig&& value) { SetJupyterLabAppImageConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
      * kernel in the AppImageConfig API. This kernel is shown to users before the image
      * starts. After the image runs, all kernels are visible in Code Editor.</p>
      */
     inline const CodeEditorAppImageConfig& GetCodeEditorAppImageConfig() const{ return m_codeEditorAppImageConfig; }
-
-    /**
-     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
-     * kernel in the AppImageConfig API. This kernel is shown to users before the image
-     * starts. After the image runs, all kernels are visible in Code Editor.</p>
-     */
     inline bool CodeEditorAppImageConfigHasBeenSet() const { return m_codeEditorAppImageConfigHasBeenSet; }
-
-    /**
-     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
-     * kernel in the AppImageConfig API. This kernel is shown to users before the image
-     * starts. After the image runs, all kernels are visible in Code Editor.</p>
-     */
     inline void SetCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { m_codeEditorAppImageConfigHasBeenSet = true; m_codeEditorAppImageConfig = value; }
-
-    /**
-     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
-     * kernel in the AppImageConfig API. This kernel is shown to users before the image
-     * starts. After the image runs, all kernels are visible in Code Editor.</p>
-     */
     inline void SetCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { m_codeEditorAppImageConfigHasBeenSet = true; m_codeEditorAppImageConfig = std::move(value); }
-
-    /**
-     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
-     * kernel in the AppImageConfig API. This kernel is shown to users before the image
-     * starts. After the image runs, all kernels are visible in Code Editor.</p>
-     */
     inline CreateAppImageConfigRequest& WithCodeEditorAppImageConfig(const CodeEditorAppImageConfig& value) { SetCodeEditorAppImageConfig(value); return *this;}
-
-    /**
-     * <p>The <code>CodeEditorAppImageConfig</code>. You can only specify one image
-     * kernel in the AppImageConfig API. This kernel is shown to users before the image
-     * starts. After the image runs, all kernels are visible in Code Editor.</p>
-     */
     inline CreateAppImageConfigRequest& WithCodeEditorAppImageConfig(CodeEditorAppImageConfig&& value) { SetCodeEditorAppImageConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appImageConfigName;

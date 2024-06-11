@@ -38,118 +38,45 @@ namespace Model
     AWS_APIGATEWAYV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The domain name.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline UpdateDomainNameRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline UpdateDomainNameRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name.</p>
-     */
     inline UpdateDomainNameRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain name configurations.</p>
      */
     inline const Aws::Vector<DomainNameConfiguration>& GetDomainNameConfigurations() const{ return m_domainNameConfigurations; }
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline bool DomainNameConfigurationsHasBeenSet() const { return m_domainNameConfigurationsHasBeenSet; }
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline void SetDomainNameConfigurations(const Aws::Vector<DomainNameConfiguration>& value) { m_domainNameConfigurationsHasBeenSet = true; m_domainNameConfigurations = value; }
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline void SetDomainNameConfigurations(Aws::Vector<DomainNameConfiguration>&& value) { m_domainNameConfigurationsHasBeenSet = true; m_domainNameConfigurations = std::move(value); }
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline UpdateDomainNameRequest& WithDomainNameConfigurations(const Aws::Vector<DomainNameConfiguration>& value) { SetDomainNameConfigurations(value); return *this;}
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline UpdateDomainNameRequest& WithDomainNameConfigurations(Aws::Vector<DomainNameConfiguration>&& value) { SetDomainNameConfigurations(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline UpdateDomainNameRequest& AddDomainNameConfigurations(const DomainNameConfiguration& value) { m_domainNameConfigurationsHasBeenSet = true; m_domainNameConfigurations.push_back(value); return *this; }
-
-    /**
-     * <p>The domain name configurations.</p>
-     */
     inline UpdateDomainNameRequest& AddDomainNameConfigurations(DomainNameConfiguration&& value) { m_domainNameConfigurationsHasBeenSet = true; m_domainNameConfigurations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The mutual TLS authentication configuration for a custom domain name.</p>
      */
     inline const MutualTlsAuthenticationInput& GetMutualTlsAuthentication() const{ return m_mutualTlsAuthentication; }
-
-    /**
-     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
-     */
     inline bool MutualTlsAuthenticationHasBeenSet() const { return m_mutualTlsAuthenticationHasBeenSet; }
-
-    /**
-     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
-     */
     inline void SetMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = value; }
-
-    /**
-     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
-     */
     inline void SetMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { m_mutualTlsAuthenticationHasBeenSet = true; m_mutualTlsAuthentication = std::move(value); }
-
-    /**
-     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
-     */
     inline UpdateDomainNameRequest& WithMutualTlsAuthentication(const MutualTlsAuthenticationInput& value) { SetMutualTlsAuthentication(value); return *this;}
-
-    /**
-     * <p>The mutual TLS authentication configuration for a custom domain name.</p>
-     */
     inline UpdateDomainNameRequest& WithMutualTlsAuthentication(MutualTlsAuthenticationInput&& value) { SetMutualTlsAuthentication(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

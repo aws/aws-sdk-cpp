@@ -38,42 +38,18 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether to group the session by their end state or their
      * locale.</p>
      */
     inline const AnalyticsSessionField& GetName() const{ return m_name; }
-
-    /**
-     * <p>Specifies whether to group the session by their end state or their
-     * locale.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to group the session by their end state or their
-     * locale.</p>
-     */
     inline void SetName(const AnalyticsSessionField& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Specifies whether to group the session by their end state or their
-     * locale.</p>
-     */
     inline void SetName(AnalyticsSessionField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Specifies whether to group the session by their end state or their
-     * locale.</p>
-     */
     inline AnalyticsSessionGroupBySpecification& WithName(const AnalyticsSessionField& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Specifies whether to group the session by their end state or their
-     * locale.</p>
-     */
     inline AnalyticsSessionGroupBySpecification& WithName(AnalyticsSessionField&& value) { SetName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AnalyticsSessionField m_name;

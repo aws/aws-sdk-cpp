@@ -34,54 +34,20 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the load balancer you associated with your SSL/TLS
      * certificate.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline GetLoadBalancerTlsCertificatesRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline GetLoadBalancerTlsCertificatesRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the load balancer you associated with your SSL/TLS
-     * certificate.</p>
-     */
     inline GetLoadBalancerTlsCertificatesRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerName;

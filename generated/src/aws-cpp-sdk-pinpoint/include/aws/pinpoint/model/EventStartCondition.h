@@ -39,49 +39,27 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const EventFilter& GetEventFilter() const{ return m_eventFilter; }
-
-    
     inline bool EventFilterHasBeenSet() const { return m_eventFilterHasBeenSet; }
-
-    
     inline void SetEventFilter(const EventFilter& value) { m_eventFilterHasBeenSet = true; m_eventFilter = value; }
-
-    
     inline void SetEventFilter(EventFilter&& value) { m_eventFilterHasBeenSet = true; m_eventFilter = std::move(value); }
-
-    
     inline EventStartCondition& WithEventFilter(const EventFilter& value) { SetEventFilter(value); return *this;}
-
-    
     inline EventStartCondition& WithEventFilter(EventFilter&& value) { SetEventFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
-
-    
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-
-    
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-
-    
     inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-
-    
     inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-
-    
     inline EventStartCondition& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-
-    
     inline EventStartCondition& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-
-    
     inline EventStartCondition& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
-
+    ///@}
   private:
 
     EventFilter m_eventFilter;

@@ -38,48 +38,19 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A complex type that controls the countries in which your content is
      * distributed. CloudFront determines the location of your users using
      * <code>MaxMind</code> GeoIP databases.</p>
      */
     inline const GeoRestriction& GetGeoRestriction() const{ return m_geoRestriction; }
-
-    /**
-     * <p>A complex type that controls the countries in which your content is
-     * distributed. CloudFront determines the location of your users using
-     * <code>MaxMind</code> GeoIP databases.</p>
-     */
     inline bool GeoRestrictionHasBeenSet() const { return m_geoRestrictionHasBeenSet; }
-
-    /**
-     * <p>A complex type that controls the countries in which your content is
-     * distributed. CloudFront determines the location of your users using
-     * <code>MaxMind</code> GeoIP databases.</p>
-     */
     inline void SetGeoRestriction(const GeoRestriction& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = value; }
-
-    /**
-     * <p>A complex type that controls the countries in which your content is
-     * distributed. CloudFront determines the location of your users using
-     * <code>MaxMind</code> GeoIP databases.</p>
-     */
     inline void SetGeoRestriction(GeoRestriction&& value) { m_geoRestrictionHasBeenSet = true; m_geoRestriction = std::move(value); }
-
-    /**
-     * <p>A complex type that controls the countries in which your content is
-     * distributed. CloudFront determines the location of your users using
-     * <code>MaxMind</code> GeoIP databases.</p>
-     */
     inline Restrictions& WithGeoRestriction(const GeoRestriction& value) { SetGeoRestriction(value); return *this;}
-
-    /**
-     * <p>A complex type that controls the countries in which your content is
-     * distributed. CloudFront determines the location of your users using
-     * <code>MaxMind</code> GeoIP databases.</p>
-     */
     inline Restrictions& WithGeoRestriction(GeoRestriction&& value) { SetGeoRestriction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GeoRestriction m_geoRestriction;

@@ -38,87 +38,33 @@ namespace Model
     AWS_WORKSPACESWEB_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the browser settings.</p>
      */
     inline const Aws::String& GetBrowserSettingsArn() const{ return m_browserSettingsArn; }
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline bool BrowserSettingsArnHasBeenSet() const { return m_browserSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline void SetBrowserSettingsArn(const Aws::String& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline void SetBrowserSettingsArn(Aws::String&& value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline void SetBrowserSettingsArn(const char* value) { m_browserSettingsArnHasBeenSet = true; m_browserSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline AssociateBrowserSettingsRequest& WithBrowserSettingsArn(const Aws::String& value) { SetBrowserSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline AssociateBrowserSettingsRequest& WithBrowserSettingsArn(Aws::String&& value) { SetBrowserSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the browser settings.</p>
-     */
     inline AssociateBrowserSettingsRequest& WithBrowserSettingsArn(const char* value) { SetBrowserSettingsArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the web portal.</p>
      */
     inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const Aws::String& value) { m_portalArnHasBeenSet = true; m_portalArn = value; }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(Aws::String&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline void SetPortalArn(const char* value) { m_portalArnHasBeenSet = true; m_portalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateBrowserSettingsRequest& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateBrowserSettingsRequest& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the web portal.</p>
-     */
     inline AssociateBrowserSettingsRequest& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_browserSettingsArn;

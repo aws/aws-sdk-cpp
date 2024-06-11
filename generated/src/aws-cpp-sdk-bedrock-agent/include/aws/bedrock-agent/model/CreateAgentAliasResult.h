@@ -33,53 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API CreateAgentAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about the alias that was created.</p>
      */
     inline const AgentAlias& GetAgentAlias() const{ return m_agentAlias; }
-
-    /**
-     * <p>Contains details about the alias that was created.</p>
-     */
     inline void SetAgentAlias(const AgentAlias& value) { m_agentAlias = value; }
-
-    /**
-     * <p>Contains details about the alias that was created.</p>
-     */
     inline void SetAgentAlias(AgentAlias&& value) { m_agentAlias = std::move(value); }
-
-    /**
-     * <p>Contains details about the alias that was created.</p>
-     */
     inline CreateAgentAliasResult& WithAgentAlias(const AgentAlias& value) { SetAgentAlias(value); return *this;}
-
-    /**
-     * <p>Contains details about the alias that was created.</p>
-     */
     inline CreateAgentAliasResult& WithAgentAlias(AgentAlias&& value) { SetAgentAlias(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAgentAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAgentAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAgentAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentAlias m_agentAlias;

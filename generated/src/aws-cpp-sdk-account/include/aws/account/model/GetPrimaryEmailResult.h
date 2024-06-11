@@ -32,70 +32,30 @@ namespace Model
     AWS_ACCOUNT_API GetPrimaryEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Retrieves the primary email address associated with the specified
      * account.</p>
      */
     inline const Aws::String& GetPrimaryEmail() const{ return m_primaryEmail; }
-
-    /**
-     * <p>Retrieves the primary email address associated with the specified
-     * account.</p>
-     */
     inline void SetPrimaryEmail(const Aws::String& value) { m_primaryEmail = value; }
-
-    /**
-     * <p>Retrieves the primary email address associated with the specified
-     * account.</p>
-     */
     inline void SetPrimaryEmail(Aws::String&& value) { m_primaryEmail = std::move(value); }
-
-    /**
-     * <p>Retrieves the primary email address associated with the specified
-     * account.</p>
-     */
     inline void SetPrimaryEmail(const char* value) { m_primaryEmail.assign(value); }
-
-    /**
-     * <p>Retrieves the primary email address associated with the specified
-     * account.</p>
-     */
     inline GetPrimaryEmailResult& WithPrimaryEmail(const Aws::String& value) { SetPrimaryEmail(value); return *this;}
-
-    /**
-     * <p>Retrieves the primary email address associated with the specified
-     * account.</p>
-     */
     inline GetPrimaryEmailResult& WithPrimaryEmail(Aws::String&& value) { SetPrimaryEmail(std::move(value)); return *this;}
-
-    /**
-     * <p>Retrieves the primary email address associated with the specified
-     * account.</p>
-     */
     inline GetPrimaryEmailResult& WithPrimaryEmail(const char* value) { SetPrimaryEmail(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPrimaryEmailResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPrimaryEmailResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPrimaryEmailResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_primaryEmail;

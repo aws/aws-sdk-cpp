@@ -40,99 +40,42 @@ namespace Model
     AWS_MEDIALIVE_API ListMultiplexProgramsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * List of multiplex programs.
      */
     inline const Aws::Vector<MultiplexProgramSummary>& GetMultiplexPrograms() const{ return m_multiplexPrograms; }
-
-    /**
-     * List of multiplex programs.
-     */
     inline void SetMultiplexPrograms(const Aws::Vector<MultiplexProgramSummary>& value) { m_multiplexPrograms = value; }
-
-    /**
-     * List of multiplex programs.
-     */
     inline void SetMultiplexPrograms(Aws::Vector<MultiplexProgramSummary>&& value) { m_multiplexPrograms = std::move(value); }
-
-    /**
-     * List of multiplex programs.
-     */
     inline ListMultiplexProgramsResult& WithMultiplexPrograms(const Aws::Vector<MultiplexProgramSummary>& value) { SetMultiplexPrograms(value); return *this;}
-
-    /**
-     * List of multiplex programs.
-     */
     inline ListMultiplexProgramsResult& WithMultiplexPrograms(Aws::Vector<MultiplexProgramSummary>&& value) { SetMultiplexPrograms(std::move(value)); return *this;}
-
-    /**
-     * List of multiplex programs.
-     */
     inline ListMultiplexProgramsResult& AddMultiplexPrograms(const MultiplexProgramSummary& value) { m_multiplexPrograms.push_back(value); return *this; }
-
-    /**
-     * List of multiplex programs.
-     */
     inline ListMultiplexProgramsResult& AddMultiplexPrograms(MultiplexProgramSummary&& value) { m_multiplexPrograms.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * Token for the next ListMultiplexProgram request.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * Token for the next ListMultiplexProgram request.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * Token for the next ListMultiplexProgram request.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * Token for the next ListMultiplexProgram request.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * Token for the next ListMultiplexProgram request.
-     */
     inline ListMultiplexProgramsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * Token for the next ListMultiplexProgram request.
-     */
     inline ListMultiplexProgramsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * Token for the next ListMultiplexProgram request.
-     */
     inline ListMultiplexProgramsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListMultiplexProgramsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListMultiplexProgramsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListMultiplexProgramsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MultiplexProgramSummary> m_multiplexPrograms;

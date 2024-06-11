@@ -39,46 +39,19 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of crawls represented by the crawl node.</p>
      */
     inline const Aws::Vector<Crawl>& GetCrawls() const{ return m_crawls; }
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline bool CrawlsHasBeenSet() const { return m_crawlsHasBeenSet; }
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline void SetCrawls(const Aws::Vector<Crawl>& value) { m_crawlsHasBeenSet = true; m_crawls = value; }
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline void SetCrawls(Aws::Vector<Crawl>&& value) { m_crawlsHasBeenSet = true; m_crawls = std::move(value); }
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline CrawlerNodeDetails& WithCrawls(const Aws::Vector<Crawl>& value) { SetCrawls(value); return *this;}
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline CrawlerNodeDetails& WithCrawls(Aws::Vector<Crawl>&& value) { SetCrawls(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline CrawlerNodeDetails& AddCrawls(const Crawl& value) { m_crawlsHasBeenSet = true; m_crawls.push_back(value); return *this; }
-
-    /**
-     * <p>A list of crawls represented by the crawl node.</p>
-     */
     inline CrawlerNodeDetails& AddCrawls(Crawl&& value) { m_crawlsHasBeenSet = true; m_crawls.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Crawl> m_crawls;

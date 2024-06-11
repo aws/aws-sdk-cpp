@@ -39,73 +39,30 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Options to configure endpoint for the Elasticsearch domain.</p>
      */
     inline const DomainEndpointOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>Options to configure endpoint for the Elasticsearch domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>Options to configure endpoint for the Elasticsearch domain.</p>
-     */
     inline void SetOptions(const DomainEndpointOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>Options to configure endpoint for the Elasticsearch domain.</p>
-     */
     inline void SetOptions(DomainEndpointOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>Options to configure endpoint for the Elasticsearch domain.</p>
-     */
     inline DomainEndpointOptionsStatus& WithOptions(const DomainEndpointOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>Options to configure endpoint for the Elasticsearch domain.</p>
-     */
     inline DomainEndpointOptionsStatus& WithOptions(DomainEndpointOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the endpoint options for the Elasticsearch domain. See
      * <code>OptionStatus</code> for the status information that's included. </p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the endpoint options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the endpoint options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the endpoint options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the endpoint options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline DomainEndpointOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the endpoint options for the Elasticsearch domain. See
-     * <code>OptionStatus</code> for the status information that's included. </p>
-     */
     inline DomainEndpointOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DomainEndpointOptions m_options;

@@ -41,142 +41,48 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> One pair of target groups. One is associated with the original task set. The
      * second is associated with the task set that serves traffic after the deployment
      * is complete. </p>
      */
     inline const Aws::Vector<TargetGroupInfo>& GetTargetGroups() const{ return m_targetGroups; }
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline void SetTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline void SetTargetGroups(Aws::Vector<TargetGroupInfo>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline TargetGroupPairInfo& WithTargetGroups(const Aws::Vector<TargetGroupInfo>& value) { SetTargetGroups(value); return *this;}
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline TargetGroupPairInfo& WithTargetGroups(Aws::Vector<TargetGroupInfo>&& value) { SetTargetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline TargetGroupPairInfo& AddTargetGroups(const TargetGroupInfo& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
-
-    /**
-     * <p> One pair of target groups. One is associated with the original task set. The
-     * second is associated with the task set that serves traffic after the deployment
-     * is complete. </p>
-     */
     inline TargetGroupPairInfo& AddTargetGroups(TargetGroupInfo&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The path used by a load balancer to route production traffic when an Amazon
      * ECS deployment is complete. </p>
      */
     inline const TrafficRoute& GetProdTrafficRoute() const{ return m_prodTrafficRoute; }
-
-    /**
-     * <p> The path used by a load balancer to route production traffic when an Amazon
-     * ECS deployment is complete. </p>
-     */
     inline bool ProdTrafficRouteHasBeenSet() const { return m_prodTrafficRouteHasBeenSet; }
-
-    /**
-     * <p> The path used by a load balancer to route production traffic when an Amazon
-     * ECS deployment is complete. </p>
-     */
     inline void SetProdTrafficRoute(const TrafficRoute& value) { m_prodTrafficRouteHasBeenSet = true; m_prodTrafficRoute = value; }
-
-    /**
-     * <p> The path used by a load balancer to route production traffic when an Amazon
-     * ECS deployment is complete. </p>
-     */
     inline void SetProdTrafficRoute(TrafficRoute&& value) { m_prodTrafficRouteHasBeenSet = true; m_prodTrafficRoute = std::move(value); }
-
-    /**
-     * <p> The path used by a load balancer to route production traffic when an Amazon
-     * ECS deployment is complete. </p>
-     */
     inline TargetGroupPairInfo& WithProdTrafficRoute(const TrafficRoute& value) { SetProdTrafficRoute(value); return *this;}
-
-    /**
-     * <p> The path used by a load balancer to route production traffic when an Amazon
-     * ECS deployment is complete. </p>
-     */
     inline TargetGroupPairInfo& WithProdTrafficRoute(TrafficRoute&& value) { SetProdTrafficRoute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An optional path used by a load balancer to route test traffic after an
      * Amazon ECS deployment. Validation can occur while test traffic is served during
      * a deployment. </p>
      */
     inline const TrafficRoute& GetTestTrafficRoute() const{ return m_testTrafficRoute; }
-
-    /**
-     * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can occur while test traffic is served during
-     * a deployment. </p>
-     */
     inline bool TestTrafficRouteHasBeenSet() const { return m_testTrafficRouteHasBeenSet; }
-
-    /**
-     * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can occur while test traffic is served during
-     * a deployment. </p>
-     */
     inline void SetTestTrafficRoute(const TrafficRoute& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = value; }
-
-    /**
-     * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can occur while test traffic is served during
-     * a deployment. </p>
-     */
     inline void SetTestTrafficRoute(TrafficRoute&& value) { m_testTrafficRouteHasBeenSet = true; m_testTrafficRoute = std::move(value); }
-
-    /**
-     * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can occur while test traffic is served during
-     * a deployment. </p>
-     */
     inline TargetGroupPairInfo& WithTestTrafficRoute(const TrafficRoute& value) { SetTestTrafficRoute(value); return *this;}
-
-    /**
-     * <p> An optional path used by a load balancer to route test traffic after an
-     * Amazon ECS deployment. Validation can occur while test traffic is served during
-     * a deployment. </p>
-     */
     inline TargetGroupPairInfo& WithTestTrafficRoute(TrafficRoute&& value) { SetTestTrafficRoute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TargetGroupInfo> m_targetGroups;

@@ -32,46 +32,19 @@ namespace Model
     AWS_TRUSTEDADVISOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Recommendation identifier</p>
      */
     inline const Aws::String& GetRecommendationIdentifier() const{ return m_recommendationIdentifier; }
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline bool RecommendationIdentifierHasBeenSet() const { return m_recommendationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline void SetRecommendationIdentifier(const Aws::String& value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier = value; }
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline void SetRecommendationIdentifier(Aws::String&& value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier = std::move(value); }
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline void SetRecommendationIdentifier(const char* value) { m_recommendationIdentifierHasBeenSet = true; m_recommendationIdentifier.assign(value); }
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline GetRecommendationRequest& WithRecommendationIdentifier(const Aws::String& value) { SetRecommendationIdentifier(value); return *this;}
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline GetRecommendationRequest& WithRecommendationIdentifier(Aws::String&& value) { SetRecommendationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Recommendation identifier</p>
-     */
     inline GetRecommendationRequest& WithRecommendationIdentifier(const char* value) { SetRecommendationIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recommendationIdentifier;

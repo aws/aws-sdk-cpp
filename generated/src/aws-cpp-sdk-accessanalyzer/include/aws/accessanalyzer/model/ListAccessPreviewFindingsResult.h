@@ -34,106 +34,43 @@ namespace Model
     AWS_ACCESSANALYZER_API ListAccessPreviewFindingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of access preview findings that match the specified filter
      * criteria.</p>
      */
     inline const Aws::Vector<AccessPreviewFinding>& GetFindings() const{ return m_findings; }
-
-    /**
-     * <p>A list of access preview findings that match the specified filter
-     * criteria.</p>
-     */
     inline void SetFindings(const Aws::Vector<AccessPreviewFinding>& value) { m_findings = value; }
-
-    /**
-     * <p>A list of access preview findings that match the specified filter
-     * criteria.</p>
-     */
     inline void SetFindings(Aws::Vector<AccessPreviewFinding>&& value) { m_findings = std::move(value); }
-
-    /**
-     * <p>A list of access preview findings that match the specified filter
-     * criteria.</p>
-     */
     inline ListAccessPreviewFindingsResult& WithFindings(const Aws::Vector<AccessPreviewFinding>& value) { SetFindings(value); return *this;}
-
-    /**
-     * <p>A list of access preview findings that match the specified filter
-     * criteria.</p>
-     */
     inline ListAccessPreviewFindingsResult& WithFindings(Aws::Vector<AccessPreviewFinding>&& value) { SetFindings(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of access preview findings that match the specified filter
-     * criteria.</p>
-     */
     inline ListAccessPreviewFindingsResult& AddFindings(const AccessPreviewFinding& value) { m_findings.push_back(value); return *this; }
-
-    /**
-     * <p>A list of access preview findings that match the specified filter
-     * criteria.</p>
-     */
     inline ListAccessPreviewFindingsResult& AddFindings(AccessPreviewFinding&& value) { m_findings.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListAccessPreviewFindingsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListAccessPreviewFindingsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token used for pagination of results returned.</p>
-     */
     inline ListAccessPreviewFindingsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAccessPreviewFindingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAccessPreviewFindingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAccessPreviewFindingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AccessPreviewFinding> m_findings;

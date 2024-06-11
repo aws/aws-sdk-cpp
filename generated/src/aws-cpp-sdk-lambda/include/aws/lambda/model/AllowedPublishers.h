@@ -39,60 +39,21 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
      * profile defines a trusted user who can sign a code package. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSigningProfileVersionArns() const{ return m_signingProfileVersionArns; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline bool SigningProfileVersionArnsHasBeenSet() const { return m_signingProfileVersionArnsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline void SetSigningProfileVersionArns(const Aws::Vector<Aws::String>& value) { m_signingProfileVersionArnsHasBeenSet = true; m_signingProfileVersionArns = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline void SetSigningProfileVersionArns(Aws::Vector<Aws::String>&& value) { m_signingProfileVersionArnsHasBeenSet = true; m_signingProfileVersionArns = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline AllowedPublishers& WithSigningProfileVersionArns(const Aws::Vector<Aws::String>& value) { SetSigningProfileVersionArns(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline AllowedPublishers& WithSigningProfileVersionArns(Aws::Vector<Aws::String>&& value) { SetSigningProfileVersionArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline AllowedPublishers& AddSigningProfileVersionArns(const Aws::String& value) { m_signingProfileVersionArnsHasBeenSet = true; m_signingProfileVersionArns.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline AllowedPublishers& AddSigningProfileVersionArns(Aws::String&& value) { m_signingProfileVersionArnsHasBeenSet = true; m_signingProfileVersionArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for each of the signing profiles. A signing
-     * profile defines a trusted user who can sign a code package. </p>
-     */
     inline AllowedPublishers& AddSigningProfileVersionArns(const char* value) { m_signingProfileVersionArnsHasBeenSet = true; m_signingProfileVersionArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_signingProfileVersionArns;

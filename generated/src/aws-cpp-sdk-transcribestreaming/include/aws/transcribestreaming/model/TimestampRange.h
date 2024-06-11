@@ -36,55 +36,27 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in milliseconds, from the beginning of the audio stream to the
      * start of the category match.</p>
      */
     inline long long GetBeginOffsetMillis() const{ return m_beginOffsetMillis; }
-
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the
-     * start of the category match.</p>
-     */
     inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the
-     * start of the category match.</p>
-     */
     inline void SetBeginOffsetMillis(long long value) { m_beginOffsetMillisHasBeenSet = true; m_beginOffsetMillis = value; }
-
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the
-     * start of the category match.</p>
-     */
     inline TimestampRange& WithBeginOffsetMillis(long long value) { SetBeginOffsetMillis(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in milliseconds, from the beginning of the audio stream to the end
      * of the category match.</p>
      */
     inline long long GetEndOffsetMillis() const{ return m_endOffsetMillis; }
-
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the end
-     * of the category match.</p>
-     */
     inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the end
-     * of the category match.</p>
-     */
     inline void SetEndOffsetMillis(long long value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
-
-    /**
-     * <p>The time, in milliseconds, from the beginning of the audio stream to the end
-     * of the category match.</p>
-     */
     inline TimestampRange& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
-
+    ///@}
   private:
 
     long long m_beginOffsetMillis;

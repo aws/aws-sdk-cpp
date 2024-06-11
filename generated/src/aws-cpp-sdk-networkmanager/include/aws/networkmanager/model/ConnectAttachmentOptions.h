@@ -38,36 +38,17 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The protocol used for the attachment connection.</p>
      */
     inline const TunnelProtocol& GetProtocol() const{ return m_protocol; }
-
-    /**
-     * <p>The protocol used for the attachment connection.</p>
-     */
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-
-    /**
-     * <p>The protocol used for the attachment connection.</p>
-     */
     inline void SetProtocol(const TunnelProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-
-    /**
-     * <p>The protocol used for the attachment connection.</p>
-     */
     inline void SetProtocol(TunnelProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-
-    /**
-     * <p>The protocol used for the attachment connection.</p>
-     */
     inline ConnectAttachmentOptions& WithProtocol(const TunnelProtocol& value) { SetProtocol(value); return *this;}
-
-    /**
-     * <p>The protocol used for the attachment connection.</p>
-     */
     inline ConnectAttachmentOptions& WithProtocol(TunnelProtocol&& value) { SetProtocol(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TunnelProtocol m_protocol;

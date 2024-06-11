@@ -39,47 +39,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the bundle task.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline CancelBundleTaskRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline CancelBundleTaskRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the bundle task.</p>
-     */
     inline CancelBundleTaskRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -87,31 +61,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CancelBundleTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bundleId;

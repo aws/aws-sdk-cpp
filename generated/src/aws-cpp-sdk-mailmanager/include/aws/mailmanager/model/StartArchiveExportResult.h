@@ -37,63 +37,29 @@ namespace Model
     AWS_MAILMANAGER_API StartArchiveExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier for the initiated export job.</p>
      */
     inline const Aws::String& GetExportId() const{ return m_exportId; }
-
-    /**
-     * <p>The unique identifier for the initiated export job.</p>
-     */
     inline void SetExportId(const Aws::String& value) { m_exportId = value; }
-
-    /**
-     * <p>The unique identifier for the initiated export job.</p>
-     */
     inline void SetExportId(Aws::String&& value) { m_exportId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the initiated export job.</p>
-     */
     inline void SetExportId(const char* value) { m_exportId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the initiated export job.</p>
-     */
     inline StartArchiveExportResult& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the initiated export job.</p>
-     */
     inline StartArchiveExportResult& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the initiated export job.</p>
-     */
     inline StartArchiveExportResult& WithExportId(const char* value) { SetExportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartArchiveExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartArchiveExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartArchiveExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportId;

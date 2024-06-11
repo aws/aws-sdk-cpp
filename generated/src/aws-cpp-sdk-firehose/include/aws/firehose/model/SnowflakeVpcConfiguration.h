@@ -37,6 +37,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
      * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
@@ -45,70 +46,14 @@ namespace Model
      * PrivateLink &amp; Snowflake</a> </p>
      */
     inline const Aws::String& GetPrivateLinkVpceId() const{ return m_privateLinkVpceId; }
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline bool PrivateLinkVpceIdHasBeenSet() const { return m_privateLinkVpceIdHasBeenSet; }
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline void SetPrivateLinkVpceId(const Aws::String& value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId = value; }
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline void SetPrivateLinkVpceId(Aws::String&& value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId = std::move(value); }
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline void SetPrivateLinkVpceId(const char* value) { m_privateLinkVpceIdHasBeenSet = true; m_privateLinkVpceId.assign(value); }
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline SnowflakeVpcConfiguration& WithPrivateLinkVpceId(const Aws::String& value) { SetPrivateLinkVpceId(value); return *this;}
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline SnowflakeVpcConfiguration& WithPrivateLinkVpceId(Aws::String&& value) { SetPrivateLinkVpceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The VPCE ID for Firehose to privately connect with Snowflake. The ID format
-     * is com.amazonaws.vpce.[region].vpce-svc-&lt;[id]&gt;. For more information, see
-     * <a
-     * href="https://docs.snowflake.com/en/user-guide/admin-security-privatelink">Amazon
-     * PrivateLink &amp; Snowflake</a> </p>
-     */
     inline SnowflakeVpcConfiguration& WithPrivateLinkVpceId(const char* value) { SetPrivateLinkVpceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_privateLinkVpceId;

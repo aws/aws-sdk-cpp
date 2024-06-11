@@ -38,65 +38,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Time, in milliseconds from the start of the video, that the face was
      * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
      * the individual frame where the face first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>Time, in milliseconds from the start of the video, that the face was
-     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
-     * the individual frame where the face first appears.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>Time, in milliseconds from the start of the video, that the face was
-     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
-     * the individual frame where the face first appears.</p>
-     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>Time, in milliseconds from the start of the video, that the face was
-     * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
-     * the individual frame where the face first appears.</p>
-     */
     inline FaceDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The face properties for the detected face.</p>
      */
     inline const FaceDetail& GetFace() const{ return m_face; }
-
-    /**
-     * <p>The face properties for the detected face.</p>
-     */
     inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
-
-    /**
-     * <p>The face properties for the detected face.</p>
-     */
     inline void SetFace(const FaceDetail& value) { m_faceHasBeenSet = true; m_face = value; }
-
-    /**
-     * <p>The face properties for the detected face.</p>
-     */
     inline void SetFace(FaceDetail&& value) { m_faceHasBeenSet = true; m_face = std::move(value); }
-
-    /**
-     * <p>The face properties for the detected face.</p>
-     */
     inline FaceDetection& WithFace(const FaceDetail& value) { SetFace(value); return *this;}
-
-    /**
-     * <p>The face properties for the detected face.</p>
-     */
     inline FaceDetection& WithFace(FaceDetail&& value) { SetFace(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_timestamp;

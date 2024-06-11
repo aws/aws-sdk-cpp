@@ -36,47 +36,25 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The amount of memory in the container. </p>
      */
     inline int GetMemory() const{ return m_memory; }
-
-    /**
-     * <p> The amount of memory in the container. </p>
-     */
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-
-    /**
-     * <p> The amount of memory in the container. </p>
-     */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
-
-    /**
-     * <p> The amount of memory in the container. </p>
-     */
     inline MemorySizeConfiguration& WithMemory(int value) { SetMemory(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The limit of memory reserve for the container. </p>
      */
     inline int GetMemoryReservation() const{ return m_memoryReservation; }
-
-    /**
-     * <p> The limit of memory reserve for the container. </p>
-     */
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
-
-    /**
-     * <p> The limit of memory reserve for the container. </p>
-     */
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
-
-    /**
-     * <p> The limit of memory reserve for the container. </p>
-     */
     inline MemorySizeConfiguration& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
-
+    ///@}
   private:
 
     int m_memory;

@@ -34,46 +34,19 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the registration attachment.</p>
      */
     inline const Aws::String& GetRegistrationAttachmentId() const{ return m_registrationAttachmentId; }
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline bool RegistrationAttachmentIdHasBeenSet() const { return m_registrationAttachmentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline void SetRegistrationAttachmentId(const Aws::String& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = value; }
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline void SetRegistrationAttachmentId(Aws::String&& value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline void SetRegistrationAttachmentId(const char* value) { m_registrationAttachmentIdHasBeenSet = true; m_registrationAttachmentId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(const Aws::String& value) { SetRegistrationAttachmentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(Aws::String&& value) { SetRegistrationAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the registration attachment.</p>
-     */
     inline DeleteRegistrationAttachmentRequest& WithRegistrationAttachmentId(const char* value) { SetRegistrationAttachmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registrationAttachmentId;

@@ -33,53 +33,27 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API DescribeUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A domain description object containing information about the domain.</p>
      */
     inline const DomainDescriptionType& GetDomainDescription() const{ return m_domainDescription; }
-
-    /**
-     * <p>A domain description object containing information about the domain.</p>
-     */
     inline void SetDomainDescription(const DomainDescriptionType& value) { m_domainDescription = value; }
-
-    /**
-     * <p>A domain description object containing information about the domain.</p>
-     */
     inline void SetDomainDescription(DomainDescriptionType&& value) { m_domainDescription = std::move(value); }
-
-    /**
-     * <p>A domain description object containing information about the domain.</p>
-     */
     inline DescribeUserPoolDomainResult& WithDomainDescription(const DomainDescriptionType& value) { SetDomainDescription(value); return *this;}
-
-    /**
-     * <p>A domain description object containing information about the domain.</p>
-     */
     inline DescribeUserPoolDomainResult& WithDomainDescription(DomainDescriptionType&& value) { SetDomainDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeUserPoolDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeUserPoolDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainDescriptionType m_domainDescription;

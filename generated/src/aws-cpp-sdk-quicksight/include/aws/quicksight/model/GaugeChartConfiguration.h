@@ -44,228 +44,90 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
      */
     inline const GaugeChartFieldWells& GetFieldWells() const{ return m_fieldWells; }
-
-    /**
-     * <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetFieldWells(const GaugeChartFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-
-    /**
-     * <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetFieldWells(GaugeChartFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-
-    /**
-     * <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithFieldWells(const GaugeChartFieldWells& value) { SetFieldWells(value); return *this;}
-
-    /**
-     * <p>The field well configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithFieldWells(GaugeChartFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options that determine the presentation of the
      * <code>GaugeChartVisual</code>.</p>
      */
     inline const GaugeChartOptions& GetGaugeChartOptions() const{ return m_gaugeChartOptions; }
-
-    /**
-     * <p>The options that determine the presentation of the
-     * <code>GaugeChartVisual</code>.</p>
-     */
     inline bool GaugeChartOptionsHasBeenSet() const { return m_gaugeChartOptionsHasBeenSet; }
-
-    /**
-     * <p>The options that determine the presentation of the
-     * <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetGaugeChartOptions(const GaugeChartOptions& value) { m_gaugeChartOptionsHasBeenSet = true; m_gaugeChartOptions = value; }
-
-    /**
-     * <p>The options that determine the presentation of the
-     * <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetGaugeChartOptions(GaugeChartOptions&& value) { m_gaugeChartOptionsHasBeenSet = true; m_gaugeChartOptions = std::move(value); }
-
-    /**
-     * <p>The options that determine the presentation of the
-     * <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithGaugeChartOptions(const GaugeChartOptions& value) { SetGaugeChartOptions(value); return *this;}
-
-    /**
-     * <p>The options that determine the presentation of the
-     * <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithGaugeChartOptions(GaugeChartOptions&& value) { SetGaugeChartOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
      */
     inline const DataLabelOptions& GetDataLabels() const{ return m_dataLabels; }
-
-    /**
-     * <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline bool DataLabelsHasBeenSet() const { return m_dataLabelsHasBeenSet; }
-
-    /**
-     * <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetDataLabels(const DataLabelOptions& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = value; }
-
-    /**
-     * <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetDataLabels(DataLabelOptions&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::move(value); }
-
-    /**
-     * <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithDataLabels(const DataLabelOptions& value) { SetDataLabels(value); return *this;}
-
-    /**
-     * <p>The data label configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithDataLabels(DataLabelOptions&& value) { SetDataLabels(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
      */
     inline const TooltipOptions& GetTooltipOptions() const{ return m_tooltipOptions; }
-
-    /**
-     * <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline bool TooltipOptionsHasBeenSet() const { return m_tooltipOptionsHasBeenSet; }
-
-    /**
-     * <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetTooltipOptions(const TooltipOptions& value) { m_tooltipOptionsHasBeenSet = true; m_tooltipOptions = value; }
-
-    /**
-     * <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetTooltipOptions(TooltipOptions&& value) { m_tooltipOptionsHasBeenSet = true; m_tooltipOptions = std::move(value); }
-
-    /**
-     * <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithTooltipOptions(const TooltipOptions& value) { SetTooltipOptions(value); return *this;}
-
-    /**
-     * <p>The tooltip configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithTooltipOptions(TooltipOptions&& value) { SetTooltipOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
      */
     inline const VisualPalette& GetVisualPalette() const{ return m_visualPalette; }
-
-    /**
-     * <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline bool VisualPaletteHasBeenSet() const { return m_visualPaletteHasBeenSet; }
-
-    /**
-     * <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetVisualPalette(const VisualPalette& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = value; }
-
-    /**
-     * <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetVisualPalette(VisualPalette&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::move(value); }
-
-    /**
-     * <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithVisualPalette(const VisualPalette& value) { SetVisualPalette(value); return *this;}
-
-    /**
-     * <p>The visual palette configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
      */
     inline const GaugeChartColorConfiguration& GetColorConfiguration() const{ return m_colorConfiguration; }
-
-    /**
-     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline bool ColorConfigurationHasBeenSet() const { return m_colorConfigurationHasBeenSet; }
-
-    /**
-     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetColorConfiguration(const GaugeChartColorConfiguration& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = value; }
-
-    /**
-     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline void SetColorConfiguration(GaugeChartColorConfiguration&& value) { m_colorConfigurationHasBeenSet = true; m_colorConfiguration = std::move(value); }
-
-    /**
-     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithColorConfiguration(const GaugeChartColorConfiguration& value) { SetColorConfiguration(value); return *this;}
-
-    /**
-     * <p>The color configuration of a <code>GaugeChartVisual</code>.</p>
-     */
     inline GaugeChartConfiguration& WithColorConfiguration(GaugeChartColorConfiguration&& value) { SetColorConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
     inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline GaugeChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline GaugeChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GaugeChartFieldWells m_fieldWells;

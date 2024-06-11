@@ -39,46 +39,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The item list in the test set results data at the conversation level.</p>
      */
     inline const Aws::Vector<ConversationLevelTestResultItem>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline void SetItems(const Aws::Vector<ConversationLevelTestResultItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline void SetItems(Aws::Vector<ConversationLevelTestResultItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline ConversationLevelTestResults& WithItems(const Aws::Vector<ConversationLevelTestResultItem>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline ConversationLevelTestResults& WithItems(Aws::Vector<ConversationLevelTestResultItem>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline ConversationLevelTestResults& AddItems(const ConversationLevelTestResultItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The item list in the test set results data at the conversation level.</p>
-     */
     inline ConversationLevelTestResults& AddItems(ConversationLevelTestResultItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ConversationLevelTestResultItem> m_items;

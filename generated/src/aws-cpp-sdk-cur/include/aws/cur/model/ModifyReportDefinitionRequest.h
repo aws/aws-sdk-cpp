@@ -35,49 +35,27 @@ namespace Model
     AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetReportName() const{ return m_reportName; }
-
-    
     inline bool ReportNameHasBeenSet() const { return m_reportNameHasBeenSet; }
-
-    
     inline void SetReportName(const Aws::String& value) { m_reportNameHasBeenSet = true; m_reportName = value; }
-
-    
     inline void SetReportName(Aws::String&& value) { m_reportNameHasBeenSet = true; m_reportName = std::move(value); }
-
-    
     inline void SetReportName(const char* value) { m_reportNameHasBeenSet = true; m_reportName.assign(value); }
-
-    
     inline ModifyReportDefinitionRequest& WithReportName(const Aws::String& value) { SetReportName(value); return *this;}
-
-    
     inline ModifyReportDefinitionRequest& WithReportName(Aws::String&& value) { SetReportName(std::move(value)); return *this;}
-
-    
     inline ModifyReportDefinitionRequest& WithReportName(const char* value) { SetReportName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ReportDefinition& GetReportDefinition() const{ return m_reportDefinition; }
-
-    
     inline bool ReportDefinitionHasBeenSet() const { return m_reportDefinitionHasBeenSet; }
-
-    
     inline void SetReportDefinition(const ReportDefinition& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
-
-    
     inline void SetReportDefinition(ReportDefinition&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = std::move(value); }
-
-    
     inline ModifyReportDefinitionRequest& WithReportDefinition(const ReportDefinition& value) { SetReportDefinition(value); return *this;}
-
-    
     inline ModifyReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportName;

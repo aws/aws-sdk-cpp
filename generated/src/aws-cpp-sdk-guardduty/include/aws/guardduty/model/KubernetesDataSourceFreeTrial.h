@@ -38,36 +38,17 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
      */
     inline const DataSourceFreeTrial& GetAuditLogs() const{ return m_auditLogs; }
-
-    /**
-     * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-     */
     inline bool AuditLogsHasBeenSet() const { return m_auditLogsHasBeenSet; }
-
-    /**
-     * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-     */
     inline void SetAuditLogs(const DataSourceFreeTrial& value) { m_auditLogsHasBeenSet = true; m_auditLogs = value; }
-
-    /**
-     * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-     */
     inline void SetAuditLogs(DataSourceFreeTrial&& value) { m_auditLogsHasBeenSet = true; m_auditLogs = std::move(value); }
-
-    /**
-     * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-     */
     inline KubernetesDataSourceFreeTrial& WithAuditLogs(const DataSourceFreeTrial& value) { SetAuditLogs(value); return *this;}
-
-    /**
-     * <p>Describes whether Kubernetes audit logs are enabled as a data source.</p>
-     */
     inline KubernetesDataSourceFreeTrial& WithAuditLogs(DataSourceFreeTrial&& value) { SetAuditLogs(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSourceFreeTrial m_auditLogs;

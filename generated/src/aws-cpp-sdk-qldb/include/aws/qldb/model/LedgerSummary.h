@@ -40,120 +40,45 @@ namespace Model
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the ledger.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline LedgerSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline LedgerSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the ledger.</p>
-     */
     inline LedgerSummary& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the ledger.</p>
      */
     inline const LedgerState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The current status of the ledger.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The current status of the ledger.</p>
-     */
     inline void SetState(const LedgerState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The current status of the ledger.</p>
-     */
     inline void SetState(LedgerState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The current status of the ledger.</p>
-     */
     inline LedgerSummary& WithState(const LedgerState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The current status of the ledger.</p>
-     */
     inline LedgerSummary& WithState(LedgerState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time, in epoch time format, when the ledger was created. (Epoch
      * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
      * UTC.)</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The date and time, in epoch time format, when the ledger was created. (Epoch
-     * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-     * UTC.)</p>
-     */
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time, in epoch time format, when the ledger was created. (Epoch
-     * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-     * UTC.)</p>
-     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-
-    /**
-     * <p>The date and time, in epoch time format, when the ledger was created. (Epoch
-     * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-     * UTC.)</p>
-     */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time, in epoch time format, when the ledger was created. (Epoch
-     * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-     * UTC.)</p>
-     */
     inline LedgerSummary& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time, in epoch time format, when the ledger was created. (Epoch
-     * time format is the number of seconds elapsed since 12:00:00 AM January 1, 1970
-     * UTC.)</p>
-     */
     inline LedgerSummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

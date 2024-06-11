@@ -35,47 +35,21 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the pipeline.</p>
      */
     inline const Aws::String& GetPipelineName() const{ return m_pipelineName; }
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline void SetPipelineName(Aws::String&& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = std::move(value); }
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline void SetPipelineName(const char* value) { m_pipelineNameHasBeenSet = true; m_pipelineName.assign(value); }
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline CreatePipelineRequest& WithPipelineName(const Aws::String& value) { SetPipelineName(value); return *this;}
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline CreatePipelineRequest& WithPipelineName(Aws::String&& value) { SetPipelineName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipeline.</p>
-     */
     inline CreatePipelineRequest& WithPipelineName(const char* value) { SetPipelineName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>PipelineActivity</code> objects. Activities perform
      * transformations on your messages, such as removing, renaming or adding message
@@ -89,146 +63,28 @@ namespace Model
      * ]</code> </p>
      */
     inline const Aws::Vector<PipelineActivity>& GetPipelineActivities() const{ return m_pipelineActivities; }
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline bool PipelineActivitiesHasBeenSet() const { return m_pipelineActivitiesHasBeenSet; }
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline void SetPipelineActivities(const Aws::Vector<PipelineActivity>& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities = value; }
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline void SetPipelineActivities(Aws::Vector<PipelineActivity>&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities = std::move(value); }
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline CreatePipelineRequest& WithPipelineActivities(const Aws::Vector<PipelineActivity>& value) { SetPipelineActivities(value); return *this;}
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline CreatePipelineRequest& WithPipelineActivities(Aws::Vector<PipelineActivity>&& value) { SetPipelineActivities(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline CreatePipelineRequest& AddPipelineActivities(const PipelineActivity& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>PipelineActivity</code> objects. Activities perform
-     * transformations on your messages, such as removing, renaming or adding message
-     * attributes; filtering messages based on attribute values; invoking your Lambda
-     * unctions on messages for advanced processing; or performing mathematical
-     * transformations to normalize device data.</p> <p>The list can be 2-25
-     * <code>PipelineActivity</code> objects and must contain both a
-     * <code>channel</code> and a <code>datastore</code> activity. Each entry in the
-     * list must contain only one activity. For example:</p> <p>
-     * <code>pipelineActivities = [ { "channel": { ... } }, { "lambda": { ... } }, ...
-     * ]</code> </p>
-     */
     inline CreatePipelineRequest& AddPipelineActivities(PipelineActivity&& value) { m_pipelineActivitiesHasBeenSet = true; m_pipelineActivities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata which can be used to manage the pipeline.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline CreatePipelineRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline CreatePipelineRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline CreatePipelineRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>Metadata which can be used to manage the pipeline.</p>
-     */
     inline CreatePipelineRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_pipelineName;

@@ -42,68 +42,37 @@ namespace Model
     AWS_MEDIALIVE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    
     inline ListInputDeviceTransfersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline ListInputDeviceTransfersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline ListInputDeviceTransfersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline ListInputDeviceTransfersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetTransferType() const{ return m_transferType; }
-
-    
     inline bool TransferTypeHasBeenSet() const { return m_transferTypeHasBeenSet; }
-
-    
     inline void SetTransferType(const Aws::String& value) { m_transferTypeHasBeenSet = true; m_transferType = value; }
-
-    
     inline void SetTransferType(Aws::String&& value) { m_transferTypeHasBeenSet = true; m_transferType = std::move(value); }
-
-    
     inline void SetTransferType(const char* value) { m_transferTypeHasBeenSet = true; m_transferType.assign(value); }
-
-    
     inline ListInputDeviceTransfersRequest& WithTransferType(const Aws::String& value) { SetTransferType(value); return *this;}
-
-    
     inline ListInputDeviceTransfersRequest& WithTransferType(Aws::String&& value) { SetTransferType(std::move(value)); return *this;}
-
-    
     inline ListInputDeviceTransfersRequest& WithTransferType(const char* value) { SetTransferType(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

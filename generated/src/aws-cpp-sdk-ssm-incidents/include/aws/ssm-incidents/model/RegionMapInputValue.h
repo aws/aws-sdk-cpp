@@ -38,46 +38,19 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The KMS key used to encrypt the data in your replication set.</p>
      */
     inline const Aws::String& GetSseKmsKeyId() const{ return m_sseKmsKeyId; }
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline bool SseKmsKeyIdHasBeenSet() const { return m_sseKmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline void SetSseKmsKeyId(const Aws::String& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = value; }
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline void SetSseKmsKeyId(Aws::String&& value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId = std::move(value); }
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline void SetSseKmsKeyId(const char* value) { m_sseKmsKeyIdHasBeenSet = true; m_sseKmsKeyId.assign(value); }
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline RegionMapInputValue& WithSseKmsKeyId(const Aws::String& value) { SetSseKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline RegionMapInputValue& WithSseKmsKeyId(Aws::String&& value) { SetSseKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The KMS key used to encrypt the data in your replication set.</p>
-     */
     inline RegionMapInputValue& WithSseKmsKeyId(const char* value) { SetSseKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sseKmsKeyId;

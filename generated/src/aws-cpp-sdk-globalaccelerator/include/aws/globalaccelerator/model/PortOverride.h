@@ -42,59 +42,28 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The listener port that you want to map to a specific endpoint port. This is
      * the port that user traffic arrives to the Global Accelerator on.</p>
      */
     inline int GetListenerPort() const{ return m_listenerPort; }
-
-    /**
-     * <p>The listener port that you want to map to a specific endpoint port. This is
-     * the port that user traffic arrives to the Global Accelerator on.</p>
-     */
     inline bool ListenerPortHasBeenSet() const { return m_listenerPortHasBeenSet; }
-
-    /**
-     * <p>The listener port that you want to map to a specific endpoint port. This is
-     * the port that user traffic arrives to the Global Accelerator on.</p>
-     */
     inline void SetListenerPort(int value) { m_listenerPortHasBeenSet = true; m_listenerPort = value; }
-
-    /**
-     * <p>The listener port that you want to map to a specific endpoint port. This is
-     * the port that user traffic arrives to the Global Accelerator on.</p>
-     */
     inline PortOverride& WithListenerPort(int value) { SetListenerPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The endpoint port that you want a listener port to be mapped to. This is the
      * port on the endpoint, such as the Application Load Balancer or Amazon EC2
      * instance.</p>
      */
     inline int GetEndpointPort() const{ return m_endpointPort; }
-
-    /**
-     * <p>The endpoint port that you want a listener port to be mapped to. This is the
-     * port on the endpoint, such as the Application Load Balancer or Amazon EC2
-     * instance.</p>
-     */
     inline bool EndpointPortHasBeenSet() const { return m_endpointPortHasBeenSet; }
-
-    /**
-     * <p>The endpoint port that you want a listener port to be mapped to. This is the
-     * port on the endpoint, such as the Application Load Balancer or Amazon EC2
-     * instance.</p>
-     */
     inline void SetEndpointPort(int value) { m_endpointPortHasBeenSet = true; m_endpointPort = value; }
-
-    /**
-     * <p>The endpoint port that you want a listener port to be mapped to. This is the
-     * port on the endpoint, such as the Application Load Balancer or Amazon EC2
-     * instance.</p>
-     */
     inline PortOverride& WithEndpointPort(int value) { SetEndpointPort(value); return *this;}
-
+    ///@}
   private:
 
     int m_listenerPort;

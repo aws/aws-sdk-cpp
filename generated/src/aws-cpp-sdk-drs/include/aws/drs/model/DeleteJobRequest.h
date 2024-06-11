@@ -32,46 +32,19 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Job to be deleted.</p>
      */
     inline const Aws::String& GetJobID() const{ return m_jobID; }
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline void SetJobID(const Aws::String& value) { m_jobIDHasBeenSet = true; m_jobID = value; }
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline void SetJobID(Aws::String&& value) { m_jobIDHasBeenSet = true; m_jobID = std::move(value); }
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline void SetJobID(const char* value) { m_jobIDHasBeenSet = true; m_jobID.assign(value); }
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline DeleteJobRequest& WithJobID(const Aws::String& value) { SetJobID(value); return *this;}
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline DeleteJobRequest& WithJobID(Aws::String&& value) { SetJobID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Job to be deleted.</p>
-     */
     inline DeleteJobRequest& WithJobID(const char* value) { SetJobID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobID;

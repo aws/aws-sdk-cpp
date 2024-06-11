@@ -33,53 +33,27 @@ namespace Model
     AWS_CLEANROOMS_API UpdateCollaborationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The entire collaboration that has been updated.</p>
      */
     inline const Collaboration& GetCollaboration() const{ return m_collaboration; }
-
-    /**
-     * <p>The entire collaboration that has been updated.</p>
-     */
     inline void SetCollaboration(const Collaboration& value) { m_collaboration = value; }
-
-    /**
-     * <p>The entire collaboration that has been updated.</p>
-     */
     inline void SetCollaboration(Collaboration&& value) { m_collaboration = std::move(value); }
-
-    /**
-     * <p>The entire collaboration that has been updated.</p>
-     */
     inline UpdateCollaborationResult& WithCollaboration(const Collaboration& value) { SetCollaboration(value); return *this;}
-
-    /**
-     * <p>The entire collaboration that has been updated.</p>
-     */
     inline UpdateCollaborationResult& WithCollaboration(Collaboration&& value) { SetCollaboration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCollaborationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCollaborationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCollaborationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Collaboration m_collaboration;

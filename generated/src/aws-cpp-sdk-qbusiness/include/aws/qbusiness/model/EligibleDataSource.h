@@ -38,87 +38,33 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the index the data source is attached to.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline EligibleDataSource& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline EligibleDataSource& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index the data source is attached to.</p>
-     */
     inline EligibleDataSource& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the data source.</p>
      */
     inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline EligibleDataSource& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline EligibleDataSource& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the data source.</p>
-     */
     inline EligibleDataSource& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexId;

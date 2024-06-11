@@ -33,53 +33,27 @@ namespace Model
     AWS_XRAY_API CreateSamplingRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The saved rule definition and metadata.</p>
      */
     inline const SamplingRuleRecord& GetSamplingRuleRecord() const{ return m_samplingRuleRecord; }
-
-    /**
-     * <p>The saved rule definition and metadata.</p>
-     */
     inline void SetSamplingRuleRecord(const SamplingRuleRecord& value) { m_samplingRuleRecord = value; }
-
-    /**
-     * <p>The saved rule definition and metadata.</p>
-     */
     inline void SetSamplingRuleRecord(SamplingRuleRecord&& value) { m_samplingRuleRecord = std::move(value); }
-
-    /**
-     * <p>The saved rule definition and metadata.</p>
-     */
     inline CreateSamplingRuleResult& WithSamplingRuleRecord(const SamplingRuleRecord& value) { SetSamplingRuleRecord(value); return *this;}
-
-    /**
-     * <p>The saved rule definition and metadata.</p>
-     */
     inline CreateSamplingRuleResult& WithSamplingRuleRecord(SamplingRuleRecord&& value) { SetSamplingRuleRecord(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSamplingRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSamplingRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSamplingRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SamplingRuleRecord m_samplingRuleRecord;

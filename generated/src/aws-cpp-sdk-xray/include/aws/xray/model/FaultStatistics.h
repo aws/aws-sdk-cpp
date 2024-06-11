@@ -36,55 +36,27 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of requests that failed with untracked 5xx Server Error status
      * codes.</p>
      */
     inline long long GetOtherCount() const{ return m_otherCount; }
-
-    /**
-     * <p>The number of requests that failed with untracked 5xx Server Error status
-     * codes.</p>
-     */
     inline bool OtherCountHasBeenSet() const { return m_otherCountHasBeenSet; }
-
-    /**
-     * <p>The number of requests that failed with untracked 5xx Server Error status
-     * codes.</p>
-     */
     inline void SetOtherCount(long long value) { m_otherCountHasBeenSet = true; m_otherCount = value; }
-
-    /**
-     * <p>The number of requests that failed with untracked 5xx Server Error status
-     * codes.</p>
-     */
     inline FaultStatistics& WithOtherCount(long long value) { SetOtherCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of requests that failed with a 5xx Server Error status
      * code.</p>
      */
     inline long long GetTotalCount() const{ return m_totalCount; }
-
-    /**
-     * <p>The total number of requests that failed with a 5xx Server Error status
-     * code.</p>
-     */
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
-
-    /**
-     * <p>The total number of requests that failed with a 5xx Server Error status
-     * code.</p>
-     */
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
-
-    /**
-     * <p>The total number of requests that failed with a 5xx Server Error status
-     * code.</p>
-     */
     inline FaultStatistics& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_otherCount;

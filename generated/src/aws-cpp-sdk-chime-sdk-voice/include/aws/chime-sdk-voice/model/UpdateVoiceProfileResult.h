@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKVOICE_API UpdateVoiceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated voice profile settings.</p>
      */
     inline const VoiceProfile& GetVoiceProfile() const{ return m_voiceProfile; }
-
-    /**
-     * <p>The updated voice profile settings.</p>
-     */
     inline void SetVoiceProfile(const VoiceProfile& value) { m_voiceProfile = value; }
-
-    /**
-     * <p>The updated voice profile settings.</p>
-     */
     inline void SetVoiceProfile(VoiceProfile&& value) { m_voiceProfile = std::move(value); }
-
-    /**
-     * <p>The updated voice profile settings.</p>
-     */
     inline UpdateVoiceProfileResult& WithVoiceProfile(const VoiceProfile& value) { SetVoiceProfile(value); return *this;}
-
-    /**
-     * <p>The updated voice profile settings.</p>
-     */
     inline UpdateVoiceProfileResult& WithVoiceProfile(VoiceProfile&& value) { SetVoiceProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVoiceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVoiceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVoiceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VoiceProfile m_voiceProfile;

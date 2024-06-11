@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Settings to configure Nielsen Watermarks in the audio encode
      */
     inline const NielsenWatermarksSettings& GetNielsenWatermarksSettings() const{ return m_nielsenWatermarksSettings; }
-
-    /**
-     * Settings to configure Nielsen Watermarks in the audio encode
-     */
     inline bool NielsenWatermarksSettingsHasBeenSet() const { return m_nielsenWatermarksSettingsHasBeenSet; }
-
-    /**
-     * Settings to configure Nielsen Watermarks in the audio encode
-     */
     inline void SetNielsenWatermarksSettings(const NielsenWatermarksSettings& value) { m_nielsenWatermarksSettingsHasBeenSet = true; m_nielsenWatermarksSettings = value; }
-
-    /**
-     * Settings to configure Nielsen Watermarks in the audio encode
-     */
     inline void SetNielsenWatermarksSettings(NielsenWatermarksSettings&& value) { m_nielsenWatermarksSettingsHasBeenSet = true; m_nielsenWatermarksSettings = std::move(value); }
-
-    /**
-     * Settings to configure Nielsen Watermarks in the audio encode
-     */
     inline AudioWatermarkSettings& WithNielsenWatermarksSettings(const NielsenWatermarksSettings& value) { SetNielsenWatermarksSettings(value); return *this;}
-
-    /**
-     * Settings to configure Nielsen Watermarks in the audio encode
-     */
     inline AudioWatermarkSettings& WithNielsenWatermarksSettings(NielsenWatermarksSettings&& value) { SetNielsenWatermarksSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NielsenWatermarksSettings m_nielsenWatermarksSettings;

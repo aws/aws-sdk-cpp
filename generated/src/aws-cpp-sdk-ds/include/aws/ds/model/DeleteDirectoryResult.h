@@ -38,63 +38,29 @@ namespace Model
     AWS_DIRECTORYSERVICE_API DeleteDirectoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The directory identifier.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>The directory identifier.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryId = value; }
-
-    /**
-     * <p>The directory identifier.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryId = std::move(value); }
-
-    /**
-     * <p>The directory identifier.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryId.assign(value); }
-
-    /**
-     * <p>The directory identifier.</p>
-     */
     inline DeleteDirectoryResult& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>The directory identifier.</p>
-     */
     inline DeleteDirectoryResult& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The directory identifier.</p>
-     */
     inline DeleteDirectoryResult& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteDirectoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteDirectoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteDirectoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

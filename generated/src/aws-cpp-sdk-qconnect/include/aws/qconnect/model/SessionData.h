@@ -40,297 +40,104 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The description of the session.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline SessionData& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline SessionData& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the session.</p>
-     */
     inline SessionData& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration information for the session integration.</p>
      */
     inline const SessionIntegrationConfiguration& GetIntegrationConfiguration() const{ return m_integrationConfiguration; }
-
-    /**
-     * <p>The configuration information for the session integration.</p>
-     */
     inline bool IntegrationConfigurationHasBeenSet() const { return m_integrationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration information for the session integration.</p>
-     */
     inline void SetIntegrationConfiguration(const SessionIntegrationConfiguration& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = value; }
-
-    /**
-     * <p>The configuration information for the session integration.</p>
-     */
     inline void SetIntegrationConfiguration(SessionIntegrationConfiguration&& value) { m_integrationConfigurationHasBeenSet = true; m_integrationConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration information for the session integration.</p>
-     */
     inline SessionData& WithIntegrationConfiguration(const SessionIntegrationConfiguration& value) { SetIntegrationConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration information for the session integration.</p>
-     */
     inline SessionData& WithIntegrationConfiguration(SessionIntegrationConfiguration&& value) { SetIntegrationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the session.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline SessionData& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline SessionData& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the session.</p>
-     */
     inline SessionData& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the session.</p>
      */
     inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline bool SessionArnHasBeenSet() const { return m_sessionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline void SetSessionArn(const Aws::String& value) { m_sessionArnHasBeenSet = true; m_sessionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline void SetSessionArn(Aws::String&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline void SetSessionArn(const char* value) { m_sessionArnHasBeenSet = true; m_sessionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline SessionData& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline SessionData& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the session.</p>
-     */
     inline SessionData& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the session.</p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline SessionData& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline SessionData& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the session.</p>
-     */
     inline SessionData& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that can be used to specify Tag conditions.</p>
      */
     inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
-
-    /**
-     * <p>An object that can be used to specify Tag conditions.</p>
-     */
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
-
-    /**
-     * <p>An object that can be used to specify Tag conditions.</p>
-     */
     inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
-
-    /**
-     * <p>An object that can be used to specify Tag conditions.</p>
-     */
     inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
-
-    /**
-     * <p>An object that can be used to specify Tag conditions.</p>
-     */
     inline SessionData& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
-
-    /**
-     * <p>An object that can be used to specify Tag conditions.</p>
-     */
     inline SessionData& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource.</p>
-     */
     inline SessionData& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_description;

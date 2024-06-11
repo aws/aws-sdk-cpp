@@ -39,65 +39,29 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the global secondary index.</p>
      */
     inline const Aws::String& GetIndexName() const{ return m_indexName; }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the global secondary index.</p>
-     */
     inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AutoScalingSettingsUpdate& GetProvisionedReadCapacityAutoScalingUpdate() const{ return m_provisionedReadCapacityAutoScalingUpdate; }
-
-    
     inline bool ProvisionedReadCapacityAutoScalingUpdateHasBeenSet() const { return m_provisionedReadCapacityAutoScalingUpdateHasBeenSet; }
-
-    
     inline void SetProvisionedReadCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingUpdate = value; }
-
-    
     inline void SetProvisionedReadCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedReadCapacityAutoScalingUpdateHasBeenSet = true; m_provisionedReadCapacityAutoScalingUpdate = std::move(value); }
-
-    
     inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithProvisionedReadCapacityAutoScalingUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedReadCapacityAutoScalingUpdate(value); return *this;}
-
-    
     inline ReplicaGlobalSecondaryIndexAutoScalingUpdate& WithProvisionedReadCapacityAutoScalingUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedReadCapacityAutoScalingUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexName;

@@ -33,6 +33,7 @@ namespace Model
     AWS_NEPTUNEDATA_API GetPropertygraphStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200. See <a
@@ -40,103 +41,35 @@ namespace Model
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP return code of the request. If the request succeeded, the code is
-     * 200. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
-     * error codes for DFE statistics request</a> for a list of common errors.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_status = value; }
-
-    /**
-     * <p>The HTTP return code of the request. If the request succeeded, the code is
-     * 200. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
-     * error codes for DFE statistics request</a> for a list of common errors.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The HTTP return code of the request. If the request succeeded, the code is
-     * 200. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
-     * error codes for DFE statistics request</a> for a list of common errors.</p>
-     */
     inline void SetStatus(const char* value) { m_status.assign(value); }
-
-    /**
-     * <p>The HTTP return code of the request. If the request succeeded, the code is
-     * 200. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
-     * error codes for DFE statistics request</a> for a list of common errors.</p>
-     */
     inline GetPropertygraphStatisticsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The HTTP return code of the request. If the request succeeded, the code is
-     * 200. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
-     * error codes for DFE statistics request</a> for a list of common errors.</p>
-     */
     inline GetPropertygraphStatisticsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP return code of the request. If the request succeeded, the code is
-     * 200. See <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
-     * error codes for DFE statistics request</a> for a list of common errors.</p>
-     */
     inline GetPropertygraphStatisticsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Statistics for property-graph data.</p>
      */
     inline const Statistics& GetPayload() const{ return m_payload; }
-
-    /**
-     * <p>Statistics for property-graph data.</p>
-     */
     inline void SetPayload(const Statistics& value) { m_payload = value; }
-
-    /**
-     * <p>Statistics for property-graph data.</p>
-     */
     inline void SetPayload(Statistics&& value) { m_payload = std::move(value); }
-
-    /**
-     * <p>Statistics for property-graph data.</p>
-     */
     inline GetPropertygraphStatisticsResult& WithPayload(const Statistics& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>Statistics for property-graph data.</p>
-     */
     inline GetPropertygraphStatisticsResult& WithPayload(Statistics&& value) { SetPayload(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPropertygraphStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPropertygraphStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPropertygraphStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_status;

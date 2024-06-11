@@ -53,6 +53,7 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A blob of base64-encoded document bytes. The maximum size of a document
      * that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or
@@ -61,89 +62,25 @@ namespace Model
      * field. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
-
-    /**
-     * <p>A blob of base64-encoded document bytes. The maximum size of a document
-     * that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or
-     * JPEG format.</p> <p>If you're using an AWS SDK to call Amazon Textract, you
-     * might not need to base64-encode image bytes passed using the <code>Bytes</code>
-     * field. </p>
-     */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-
-    /**
-     * <p>A blob of base64-encoded document bytes. The maximum size of a document
-     * that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or
-     * JPEG format.</p> <p>If you're using an AWS SDK to call Amazon Textract, you
-     * might not need to base64-encode image bytes passed using the <code>Bytes</code>
-     * field. </p>
-     */
     inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>A blob of base64-encoded document bytes. The maximum size of a document
-     * that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or
-     * JPEG format.</p> <p>If you're using an AWS SDK to call Amazon Textract, you
-     * might not need to base64-encode image bytes passed using the <code>Bytes</code>
-     * field. </p>
-     */
     inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-
-    /**
-     * <p>A blob of base64-encoded document bytes. The maximum size of a document
-     * that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or
-     * JPEG format.</p> <p>If you're using an AWS SDK to call Amazon Textract, you
-     * might not need to base64-encode image bytes passed using the <code>Bytes</code>
-     * field. </p>
-     */
     inline Document& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-
-    /**
-     * <p>A blob of base64-encoded document bytes. The maximum size of a document
-     * that's provided in a blob of bytes is 5 MB. The document bytes must be in PNG or
-     * JPEG format.</p> <p>If you're using an AWS SDK to call Amazon Textract, you
-     * might not need to base64-encode image bytes passed using the <code>Bytes</code>
-     * field. </p>
-     */
     inline Document& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifies an S3 object as the document source. The maximum size of a
      * document that's stored in an S3 bucket is 5 MB.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
-
-    /**
-     * <p>Identifies an S3 object as the document source. The maximum size of a
-     * document that's stored in an S3 bucket is 5 MB.</p>
-     */
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-
-    /**
-     * <p>Identifies an S3 object as the document source. The maximum size of a
-     * document that's stored in an S3 bucket is 5 MB.</p>
-     */
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-
-    /**
-     * <p>Identifies an S3 object as the document source. The maximum size of a
-     * document that's stored in an S3 bucket is 5 MB.</p>
-     */
     inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-
-    /**
-     * <p>Identifies an S3 object as the document source. The maximum size of a
-     * document that's stored in an S3 bucket is 5 MB.</p>
-     */
     inline Document& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-
-    /**
-     * <p>Identifies an S3 object as the document source. The maximum size of a
-     * document that's stored in an S3 bucket is 5 MB.</p>
-     */
     inline Document& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_bytes;

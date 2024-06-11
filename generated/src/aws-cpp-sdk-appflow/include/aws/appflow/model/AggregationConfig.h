@@ -38,43 +38,20 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
      * file, or leave them unaggregated. </p>
      */
     inline const AggregationType& GetAggregationType() const{ return m_aggregationType; }
-
-    /**
-     * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
-     * file, or leave them unaggregated. </p>
-     */
     inline bool AggregationTypeHasBeenSet() const { return m_aggregationTypeHasBeenSet; }
-
-    /**
-     * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
-     * file, or leave them unaggregated. </p>
-     */
     inline void SetAggregationType(const AggregationType& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = value; }
-
-    /**
-     * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
-     * file, or leave them unaggregated. </p>
-     */
     inline void SetAggregationType(AggregationType&& value) { m_aggregationTypeHasBeenSet = true; m_aggregationType = std::move(value); }
-
-    /**
-     * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
-     * file, or leave them unaggregated. </p>
-     */
     inline AggregationConfig& WithAggregationType(const AggregationType& value) { SetAggregationType(value); return *this;}
-
-    /**
-     * <p> Specifies whether Amazon AppFlow aggregates the flow records into a single
-     * file, or leave them unaggregated. </p>
-     */
     inline AggregationConfig& WithAggregationType(AggregationType&& value) { SetAggregationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
      * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
@@ -82,31 +59,10 @@ namespace Model
      * on the number and size of the records that each file contains.</p>
      */
     inline long long GetTargetFileSize() const{ return m_targetFileSize; }
-
-    /**
-     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
-     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
-     * size that you specify. The actual file sizes might differ from this target based
-     * on the number and size of the records that each file contains.</p>
-     */
     inline bool TargetFileSizeHasBeenSet() const { return m_targetFileSizeHasBeenSet; }
-
-    /**
-     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
-     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
-     * size that you specify. The actual file sizes might differ from this target based
-     * on the number and size of the records that each file contains.</p>
-     */
     inline void SetTargetFileSize(long long value) { m_targetFileSizeHasBeenSet = true; m_targetFileSize = value; }
-
-    /**
-     * <p>The desired file size, in MB, for each output file that Amazon AppFlow writes
-     * to the flow destination. For each file, Amazon AppFlow attempts to achieve the
-     * size that you specify. The actual file sizes might differ from this target based
-     * on the number and size of the records that each file contains.</p>
-     */
     inline AggregationConfig& WithTargetFileSize(long long value) { SetTargetFileSize(value); return *this;}
-
+    ///@}
   private:
 
     AggregationType m_aggregationType;

@@ -38,67 +38,29 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of single sign-on in Amazon DataZone.</p>
      */
     inline const AuthType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of single sign-on in Amazon DataZone.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of single sign-on in Amazon DataZone.</p>
-     */
     inline void SetType(const AuthType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of single sign-on in Amazon DataZone.</p>
-     */
     inline void SetType(AuthType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of single sign-on in Amazon DataZone.</p>
-     */
     inline SingleSignOn& WithType(const AuthType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of single sign-on in Amazon DataZone.</p>
-     */
     inline SingleSignOn& WithType(AuthType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The single sign-on user assignment in Amazon DataZone.</p>
      */
     inline const UserAssignment& GetUserAssignment() const{ return m_userAssignment; }
-
-    /**
-     * <p>The single sign-on user assignment in Amazon DataZone.</p>
-     */
     inline bool UserAssignmentHasBeenSet() const { return m_userAssignmentHasBeenSet; }
-
-    /**
-     * <p>The single sign-on user assignment in Amazon DataZone.</p>
-     */
     inline void SetUserAssignment(const UserAssignment& value) { m_userAssignmentHasBeenSet = true; m_userAssignment = value; }
-
-    /**
-     * <p>The single sign-on user assignment in Amazon DataZone.</p>
-     */
     inline void SetUserAssignment(UserAssignment&& value) { m_userAssignmentHasBeenSet = true; m_userAssignment = std::move(value); }
-
-    /**
-     * <p>The single sign-on user assignment in Amazon DataZone.</p>
-     */
     inline SingleSignOn& WithUserAssignment(const UserAssignment& value) { SetUserAssignment(value); return *this;}
-
-    /**
-     * <p>The single sign-on user assignment in Amazon DataZone.</p>
-     */
     inline SingleSignOn& WithUserAssignment(UserAssignment&& value) { SetUserAssignment(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AuthType m_type;

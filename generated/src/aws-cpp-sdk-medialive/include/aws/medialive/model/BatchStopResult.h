@@ -40,99 +40,42 @@ namespace Model
     AWS_MEDIALIVE_API BatchStopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * List of failed operations
      */
     inline const Aws::Vector<BatchFailedResultModel>& GetFailed() const{ return m_failed; }
-
-    /**
-     * List of failed operations
-     */
     inline void SetFailed(const Aws::Vector<BatchFailedResultModel>& value) { m_failed = value; }
-
-    /**
-     * List of failed operations
-     */
     inline void SetFailed(Aws::Vector<BatchFailedResultModel>&& value) { m_failed = std::move(value); }
-
-    /**
-     * List of failed operations
-     */
     inline BatchStopResult& WithFailed(const Aws::Vector<BatchFailedResultModel>& value) { SetFailed(value); return *this;}
-
-    /**
-     * List of failed operations
-     */
     inline BatchStopResult& WithFailed(Aws::Vector<BatchFailedResultModel>&& value) { SetFailed(std::move(value)); return *this;}
-
-    /**
-     * List of failed operations
-     */
     inline BatchStopResult& AddFailed(const BatchFailedResultModel& value) { m_failed.push_back(value); return *this; }
-
-    /**
-     * List of failed operations
-     */
     inline BatchStopResult& AddFailed(BatchFailedResultModel&& value) { m_failed.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * List of successful operations
      */
     inline const Aws::Vector<BatchSuccessfulResultModel>& GetSuccessful() const{ return m_successful; }
-
-    /**
-     * List of successful operations
-     */
     inline void SetSuccessful(const Aws::Vector<BatchSuccessfulResultModel>& value) { m_successful = value; }
-
-    /**
-     * List of successful operations
-     */
     inline void SetSuccessful(Aws::Vector<BatchSuccessfulResultModel>&& value) { m_successful = std::move(value); }
-
-    /**
-     * List of successful operations
-     */
     inline BatchStopResult& WithSuccessful(const Aws::Vector<BatchSuccessfulResultModel>& value) { SetSuccessful(value); return *this;}
-
-    /**
-     * List of successful operations
-     */
     inline BatchStopResult& WithSuccessful(Aws::Vector<BatchSuccessfulResultModel>&& value) { SetSuccessful(std::move(value)); return *this;}
-
-    /**
-     * List of successful operations
-     */
     inline BatchStopResult& AddSuccessful(const BatchSuccessfulResultModel& value) { m_successful.push_back(value); return *this; }
-
-    /**
-     * List of successful operations
-     */
     inline BatchStopResult& AddSuccessful(BatchSuccessfulResultModel&& value) { m_successful.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchStopResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchStopResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchStopResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchFailedResultModel> m_failed;

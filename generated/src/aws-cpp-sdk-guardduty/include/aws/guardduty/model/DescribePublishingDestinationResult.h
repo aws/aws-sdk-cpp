@@ -35,175 +35,75 @@ namespace Model
     AWS_GUARDDUTY_API DescribePublishingDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the publishing destination.</p>
      */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
-
-    /**
-     * <p>The ID of the publishing destination.</p>
-     */
     inline void SetDestinationId(const Aws::String& value) { m_destinationId = value; }
-
-    /**
-     * <p>The ID of the publishing destination.</p>
-     */
     inline void SetDestinationId(Aws::String&& value) { m_destinationId = std::move(value); }
-
-    /**
-     * <p>The ID of the publishing destination.</p>
-     */
     inline void SetDestinationId(const char* value) { m_destinationId.assign(value); }
-
-    /**
-     * <p>The ID of the publishing destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
-
-    /**
-     * <p>The ID of the publishing destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the publishing destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
      * supported.</p>
      */
     inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
-
-    /**
-     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-     * supported.</p>
-     */
     inline void SetDestinationType(const DestinationType& value) { m_destinationType = value; }
-
-    /**
-     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-     * supported.</p>
-     */
     inline void SetDestinationType(DestinationType&& value) { m_destinationType = std::move(value); }
-
-    /**
-     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-     * supported.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
-
-    /**
-     * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
-     * supported.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the publishing destination.</p>
      */
     inline const PublishingStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the publishing destination.</p>
-     */
     inline void SetStatus(const PublishingStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the publishing destination.</p>
-     */
     inline void SetStatus(PublishingStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the publishing destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithStatus(const PublishingStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the publishing destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithStatus(PublishingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in epoch millisecond format, at which GuardDuty was first unable to
      * publish findings to the destination.</p>
      */
     inline long long GetPublishingFailureStartTimestamp() const{ return m_publishingFailureStartTimestamp; }
-
-    /**
-     * <p>The time, in epoch millisecond format, at which GuardDuty was first unable to
-     * publish findings to the destination.</p>
-     */
     inline void SetPublishingFailureStartTimestamp(long long value) { m_publishingFailureStartTimestamp = value; }
-
-    /**
-     * <p>The time, in epoch millisecond format, at which GuardDuty was first unable to
-     * publish findings to the destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithPublishingFailureStartTimestamp(long long value) { SetPublishingFailureStartTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>DestinationProperties</code> object that includes the
      * <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing
      * destination.</p>
      */
     inline const DestinationProperties& GetDestinationProperties() const{ return m_destinationProperties; }
-
-    /**
-     * <p>A <code>DestinationProperties</code> object that includes the
-     * <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing
-     * destination.</p>
-     */
     inline void SetDestinationProperties(const DestinationProperties& value) { m_destinationProperties = value; }
-
-    /**
-     * <p>A <code>DestinationProperties</code> object that includes the
-     * <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing
-     * destination.</p>
-     */
     inline void SetDestinationProperties(DestinationProperties&& value) { m_destinationProperties = std::move(value); }
-
-    /**
-     * <p>A <code>DestinationProperties</code> object that includes the
-     * <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing
-     * destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationProperties(const DestinationProperties& value) { SetDestinationProperties(value); return *this;}
-
-    /**
-     * <p>A <code>DestinationProperties</code> object that includes the
-     * <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing
-     * destination.</p>
-     */
     inline DescribePublishingDestinationResult& WithDestinationProperties(DestinationProperties&& value) { SetDestinationProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribePublishingDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribePublishingDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribePublishingDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationId;

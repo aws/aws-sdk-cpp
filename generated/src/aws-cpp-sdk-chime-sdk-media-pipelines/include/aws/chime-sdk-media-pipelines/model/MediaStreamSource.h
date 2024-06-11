@@ -39,77 +39,31 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of media stream source.</p>
      */
     inline const MediaPipelineSourceType& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>The type of media stream source.</p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of media stream source.</p>
-     */
     inline void SetSourceType(const MediaPipelineSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>The type of media stream source.</p>
-     */
     inline void SetSourceType(MediaPipelineSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>The type of media stream source.</p>
-     */
     inline MediaStreamSource& WithSourceType(const MediaPipelineSourceType& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>The type of media stream source.</p>
-     */
     inline MediaStreamSource& WithSourceType(MediaPipelineSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the media stream source. </p>
      */
     inline const Aws::String& GetSourceArn() const{ return m_sourceArn; }
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline void SetSourceArn(Aws::String&& value) { m_sourceArnHasBeenSet = true; m_sourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline void SetSourceArn(const char* value) { m_sourceArnHasBeenSet = true; m_sourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline MediaStreamSource& WithSourceArn(const Aws::String& value) { SetSourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline MediaStreamSource& WithSourceArn(Aws::String&& value) { SetSourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the media stream source. </p>
-     */
     inline MediaStreamSource& WithSourceArn(const char* value) { SetSourceArn(value); return *this;}
-
+    ///@}
   private:
 
     MediaPipelineSourceType m_sourceType;

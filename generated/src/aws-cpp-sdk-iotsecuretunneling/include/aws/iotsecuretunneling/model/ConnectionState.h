@@ -38,73 +38,30 @@ namespace Model
     AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
      * and <code>DISCONNECTED</code>.</p>
      */
     inline const ConnectionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
-     * and <code>DISCONNECTED</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
-     * and <code>DISCONNECTED</code>.</p>
-     */
     inline void SetStatus(const ConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
-     * and <code>DISCONNECTED</code>.</p>
-     */
     inline void SetStatus(ConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
-     * and <code>DISCONNECTED</code>.</p>
-     */
     inline ConnectionState& WithStatus(const ConnectionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The connection status of the tunnel. Valid values are <code>CONNECTED</code>
-     * and <code>DISCONNECTED</code>.</p>
-     */
     inline ConnectionState& WithStatus(ConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last time the connection status was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-
-    /**
-     * <p>The last time the connection status was updated.</p>
-     */
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-
-    /**
-     * <p>The last time the connection status was updated.</p>
-     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-
-    /**
-     * <p>The last time the connection status was updated.</p>
-     */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-
-    /**
-     * <p>The last time the connection status was updated.</p>
-     */
     inline ConnectionState& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The last time the connection status was updated.</p>
-     */
     inline ConnectionState& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConnectionStatus m_status;

@@ -39,96 +39,41 @@ namespace Model
     AWS_CLOUDFRONT_API GetCloudFrontOriginAccessIdentity2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The origin access identity's information.</p>
      */
     inline const CloudFrontOriginAccessIdentity& GetCloudFrontOriginAccessIdentity() const{ return m_cloudFrontOriginAccessIdentity; }
-
-    /**
-     * <p>The origin access identity's information.</p>
-     */
     inline void SetCloudFrontOriginAccessIdentity(const CloudFrontOriginAccessIdentity& value) { m_cloudFrontOriginAccessIdentity = value; }
-
-    /**
-     * <p>The origin access identity's information.</p>
-     */
     inline void SetCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { m_cloudFrontOriginAccessIdentity = std::move(value); }
-
-    /**
-     * <p>The origin access identity's information.</p>
-     */
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithCloudFrontOriginAccessIdentity(const CloudFrontOriginAccessIdentity& value) { SetCloudFrontOriginAccessIdentity(value); return *this;}
-
-    /**
-     * <p>The origin access identity's information.</p>
-     */
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithCloudFrontOriginAccessIdentity(CloudFrontOriginAccessIdentity&& value) { SetCloudFrontOriginAccessIdentity(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the origin access identity's information. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The current version of the origin access identity's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The current version of the origin access identity's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The current version of the origin access identity's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The current version of the origin access identity's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The current version of the origin access identity's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The current version of the origin access identity's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCloudFrontOriginAccessIdentity2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CloudFrontOriginAccessIdentity m_cloudFrontOriginAccessIdentity;

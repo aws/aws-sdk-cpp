@@ -39,79 +39,31 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the database resource included in the AWS Lake Formation data
      * permission.</p>
      */
     inline const DatabaseLFTagPolicy& GetDatabase() const{ return m_database; }
-
-    /**
-     * <p>Details about the database resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
-
-    /**
-     * <p>Details about the database resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline void SetDatabase(const DatabaseLFTagPolicy& value) { m_databaseHasBeenSet = true; m_database = value; }
-
-    /**
-     * <p>Details about the database resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline void SetDatabase(DatabaseLFTagPolicy&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
-
-    /**
-     * <p>Details about the database resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline LFResourceDetails& WithDatabase(const DatabaseLFTagPolicy& value) { SetDatabase(value); return *this;}
-
-    /**
-     * <p>Details about the database resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline LFResourceDetails& WithDatabase(DatabaseLFTagPolicy&& value) { SetDatabase(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about the table resource included in the AWS Lake Formation data
      * permission.</p>
      */
     inline const TableLFTagPolicy& GetTable() const{ return m_table; }
-
-    /**
-     * <p>Details about the table resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
-
-    /**
-     * <p>Details about the table resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline void SetTable(const TableLFTagPolicy& value) { m_tableHasBeenSet = true; m_table = value; }
-
-    /**
-     * <p>Details about the table resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline void SetTable(TableLFTagPolicy&& value) { m_tableHasBeenSet = true; m_table = std::move(value); }
-
-    /**
-     * <p>Details about the table resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline LFResourceDetails& WithTable(const TableLFTagPolicy& value) { SetTable(value); return *this;}
-
-    /**
-     * <p>Details about the table resource included in the AWS Lake Formation data
-     * permission.</p>
-     */
     inline LFResourceDetails& WithTable(TableLFTagPolicy&& value) { SetTable(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DatabaseLFTagPolicy m_database;

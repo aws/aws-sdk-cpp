@@ -38,36 +38,17 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A relative ranking for how relevant the response is to the query.</p>
      */
     inline const ScoreConfidence& GetScoreConfidence() const{ return m_scoreConfidence; }
-
-    /**
-     * <p>A relative ranking for how relevant the response is to the query.</p>
-     */
     inline bool ScoreConfidenceHasBeenSet() const { return m_scoreConfidenceHasBeenSet; }
-
-    /**
-     * <p>A relative ranking for how relevant the response is to the query.</p>
-     */
     inline void SetScoreConfidence(const ScoreConfidence& value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = value; }
-
-    /**
-     * <p>A relative ranking for how relevant the response is to the query.</p>
-     */
     inline void SetScoreConfidence(ScoreConfidence&& value) { m_scoreConfidenceHasBeenSet = true; m_scoreConfidence = std::move(value); }
-
-    /**
-     * <p>A relative ranking for how relevant the response is to the query.</p>
-     */
     inline ScoreAttributes& WithScoreConfidence(const ScoreConfidence& value) { SetScoreConfidence(value); return *this;}
-
-    /**
-     * <p>A relative ranking for how relevant the response is to the query.</p>
-     */
     inline ScoreAttributes& WithScoreConfidence(ScoreConfidence&& value) { SetScoreConfidence(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ScoreConfidence m_scoreConfidence;

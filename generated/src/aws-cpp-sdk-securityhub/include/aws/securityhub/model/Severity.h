@@ -44,6 +44,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Deprecated. This attribute isn't included in findings. Instead of providing
      * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
@@ -51,32 +52,12 @@ namespace Model
      * generated the finding.</p>
      */
     inline double GetProduct() const{ return m_product; }
-
-    /**
-     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
-     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the Amazon Web Services service or integrated partner product that
-     * generated the finding.</p>
-     */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-
-    /**
-     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
-     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the Amazon Web Services service or integrated partner product that
-     * generated the finding.</p>
-     */
     inline void SetProduct(double value) { m_productHasBeenSet = true; m_product = value; }
-
-    /**
-     * <p>Deprecated. This attribute isn't included in findings. Instead of providing
-     * <code>Product</code>, provide <code>Original</code>.</p> <p>The native severity
-     * as defined by the Amazon Web Services service or integrated partner product that
-     * generated the finding.</p>
-     */
     inline Severity& WithProduct(double value) { SetProduct(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The severity value of the finding. The allowed values are the following.</p>
      * <ul> <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li> <li>
@@ -92,88 +73,14 @@ namespace Model
      * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
      */
     inline const SeverityLabel& GetLabel() const{ return m_label; }
-
-    /**
-     * <p>The severity value of the finding. The allowed values are the following.</p>
-     * <ul> <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li> <li>
-     * <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
-     * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
-     * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
-     * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>, then
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
-     */
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-
-    /**
-     * <p>The severity value of the finding. The allowed values are the following.</p>
-     * <ul> <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li> <li>
-     * <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
-     * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
-     * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
-     * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>, then
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
-     */
     inline void SetLabel(const SeverityLabel& value) { m_labelHasBeenSet = true; m_label = value; }
-
-    /**
-     * <p>The severity value of the finding. The allowed values are the following.</p>
-     * <ul> <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li> <li>
-     * <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
-     * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
-     * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
-     * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>, then
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
-     */
     inline void SetLabel(SeverityLabel&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-
-    /**
-     * <p>The severity value of the finding. The allowed values are the following.</p>
-     * <ul> <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li> <li>
-     * <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
-     * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
-     * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
-     * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>, then
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
-     */
     inline Severity& WithLabel(const SeverityLabel& value) { SetLabel(value); return *this;}
-
-    /**
-     * <p>The severity value of the finding. The allowed values are the following.</p>
-     * <ul> <li> <p> <code>INFORMATIONAL</code> - No issue was found.</p> </li> <li>
-     * <p> <code>LOW</code> - The issue does not require action on its own.</p> </li>
-     * <li> <p> <code>MEDIUM</code> - The issue must be addressed but not urgently.</p>
-     * </li> <li> <p> <code>HIGH</code> - The issue must be addressed as a
-     * priority.</p> </li> <li> <p> <code>CRITICAL</code> - The issue must be
-     * remediated immediately to avoid it escalating.</p> </li> </ul> <p>If you provide
-     * <code>Normalized</code> and do not provide <code>Label</code>, then
-     * <code>Label</code> is set automatically as follows. </p> <ul> <li> <p>0 -
-     * <code>INFORMATIONAL</code> </p> </li> <li> <p>1–39 - <code>LOW</code> </p> </li>
-     * <li> <p>40–69 - <code>MEDIUM</code> </p> </li> <li> <p>70–89 - <code>HIGH</code>
-     * </p> </li> <li> <p>90–100 - <code>CRITICAL</code> </p> </li> </ul>
-     */
     inline Severity& WithLabel(SeverityLabel&& value) { SetLabel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Deprecated. The normalized severity of a finding. Instead of providing
      * <code>Normalized</code>, provide <code>Label</code>.</p> <p>The value of
@@ -186,95 +93,25 @@ namespace Model
      * </li> </ul>
      */
     inline int GetNormalized() const{ return m_normalized; }
-
-    /**
-     * <p>Deprecated. The normalized severity of a finding. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>The value of
-     * <code>Normalized</code> can be an integer between <code>0</code> and
-     * <code>100</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
-     */
     inline bool NormalizedHasBeenSet() const { return m_normalizedHasBeenSet; }
-
-    /**
-     * <p>Deprecated. The normalized severity of a finding. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>The value of
-     * <code>Normalized</code> can be an integer between <code>0</code> and
-     * <code>100</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
-     */
     inline void SetNormalized(int value) { m_normalizedHasBeenSet = true; m_normalized = value; }
-
-    /**
-     * <p>Deprecated. The normalized severity of a finding. Instead of providing
-     * <code>Normalized</code>, provide <code>Label</code>.</p> <p>The value of
-     * <code>Normalized</code> can be an integer between <code>0</code> and
-     * <code>100</code>.</p> <p>If you provide <code>Label</code> and do not provide
-     * <code>Normalized</code>, then <code>Normalized</code> is set automatically as
-     * follows.</p> <ul> <li> <p> <code>INFORMATIONAL</code> - 0</p> </li> <li> <p>
-     * <code>LOW</code> - 1</p> </li> <li> <p> <code>MEDIUM</code> - 40</p> </li> <li>
-     * <p> <code>HIGH</code> - 70</p> </li> <li> <p> <code>CRITICAL</code> - 90</p>
-     * </li> </ul>
-     */
     inline Severity& WithNormalized(int value) { SetNormalized(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The native severity from the finding product that generated the finding.</p>
      * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
      */
     inline const Aws::String& GetOriginal() const{ return m_original; }
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline bool OriginalHasBeenSet() const { return m_originalHasBeenSet; }
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline void SetOriginal(const Aws::String& value) { m_originalHasBeenSet = true; m_original = value; }
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline void SetOriginal(Aws::String&& value) { m_originalHasBeenSet = true; m_original = std::move(value); }
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline void SetOriginal(const char* value) { m_originalHasBeenSet = true; m_original.assign(value); }
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline Severity& WithOriginal(const Aws::String& value) { SetOriginal(value); return *this;}
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline Severity& WithOriginal(Aws::String&& value) { SetOriginal(std::move(value)); return *this;}
-
-    /**
-     * <p>The native severity from the finding product that generated the finding.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 64.</p>
-     */
     inline Severity& WithOriginal(const char* value) { SetOriginal(value); return *this;}
-
+    ///@}
   private:
 
     double m_product;

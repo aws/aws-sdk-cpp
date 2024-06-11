@@ -39,6 +39,7 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
      * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
@@ -46,88 +47,25 @@ namespace Model
      * are ordered based on their job priority and share usage.</p>
      */
     inline const Aws::Vector<FrontOfQueueJobSummary>& GetJobs() const{ return m_jobs; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline bool JobsHasBeenSet() const { return m_jobsHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline void SetJobs(const Aws::Vector<FrontOfQueueJobSummary>& value) { m_jobsHasBeenSet = true; m_jobs = value; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline void SetJobs(Aws::Vector<FrontOfQueueJobSummary>&& value) { m_jobsHasBeenSet = true; m_jobs = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline FrontOfQueueDetail& WithJobs(const Aws::Vector<FrontOfQueueJobSummary>& value) { SetJobs(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline FrontOfQueueDetail& WithJobs(Aws::Vector<FrontOfQueueJobSummary>&& value) { SetJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline FrontOfQueueDetail& AddJobs(const FrontOfQueueJobSummary& value) { m_jobsHasBeenSet = true; m_jobs.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon Resource Names (ARNs) of the first 100 <code>RUNNABLE</code> jobs
-     * in a named job queue. For first-in-first-out (FIFO) job queues, jobs are ordered
-     * based on their submission time. For fair share scheduling (FSS) job queues, jobs
-     * are ordered based on their job priority and share usage.</p>
-     */
     inline FrontOfQueueDetail& AddJobs(FrontOfQueueJobSummary&& value) { m_jobsHasBeenSet = true; m_jobs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Unix timestamp (in milliseconds) for when each of the first 100
      * <code>RUNNABLE</code> jobs were last updated. </p>
      */
     inline long long GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-
-    /**
-     * <p>The Unix timestamp (in milliseconds) for when each of the first 100
-     * <code>RUNNABLE</code> jobs were last updated. </p>
-     */
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp (in milliseconds) for when each of the first 100
-     * <code>RUNNABLE</code> jobs were last updated. </p>
-     */
     inline void SetLastUpdatedAt(long long value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-
-    /**
-     * <p>The Unix timestamp (in milliseconds) for when each of the first 100
-     * <code>RUNNABLE</code> jobs were last updated. </p>
-     */
     inline FrontOfQueueDetail& WithLastUpdatedAt(long long value) { SetLastUpdatedAt(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FrontOfQueueJobSummary> m_jobs;

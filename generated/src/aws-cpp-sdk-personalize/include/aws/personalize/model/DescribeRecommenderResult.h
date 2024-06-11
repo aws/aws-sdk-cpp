@@ -33,53 +33,27 @@ namespace Model
     AWS_PERSONALIZE_API DescribeRecommenderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The properties of the recommender.</p>
      */
     inline const Recommender& GetRecommender() const{ return m_recommender; }
-
-    /**
-     * <p>The properties of the recommender.</p>
-     */
     inline void SetRecommender(const Recommender& value) { m_recommender = value; }
-
-    /**
-     * <p>The properties of the recommender.</p>
-     */
     inline void SetRecommender(Recommender&& value) { m_recommender = std::move(value); }
-
-    /**
-     * <p>The properties of the recommender.</p>
-     */
     inline DescribeRecommenderResult& WithRecommender(const Recommender& value) { SetRecommender(value); return *this;}
-
-    /**
-     * <p>The properties of the recommender.</p>
-     */
     inline DescribeRecommenderResult& WithRecommender(Recommender&& value) { SetRecommender(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRecommenderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRecommenderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRecommenderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Recommender m_recommender;

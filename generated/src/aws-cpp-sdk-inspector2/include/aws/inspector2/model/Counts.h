@@ -38,57 +38,27 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of resources.</p>
      */
     inline long long GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of resources.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of resources.</p>
-     */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of resources.</p>
-     */
     inline Counts& WithCount(long long value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key associated with this group</p>
      */
     inline const GroupKey& GetGroupKey() const{ return m_groupKey; }
-
-    /**
-     * <p>The key associated with this group</p>
-     */
     inline bool GroupKeyHasBeenSet() const { return m_groupKeyHasBeenSet; }
-
-    /**
-     * <p>The key associated with this group</p>
-     */
     inline void SetGroupKey(const GroupKey& value) { m_groupKeyHasBeenSet = true; m_groupKey = value; }
-
-    /**
-     * <p>The key associated with this group</p>
-     */
     inline void SetGroupKey(GroupKey&& value) { m_groupKeyHasBeenSet = true; m_groupKey = std::move(value); }
-
-    /**
-     * <p>The key associated with this group</p>
-     */
     inline Counts& WithGroupKey(const GroupKey& value) { SetGroupKey(value); return *this;}
-
-    /**
-     * <p>The key associated with this group</p>
-     */
     inline Counts& WithGroupKey(GroupKey&& value) { SetGroupKey(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_count;

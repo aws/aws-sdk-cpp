@@ -44,104 +44,37 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon Web Services account that the stack instance is
      * associated with.</p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline StackInstance& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline StackInstance& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services account that the stack instance is
-     * associated with.</p>
-     */
     inline StackInstance& WithAccount(const char* value) { SetAccount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Web Services Region that the stack instance is
      * associated with.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline StackInstance& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline StackInstance& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services Region that the stack instance is
-     * associated with.</p>
-     */
     inline StackInstance& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the stack instance, in terms of its synchronization with its
      * associated stack set. </p> <ul> <li> <p> <code>INOPERABLE</code>: A
@@ -159,97 +92,12 @@ namespace Model
      * date with the stack set.</p> </li> </ul>
      */
     inline const StackInstanceStatus& GetStackInstanceStatus() const{ return m_stackInstanceStatus; }
-
-    /**
-     * <p>The status of the stack instance, in terms of its synchronization with its
-     * associated stack set. </p> <ul> <li> <p> <code>INOPERABLE</code>: A
-     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
-     * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> operations. You might need to perform a
-     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
-     * to true, to delete the stack instance, and then delete the stack manually. </p>
-     * </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with
-     * the stack set because either the associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the
-     * stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation that failed or was stopped before the stack was created or
-     * updated.</p> </li> <li> <p> <code>CURRENT</code>: The stack is currently up to
-     * date with the stack set.</p> </li> </ul>
-     */
     inline bool StackInstanceStatusHasBeenSet() const { return m_stackInstanceStatusHasBeenSet; }
-
-    /**
-     * <p>The status of the stack instance, in terms of its synchronization with its
-     * associated stack set. </p> <ul> <li> <p> <code>INOPERABLE</code>: A
-     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
-     * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> operations. You might need to perform a
-     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
-     * to true, to delete the stack instance, and then delete the stack manually. </p>
-     * </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with
-     * the stack set because either the associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the
-     * stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation that failed or was stopped before the stack was created or
-     * updated.</p> </li> <li> <p> <code>CURRENT</code>: The stack is currently up to
-     * date with the stack set.</p> </li> </ul>
-     */
     inline void SetStackInstanceStatus(const StackInstanceStatus& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = value; }
-
-    /**
-     * <p>The status of the stack instance, in terms of its synchronization with its
-     * associated stack set. </p> <ul> <li> <p> <code>INOPERABLE</code>: A
-     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
-     * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> operations. You might need to perform a
-     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
-     * to true, to delete the stack instance, and then delete the stack manually. </p>
-     * </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with
-     * the stack set because either the associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the
-     * stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation that failed or was stopped before the stack was created or
-     * updated.</p> </li> <li> <p> <code>CURRENT</code>: The stack is currently up to
-     * date with the stack set.</p> </li> </ul>
-     */
     inline void SetStackInstanceStatus(StackInstanceStatus&& value) { m_stackInstanceStatusHasBeenSet = true; m_stackInstanceStatus = std::move(value); }
-
-    /**
-     * <p>The status of the stack instance, in terms of its synchronization with its
-     * associated stack set. </p> <ul> <li> <p> <code>INOPERABLE</code>: A
-     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
-     * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> operations. You might need to perform a
-     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
-     * to true, to delete the stack instance, and then delete the stack manually. </p>
-     * </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with
-     * the stack set because either the associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the
-     * stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation that failed or was stopped before the stack was created or
-     * updated.</p> </li> <li> <p> <code>CURRENT</code>: The stack is currently up to
-     * date with the stack set.</p> </li> </ul>
-     */
     inline StackInstance& WithStackInstanceStatus(const StackInstanceStatus& value) { SetStackInstanceStatus(value); return *this;}
-
-    /**
-     * <p>The status of the stack instance, in terms of its synchronization with its
-     * associated stack set. </p> <ul> <li> <p> <code>INOPERABLE</code>: A
-     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
-     * unstable state. Stacks in this state are excluded from further
-     * <code>UpdateStackSet</code> operations. You might need to perform a
-     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
-     * to true, to delete the stack instance, and then delete the stack manually. </p>
-     * </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up to date with
-     * the stack set because either the associated stack failed during a
-     * <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation, or the
-     * stack was part of a <code>CreateStackSet</code> or <code>UpdateStackSet</code>
-     * operation that failed or was stopped before the stack was created or
-     * updated.</p> </li> <li> <p> <code>CURRENT</code>: The stack is currently up to
-     * date with the stack set.</p> </li> </ul>
-     */
     inline StackInstance& WithStackInstanceStatus(StackInstanceStatus&& value) { SetStackInstanceStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_account;

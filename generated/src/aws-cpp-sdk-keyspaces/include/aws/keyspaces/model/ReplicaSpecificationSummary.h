@@ -46,102 +46,42 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecificationSummary& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecificationSummary& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region.</p>
-     */
     inline ReplicaSpecificationSummary& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the multi-Region table in the specified Amazon Web Services
      * Region.</p>
      */
     inline const TableStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the multi-Region table in the specified Amazon Web Services
-     * Region.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the multi-Region table in the specified Amazon Web Services
-     * Region.</p>
-     */
     inline void SetStatus(const TableStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the multi-Region table in the specified Amazon Web Services
-     * Region.</p>
-     */
     inline void SetStatus(TableStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the multi-Region table in the specified Amazon Web Services
-     * Region.</p>
-     */
     inline ReplicaSpecificationSummary& WithStatus(const TableStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the multi-Region table in the specified Amazon Web Services
-     * Region.</p>
-     */
     inline ReplicaSpecificationSummary& WithStatus(TableStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const CapacitySpecificationSummary& GetCapacitySpecification() const{ return m_capacitySpecification; }
-
-    
     inline bool CapacitySpecificationHasBeenSet() const { return m_capacitySpecificationHasBeenSet; }
-
-    
     inline void SetCapacitySpecification(const CapacitySpecificationSummary& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = value; }
-
-    
     inline void SetCapacitySpecification(CapacitySpecificationSummary&& value) { m_capacitySpecificationHasBeenSet = true; m_capacitySpecification = std::move(value); }
-
-    
     inline ReplicaSpecificationSummary& WithCapacitySpecification(const CapacitySpecificationSummary& value) { SetCapacitySpecification(value); return *this;}
-
-    
     inline ReplicaSpecificationSummary& WithCapacitySpecification(CapacitySpecificationSummary&& value) { SetCapacitySpecification(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_region;

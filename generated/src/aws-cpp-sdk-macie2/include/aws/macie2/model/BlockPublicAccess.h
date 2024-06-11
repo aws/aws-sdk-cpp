@@ -40,101 +40,48 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the
      * bucket and objects in the bucket.</p>
      */
     inline bool GetBlockPublicAcls() const{ return m_blockPublicAcls; }
-
-    /**
-     * <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the
-     * bucket and objects in the bucket.</p>
-     */
     inline bool BlockPublicAclsHasBeenSet() const { return m_blockPublicAclsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the
-     * bucket and objects in the bucket.</p>
-     */
     inline void SetBlockPublicAcls(bool value) { m_blockPublicAclsHasBeenSet = true; m_blockPublicAcls = value; }
-
-    /**
-     * <p>Specifies whether Amazon S3 blocks public access control lists (ACLs) for the
-     * bucket and objects in the bucket.</p>
-     */
     inline BlockPublicAccess& WithBlockPublicAcls(bool value) { SetBlockPublicAcls(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
      */
     inline bool GetBlockPublicPolicy() const{ return m_blockPublicPolicy; }
-
-    /**
-     * <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
-     */
     inline bool BlockPublicPolicyHasBeenSet() const { return m_blockPublicPolicyHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
-     */
     inline void SetBlockPublicPolicy(bool value) { m_blockPublicPolicyHasBeenSet = true; m_blockPublicPolicy = value; }
-
-    /**
-     * <p>Specifies whether Amazon S3 blocks public bucket policies for the bucket.</p>
-     */
     inline BlockPublicAccess& WithBlockPublicPolicy(bool value) { SetBlockPublicPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in
      * the bucket.</p>
      */
     inline bool GetIgnorePublicAcls() const{ return m_ignorePublicAcls; }
-
-    /**
-     * <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in
-     * the bucket.</p>
-     */
     inline bool IgnorePublicAclsHasBeenSet() const { return m_ignorePublicAclsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in
-     * the bucket.</p>
-     */
     inline void SetIgnorePublicAcls(bool value) { m_ignorePublicAclsHasBeenSet = true; m_ignorePublicAcls = value; }
-
-    /**
-     * <p>Specifies whether Amazon S3 ignores public ACLs for the bucket and objects in
-     * the bucket.</p>
-     */
     inline BlockPublicAccess& WithIgnorePublicAcls(bool value) { SetIgnorePublicAcls(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether Amazon S3 restricts public bucket policies for the
      * bucket.</p>
      */
     inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
-
-    /**
-     * <p>Specifies whether Amazon S3 restricts public bucket policies for the
-     * bucket.</p>
-     */
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether Amazon S3 restricts public bucket policies for the
-     * bucket.</p>
-     */
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
-
-    /**
-     * <p>Specifies whether Amazon S3 restricts public bucket policies for the
-     * bucket.</p>
-     */
     inline BlockPublicAccess& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
-
+    ///@}
   private:
 
     bool m_blockPublicAcls;

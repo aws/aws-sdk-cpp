@@ -34,46 +34,19 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon RDS instance's ARN.</p>
      */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = std::move(value); }
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline DeregisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline DeregisterRdsDbInstanceRequest& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon RDS instance's ARN.</p>
-     */
     inline DeregisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rdsDbInstanceArn;

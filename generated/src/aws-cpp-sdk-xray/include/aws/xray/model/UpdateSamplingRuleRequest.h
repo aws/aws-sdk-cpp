@@ -32,36 +32,17 @@ namespace Model
     AWS_XRAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The rule and fields to change.</p>
      */
     inline const SamplingRuleUpdate& GetSamplingRuleUpdate() const{ return m_samplingRuleUpdate; }
-
-    /**
-     * <p>The rule and fields to change.</p>
-     */
     inline bool SamplingRuleUpdateHasBeenSet() const { return m_samplingRuleUpdateHasBeenSet; }
-
-    /**
-     * <p>The rule and fields to change.</p>
-     */
     inline void SetSamplingRuleUpdate(const SamplingRuleUpdate& value) { m_samplingRuleUpdateHasBeenSet = true; m_samplingRuleUpdate = value; }
-
-    /**
-     * <p>The rule and fields to change.</p>
-     */
     inline void SetSamplingRuleUpdate(SamplingRuleUpdate&& value) { m_samplingRuleUpdateHasBeenSet = true; m_samplingRuleUpdate = std::move(value); }
-
-    /**
-     * <p>The rule and fields to change.</p>
-     */
     inline UpdateSamplingRuleRequest& WithSamplingRuleUpdate(const SamplingRuleUpdate& value) { SetSamplingRuleUpdate(value); return *this;}
-
-    /**
-     * <p>The rule and fields to change.</p>
-     */
     inline UpdateSamplingRuleRequest& WithSamplingRuleUpdate(SamplingRuleUpdate&& value) { SetSamplingRuleUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SamplingRuleUpdate m_samplingRuleUpdate;

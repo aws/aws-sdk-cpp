@@ -39,79 +39,31 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field to sort the results by.</p>
      */
     inline const UsageStatisticsSortKey& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The field to sort the results by.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The field to sort the results by.</p>
-     */
     inline void SetKey(const UsageStatisticsSortKey& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The field to sort the results by.</p>
-     */
     inline void SetKey(UsageStatisticsSortKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The field to sort the results by.</p>
-     */
     inline UsageStatisticsSortBy& WithKey(const UsageStatisticsSortKey& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The field to sort the results by.</p>
-     */
     inline UsageStatisticsSortBy& WithKey(UsageStatisticsSortKey&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort order to apply to the results, based on the value for the field
      * specified by the key property. Valid values are: ASC, sort the results in
      * ascending order; and, DESC, sort the results in descending order.</p>
      */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the field
-     * specified by the key property. Valid values are: ASC, sort the results in
-     * ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the field
-     * specified by the key property. Valid values are: ASC, sort the results in
-     * ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the field
-     * specified by the key property. Valid values are: ASC, sort the results in
-     * ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the field
-     * specified by the key property. Valid values are: ASC, sort the results in
-     * ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline UsageStatisticsSortBy& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-
-    /**
-     * <p>The sort order to apply to the results, based on the value for the field
-     * specified by the key property. Valid values are: ASC, sort the results in
-     * ascending order; and, DESC, sort the results in descending order.</p>
-     */
     inline UsageStatisticsSortBy& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UsageStatisticsSortKey m_key;

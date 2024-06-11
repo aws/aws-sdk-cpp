@@ -32,63 +32,29 @@ namespace Model
     AWS_WELLARCHITECTED_API CreateReviewTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The review template ARN.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline CreateReviewTemplateResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline CreateReviewTemplateResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline CreateReviewTemplateResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateReviewTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateReviewTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateReviewTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

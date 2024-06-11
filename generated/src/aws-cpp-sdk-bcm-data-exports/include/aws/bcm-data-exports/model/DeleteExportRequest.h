@@ -34,46 +34,19 @@ namespace Model
     AWS_BCMDATAEXPORTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for this export.</p>
      */
     inline const Aws::String& GetExportArn() const{ return m_exportArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline bool ExportArnHasBeenSet() const { return m_exportArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline void SetExportArn(const Aws::String& value) { m_exportArnHasBeenSet = true; m_exportArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline void SetExportArn(Aws::String&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline void SetExportArn(const char* value) { m_exportArnHasBeenSet = true; m_exportArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline DeleteExportRequest& WithExportArn(const Aws::String& value) { SetExportArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline DeleteExportRequest& WithExportArn(Aws::String&& value) { SetExportArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline DeleteExportRequest& WithExportArn(const char* value) { SetExportArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportArn;

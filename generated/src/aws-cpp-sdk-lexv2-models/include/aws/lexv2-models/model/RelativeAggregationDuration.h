@@ -50,43 +50,20 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of time period that the <code>timeValue</code> field represents.
      * </p>
      */
     inline const TimeDimension& GetTimeDimension() const{ return m_timeDimension; }
-
-    /**
-     * <p>The type of time period that the <code>timeValue</code> field represents.
-     * </p>
-     */
     inline bool TimeDimensionHasBeenSet() const { return m_timeDimensionHasBeenSet; }
-
-    /**
-     * <p>The type of time period that the <code>timeValue</code> field represents.
-     * </p>
-     */
     inline void SetTimeDimension(const TimeDimension& value) { m_timeDimensionHasBeenSet = true; m_timeDimension = value; }
-
-    /**
-     * <p>The type of time period that the <code>timeValue</code> field represents.
-     * </p>
-     */
     inline void SetTimeDimension(TimeDimension&& value) { m_timeDimensionHasBeenSet = true; m_timeDimension = std::move(value); }
-
-    /**
-     * <p>The type of time period that the <code>timeValue</code> field represents.
-     * </p>
-     */
     inline RelativeAggregationDuration& WithTimeDimension(const TimeDimension& value) { SetTimeDimension(value); return *this;}
-
-    /**
-     * <p>The type of time period that the <code>timeValue</code> field represents.
-     * </p>
-     */
     inline RelativeAggregationDuration& WithTimeDimension(TimeDimension&& value) { SetTimeDimension(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The period of the time window to gather statistics for. The valid value
      * depends on the setting of the <code>timeDimension</code> field.</p> <ul> <li>
@@ -94,31 +71,10 @@ namespace Model
      * 3</p> </li> <li> <p> <code>Weeks</code> - 1/2</p> </li> </ul>
      */
     inline int GetTimeValue() const{ return m_timeValue; }
-
-    /**
-     * <p>The period of the time window to gather statistics for. The valid value
-     * depends on the setting of the <code>timeDimension</code> field.</p> <ul> <li>
-     * <p> <code>Hours</code> - 1/3/6/12/24</p> </li> <li> <p> <code>Days</code> -
-     * 3</p> </li> <li> <p> <code>Weeks</code> - 1/2</p> </li> </ul>
-     */
     inline bool TimeValueHasBeenSet() const { return m_timeValueHasBeenSet; }
-
-    /**
-     * <p>The period of the time window to gather statistics for. The valid value
-     * depends on the setting of the <code>timeDimension</code> field.</p> <ul> <li>
-     * <p> <code>Hours</code> - 1/3/6/12/24</p> </li> <li> <p> <code>Days</code> -
-     * 3</p> </li> <li> <p> <code>Weeks</code> - 1/2</p> </li> </ul>
-     */
     inline void SetTimeValue(int value) { m_timeValueHasBeenSet = true; m_timeValue = value; }
-
-    /**
-     * <p>The period of the time window to gather statistics for. The valid value
-     * depends on the setting of the <code>timeDimension</code> field.</p> <ul> <li>
-     * <p> <code>Hours</code> - 1/3/6/12/24</p> </li> <li> <p> <code>Days</code> -
-     * 3</p> </li> <li> <p> <code>Weeks</code> - 1/2</p> </li> </ul>
-     */
     inline RelativeAggregationDuration& WithTimeValue(int value) { SetTimeValue(value); return *this;}
-
+    ///@}
   private:
 
     TimeDimension m_timeDimension;

@@ -34,46 +34,19 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The cluster's Amazon Resource Number (ARN).</p>
      */
     inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::move(value); }
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline void SetEcsClusterArn(const char* value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn.assign(value); }
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster's Amazon Resource Number (ARN).</p>
-     */
     inline DeregisterEcsClusterRequest& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ecsClusterArn;

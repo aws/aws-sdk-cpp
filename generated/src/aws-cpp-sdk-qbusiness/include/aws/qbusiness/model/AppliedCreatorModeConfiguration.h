@@ -43,42 +43,18 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Information about whether creator mode is enabled or disabled for an Amazon
      * Q Business application. </p>
      */
     inline const CreatorModeControl& GetCreatorModeControl() const{ return m_creatorModeControl; }
-
-    /**
-     * <p> Information about whether creator mode is enabled or disabled for an Amazon
-     * Q Business application. </p>
-     */
     inline bool CreatorModeControlHasBeenSet() const { return m_creatorModeControlHasBeenSet; }
-
-    /**
-     * <p> Information about whether creator mode is enabled or disabled for an Amazon
-     * Q Business application. </p>
-     */
     inline void SetCreatorModeControl(const CreatorModeControl& value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = value; }
-
-    /**
-     * <p> Information about whether creator mode is enabled or disabled for an Amazon
-     * Q Business application. </p>
-     */
     inline void SetCreatorModeControl(CreatorModeControl&& value) { m_creatorModeControlHasBeenSet = true; m_creatorModeControl = std::move(value); }
-
-    /**
-     * <p> Information about whether creator mode is enabled or disabled for an Amazon
-     * Q Business application. </p>
-     */
     inline AppliedCreatorModeConfiguration& WithCreatorModeControl(const CreatorModeControl& value) { SetCreatorModeControl(value); return *this;}
-
-    /**
-     * <p> Information about whether creator mode is enabled or disabled for an Amazon
-     * Q Business application. </p>
-     */
     inline AppliedCreatorModeConfiguration& WithCreatorModeControl(CreatorModeControl&& value) { SetCreatorModeControl(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreatorModeControl m_creatorModeControl;

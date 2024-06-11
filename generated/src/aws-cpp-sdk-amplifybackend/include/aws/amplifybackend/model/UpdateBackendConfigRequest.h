@@ -36,77 +36,31 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The app ID.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(Aws::String&& value) { m_appIdHasBeenSet = true; m_appId = std::move(value); }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(const char* value) { m_appIdHasBeenSet = true; m_appId.assign(value); }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline UpdateBackendConfigRequest& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline UpdateBackendConfigRequest& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline UpdateBackendConfigRequest& WithAppId(const char* value) { SetAppId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
      */
     inline const LoginAuthConfigReqObj& GetLoginAuthConfig() const{ return m_loginAuthConfig; }
-
-    /**
-     * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-     */
     inline bool LoginAuthConfigHasBeenSet() const { return m_loginAuthConfigHasBeenSet; }
-
-    /**
-     * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-     */
     inline void SetLoginAuthConfig(const LoginAuthConfigReqObj& value) { m_loginAuthConfigHasBeenSet = true; m_loginAuthConfig = value; }
-
-    /**
-     * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-     */
     inline void SetLoginAuthConfig(LoginAuthConfigReqObj&& value) { m_loginAuthConfigHasBeenSet = true; m_loginAuthConfig = std::move(value); }
-
-    /**
-     * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-     */
     inline UpdateBackendConfigRequest& WithLoginAuthConfig(const LoginAuthConfigReqObj& value) { SetLoginAuthConfig(value); return *this;}
-
-    /**
-     * <p>Describes the Amazon Cognito configuration for Admin UI access.</p>
-     */
     inline UpdateBackendConfigRequest& WithLoginAuthConfig(LoginAuthConfigReqObj&& value) { SetLoginAuthConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appId;

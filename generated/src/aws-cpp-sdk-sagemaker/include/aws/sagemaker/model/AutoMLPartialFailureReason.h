@@ -38,46 +38,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The message containing the reason for a partial failure of an AutoML job.</p>
      */
     inline const Aws::String& GetPartialFailureMessage() const{ return m_partialFailureMessage; }
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline bool PartialFailureMessageHasBeenSet() const { return m_partialFailureMessageHasBeenSet; }
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline void SetPartialFailureMessage(const Aws::String& value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage = value; }
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline void SetPartialFailureMessage(Aws::String&& value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage = std::move(value); }
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline void SetPartialFailureMessage(const char* value) { m_partialFailureMessageHasBeenSet = true; m_partialFailureMessage.assign(value); }
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline AutoMLPartialFailureReason& WithPartialFailureMessage(const Aws::String& value) { SetPartialFailureMessage(value); return *this;}
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline AutoMLPartialFailureReason& WithPartialFailureMessage(Aws::String&& value) { SetPartialFailureMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message containing the reason for a partial failure of an AutoML job.</p>
-     */
     inline AutoMLPartialFailureReason& WithPartialFailureMessage(const char* value) { SetPartialFailureMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_partialFailureMessage;

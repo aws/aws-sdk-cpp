@@ -32,70 +32,30 @@ namespace Model
     AWS_CONFIGSERVICE_API GetCustomRulePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The policy definition containing the logic for your Config Custom Policy
      * rule.</p>
      */
     inline const Aws::String& GetPolicyText() const{ return m_policyText; }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline void SetPolicyText(const Aws::String& value) { m_policyText = value; }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline void SetPolicyText(Aws::String&& value) { m_policyText = std::move(value); }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline void SetPolicyText(const char* value) { m_policyText.assign(value); }
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline GetCustomRulePolicyResult& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline GetCustomRulePolicyResult& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy definition containing the logic for your Config Custom Policy
-     * rule.</p>
-     */
     inline GetCustomRulePolicyResult& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCustomRulePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCustomRulePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCustomRulePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyText;

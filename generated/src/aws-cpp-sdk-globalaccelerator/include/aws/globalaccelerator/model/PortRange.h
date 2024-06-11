@@ -36,47 +36,25 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The first port in the range of ports, inclusive.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>The first port in the range of ports, inclusive.</p>
-     */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-
-    /**
-     * <p>The first port in the range of ports, inclusive.</p>
-     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>The first port in the range of ports, inclusive.</p>
-     */
     inline PortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last port in the range of ports, inclusive.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>The last port in the range of ports, inclusive.</p>
-     */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-
-    /**
-     * <p>The last port in the range of ports, inclusive.</p>
-     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>The last port in the range of ports, inclusive.</p>
-     */
     inline PortRange& WithToPort(int value) { SetToPort(value); return *this;}
-
+    ///@}
   private:
 
     int m_fromPort;

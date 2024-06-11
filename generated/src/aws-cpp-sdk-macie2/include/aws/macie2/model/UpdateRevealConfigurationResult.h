@@ -34,84 +34,39 @@ namespace Model
     AWS_MACIE2_API UpdateRevealConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The KMS key to use to encrypt the sensitive data, and the status of the
      * configuration for the Amazon Macie account.</p>
      */
     inline const RevealConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
-     * configuration for the Amazon Macie account.</p>
-     */
     inline void SetConfiguration(const RevealConfiguration& value) { m_configuration = value; }
-
-    /**
-     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
-     * configuration for the Amazon Macie account.</p>
-     */
     inline void SetConfiguration(RevealConfiguration&& value) { m_configuration = std::move(value); }
-
-    /**
-     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
-     * configuration for the Amazon Macie account.</p>
-     */
     inline UpdateRevealConfigurationResult& WithConfiguration(const RevealConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The KMS key to use to encrypt the sensitive data, and the status of the
-     * configuration for the Amazon Macie account.</p>
-     */
     inline UpdateRevealConfigurationResult& WithConfiguration(RevealConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The access method and settings to use when retrieving the sensitive data.</p>
      */
     inline const RetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
-
-    /**
-     * <p>The access method and settings to use when retrieving the sensitive data.</p>
-     */
     inline void SetRetrievalConfiguration(const RetrievalConfiguration& value) { m_retrievalConfiguration = value; }
-
-    /**
-     * <p>The access method and settings to use when retrieving the sensitive data.</p>
-     */
     inline void SetRetrievalConfiguration(RetrievalConfiguration&& value) { m_retrievalConfiguration = std::move(value); }
-
-    /**
-     * <p>The access method and settings to use when retrieving the sensitive data.</p>
-     */
     inline UpdateRevealConfigurationResult& WithRetrievalConfiguration(const RetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
-
-    /**
-     * <p>The access method and settings to use when retrieving the sensitive data.</p>
-     */
     inline UpdateRevealConfigurationResult& WithRetrievalConfiguration(RetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateRevealConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateRevealConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateRevealConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RevealConfiguration m_configuration;

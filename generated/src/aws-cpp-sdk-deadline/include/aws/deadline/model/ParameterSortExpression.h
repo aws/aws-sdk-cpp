@@ -39,77 +39,31 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parameter name to sort by.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline ParameterSortExpression& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline ParameterSortExpression& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameter name to sort by.</p>
-     */
     inline ParameterSortExpression& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sort order for the parameter.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The sort order for the parameter.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The sort order for the parameter.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The sort order for the parameter.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The sort order for the parameter.</p>
-     */
     inline ParameterSortExpression& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The sort order for the parameter.</p>
-     */
     inline ParameterSortExpression& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

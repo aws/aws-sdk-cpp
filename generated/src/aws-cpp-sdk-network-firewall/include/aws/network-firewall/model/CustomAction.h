@@ -52,85 +52,32 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The descriptive name of the custom action. You can't change the name of a
      * custom action after you create it.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline CustomAction& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline CustomAction& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The descriptive name of the custom action. You can't change the name of a
-     * custom action after you create it.</p>
-     */
     inline CustomAction& WithActionName(const char* value) { SetActionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The custom action associated with the action name.</p>
      */
     inline const ActionDefinition& GetActionDefinition() const{ return m_actionDefinition; }
-
-    /**
-     * <p>The custom action associated with the action name.</p>
-     */
     inline bool ActionDefinitionHasBeenSet() const { return m_actionDefinitionHasBeenSet; }
-
-    /**
-     * <p>The custom action associated with the action name.</p>
-     */
     inline void SetActionDefinition(const ActionDefinition& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = value; }
-
-    /**
-     * <p>The custom action associated with the action name.</p>
-     */
     inline void SetActionDefinition(ActionDefinition&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::move(value); }
-
-    /**
-     * <p>The custom action associated with the action name.</p>
-     */
     inline CustomAction& WithActionDefinition(const ActionDefinition& value) { SetActionDefinition(value); return *this;}
-
-    /**
-     * <p>The custom action associated with the action name.</p>
-     */
     inline CustomAction& WithActionDefinition(ActionDefinition&& value) { SetActionDefinition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionName;

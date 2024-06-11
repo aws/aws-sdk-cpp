@@ -33,53 +33,27 @@ namespace Model
     AWS_WELLARCHITECTED_API UpdateReviewTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A review template.</p>
      */
     inline const ReviewTemplate& GetReviewTemplate() const{ return m_reviewTemplate; }
-
-    /**
-     * <p>A review template.</p>
-     */
     inline void SetReviewTemplate(const ReviewTemplate& value) { m_reviewTemplate = value; }
-
-    /**
-     * <p>A review template.</p>
-     */
     inline void SetReviewTemplate(ReviewTemplate&& value) { m_reviewTemplate = std::move(value); }
-
-    /**
-     * <p>A review template.</p>
-     */
     inline UpdateReviewTemplateResult& WithReviewTemplate(const ReviewTemplate& value) { SetReviewTemplate(value); return *this;}
-
-    /**
-     * <p>A review template.</p>
-     */
     inline UpdateReviewTemplateResult& WithReviewTemplate(ReviewTemplate&& value) { SetReviewTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateReviewTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateReviewTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateReviewTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReviewTemplate m_reviewTemplate;

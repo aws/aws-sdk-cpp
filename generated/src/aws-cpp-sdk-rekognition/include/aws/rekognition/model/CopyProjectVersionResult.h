@@ -32,63 +32,29 @@ namespace Model
     AWS_REKOGNITION_API CopyProjectVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the copied model version in the destination project. </p>
      */
     inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
-
-    /**
-     * <p>The ARN of the copied model version in the destination project. </p>
-     */
     inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArn = value; }
-
-    /**
-     * <p>The ARN of the copied model version in the destination project. </p>
-     */
     inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the copied model version in the destination project. </p>
-     */
     inline void SetProjectVersionArn(const char* value) { m_projectVersionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the copied model version in the destination project. </p>
-     */
     inline CopyProjectVersionResult& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the copied model version in the destination project. </p>
-     */
     inline CopyProjectVersionResult& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the copied model version in the destination project. </p>
-     */
     inline CopyProjectVersionResult& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CopyProjectVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CopyProjectVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CopyProjectVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectVersionArn;

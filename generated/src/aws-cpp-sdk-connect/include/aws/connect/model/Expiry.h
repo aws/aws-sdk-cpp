@@ -38,57 +38,27 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of seconds to wait before expiring the routing step.</p>
      */
     inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
-
-    /**
-     * <p>The number of seconds to wait before expiring the routing step.</p>
-     */
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
-
-    /**
-     * <p>The number of seconds to wait before expiring the routing step.</p>
-     */
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
-
-    /**
-     * <p>The number of seconds to wait before expiring the routing step.</p>
-     */
     inline Expiry& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp indicating when the routing step expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTimestamp() const{ return m_expiryTimestamp; }
-
-    /**
-     * <p>The timestamp indicating when the routing step expires.</p>
-     */
     inline bool ExpiryTimestampHasBeenSet() const { return m_expiryTimestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp indicating when the routing step expires.</p>
-     */
     inline void SetExpiryTimestamp(const Aws::Utils::DateTime& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = value; }
-
-    /**
-     * <p>The timestamp indicating when the routing step expires.</p>
-     */
     inline void SetExpiryTimestamp(Aws::Utils::DateTime&& value) { m_expiryTimestampHasBeenSet = true; m_expiryTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp indicating when the routing step expires.</p>
-     */
     inline Expiry& WithExpiryTimestamp(const Aws::Utils::DateTime& value) { SetExpiryTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp indicating when the routing step expires.</p>
-     */
     inline Expiry& WithExpiryTimestamp(Aws::Utils::DateTime&& value) { SetExpiryTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_durationInSeconds;

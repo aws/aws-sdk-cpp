@@ -34,149 +34,57 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline SearchDataSourcesRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline SearchDataSourcesRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID.</p>
-     */
     inline SearchDataSourcesRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filters to apply to the search.</p>
      */
     inline const Aws::Vector<DataSourceSearchFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline void SetFilters(const Aws::Vector<DataSourceSearchFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline void SetFilters(Aws::Vector<DataSourceSearchFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline SearchDataSourcesRequest& WithFilters(const Aws::Vector<DataSourceSearchFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline SearchDataSourcesRequest& WithFilters(Aws::Vector<DataSourceSearchFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline SearchDataSourcesRequest& AddFilters(const DataSourceSearchFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters to apply to the search.</p>
-     */
     inline SearchDataSourcesRequest& AddFilters(DataSourceSearchFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A pagination token that can be used in a subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline SearchDataSourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline SearchDataSourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that can be used in a subsequent request.</p>
-     */
     inline SearchDataSourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to be returned per request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to be returned per request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to be returned per request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to be returned per request.</p>
-     */
     inline SearchDataSourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

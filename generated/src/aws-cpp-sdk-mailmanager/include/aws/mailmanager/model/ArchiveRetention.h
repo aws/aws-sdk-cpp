@@ -38,36 +38,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The enum value sets the period for retaining emails in an archive.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
-
-    /**
-     * <p>The enum value sets the period for retaining emails in an archive.</p>
-     */
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-
-    /**
-     * <p>The enum value sets the period for retaining emails in an archive.</p>
-     */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-
-    /**
-     * <p>The enum value sets the period for retaining emails in an archive.</p>
-     */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-
-    /**
-     * <p>The enum value sets the period for retaining emails in an archive.</p>
-     */
     inline ArchiveRetention& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-
-    /**
-     * <p>The enum value sets the period for retaining emails in an archive.</p>
-     */
     inline ArchiveRetention& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RetentionPeriod m_retentionPeriod;

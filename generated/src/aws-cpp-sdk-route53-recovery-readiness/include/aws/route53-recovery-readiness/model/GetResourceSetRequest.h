@@ -32,46 +32,19 @@ namespace Model
     AWS_ROUTE53RECOVERYREADINESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Name of a resource set.</p>
      */
     inline const Aws::String& GetResourceSetName() const{ return m_resourceSetName; }
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline bool ResourceSetNameHasBeenSet() const { return m_resourceSetNameHasBeenSet; }
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline void SetResourceSetName(const Aws::String& value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName = value; }
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline void SetResourceSetName(Aws::String&& value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName = std::move(value); }
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline void SetResourceSetName(const char* value) { m_resourceSetNameHasBeenSet = true; m_resourceSetName.assign(value); }
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline GetResourceSetRequest& WithResourceSetName(const Aws::String& value) { SetResourceSetName(value); return *this;}
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline GetResourceSetRequest& WithResourceSetName(Aws::String&& value) { SetResourceSetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of a resource set.</p>
-     */
     inline GetResourceSetRequest& WithResourceSetName(const char* value) { SetResourceSetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceSetName;

@@ -41,112 +41,45 @@ namespace Model
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lens ARN.</p>
      */
     inline const Aws::String& GetLensArn() const{ return m_lensArn; }
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline bool LensArnHasBeenSet() const { return m_lensArnHasBeenSet; }
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline void SetLensArn(const Aws::String& value) { m_lensArnHasBeenSet = true; m_lensArn = value; }
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline void SetLensArn(Aws::String&& value) { m_lensArnHasBeenSet = true; m_lensArn = std::move(value); }
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline void SetLensArn(const char* value) { m_lensArnHasBeenSet = true; m_lensArn.assign(value); }
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline LensMetric& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline LensMetric& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The lens ARN.</p>
-     */
     inline LensMetric& WithLensArn(const char* value) { SetLensArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metrics for the pillars in a lens.</p>
      */
     inline const Aws::Vector<PillarMetric>& GetPillars() const{ return m_pillars; }
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline bool PillarsHasBeenSet() const { return m_pillarsHasBeenSet; }
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline void SetPillars(const Aws::Vector<PillarMetric>& value) { m_pillarsHasBeenSet = true; m_pillars = value; }
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline void SetPillars(Aws::Vector<PillarMetric>&& value) { m_pillarsHasBeenSet = true; m_pillars = std::move(value); }
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline LensMetric& WithPillars(const Aws::Vector<PillarMetric>& value) { SetPillars(value); return *this;}
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline LensMetric& WithPillars(Aws::Vector<PillarMetric>&& value) { SetPillars(std::move(value)); return *this;}
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline LensMetric& AddPillars(const PillarMetric& value) { m_pillarsHasBeenSet = true; m_pillars.push_back(value); return *this; }
-
-    /**
-     * <p>The metrics for the pillars in a lens.</p>
-     */
     inline LensMetric& AddPillars(PillarMetric&& value) { m_pillarsHasBeenSet = true; m_pillars.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Map<Risk, int>& GetRiskCounts() const{ return m_riskCounts; }
-
-    
     inline bool RiskCountsHasBeenSet() const { return m_riskCountsHasBeenSet; }
-
-    
     inline void SetRiskCounts(const Aws::Map<Risk, int>& value) { m_riskCountsHasBeenSet = true; m_riskCounts = value; }
-
-    
     inline void SetRiskCounts(Aws::Map<Risk, int>&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::move(value); }
-
-    
     inline LensMetric& WithRiskCounts(const Aws::Map<Risk, int>& value) { SetRiskCounts(value); return *this;}
-
-    
     inline LensMetric& WithRiskCounts(Aws::Map<Risk, int>&& value) { SetRiskCounts(std::move(value)); return *this;}
-
-    
     inline LensMetric& AddRiskCounts(const Risk& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this; }
-
-    
     inline LensMetric& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_lensArn;

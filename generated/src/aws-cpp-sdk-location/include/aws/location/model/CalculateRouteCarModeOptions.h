@@ -36,63 +36,29 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
      * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
      * </p>
      */
     inline bool GetAvoidFerries() const{ return m_avoidFerries; }
-
-    /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
-     * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
-     * </p>
-     */
     inline bool AvoidFerriesHasBeenSet() const { return m_avoidFerriesHasBeenSet; }
-
-    /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
-     * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
-     * </p>
-     */
     inline void SetAvoidFerries(bool value) { m_avoidFerriesHasBeenSet = true; m_avoidFerries = value; }
-
-    /**
-     * <p>Avoids ferries when calculating routes.</p> <p>Default Value:
-     * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
-     * </p>
-     */
     inline CalculateRouteCarModeOptions& WithAvoidFerries(bool value) { SetAvoidFerries(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
      * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
      * </p>
      */
     inline bool GetAvoidTolls() const{ return m_avoidTolls; }
-
-    /**
-     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
-     * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
-     * </p>
-     */
     inline bool AvoidTollsHasBeenSet() const { return m_avoidTollsHasBeenSet; }
-
-    /**
-     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
-     * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
-     * </p>
-     */
     inline void SetAvoidTolls(bool value) { m_avoidTollsHasBeenSet = true; m_avoidTolls = value; }
-
-    /**
-     * <p>Avoids tolls when calculating routes.</p> <p>Default Value:
-     * <code>false</code> </p> <p>Valid Values: <code>false</code> | <code>true</code>
-     * </p>
-     */
     inline CalculateRouteCarModeOptions& WithAvoidTolls(bool value) { SetAvoidTolls(value); return *this;}
-
+    ///@}
   private:
 
     bool m_avoidFerries;

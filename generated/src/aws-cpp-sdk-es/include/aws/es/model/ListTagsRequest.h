@@ -43,54 +43,20 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
      * are attached that you want to view.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline ListTagsRequest& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline ListTagsRequest& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-
-    /**
-     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
-     * are attached that you want to view.</p>
-     */
     inline ListTagsRequest& WithARN(const char* value) { SetARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_aRN;

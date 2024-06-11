@@ -32,63 +32,29 @@ namespace Model
     AWS_CLOUDDIRECTORY_API DetachObjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
      */
     inline const Aws::String& GetDetachedObjectIdentifier() const{ return m_detachedObjectIdentifier; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-     */
     inline void SetDetachedObjectIdentifier(const Aws::String& value) { m_detachedObjectIdentifier = value; }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-     */
     inline void SetDetachedObjectIdentifier(Aws::String&& value) { m_detachedObjectIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-     */
     inline void SetDetachedObjectIdentifier(const char* value) { m_detachedObjectIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-     */
     inline DetachObjectResult& WithDetachedObjectIdentifier(const Aws::String& value) { SetDetachedObjectIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-     */
     inline DetachObjectResult& WithDetachedObjectIdentifier(Aws::String&& value) { SetDetachedObjectIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>ObjectIdentifier</code> that was detached from the object.</p>
-     */
     inline DetachObjectResult& WithDetachedObjectIdentifier(const char* value) { SetDetachedObjectIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DetachObjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DetachObjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DetachObjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detachedObjectIdentifier;

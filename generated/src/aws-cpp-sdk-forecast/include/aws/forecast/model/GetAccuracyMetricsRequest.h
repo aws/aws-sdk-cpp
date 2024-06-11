@@ -34,46 +34,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
      */
     inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline bool PredictorArnHasBeenSet() const { return m_predictorArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline void SetPredictorArn(const Aws::String& value) { m_predictorArnHasBeenSet = true; m_predictorArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline void SetPredictorArn(Aws::String&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline void SetPredictorArn(const char* value) { m_predictorArnHasBeenSet = true; m_predictorArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline GetAccuracyMetricsRequest& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline GetAccuracyMetricsRequest& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the predictor to get metrics for.</p>
-     */
     inline GetAccuracyMetricsRequest& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_predictorArn;

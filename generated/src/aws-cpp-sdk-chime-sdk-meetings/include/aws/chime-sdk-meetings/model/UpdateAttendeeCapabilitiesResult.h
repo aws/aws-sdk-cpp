@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API UpdateAttendeeCapabilitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated attendee data.</p>
      */
     inline const Attendee& GetAttendee() const{ return m_attendee; }
-
-    /**
-     * <p>The updated attendee data.</p>
-     */
     inline void SetAttendee(const Attendee& value) { m_attendee = value; }
-
-    /**
-     * <p>The updated attendee data.</p>
-     */
     inline void SetAttendee(Attendee&& value) { m_attendee = std::move(value); }
-
-    /**
-     * <p>The updated attendee data.</p>
-     */
     inline UpdateAttendeeCapabilitiesResult& WithAttendee(const Attendee& value) { SetAttendee(value); return *this;}
-
-    /**
-     * <p>The updated attendee data.</p>
-     */
     inline UpdateAttendeeCapabilitiesResult& WithAttendee(Attendee&& value) { SetAttendee(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAttendeeCapabilitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAttendeeCapabilitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAttendeeCapabilitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Attendee m_attendee;

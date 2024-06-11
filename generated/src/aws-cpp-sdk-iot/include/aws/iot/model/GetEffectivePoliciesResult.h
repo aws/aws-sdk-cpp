@@ -34,63 +34,29 @@ namespace Model
     AWS_IOT_API GetEffectivePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The effective policies.</p>
      */
     inline const Aws::Vector<EffectivePolicy>& GetEffectivePolicies() const{ return m_effectivePolicies; }
-
-    /**
-     * <p>The effective policies.</p>
-     */
     inline void SetEffectivePolicies(const Aws::Vector<EffectivePolicy>& value) { m_effectivePolicies = value; }
-
-    /**
-     * <p>The effective policies.</p>
-     */
     inline void SetEffectivePolicies(Aws::Vector<EffectivePolicy>&& value) { m_effectivePolicies = std::move(value); }
-
-    /**
-     * <p>The effective policies.</p>
-     */
     inline GetEffectivePoliciesResult& WithEffectivePolicies(const Aws::Vector<EffectivePolicy>& value) { SetEffectivePolicies(value); return *this;}
-
-    /**
-     * <p>The effective policies.</p>
-     */
     inline GetEffectivePoliciesResult& WithEffectivePolicies(Aws::Vector<EffectivePolicy>&& value) { SetEffectivePolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>The effective policies.</p>
-     */
     inline GetEffectivePoliciesResult& AddEffectivePolicies(const EffectivePolicy& value) { m_effectivePolicies.push_back(value); return *this; }
-
-    /**
-     * <p>The effective policies.</p>
-     */
     inline GetEffectivePoliciesResult& AddEffectivePolicies(EffectivePolicy&& value) { m_effectivePolicies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEffectivePoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEffectivePoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEffectivePoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EffectivePolicy> m_effectivePolicies;

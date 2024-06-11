@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API CancelServiceInstanceDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The service instance summary data that's returned by Proton.</p>
      */
     inline const ServiceInstance& GetServiceInstance() const{ return m_serviceInstance; }
-
-    /**
-     * <p>The service instance summary data that's returned by Proton.</p>
-     */
     inline void SetServiceInstance(const ServiceInstance& value) { m_serviceInstance = value; }
-
-    /**
-     * <p>The service instance summary data that's returned by Proton.</p>
-     */
     inline void SetServiceInstance(ServiceInstance&& value) { m_serviceInstance = std::move(value); }
-
-    /**
-     * <p>The service instance summary data that's returned by Proton.</p>
-     */
     inline CancelServiceInstanceDeploymentResult& WithServiceInstance(const ServiceInstance& value) { SetServiceInstance(value); return *this;}
-
-    /**
-     * <p>The service instance summary data that's returned by Proton.</p>
-     */
     inline CancelServiceInstanceDeploymentResult& WithServiceInstance(ServiceInstance&& value) { SetServiceInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelServiceInstanceDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelServiceInstanceDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelServiceInstanceDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceInstance m_serviceInstance;

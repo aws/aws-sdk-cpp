@@ -38,53 +38,27 @@ namespace Model
     AWS_DEVICEFARM_API GetRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The run to get results from.</p>
      */
     inline const Run& GetRun() const{ return m_run; }
-
-    /**
-     * <p>The run to get results from.</p>
-     */
     inline void SetRun(const Run& value) { m_run = value; }
-
-    /**
-     * <p>The run to get results from.</p>
-     */
     inline void SetRun(Run&& value) { m_run = std::move(value); }
-
-    /**
-     * <p>The run to get results from.</p>
-     */
     inline GetRunResult& WithRun(const Run& value) { SetRun(value); return *this;}
-
-    /**
-     * <p>The run to get results from.</p>
-     */
     inline GetRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Run m_run;

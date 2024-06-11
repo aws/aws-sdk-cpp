@@ -35,26 +35,15 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latency for the streaming request, in milliseconds.</p>
      */
     inline long long GetLatencyMs() const{ return m_latencyMs; }
-
-    /**
-     * <p>The latency for the streaming request, in milliseconds.</p>
-     */
     inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
-
-    /**
-     * <p>The latency for the streaming request, in milliseconds.</p>
-     */
     inline void SetLatencyMs(long long value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
-
-    /**
-     * <p>The latency for the streaming request, in milliseconds.</p>
-     */
     inline ConverseStreamMetrics& WithLatencyMs(long long value) { SetLatencyMs(value); return *this;}
-
+    ///@}
   private:
 
     long long m_latencyMs;

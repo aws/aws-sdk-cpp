@@ -32,46 +32,19 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the deployment.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline GetDeploymentRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline GetDeploymentRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the deployment.</p>
-     */
     inline GetDeploymentRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentId;

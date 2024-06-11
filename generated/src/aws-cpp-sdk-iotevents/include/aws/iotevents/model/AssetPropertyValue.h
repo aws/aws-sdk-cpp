@@ -52,122 +52,45 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value to send to an asset property.</p>
      */
     inline const AssetPropertyVariant& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value to send to an asset property.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value to send to an asset property.</p>
-     */
     inline void SetValue(const AssetPropertyVariant& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value to send to an asset property.</p>
-     */
     inline void SetValue(AssetPropertyVariant&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value to send to an asset property.</p>
-     */
     inline AssetPropertyValue& WithValue(const AssetPropertyVariant& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value to send to an asset property.</p>
-     */
     inline AssetPropertyValue& WithValue(AssetPropertyVariant&& value) { SetValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp associated with the asset property value. The default is the
      * current event time.</p>
      */
     inline const AssetPropertyTimestamp& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The timestamp associated with the asset property value. The default is the
-     * current event time.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The timestamp associated with the asset property value. The default is the
-     * current event time.</p>
-     */
     inline void SetTimestamp(const AssetPropertyTimestamp& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The timestamp associated with the asset property value. The default is the
-     * current event time.</p>
-     */
     inline void SetTimestamp(AssetPropertyTimestamp&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp associated with the asset property value. The default is the
-     * current event time.</p>
-     */
     inline AssetPropertyValue& WithTimestamp(const AssetPropertyTimestamp& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp associated with the asset property value. The default is the
-     * current event time.</p>
-     */
     inline AssetPropertyValue& WithTimestamp(AssetPropertyTimestamp&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The quality of the asset property value. The value must be
      * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
      */
     inline const Aws::String& GetQuality() const{ return m_quality; }
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline void SetQuality(const Aws::String& value) { m_qualityHasBeenSet = true; m_quality = value; }
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline void SetQuality(Aws::String&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline void SetQuality(const char* value) { m_qualityHasBeenSet = true; m_quality.assign(value); }
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline AssetPropertyValue& WithQuality(const Aws::String& value) { SetQuality(value); return *this;}
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline AssetPropertyValue& WithQuality(Aws::String&& value) { SetQuality(std::move(value)); return *this;}
-
-    /**
-     * <p>The quality of the asset property value. The value must be
-     * <code>'GOOD'</code>, <code>'BAD'</code>, or <code>'UNCERTAIN'</code>.</p>
-     */
     inline AssetPropertyValue& WithQuality(const char* value) { SetQuality(value); return *this;}
-
+    ///@}
   private:
 
     AssetPropertyVariant m_value;

@@ -33,69 +33,36 @@ namespace Model
     AWS_QUICKSIGHT_API UpdateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon QuickSight user.</p>
      */
     inline const User& GetUser() const{ return m_user; }
-
-    /**
-     * <p>The Amazon QuickSight user.</p>
-     */
     inline void SetUser(const User& value) { m_user = value; }
-
-    /**
-     * <p>The Amazon QuickSight user.</p>
-     */
     inline void SetUser(User&& value) { m_user = std::move(value); }
-
-    /**
-     * <p>The Amazon QuickSight user.</p>
-     */
     inline UpdateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
-
-    /**
-     * <p>The Amazon QuickSight user.</p>
-     */
     inline UpdateUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline UpdateUserResult& WithStatus(int value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     User m_user;

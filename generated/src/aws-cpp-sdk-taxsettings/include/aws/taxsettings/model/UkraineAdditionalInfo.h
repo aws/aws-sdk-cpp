@@ -38,36 +38,17 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The tax registration type. </p>
      */
     inline const UkraineTrnType& GetUkraineTrnType() const{ return m_ukraineTrnType; }
-
-    /**
-     * <p> The tax registration type. </p>
-     */
     inline bool UkraineTrnTypeHasBeenSet() const { return m_ukraineTrnTypeHasBeenSet; }
-
-    /**
-     * <p> The tax registration type. </p>
-     */
     inline void SetUkraineTrnType(const UkraineTrnType& value) { m_ukraineTrnTypeHasBeenSet = true; m_ukraineTrnType = value; }
-
-    /**
-     * <p> The tax registration type. </p>
-     */
     inline void SetUkraineTrnType(UkraineTrnType&& value) { m_ukraineTrnTypeHasBeenSet = true; m_ukraineTrnType = std::move(value); }
-
-    /**
-     * <p> The tax registration type. </p>
-     */
     inline UkraineAdditionalInfo& WithUkraineTrnType(const UkraineTrnType& value) { SetUkraineTrnType(value); return *this;}
-
-    /**
-     * <p> The tax registration type. </p>
-     */
     inline UkraineAdditionalInfo& WithUkraineTrnType(UkraineTrnType&& value) { SetUkraineTrnType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UkraineTrnType m_ukraineTrnType;

@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the activation that you want to delete.</p>
      */
     inline const Aws::String& GetActivationId() const{ return m_activationId; }
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline bool ActivationIdHasBeenSet() const { return m_activationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline void SetActivationId(Aws::String&& value) { m_activationIdHasBeenSet = true; m_activationId = std::move(value); }
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline void SetActivationId(const char* value) { m_activationIdHasBeenSet = true; m_activationId.assign(value); }
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline DeleteActivationRequest& WithActivationId(const Aws::String& value) { SetActivationId(value); return *this;}
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline DeleteActivationRequest& WithActivationId(Aws::String&& value) { SetActivationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the activation that you want to delete.</p>
-     */
     inline DeleteActivationRequest& WithActivationId(const char* value) { SetActivationId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_activationId;

@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the notebook instance to terminate.</p>
      */
     inline const Aws::String& GetNotebookInstanceName() const{ return m_notebookInstanceName; }
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline void SetNotebookInstanceName(Aws::String&& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = std::move(value); }
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline void SetNotebookInstanceName(const char* value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName.assign(value); }
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline StopNotebookInstanceRequest& WithNotebookInstanceName(const Aws::String& value) { SetNotebookInstanceName(value); return *this;}
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline StopNotebookInstanceRequest& WithNotebookInstanceName(Aws::String&& value) { SetNotebookInstanceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the notebook instance to terminate.</p>
-     */
     inline StopNotebookInstanceRequest& WithNotebookInstanceName(const char* value) { SetNotebookInstanceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_notebookInstanceName;

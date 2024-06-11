@@ -41,269 +41,91 @@ namespace Model
     AWS_ROUTE53RECOVERYCLUSTER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
      * is located.</p>
      */
     inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline RoutingControl& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline RoutingControl& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel where the routing control
-     * is located.</p>
-     */
     inline RoutingControl& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the control panel where the routing control is located. Only
      * ASCII characters are supported for control panel names.</p>
      */
     inline const Aws::String& GetControlPanelName() const{ return m_controlPanelName; }
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline bool ControlPanelNameHasBeenSet() const { return m_controlPanelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline void SetControlPanelName(const Aws::String& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = value; }
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline void SetControlPanelName(Aws::String&& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = std::move(value); }
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline void SetControlPanelName(const char* value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName.assign(value); }
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline RoutingControl& WithControlPanelName(const Aws::String& value) { SetControlPanelName(value); return *this;}
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline RoutingControl& WithControlPanelName(Aws::String&& value) { SetControlPanelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the control panel where the routing control is located. Only
-     * ASCII characters are supported for control panel names.</p>
-     */
     inline RoutingControl& WithControlPanelName(const char* value) { SetControlPanelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the routing control.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the routing control.</p>
      */
     inline const Aws::String& GetRoutingControlName() const{ return m_routingControlName; }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline bool RoutingControlNameHasBeenSet() const { return m_routingControlNameHasBeenSet; }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline void SetRoutingControlName(const Aws::String& value) { m_routingControlNameHasBeenSet = true; m_routingControlName = value; }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline void SetRoutingControlName(Aws::String&& value) { m_routingControlNameHasBeenSet = true; m_routingControlName = std::move(value); }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline void SetRoutingControlName(const char* value) { m_routingControlNameHasBeenSet = true; m_routingControlName.assign(value); }
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlName(const Aws::String& value) { SetRoutingControlName(value); return *this;}
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlName(Aws::String&& value) { SetRoutingControlName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the routing control.</p>
-     */
     inline RoutingControl& WithRoutingControlName(const char* value) { SetRoutingControlName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current state of the routing control. When a routing control state is set
      * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
      * flow. </p>
      */
     inline const RoutingControlState& GetRoutingControlState() const{ return m_routingControlState; }
-
-    /**
-     * <p>The current state of the routing control. When a routing control state is set
-     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
-     * flow. </p>
-     */
     inline bool RoutingControlStateHasBeenSet() const { return m_routingControlStateHasBeenSet; }
-
-    /**
-     * <p>The current state of the routing control. When a routing control state is set
-     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
-     * flow. </p>
-     */
     inline void SetRoutingControlState(const RoutingControlState& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = value; }
-
-    /**
-     * <p>The current state of the routing control. When a routing control state is set
-     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
-     * flow. </p>
-     */
     inline void SetRoutingControlState(RoutingControlState&& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = std::move(value); }
-
-    /**
-     * <p>The current state of the routing control. When a routing control state is set
-     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
-     * flow. </p>
-     */
     inline RoutingControl& WithRoutingControlState(const RoutingControlState& value) { SetRoutingControlState(value); return *this;}
-
-    /**
-     * <p>The current state of the routing control. When a routing control state is set
-     * to ON, traffic flows to a cell. When the state is set to OFF, traffic does not
-     * flow. </p>
-     */
     inline RoutingControl& WithRoutingControlState(RoutingControlState&& value) { SetRoutingControlState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the routing control owner.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline RoutingControl& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline RoutingControl& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the routing control owner.</p>
-     */
     inline RoutingControl& WithOwner(const char* value) { SetOwner(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_controlPanelArn;

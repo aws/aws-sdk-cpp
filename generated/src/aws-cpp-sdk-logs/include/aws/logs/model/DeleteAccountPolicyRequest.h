@@ -35,77 +35,31 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the policy to delete.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline DeleteAccountPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline DeleteAccountPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the policy to delete.</p>
-     */
     inline DeleteAccountPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of policy to delete.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
-
-    /**
-     * <p>The type of policy to delete.</p>
-     */
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-
-    /**
-     * <p>The type of policy to delete.</p>
-     */
     inline void SetPolicyType(const PolicyType& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-
-    /**
-     * <p>The type of policy to delete.</p>
-     */
     inline void SetPolicyType(PolicyType&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-
-    /**
-     * <p>The type of policy to delete.</p>
-     */
     inline DeleteAccountPolicyRequest& WithPolicyType(const PolicyType& value) { SetPolicyType(value); return *this;}
-
-    /**
-     * <p>The type of policy to delete.</p>
-     */
     inline DeleteAccountPolicyRequest& WithPolicyType(PolicyType&& value) { SetPolicyType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

@@ -34,87 +34,33 @@ namespace Model
     AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the domain that contains the watchlist.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline DeleteWatchlistRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline DeleteWatchlistRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the domain that contains the watchlist.</p>
-     */
     inline DeleteWatchlistRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the watchlist to be deleted.</p>
      */
     inline const Aws::String& GetWatchlistId() const{ return m_watchlistId; }
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline bool WatchlistIdHasBeenSet() const { return m_watchlistIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline void SetWatchlistId(const Aws::String& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = value; }
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline void SetWatchlistId(Aws::String&& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = std::move(value); }
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline void SetWatchlistId(const char* value) { m_watchlistIdHasBeenSet = true; m_watchlistId.assign(value); }
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline DeleteWatchlistRequest& WithWatchlistId(const Aws::String& value) { SetWatchlistId(value); return *this;}
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline DeleteWatchlistRequest& WithWatchlistId(Aws::String&& value) { SetWatchlistId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the watchlist to be deleted.</p>
-     */
     inline DeleteWatchlistRequest& WithWatchlistId(const char* value) { SetWatchlistId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainId;

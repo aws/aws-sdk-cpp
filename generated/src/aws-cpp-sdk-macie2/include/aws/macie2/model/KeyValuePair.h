@@ -39,103 +39,35 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag key is a general
      * label that acts as a category for more specific tag values.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline KeyValuePair& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline KeyValuePair& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag key is a general
-     * label that acts as a category for more specific tag values.</p>
-     */
     inline KeyValuePair& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
      * descriptor for a tag key. A tag value can be an empty string.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline KeyValuePair& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline KeyValuePair& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>One part of a key-value pair that comprises a tag. A tag value acts as a
-     * descriptor for a tag key. A tag value can be an empty string.</p>
-     */
     inline KeyValuePair& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

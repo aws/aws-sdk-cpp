@@ -38,42 +38,18 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
      * deprecated (<code>LEGACY</code>.</p>
      */
     inline const FoundationModelLifecycleStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
-     * deprecated (<code>LEGACY</code>.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
-     * deprecated (<code>LEGACY</code>.</p>
-     */
     inline void SetStatus(const FoundationModelLifecycleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
-     * deprecated (<code>LEGACY</code>.</p>
-     */
     inline void SetStatus(FoundationModelLifecycleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
-     * deprecated (<code>LEGACY</code>.</p>
-     */
     inline FoundationModelLifecycle& WithStatus(const FoundationModelLifecycleStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Specifies whether a model version is available (<code>ACTIVE</code>) or
-     * deprecated (<code>LEGACY</code>.</p>
-     */
     inline FoundationModelLifecycle& WithStatus(FoundationModelLifecycleStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FoundationModelLifecycleStatus m_status;

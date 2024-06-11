@@ -34,62 +34,21 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
      * want to get. <code>SizeConstraintSetId</code> is returned by
      * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
      */
     inline const Aws::String& GetSizeConstraintSetId() const{ return m_sizeConstraintSetId; }
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline bool SizeConstraintSetIdHasBeenSet() const { return m_sizeConstraintSetIdHasBeenSet; }
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline void SetSizeConstraintSetId(const Aws::String& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = value; }
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline void SetSizeConstraintSetId(Aws::String&& value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId = std::move(value); }
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline void SetSizeConstraintSetId(const char* value) { m_sizeConstraintSetIdHasBeenSet = true; m_sizeConstraintSetId.assign(value); }
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline GetSizeConstraintSetRequest& WithSizeConstraintSetId(const Aws::String& value) { SetSizeConstraintSetId(value); return *this;}
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline GetSizeConstraintSetRequest& WithSizeConstraintSetId(Aws::String&& value) { SetSizeConstraintSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>SizeConstraintSetId</code> of the <a>SizeConstraintSet</a> that you
-     * want to get. <code>SizeConstraintSetId</code> is returned by
-     * <a>CreateSizeConstraintSet</a> and by <a>ListSizeConstraintSets</a>.</p>
-     */
     inline GetSizeConstraintSetRequest& WithSizeConstraintSetId(const char* value) { SetSizeConstraintSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sizeConstraintSetId;

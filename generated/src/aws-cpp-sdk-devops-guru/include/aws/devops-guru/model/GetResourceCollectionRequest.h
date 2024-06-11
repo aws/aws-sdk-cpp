@@ -39,97 +39,34 @@ namespace Model
     AWS_DEVOPSGURU_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> The type of Amazon Web Services resource collections to return. The one
      * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
      * CloudFormation stacks. </p>
      */
     inline const ResourceCollectionType& GetResourceCollectionType() const{ return m_resourceCollectionType; }
-
-    /**
-     * <p> The type of Amazon Web Services resource collections to return. The one
-     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
-     * CloudFormation stacks. </p>
-     */
     inline bool ResourceCollectionTypeHasBeenSet() const { return m_resourceCollectionTypeHasBeenSet; }
-
-    /**
-     * <p> The type of Amazon Web Services resource collections to return. The one
-     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
-     * CloudFormation stacks. </p>
-     */
     inline void SetResourceCollectionType(const ResourceCollectionType& value) { m_resourceCollectionTypeHasBeenSet = true; m_resourceCollectionType = value; }
-
-    /**
-     * <p> The type of Amazon Web Services resource collections to return. The one
-     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
-     * CloudFormation stacks. </p>
-     */
     inline void SetResourceCollectionType(ResourceCollectionType&& value) { m_resourceCollectionTypeHasBeenSet = true; m_resourceCollectionType = std::move(value); }
-
-    /**
-     * <p> The type of Amazon Web Services resource collections to return. The one
-     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
-     * CloudFormation stacks. </p>
-     */
     inline GetResourceCollectionRequest& WithResourceCollectionType(const ResourceCollectionType& value) { SetResourceCollectionType(value); return *this;}
-
-    /**
-     * <p> The type of Amazon Web Services resource collections to return. The one
-     * valid value is <code>CLOUD_FORMATION</code> for Amazon Web Services
-     * CloudFormation stacks. </p>
-     */
     inline GetResourceCollectionRequest& WithResourceCollectionType(ResourceCollectionType&& value) { SetResourceCollectionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If this value is null, it retrieves the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline GetResourceCollectionRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline GetResourceCollectionRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If this value is null, it retrieves the first page.</p>
-     */
     inline GetResourceCollectionRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     ResourceCollectionType m_resourceCollectionType;

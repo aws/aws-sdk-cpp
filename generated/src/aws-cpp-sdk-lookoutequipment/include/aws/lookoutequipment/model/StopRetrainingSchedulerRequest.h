@@ -34,46 +34,19 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the model whose retraining scheduler you want to stop.</p>
      */
     inline const Aws::String& GetModelName() const{ return m_modelName; }
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline StopRetrainingSchedulerRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline StopRetrainingSchedulerRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the model whose retraining scheduler you want to stop.</p>
-     */
     inline StopRetrainingSchedulerRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelName;

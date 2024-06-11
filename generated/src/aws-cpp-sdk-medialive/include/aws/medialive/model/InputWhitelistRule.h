@@ -37,46 +37,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The IPv4 CIDR that's whitelisted.
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline InputWhitelistRule& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline InputWhitelistRule& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * The IPv4 CIDR that's whitelisted.
-     */
     inline InputWhitelistRule& WithCidr(const char* value) { SetCidr(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

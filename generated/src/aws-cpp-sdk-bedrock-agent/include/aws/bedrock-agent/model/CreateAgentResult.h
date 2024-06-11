@@ -33,53 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API CreateAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about the agent created.</p>
      */
     inline const Agent& GetAgent() const{ return m_agent; }
-
-    /**
-     * <p>Contains details about the agent created.</p>
-     */
     inline void SetAgent(const Agent& value) { m_agent = value; }
-
-    /**
-     * <p>Contains details about the agent created.</p>
-     */
     inline void SetAgent(Agent&& value) { m_agent = std::move(value); }
-
-    /**
-     * <p>Contains details about the agent created.</p>
-     */
     inline CreateAgentResult& WithAgent(const Agent& value) { SetAgent(value); return *this;}
-
-    /**
-     * <p>Contains details about the agent created.</p>
-     */
     inline CreateAgentResult& WithAgent(Agent&& value) { SetAgent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Agent m_agent;

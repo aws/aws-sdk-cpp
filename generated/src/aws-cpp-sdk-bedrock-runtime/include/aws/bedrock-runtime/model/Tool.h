@@ -38,36 +38,17 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The specfication for the tool.</p>
      */
     inline const ToolSpecification& GetToolSpec() const{ return m_toolSpec; }
-
-    /**
-     * <p>The specfication for the tool.</p>
-     */
     inline bool ToolSpecHasBeenSet() const { return m_toolSpecHasBeenSet; }
-
-    /**
-     * <p>The specfication for the tool.</p>
-     */
     inline void SetToolSpec(const ToolSpecification& value) { m_toolSpecHasBeenSet = true; m_toolSpec = value; }
-
-    /**
-     * <p>The specfication for the tool.</p>
-     */
     inline void SetToolSpec(ToolSpecification&& value) { m_toolSpecHasBeenSet = true; m_toolSpec = std::move(value); }
-
-    /**
-     * <p>The specfication for the tool.</p>
-     */
     inline Tool& WithToolSpec(const ToolSpecification& value) { SetToolSpec(value); return *this;}
-
-    /**
-     * <p>The specfication for the tool.</p>
-     */
     inline Tool& WithToolSpec(ToolSpecification&& value) { SetToolSpec(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ToolSpecification m_toolSpec;

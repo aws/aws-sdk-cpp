@@ -39,51 +39,20 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string array of unique entity id values to be filtered on.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValueList() const{ return m_valueList; }
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline void SetValueList(const Aws::Vector<Aws::String>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline void SetValueList(Aws::Vector<Aws::String>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline DataProductEntityIdFilter& WithValueList(const Aws::Vector<Aws::String>& value) { SetValueList(value); return *this;}
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline DataProductEntityIdFilter& WithValueList(Aws::Vector<Aws::String>&& value) { SetValueList(std::move(value)); return *this;}
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline DataProductEntityIdFilter& AddValueList(const Aws::String& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline DataProductEntityIdFilter& AddValueList(Aws::String&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A string array of unique entity id values to be filtered on.</p>
-     */
     inline DataProductEntityIdFilter& AddValueList(const char* value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_valueList;

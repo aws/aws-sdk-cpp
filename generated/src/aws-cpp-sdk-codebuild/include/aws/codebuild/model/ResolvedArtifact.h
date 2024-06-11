@@ -40,118 +40,45 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the type of artifact.</p>
      */
     inline const ArtifactsType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Specifies the type of artifact.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Specifies the type of artifact.</p>
-     */
     inline void SetType(const ArtifactsType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Specifies the type of artifact.</p>
-     */
     inline void SetType(ArtifactsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Specifies the type of artifact.</p>
-     */
     inline ResolvedArtifact& WithType(const ArtifactsType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Specifies the type of artifact.</p>
-     */
     inline ResolvedArtifact& WithType(ArtifactsType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the artifact.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline ResolvedArtifact& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline ResolvedArtifact& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline ResolvedArtifact& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the artifact.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline ResolvedArtifact& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline ResolvedArtifact& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the artifact.</p>
-     */
     inline ResolvedArtifact& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     ArtifactsType m_type;

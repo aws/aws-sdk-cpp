@@ -34,54 +34,20 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A collection of matchmaking rules to validate, formatted as a JSON
      * string.</p>
      */
     inline const Aws::String& GetRuleSetBody() const{ return m_ruleSetBody; }
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline bool RuleSetBodyHasBeenSet() const { return m_ruleSetBodyHasBeenSet; }
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline void SetRuleSetBody(const Aws::String& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = value; }
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline void SetRuleSetBody(Aws::String&& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = std::move(value); }
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline void SetRuleSetBody(const char* value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody.assign(value); }
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline ValidateMatchmakingRuleSetRequest& WithRuleSetBody(const Aws::String& value) { SetRuleSetBody(value); return *this;}
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline ValidateMatchmakingRuleSetRequest& WithRuleSetBody(Aws::String&& value) { SetRuleSetBody(std::move(value)); return *this;}
-
-    /**
-     * <p>A collection of matchmaking rules to validate, formatted as a JSON
-     * string.</p>
-     */
     inline ValidateMatchmakingRuleSetRequest& WithRuleSetBody(const char* value) { SetRuleSetBody(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleSetBody;

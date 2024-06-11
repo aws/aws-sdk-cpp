@@ -55,134 +55,47 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parameters of the human workflow.</p>
      */
     inline const HumanWorkflowConfig& GetHumanWorkflowConfig() const{ return m_humanWorkflowConfig; }
-
-    /**
-     * <p>The parameters of the human workflow.</p>
-     */
     inline bool HumanWorkflowConfigHasBeenSet() const { return m_humanWorkflowConfigHasBeenSet; }
-
-    /**
-     * <p>The parameters of the human workflow.</p>
-     */
     inline void SetHumanWorkflowConfig(const HumanWorkflowConfig& value) { m_humanWorkflowConfigHasBeenSet = true; m_humanWorkflowConfig = value; }
-
-    /**
-     * <p>The parameters of the human workflow.</p>
-     */
     inline void SetHumanWorkflowConfig(HumanWorkflowConfig&& value) { m_humanWorkflowConfigHasBeenSet = true; m_humanWorkflowConfig = std::move(value); }
-
-    /**
-     * <p>The parameters of the human workflow.</p>
-     */
     inline HumanEvaluationConfig& WithHumanWorkflowConfig(const HumanWorkflowConfig& value) { SetHumanWorkflowConfig(value); return *this;}
-
-    /**
-     * <p>The parameters of the human workflow.</p>
-     */
     inline HumanEvaluationConfig& WithHumanWorkflowConfig(HumanWorkflowConfig&& value) { SetHumanWorkflowConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
      * metrics, how the metrics are to be evaluated, an optional description.</p>
      */
     inline const Aws::Vector<HumanEvaluationCustomMetric>& GetCustomMetrics() const{ return m_customMetrics; }
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline bool CustomMetricsHasBeenSet() const { return m_customMetricsHasBeenSet; }
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline void SetCustomMetrics(const Aws::Vector<HumanEvaluationCustomMetric>& value) { m_customMetricsHasBeenSet = true; m_customMetrics = value; }
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline void SetCustomMetrics(Aws::Vector<HumanEvaluationCustomMetric>&& value) { m_customMetricsHasBeenSet = true; m_customMetrics = std::move(value); }
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline HumanEvaluationConfig& WithCustomMetrics(const Aws::Vector<HumanEvaluationCustomMetric>& value) { SetCustomMetrics(value); return *this;}
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline HumanEvaluationConfig& WithCustomMetrics(Aws::Vector<HumanEvaluationCustomMetric>&& value) { SetCustomMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline HumanEvaluationConfig& AddCustomMetrics(const HumanEvaluationCustomMetric& value) { m_customMetricsHasBeenSet = true; m_customMetrics.push_back(value); return *this; }
-
-    /**
-     * <p>A <code>HumanEvaluationCustomMetric</code> object. It contains the names the
-     * metrics, how the metrics are to be evaluated, an optional description.</p>
-     */
     inline HumanEvaluationConfig& AddCustomMetrics(HumanEvaluationCustomMetric&& value) { m_customMetricsHasBeenSet = true; m_customMetrics.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
      * evaluation job.</p>
      */
     inline const Aws::Vector<EvaluationDatasetMetricConfig>& GetDatasetMetricConfigs() const{ return m_datasetMetricConfigs; }
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline bool DatasetMetricConfigsHasBeenSet() const { return m_datasetMetricConfigsHasBeenSet; }
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline void SetDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = value; }
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline void SetDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs = std::move(value); }
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline HumanEvaluationConfig& WithDatasetMetricConfigs(const Aws::Vector<EvaluationDatasetMetricConfig>& value) { SetDatasetMetricConfigs(value); return *this;}
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline HumanEvaluationConfig& WithDatasetMetricConfigs(Aws::Vector<EvaluationDatasetMetricConfig>&& value) { SetDatasetMetricConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline HumanEvaluationConfig& AddDatasetMetricConfigs(const EvaluationDatasetMetricConfig& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>Use to specify the metrics, task, and prompt dataset to be used in your model
-     * evaluation job.</p>
-     */
     inline HumanEvaluationConfig& AddDatasetMetricConfigs(EvaluationDatasetMetricConfig&& value) { m_datasetMetricConfigsHasBeenSet = true; m_datasetMetricConfigs.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     HumanWorkflowConfig m_humanWorkflowConfig;

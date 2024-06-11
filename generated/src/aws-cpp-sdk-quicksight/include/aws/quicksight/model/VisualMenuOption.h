@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The availaiblity status of a visual's menu options.</p>
      */
     inline const DashboardBehavior& GetAvailabilityStatus() const{ return m_availabilityStatus; }
-
-    /**
-     * <p>The availaiblity status of a visual's menu options.</p>
-     */
     inline bool AvailabilityStatusHasBeenSet() const { return m_availabilityStatusHasBeenSet; }
-
-    /**
-     * <p>The availaiblity status of a visual's menu options.</p>
-     */
     inline void SetAvailabilityStatus(const DashboardBehavior& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = value; }
-
-    /**
-     * <p>The availaiblity status of a visual's menu options.</p>
-     */
     inline void SetAvailabilityStatus(DashboardBehavior&& value) { m_availabilityStatusHasBeenSet = true; m_availabilityStatus = std::move(value); }
-
-    /**
-     * <p>The availaiblity status of a visual's menu options.</p>
-     */
     inline VisualMenuOption& WithAvailabilityStatus(const DashboardBehavior& value) { SetAvailabilityStatus(value); return *this;}
-
-    /**
-     * <p>The availaiblity status of a visual's menu options.</p>
-     */
     inline VisualMenuOption& WithAvailabilityStatus(DashboardBehavior&& value) { SetAvailabilityStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DashboardBehavior m_availabilityStatus;

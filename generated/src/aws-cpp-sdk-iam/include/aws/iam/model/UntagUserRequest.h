@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
      * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
@@ -45,125 +46,30 @@ namespace Model
      * following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline UntagUserRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline UntagUserRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IAM user from which you want to remove tags.</p> <p>This
-     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
-     * pattern</a>) a string of characters consisting of upper and lowercase
-     * alphanumeric characters with no spaces. You can also include any of the
-     * following characters: _+=,.@-</p>
-     */
     inline UntagUserRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key names as a simple array of strings. The tags with matching keys
      * are removed from the specified user.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline UntagUserRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline UntagUserRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline UntagUserRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline UntagUserRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified user.</p>
-     */
     inline UntagUserRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_userName;

@@ -38,237 +38,95 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the compliance standard that was used to determine the
      * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
      * length of 256.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline PatchSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline PatchSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the compliance standard that was used to determine the
-     * patch compliance status.</p> <p>Length Constraints: Minimum length of 1. Maximum
-     * length of 256.</p>
-     */
     inline PatchSummary& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of patches from the compliance standard that were installed
      * successfully.</p> <p>The value can be an integer from <code>0</code> to
      * <code>100000</code>.</p>
      */
     inline int GetInstalledCount() const{ return m_installedCount; }
-
-    /**
-     * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline bool InstalledCountHasBeenSet() const { return m_installedCountHasBeenSet; }
-
-    /**
-     * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline void SetInstalledCount(int value) { m_installedCountHasBeenSet = true; m_installedCount = value; }
-
-    /**
-     * <p>The number of patches from the compliance standard that were installed
-     * successfully.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline PatchSummary& WithInstalledCount(int value) { SetInstalledCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of patches that are part of the compliance standard but are not
      * installed. The count includes patches that failed to install.</p> <p>The value
      * can be an integer from <code>0</code> to <code>100000</code>.</p>
      */
     inline int GetMissingCount() const{ return m_missingCount; }
-
-    /**
-     * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p> <p>The value
-     * can be an integer from <code>0</code> to <code>100000</code>.</p>
-     */
     inline bool MissingCountHasBeenSet() const { return m_missingCountHasBeenSet; }
-
-    /**
-     * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p> <p>The value
-     * can be an integer from <code>0</code> to <code>100000</code>.</p>
-     */
     inline void SetMissingCount(int value) { m_missingCountHasBeenSet = true; m_missingCount = value; }
-
-    /**
-     * <p>The number of patches that are part of the compliance standard but are not
-     * installed. The count includes patches that failed to install.</p> <p>The value
-     * can be an integer from <code>0</code> to <code>100000</code>.</p>
-     */
     inline PatchSummary& WithMissingCount(int value) { SetMissingCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of patches from the compliance standard that failed to
      * install.</p> <p>The value can be an integer from <code>0</code> to
      * <code>100000</code>.</p>
      */
     inline int GetFailedCount() const{ return m_failedCount; }
-
-    /**
-     * <p>The number of patches from the compliance standard that failed to
-     * install.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline bool FailedCountHasBeenSet() const { return m_failedCountHasBeenSet; }
-
-    /**
-     * <p>The number of patches from the compliance standard that failed to
-     * install.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline void SetFailedCount(int value) { m_failedCountHasBeenSet = true; m_failedCount = value; }
-
-    /**
-     * <p>The number of patches from the compliance standard that failed to
-     * install.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline PatchSummary& WithFailedCount(int value) { SetFailedCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of installed patches that are not part of the compliance
      * standard.</p> <p>The value can be an integer from <code>0</code> to
      * <code>100000</code>.</p>
      */
     inline int GetInstalledOtherCount() const{ return m_installedOtherCount; }
-
-    /**
-     * <p>The number of installed patches that are not part of the compliance
-     * standard.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline bool InstalledOtherCountHasBeenSet() const { return m_installedOtherCountHasBeenSet; }
-
-    /**
-     * <p>The number of installed patches that are not part of the compliance
-     * standard.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline void SetInstalledOtherCount(int value) { m_installedOtherCountHasBeenSet = true; m_installedOtherCount = value; }
-
-    /**
-     * <p>The number of installed patches that are not part of the compliance
-     * standard.</p> <p>The value can be an integer from <code>0</code> to
-     * <code>100000</code>.</p>
-     */
     inline PatchSummary& WithInstalledOtherCount(int value) { SetInstalledOtherCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of patches that are installed but are also on a list of patches
      * that the customer rejected.</p> <p>The value can be an integer from
      * <code>0</code> to <code>100000</code>.</p>
      */
     inline int GetInstalledRejectedCount() const{ return m_installedRejectedCount; }
-
-    /**
-     * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p> <p>The value can be an integer from
-     * <code>0</code> to <code>100000</code>.</p>
-     */
     inline bool InstalledRejectedCountHasBeenSet() const { return m_installedRejectedCountHasBeenSet; }
-
-    /**
-     * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p> <p>The value can be an integer from
-     * <code>0</code> to <code>100000</code>.</p>
-     */
     inline void SetInstalledRejectedCount(int value) { m_installedRejectedCountHasBeenSet = true; m_installedRejectedCount = value; }
-
-    /**
-     * <p>The number of patches that are installed but are also on a list of patches
-     * that the customer rejected.</p> <p>The value can be an integer from
-     * <code>0</code> to <code>100000</code>.</p>
-     */
     inline PatchSummary& WithInstalledRejectedCount(int value) { SetInstalledRejectedCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of patches that were applied, but that require the instance to be
      * rebooted in order to be marked as installed.</p> <p>The value can be an integer
      * from <code>0</code> to <code>100000</code>.</p>
      */
     inline int GetInstalledPendingReboot() const{ return m_installedPendingReboot; }
-
-    /**
-     * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
-     * from <code>0</code> to <code>100000</code>.</p>
-     */
     inline bool InstalledPendingRebootHasBeenSet() const { return m_installedPendingRebootHasBeenSet; }
-
-    /**
-     * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
-     * from <code>0</code> to <code>100000</code>.</p>
-     */
     inline void SetInstalledPendingReboot(int value) { m_installedPendingRebootHasBeenSet = true; m_installedPendingReboot = value; }
-
-    /**
-     * <p>The number of patches that were applied, but that require the instance to be
-     * rebooted in order to be marked as installed.</p> <p>The value can be an integer
-     * from <code>0</code> to <code>100000</code>.</p>
-     */
     inline PatchSummary& WithInstalledPendingReboot(int value) { SetInstalledPendingReboot(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates when the operation started.</p> <p>This field accepts only the
      * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
@@ -287,141 +145,16 @@ namespace Model
      * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetOperationStartTime() const{ return m_operationStartTime; }
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline bool OperationStartTimeHasBeenSet() const { return m_operationStartTimeHasBeenSet; }
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetOperationStartTime(const Aws::String& value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime = value; }
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetOperationStartTime(Aws::String&& value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime = std::move(value); }
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetOperationStartTime(const char* value) { m_operationStartTimeHasBeenSet = true; m_operationStartTime.assign(value); }
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline PatchSummary& WithOperationStartTime(const Aws::String& value) { SetOperationStartTime(value); return *this;}
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline PatchSummary& WithOperationStartTime(Aws::String&& value) { SetOperationStartTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates when the operation started.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline PatchSummary& WithOperationStartTime(const char* value) { SetOperationStartTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates when the operation completed.</p> <p>This field accepts only the
      * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
@@ -440,246 +173,45 @@ namespace Model
      * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetOperationEndTime() const{ return m_operationEndTime; }
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline bool OperationEndTimeHasBeenSet() const { return m_operationEndTimeHasBeenSet; }
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetOperationEndTime(const Aws::String& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = value; }
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetOperationEndTime(Aws::String&& value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime = std::move(value); }
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetOperationEndTime(const char* value) { m_operationEndTimeHasBeenSet = true; m_operationEndTime.assign(value); }
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline PatchSummary& WithOperationEndTime(const Aws::String& value) { SetOperationEndTime(value); return *this;}
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline PatchSummary& WithOperationEndTime(Aws::String&& value) { SetOperationEndTime(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates when the operation completed.</p> <p>This field accepts only the
-     * specified formats. Timestamps can end with <code>Z</code> or <code>("+" / "-")
-     * time-hour [":" time-minute]</code>. The time-secfrac after seconds is limited to
-     * a maximum of 9 digits. The offset is bounded by +/-18:00. Here are valid
-     * timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline PatchSummary& WithOperationEndTime(const char* value) { SetOperationEndTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
      * Minimum length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetRebootOption() const{ return m_rebootOption; }
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline bool RebootOptionHasBeenSet() const { return m_rebootOptionHasBeenSet; }
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline void SetRebootOption(const Aws::String& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = value; }
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline void SetRebootOption(Aws::String&& value) { m_rebootOptionHasBeenSet = true; m_rebootOption = std::move(value); }
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline void SetRebootOption(const char* value) { m_rebootOptionHasBeenSet = true; m_rebootOption.assign(value); }
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline PatchSummary& WithRebootOption(const Aws::String& value) { SetRebootOption(value); return *this;}
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline PatchSummary& WithRebootOption(Aws::String&& value) { SetRebootOption(std::move(value)); return *this;}
-
-    /**
-     * <p>The reboot option specified for the instance.</p> <p>Length Constraints:
-     * Minimum length of 1. Maximum length of 256.</p>
-     */
     inline PatchSummary& WithRebootOption(const char* value) { SetRebootOption(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of patch operation performed. For Patch Manager, the values are
      * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
      * length of 1. Maximum length of 256.</p>
      */
     inline const Aws::String& GetOperation() const{ return m_operation; }
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline PatchSummary& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline PatchSummary& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of patch operation performed. For Patch Manager, the values are
-     * <code>SCAN</code> and <code>INSTALL</code>.</p> <p>Length Constraints: Minimum
-     * length of 1. Maximum length of 256.</p>
-     */
     inline PatchSummary& WithOperation(const char* value) { SetOperation(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

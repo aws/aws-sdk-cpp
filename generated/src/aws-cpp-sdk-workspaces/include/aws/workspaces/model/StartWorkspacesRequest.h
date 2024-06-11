@@ -35,46 +35,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
      */
     inline const Aws::Vector<StartRequest>& GetStartWorkspaceRequests() const{ return m_startWorkspaceRequests; }
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline bool StartWorkspaceRequestsHasBeenSet() const { return m_startWorkspaceRequestsHasBeenSet; }
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline void SetStartWorkspaceRequests(const Aws::Vector<StartRequest>& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = value; }
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline void SetStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = std::move(value); }
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline StartWorkspacesRequest& WithStartWorkspaceRequests(const Aws::Vector<StartRequest>& value) { SetStartWorkspaceRequests(value); return *this;}
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline StartWorkspacesRequest& WithStartWorkspaceRequests(Aws::Vector<StartRequest>&& value) { SetStartWorkspaceRequests(std::move(value)); return *this;}
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline StartWorkspacesRequest& AddStartWorkspaceRequests(const StartRequest& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(value); return *this; }
-
-    /**
-     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
-     */
     inline StartWorkspacesRequest& AddStartWorkspaceRequests(StartRequest&& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<StartRequest> m_startWorkspaceRequests;

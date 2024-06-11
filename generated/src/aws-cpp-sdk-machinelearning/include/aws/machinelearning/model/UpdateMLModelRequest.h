@@ -34,88 +34,35 @@ namespace Model
     AWS_MACHINELEARNING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
     inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline void SetMLModelId(const char* value) { m_mLModelIdHasBeenSet = true; m_mLModelId.assign(value); }
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline UpdateMLModelRequest& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline UpdateMLModelRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
-     */
     inline UpdateMLModelRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
      */
     inline const Aws::String& GetMLModelName() const{ return m_mLModelName; }
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline bool MLModelNameHasBeenSet() const { return m_mLModelNameHasBeenSet; }
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline void SetMLModelName(const Aws::String& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = value; }
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline void SetMLModelName(Aws::String&& value) { m_mLModelNameHasBeenSet = true; m_mLModelName = std::move(value); }
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline void SetMLModelName(const char* value) { m_mLModelNameHasBeenSet = true; m_mLModelName.assign(value); }
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline UpdateMLModelRequest& WithMLModelName(const Aws::String& value) { SetMLModelName(value); return *this;}
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline UpdateMLModelRequest& WithMLModelName(Aws::String&& value) { SetMLModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-supplied name or description of the <code>MLModel</code>.</p>
-     */
     inline UpdateMLModelRequest& WithMLModelName(const char* value) { SetMLModelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>ScoreThreshold</code> used in binary classification
      * <code>MLModel</code> that marks the boundary between a positive prediction and a
@@ -126,40 +73,10 @@ namespace Model
      * <code>MLModel</code>, such as <code>false</code>.</p>
      */
     inline double GetScoreThreshold() const{ return m_scoreThreshold; }
-
-    /**
-     * <p>The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive prediction and a
-     * negative prediction.</p> <p>Output values greater than or equal to the
-     * <code>ScoreThreshold</code> receive a positive result from the
-     * <code>MLModel</code>, such as <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.</p>
-     */
     inline bool ScoreThresholdHasBeenSet() const { return m_scoreThresholdHasBeenSet; }
-
-    /**
-     * <p>The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive prediction and a
-     * negative prediction.</p> <p>Output values greater than or equal to the
-     * <code>ScoreThreshold</code> receive a positive result from the
-     * <code>MLModel</code>, such as <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.</p>
-     */
     inline void SetScoreThreshold(double value) { m_scoreThresholdHasBeenSet = true; m_scoreThreshold = value; }
-
-    /**
-     * <p>The <code>ScoreThreshold</code> used in binary classification
-     * <code>MLModel</code> that marks the boundary between a positive prediction and a
-     * negative prediction.</p> <p>Output values greater than or equal to the
-     * <code>ScoreThreshold</code> receive a positive result from the
-     * <code>MLModel</code>, such as <code>true</code>. Output values less than the
-     * <code>ScoreThreshold</code> receive a negative response from the
-     * <code>MLModel</code>, such as <code>false</code>.</p>
-     */
     inline UpdateMLModelRequest& WithScoreThreshold(double value) { SetScoreThreshold(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mLModelId;

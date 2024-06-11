@@ -34,46 +34,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the static IP address.</p>
      */
     inline const Aws::String& GetStaticIpName() const{ return m_staticIpName; }
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline bool StaticIpNameHasBeenSet() const { return m_staticIpNameHasBeenSet; }
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline void SetStaticIpName(const Aws::String& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = std::move(value); }
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline void SetStaticIpName(const char* value) { m_staticIpNameHasBeenSet = true; m_staticIpName.assign(value); }
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline AllocateStaticIpRequest& WithStaticIpName(const Aws::String& value) { SetStaticIpName(value); return *this;}
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline AllocateStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the static IP address.</p>
-     */
     inline AllocateStaticIpRequest& WithStaticIpName(const char* value) { SetStaticIpName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_staticIpName;

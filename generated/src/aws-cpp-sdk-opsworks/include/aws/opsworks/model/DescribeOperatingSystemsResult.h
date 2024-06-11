@@ -40,70 +40,30 @@ namespace Model
     AWS_OPSWORKS_API DescribeOperatingSystemsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
      * request.</p>
      */
     inline const Aws::Vector<OperatingSystem>& GetOperatingSystems() const{ return m_operatingSystems; }
-
-    /**
-     * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
-     * request.</p>
-     */
     inline void SetOperatingSystems(const Aws::Vector<OperatingSystem>& value) { m_operatingSystems = value; }
-
-    /**
-     * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
-     * request.</p>
-     */
     inline void SetOperatingSystems(Aws::Vector<OperatingSystem>&& value) { m_operatingSystems = std::move(value); }
-
-    /**
-     * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
-     * request.</p>
-     */
     inline DescribeOperatingSystemsResult& WithOperatingSystems(const Aws::Vector<OperatingSystem>& value) { SetOperatingSystems(value); return *this;}
-
-    /**
-     * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
-     * request.</p>
-     */
     inline DescribeOperatingSystemsResult& WithOperatingSystems(Aws::Vector<OperatingSystem>&& value) { SetOperatingSystems(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
-     * request.</p>
-     */
     inline DescribeOperatingSystemsResult& AddOperatingSystems(const OperatingSystem& value) { m_operatingSystems.push_back(value); return *this; }
-
-    /**
-     * <p>Contains information in response to a <code>DescribeOperatingSystems</code>
-     * request.</p>
-     */
     inline DescribeOperatingSystemsResult& AddOperatingSystems(OperatingSystem&& value) { m_operatingSystems.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeOperatingSystemsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeOperatingSystemsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeOperatingSystemsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<OperatingSystem> m_operatingSystems;

@@ -40,54 +40,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identity to be removed from the list of identities for the Amazon Web
      * Services account.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline DeleteIdentityRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline DeleteIdentityRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity to be removed from the list of identities for the Amazon Web
-     * Services account.</p>
-     */
     inline DeleteIdentityRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identity;

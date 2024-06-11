@@ -38,46 +38,19 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the deleted document.</p>
      */
     inline const Aws::String& GetDocumentId() const{ return m_documentId; }
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline void SetDocumentId(Aws::String&& value) { m_documentIdHasBeenSet = true; m_documentId = std::move(value); }
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline void SetDocumentId(const char* value) { m_documentIdHasBeenSet = true; m_documentId.assign(value); }
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline DeleteDocument& WithDocumentId(const Aws::String& value) { SetDocumentId(value); return *this;}
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline DeleteDocument& WithDocumentId(Aws::String&& value) { SetDocumentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the deleted document.</p>
-     */
     inline DeleteDocument& WithDocumentId(const char* value) { SetDocumentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_documentId;

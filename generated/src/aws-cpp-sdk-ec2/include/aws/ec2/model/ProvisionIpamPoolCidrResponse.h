@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API ProvisionIpamPoolCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the provisioned CIDR.</p>
      */
     inline const IpamPoolCidr& GetIpamPoolCidr() const{ return m_ipamPoolCidr; }
-
-    /**
-     * <p>Information about the provisioned CIDR.</p>
-     */
     inline void SetIpamPoolCidr(const IpamPoolCidr& value) { m_ipamPoolCidr = value; }
-
-    /**
-     * <p>Information about the provisioned CIDR.</p>
-     */
     inline void SetIpamPoolCidr(IpamPoolCidr&& value) { m_ipamPoolCidr = std::move(value); }
-
-    /**
-     * <p>Information about the provisioned CIDR.</p>
-     */
     inline ProvisionIpamPoolCidrResponse& WithIpamPoolCidr(const IpamPoolCidr& value) { SetIpamPoolCidr(value); return *this;}
-
-    /**
-     * <p>Information about the provisioned CIDR.</p>
-     */
     inline ProvisionIpamPoolCidrResponse& WithIpamPoolCidr(IpamPoolCidr&& value) { SetIpamPoolCidr(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ProvisionIpamPoolCidrResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ProvisionIpamPoolCidrResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpamPoolCidr m_ipamPoolCidr;

@@ -35,47 +35,21 @@ namespace Model
     AWS_IDENTITYSTORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The globally unique identifier for the identity store.</p>
      */
     inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetUserIdRequest& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetUserIdRequest& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The globally unique identifier for the identity store.</p>
-     */
     inline GetUserIdRequest& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for a user or group that is not the primary identifier.
      * This value can be an identifier from an external identity provider (IdP) that is
@@ -84,52 +58,12 @@ namespace Model
      * <code>emails.value</code>.</p>
      */
     inline const AlternateIdentifier& GetAlternateIdentifier() const{ return m_alternateIdentifier; }
-
-    /**
-     * <p>A unique identifier for a user or group that is not the primary identifier.
-     * This value can be an identifier from an external identity provider (IdP) that is
-     * associated with the user, the group, or a unique attribute. For the unique
-     * attribute, the only valid paths are <code>userName</code> and
-     * <code>emails.value</code>.</p>
-     */
     inline bool AlternateIdentifierHasBeenSet() const { return m_alternateIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier for a user or group that is not the primary identifier.
-     * This value can be an identifier from an external identity provider (IdP) that is
-     * associated with the user, the group, or a unique attribute. For the unique
-     * attribute, the only valid paths are <code>userName</code> and
-     * <code>emails.value</code>.</p>
-     */
     inline void SetAlternateIdentifier(const AlternateIdentifier& value) { m_alternateIdentifierHasBeenSet = true; m_alternateIdentifier = value; }
-
-    /**
-     * <p>A unique identifier for a user or group that is not the primary identifier.
-     * This value can be an identifier from an external identity provider (IdP) that is
-     * associated with the user, the group, or a unique attribute. For the unique
-     * attribute, the only valid paths are <code>userName</code> and
-     * <code>emails.value</code>.</p>
-     */
     inline void SetAlternateIdentifier(AlternateIdentifier&& value) { m_alternateIdentifierHasBeenSet = true; m_alternateIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier for a user or group that is not the primary identifier.
-     * This value can be an identifier from an external identity provider (IdP) that is
-     * associated with the user, the group, or a unique attribute. For the unique
-     * attribute, the only valid paths are <code>userName</code> and
-     * <code>emails.value</code>.</p>
-     */
     inline GetUserIdRequest& WithAlternateIdentifier(const AlternateIdentifier& value) { SetAlternateIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier for a user or group that is not the primary identifier.
-     * This value can be an identifier from an external identity provider (IdP) that is
-     * associated with the user, the group, or a unique attribute. For the unique
-     * attribute, the only valid paths are <code>userName</code> and
-     * <code>emails.value</code>.</p>
-     */
     inline GetUserIdRequest& WithAlternateIdentifier(AlternateIdentifier&& value) { SetAlternateIdentifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identityStoreId;

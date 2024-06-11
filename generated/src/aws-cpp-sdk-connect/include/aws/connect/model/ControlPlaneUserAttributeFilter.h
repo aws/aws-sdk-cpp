@@ -48,129 +48,53 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
     inline const Aws::Vector<AttributeAndCondition>& GetOrConditions() const{ return m_orConditions; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline void SetOrConditions(const Aws::Vector<AttributeAndCondition>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline void SetOrConditions(Aws::Vector<AttributeAndCondition>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ControlPlaneUserAttributeFilter& WithOrConditions(const Aws::Vector<AttributeAndCondition>& value) { SetOrConditions(value); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ControlPlaneUserAttributeFilter& WithOrConditions(Aws::Vector<AttributeAndCondition>&& value) { SetOrConditions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ControlPlaneUserAttributeFilter& AddOrConditions(const AttributeAndCondition& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ControlPlaneUserAttributeFilter& AddOrConditions(AttributeAndCondition&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
     inline const AttributeAndCondition& GetAndCondition() const{ return m_andCondition; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline bool AndConditionHasBeenSet() const { return m_andConditionHasBeenSet; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline void SetAndCondition(const AttributeAndCondition& value) { m_andConditionHasBeenSet = true; m_andCondition = value; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline void SetAndCondition(AttributeAndCondition&& value) { m_andConditionHasBeenSet = true; m_andCondition = std::move(value); }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline ControlPlaneUserAttributeFilter& WithAndCondition(const AttributeAndCondition& value) { SetAndCondition(value); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline ControlPlaneUserAttributeFilter& WithAndCondition(AttributeAndCondition&& value) { SetAndCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const TagCondition& GetTagCondition() const{ return m_tagCondition; }
-
-    
     inline bool TagConditionHasBeenSet() const { return m_tagConditionHasBeenSet; }
-
-    
     inline void SetTagCondition(const TagCondition& value) { m_tagConditionHasBeenSet = true; m_tagCondition = value; }
-
-    
     inline void SetTagCondition(TagCondition&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::move(value); }
-
-    
     inline ControlPlaneUserAttributeFilter& WithTagCondition(const TagCondition& value) { SetTagCondition(value); return *this;}
-
-    
     inline ControlPlaneUserAttributeFilter& WithTagCondition(TagCondition&& value) { SetTagCondition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const HierarchyGroupCondition& GetHierarchyGroupCondition() const{ return m_hierarchyGroupCondition; }
-
-    
     inline bool HierarchyGroupConditionHasBeenSet() const { return m_hierarchyGroupConditionHasBeenSet; }
-
-    
     inline void SetHierarchyGroupCondition(const HierarchyGroupCondition& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = value; }
-
-    
     inline void SetHierarchyGroupCondition(HierarchyGroupCondition&& value) { m_hierarchyGroupConditionHasBeenSet = true; m_hierarchyGroupCondition = std::move(value); }
-
-    
     inline ControlPlaneUserAttributeFilter& WithHierarchyGroupCondition(const HierarchyGroupCondition& value) { SetHierarchyGroupCondition(value); return *this;}
-
-    
     inline ControlPlaneUserAttributeFilter& WithHierarchyGroupCondition(HierarchyGroupCondition&& value) { SetHierarchyGroupCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AttributeAndCondition> m_orConditions;

@@ -37,98 +37,41 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location of the first file in Amazon S3.</p>
      */
     inline const FileInformation& GetSource1() const{ return m_source1; }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline bool Source1HasBeenSet() const { return m_source1HasBeenSet; }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline void SetSource1(const FileInformation& value) { m_source1HasBeenSet = true; m_source1 = value; }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline void SetSource1(FileInformation&& value) { m_source1HasBeenSet = true; m_source1 = std::move(value); }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline ReadSetFiles& WithSource1(const FileInformation& value) { SetSource1(value); return *this;}
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline ReadSetFiles& WithSource1(FileInformation&& value) { SetSource1(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the second file in Amazon S3.</p>
      */
     inline const FileInformation& GetSource2() const{ return m_source2; }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline bool Source2HasBeenSet() const { return m_source2HasBeenSet; }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline void SetSource2(const FileInformation& value) { m_source2HasBeenSet = true; m_source2 = value; }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline void SetSource2(FileInformation&& value) { m_source2HasBeenSet = true; m_source2 = std::move(value); }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline ReadSetFiles& WithSource2(const FileInformation& value) { SetSource2(value); return *this;}
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline ReadSetFiles& WithSource2(FileInformation&& value) { SetSource2(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The files' index.</p>
      */
     inline const FileInformation& GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The files' index.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The files' index.</p>
-     */
     inline void SetIndex(const FileInformation& value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The files' index.</p>
-     */
     inline void SetIndex(FileInformation&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
-
-    /**
-     * <p>The files' index.</p>
-     */
     inline ReadSetFiles& WithIndex(const FileInformation& value) { SetIndex(value); return *this;}
-
-    /**
-     * <p>The files' index.</p>
-     */
     inline ReadSetFiles& WithIndex(FileInformation&& value) { SetIndex(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FileInformation m_source1;

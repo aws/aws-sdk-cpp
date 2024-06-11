@@ -40,63 +40,29 @@ namespace Model
     AWS_IOT_API ListPolicyVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The policy versions.</p>
      */
     inline const Aws::Vector<PolicyVersion>& GetPolicyVersions() const{ return m_policyVersions; }
-
-    /**
-     * <p>The policy versions.</p>
-     */
     inline void SetPolicyVersions(const Aws::Vector<PolicyVersion>& value) { m_policyVersions = value; }
-
-    /**
-     * <p>The policy versions.</p>
-     */
     inline void SetPolicyVersions(Aws::Vector<PolicyVersion>&& value) { m_policyVersions = std::move(value); }
-
-    /**
-     * <p>The policy versions.</p>
-     */
     inline ListPolicyVersionsResult& WithPolicyVersions(const Aws::Vector<PolicyVersion>& value) { SetPolicyVersions(value); return *this;}
-
-    /**
-     * <p>The policy versions.</p>
-     */
     inline ListPolicyVersionsResult& WithPolicyVersions(Aws::Vector<PolicyVersion>&& value) { SetPolicyVersions(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy versions.</p>
-     */
     inline ListPolicyVersionsResult& AddPolicyVersions(const PolicyVersion& value) { m_policyVersions.push_back(value); return *this; }
-
-    /**
-     * <p>The policy versions.</p>
-     */
     inline ListPolicyVersionsResult& AddPolicyVersions(PolicyVersion&& value) { m_policyVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListPolicyVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListPolicyVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListPolicyVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PolicyVersion> m_policyVersions;

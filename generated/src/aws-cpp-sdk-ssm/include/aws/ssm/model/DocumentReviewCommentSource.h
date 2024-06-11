@@ -39,91 +39,33 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of information added to a review request. Currently, only the value
      * <code>Comment</code> is supported.</p>
      */
     inline const DocumentReviewCommentType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of information added to a review request. Currently, only the value
-     * <code>Comment</code> is supported.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of information added to a review request. Currently, only the value
-     * <code>Comment</code> is supported.</p>
-     */
     inline void SetType(const DocumentReviewCommentType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of information added to a review request. Currently, only the value
-     * <code>Comment</code> is supported.</p>
-     */
     inline void SetType(DocumentReviewCommentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of information added to a review request. Currently, only the value
-     * <code>Comment</code> is supported.</p>
-     */
     inline DocumentReviewCommentSource& WithType(const DocumentReviewCommentType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of information added to a review request. Currently, only the value
-     * <code>Comment</code> is supported.</p>
-     */
     inline DocumentReviewCommentSource& WithType(DocumentReviewCommentType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content of a comment entered by a user who requests a review of a new
      * document version, or who reviews the new version.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline DocumentReviewCommentSource& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline DocumentReviewCommentSource& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of a comment entered by a user who requests a review of a new
-     * document version, or who reviews the new version.</p>
-     */
     inline DocumentReviewCommentSource& WithContent(const char* value) { SetContent(value); return *this;}
-
+    ///@}
   private:
 
     DocumentReviewCommentType m_type;

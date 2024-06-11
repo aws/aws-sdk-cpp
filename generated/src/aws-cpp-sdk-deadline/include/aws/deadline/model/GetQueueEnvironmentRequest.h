@@ -32,128 +32,47 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The farm ID for the queue environment.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline GetQueueEnvironmentRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline GetQueueEnvironmentRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID for the queue environment.</p>
-     */
     inline GetQueueEnvironmentRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The queue environment ID.</p>
      */
     inline const Aws::String& GetQueueEnvironmentId() const{ return m_queueEnvironmentId; }
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline bool QueueEnvironmentIdHasBeenSet() const { return m_queueEnvironmentIdHasBeenSet; }
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline void SetQueueEnvironmentId(const Aws::String& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = value; }
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline void SetQueueEnvironmentId(Aws::String&& value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId = std::move(value); }
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline void SetQueueEnvironmentId(const char* value) { m_queueEnvironmentIdHasBeenSet = true; m_queueEnvironmentId.assign(value); }
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline GetQueueEnvironmentRequest& WithQueueEnvironmentId(const Aws::String& value) { SetQueueEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline GetQueueEnvironmentRequest& WithQueueEnvironmentId(Aws::String&& value) { SetQueueEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The queue environment ID.</p>
-     */
     inline GetQueueEnvironmentRequest& WithQueueEnvironmentId(const char* value) { SetQueueEnvironmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The queue ID for the queue environment.</p>
      */
     inline const Aws::String& GetQueueId() const{ return m_queueId; }
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline GetQueueEnvironmentRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline GetQueueEnvironmentRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-
-    /**
-     * <p>The queue ID for the queue environment.</p>
-     */
     inline GetQueueEnvironmentRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The host name of the gateway route to rewrite.</p>
      */
     inline const GatewayRouteHostnameRewrite& GetHostname() const{ return m_hostname; }
-
-    /**
-     * <p>The host name of the gateway route to rewrite.</p>
-     */
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-
-    /**
-     * <p>The host name of the gateway route to rewrite.</p>
-     */
     inline void SetHostname(const GatewayRouteHostnameRewrite& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-
-    /**
-     * <p>The host name of the gateway route to rewrite.</p>
-     */
     inline void SetHostname(GatewayRouteHostnameRewrite&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-
-    /**
-     * <p>The host name of the gateway route to rewrite.</p>
-     */
     inline GrpcGatewayRouteRewrite& WithHostname(const GatewayRouteHostnameRewrite& value) { SetHostname(value); return *this;}
-
-    /**
-     * <p>The host name of the gateway route to rewrite.</p>
-     */
     inline GrpcGatewayRouteRewrite& WithHostname(GatewayRouteHostnameRewrite&& value) { SetHostname(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GatewayRouteHostnameRewrite m_hostname;

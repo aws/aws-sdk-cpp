@@ -33,43 +33,25 @@ namespace Model
     AWS_CLOUDCONTROLAPI_API CancelResourceRequestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const ProgressEvent& GetProgressEvent() const{ return m_progressEvent; }
-
-    
     inline void SetProgressEvent(const ProgressEvent& value) { m_progressEvent = value; }
-
-    
     inline void SetProgressEvent(ProgressEvent&& value) { m_progressEvent = std::move(value); }
-
-    
     inline CancelResourceRequestResult& WithProgressEvent(const ProgressEvent& value) { SetProgressEvent(value); return *this;}
-
-    
     inline CancelResourceRequestResult& WithProgressEvent(ProgressEvent&& value) { SetProgressEvent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelResourceRequestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelResourceRequestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelResourceRequestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProgressEvent m_progressEvent;

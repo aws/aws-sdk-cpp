@@ -38,67 +38,29 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows to sort offers.</p>
      */
     inline const OfferSortBy& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline void SetSortBy(const OfferSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline void SetSortBy(OfferSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline OfferSort& WithSortBy(const OfferSortBy& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline OfferSort& WithSortBy(OfferSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows to sort offers.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline OfferSort& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>Allows to sort offers.</p>
-     */
     inline OfferSort& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OfferSortBy m_sortBy;

@@ -38,87 +38,33 @@ namespace Model
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of limit that was exceeded.</p>
      */
     inline const Aws::String& GetLimitType() const{ return m_limitType; }
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline bool LimitTypeHasBeenSet() const { return m_limitTypeHasBeenSet; }
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline void SetLimitType(const Aws::String& value) { m_limitTypeHasBeenSet = true; m_limitType = value; }
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline void SetLimitType(Aws::String&& value) { m_limitTypeHasBeenSet = true; m_limitType = std::move(value); }
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline void SetLimitType(const char* value) { m_limitTypeHasBeenSet = true; m_limitType.assign(value); }
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline TooManyRequestsException& WithLimitType(const Aws::String& value) { SetLimitType(value); return *this;}
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline TooManyRequestsException& WithLimitType(Aws::String&& value) { SetLimitType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of limit that was exceeded.</p>
-     */
     inline TooManyRequestsException& WithLimitType(const char* value) { SetLimitType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An error message to inform that the request has failed.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline TooManyRequestsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline TooManyRequestsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>An error message to inform that the request has failed.</p>
-     */
     inline TooManyRequestsException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_limitType;

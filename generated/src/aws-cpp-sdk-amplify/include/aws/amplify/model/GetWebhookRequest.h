@@ -36,46 +36,19 @@ namespace Model
     AWS_AMPLIFY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID for a webhook. </p>
      */
     inline const Aws::String& GetWebhookId() const{ return m_webhookId; }
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline bool WebhookIdHasBeenSet() const { return m_webhookIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline void SetWebhookId(const Aws::String& value) { m_webhookIdHasBeenSet = true; m_webhookId = value; }
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline void SetWebhookId(Aws::String&& value) { m_webhookIdHasBeenSet = true; m_webhookId = std::move(value); }
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline void SetWebhookId(const char* value) { m_webhookIdHasBeenSet = true; m_webhookId.assign(value); }
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline GetWebhookRequest& WithWebhookId(const Aws::String& value) { SetWebhookId(value); return *this;}
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline GetWebhookRequest& WithWebhookId(Aws::String&& value) { SetWebhookId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for a webhook. </p>
-     */
     inline GetWebhookRequest& WithWebhookId(const char* value) { SetWebhookId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_webhookId;

@@ -40,6 +40,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of users whose documents should be indexed. Specify the user names in
      * email format, for example, <code>username@tenantdomain</code>. If you need to
@@ -48,116 +49,28 @@ namespace Model
      * containing a list of users.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOneDriveUserList() const{ return m_oneDriveUserList; }
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline bool OneDriveUserListHasBeenSet() const { return m_oneDriveUserListHasBeenSet; }
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline void SetOneDriveUserList(const Aws::Vector<Aws::String>& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList = value; }
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline void SetOneDriveUserList(Aws::Vector<Aws::String>&& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList = std::move(value); }
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline OneDriveUsers& WithOneDriveUserList(const Aws::Vector<Aws::String>& value) { SetOneDriveUserList(value); return *this;}
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline OneDriveUsers& WithOneDriveUserList(Aws::Vector<Aws::String>&& value) { SetOneDriveUserList(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline OneDriveUsers& AddOneDriveUserList(const Aws::String& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.push_back(value); return *this; }
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline OneDriveUsers& AddOneDriveUserList(Aws::String&& value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of users whose documents should be indexed. Specify the user names in
-     * email format, for example, <code>username@tenantdomain</code>. If you need to
-     * index the documents of more than 100 users, use the
-     * <code>OneDriveUserS3Path</code> field to specify the location of a file
-     * containing a list of users.</p>
-     */
     inline OneDriveUsers& AddOneDriveUserList(const char* value) { m_oneDriveUserListHasBeenSet = true; m_oneDriveUserList.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 bucket location of a file containing a list of users whose documents
      * should be indexed.</p>
      */
     inline const S3Path& GetOneDriveUserS3Path() const{ return m_oneDriveUserS3Path; }
-
-    /**
-     * <p>The S3 bucket location of a file containing a list of users whose documents
-     * should be indexed.</p>
-     */
     inline bool OneDriveUserS3PathHasBeenSet() const { return m_oneDriveUserS3PathHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket location of a file containing a list of users whose documents
-     * should be indexed.</p>
-     */
     inline void SetOneDriveUserS3Path(const S3Path& value) { m_oneDriveUserS3PathHasBeenSet = true; m_oneDriveUserS3Path = value; }
-
-    /**
-     * <p>The S3 bucket location of a file containing a list of users whose documents
-     * should be indexed.</p>
-     */
     inline void SetOneDriveUserS3Path(S3Path&& value) { m_oneDriveUserS3PathHasBeenSet = true; m_oneDriveUserS3Path = std::move(value); }
-
-    /**
-     * <p>The S3 bucket location of a file containing a list of users whose documents
-     * should be indexed.</p>
-     */
     inline OneDriveUsers& WithOneDriveUserS3Path(const S3Path& value) { SetOneDriveUserS3Path(value); return *this;}
-
-    /**
-     * <p>The S3 bucket location of a file containing a list of users whose documents
-     * should be indexed.</p>
-     */
     inline OneDriveUsers& WithOneDriveUserS3Path(S3Path&& value) { SetOneDriveUserS3Path(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_oneDriveUserList;

@@ -38,36 +38,17 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration information of the Amazon Connect data source.</p>
      */
     inline const ConnectConfiguration& GetConnectConfiguration() const{ return m_connectConfiguration; }
-
-    /**
-     * <p>The configuration information of the Amazon Connect data source.</p>
-     */
     inline bool ConnectConfigurationHasBeenSet() const { return m_connectConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration information of the Amazon Connect data source.</p>
-     */
     inline void SetConnectConfiguration(const ConnectConfiguration& value) { m_connectConfigurationHasBeenSet = true; m_connectConfiguration = value; }
-
-    /**
-     * <p>The configuration information of the Amazon Connect data source.</p>
-     */
     inline void SetConnectConfiguration(ConnectConfiguration&& value) { m_connectConfigurationHasBeenSet = true; m_connectConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration information of the Amazon Connect data source.</p>
-     */
     inline Configuration& WithConnectConfiguration(const ConnectConfiguration& value) { SetConnectConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration information of the Amazon Connect data source.</p>
-     */
     inline Configuration& WithConnectConfiguration(ConnectConfiguration&& value) { SetConnectConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConnectConfiguration m_connectConfiguration;

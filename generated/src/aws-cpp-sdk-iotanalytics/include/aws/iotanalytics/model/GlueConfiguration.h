@@ -38,111 +38,36 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the table in your Glue Data Catalog that is used to perform the
      * ETL operations. An Glue Data Catalog table contains partitioned data and
      * descriptions of data sources and targets.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline GlueConfiguration& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline GlueConfiguration& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table in your Glue Data Catalog that is used to perform the
-     * ETL operations. An Glue Data Catalog table contains partitioned data and
-     * descriptions of data sources and targets.</p>
-     */
     inline GlueConfiguration& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the database in your Glue Data Catalog in which the table is
      * located. An Glue Data Catalog database contains metadata tables.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline GlueConfiguration& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline GlueConfiguration& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database in your Glue Data Catalog in which the table is
-     * located. An Glue Data Catalog database contains metadata tables.</p>
-     */
     inline GlueConfiguration& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tableName;

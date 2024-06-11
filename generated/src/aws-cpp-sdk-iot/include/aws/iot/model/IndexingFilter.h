@@ -52,6 +52,7 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The shadow names that you select to index. The default maximum number of
      * shadow names for indexing is 10. To increase the limit, see <a
@@ -60,80 +61,17 @@ namespace Model
      * General Reference</i>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetNamedShadowNames() const{ return m_namedShadowNames; }
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline bool NamedShadowNamesHasBeenSet() const { return m_namedShadowNamesHasBeenSet; }
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline void SetNamedShadowNames(const Aws::Vector<Aws::String>& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames = value; }
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline void SetNamedShadowNames(Aws::Vector<Aws::String>&& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames = std::move(value); }
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline IndexingFilter& WithNamedShadowNames(const Aws::Vector<Aws::String>& value) { SetNamedShadowNames(value); return *this;}
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline IndexingFilter& WithNamedShadowNames(Aws::Vector<Aws::String>&& value) { SetNamedShadowNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline IndexingFilter& AddNamedShadowNames(const Aws::String& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.push_back(value); return *this; }
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline IndexingFilter& AddNamedShadowNames(Aws::String&& value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The shadow names that you select to index. The default maximum number of
-     * shadow names for indexing is 10. To increase the limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>. </p>
-     */
     inline IndexingFilter& AddNamedShadowNames(const char* value) { m_namedShadowNamesHasBeenSet = true; m_namedShadowNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of geolocation targets that you select to index. The default maximum
      * number of geolocation targets for indexing is <code>1</code>. To increase the
@@ -143,77 +81,14 @@ namespace Model
      * General Reference</i>.</p>
      */
     inline const Aws::Vector<GeoLocationTarget>& GetGeoLocations() const{ return m_geoLocations; }
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline bool GeoLocationsHasBeenSet() const { return m_geoLocationsHasBeenSet; }
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline void SetGeoLocations(const Aws::Vector<GeoLocationTarget>& value) { m_geoLocationsHasBeenSet = true; m_geoLocations = value; }
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline void SetGeoLocations(Aws::Vector<GeoLocationTarget>&& value) { m_geoLocationsHasBeenSet = true; m_geoLocations = std::move(value); }
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline IndexingFilter& WithGeoLocations(const Aws::Vector<GeoLocationTarget>& value) { SetGeoLocations(value); return *this;}
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline IndexingFilter& WithGeoLocations(Aws::Vector<GeoLocationTarget>&& value) { SetGeoLocations(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline IndexingFilter& AddGeoLocations(const GeoLocationTarget& value) { m_geoLocationsHasBeenSet = true; m_geoLocations.push_back(value); return *this; }
-
-    /**
-     * <p>The list of geolocation targets that you select to index. The default maximum
-     * number of geolocation targets for indexing is <code>1</code>. To increase the
-     * limit, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/iot_device_management.html#fleet-indexing-limits">Amazon
-     * Web Services IoT Device Management Quotas</a> in the <i>Amazon Web Services
-     * General Reference</i>.</p>
-     */
     inline IndexingFilter& AddGeoLocations(GeoLocationTarget&& value) { m_geoLocationsHasBeenSet = true; m_geoLocations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_namedShadowNames;

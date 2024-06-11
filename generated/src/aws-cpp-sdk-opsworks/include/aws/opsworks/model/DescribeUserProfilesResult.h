@@ -40,63 +40,29 @@ namespace Model
     AWS_OPSWORKS_API DescribeUserProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>Users</code> object that describes the specified users.</p>
      */
     inline const Aws::Vector<UserProfile>& GetUserProfiles() const{ return m_userProfiles; }
-
-    /**
-     * <p>A <code>Users</code> object that describes the specified users.</p>
-     */
     inline void SetUserProfiles(const Aws::Vector<UserProfile>& value) { m_userProfiles = value; }
-
-    /**
-     * <p>A <code>Users</code> object that describes the specified users.</p>
-     */
     inline void SetUserProfiles(Aws::Vector<UserProfile>&& value) { m_userProfiles = std::move(value); }
-
-    /**
-     * <p>A <code>Users</code> object that describes the specified users.</p>
-     */
     inline DescribeUserProfilesResult& WithUserProfiles(const Aws::Vector<UserProfile>& value) { SetUserProfiles(value); return *this;}
-
-    /**
-     * <p>A <code>Users</code> object that describes the specified users.</p>
-     */
     inline DescribeUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfile>&& value) { SetUserProfiles(std::move(value)); return *this;}
-
-    /**
-     * <p>A <code>Users</code> object that describes the specified users.</p>
-     */
     inline DescribeUserProfilesResult& AddUserProfiles(const UserProfile& value) { m_userProfiles.push_back(value); return *this; }
-
-    /**
-     * <p>A <code>Users</code> object that describes the specified users.</p>
-     */
     inline DescribeUserProfilesResult& AddUserProfiles(UserProfile&& value) { m_userProfiles.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeUserProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeUserProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeUserProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UserProfile> m_userProfiles;

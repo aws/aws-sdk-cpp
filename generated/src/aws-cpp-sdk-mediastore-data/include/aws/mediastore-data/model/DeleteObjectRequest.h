@@ -32,54 +32,20 @@ namespace Model
     AWS_MEDIASTOREDATA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The path (including the file name) where the object is stored in the
      * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline DeleteObjectRequest& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline DeleteObjectRequest& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>The path (including the file name) where the object is stored in the
-     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
-     */
     inline DeleteObjectRequest& WithPath(const char* value) { SetPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_path;

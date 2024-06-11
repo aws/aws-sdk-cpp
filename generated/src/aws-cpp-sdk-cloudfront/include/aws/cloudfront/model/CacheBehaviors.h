@@ -39,75 +39,30 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of cache behaviors for this distribution.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of cache behaviors for this distribution.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of cache behaviors for this distribution.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of cache behaviors for this distribution.</p>
-     */
     inline CacheBehaviors& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optional: A complex type that contains cache behaviors for this distribution.
      * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
      */
     inline const Aws::Vector<CacheBehavior>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline void SetItems(const Aws::Vector<CacheBehavior>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline void SetItems(Aws::Vector<CacheBehavior>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline CacheBehaviors& WithItems(const Aws::Vector<CacheBehavior>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline CacheBehaviors& WithItems(Aws::Vector<CacheBehavior>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline CacheBehaviors& AddItems(const CacheBehavior& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>Optional: A complex type that contains cache behaviors for this distribution.
-     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
-     */
     inline CacheBehaviors& AddItems(CacheBehavior&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

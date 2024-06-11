@@ -37,57 +37,27 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Type of resource associated with a license.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>Type of resource associated with a license.</p>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>Type of resource associated with a license.</p>
-     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>Type of resource associated with a license.</p>
-     */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>Type of resource associated with a license.</p>
-     */
     inline ManagedResourceSummary& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>Type of resource associated with a license.</p>
-     */
     inline ManagedResourceSummary& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of resources associated with licenses.</p>
      */
     inline long long GetAssociationCount() const{ return m_associationCount; }
-
-    /**
-     * <p>Number of resources associated with licenses.</p>
-     */
     inline bool AssociationCountHasBeenSet() const { return m_associationCountHasBeenSet; }
-
-    /**
-     * <p>Number of resources associated with licenses.</p>
-     */
     inline void SetAssociationCount(long long value) { m_associationCountHasBeenSet = true; m_associationCount = value; }
-
-    /**
-     * <p>Number of resources associated with licenses.</p>
-     */
     inline ManagedResourceSummary& WithAssociationCount(long long value) { SetAssociationCount(value); return *this;}
-
+    ///@}
   private:
 
     ResourceType m_resourceType;

@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API GetDeliverySourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure containing information about the delivery source.</p>
      */
     inline const DeliverySource& GetDeliverySource() const{ return m_deliverySource; }
-
-    /**
-     * <p>A structure containing information about the delivery source.</p>
-     */
     inline void SetDeliverySource(const DeliverySource& value) { m_deliverySource = value; }
-
-    /**
-     * <p>A structure containing information about the delivery source.</p>
-     */
     inline void SetDeliverySource(DeliverySource&& value) { m_deliverySource = std::move(value); }
-
-    /**
-     * <p>A structure containing information about the delivery source.</p>
-     */
     inline GetDeliverySourceResult& WithDeliverySource(const DeliverySource& value) { SetDeliverySource(value); return *this;}
-
-    /**
-     * <p>A structure containing information about the delivery source.</p>
-     */
     inline GetDeliverySourceResult& WithDeliverySource(DeliverySource&& value) { SetDeliverySource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeliverySourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeliverySourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeliverySourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DeliverySource m_deliverySource;

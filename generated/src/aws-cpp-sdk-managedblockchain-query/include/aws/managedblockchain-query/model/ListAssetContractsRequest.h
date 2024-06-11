@@ -33,78 +33,33 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Contains the filter parameter for the request.</p>
      */
     inline const ContractFilter& GetContractFilter() const{ return m_contractFilter; }
-
-    /**
-     * <p>Contains the filter parameter for the request.</p>
-     */
     inline bool ContractFilterHasBeenSet() const { return m_contractFilterHasBeenSet; }
-
-    /**
-     * <p>Contains the filter parameter for the request.</p>
-     */
     inline void SetContractFilter(const ContractFilter& value) { m_contractFilterHasBeenSet = true; m_contractFilter = value; }
-
-    /**
-     * <p>Contains the filter parameter for the request.</p>
-     */
     inline void SetContractFilter(ContractFilter&& value) { m_contractFilterHasBeenSet = true; m_contractFilter = std::move(value); }
-
-    /**
-     * <p>Contains the filter parameter for the request.</p>
-     */
     inline ListAssetContractsRequest& WithContractFilter(const ContractFilter& value) { SetContractFilter(value); return *this;}
-
-    /**
-     * <p>Contains the filter parameter for the request.</p>
-     */
     inline ListAssetContractsRequest& WithContractFilter(ContractFilter&& value) { SetContractFilter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListAssetContractsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListAssetContractsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListAssetContractsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
      * </p>  <p>Even if additional results can be retrieved, the request can
@@ -114,37 +69,10 @@ namespace Model
      * is <code>null</code> when there are no more results to return</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
-     * </p>  <p>Even if additional results can be retrieved, the request can
-     * return less results than <code>maxResults</code> or an empty array of
-     * results.</p> <p>To retrieve the next set of results, make another request with
-     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
-     * is <code>null</code> when there are no more results to return</p> 
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
-     * </p>  <p>Even if additional results can be retrieved, the request can
-     * return less results than <code>maxResults</code> or an empty array of
-     * results.</p> <p>To retrieve the next set of results, make another request with
-     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
-     * is <code>null</code> when there are no more results to return</p> 
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of contracts to list.</p> <p>Default: <code>100</code>
-     * </p>  <p>Even if additional results can be retrieved, the request can
-     * return less results than <code>maxResults</code> or an empty array of
-     * results.</p> <p>To retrieve the next set of results, make another request with
-     * the returned <code>nextToken</code> value. The value of <code>nextToken</code>
-     * is <code>null</code> when there are no more results to return</p> 
-     */
     inline ListAssetContractsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     ContractFilter m_contractFilter;

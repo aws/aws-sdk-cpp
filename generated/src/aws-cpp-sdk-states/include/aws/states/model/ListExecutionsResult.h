@@ -34,42 +34,20 @@ namespace Model
     AWS_SFN_API ListExecutionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of matching executions.</p>
      */
     inline const Aws::Vector<ExecutionListItem>& GetExecutions() const{ return m_executions; }
-
-    /**
-     * <p>The list of matching executions.</p>
-     */
     inline void SetExecutions(const Aws::Vector<ExecutionListItem>& value) { m_executions = value; }
-
-    /**
-     * <p>The list of matching executions.</p>
-     */
     inline void SetExecutions(Aws::Vector<ExecutionListItem>&& value) { m_executions = std::move(value); }
-
-    /**
-     * <p>The list of matching executions.</p>
-     */
     inline ListExecutionsResult& WithExecutions(const Aws::Vector<ExecutionListItem>& value) { SetExecutions(value); return *this;}
-
-    /**
-     * <p>The list of matching executions.</p>
-     */
     inline ListExecutionsResult& WithExecutions(Aws::Vector<ExecutionListItem>&& value) { SetExecutions(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of matching executions.</p>
-     */
     inline ListExecutionsResult& AddExecutions(const ExecutionListItem& value) { m_executions.push_back(value); return *this; }
-
-    /**
-     * <p>The list of matching executions.</p>
-     */
     inline ListExecutionsResult& AddExecutions(ExecutionListItem&& value) { m_executions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If <code>nextToken</code> is returned, there are more results available. The
      * value of <code>nextToken</code> is a unique pagination token for each page. Make
@@ -79,89 +57,24 @@ namespace Model
      * error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
-     * error.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
-     * error.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
-     * error.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
-     * error.</p>
-     */
     inline ListExecutionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
-     * error.</p>
-     */
     inline ListExecutionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
-     * error.</p>
-     */
     inline ListExecutionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListExecutionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListExecutionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListExecutionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ExecutionListItem> m_executions;

@@ -40,111 +40,36 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of an CodeDeploy application about which to get revision
      * information.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an CodeDeploy application about which to get revision
-     * information.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of <code>RevisionLocation</code> objects that specify information to
      * get about the application revisions, including type and location. The maximum
      * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
      */
     inline const Aws::Vector<RevisionLocation>& GetRevisions() const{ return m_revisions; }
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline bool RevisionsHasBeenSet() const { return m_revisionsHasBeenSet; }
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline void SetRevisions(const Aws::Vector<RevisionLocation>& value) { m_revisionsHasBeenSet = true; m_revisions = value; }
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline void SetRevisions(Aws::Vector<RevisionLocation>&& value) { m_revisionsHasBeenSet = true; m_revisions = std::move(value); }
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& WithRevisions(const Aws::Vector<RevisionLocation>& value) { SetRevisions(value); return *this;}
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& WithRevisions(Aws::Vector<RevisionLocation>&& value) { SetRevisions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& AddRevisions(const RevisionLocation& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(value); return *this; }
-
-    /**
-     * <p>An array of <code>RevisionLocation</code> objects that specify information to
-     * get about the application revisions, including type and location. The maximum
-     * number of <code>RevisionLocation</code> objects you can specify is 25.</p>
-     */
     inline BatchGetApplicationRevisionsRequest& AddRevisions(RevisionLocation&& value) { m_revisionsHasBeenSet = true; m_revisions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

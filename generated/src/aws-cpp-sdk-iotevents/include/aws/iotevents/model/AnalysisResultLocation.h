@@ -38,54 +38,20 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
      * that identifies the error field in your detector model.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline AnalysisResultLocation& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline AnalysisResultLocation& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-
-    /**
-     * <p>A <a href="https://github.com/json-path/JsonPath">JsonPath</a> expression
-     * that identifies the error field in your detector model.</p>
-     */
     inline AnalysisResultLocation& WithPath(const char* value) { SetPath(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_path;

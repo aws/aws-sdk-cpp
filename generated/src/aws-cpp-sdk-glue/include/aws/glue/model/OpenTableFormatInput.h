@@ -37,42 +37,18 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies an <code>IcebergInput</code> structure that defines an Apache
      * Iceberg metadata table.</p>
      */
     inline const IcebergInput& GetIcebergInput() const{ return m_icebergInput; }
-
-    /**
-     * <p>Specifies an <code>IcebergInput</code> structure that defines an Apache
-     * Iceberg metadata table.</p>
-     */
     inline bool IcebergInputHasBeenSet() const { return m_icebergInputHasBeenSet; }
-
-    /**
-     * <p>Specifies an <code>IcebergInput</code> structure that defines an Apache
-     * Iceberg metadata table.</p>
-     */
     inline void SetIcebergInput(const IcebergInput& value) { m_icebergInputHasBeenSet = true; m_icebergInput = value; }
-
-    /**
-     * <p>Specifies an <code>IcebergInput</code> structure that defines an Apache
-     * Iceberg metadata table.</p>
-     */
     inline void SetIcebergInput(IcebergInput&& value) { m_icebergInputHasBeenSet = true; m_icebergInput = std::move(value); }
-
-    /**
-     * <p>Specifies an <code>IcebergInput</code> structure that defines an Apache
-     * Iceberg metadata table.</p>
-     */
     inline OpenTableFormatInput& WithIcebergInput(const IcebergInput& value) { SetIcebergInput(value); return *this;}
-
-    /**
-     * <p>Specifies an <code>IcebergInput</code> structure that defines an Apache
-     * Iceberg metadata table.</p>
-     */
     inline OpenTableFormatInput& WithIcebergInput(IcebergInput&& value) { SetIcebergInput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IcebergInput m_icebergInput;

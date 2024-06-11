@@ -33,53 +33,27 @@ namespace Model
     AWS_EBS_API CompleteSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the snapshot.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the snapshot.</p>
-     */
     inline void SetStatus(const Status& value) { m_status = value; }
-
-    /**
-     * <p>The status of the snapshot.</p>
-     */
     inline void SetStatus(Status&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the snapshot.</p>
-     */
     inline CompleteSnapshotResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the snapshot.</p>
-     */
     inline CompleteSnapshotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CompleteSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CompleteSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CompleteSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Status m_status;

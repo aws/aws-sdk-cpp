@@ -37,54 +37,20 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the health check used by the endpoint to determine whether
      * failover is triggered.</p>
      */
     inline const Aws::String& GetHealthCheck() const{ return m_healthCheck; }
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline void SetHealthCheck(const Aws::String& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline void SetHealthCheck(Aws::String&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline void SetHealthCheck(const char* value) { m_healthCheckHasBeenSet = true; m_healthCheck.assign(value); }
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline Primary& WithHealthCheck(const Aws::String& value) { SetHealthCheck(value); return *this;}
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline Primary& WithHealthCheck(Aws::String&& value) { SetHealthCheck(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the health check used by the endpoint to determine whether
-     * failover is triggered.</p>
-     */
     inline Primary& WithHealthCheck(const char* value) { SetHealthCheck(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_healthCheck;

@@ -34,42 +34,20 @@ namespace Model
     AWS_DEADLINE_API ListLicenseEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The license endpoints.</p>
      */
     inline const Aws::Vector<LicenseEndpointSummary>& GetLicenseEndpoints() const{ return m_licenseEndpoints; }
-
-    /**
-     * <p>The license endpoints.</p>
-     */
     inline void SetLicenseEndpoints(const Aws::Vector<LicenseEndpointSummary>& value) { m_licenseEndpoints = value; }
-
-    /**
-     * <p>The license endpoints.</p>
-     */
     inline void SetLicenseEndpoints(Aws::Vector<LicenseEndpointSummary>&& value) { m_licenseEndpoints = std::move(value); }
-
-    /**
-     * <p>The license endpoints.</p>
-     */
     inline ListLicenseEndpointsResult& WithLicenseEndpoints(const Aws::Vector<LicenseEndpointSummary>& value) { SetLicenseEndpoints(value); return *this;}
-
-    /**
-     * <p>The license endpoints.</p>
-     */
     inline ListLicenseEndpointsResult& WithLicenseEndpoints(Aws::Vector<LicenseEndpointSummary>&& value) { SetLicenseEndpoints(std::move(value)); return *this;}
-
-    /**
-     * <p>The license endpoints.</p>
-     */
     inline ListLicenseEndpointsResult& AddLicenseEndpoints(const LicenseEndpointSummary& value) { m_licenseEndpoints.push_back(value); return *this; }
-
-    /**
-     * <p>The license endpoints.</p>
-     */
     inline ListLicenseEndpointsResult& AddLicenseEndpoints(LicenseEndpointSummary&& value) { m_licenseEndpoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
      * available. The value of <code>nextToken</code> is a unique pagination token for
@@ -80,95 +58,24 @@ namespace Model
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain, then
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, then you
-     * receive an HTTP 400 <code>ValidationException</code> error.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain, then
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, then you
-     * receive an HTTP 400 <code>ValidationException</code> error.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain, then
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, then you
-     * receive an HTTP 400 <code>ValidationException</code> error.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain, then
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, then you
-     * receive an HTTP 400 <code>ValidationException</code> error.</p>
-     */
     inline ListLicenseEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain, then
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, then you
-     * receive an HTTP 400 <code>ValidationException</code> error.</p>
-     */
     inline ListLicenseEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If Deadline Cloud returns <code>nextToken</code>, then there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain, then
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, then you
-     * receive an HTTP 400 <code>ValidationException</code> error.</p>
-     */
     inline ListLicenseEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListLicenseEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListLicenseEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListLicenseEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<LicenseEndpointSummary> m_licenseEndpoints;

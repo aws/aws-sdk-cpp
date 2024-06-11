@@ -42,85 +42,32 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the access key for which the unused access finding was
      * generated.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline UnusedIamUserAccessKeyDetails& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline UnusedIamUserAccessKeyDetails& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the access key for which the unused access finding was
-     * generated.</p>
-     */
     inline UnusedIamUserAccessKeyDetails& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which the access key was last accessed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessed() const{ return m_lastAccessed; }
-
-    /**
-     * <p>The time at which the access key was last accessed.</p>
-     */
     inline bool LastAccessedHasBeenSet() const { return m_lastAccessedHasBeenSet; }
-
-    /**
-     * <p>The time at which the access key was last accessed.</p>
-     */
     inline void SetLastAccessed(const Aws::Utils::DateTime& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = value; }
-
-    /**
-     * <p>The time at which the access key was last accessed.</p>
-     */
     inline void SetLastAccessed(Aws::Utils::DateTime&& value) { m_lastAccessedHasBeenSet = true; m_lastAccessed = std::move(value); }
-
-    /**
-     * <p>The time at which the access key was last accessed.</p>
-     */
     inline UnusedIamUserAccessKeyDetails& WithLastAccessed(const Aws::Utils::DateTime& value) { SetLastAccessed(value); return *this;}
-
-    /**
-     * <p>The time at which the access key was last accessed.</p>
-     */
     inline UnusedIamUserAccessKeyDetails& WithLastAccessed(Aws::Utils::DateTime&& value) { SetLastAccessed(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessKeyId;

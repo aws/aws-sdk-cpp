@@ -38,64 +38,36 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>Indicates the media type of the resource.</p>
      */
     inline const PackageContentType& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline void SetContentType(const PackageContentType& value) { m_contentType = value; }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline void SetContentType(PackageContentType&& value) { m_contentType = std::move(value); }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline GetSolFunctionPackageContentResult& WithContentType(const PackageContentType& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline GetSolFunctionPackageContentResult& WithContentType(PackageContentType&& value) { SetContentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contents of the function package.</p>
      */
     inline Aws::IOStream& GetPackageContent() const { return m_packageContent.GetUnderlyingStream(); }
-
-    /**
-     * <p>Contents of the function package.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_packageContent = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSolFunctionPackageContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSolFunctionPackageContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSolFunctionPackageContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PackageContentType m_contentType;

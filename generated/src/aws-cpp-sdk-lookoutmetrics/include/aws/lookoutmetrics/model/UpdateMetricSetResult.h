@@ -32,63 +32,29 @@ namespace Model
     AWS_LOOKOUTMETRICS_API UpdateMetricSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the dataset.</p>
      */
     inline const Aws::String& GetMetricSetArn() const{ return m_metricSetArn; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetMetricSetArn(const Aws::String& value) { m_metricSetArn = value; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetMetricSetArn(Aws::String&& value) { m_metricSetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetMetricSetArn(const char* value) { m_metricSetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline UpdateMetricSetResult& WithMetricSetArn(const Aws::String& value) { SetMetricSetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline UpdateMetricSetResult& WithMetricSetArn(Aws::String&& value) { SetMetricSetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline UpdateMetricSetResult& WithMetricSetArn(const char* value) { SetMetricSetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateMetricSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateMetricSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateMetricSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricSetArn;

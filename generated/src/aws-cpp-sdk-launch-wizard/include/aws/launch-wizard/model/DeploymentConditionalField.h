@@ -38,136 +38,48 @@ namespace Model
     AWS_LAUNCHWIZARD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
      * NotEqual</code> </p>
      */
     inline const Aws::String& GetComparator() const{ return m_comparator; }
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline void SetComparator(const Aws::String& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline void SetComparator(Aws::String&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline void SetComparator(const char* value) { m_comparatorHasBeenSet = true; m_comparator.assign(value); }
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline DeploymentConditionalField& WithComparator(const Aws::String& value) { SetComparator(value); return *this;}
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline DeploymentConditionalField& WithComparator(Aws::String&& value) { SetComparator(std::move(value)); return *this;}
-
-    /**
-     * <p>The comparator of the condition.</p> <p>Valid values: <code>Equal |
-     * NotEqual</code> </p>
-     */
     inline DeploymentConditionalField& WithComparator(const char* value) { SetComparator(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the deployment condition.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline DeploymentConditionalField& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline DeploymentConditionalField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the deployment condition.</p>
-     */
     inline DeploymentConditionalField& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the condition.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline DeploymentConditionalField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline DeploymentConditionalField& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the condition.</p>
-     */
     inline DeploymentConditionalField& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_comparator;

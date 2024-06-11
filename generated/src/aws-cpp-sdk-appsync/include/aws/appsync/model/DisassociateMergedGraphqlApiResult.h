@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSYNC_API DisassociateMergedGraphqlApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The state of the source API association.</p>
      */
     inline const SourceApiAssociationStatus& GetSourceApiAssociationStatus() const{ return m_sourceApiAssociationStatus; }
-
-    /**
-     * <p>The state of the source API association.</p>
-     */
     inline void SetSourceApiAssociationStatus(const SourceApiAssociationStatus& value) { m_sourceApiAssociationStatus = value; }
-
-    /**
-     * <p>The state of the source API association.</p>
-     */
     inline void SetSourceApiAssociationStatus(SourceApiAssociationStatus&& value) { m_sourceApiAssociationStatus = std::move(value); }
-
-    /**
-     * <p>The state of the source API association.</p>
-     */
     inline DisassociateMergedGraphqlApiResult& WithSourceApiAssociationStatus(const SourceApiAssociationStatus& value) { SetSourceApiAssociationStatus(value); return *this;}
-
-    /**
-     * <p>The state of the source API association.</p>
-     */
     inline DisassociateMergedGraphqlApiResult& WithSourceApiAssociationStatus(SourceApiAssociationStatus&& value) { SetSourceApiAssociationStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateMergedGraphqlApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateMergedGraphqlApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateMergedGraphqlApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SourceApiAssociationStatus m_sourceApiAssociationStatus;

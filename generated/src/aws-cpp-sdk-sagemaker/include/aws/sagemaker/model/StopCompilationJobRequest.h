@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the model compilation job to stop.</p>
      */
     inline const Aws::String& GetCompilationJobName() const{ return m_compilationJobName; }
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline bool CompilationJobNameHasBeenSet() const { return m_compilationJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline void SetCompilationJobName(const Aws::String& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = value; }
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline void SetCompilationJobName(Aws::String&& value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName = std::move(value); }
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline void SetCompilationJobName(const char* value) { m_compilationJobNameHasBeenSet = true; m_compilationJobName.assign(value); }
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline StopCompilationJobRequest& WithCompilationJobName(const Aws::String& value) { SetCompilationJobName(value); return *this;}
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline StopCompilationJobRequest& WithCompilationJobName(Aws::String&& value) { SetCompilationJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the model compilation job to stop.</p>
-     */
     inline StopCompilationJobRequest& WithCompilationJobName(const char* value) { SetCompilationJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_compilationJobName;

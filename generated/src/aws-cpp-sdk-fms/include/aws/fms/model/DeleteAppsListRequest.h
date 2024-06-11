@@ -34,62 +34,21 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the applications list that you want to delete. You can retrieve
      * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
      * <code>GetAppsList</code>.</p>
      */
     inline const Aws::String& GetListId() const{ return m_listId; }
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline bool ListIdHasBeenSet() const { return m_listIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline void SetListId(const Aws::String& value) { m_listIdHasBeenSet = true; m_listId = value; }
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline void SetListId(Aws::String&& value) { m_listIdHasBeenSet = true; m_listId = std::move(value); }
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline void SetListId(const char* value) { m_listIdHasBeenSet = true; m_listId.assign(value); }
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline DeleteAppsListRequest& WithListId(const Aws::String& value) { SetListId(value); return *this;}
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline DeleteAppsListRequest& WithListId(Aws::String&& value) { SetListId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the applications list that you want to delete. You can retrieve
-     * this ID from <code>PutAppsList</code>, <code>ListAppsLists</code>, and
-     * <code>GetAppsList</code>.</p>
-     */
     inline DeleteAppsListRequest& WithListId(const char* value) { SetListId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_listId;

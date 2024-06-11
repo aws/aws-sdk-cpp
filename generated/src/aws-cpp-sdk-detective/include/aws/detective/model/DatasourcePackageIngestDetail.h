@@ -40,87 +40,33 @@ namespace Model
     AWS_DETECTIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details on which data source packages are ingested for a member account.</p>
      */
     inline const DatasourcePackageIngestState& GetDatasourcePackageIngestState() const{ return m_datasourcePackageIngestState; }
-
-    /**
-     * <p>Details on which data source packages are ingested for a member account.</p>
-     */
     inline bool DatasourcePackageIngestStateHasBeenSet() const { return m_datasourcePackageIngestStateHasBeenSet; }
-
-    /**
-     * <p>Details on which data source packages are ingested for a member account.</p>
-     */
     inline void SetDatasourcePackageIngestState(const DatasourcePackageIngestState& value) { m_datasourcePackageIngestStateHasBeenSet = true; m_datasourcePackageIngestState = value; }
-
-    /**
-     * <p>Details on which data source packages are ingested for a member account.</p>
-     */
     inline void SetDatasourcePackageIngestState(DatasourcePackageIngestState&& value) { m_datasourcePackageIngestStateHasBeenSet = true; m_datasourcePackageIngestState = std::move(value); }
-
-    /**
-     * <p>Details on which data source packages are ingested for a member account.</p>
-     */
     inline DatasourcePackageIngestDetail& WithDatasourcePackageIngestState(const DatasourcePackageIngestState& value) { SetDatasourcePackageIngestState(value); return *this;}
-
-    /**
-     * <p>Details on which data source packages are ingested for a member account.</p>
-     */
     inline DatasourcePackageIngestDetail& WithDatasourcePackageIngestState(DatasourcePackageIngestState&& value) { SetDatasourcePackageIngestState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date a data source package was enabled for this account</p>
      */
     inline const Aws::Map<DatasourcePackageIngestState, TimestampForCollection>& GetLastIngestStateChange() const{ return m_lastIngestStateChange; }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline bool LastIngestStateChangeHasBeenSet() const { return m_lastIngestStateChangeHasBeenSet; }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline void SetLastIngestStateChange(const Aws::Map<DatasourcePackageIngestState, TimestampForCollection>& value) { m_lastIngestStateChangeHasBeenSet = true; m_lastIngestStateChange = value; }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline void SetLastIngestStateChange(Aws::Map<DatasourcePackageIngestState, TimestampForCollection>&& value) { m_lastIngestStateChangeHasBeenSet = true; m_lastIngestStateChange = std::move(value); }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline DatasourcePackageIngestDetail& WithLastIngestStateChange(const Aws::Map<DatasourcePackageIngestState, TimestampForCollection>& value) { SetLastIngestStateChange(value); return *this;}
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline DatasourcePackageIngestDetail& WithLastIngestStateChange(Aws::Map<DatasourcePackageIngestState, TimestampForCollection>&& value) { SetLastIngestStateChange(std::move(value)); return *this;}
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline DatasourcePackageIngestDetail& AddLastIngestStateChange(const DatasourcePackageIngestState& key, const TimestampForCollection& value) { m_lastIngestStateChangeHasBeenSet = true; m_lastIngestStateChange.emplace(key, value); return *this; }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline DatasourcePackageIngestDetail& AddLastIngestStateChange(DatasourcePackageIngestState&& key, const TimestampForCollection& value) { m_lastIngestStateChangeHasBeenSet = true; m_lastIngestStateChange.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline DatasourcePackageIngestDetail& AddLastIngestStateChange(const DatasourcePackageIngestState& key, TimestampForCollection&& value) { m_lastIngestStateChangeHasBeenSet = true; m_lastIngestStateChange.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The date a data source package was enabled for this account</p>
-     */
     inline DatasourcePackageIngestDetail& AddLastIngestStateChange(DatasourcePackageIngestState&& key, TimestampForCollection&& value) { m_lastIngestStateChangeHasBeenSet = true; m_lastIngestStateChange.emplace(std::move(key), std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DatasourcePackageIngestState m_datasourcePackageIngestState;

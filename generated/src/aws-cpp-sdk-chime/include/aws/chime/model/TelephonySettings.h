@@ -37,68 +37,35 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows or denies inbound calling.</p>
      */
     inline bool GetInboundCalling() const{ return m_inboundCalling; }
-
-    /**
-     * <p>Allows or denies inbound calling.</p>
-     */
     inline bool InboundCallingHasBeenSet() const { return m_inboundCallingHasBeenSet; }
-
-    /**
-     * <p>Allows or denies inbound calling.</p>
-     */
     inline void SetInboundCalling(bool value) { m_inboundCallingHasBeenSet = true; m_inboundCalling = value; }
-
-    /**
-     * <p>Allows or denies inbound calling.</p>
-     */
     inline TelephonySettings& WithInboundCalling(bool value) { SetInboundCalling(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies outbound calling.</p>
      */
     inline bool GetOutboundCalling() const{ return m_outboundCalling; }
-
-    /**
-     * <p>Allows or denies outbound calling.</p>
-     */
     inline bool OutboundCallingHasBeenSet() const { return m_outboundCallingHasBeenSet; }
-
-    /**
-     * <p>Allows or denies outbound calling.</p>
-     */
     inline void SetOutboundCalling(bool value) { m_outboundCallingHasBeenSet = true; m_outboundCalling = value; }
-
-    /**
-     * <p>Allows or denies outbound calling.</p>
-     */
     inline TelephonySettings& WithOutboundCalling(bool value) { SetOutboundCalling(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies SMS messaging.</p>
      */
     inline bool GetSMS() const{ return m_sMS; }
-
-    /**
-     * <p>Allows or denies SMS messaging.</p>
-     */
     inline bool SMSHasBeenSet() const { return m_sMSHasBeenSet; }
-
-    /**
-     * <p>Allows or denies SMS messaging.</p>
-     */
     inline void SetSMS(bool value) { m_sMSHasBeenSet = true; m_sMS = value; }
-
-    /**
-     * <p>Allows or denies SMS messaging.</p>
-     */
     inline TelephonySettings& WithSMS(bool value) { SetSMS(value); return *this;}
-
+    ///@}
   private:
 
     bool m_inboundCalling;

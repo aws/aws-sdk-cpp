@@ -39,79 +39,31 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Supplemental information about the requirements to the recommended target
      * database on Amazon RDS.</p>
      */
     inline const RdsRequirements& GetRequirementsToTarget() const{ return m_requirementsToTarget; }
-
-    /**
-     * <p>Supplemental information about the requirements to the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline bool RequirementsToTargetHasBeenSet() const { return m_requirementsToTargetHasBeenSet; }
-
-    /**
-     * <p>Supplemental information about the requirements to the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline void SetRequirementsToTarget(const RdsRequirements& value) { m_requirementsToTargetHasBeenSet = true; m_requirementsToTarget = value; }
-
-    /**
-     * <p>Supplemental information about the requirements to the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline void SetRequirementsToTarget(RdsRequirements&& value) { m_requirementsToTargetHasBeenSet = true; m_requirementsToTarget = std::move(value); }
-
-    /**
-     * <p>Supplemental information about the requirements to the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline RdsRecommendation& WithRequirementsToTarget(const RdsRequirements& value) { SetRequirementsToTarget(value); return *this;}
-
-    /**
-     * <p>Supplemental information about the requirements to the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline RdsRecommendation& WithRequirementsToTarget(RdsRequirements&& value) { SetRequirementsToTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Supplemental information about the configuration of the recommended target
      * database on Amazon RDS.</p>
      */
     inline const RdsConfiguration& GetTargetConfiguration() const{ return m_targetConfiguration; }
-
-    /**
-     * <p>Supplemental information about the configuration of the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline bool TargetConfigurationHasBeenSet() const { return m_targetConfigurationHasBeenSet; }
-
-    /**
-     * <p>Supplemental information about the configuration of the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline void SetTargetConfiguration(const RdsConfiguration& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = value; }
-
-    /**
-     * <p>Supplemental information about the configuration of the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline void SetTargetConfiguration(RdsConfiguration&& value) { m_targetConfigurationHasBeenSet = true; m_targetConfiguration = std::move(value); }
-
-    /**
-     * <p>Supplemental information about the configuration of the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline RdsRecommendation& WithTargetConfiguration(const RdsConfiguration& value) { SetTargetConfiguration(value); return *this;}
-
-    /**
-     * <p>Supplemental information about the configuration of the recommended target
-     * database on Amazon RDS.</p>
-     */
     inline RdsRecommendation& WithTargetConfiguration(RdsConfiguration&& value) { SetTargetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RdsRequirements m_requirementsToTarget;

@@ -33,58 +33,28 @@ namespace Model
     AWS_LIGHTSAIL_API GetInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of key-value pairs containing information about the specified
      * instance.</p>
      */
     inline const Instance& GetInstance() const{ return m_instance; }
-
-    /**
-     * <p>An array of key-value pairs containing information about the specified
-     * instance.</p>
-     */
     inline void SetInstance(const Instance& value) { m_instance = value; }
-
-    /**
-     * <p>An array of key-value pairs containing information about the specified
-     * instance.</p>
-     */
     inline void SetInstance(Instance&& value) { m_instance = std::move(value); }
-
-    /**
-     * <p>An array of key-value pairs containing information about the specified
-     * instance.</p>
-     */
     inline GetInstanceResult& WithInstance(const Instance& value) { SetInstance(value); return *this;}
-
-    /**
-     * <p>An array of key-value pairs containing information about the specified
-     * instance.</p>
-     */
     inline GetInstanceResult& WithInstance(Instance&& value) { SetInstance(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Instance m_instance;

@@ -40,37 +40,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The display options of a control.</p>
      */
     inline const DropDownControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline void SetDisplayOptions(const DropDownControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline void SetDisplayOptions(DropDownControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline DefaultFilterDropDownControlOptions& WithDisplayOptions(const DropDownControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-
-    /**
-     * <p>The display options of a control.</p>
-     */
     inline DefaultFilterDropDownControlOptions& WithDisplayOptions(DropDownControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
      * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
@@ -79,83 +61,24 @@ namespace Model
      * menu.</p> </li> </ul>
      */
     inline const SheetControlListType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
-     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
-     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
-     * menu.</p> </li> </ul>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
-     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
-     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
-     * menu.</p> </li> </ul>
-     */
     inline void SetType(const SheetControlListType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
-     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
-     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
-     * menu.</p> </li> </ul>
-     */
     inline void SetType(SheetControlListType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
-     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
-     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
-     * menu.</p> </li> </ul>
-     */
     inline DefaultFilterDropDownControlOptions& WithType(const SheetControlListType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the <code>FilterDropDownControl</code>. Choose one of the
-     * following options:</p> <ul> <li> <p> <code>MULTI_SELECT</code>: The user can
-     * select multiple entries from a dropdown menu.</p> </li> <li> <p>
-     * <code>SINGLE_SELECT</code>: The user can select a single entry from a dropdown
-     * menu.</p> </li> </ul>
-     */
     inline DefaultFilterDropDownControlOptions& WithType(SheetControlListType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of selectable values that are used in a control.</p>
      */
     inline const FilterSelectableValues& GetSelectableValues() const{ return m_selectableValues; }
-
-    /**
-     * <p>A list of selectable values that are used in a control.</p>
-     */
     inline bool SelectableValuesHasBeenSet() const { return m_selectableValuesHasBeenSet; }
-
-    /**
-     * <p>A list of selectable values that are used in a control.</p>
-     */
     inline void SetSelectableValues(const FilterSelectableValues& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = value; }
-
-    /**
-     * <p>A list of selectable values that are used in a control.</p>
-     */
     inline void SetSelectableValues(FilterSelectableValues&& value) { m_selectableValuesHasBeenSet = true; m_selectableValues = std::move(value); }
-
-    /**
-     * <p>A list of selectable values that are used in a control.</p>
-     */
     inline DefaultFilterDropDownControlOptions& WithSelectableValues(const FilterSelectableValues& value) { SetSelectableValues(value); return *this;}
-
-    /**
-     * <p>A list of selectable values that are used in a control.</p>
-     */
     inline DefaultFilterDropDownControlOptions& WithSelectableValues(FilterSelectableValues&& value) { SetSelectableValues(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DropDownControlDisplayOptions m_displayOptions;

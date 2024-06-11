@@ -32,46 +32,19 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ID of the network function.</p>
      */
     inline const Aws::String& GetVnfInstanceId() const{ return m_vnfInstanceId; }
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline bool VnfInstanceIdHasBeenSet() const { return m_vnfInstanceIdHasBeenSet; }
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline void SetVnfInstanceId(const Aws::String& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = value; }
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline void SetVnfInstanceId(Aws::String&& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = std::move(value); }
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline void SetVnfInstanceId(const char* value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId.assign(value); }
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline GetSolFunctionInstanceRequest& WithVnfInstanceId(const Aws::String& value) { SetVnfInstanceId(value); return *this;}
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline GetSolFunctionInstanceRequest& WithVnfInstanceId(Aws::String&& value) { SetVnfInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the network function.</p>
-     */
     inline GetSolFunctionInstanceRequest& WithVnfInstanceId(const char* value) { SetVnfInstanceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vnfInstanceId;

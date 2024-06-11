@@ -39,36 +39,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The compute location for the given metric property. </p>
      */
     inline const ComputeLocation& GetComputeLocation() const{ return m_computeLocation; }
-
-    /**
-     * <p>The compute location for the given metric property. </p>
-     */
     inline bool ComputeLocationHasBeenSet() const { return m_computeLocationHasBeenSet; }
-
-    /**
-     * <p>The compute location for the given metric property. </p>
-     */
     inline void SetComputeLocation(const ComputeLocation& value) { m_computeLocationHasBeenSet = true; m_computeLocation = value; }
-
-    /**
-     * <p>The compute location for the given metric property. </p>
-     */
     inline void SetComputeLocation(ComputeLocation&& value) { m_computeLocationHasBeenSet = true; m_computeLocation = std::move(value); }
-
-    /**
-     * <p>The compute location for the given metric property. </p>
-     */
     inline MetricProcessingConfig& WithComputeLocation(const ComputeLocation& value) { SetComputeLocation(value); return *this;}
-
-    /**
-     * <p>The compute location for the given metric property. </p>
-     */
     inline MetricProcessingConfig& WithComputeLocation(ComputeLocation&& value) { SetComputeLocation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ComputeLocation m_computeLocation;

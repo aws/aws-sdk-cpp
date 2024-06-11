@@ -39,42 +39,18 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about whether DevOps Guru is configured to consume
      * recommendations which are generated from AWS CodeGuru Profiler.</p>
      */
     inline const AmazonCodeGuruProfilerIntegration& GetAmazonCodeGuruProfiler() const{ return m_amazonCodeGuruProfiler; }
-
-    /**
-     * <p>Information about whether DevOps Guru is configured to consume
-     * recommendations which are generated from AWS CodeGuru Profiler.</p>
-     */
     inline bool AmazonCodeGuruProfilerHasBeenSet() const { return m_amazonCodeGuruProfilerHasBeenSet; }
-
-    /**
-     * <p>Information about whether DevOps Guru is configured to consume
-     * recommendations which are generated from AWS CodeGuru Profiler.</p>
-     */
     inline void SetAmazonCodeGuruProfiler(const AmazonCodeGuruProfilerIntegration& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = value; }
-
-    /**
-     * <p>Information about whether DevOps Guru is configured to consume
-     * recommendations which are generated from AWS CodeGuru Profiler.</p>
-     */
     inline void SetAmazonCodeGuruProfiler(AmazonCodeGuruProfilerIntegration&& value) { m_amazonCodeGuruProfilerHasBeenSet = true; m_amazonCodeGuruProfiler = std::move(value); }
-
-    /**
-     * <p>Information about whether DevOps Guru is configured to consume
-     * recommendations which are generated from AWS CodeGuru Profiler.</p>
-     */
     inline EventSourcesConfig& WithAmazonCodeGuruProfiler(const AmazonCodeGuruProfilerIntegration& value) { SetAmazonCodeGuruProfiler(value); return *this;}
-
-    /**
-     * <p>Information about whether DevOps Guru is configured to consume
-     * recommendations which are generated from AWS CodeGuru Profiler.</p>
-     */
     inline EventSourcesConfig& WithAmazonCodeGuruProfiler(AmazonCodeGuruProfilerIntegration&& value) { SetAmazonCodeGuruProfiler(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AmazonCodeGuruProfilerIntegration m_amazonCodeGuruProfiler;

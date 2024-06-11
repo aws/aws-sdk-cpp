@@ -33,53 +33,27 @@ namespace Model
     AWS_DYNAMODB_API DeleteBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the description of the backup created for the table.</p>
      */
     inline const BackupDescription& GetBackupDescription() const{ return m_backupDescription; }
-
-    /**
-     * <p>Contains the description of the backup created for the table.</p>
-     */
     inline void SetBackupDescription(const BackupDescription& value) { m_backupDescription = value; }
-
-    /**
-     * <p>Contains the description of the backup created for the table.</p>
-     */
     inline void SetBackupDescription(BackupDescription&& value) { m_backupDescription = std::move(value); }
-
-    /**
-     * <p>Contains the description of the backup created for the table.</p>
-     */
     inline DeleteBackupResult& WithBackupDescription(const BackupDescription& value) { SetBackupDescription(value); return *this;}
-
-    /**
-     * <p>Contains the description of the backup created for the table.</p>
-     */
     inline DeleteBackupResult& WithBackupDescription(BackupDescription&& value) { SetBackupDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BackupDescription m_backupDescription;

@@ -33,52 +33,26 @@ namespace Model
     AWS_ELASTICACHE_API ExportServerlessCacheSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The state of a serverless cache at a specific point in time, to the
      * millisecond. Available for Redis only.</p>
      */
     inline const ServerlessCacheSnapshot& GetServerlessCacheSnapshot() const{ return m_serverlessCacheSnapshot; }
-
-    /**
-     * <p>The state of a serverless cache at a specific point in time, to the
-     * millisecond. Available for Redis only.</p>
-     */
     inline void SetServerlessCacheSnapshot(const ServerlessCacheSnapshot& value) { m_serverlessCacheSnapshot = value; }
-
-    /**
-     * <p>The state of a serverless cache at a specific point in time, to the
-     * millisecond. Available for Redis only.</p>
-     */
     inline void SetServerlessCacheSnapshot(ServerlessCacheSnapshot&& value) { m_serverlessCacheSnapshot = std::move(value); }
-
-    /**
-     * <p>The state of a serverless cache at a specific point in time, to the
-     * millisecond. Available for Redis only.</p>
-     */
     inline ExportServerlessCacheSnapshotResult& WithServerlessCacheSnapshot(const ServerlessCacheSnapshot& value) { SetServerlessCacheSnapshot(value); return *this;}
-
-    /**
-     * <p>The state of a serverless cache at a specific point in time, to the
-     * millisecond. Available for Redis only.</p>
-     */
     inline ExportServerlessCacheSnapshotResult& WithServerlessCacheSnapshot(ServerlessCacheSnapshot&& value) { SetServerlessCacheSnapshot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ExportServerlessCacheSnapshotResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ExportServerlessCacheSnapshotResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServerlessCacheSnapshot m_serverlessCacheSnapshot;

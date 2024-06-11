@@ -36,26 +36,15 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The read capacity units for the replica.</p>
      */
     inline int GetReadCapacityUnits() const{ return m_readCapacityUnits; }
-
-    /**
-     * <p>The read capacity units for the replica.</p>
-     */
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p>The read capacity units for the replica.</p>
-     */
     inline void SetReadCapacityUnits(int value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
-
-    /**
-     * <p>The read capacity units for the replica.</p>
-     */
     inline AwsDynamoDbTableProvisionedThroughputOverride& WithReadCapacityUnits(int value) { SetReadCapacityUnits(value); return *this;}
-
+    ///@}
   private:
 
     int m_readCapacityUnits;

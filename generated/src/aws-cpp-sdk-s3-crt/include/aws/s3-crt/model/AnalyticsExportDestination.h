@@ -37,36 +37,17 @@ namespace Model
     AWS_S3CRT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A destination signifying output to an S3 bucket.</p>
      */
     inline const AnalyticsS3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
-
-    /**
-     * <p>A destination signifying output to an S3 bucket.</p>
-     */
     inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
-
-    /**
-     * <p>A destination signifying output to an S3 bucket.</p>
-     */
     inline void SetS3BucketDestination(const AnalyticsS3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
-
-    /**
-     * <p>A destination signifying output to an S3 bucket.</p>
-     */
     inline void SetS3BucketDestination(AnalyticsS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
-
-    /**
-     * <p>A destination signifying output to an S3 bucket.</p>
-     */
     inline AnalyticsExportDestination& WithS3BucketDestination(const AnalyticsS3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
-
-    /**
-     * <p>A destination signifying output to an S3 bucket.</p>
-     */
     inline AnalyticsExportDestination& WithS3BucketDestination(AnalyticsS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AnalyticsS3BucketDestination m_s3BucketDestination;

@@ -39,43 +39,25 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const SupportedRfRegion& GetRfRegion() const{ return m_rfRegion; }
-
-    
     inline bool RfRegionHasBeenSet() const { return m_rfRegionHasBeenSet; }
-
-    
     inline void SetRfRegion(const SupportedRfRegion& value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
-
-    
     inline void SetRfRegion(SupportedRfRegion&& value) { m_rfRegionHasBeenSet = true; m_rfRegion = std::move(value); }
-
-    
     inline LoRaWANMulticast& WithRfRegion(const SupportedRfRegion& value) { SetRfRegion(value); return *this;}
-
-    
     inline LoRaWANMulticast& WithRfRegion(SupportedRfRegion&& value) { SetRfRegion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DlClass& GetDlClass() const{ return m_dlClass; }
-
-    
     inline bool DlClassHasBeenSet() const { return m_dlClassHasBeenSet; }
-
-    
     inline void SetDlClass(const DlClass& value) { m_dlClassHasBeenSet = true; m_dlClass = value; }
-
-    
     inline void SetDlClass(DlClass&& value) { m_dlClassHasBeenSet = true; m_dlClass = std::move(value); }
-
-    
     inline LoRaWANMulticast& WithDlClass(const DlClass& value) { SetDlClass(value); return *this;}
-
-    
     inline LoRaWANMulticast& WithDlClass(DlClass&& value) { SetDlClass(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SupportedRfRegion m_rfRegion;

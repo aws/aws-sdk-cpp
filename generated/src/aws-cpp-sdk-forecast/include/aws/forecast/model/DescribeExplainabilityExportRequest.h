@@ -34,46 +34,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
     inline const Aws::String& GetExplainabilityExportArn() const{ return m_explainabilityExportArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline bool ExplainabilityExportArnHasBeenSet() const { return m_explainabilityExportArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline void SetExplainabilityExportArn(const Aws::String& value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline void SetExplainabilityExportArn(Aws::String&& value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline void SetExplainabilityExportArn(const char* value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline DescribeExplainabilityExportRequest& WithExplainabilityExportArn(const Aws::String& value) { SetExplainabilityExportArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline DescribeExplainabilityExportRequest& WithExplainabilityExportArn(Aws::String&& value) { SetExplainabilityExportArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
-     */
     inline DescribeExplainabilityExportRequest& WithExplainabilityExportArn(const char* value) { SetExplainabilityExportArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_explainabilityExportArn;

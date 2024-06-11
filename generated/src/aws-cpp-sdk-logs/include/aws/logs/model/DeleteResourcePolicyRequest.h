@@ -34,46 +34,19 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the policy to be revoked. This parameter is required.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline DeleteResourcePolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline DeleteResourcePolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the policy to be revoked. This parameter is required.</p>
-     */
     inline DeleteResourcePolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

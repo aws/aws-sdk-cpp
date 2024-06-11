@@ -40,78 +40,24 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents a map of finding properties that match specified conditions and
      * values when querying findings.</p>
      */
     inline const Aws::Map<Aws::String, Condition>& GetCriterion() const{ return m_criterion; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline bool CriterionHasBeenSet() const { return m_criterionHasBeenSet; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline void SetCriterion(const Aws::Map<Aws::String, Condition>& value) { m_criterionHasBeenSet = true; m_criterion = value; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline void SetCriterion(Aws::Map<Aws::String, Condition>&& value) { m_criterionHasBeenSet = true; m_criterion = std::move(value); }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& WithCriterion(const Aws::Map<Aws::String, Condition>& value) { SetCriterion(value); return *this;}
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& WithCriterion(Aws::Map<Aws::String, Condition>&& value) { SetCriterion(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& AddCriterion(const Aws::String& key, const Condition& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, value); return *this; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& AddCriterion(Aws::String&& key, const Condition& value) { m_criterionHasBeenSet = true; m_criterion.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& AddCriterion(const Aws::String& key, Condition&& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& AddCriterion(Aws::String&& key, Condition&& value) { m_criterionHasBeenSet = true; m_criterion.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& AddCriterion(const char* key, Condition&& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Represents a map of finding properties that match specified conditions and
-     * values when querying findings.</p>
-     */
     inline FindingCriteria& AddCriterion(const char* key, const Condition& value) { m_criterionHasBeenSet = true; m_criterion.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, Condition> m_criterion;

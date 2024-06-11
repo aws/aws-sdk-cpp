@@ -32,55 +32,22 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the tracker resource to be associated with a geofence
      * collection.</p>
      */
     inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline AssociateTrackerConsumerRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline AssociateTrackerConsumerRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the tracker resource to be associated with a geofence
-     * collection.</p>
-     */
     inline AssociateTrackerConsumerRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
      * to tracker resource. Used when you need to specify a resource across all Amazon
@@ -89,70 +56,14 @@ namespace Model
      * </p> </li> </ul>
      */
     inline const Aws::String& GetConsumerArn() const{ return m_consumerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline bool ConsumerArnHasBeenSet() const { return m_consumerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline void SetConsumerArn(const Aws::String& value) { m_consumerArnHasBeenSet = true; m_consumerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline void SetConsumerArn(Aws::String&& value) { m_consumerArnHasBeenSet = true; m_consumerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline void SetConsumerArn(const char* value) { m_consumerArnHasBeenSet = true; m_consumerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline AssociateTrackerConsumerRequest& WithConsumerArn(const Aws::String& value) { SetConsumerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline AssociateTrackerConsumerRequest& WithConsumerArn(Aws::String&& value) { SetConsumerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the geofence collection to be associated
-     * to tracker resource. Used when you need to specify a resource across all Amazon
-     * Web Services.</p> <ul> <li> <p>Format example:
-     * <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code>
-     * </p> </li> </ul>
-     */
     inline AssociateTrackerConsumerRequest& WithConsumerArn(const char* value) { SetConsumerArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trackerName;

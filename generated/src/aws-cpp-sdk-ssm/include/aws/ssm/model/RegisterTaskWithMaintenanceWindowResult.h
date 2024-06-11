@@ -32,63 +32,29 @@ namespace Model
     AWS_SSM_API RegisterTaskWithMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the task in the maintenance window.</p>
      */
     inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
-
-    /**
-     * <p>The ID of the task in the maintenance window.</p>
-     */
     inline void SetWindowTaskId(const Aws::String& value) { m_windowTaskId = value; }
-
-    /**
-     * <p>The ID of the task in the maintenance window.</p>
-     */
     inline void SetWindowTaskId(Aws::String&& value) { m_windowTaskId = std::move(value); }
-
-    /**
-     * <p>The ID of the task in the maintenance window.</p>
-     */
     inline void SetWindowTaskId(const char* value) { m_windowTaskId.assign(value); }
-
-    /**
-     * <p>The ID of the task in the maintenance window.</p>
-     */
     inline RegisterTaskWithMaintenanceWindowResult& WithWindowTaskId(const Aws::String& value) { SetWindowTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the task in the maintenance window.</p>
-     */
     inline RegisterTaskWithMaintenanceWindowResult& WithWindowTaskId(Aws::String&& value) { SetWindowTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the task in the maintenance window.</p>
-     */
     inline RegisterTaskWithMaintenanceWindowResult& WithWindowTaskId(const char* value) { SetWindowTaskId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterTaskWithMaintenanceWindowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterTaskWithMaintenanceWindowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterTaskWithMaintenanceWindowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_windowTaskId;

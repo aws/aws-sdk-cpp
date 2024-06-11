@@ -32,63 +32,29 @@ namespace Model
     AWS_GLUE_API StartJobRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID assigned to this job run.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
-
-    /**
-     * <p>The ID assigned to this job run.</p>
-     */
     inline void SetJobRunId(const Aws::String& value) { m_jobRunId = value; }
-
-    /**
-     * <p>The ID assigned to this job run.</p>
-     */
     inline void SetJobRunId(Aws::String&& value) { m_jobRunId = std::move(value); }
-
-    /**
-     * <p>The ID assigned to this job run.</p>
-     */
     inline void SetJobRunId(const char* value) { m_jobRunId.assign(value); }
-
-    /**
-     * <p>The ID assigned to this job run.</p>
-     */
     inline StartJobRunResult& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-
-    /**
-     * <p>The ID assigned to this job run.</p>
-     */
     inline StartJobRunResult& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID assigned to this job run.</p>
-     */
     inline StartJobRunResult& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartJobRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartJobRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartJobRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobRunId;

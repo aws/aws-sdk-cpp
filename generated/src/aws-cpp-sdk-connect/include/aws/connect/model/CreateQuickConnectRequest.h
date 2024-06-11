@@ -34,254 +34,81 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline CreateQuickConnectRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline CreateQuickConnectRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline CreateQuickConnectRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique name of the quick connect.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique name of the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the quick connect.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configuration settings for the quick connect.</p>
      */
     inline const QuickConnectConfig& GetQuickConnectConfig() const{ return m_quickConnectConfig; }
-
-    /**
-     * <p>Configuration settings for the quick connect.</p>
-     */
     inline bool QuickConnectConfigHasBeenSet() const { return m_quickConnectConfigHasBeenSet; }
-
-    /**
-     * <p>Configuration settings for the quick connect.</p>
-     */
     inline void SetQuickConnectConfig(const QuickConnectConfig& value) { m_quickConnectConfigHasBeenSet = true; m_quickConnectConfig = value; }
-
-    /**
-     * <p>Configuration settings for the quick connect.</p>
-     */
     inline void SetQuickConnectConfig(QuickConnectConfig&& value) { m_quickConnectConfigHasBeenSet = true; m_quickConnectConfig = std::move(value); }
-
-    /**
-     * <p>Configuration settings for the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithQuickConnectConfig(const QuickConnectConfig& value) { SetQuickConnectConfig(value); return *this;}
-
-    /**
-     * <p>Configuration settings for the quick connect.</p>
-     */
     inline CreateQuickConnectRequest& WithQuickConnectConfig(QuickConnectConfig&& value) { SetQuickConnectConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The tags used to organize, track, or control access for this resource. For
-     * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
-     */
     inline CreateQuickConnectRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

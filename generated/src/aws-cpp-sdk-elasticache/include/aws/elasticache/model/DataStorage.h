@@ -39,78 +39,37 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The upper limit for data storage the cache is set to use.</p>
      */
     inline int GetMaximum() const{ return m_maximum; }
-
-    /**
-     * <p>The upper limit for data storage the cache is set to use.</p>
-     */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-
-    /**
-     * <p>The upper limit for data storage the cache is set to use.</p>
-     */
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
-
-    /**
-     * <p>The upper limit for data storage the cache is set to use.</p>
-     */
     inline DataStorage& WithMaximum(int value) { SetMaximum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The lower limit for data storage the cache is set to use.</p>
      */
     inline int GetMinimum() const{ return m_minimum; }
-
-    /**
-     * <p>The lower limit for data storage the cache is set to use.</p>
-     */
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-
-    /**
-     * <p>The lower limit for data storage the cache is set to use.</p>
-     */
     inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
-
-    /**
-     * <p>The lower limit for data storage the cache is set to use.</p>
-     */
     inline DataStorage& WithMinimum(int value) { SetMinimum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit that the storage is measured in, in GB.</p>
      */
     inline const DataStorageUnit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit that the storage is measured in, in GB.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit that the storage is measured in, in GB.</p>
-     */
     inline void SetUnit(const DataStorageUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit that the storage is measured in, in GB.</p>
-     */
     inline void SetUnit(DataStorageUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit that the storage is measured in, in GB.</p>
-     */
     inline DataStorage& WithUnit(const DataStorageUnit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit that the storage is measured in, in GB.</p>
-     */
     inline DataStorage& WithUnit(DataStorageUnit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maximum;

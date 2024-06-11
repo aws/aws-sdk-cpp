@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateModelBiasJobDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
      */
     inline const Aws::String& GetJobDefinitionArn() const{ return m_jobDefinitionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
-     */
     inline void SetJobDefinitionArn(const Aws::String& value) { m_jobDefinitionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
-     */
     inline void SetJobDefinitionArn(Aws::String&& value) { m_jobDefinitionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
-     */
     inline void SetJobDefinitionArn(const char* value) { m_jobDefinitionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
-     */
     inline CreateModelBiasJobDefinitionResult& WithJobDefinitionArn(const Aws::String& value) { SetJobDefinitionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
-     */
     inline CreateModelBiasJobDefinitionResult& WithJobDefinitionArn(Aws::String&& value) { SetJobDefinitionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the model bias job.</p>
-     */
     inline CreateModelBiasJobDefinitionResult& WithJobDefinitionArn(const char* value) { SetJobDefinitionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateModelBiasJobDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateModelBiasJobDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateModelBiasJobDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobDefinitionArn;

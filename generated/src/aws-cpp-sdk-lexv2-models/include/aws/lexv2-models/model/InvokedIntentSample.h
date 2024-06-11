@@ -38,46 +38,19 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of an intent that was invoked.</p>
      */
     inline const Aws::String& GetIntentName() const{ return m_intentName; }
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline bool IntentNameHasBeenSet() const { return m_intentNameHasBeenSet; }
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline void SetIntentName(const Aws::String& value) { m_intentNameHasBeenSet = true; m_intentName = value; }
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline void SetIntentName(Aws::String&& value) { m_intentNameHasBeenSet = true; m_intentName = std::move(value); }
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline void SetIntentName(const char* value) { m_intentNameHasBeenSet = true; m_intentName.assign(value); }
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline InvokedIntentSample& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline InvokedIntentSample& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an intent that was invoked.</p>
-     */
     inline InvokedIntentSample& WithIntentName(const char* value) { SetIntentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_intentName;

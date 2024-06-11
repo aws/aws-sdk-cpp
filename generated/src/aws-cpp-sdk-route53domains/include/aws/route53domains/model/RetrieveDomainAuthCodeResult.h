@@ -38,63 +38,29 @@ namespace Model
     AWS_ROUTE53DOMAINS_API RetrieveDomainAuthCodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The authorization code for the domain.</p>
      */
     inline const Aws::String& GetAuthCode() const{ return m_authCode; }
-
-    /**
-     * <p>The authorization code for the domain.</p>
-     */
     inline void SetAuthCode(const Aws::String& value) { m_authCode = value; }
-
-    /**
-     * <p>The authorization code for the domain.</p>
-     */
     inline void SetAuthCode(Aws::String&& value) { m_authCode = std::move(value); }
-
-    /**
-     * <p>The authorization code for the domain.</p>
-     */
     inline void SetAuthCode(const char* value) { m_authCode.assign(value); }
-
-    /**
-     * <p>The authorization code for the domain.</p>
-     */
     inline RetrieveDomainAuthCodeResult& WithAuthCode(const Aws::String& value) { SetAuthCode(value); return *this;}
-
-    /**
-     * <p>The authorization code for the domain.</p>
-     */
     inline RetrieveDomainAuthCodeResult& WithAuthCode(Aws::String&& value) { SetAuthCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The authorization code for the domain.</p>
-     */
     inline RetrieveDomainAuthCodeResult& WithAuthCode(const char* value) { SetAuthCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RetrieveDomainAuthCodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RetrieveDomainAuthCodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RetrieveDomainAuthCodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authCode;

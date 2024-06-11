@@ -32,63 +32,29 @@ namespace Model
     AWS_CONFIGSERVICE_API StartResourceEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
      */
     inline const Aws::String& GetResourceEvaluationId() const{ return m_resourceEvaluationId; }
-
-    /**
-     * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-     */
     inline void SetResourceEvaluationId(const Aws::String& value) { m_resourceEvaluationId = value; }
-
-    /**
-     * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-     */
     inline void SetResourceEvaluationId(Aws::String&& value) { m_resourceEvaluationId = std::move(value); }
-
-    /**
-     * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-     */
     inline void SetResourceEvaluationId(const char* value) { m_resourceEvaluationId.assign(value); }
-
-    /**
-     * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-     */
     inline StartResourceEvaluationResult& WithResourceEvaluationId(const Aws::String& value) { SetResourceEvaluationId(value); return *this;}
-
-    /**
-     * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-     */
     inline StartResourceEvaluationResult& WithResourceEvaluationId(Aws::String&& value) { SetResourceEvaluationId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique ResourceEvaluationId that is associated with a single execution.</p>
-     */
     inline StartResourceEvaluationResult& WithResourceEvaluationId(const char* value) { SetResourceEvaluationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartResourceEvaluationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartResourceEvaluationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartResourceEvaluationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceEvaluationId;

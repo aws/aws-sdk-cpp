@@ -34,87 +34,32 @@ namespace Model
     AWS_SNOWBALL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of results for the list of compatible images. Currently, a
      * Snowball Edge device can store 10 AMIs.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results for the list of compatible images. Currently, a
-     * Snowball Edge device can store 10 AMIs.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results for the list of compatible images. Currently, a
-     * Snowball Edge device can store 10 AMIs.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results for the list of compatible images. Currently, a
-     * Snowball Edge device can store 10 AMIs.</p>
-     */
     inline ListCompatibleImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list
      * of compatible images, you can specify a value for <code>NextToken</code> as the
      * starting point for your list of returned images.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline ListCompatibleImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline ListCompatibleImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
-     * of compatible images, you can specify a value for <code>NextToken</code> as the
-     * starting point for your list of returned images.</p>
-     */
     inline ListCompatibleImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

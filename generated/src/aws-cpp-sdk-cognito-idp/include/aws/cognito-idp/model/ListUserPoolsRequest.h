@@ -37,79 +37,31 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline ListUserPoolsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline ListUserPoolsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier that was returned from the previous call to this operation,
-     * which can be used to return the next set of items in the list.</p>
-     */
     inline ListUserPoolsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results you want the request to return when listing the
      * user pools.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results you want the request to return when listing the
-     * user pools.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results you want the request to return when listing the
-     * user pools.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results you want the request to return when listing the
-     * user pools.</p>
-     */
     inline ListUserPoolsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -38,87 +38,33 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the repository that contains the branch to be deleted.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline DeleteBranchRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline DeleteBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository that contains the branch to be deleted.</p>
-     */
     inline DeleteBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the branch to delete.</p>
      */
     inline const Aws::String& GetBranchName() const{ return m_branchName; }
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline DeleteBranchRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline DeleteBranchRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the branch to delete.</p>
-     */
     inline DeleteBranchRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

@@ -37,42 +37,18 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The workers can send worker logs to different destination types. This
      * configuration specifies the details of these destinations.</p>
      */
     inline const WorkerLogDeliveryDescription& GetWorkerLogDelivery() const{ return m_workerLogDelivery; }
-
-    /**
-     * <p>The workers can send worker logs to different destination types. This
-     * configuration specifies the details of these destinations.</p>
-     */
     inline bool WorkerLogDeliveryHasBeenSet() const { return m_workerLogDeliveryHasBeenSet; }
-
-    /**
-     * <p>The workers can send worker logs to different destination types. This
-     * configuration specifies the details of these destinations.</p>
-     */
     inline void SetWorkerLogDelivery(const WorkerLogDeliveryDescription& value) { m_workerLogDeliveryHasBeenSet = true; m_workerLogDelivery = value; }
-
-    /**
-     * <p>The workers can send worker logs to different destination types. This
-     * configuration specifies the details of these destinations.</p>
-     */
     inline void SetWorkerLogDelivery(WorkerLogDeliveryDescription&& value) { m_workerLogDeliveryHasBeenSet = true; m_workerLogDelivery = std::move(value); }
-
-    /**
-     * <p>The workers can send worker logs to different destination types. This
-     * configuration specifies the details of these destinations.</p>
-     */
     inline LogDeliveryDescription& WithWorkerLogDelivery(const WorkerLogDeliveryDescription& value) { SetWorkerLogDelivery(value); return *this;}
-
-    /**
-     * <p>The workers can send worker logs to different destination types. This
-     * configuration specifies the details of these destinations.</p>
-     */
     inline LogDeliveryDescription& WithWorkerLogDelivery(WorkerLogDeliveryDescription&& value) { SetWorkerLogDelivery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     WorkerLogDeliveryDescription m_workerLogDelivery;

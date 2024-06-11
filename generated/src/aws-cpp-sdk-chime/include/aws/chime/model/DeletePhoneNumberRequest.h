@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIME_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The phone number ID.</p>
      */
     inline const Aws::String& GetPhoneNumberId() const{ return m_phoneNumberId; }
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline bool PhoneNumberIdHasBeenSet() const { return m_phoneNumberIdHasBeenSet; }
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline void SetPhoneNumberId(const Aws::String& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = value; }
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline void SetPhoneNumberId(Aws::String&& value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId = std::move(value); }
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline void SetPhoneNumberId(const char* value) { m_phoneNumberIdHasBeenSet = true; m_phoneNumberId.assign(value); }
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline DeletePhoneNumberRequest& WithPhoneNumberId(const Aws::String& value) { SetPhoneNumberId(value); return *this;}
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline DeletePhoneNumberRequest& WithPhoneNumberId(Aws::String&& value) { SetPhoneNumberId(std::move(value)); return *this;}
-
-    /**
-     * <p>The phone number ID.</p>
-     */
     inline DeletePhoneNumberRequest& WithPhoneNumberId(const char* value) { SetPhoneNumberId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phoneNumberId;

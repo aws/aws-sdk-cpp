@@ -37,6 +37,7 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>The position information of the resource, displayed as a JSON payload. The
      * payload uses the GeoJSON format, which a format that's used to encode geographic
@@ -44,37 +45,20 @@ namespace Model
      * href="https://geojson.org/">GeoJSON</a>.</p>
      */
     inline Aws::IOStream& GetGeoJsonPayload() const { return m_geoJsonPayload.GetUnderlyingStream(); }
-
-    /**
-     * <p>The position information of the resource, displayed as a JSON payload. The
-     * payload uses the GeoJSON format, which a format that's used to encode geographic
-     * data structures. For more information, see <a
-     * href="https://geojson.org/">GeoJSON</a>.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_geoJsonPayload = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResourcePositionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResourcePositionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResourcePositionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_geoJsonPayload;

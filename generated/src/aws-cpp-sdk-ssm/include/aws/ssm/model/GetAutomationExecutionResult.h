@@ -33,53 +33,27 @@ namespace Model
     AWS_SSM_API GetAutomationExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Detailed information about the current state of an automation execution.</p>
      */
     inline const AutomationExecution& GetAutomationExecution() const{ return m_automationExecution; }
-
-    /**
-     * <p>Detailed information about the current state of an automation execution.</p>
-     */
     inline void SetAutomationExecution(const AutomationExecution& value) { m_automationExecution = value; }
-
-    /**
-     * <p>Detailed information about the current state of an automation execution.</p>
-     */
     inline void SetAutomationExecution(AutomationExecution&& value) { m_automationExecution = std::move(value); }
-
-    /**
-     * <p>Detailed information about the current state of an automation execution.</p>
-     */
     inline GetAutomationExecutionResult& WithAutomationExecution(const AutomationExecution& value) { SetAutomationExecution(value); return *this;}
-
-    /**
-     * <p>Detailed information about the current state of an automation execution.</p>
-     */
     inline GetAutomationExecutionResult& WithAutomationExecution(AutomationExecution&& value) { SetAutomationExecution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAutomationExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAutomationExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAutomationExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AutomationExecution m_automationExecution;

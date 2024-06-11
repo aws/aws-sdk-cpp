@@ -40,87 +40,33 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the states of the detector.</p>
      */
     inline const Aws::Vector<State>& GetStates() const{ return m_states; }
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline void SetStates(const Aws::Vector<State>& value) { m_statesHasBeenSet = true; m_states = value; }
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline void SetStates(Aws::Vector<State>&& value) { m_statesHasBeenSet = true; m_states = std::move(value); }
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline DetectorModelDefinition& WithStates(const Aws::Vector<State>& value) { SetStates(value); return *this;}
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline DetectorModelDefinition& WithStates(Aws::Vector<State>&& value) { SetStates(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline DetectorModelDefinition& AddStates(const State& value) { m_statesHasBeenSet = true; m_states.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the states of the detector.</p>
-     */
     inline DetectorModelDefinition& AddStates(State&& value) { m_statesHasBeenSet = true; m_states.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state that is entered at the creation of each detector (instance).</p>
      */
     inline const Aws::String& GetInitialStateName() const{ return m_initialStateName; }
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline bool InitialStateNameHasBeenSet() const { return m_initialStateNameHasBeenSet; }
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline void SetInitialStateName(const Aws::String& value) { m_initialStateNameHasBeenSet = true; m_initialStateName = value; }
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline void SetInitialStateName(Aws::String&& value) { m_initialStateNameHasBeenSet = true; m_initialStateName = std::move(value); }
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline void SetInitialStateName(const char* value) { m_initialStateNameHasBeenSet = true; m_initialStateName.assign(value); }
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline DetectorModelDefinition& WithInitialStateName(const Aws::String& value) { SetInitialStateName(value); return *this;}
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline DetectorModelDefinition& WithInitialStateName(Aws::String&& value) { SetInitialStateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The state that is entered at the creation of each detector (instance).</p>
-     */
     inline DetectorModelDefinition& WithInitialStateName(const char* value) { SetInitialStateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<State> m_states;

@@ -39,55 +39,27 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const LexBot& GetLexBot() const{ return m_lexBot; }
-
-    
     inline bool LexBotHasBeenSet() const { return m_lexBotHasBeenSet; }
-
-    
     inline void SetLexBot(const LexBot& value) { m_lexBotHasBeenSet = true; m_lexBot = value; }
-
-    
     inline void SetLexBot(LexBot&& value) { m_lexBotHasBeenSet = true; m_lexBot = std::move(value); }
-
-    
     inline LexBotConfig& WithLexBot(const LexBot& value) { SetLexBot(value); return *this;}
-
-    
     inline LexBotConfig& WithLexBot(LexBot&& value) { SetLexBot(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Configuration information of an Amazon Lex V2 bot.</p>
      */
     inline const LexV2Bot& GetLexV2Bot() const{ return m_lexV2Bot; }
-
-    /**
-     * <p>Configuration information of an Amazon Lex V2 bot.</p>
-     */
     inline bool LexV2BotHasBeenSet() const { return m_lexV2BotHasBeenSet; }
-
-    /**
-     * <p>Configuration information of an Amazon Lex V2 bot.</p>
-     */
     inline void SetLexV2Bot(const LexV2Bot& value) { m_lexV2BotHasBeenSet = true; m_lexV2Bot = value; }
-
-    /**
-     * <p>Configuration information of an Amazon Lex V2 bot.</p>
-     */
     inline void SetLexV2Bot(LexV2Bot&& value) { m_lexV2BotHasBeenSet = true; m_lexV2Bot = std::move(value); }
-
-    /**
-     * <p>Configuration information of an Amazon Lex V2 bot.</p>
-     */
     inline LexBotConfig& WithLexV2Bot(const LexV2Bot& value) { SetLexV2Bot(value); return *this;}
-
-    /**
-     * <p>Configuration information of an Amazon Lex V2 bot.</p>
-     */
     inline LexBotConfig& WithLexV2Bot(LexV2Bot&& value) { SetLexV2Bot(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LexBot m_lexBot;

@@ -39,53 +39,27 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DeleteInboundConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The deleted inbound connection.</p>
      */
     inline const InboundConnection& GetConnection() const{ return m_connection; }
-
-    /**
-     * <p>The deleted inbound connection.</p>
-     */
     inline void SetConnection(const InboundConnection& value) { m_connection = value; }
-
-    /**
-     * <p>The deleted inbound connection.</p>
-     */
     inline void SetConnection(InboundConnection&& value) { m_connection = std::move(value); }
-
-    /**
-     * <p>The deleted inbound connection.</p>
-     */
     inline DeleteInboundConnectionResult& WithConnection(const InboundConnection& value) { SetConnection(value); return *this;}
-
-    /**
-     * <p>The deleted inbound connection.</p>
-     */
     inline DeleteInboundConnectionResult& WithConnection(InboundConnection&& value) { SetConnection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteInboundConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteInboundConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteInboundConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InboundConnection m_connection;

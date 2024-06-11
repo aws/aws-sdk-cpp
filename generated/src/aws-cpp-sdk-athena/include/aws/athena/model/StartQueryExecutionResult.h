@@ -32,63 +32,29 @@ namespace Model
     AWS_ATHENA_API StartQueryExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique ID of the query that ran as a result of this request.</p>
      */
     inline const Aws::String& GetQueryExecutionId() const{ return m_queryExecutionId; }
-
-    /**
-     * <p>The unique ID of the query that ran as a result of this request.</p>
-     */
     inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionId = value; }
-
-    /**
-     * <p>The unique ID of the query that ran as a result of this request.</p>
-     */
     inline void SetQueryExecutionId(Aws::String&& value) { m_queryExecutionId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the query that ran as a result of this request.</p>
-     */
     inline void SetQueryExecutionId(const char* value) { m_queryExecutionId.assign(value); }
-
-    /**
-     * <p>The unique ID of the query that ran as a result of this request.</p>
-     */
     inline StartQueryExecutionResult& WithQueryExecutionId(const Aws::String& value) { SetQueryExecutionId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the query that ran as a result of this request.</p>
-     */
     inline StartQueryExecutionResult& WithQueryExecutionId(Aws::String&& value) { SetQueryExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the query that ran as a result of this request.</p>
-     */
     inline StartQueryExecutionResult& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartQueryExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartQueryExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartQueryExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_queryExecutionId;

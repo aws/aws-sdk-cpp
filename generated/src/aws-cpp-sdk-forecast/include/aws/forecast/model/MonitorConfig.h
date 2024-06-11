@@ -38,46 +38,19 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the monitor resource.</p>
      */
     inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline MonitorConfig& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline MonitorConfig& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the monitor resource.</p>
-     */
     inline MonitorConfig& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitorName;

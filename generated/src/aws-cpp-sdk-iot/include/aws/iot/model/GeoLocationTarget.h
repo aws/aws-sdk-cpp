@@ -40,99 +40,34 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>name</code> of the geolocation target field. If the target field is
      * part of a named shadow, you must select the named shadow using the
      * <code>namedShadow</code> filter.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline GeoLocationTarget& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline GeoLocationTarget& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>name</code> of the geolocation target field. If the target field is
-     * part of a named shadow, you must select the named shadow using the
-     * <code>namedShadow</code> filter.</p>
-     */
     inline GeoLocationTarget& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>order</code> of the geolocation target field. This field is
      * optional. The default value is <code>LatLon</code>.</p>
      */
     inline const TargetFieldOrder& GetOrder() const{ return m_order; }
-
-    /**
-     * <p>The <code>order</code> of the geolocation target field. This field is
-     * optional. The default value is <code>LatLon</code>.</p>
-     */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-
-    /**
-     * <p>The <code>order</code> of the geolocation target field. This field is
-     * optional. The default value is <code>LatLon</code>.</p>
-     */
     inline void SetOrder(const TargetFieldOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-
-    /**
-     * <p>The <code>order</code> of the geolocation target field. This field is
-     * optional. The default value is <code>LatLon</code>.</p>
-     */
     inline void SetOrder(TargetFieldOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-
-    /**
-     * <p>The <code>order</code> of the geolocation target field. This field is
-     * optional. The default value is <code>LatLon</code>.</p>
-     */
     inline GeoLocationTarget& WithOrder(const TargetFieldOrder& value) { SetOrder(value); return *this;}
-
-    /**
-     * <p>The <code>order</code> of the geolocation target field. This field is
-     * optional. The default value is <code>LatLon</code>.</p>
-     */
     inline GeoLocationTarget& WithOrder(TargetFieldOrder&& value) { SetOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

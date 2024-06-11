@@ -32,55 +32,22 @@ namespace Model
     AWS_CODESTARNOTIFICATIONS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
      * delete.</p>
      */
     inline const Aws::String& GetTargetAddress() const{ return m_targetAddress; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline void SetTargetAddress(const Aws::String& value) { m_targetAddressHasBeenSet = true; m_targetAddress = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline void SetTargetAddress(Aws::String&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline void SetTargetAddress(const char* value) { m_targetAddressHasBeenSet = true; m_targetAddress.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline DeleteTargetRequest& WithTargetAddress(const Aws::String& value) { SetTargetAddress(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline DeleteTargetRequest& WithTargetAddress(Aws::String&& value) { SetTargetAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
-     * delete.</p>
-     */
     inline DeleteTargetRequest& WithTargetAddress(const char* value) { SetTargetAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value that can be used to delete all associations with this Chatbot
      * topic. The default value is FALSE. If set to TRUE, all associations between that
@@ -88,31 +55,10 @@ namespace Model
      * deleted.</p>
      */
     inline bool GetForceUnsubscribeAll() const{ return m_forceUnsubscribeAll; }
-
-    /**
-     * <p>A Boolean value that can be used to delete all associations with this Chatbot
-     * topic. The default value is FALSE. If set to TRUE, all associations between that
-     * target and every notification rule in your Amazon Web Services account are
-     * deleted.</p>
-     */
     inline bool ForceUnsubscribeAllHasBeenSet() const { return m_forceUnsubscribeAllHasBeenSet; }
-
-    /**
-     * <p>A Boolean value that can be used to delete all associations with this Chatbot
-     * topic. The default value is FALSE. If set to TRUE, all associations between that
-     * target and every notification rule in your Amazon Web Services account are
-     * deleted.</p>
-     */
     inline void SetForceUnsubscribeAll(bool value) { m_forceUnsubscribeAllHasBeenSet = true; m_forceUnsubscribeAll = value; }
-
-    /**
-     * <p>A Boolean value that can be used to delete all associations with this Chatbot
-     * topic. The default value is FALSE. If set to TRUE, all associations between that
-     * target and every notification rule in your Amazon Web Services account are
-     * deleted.</p>
-     */
     inline DeleteTargetRequest& WithForceUnsubscribeAll(bool value) { SetForceUnsubscribeAll(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_targetAddress;

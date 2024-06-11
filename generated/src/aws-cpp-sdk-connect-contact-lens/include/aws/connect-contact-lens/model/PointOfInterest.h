@@ -36,51 +36,26 @@ namespace Model
     AWS_CONNECTCONTACTLENS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The beginning offset in milliseconds where the category rule was
      * detected.</p>
      */
     inline int GetBeginOffsetMillis() const{ return m_beginOffsetMillis; }
-
-    /**
-     * <p>The beginning offset in milliseconds where the category rule was
-     * detected.</p>
-     */
     inline bool BeginOffsetMillisHasBeenSet() const { return m_beginOffsetMillisHasBeenSet; }
-
-    /**
-     * <p>The beginning offset in milliseconds where the category rule was
-     * detected.</p>
-     */
     inline void SetBeginOffsetMillis(int value) { m_beginOffsetMillisHasBeenSet = true; m_beginOffsetMillis = value; }
-
-    /**
-     * <p>The beginning offset in milliseconds where the category rule was
-     * detected.</p>
-     */
     inline PointOfInterest& WithBeginOffsetMillis(int value) { SetBeginOffsetMillis(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ending offset in milliseconds where the category rule was detected.</p>
      */
     inline int GetEndOffsetMillis() const{ return m_endOffsetMillis; }
-
-    /**
-     * <p>The ending offset in milliseconds where the category rule was detected.</p>
-     */
     inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
-
-    /**
-     * <p>The ending offset in milliseconds where the category rule was detected.</p>
-     */
     inline void SetEndOffsetMillis(int value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
-
-    /**
-     * <p>The ending offset in milliseconds where the category rule was detected.</p>
-     */
     inline PointOfInterest& WithEndOffsetMillis(int value) { SetEndOffsetMillis(value); return *this;}
-
+    ///@}
   private:
 
     int m_beginOffsetMillis;

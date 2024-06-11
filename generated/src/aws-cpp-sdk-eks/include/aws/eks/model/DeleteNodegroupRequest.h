@@ -32,87 +32,33 @@ namespace Model
     AWS_EKS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline DeleteNodegroupRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline DeleteNodegroupRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline DeleteNodegroupRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the node group to delete.</p>
      */
     inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline DeleteNodegroupRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline DeleteNodegroupRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the node group to delete.</p>
-     */
     inline DeleteNodegroupRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterName;

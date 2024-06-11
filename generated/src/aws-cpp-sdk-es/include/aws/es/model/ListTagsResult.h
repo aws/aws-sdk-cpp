@@ -40,63 +40,29 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API ListTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
-
-    /**
-     * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
-
-    /**
-     * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
-
-    /**
-     * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-     */
     inline ListTagsResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-
-    /**
-     * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-     */
     inline ListTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-
-    /**
-     * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-     */
     inline ListTagsResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
-
-    /**
-     * <p> List of <code>Tag</code> for the requested Elasticsearch domain.</p>
-     */
     inline ListTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tagList;

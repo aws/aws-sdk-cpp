@@ -40,122 +40,45 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error code explaining why the account failed to enable Amazon
      * Inspector.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code explaining why the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code explaining why the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code explaining why the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code explaining why the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline State& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code explaining why the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline State& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message received when the account failed to enable Amazon
      * Inspector.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline State& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline State& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message received when the account failed to enable Amazon
-     * Inspector.</p>
-     */
     inline State& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of Amazon Inspector for the account.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
     inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
     inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
     inline State& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of Amazon Inspector for the account.</p>
-     */
     inline State& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ErrorCode m_errorCode;

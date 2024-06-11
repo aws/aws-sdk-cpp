@@ -37,63 +37,29 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines if tests should run after building the image. Image Builder
      * defaults to enable tests to run following the image build, before image
      * distribution.</p>
      */
     inline bool GetImageTestsEnabled() const{ return m_imageTestsEnabled; }
-
-    /**
-     * <p>Determines if tests should run after building the image. Image Builder
-     * defaults to enable tests to run following the image build, before image
-     * distribution.</p>
-     */
     inline bool ImageTestsEnabledHasBeenSet() const { return m_imageTestsEnabledHasBeenSet; }
-
-    /**
-     * <p>Determines if tests should run after building the image. Image Builder
-     * defaults to enable tests to run following the image build, before image
-     * distribution.</p>
-     */
     inline void SetImageTestsEnabled(bool value) { m_imageTestsEnabledHasBeenSet = true; m_imageTestsEnabled = value; }
-
-    /**
-     * <p>Determines if tests should run after building the image. Image Builder
-     * defaults to enable tests to run following the image build, before image
-     * distribution.</p>
-     */
     inline ImageTestsConfiguration& WithImageTestsEnabled(bool value) { SetImageTestsEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum time in minutes that tests are permitted to run.</p> 
      * <p>The timeoutMinutes attribute is not currently active. This value is
      * ignored.</p> 
      */
     inline int GetTimeoutMinutes() const{ return m_timeoutMinutes; }
-
-    /**
-     * <p>The maximum time in minutes that tests are permitted to run.</p> 
-     * <p>The timeoutMinutes attribute is not currently active. This value is
-     * ignored.</p> 
-     */
     inline bool TimeoutMinutesHasBeenSet() const { return m_timeoutMinutesHasBeenSet; }
-
-    /**
-     * <p>The maximum time in minutes that tests are permitted to run.</p> 
-     * <p>The timeoutMinutes attribute is not currently active. This value is
-     * ignored.</p> 
-     */
     inline void SetTimeoutMinutes(int value) { m_timeoutMinutesHasBeenSet = true; m_timeoutMinutes = value; }
-
-    /**
-     * <p>The maximum time in minutes that tests are permitted to run.</p> 
-     * <p>The timeoutMinutes attribute is not currently active. This value is
-     * ignored.</p> 
-     */
     inline ImageTestsConfiguration& WithTimeoutMinutes(int value) { SetTimeoutMinutes(value); return *this;}
-
+    ///@}
   private:
 
     bool m_imageTestsEnabled;

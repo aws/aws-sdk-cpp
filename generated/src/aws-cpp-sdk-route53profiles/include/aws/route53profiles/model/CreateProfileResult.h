@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53PROFILES_API CreateProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The Profile that you just created. </p>
      */
     inline const Profile& GetProfile() const{ return m_profile; }
-
-    /**
-     * <p> The Profile that you just created. </p>
-     */
     inline void SetProfile(const Profile& value) { m_profile = value; }
-
-    /**
-     * <p> The Profile that you just created. </p>
-     */
     inline void SetProfile(Profile&& value) { m_profile = std::move(value); }
-
-    /**
-     * <p> The Profile that you just created. </p>
-     */
     inline CreateProfileResult& WithProfile(const Profile& value) { SetProfile(value); return *this;}
-
-    /**
-     * <p> The Profile that you just created. </p>
-     */
     inline CreateProfileResult& WithProfile(Profile&& value) { SetProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Profile m_profile;

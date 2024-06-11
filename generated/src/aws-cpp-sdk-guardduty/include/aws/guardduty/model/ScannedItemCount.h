@@ -35,68 +35,35 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Total GB of files scanned for malware.</p>
      */
     inline int GetTotalGb() const{ return m_totalGb; }
-
-    /**
-     * <p>Total GB of files scanned for malware.</p>
-     */
     inline bool TotalGbHasBeenSet() const { return m_totalGbHasBeenSet; }
-
-    /**
-     * <p>Total GB of files scanned for malware.</p>
-     */
     inline void SetTotalGb(int value) { m_totalGbHasBeenSet = true; m_totalGb = value; }
-
-    /**
-     * <p>Total GB of files scanned for malware.</p>
-     */
     inline ScannedItemCount& WithTotalGb(int value) { SetTotalGb(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Number of files scanned.</p>
      */
     inline int GetFiles() const{ return m_files; }
-
-    /**
-     * <p>Number of files scanned.</p>
-     */
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-
-    /**
-     * <p>Number of files scanned.</p>
-     */
     inline void SetFiles(int value) { m_filesHasBeenSet = true; m_files = value; }
-
-    /**
-     * <p>Number of files scanned.</p>
-     */
     inline ScannedItemCount& WithFiles(int value) { SetFiles(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Total number of scanned volumes.</p>
      */
     inline int GetVolumes() const{ return m_volumes; }
-
-    /**
-     * <p>Total number of scanned volumes.</p>
-     */
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-
-    /**
-     * <p>Total number of scanned volumes.</p>
-     */
     inline void SetVolumes(int value) { m_volumesHasBeenSet = true; m_volumes = value; }
-
-    /**
-     * <p>Total number of scanned volumes.</p>
-     */
     inline ScannedItemCount& WithVolumes(int value) { SetVolumes(value); return *this;}
-
+    ///@}
   private:
 
     int m_totalGb;

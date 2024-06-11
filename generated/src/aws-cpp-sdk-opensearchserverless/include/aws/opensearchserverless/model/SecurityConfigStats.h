@@ -36,26 +36,15 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of security configurations in the current account.</p>
      */
     inline long long GetSamlConfigCount() const{ return m_samlConfigCount; }
-
-    /**
-     * <p>The number of security configurations in the current account.</p>
-     */
     inline bool SamlConfigCountHasBeenSet() const { return m_samlConfigCountHasBeenSet; }
-
-    /**
-     * <p>The number of security configurations in the current account.</p>
-     */
     inline void SetSamlConfigCount(long long value) { m_samlConfigCountHasBeenSet = true; m_samlConfigCount = value; }
-
-    /**
-     * <p>The number of security configurations in the current account.</p>
-     */
     inline SecurityConfigStats& WithSamlConfigCount(long long value) { SetSamlConfigCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_samlConfigCount;

@@ -33,43 +33,25 @@ namespace Model
     AWS_IOT_API DescribeAuditFindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const AuditFinding& GetFinding() const{ return m_finding; }
-
-    
     inline void SetFinding(const AuditFinding& value) { m_finding = value; }
-
-    
     inline void SetFinding(AuditFinding&& value) { m_finding = std::move(value); }
-
-    
     inline DescribeAuditFindingResult& WithFinding(const AuditFinding& value) { SetFinding(value); return *this;}
-
-    
     inline DescribeAuditFindingResult& WithFinding(AuditFinding&& value) { SetFinding(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAuditFindingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAuditFindingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAuditFindingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AuditFinding m_finding;

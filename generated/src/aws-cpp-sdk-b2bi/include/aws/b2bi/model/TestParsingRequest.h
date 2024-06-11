@@ -36,122 +36,45 @@ namespace Model
     AWS_B2BI_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
      * bucket and prefix for the location of the input file.</p>
      */
     inline const S3Location& GetInputFile() const{ return m_inputFile; }
-
-    /**
-     * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
-     * bucket and prefix for the location of the input file.</p>
-     */
     inline bool InputFileHasBeenSet() const { return m_inputFileHasBeenSet; }
-
-    /**
-     * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
-     * bucket and prefix for the location of the input file.</p>
-     */
     inline void SetInputFile(const S3Location& value) { m_inputFileHasBeenSet = true; m_inputFile = value; }
-
-    /**
-     * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
-     * bucket and prefix for the location of the input file.</p>
-     */
     inline void SetInputFile(S3Location&& value) { m_inputFileHasBeenSet = true; m_inputFile = std::move(value); }
-
-    /**
-     * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
-     * bucket and prefix for the location of the input file.</p>
-     */
     inline TestParsingRequest& WithInputFile(const S3Location& value) { SetInputFile(value); return *this;}
-
-    /**
-     * <p>Specifies an <code>S3Location</code> object, which contains the Amazon S3
-     * bucket and prefix for the location of the input file.</p>
-     */
     inline TestParsingRequest& WithInputFile(S3Location&& value) { SetInputFile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that the currently supported file formats for EDI transformations
      * are <code>JSON</code> and <code>XML</code>.</p>
      */
     inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
-
-    /**
-     * <p>Specifies that the currently supported file formats for EDI transformations
-     * are <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-
-    /**
-     * <p>Specifies that the currently supported file formats for EDI transformations
-     * are <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-
-    /**
-     * <p>Specifies that the currently supported file formats for EDI transformations
-     * are <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-
-    /**
-     * <p>Specifies that the currently supported file formats for EDI transformations
-     * are <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline TestParsingRequest& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-
-    /**
-     * <p>Specifies that the currently supported file formats for EDI transformations
-     * are <code>JSON</code> and <code>XML</code>.</p>
-     */
     inline TestParsingRequest& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the details for the EDI standard that is being used for the
      * transformer. Currently, only X12 is supported. X12 is a set of standards and
      * corresponding messages that define specific business documents.</p>
      */
     inline const EdiType& GetEdiType() const{ return m_ediType; }
-
-    /**
-     * <p>Specifies the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline bool EdiTypeHasBeenSet() const { return m_ediTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline void SetEdiType(const EdiType& value) { m_ediTypeHasBeenSet = true; m_ediType = value; }
-
-    /**
-     * <p>Specifies the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline void SetEdiType(EdiType&& value) { m_ediTypeHasBeenSet = true; m_ediType = std::move(value); }
-
-    /**
-     * <p>Specifies the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline TestParsingRequest& WithEdiType(const EdiType& value) { SetEdiType(value); return *this;}
-
-    /**
-     * <p>Specifies the details for the EDI standard that is being used for the
-     * transformer. Currently, only X12 is supported. X12 is a set of standards and
-     * corresponding messages that define specific business documents.</p>
-     */
     inline TestParsingRequest& WithEdiType(EdiType&& value) { SetEdiType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_inputFile;

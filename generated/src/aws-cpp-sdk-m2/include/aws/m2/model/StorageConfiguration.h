@@ -39,67 +39,29 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the storage configuration for an Amazon EFS file system.</p>
      */
     inline const EfsStorageConfiguration& GetEfs() const{ return m_efs; }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon EFS file system.</p>
-     */
     inline bool EfsHasBeenSet() const { return m_efsHasBeenSet; }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon EFS file system.</p>
-     */
     inline void SetEfs(const EfsStorageConfiguration& value) { m_efsHasBeenSet = true; m_efs = value; }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon EFS file system.</p>
-     */
     inline void SetEfs(EfsStorageConfiguration&& value) { m_efsHasBeenSet = true; m_efs = std::move(value); }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon EFS file system.</p>
-     */
     inline StorageConfiguration& WithEfs(const EfsStorageConfiguration& value) { SetEfs(value); return *this;}
-
-    /**
-     * <p>Defines the storage configuration for an Amazon EFS file system.</p>
-     */
     inline StorageConfiguration& WithEfs(EfsStorageConfiguration&& value) { SetEfs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the storage configuration for an Amazon FSx file system.</p>
      */
     inline const FsxStorageConfiguration& GetFsx() const{ return m_fsx; }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon FSx file system.</p>
-     */
     inline bool FsxHasBeenSet() const { return m_fsxHasBeenSet; }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon FSx file system.</p>
-     */
     inline void SetFsx(const FsxStorageConfiguration& value) { m_fsxHasBeenSet = true; m_fsx = value; }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon FSx file system.</p>
-     */
     inline void SetFsx(FsxStorageConfiguration&& value) { m_fsxHasBeenSet = true; m_fsx = std::move(value); }
-
-    /**
-     * <p>Defines the storage configuration for an Amazon FSx file system.</p>
-     */
     inline StorageConfiguration& WithFsx(const FsxStorageConfiguration& value) { SetFsx(value); return *this;}
-
-    /**
-     * <p>Defines the storage configuration for an Amazon FSx file system.</p>
-     */
     inline StorageConfiguration& WithFsx(FsxStorageConfiguration&& value) { SetFsx(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EfsStorageConfiguration m_efs;

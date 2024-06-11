@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the detector model to be deleted.</p>
      */
     inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline DeleteDetectorModelRequest& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline DeleteDetectorModelRequest& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the detector model to be deleted.</p>
-     */
     inline DeleteDetectorModelRequest& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorModelName;

@@ -39,67 +39,29 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of origins for this distribution.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of origins for this distribution.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of origins for this distribution.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of origins for this distribution.</p>
-     */
     inline Origins& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of origins.</p>
      */
     inline const Aws::Vector<Origin>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline void SetItems(const Aws::Vector<Origin>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline void SetItems(Aws::Vector<Origin>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline Origins& WithItems(const Aws::Vector<Origin>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline Origins& WithItems(Aws::Vector<Origin>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline Origins& AddItems(const Origin& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>A list of origins.</p>
-     */
     inline Origins& AddItems(Origin&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

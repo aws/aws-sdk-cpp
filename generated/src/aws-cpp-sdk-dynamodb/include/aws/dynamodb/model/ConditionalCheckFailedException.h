@@ -40,107 +40,37 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The conditional request failed.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline ConditionalCheckFailedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline ConditionalCheckFailedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The conditional request failed.</p>
-     */
     inline ConditionalCheckFailedException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>
-     */
     inline ConditionalCheckFailedException& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

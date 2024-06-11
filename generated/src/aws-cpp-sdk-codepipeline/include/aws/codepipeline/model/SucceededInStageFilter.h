@@ -38,54 +38,20 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the stage for filtering for pipeline executions where the stage
      * was successful in the current pipeline version.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline SucceededInStageFilter& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline SucceededInStageFilter& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stage for filtering for pipeline executions where the stage
-     * was successful in the current pipeline version.</p>
-     */
     inline SucceededInStageFilter& WithStageName(const char* value) { SetStageName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stageName;

@@ -50,6 +50,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum length of time, in seconds, that a training or compilation job
      * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
@@ -65,56 +66,12 @@ namespace Model
      * days.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
-     * complete during this time, a <code>TimeOut</code> error is generated. We
-     * recommend starting with 900 seconds and increasing as necessary based on your
-     * model.</p> <p>For all other jobs, if the job does not complete during this time,
-     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
-     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
-     * the attempts in total, not each individual attempt. The default value is 1 day.
-     * The maximum value is 28 days.</p> <p>The maximum time that a
-     * <code>TrainingJob</code> can run in total, including any time spent publishing
-     * metrics or archiving and uploading models after it has been stopped, is 30
-     * days.</p>
-     */
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
-     * complete during this time, a <code>TimeOut</code> error is generated. We
-     * recommend starting with 900 seconds and increasing as necessary based on your
-     * model.</p> <p>For all other jobs, if the job does not complete during this time,
-     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
-     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
-     * the attempts in total, not each individual attempt. The default value is 1 day.
-     * The maximum value is 28 days.</p> <p>The maximum time that a
-     * <code>TrainingJob</code> can run in total, including any time spent publishing
-     * metrics or archiving and uploading models after it has been stopped, is 30
-     * days.</p>
-     */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can run before it is stopped.</p> <p>For compilation jobs, if the job does not
-     * complete during this time, a <code>TimeOut</code> error is generated. We
-     * recommend starting with 900 seconds and increasing as necessary based on your
-     * model.</p> <p>For all other jobs, if the job does not complete during this time,
-     * SageMaker ends the job. When <code>RetryStrategy</code> is specified in the job
-     * request, <code>MaxRuntimeInSeconds</code> specifies the maximum time for all of
-     * the attempts in total, not each individual attempt. The default value is 1 day.
-     * The maximum value is 28 days.</p> <p>The maximum time that a
-     * <code>TrainingJob</code> can run in total, including any time spent publishing
-     * metrics or archiving and uploading models after it has been stopped, is 30
-     * days.</p>
-     */
     inline StoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum length of time, in seconds, that a managed Spot training job has
      * to complete. It is the amount of time spent waiting for Spot capacity plus the
@@ -125,65 +82,21 @@ namespace Model
      * for all of the attempts in total, not each individual attempt.</p>
      */
     inline int GetMaxWaitTimeInSeconds() const{ return m_maxWaitTimeInSeconds; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a managed Spot training job has
-     * to complete. It is the amount of time spent waiting for Spot capacity plus the
-     * amount of time the job can run. It must be equal to or greater than
-     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time,
-     * SageMaker ends the job.</p> <p>When <code>RetryStrategy</code> is specified in
-     * the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time
-     * for all of the attempts in total, not each individual attempt.</p>
-     */
     inline bool MaxWaitTimeInSecondsHasBeenSet() const { return m_maxWaitTimeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a managed Spot training job has
-     * to complete. It is the amount of time spent waiting for Spot capacity plus the
-     * amount of time the job can run. It must be equal to or greater than
-     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time,
-     * SageMaker ends the job.</p> <p>When <code>RetryStrategy</code> is specified in
-     * the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time
-     * for all of the attempts in total, not each individual attempt.</p>
-     */
     inline void SetMaxWaitTimeInSeconds(int value) { m_maxWaitTimeInSecondsHasBeenSet = true; m_maxWaitTimeInSeconds = value; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a managed Spot training job has
-     * to complete. It is the amount of time spent waiting for Spot capacity plus the
-     * amount of time the job can run. It must be equal to or greater than
-     * <code>MaxRuntimeInSeconds</code>. If the job does not complete during this time,
-     * SageMaker ends the job.</p> <p>When <code>RetryStrategy</code> is specified in
-     * the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time
-     * for all of the attempts in total, not each individual attempt.</p>
-     */
     inline StoppingCondition& WithMaxWaitTimeInSeconds(int value) { SetMaxWaitTimeInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum length of time, in seconds, that a training or compilation job
      * can be pending before it is stopped.</p>
      */
     inline int GetMaxPendingTimeInSeconds() const{ return m_maxPendingTimeInSeconds; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can be pending before it is stopped.</p>
-     */
     inline bool MaxPendingTimeInSecondsHasBeenSet() const { return m_maxPendingTimeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can be pending before it is stopped.</p>
-     */
     inline void SetMaxPendingTimeInSeconds(int value) { m_maxPendingTimeInSecondsHasBeenSet = true; m_maxPendingTimeInSeconds = value; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that a training or compilation job
-     * can be pending before it is stopped.</p>
-     */
     inline StoppingCondition& WithMaxPendingTimeInSeconds(int value) { SetMaxPendingTimeInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxRuntimeInSeconds;

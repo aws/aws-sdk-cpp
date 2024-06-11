@@ -33,89 +33,40 @@ namespace Model
     AWS_IOTWIRELESS_API AssociateAwsAccountWithPartnerAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Sidewalk account credentials.</p>
      */
     inline const SidewalkAccountInfo& GetSidewalk() const{ return m_sidewalk; }
-
-    /**
-     * <p>The Sidewalk account credentials.</p>
-     */
     inline void SetSidewalk(const SidewalkAccountInfo& value) { m_sidewalk = value; }
-
-    /**
-     * <p>The Sidewalk account credentials.</p>
-     */
     inline void SetSidewalk(SidewalkAccountInfo&& value) { m_sidewalk = std::move(value); }
-
-    /**
-     * <p>The Sidewalk account credentials.</p>
-     */
     inline AssociateAwsAccountWithPartnerAccountResult& WithSidewalk(const SidewalkAccountInfo& value) { SetSidewalk(value); return *this;}
-
-    /**
-     * <p>The Sidewalk account credentials.</p>
-     */
     inline AssociateAwsAccountWithPartnerAccountResult& WithSidewalk(SidewalkAccountInfo&& value) { SetSidewalk(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name of the resource.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name of the resource.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name of the resource.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the resource.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name of the resource.</p>
-     */
     inline AssociateAwsAccountWithPartnerAccountResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the resource.</p>
-     */
     inline AssociateAwsAccountWithPartnerAccountResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name of the resource.</p>
-     */
     inline AssociateAwsAccountWithPartnerAccountResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateAwsAccountWithPartnerAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateAwsAccountWithPartnerAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateAwsAccountWithPartnerAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SidewalkAccountInfo m_sidewalk;

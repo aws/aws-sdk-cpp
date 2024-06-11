@@ -37,42 +37,18 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object representing the <a href="https://openid.net/connect/">OpenID
      * Connect</a> identity provider information.</p>
      */
     inline const OIDC& GetOidc() const{ return m_oidc; }
-
-    /**
-     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
-     * Connect</a> identity provider information.</p>
-     */
     inline bool OidcHasBeenSet() const { return m_oidcHasBeenSet; }
-
-    /**
-     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
-     * Connect</a> identity provider information.</p>
-     */
     inline void SetOidc(const OIDC& value) { m_oidcHasBeenSet = true; m_oidc = value; }
-
-    /**
-     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
-     * Connect</a> identity provider information.</p>
-     */
     inline void SetOidc(OIDC&& value) { m_oidcHasBeenSet = true; m_oidc = std::move(value); }
-
-    /**
-     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
-     * Connect</a> identity provider information.</p>
-     */
     inline Identity& WithOidc(const OIDC& value) { SetOidc(value); return *this;}
-
-    /**
-     * <p>An object representing the <a href="https://openid.net/connect/">OpenID
-     * Connect</a> identity provider information.</p>
-     */
     inline Identity& WithOidc(OIDC&& value) { SetOidc(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OIDC m_oidc;

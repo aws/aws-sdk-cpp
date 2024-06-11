@@ -40,99 +40,34 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
      * </p>
      */
     inline const AutoTuneDesiredState& GetDesiredState() const{ return m_desiredState; }
-
-    /**
-     * <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
-     * </p>
-     */
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-
-    /**
-     * <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
-     * </p>
-     */
     inline void SetDesiredState(const AutoTuneDesiredState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-
-    /**
-     * <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
-     * </p>
-     */
     inline void SetDesiredState(AutoTuneDesiredState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-
-    /**
-     * <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
-     * </p>
-     */
     inline AutoTuneOptionsInput& WithDesiredState(const AutoTuneDesiredState& value) { SetDesiredState(value); return *this;}
-
-    /**
-     * <p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.
-     * </p>
-     */
     inline AutoTuneOptionsInput& WithDesiredState(AutoTuneDesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies list of maitenance schedules. See the <a
      * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
      * target="_blank">Developer Guide</a> for more information.</p>
      */
     inline const Aws::Vector<AutoTuneMaintenanceSchedule>& GetMaintenanceSchedules() const{ return m_maintenanceSchedules; }
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline bool MaintenanceSchedulesHasBeenSet() const { return m_maintenanceSchedulesHasBeenSet; }
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline void SetMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = value; }
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline void SetMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules = std::move(value); }
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline AutoTuneOptionsInput& WithMaintenanceSchedules(const Aws::Vector<AutoTuneMaintenanceSchedule>& value) { SetMaintenanceSchedules(value); return *this;}
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline AutoTuneOptionsInput& WithMaintenanceSchedules(Aws::Vector<AutoTuneMaintenanceSchedule>&& value) { SetMaintenanceSchedules(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline AutoTuneOptionsInput& AddMaintenanceSchedules(const AutoTuneMaintenanceSchedule& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies list of maitenance schedules. See the <a
-     * href="https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html"
-     * target="_blank">Developer Guide</a> for more information.</p>
-     */
     inline AutoTuneOptionsInput& AddMaintenanceSchedules(AutoTuneMaintenanceSchedule&& value) { m_maintenanceSchedulesHasBeenSet = true; m_maintenanceSchedules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     AutoTuneDesiredState m_desiredState;

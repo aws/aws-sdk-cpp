@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53RESOLVER_API GetFirewallDomainListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The domain list that you requested. </p>
      */
     inline const FirewallDomainList& GetFirewallDomainList() const{ return m_firewallDomainList; }
-
-    /**
-     * <p>The domain list that you requested. </p>
-     */
     inline void SetFirewallDomainList(const FirewallDomainList& value) { m_firewallDomainList = value; }
-
-    /**
-     * <p>The domain list that you requested. </p>
-     */
     inline void SetFirewallDomainList(FirewallDomainList&& value) { m_firewallDomainList = std::move(value); }
-
-    /**
-     * <p>The domain list that you requested. </p>
-     */
     inline GetFirewallDomainListResult& WithFirewallDomainList(const FirewallDomainList& value) { SetFirewallDomainList(value); return *this;}
-
-    /**
-     * <p>The domain list that you requested. </p>
-     */
     inline GetFirewallDomainListResult& WithFirewallDomainList(FirewallDomainList&& value) { SetFirewallDomainList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFirewallDomainListResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFirewallDomainListResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFirewallDomainListResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FirewallDomainList m_firewallDomainList;

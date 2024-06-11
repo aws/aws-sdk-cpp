@@ -39,67 +39,29 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filter by component type.</p>
      */
     inline const FilterByComponentType& GetFilterByComponentType() const{ return m_filterByComponentType; }
-
-    /**
-     * <p>Filter by component type.</p>
-     */
     inline bool FilterByComponentTypeHasBeenSet() const { return m_filterByComponentTypeHasBeenSet; }
-
-    /**
-     * <p>Filter by component type.</p>
-     */
     inline void SetFilterByComponentType(const FilterByComponentType& value) { m_filterByComponentTypeHasBeenSet = true; m_filterByComponentType = value; }
-
-    /**
-     * <p>Filter by component type.</p>
-     */
     inline void SetFilterByComponentType(FilterByComponentType&& value) { m_filterByComponentTypeHasBeenSet = true; m_filterByComponentType = std::move(value); }
-
-    /**
-     * <p>Filter by component type.</p>
-     */
     inline IotTwinMakerSourceConfigurationFilter& WithFilterByComponentType(const FilterByComponentType& value) { SetFilterByComponentType(value); return *this;}
-
-    /**
-     * <p>Filter by component type.</p>
-     */
     inline IotTwinMakerSourceConfigurationFilter& WithFilterByComponentType(FilterByComponentType&& value) { SetFilterByComponentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter by entity.</p>
      */
     inline const FilterByEntity& GetFilterByEntity() const{ return m_filterByEntity; }
-
-    /**
-     * <p>Filter by entity.</p>
-     */
     inline bool FilterByEntityHasBeenSet() const { return m_filterByEntityHasBeenSet; }
-
-    /**
-     * <p>Filter by entity.</p>
-     */
     inline void SetFilterByEntity(const FilterByEntity& value) { m_filterByEntityHasBeenSet = true; m_filterByEntity = value; }
-
-    /**
-     * <p>Filter by entity.</p>
-     */
     inline void SetFilterByEntity(FilterByEntity&& value) { m_filterByEntityHasBeenSet = true; m_filterByEntity = std::move(value); }
-
-    /**
-     * <p>Filter by entity.</p>
-     */
     inline IotTwinMakerSourceConfigurationFilter& WithFilterByEntity(const FilterByEntity& value) { SetFilterByEntity(value); return *this;}
-
-    /**
-     * <p>Filter by entity.</p>
-     */
     inline IotTwinMakerSourceConfigurationFilter& WithFilterByEntity(FilterByEntity&& value) { SetFilterByEntity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FilterByComponentType m_filterByComponentType;

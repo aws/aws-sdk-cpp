@@ -38,36 +38,17 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure that describes details for IAM authentication.</p>
      */
     inline const IamAuthenticationMethod& GetIam() const{ return m_iam; }
-
-    /**
-     * <p>A structure that describes details for IAM authentication.</p>
-     */
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-
-    /**
-     * <p>A structure that describes details for IAM authentication.</p>
-     */
     inline void SetIam(const IamAuthenticationMethod& value) { m_iamHasBeenSet = true; m_iam = value; }
-
-    /**
-     * <p>A structure that describes details for IAM authentication.</p>
-     */
     inline void SetIam(IamAuthenticationMethod&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-
-    /**
-     * <p>A structure that describes details for IAM authentication.</p>
-     */
     inline AuthenticationMethod& WithIam(const IamAuthenticationMethod& value) { SetIam(value); return *this;}
-
-    /**
-     * <p>A structure that describes details for IAM authentication.</p>
-     */
     inline AuthenticationMethod& WithIam(IamAuthenticationMethod&& value) { SetIam(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IamAuthenticationMethod m_iam;

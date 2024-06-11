@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The unique identifier of the integration.</p>
      */
     inline const Aws::String& GetIntegrationIdentifier() const{ return m_integrationIdentifier; }
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline bool IntegrationIdentifierHasBeenSet() const { return m_integrationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline void SetIntegrationIdentifier(const Aws::String& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline void SetIntegrationIdentifier(Aws::String&& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline void SetIntegrationIdentifier(const char* value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline DeleteIntegrationRequest& WithIntegrationIdentifier(const Aws::String& value) { SetIntegrationIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline DeleteIntegrationRequest& WithIntegrationIdentifier(Aws::String&& value) { SetIntegrationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the integration.</p>
-     */
     inline DeleteIntegrationRequest& WithIntegrationIdentifier(const char* value) { SetIntegrationIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_integrationIdentifier;

@@ -41,62 +41,21 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>One or more metric data queries to provide the data points for a scaling
      * metric. Use multiple metric data queries only if you are performing a math
      * expression on returned data. </p>
      */
     inline const Aws::Vector<MetricDataQuery>& GetMetricDataQueries() const{ return m_metricDataQueries; }
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline bool MetricDataQueriesHasBeenSet() const { return m_metricDataQueriesHasBeenSet; }
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline void SetMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = value; }
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline void SetMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries = std::move(value); }
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline PredictiveScalingCustomizedScalingMetric& WithMetricDataQueries(const Aws::Vector<MetricDataQuery>& value) { SetMetricDataQueries(value); return *this;}
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline PredictiveScalingCustomizedScalingMetric& WithMetricDataQueries(Aws::Vector<MetricDataQuery>&& value) { SetMetricDataQueries(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline PredictiveScalingCustomizedScalingMetric& AddMetricDataQueries(const MetricDataQuery& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(value); return *this; }
-
-    /**
-     * <p>One or more metric data queries to provide the data points for a scaling
-     * metric. Use multiple metric data queries only if you are performing a math
-     * expression on returned data. </p>
-     */
     inline PredictiveScalingCustomizedScalingMetric& AddMetricDataQueries(MetricDataQuery&& value) { m_metricDataQueriesHasBeenSet = true; m_metricDataQueries.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<MetricDataQuery> m_metricDataQueries;

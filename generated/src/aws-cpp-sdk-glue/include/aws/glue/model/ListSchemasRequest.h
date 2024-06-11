@@ -35,108 +35,43 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A wrapper structure that may contain the registry name and Amazon Resource
      * Name (ARN).</p>
      */
     inline const RegistryId& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>A wrapper structure that may contain the registry name and Amazon Resource
-     * Name (ARN).</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>A wrapper structure that may contain the registry name and Amazon Resource
-     * Name (ARN).</p>
-     */
     inline void SetRegistryId(const RegistryId& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>A wrapper structure that may contain the registry name and Amazon Resource
-     * Name (ARN).</p>
-     */
     inline void SetRegistryId(RegistryId&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>A wrapper structure that may contain the registry name and Amazon Resource
-     * Name (ARN).</p>
-     */
     inline ListSchemasRequest& WithRegistryId(const RegistryId& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>A wrapper structure that may contain the registry name and Amazon Resource
-     * Name (ARN).</p>
-     */
     inline ListSchemasRequest& WithRegistryId(RegistryId&& value) { SetRegistryId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum number of results required per page. If the value is not supplied,
      * this will be defaulted to 25 per page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum number of results required per page. If the value is not supplied,
-     * this will be defaulted to 25 per page.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of results required per page. If the value is not supplied,
-     * this will be defaulted to 25 per page.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum number of results required per page. If the value is not supplied,
-     * this will be defaulted to 25 per page.</p>
-     */
     inline ListSchemasRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline ListSchemasRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline ListSchemasRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token, if this is a continuation call.</p>
-     */
     inline ListSchemasRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     RegistryId m_registryId;

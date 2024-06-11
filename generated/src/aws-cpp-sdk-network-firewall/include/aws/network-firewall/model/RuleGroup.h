@@ -49,105 +49,44 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Settings that are available for use in the rules in the rule group. You can
      * only use these for stateful rule groups. </p>
      */
     inline const RuleVariables& GetRuleVariables() const{ return m_ruleVariables; }
-
-    /**
-     * <p>Settings that are available for use in the rules in the rule group. You can
-     * only use these for stateful rule groups. </p>
-     */
     inline bool RuleVariablesHasBeenSet() const { return m_ruleVariablesHasBeenSet; }
-
-    /**
-     * <p>Settings that are available for use in the rules in the rule group. You can
-     * only use these for stateful rule groups. </p>
-     */
     inline void SetRuleVariables(const RuleVariables& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = value; }
-
-    /**
-     * <p>Settings that are available for use in the rules in the rule group. You can
-     * only use these for stateful rule groups. </p>
-     */
     inline void SetRuleVariables(RuleVariables&& value) { m_ruleVariablesHasBeenSet = true; m_ruleVariables = std::move(value); }
-
-    /**
-     * <p>Settings that are available for use in the rules in the rule group. You can
-     * only use these for stateful rule groups. </p>
-     */
     inline RuleGroup& WithRuleVariables(const RuleVariables& value) { SetRuleVariables(value); return *this;}
-
-    /**
-     * <p>Settings that are available for use in the rules in the rule group. You can
-     * only use these for stateful rule groups. </p>
-     */
     inline RuleGroup& WithRuleVariables(RuleVariables&& value) { SetRuleVariables(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of a rule group's reference sets.</p>
      */
     inline const ReferenceSets& GetReferenceSets() const{ return m_referenceSets; }
-
-    /**
-     * <p>The list of a rule group's reference sets.</p>
-     */
     inline bool ReferenceSetsHasBeenSet() const { return m_referenceSetsHasBeenSet; }
-
-    /**
-     * <p>The list of a rule group's reference sets.</p>
-     */
     inline void SetReferenceSets(const ReferenceSets& value) { m_referenceSetsHasBeenSet = true; m_referenceSets = value; }
-
-    /**
-     * <p>The list of a rule group's reference sets.</p>
-     */
     inline void SetReferenceSets(ReferenceSets&& value) { m_referenceSetsHasBeenSet = true; m_referenceSets = std::move(value); }
-
-    /**
-     * <p>The list of a rule group's reference sets.</p>
-     */
     inline RuleGroup& WithReferenceSets(const ReferenceSets& value) { SetReferenceSets(value); return *this;}
-
-    /**
-     * <p>The list of a rule group's reference sets.</p>
-     */
     inline RuleGroup& WithReferenceSets(ReferenceSets&& value) { SetReferenceSets(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The stateful rules or stateless rules for the rule group. </p>
      */
     inline const RulesSource& GetRulesSource() const{ return m_rulesSource; }
-
-    /**
-     * <p>The stateful rules or stateless rules for the rule group. </p>
-     */
     inline bool RulesSourceHasBeenSet() const { return m_rulesSourceHasBeenSet; }
-
-    /**
-     * <p>The stateful rules or stateless rules for the rule group. </p>
-     */
     inline void SetRulesSource(const RulesSource& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = value; }
-
-    /**
-     * <p>The stateful rules or stateless rules for the rule group. </p>
-     */
     inline void SetRulesSource(RulesSource&& value) { m_rulesSourceHasBeenSet = true; m_rulesSource = std::move(value); }
-
-    /**
-     * <p>The stateful rules or stateless rules for the rule group. </p>
-     */
     inline RuleGroup& WithRulesSource(const RulesSource& value) { SetRulesSource(value); return *this;}
-
-    /**
-     * <p>The stateful rules or stateless rules for the rule group. </p>
-     */
     inline RuleGroup& WithRulesSource(RulesSource&& value) { SetRulesSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional options governing how Network Firewall handles stateful rules. The
      * policies where you use your stateful rule group must have stateful rule options
@@ -157,57 +96,12 @@ namespace Model
      * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
      */
     inline const StatefulRuleOptions& GetStatefulRuleOptions() const{ return m_statefulRuleOptions; }
-
-    /**
-     * <p>Additional options governing how Network Firewall handles stateful rules. The
-     * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings. Some limitations apply; for
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
-     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline bool StatefulRuleOptionsHasBeenSet() const { return m_statefulRuleOptionsHasBeenSet; }
-
-    /**
-     * <p>Additional options governing how Network Firewall handles stateful rules. The
-     * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings. Some limitations apply; for
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
-     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline void SetStatefulRuleOptions(const StatefulRuleOptions& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = value; }
-
-    /**
-     * <p>Additional options governing how Network Firewall handles stateful rules. The
-     * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings. Some limitations apply; for
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
-     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline void SetStatefulRuleOptions(StatefulRuleOptions&& value) { m_statefulRuleOptionsHasBeenSet = true; m_statefulRuleOptions = std::move(value); }
-
-    /**
-     * <p>Additional options governing how Network Firewall handles stateful rules. The
-     * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings. Some limitations apply; for
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
-     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline RuleGroup& WithStatefulRuleOptions(const StatefulRuleOptions& value) { SetStatefulRuleOptions(value); return *this;}
-
-    /**
-     * <p>Additional options governing how Network Firewall handles stateful rules. The
-     * policies where you use your stateful rule group must have stateful rule options
-     * settings that are compatible with these settings. Some limitations apply; for
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/suricata-limitations-caveats.html">Strict
-     * evaluation order</a> in the <i>Network Firewall Developer Guide</i>.</p>
-     */
     inline RuleGroup& WithStatefulRuleOptions(StatefulRuleOptions&& value) { SetStatefulRuleOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleVariables m_ruleVariables;

@@ -32,63 +32,29 @@ namespace Model
     AWS_COMPREHEND_API CreateDocumentClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
      */
     inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-     */
     inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-     */
     inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-     */
     inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-     */
     inline CreateDocumentClassifierResult& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-     */
     inline CreateDocumentClassifierResult& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
-     */
     inline CreateDocumentClassifierResult& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDocumentClassifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDocumentClassifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDocumentClassifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_documentClassifierArn;

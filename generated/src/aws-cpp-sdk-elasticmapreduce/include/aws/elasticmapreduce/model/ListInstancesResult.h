@@ -39,99 +39,42 @@ namespace Model
     AWS_EMR_API ListInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of instances for the cluster and given filters.</p>
      */
     inline const Aws::Vector<Instance>& GetInstances() const{ return m_instances; }
-
-    /**
-     * <p>The list of instances for the cluster and given filters.</p>
-     */
     inline void SetInstances(const Aws::Vector<Instance>& value) { m_instances = value; }
-
-    /**
-     * <p>The list of instances for the cluster and given filters.</p>
-     */
     inline void SetInstances(Aws::Vector<Instance>&& value) { m_instances = std::move(value); }
-
-    /**
-     * <p>The list of instances for the cluster and given filters.</p>
-     */
     inline ListInstancesResult& WithInstances(const Aws::Vector<Instance>& value) { SetInstances(value); return *this;}
-
-    /**
-     * <p>The list of instances for the cluster and given filters.</p>
-     */
     inline ListInstancesResult& WithInstances(Aws::Vector<Instance>&& value) { SetInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of instances for the cluster and given filters.</p>
-     */
     inline ListInstancesResult& AddInstances(const Instance& value) { m_instances.push_back(value); return *this; }
-
-    /**
-     * <p>The list of instances for the cluster and given filters.</p>
-     */
     inline ListInstancesResult& AddInstances(Instance&& value) { m_instances.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListInstancesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListInstancesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListInstancesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Instance> m_instances;

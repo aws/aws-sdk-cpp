@@ -41,133 +41,48 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The utterance input in the user turn.</p>
      */
     inline const UtteranceInputSpecification& GetUtteranceInput() const{ return m_utteranceInput; }
-
-    /**
-     * <p>The utterance input in the user turn.</p>
-     */
     inline bool UtteranceInputHasBeenSet() const { return m_utteranceInputHasBeenSet; }
-
-    /**
-     * <p>The utterance input in the user turn.</p>
-     */
     inline void SetUtteranceInput(const UtteranceInputSpecification& value) { m_utteranceInputHasBeenSet = true; m_utteranceInput = value; }
-
-    /**
-     * <p>The utterance input in the user turn.</p>
-     */
     inline void SetUtteranceInput(UtteranceInputSpecification&& value) { m_utteranceInputHasBeenSet = true; m_utteranceInput = std::move(value); }
-
-    /**
-     * <p>The utterance input in the user turn.</p>
-     */
     inline UserTurnInputSpecification& WithUtteranceInput(const UtteranceInputSpecification& value) { SetUtteranceInput(value); return *this;}
-
-    /**
-     * <p>The utterance input in the user turn.</p>
-     */
     inline UserTurnInputSpecification& WithUtteranceInput(UtteranceInputSpecification&& value) { SetUtteranceInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Request attributes of the user turn.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const{ return m_requestAttributes; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline void SetRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = value; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline void SetRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes = std::move(value); }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& WithRequestAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetRequestAttributes(value); return *this;}
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& WithRequestAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetRequestAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(const Aws::String& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(Aws::String&& key, const Aws::String& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(const Aws::String& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(Aws::String&& key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(const char* key, Aws::String&& value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(Aws::String&& key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Request attributes of the user turn.</p>
-     */
     inline UserTurnInputSpecification& AddRequestAttributes(const char* key, const char* value) { m_requestAttributesHasBeenSet = true; m_requestAttributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the session state in the input.</p>
      */
     inline const InputSessionStateSpecification& GetSessionState() const{ return m_sessionState; }
-
-    /**
-     * <p>Contains information about the session state in the input.</p>
-     */
     inline bool SessionStateHasBeenSet() const { return m_sessionStateHasBeenSet; }
-
-    /**
-     * <p>Contains information about the session state in the input.</p>
-     */
     inline void SetSessionState(const InputSessionStateSpecification& value) { m_sessionStateHasBeenSet = true; m_sessionState = value; }
-
-    /**
-     * <p>Contains information about the session state in the input.</p>
-     */
     inline void SetSessionState(InputSessionStateSpecification&& value) { m_sessionStateHasBeenSet = true; m_sessionState = std::move(value); }
-
-    /**
-     * <p>Contains information about the session state in the input.</p>
-     */
     inline UserTurnInputSpecification& WithSessionState(const InputSessionStateSpecification& value) { SetSessionState(value); return *this;}
-
-    /**
-     * <p>Contains information about the session state in the input.</p>
-     */
     inline UserTurnInputSpecification& WithSessionState(InputSessionStateSpecification&& value) { SetSessionState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UtteranceInputSpecification m_utteranceInput;

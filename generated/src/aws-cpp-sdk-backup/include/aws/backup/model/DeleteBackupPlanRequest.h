@@ -32,46 +32,19 @@ namespace Model
     AWS_BACKUP_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Uniquely identifies a backup plan.</p>
      */
     inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline void SetBackupPlanId(Aws::String&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::move(value); }
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline void SetBackupPlanId(const char* value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId.assign(value); }
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline DeleteBackupPlanRequest& WithBackupPlanId(const Aws::String& value) { SetBackupPlanId(value); return *this;}
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline DeleteBackupPlanRequest& WithBackupPlanId(Aws::String&& value) { SetBackupPlanId(std::move(value)); return *this;}
-
-    /**
-     * <p>Uniquely identifies a backup plan.</p>
-     */
     inline DeleteBackupPlanRequest& WithBackupPlanId(const char* value) { SetBackupPlanId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupPlanId;

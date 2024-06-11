@@ -39,60 +39,21 @@ namespace Model
     AWS_CODEDEPLOY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> A list of deployment IDs, separated by spaces. The maximum number of
      * deployment IDs you can specify is 25.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentIds() const{ return m_deploymentIds; }
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline bool DeploymentIdsHasBeenSet() const { return m_deploymentIdsHasBeenSet; }
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline void SetDeploymentIds(const Aws::Vector<Aws::String>& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = std::move(value); }
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline BatchGetDeploymentsRequest& WithDeploymentIds(const Aws::Vector<Aws::String>& value) { SetDeploymentIds(value); return *this;}
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline BatchGetDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const Aws::String& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of deployment IDs, separated by spaces. The maximum number of
-     * deployment IDs you can specify is 25.</p>
-     */
     inline BatchGetDeploymentsRequest& AddDeploymentIds(const char* value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_deploymentIds;

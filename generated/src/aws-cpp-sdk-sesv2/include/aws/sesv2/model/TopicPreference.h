@@ -39,83 +39,32 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the topic.</p>
      */
     inline const Aws::String& GetTopicName() const{ return m_topicName; }
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline TopicPreference& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline TopicPreference& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the topic.</p>
-     */
     inline TopicPreference& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The contact's subscription status to a topic which is either
      * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
      */
     inline const SubscriptionStatus& GetSubscriptionStatus() const{ return m_subscriptionStatus; }
-
-    /**
-     * <p>The contact's subscription status to a topic which is either
-     * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-     */
     inline bool SubscriptionStatusHasBeenSet() const { return m_subscriptionStatusHasBeenSet; }
-
-    /**
-     * <p>The contact's subscription status to a topic which is either
-     * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-     */
     inline void SetSubscriptionStatus(const SubscriptionStatus& value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = value; }
-
-    /**
-     * <p>The contact's subscription status to a topic which is either
-     * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-     */
     inline void SetSubscriptionStatus(SubscriptionStatus&& value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = std::move(value); }
-
-    /**
-     * <p>The contact's subscription status to a topic which is either
-     * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-     */
     inline TopicPreference& WithSubscriptionStatus(const SubscriptionStatus& value) { SetSubscriptionStatus(value); return *this;}
-
-    /**
-     * <p>The contact's subscription status to a topic which is either
-     * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
-     */
     inline TopicPreference& WithSubscriptionStatus(SubscriptionStatus&& value) { SetSubscriptionStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicName;

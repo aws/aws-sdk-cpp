@@ -40,73 +40,30 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates if a notification configuration is enabled or disabled.</p>
      */
     inline const ConfigurationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates if a notification configuration is enabled or disabled.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates if a notification configuration is enabled or disabled.</p>
-     */
     inline void SetStatus(const ConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates if a notification configuration is enabled or disabled.</p>
-     */
     inline void SetStatus(ConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates if a notification configuration is enabled or disabled.</p>
-     */
     inline NotificationConfiguration& WithStatus(const ConfigurationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates if a notification configuration is enabled or disabled.</p>
-     */
     inline NotificationConfiguration& WithStatus(ConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination information required to deliver a notification to a
      * customer.</p>
      */
     inline const NotificationDestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
-
-    /**
-     * <p>The destination information required to deliver a notification to a
-     * customer.</p>
-     */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
-
-    /**
-     * <p>The destination information required to deliver a notification to a
-     * customer.</p>
-     */
     inline void SetDestinationConfig(const NotificationDestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
-
-    /**
-     * <p>The destination information required to deliver a notification to a
-     * customer.</p>
-     */
     inline void SetDestinationConfig(NotificationDestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
-
-    /**
-     * <p>The destination information required to deliver a notification to a
-     * customer.</p>
-     */
     inline NotificationConfiguration& WithDestinationConfig(const NotificationDestinationConfig& value) { SetDestinationConfig(value); return *this;}
-
-    /**
-     * <p>The destination information required to deliver a notification to a
-     * customer.</p>
-     */
     inline NotificationConfiguration& WithDestinationConfig(NotificationDestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConfigurationStatus m_status;

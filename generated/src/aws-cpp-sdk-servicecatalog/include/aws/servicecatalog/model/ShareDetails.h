@@ -40,92 +40,34 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List of accounts for whom the operation succeeded.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSuccessfulShares() const{ return m_successfulShares; }
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline bool SuccessfulSharesHasBeenSet() const { return m_successfulSharesHasBeenSet; }
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline void SetSuccessfulShares(const Aws::Vector<Aws::String>& value) { m_successfulSharesHasBeenSet = true; m_successfulShares = value; }
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline void SetSuccessfulShares(Aws::Vector<Aws::String>&& value) { m_successfulSharesHasBeenSet = true; m_successfulShares = std::move(value); }
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline ShareDetails& WithSuccessfulShares(const Aws::Vector<Aws::String>& value) { SetSuccessfulShares(value); return *this;}
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline ShareDetails& WithSuccessfulShares(Aws::Vector<Aws::String>&& value) { SetSuccessfulShares(std::move(value)); return *this;}
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline ShareDetails& AddSuccessfulShares(const Aws::String& value) { m_successfulSharesHasBeenSet = true; m_successfulShares.push_back(value); return *this; }
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline ShareDetails& AddSuccessfulShares(Aws::String&& value) { m_successfulSharesHasBeenSet = true; m_successfulShares.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List of accounts for whom the operation succeeded.</p>
-     */
     inline ShareDetails& AddSuccessfulShares(const char* value) { m_successfulSharesHasBeenSet = true; m_successfulShares.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of errors.</p>
      */
     inline const Aws::Vector<ShareError>& GetShareErrors() const{ return m_shareErrors; }
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline bool ShareErrorsHasBeenSet() const { return m_shareErrorsHasBeenSet; }
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline void SetShareErrors(const Aws::Vector<ShareError>& value) { m_shareErrorsHasBeenSet = true; m_shareErrors = value; }
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline void SetShareErrors(Aws::Vector<ShareError>&& value) { m_shareErrorsHasBeenSet = true; m_shareErrors = std::move(value); }
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline ShareDetails& WithShareErrors(const Aws::Vector<ShareError>& value) { SetShareErrors(value); return *this;}
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline ShareDetails& WithShareErrors(Aws::Vector<ShareError>&& value) { SetShareErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline ShareDetails& AddShareErrors(const ShareError& value) { m_shareErrorsHasBeenSet = true; m_shareErrors.push_back(value); return *this; }
-
-    /**
-     * <p>List of errors.</p>
-     */
     inline ShareDetails& AddShareErrors(ShareError&& value) { m_shareErrorsHasBeenSet = true; m_shareErrors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_successfulShares;

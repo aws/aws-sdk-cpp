@@ -33,53 +33,27 @@ namespace Model
     AWS_GUARDDUTY_API GetFindingsStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The finding statistics object.</p>
      */
     inline const FindingStatistics& GetFindingStatistics() const{ return m_findingStatistics; }
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline void SetFindingStatistics(const FindingStatistics& value) { m_findingStatistics = value; }
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline void SetFindingStatistics(FindingStatistics&& value) { m_findingStatistics = std::move(value); }
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline GetFindingsStatisticsResult& WithFindingStatistics(const FindingStatistics& value) { SetFindingStatistics(value); return *this;}
-
-    /**
-     * <p>The finding statistics object.</p>
-     */
     inline GetFindingsStatisticsResult& WithFindingStatistics(FindingStatistics&& value) { SetFindingStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFindingsStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFindingsStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFindingsStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FindingStatistics m_findingStatistics;

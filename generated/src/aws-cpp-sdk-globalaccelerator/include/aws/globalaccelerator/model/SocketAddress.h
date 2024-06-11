@@ -37,67 +37,29 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IP address for the socket address.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline SocketAddress& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline SocketAddress& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP address for the socket address.</p>
-     */
     inline SocketAddress& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port for the socket address.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port for the socket address.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port for the socket address.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port for the socket address.</p>
-     */
     inline SocketAddress& WithPort(int value) { SetPort(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipAddress;

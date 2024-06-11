@@ -38,46 +38,19 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Source Network ID.</p>
      */
     inline const Aws::String& GetSourceNetworkID() const{ return m_sourceNetworkID; }
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline bool SourceNetworkIDHasBeenSet() const { return m_sourceNetworkIDHasBeenSet; }
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline void SetSourceNetworkID(const Aws::String& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = value; }
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline void SetSourceNetworkID(Aws::String&& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = std::move(value); }
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline void SetSourceNetworkID(const char* value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID.assign(value); }
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline ParticipatingResourceID& WithSourceNetworkID(const Aws::String& value) { SetSourceNetworkID(value); return *this;}
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline ParticipatingResourceID& WithSourceNetworkID(Aws::String&& value) { SetSourceNetworkID(std::move(value)); return *this;}
-
-    /**
-     * <p>Source Network ID.</p>
-     */
     inline ParticipatingResourceID& WithSourceNetworkID(const char* value) { SetSourceNetworkID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceNetworkID;

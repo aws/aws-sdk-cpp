@@ -40,87 +40,33 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
      */
     inline const Aws::Vector<TextLogSetting>& GetTextLogSettings() const{ return m_textLogSettings; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline bool TextLogSettingsHasBeenSet() const { return m_textLogSettingsHasBeenSet; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline void SetTextLogSettings(const Aws::Vector<TextLogSetting>& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings = value; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline void SetTextLogSettings(Aws::Vector<TextLogSetting>&& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings = std::move(value); }
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline ConversationLogSettings& WithTextLogSettings(const Aws::Vector<TextLogSetting>& value) { SetTextLogSettings(value); return *this;}
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline ConversationLogSettings& WithTextLogSettings(Aws::Vector<TextLogSetting>&& value) { SetTextLogSettings(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline ConversationLogSettings& AddTextLogSettings(const TextLogSetting& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
-     */
     inline ConversationLogSettings& AddTextLogSettings(TextLogSetting&& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
      */
     inline const Aws::Vector<AudioLogSetting>& GetAudioLogSettings() const{ return m_audioLogSettings; }
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline bool AudioLogSettingsHasBeenSet() const { return m_audioLogSettingsHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline void SetAudioLogSettings(const Aws::Vector<AudioLogSetting>& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings = value; }
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline void SetAudioLogSettings(Aws::Vector<AudioLogSetting>&& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline ConversationLogSettings& WithAudioLogSettings(const Aws::Vector<AudioLogSetting>& value) { SetAudioLogSettings(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline ConversationLogSettings& WithAudioLogSettings(Aws::Vector<AudioLogSetting>&& value) { SetAudioLogSettings(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline ConversationLogSettings& AddAudioLogSettings(const AudioLogSetting& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings.push_back(value); return *this; }
-
-    /**
-     * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
-     */
     inline ConversationLogSettings& AddAudioLogSettings(AudioLogSetting&& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TextLogSetting> m_textLogSettings;

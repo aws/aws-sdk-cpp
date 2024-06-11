@@ -38,95 +38,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p> The ID of the replication group to which data is to be migrated. </p>
      */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline TestMigrationRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline TestMigrationRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the replication group to which data is to be migrated. </p>
-     */
     inline TestMigrationRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> List of endpoints from which data should be migrated. List should have only
      * one element. </p>
      */
     inline const Aws::Vector<CustomerNodeEndpoint>& GetCustomerNodeEndpointList() const{ return m_customerNodeEndpointList; }
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline bool CustomerNodeEndpointListHasBeenSet() const { return m_customerNodeEndpointListHasBeenSet; }
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline void SetCustomerNodeEndpointList(const Aws::Vector<CustomerNodeEndpoint>& value) { m_customerNodeEndpointListHasBeenSet = true; m_customerNodeEndpointList = value; }
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline void SetCustomerNodeEndpointList(Aws::Vector<CustomerNodeEndpoint>&& value) { m_customerNodeEndpointListHasBeenSet = true; m_customerNodeEndpointList = std::move(value); }
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline TestMigrationRequest& WithCustomerNodeEndpointList(const Aws::Vector<CustomerNodeEndpoint>& value) { SetCustomerNodeEndpointList(value); return *this;}
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline TestMigrationRequest& WithCustomerNodeEndpointList(Aws::Vector<CustomerNodeEndpoint>&& value) { SetCustomerNodeEndpointList(std::move(value)); return *this;}
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline TestMigrationRequest& AddCustomerNodeEndpointList(const CustomerNodeEndpoint& value) { m_customerNodeEndpointListHasBeenSet = true; m_customerNodeEndpointList.push_back(value); return *this; }
-
-    /**
-     * <p> List of endpoints from which data should be migrated. List should have only
-     * one element. </p>
-     */
     inline TestMigrationRequest& AddCustomerNodeEndpointList(CustomerNodeEndpoint&& value) { m_customerNodeEndpointListHasBeenSet = true; m_customerNodeEndpointList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_replicationGroupId;

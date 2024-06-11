@@ -39,161 +39,53 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Name of the SerDe.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline SerDeInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline SerDeInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the SerDe.</p>
-     */
     inline SerDeInfo& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Usually the class that implements the SerDe. An example is
      * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
      */
     inline const Aws::String& GetSerializationLibrary() const{ return m_serializationLibrary; }
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline bool SerializationLibraryHasBeenSet() const { return m_serializationLibraryHasBeenSet; }
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline void SetSerializationLibrary(const Aws::String& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = value; }
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline void SetSerializationLibrary(Aws::String&& value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary = std::move(value); }
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline void SetSerializationLibrary(const char* value) { m_serializationLibraryHasBeenSet = true; m_serializationLibrary.assign(value); }
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline SerDeInfo& WithSerializationLibrary(const Aws::String& value) { SetSerializationLibrary(value); return *this;}
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline SerDeInfo& WithSerializationLibrary(Aws::String&& value) { SetSerializationLibrary(std::move(value)); return *this;}
-
-    /**
-     * <p>Usually the class that implements the SerDe. An example is
-     * <code>org.apache.hadoop.hive.serde2.columnar.ColumnarSerDe</code>.</p>
-     */
     inline SerDeInfo& WithSerializationLibrary(const char* value) { SetSerializationLibrary(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>These key-value pairs define initialization parameters for the SerDe.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>These key-value pairs define initialization parameters for the SerDe.</p>
-     */
     inline SerDeInfo& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

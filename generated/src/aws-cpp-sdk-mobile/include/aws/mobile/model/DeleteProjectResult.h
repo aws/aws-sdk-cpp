@@ -40,106 +40,43 @@ namespace Model
     AWS_MOBILE_API DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Resources which were deleted. </p>
      */
     inline const Aws::Vector<Resource>& GetDeletedResources() const{ return m_deletedResources; }
-
-    /**
-     * <p> Resources which were deleted. </p>
-     */
     inline void SetDeletedResources(const Aws::Vector<Resource>& value) { m_deletedResources = value; }
-
-    /**
-     * <p> Resources which were deleted. </p>
-     */
     inline void SetDeletedResources(Aws::Vector<Resource>&& value) { m_deletedResources = std::move(value); }
-
-    /**
-     * <p> Resources which were deleted. </p>
-     */
     inline DeleteProjectResult& WithDeletedResources(const Aws::Vector<Resource>& value) { SetDeletedResources(value); return *this;}
-
-    /**
-     * <p> Resources which were deleted. </p>
-     */
     inline DeleteProjectResult& WithDeletedResources(Aws::Vector<Resource>&& value) { SetDeletedResources(std::move(value)); return *this;}
-
-    /**
-     * <p> Resources which were deleted. </p>
-     */
     inline DeleteProjectResult& AddDeletedResources(const Resource& value) { m_deletedResources.push_back(value); return *this; }
-
-    /**
-     * <p> Resources which were deleted. </p>
-     */
     inline DeleteProjectResult& AddDeletedResources(Resource&& value) { m_deletedResources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> Resources which were not deleted, due to a risk of losing potentially
      * important data or files. </p>
      */
     inline const Aws::Vector<Resource>& GetOrphanedResources() const{ return m_orphanedResources; }
-
-    /**
-     * <p> Resources which were not deleted, due to a risk of losing potentially
-     * important data or files. </p>
-     */
     inline void SetOrphanedResources(const Aws::Vector<Resource>& value) { m_orphanedResources = value; }
-
-    /**
-     * <p> Resources which were not deleted, due to a risk of losing potentially
-     * important data or files. </p>
-     */
     inline void SetOrphanedResources(Aws::Vector<Resource>&& value) { m_orphanedResources = std::move(value); }
-
-    /**
-     * <p> Resources which were not deleted, due to a risk of losing potentially
-     * important data or files. </p>
-     */
     inline DeleteProjectResult& WithOrphanedResources(const Aws::Vector<Resource>& value) { SetOrphanedResources(value); return *this;}
-
-    /**
-     * <p> Resources which were not deleted, due to a risk of losing potentially
-     * important data or files. </p>
-     */
     inline DeleteProjectResult& WithOrphanedResources(Aws::Vector<Resource>&& value) { SetOrphanedResources(std::move(value)); return *this;}
-
-    /**
-     * <p> Resources which were not deleted, due to a risk of losing potentially
-     * important data or files. </p>
-     */
     inline DeleteProjectResult& AddOrphanedResources(const Resource& value) { m_orphanedResources.push_back(value); return *this; }
-
-    /**
-     * <p> Resources which were not deleted, due to a risk of losing potentially
-     * important data or files. </p>
-     */
     inline DeleteProjectResult& AddOrphanedResources(Resource&& value) { m_orphanedResources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Resource> m_deletedResources;

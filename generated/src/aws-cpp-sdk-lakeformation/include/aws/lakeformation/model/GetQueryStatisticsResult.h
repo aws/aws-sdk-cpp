@@ -35,115 +35,51 @@ namespace Model
     AWS_LAKEFORMATION_API GetQueryStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An <code>ExecutionStatistics</code> structure containing execution
      * statistics.</p>
      */
     inline const ExecutionStatistics& GetExecutionStatistics() const{ return m_executionStatistics; }
-
-    /**
-     * <p>An <code>ExecutionStatistics</code> structure containing execution
-     * statistics.</p>
-     */
     inline void SetExecutionStatistics(const ExecutionStatistics& value) { m_executionStatistics = value; }
-
-    /**
-     * <p>An <code>ExecutionStatistics</code> structure containing execution
-     * statistics.</p>
-     */
     inline void SetExecutionStatistics(ExecutionStatistics&& value) { m_executionStatistics = std::move(value); }
-
-    /**
-     * <p>An <code>ExecutionStatistics</code> structure containing execution
-     * statistics.</p>
-     */
     inline GetQueryStatisticsResult& WithExecutionStatistics(const ExecutionStatistics& value) { SetExecutionStatistics(value); return *this;}
-
-    /**
-     * <p>An <code>ExecutionStatistics</code> structure containing execution
-     * statistics.</p>
-     */
     inline GetQueryStatisticsResult& WithExecutionStatistics(ExecutionStatistics&& value) { SetExecutionStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A <code>PlanningStatistics</code> structure containing query planning
      * statistics.</p>
      */
     inline const PlanningStatistics& GetPlanningStatistics() const{ return m_planningStatistics; }
-
-    /**
-     * <p>A <code>PlanningStatistics</code> structure containing query planning
-     * statistics.</p>
-     */
     inline void SetPlanningStatistics(const PlanningStatistics& value) { m_planningStatistics = value; }
-
-    /**
-     * <p>A <code>PlanningStatistics</code> structure containing query planning
-     * statistics.</p>
-     */
     inline void SetPlanningStatistics(PlanningStatistics&& value) { m_planningStatistics = std::move(value); }
-
-    /**
-     * <p>A <code>PlanningStatistics</code> structure containing query planning
-     * statistics.</p>
-     */
     inline GetQueryStatisticsResult& WithPlanningStatistics(const PlanningStatistics& value) { SetPlanningStatistics(value); return *this;}
-
-    /**
-     * <p>A <code>PlanningStatistics</code> structure containing query planning
-     * statistics.</p>
-     */
     inline GetQueryStatisticsResult& WithPlanningStatistics(PlanningStatistics&& value) { SetPlanningStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time that the query was submitted.</p>
      */
     inline const Aws::Utils::DateTime& GetQuerySubmissionTime() const{ return m_querySubmissionTime; }
-
-    /**
-     * <p>The time that the query was submitted.</p>
-     */
     inline void SetQuerySubmissionTime(const Aws::Utils::DateTime& value) { m_querySubmissionTime = value; }
-
-    /**
-     * <p>The time that the query was submitted.</p>
-     */
     inline void SetQuerySubmissionTime(Aws::Utils::DateTime&& value) { m_querySubmissionTime = std::move(value); }
-
-    /**
-     * <p>The time that the query was submitted.</p>
-     */
     inline GetQueryStatisticsResult& WithQuerySubmissionTime(const Aws::Utils::DateTime& value) { SetQuerySubmissionTime(value); return *this;}
-
-    /**
-     * <p>The time that the query was submitted.</p>
-     */
     inline GetQueryStatisticsResult& WithQuerySubmissionTime(Aws::Utils::DateTime&& value) { SetQuerySubmissionTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetQueryStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetQueryStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetQueryStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ExecutionStatistics m_executionStatistics;

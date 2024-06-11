@@ -32,106 +32,43 @@ namespace Model
     AWS_TRANSFER_API UpdateHostKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the server identifier for the server that contains the updated host
      * key.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
-
-    /**
-     * <p>Returns the server identifier for the server that contains the updated host
-     * key.</p>
-     */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
-
-    /**
-     * <p>Returns the server identifier for the server that contains the updated host
-     * key.</p>
-     */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
-
-    /**
-     * <p>Returns the server identifier for the server that contains the updated host
-     * key.</p>
-     */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
-
-    /**
-     * <p>Returns the server identifier for the server that contains the updated host
-     * key.</p>
-     */
     inline UpdateHostKeyResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-
-    /**
-     * <p>Returns the server identifier for the server that contains the updated host
-     * key.</p>
-     */
     inline UpdateHostKeyResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the server identifier for the server that contains the updated host
-     * key.</p>
-     */
     inline UpdateHostKeyResult& WithServerId(const char* value) { SetServerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns the host key identifier for the updated host key.</p>
      */
     inline const Aws::String& GetHostKeyId() const{ return m_hostKeyId; }
-
-    /**
-     * <p>Returns the host key identifier for the updated host key.</p>
-     */
     inline void SetHostKeyId(const Aws::String& value) { m_hostKeyId = value; }
-
-    /**
-     * <p>Returns the host key identifier for the updated host key.</p>
-     */
     inline void SetHostKeyId(Aws::String&& value) { m_hostKeyId = std::move(value); }
-
-    /**
-     * <p>Returns the host key identifier for the updated host key.</p>
-     */
     inline void SetHostKeyId(const char* value) { m_hostKeyId.assign(value); }
-
-    /**
-     * <p>Returns the host key identifier for the updated host key.</p>
-     */
     inline UpdateHostKeyResult& WithHostKeyId(const Aws::String& value) { SetHostKeyId(value); return *this;}
-
-    /**
-     * <p>Returns the host key identifier for the updated host key.</p>
-     */
     inline UpdateHostKeyResult& WithHostKeyId(Aws::String&& value) { SetHostKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns the host key identifier for the updated host key.</p>
-     */
     inline UpdateHostKeyResult& WithHostKeyId(const char* value) { SetHostKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateHostKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateHostKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateHostKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverId;

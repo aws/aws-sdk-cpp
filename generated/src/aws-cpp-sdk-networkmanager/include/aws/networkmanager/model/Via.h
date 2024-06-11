@@ -41,103 +41,35 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of network function groups associated with the service insertion
      * action.</p>
      */
     inline const Aws::Vector<NetworkFunctionGroup>& GetNetworkFunctionGroups() const{ return m_networkFunctionGroups; }
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline bool NetworkFunctionGroupsHasBeenSet() const { return m_networkFunctionGroupsHasBeenSet; }
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline void SetNetworkFunctionGroups(const Aws::Vector<NetworkFunctionGroup>& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = value; }
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline void SetNetworkFunctionGroups(Aws::Vector<NetworkFunctionGroup>&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = std::move(value); }
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline Via& WithNetworkFunctionGroups(const Aws::Vector<NetworkFunctionGroup>& value) { SetNetworkFunctionGroups(value); return *this;}
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline Via& WithNetworkFunctionGroups(Aws::Vector<NetworkFunctionGroup>&& value) { SetNetworkFunctionGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline Via& AddNetworkFunctionGroups(const NetworkFunctionGroup& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(value); return *this; }
-
-    /**
-     * <p>The list of network function groups associated with the service insertion
-     * action.</p>
-     */
     inline Via& AddNetworkFunctionGroups(NetworkFunctionGroup&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes any edge overrides. An edge override is a specific edge to be used
      * for traffic.</p>
      */
     inline const Aws::Vector<EdgeOverride>& GetWithEdgeOverrides() const{ return m_withEdgeOverrides; }
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline bool WithEdgeOverridesHasBeenSet() const { return m_withEdgeOverridesHasBeenSet; }
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline void SetWithEdgeOverrides(const Aws::Vector<EdgeOverride>& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides = value; }
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline void SetWithEdgeOverrides(Aws::Vector<EdgeOverride>&& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides = std::move(value); }
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline Via& WithWithEdgeOverrides(const Aws::Vector<EdgeOverride>& value) { SetWithEdgeOverrides(value); return *this;}
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline Via& WithWithEdgeOverrides(Aws::Vector<EdgeOverride>&& value) { SetWithEdgeOverrides(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline Via& AddWithEdgeOverrides(const EdgeOverride& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides.push_back(value); return *this; }
-
-    /**
-     * <p>Describes any edge overrides. An edge override is a specific edge to be used
-     * for traffic.</p>
-     */
     inline Via& AddWithEdgeOverrides(EdgeOverride&& value) { m_withEdgeOverridesHasBeenSet = true; m_withEdgeOverrides.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<NetworkFunctionGroup> m_networkFunctionGroups;

@@ -41,196 +41,72 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID that corresponds to a device offering.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline Offering& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline Offering& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID that corresponds to a device offering.</p>
-     */
     inline Offering& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string that describes the offering.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline Offering& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline Offering& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that describes the offering.</p>
-     */
     inline Offering& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
      */
     inline const OfferingType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
-     */
     inline void SetType(const OfferingType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
-     */
     inline void SetType(OfferingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
-     */
     inline Offering& WithType(const OfferingType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of offering (for example, <code>RECURRING</code>) for a device.</p>
-     */
     inline Offering& WithType(OfferingType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The platform of the device (for example, <code>ANDROID</code> or
      * <code>IOS</code>).</p>
      */
     inline const DevicePlatform& GetPlatform() const{ return m_platform; }
-
-    /**
-     * <p>The platform of the device (for example, <code>ANDROID</code> or
-     * <code>IOS</code>).</p>
-     */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-
-    /**
-     * <p>The platform of the device (for example, <code>ANDROID</code> or
-     * <code>IOS</code>).</p>
-     */
     inline void SetPlatform(const DevicePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
-
-    /**
-     * <p>The platform of the device (for example, <code>ANDROID</code> or
-     * <code>IOS</code>).</p>
-     */
     inline void SetPlatform(DevicePlatform&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-
-    /**
-     * <p>The platform of the device (for example, <code>ANDROID</code> or
-     * <code>IOS</code>).</p>
-     */
     inline Offering& WithPlatform(const DevicePlatform& value) { SetPlatform(value); return *this;}
-
-    /**
-     * <p>The platform of the device (for example, <code>ANDROID</code> or
-     * <code>IOS</code>).</p>
-     */
     inline Offering& WithPlatform(DevicePlatform&& value) { SetPlatform(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether there are recurring charges for the offering.</p>
      */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline void SetRecurringCharges(Aws::Vector<RecurringCharge>&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = std::move(value); }
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline Offering& WithRecurringCharges(const Aws::Vector<RecurringCharge>& value) { SetRecurringCharges(value); return *this;}
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline Offering& WithRecurringCharges(Aws::Vector<RecurringCharge>&& value) { SetRecurringCharges(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline Offering& AddRecurringCharges(const RecurringCharge& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies whether there are recurring charges for the offering.</p>
-     */
     inline Offering& AddRecurringCharges(RecurringCharge&& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

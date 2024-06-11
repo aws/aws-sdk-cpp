@@ -34,46 +34,19 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A name for the data quality ruleset.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline DeleteDataQualityRulesetRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline DeleteDataQualityRulesetRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the data quality ruleset.</p>
-     */
     inline DeleteDataQualityRulesetRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

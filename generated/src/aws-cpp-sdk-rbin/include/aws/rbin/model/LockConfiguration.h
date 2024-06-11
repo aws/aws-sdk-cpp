@@ -38,36 +38,17 @@ namespace Model
     AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the retention rule unlock delay.</p>
      */
     inline const UnlockDelay& GetUnlockDelay() const{ return m_unlockDelay; }
-
-    /**
-     * <p>Information about the retention rule unlock delay.</p>
-     */
     inline bool UnlockDelayHasBeenSet() const { return m_unlockDelayHasBeenSet; }
-
-    /**
-     * <p>Information about the retention rule unlock delay.</p>
-     */
     inline void SetUnlockDelay(const UnlockDelay& value) { m_unlockDelayHasBeenSet = true; m_unlockDelay = value; }
-
-    /**
-     * <p>Information about the retention rule unlock delay.</p>
-     */
     inline void SetUnlockDelay(UnlockDelay&& value) { m_unlockDelayHasBeenSet = true; m_unlockDelay = std::move(value); }
-
-    /**
-     * <p>Information about the retention rule unlock delay.</p>
-     */
     inline LockConfiguration& WithUnlockDelay(const UnlockDelay& value) { SetUnlockDelay(value); return *this;}
-
-    /**
-     * <p>Information about the retention rule unlock delay.</p>
-     */
     inline LockConfiguration& WithUnlockDelay(UnlockDelay&& value) { SetUnlockDelay(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UnlockDelay m_unlockDelay;

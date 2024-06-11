@@ -32,87 +32,33 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the global network.</p>
      */
     inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DeleteConnectionRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DeleteConnectionRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DeleteConnectionRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the connection.</p>
      */
     inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline DeleteConnectionRequest& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline DeleteConnectionRequest& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the connection.</p>
-     */
     inline DeleteConnectionRequest& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalNetworkId;

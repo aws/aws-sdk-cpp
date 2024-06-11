@@ -33,53 +33,27 @@ namespace Model
     AWS_DAX_API UpdateClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A description of the DAX cluster, after it has been modified.</p>
      */
     inline const Cluster& GetCluster() const{ return m_cluster; }
-
-    /**
-     * <p>A description of the DAX cluster, after it has been modified.</p>
-     */
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
-
-    /**
-     * <p>A description of the DAX cluster, after it has been modified.</p>
-     */
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-
-    /**
-     * <p>A description of the DAX cluster, after it has been modified.</p>
-     */
     inline UpdateClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-
-    /**
-     * <p>A description of the DAX cluster, after it has been modified.</p>
-     */
     inline UpdateClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Cluster m_cluster;

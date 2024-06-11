@@ -40,138 +40,49 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The error associated with a failed PartiQL batch statement. </p>
      */
     inline const BatchStatementError& GetError() const{ return m_error; }
-
-    /**
-     * <p> The error associated with a failed PartiQL batch statement. </p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p> The error associated with a failed PartiQL batch statement. </p>
-     */
     inline void SetError(const BatchStatementError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p> The error associated with a failed PartiQL batch statement. </p>
-     */
     inline void SetError(BatchStatementError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p> The error associated with a failed PartiQL batch statement. </p>
-     */
     inline BatchStatementResponse& WithError(const BatchStatementError& value) { SetError(value); return *this;}
-
-    /**
-     * <p> The error associated with a failed PartiQL batch statement. </p>
-     */
     inline BatchStatementResponse& WithError(BatchStatementError&& value) { SetError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The table name associated with a failed PartiQL batch statement. </p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline BatchStatementResponse& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline BatchStatementResponse& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p> The table name associated with a failed PartiQL batch statement. </p>
-     */
     inline BatchStatementResponse& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A DynamoDB item associated with a BatchStatementResponse </p>
      */
     inline const Aws::Map<Aws::String, AttributeValue>& GetItem() const{ return m_item; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline void SetItem(const Aws::Map<Aws::String, AttributeValue>& value) { m_itemHasBeenSet = true; m_item = value; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline void SetItem(Aws::Map<Aws::String, AttributeValue>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& WithItem(const Aws::Map<Aws::String, AttributeValue>& value) { SetItem(value); return *this;}
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& WithItem(Aws::Map<Aws::String, AttributeValue>&& value) { SetItem(std::move(value)); return *this;}
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& AddItem(const Aws::String& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& AddItem(Aws::String&& key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& AddItem(const Aws::String& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& AddItem(Aws::String&& key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& AddItem(const char* key, AttributeValue&& value) { m_itemHasBeenSet = true; m_item.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A DynamoDB item associated with a BatchStatementResponse </p>
-     */
     inline BatchStatementResponse& AddItem(const char* key, const AttributeValue& value) { m_itemHasBeenSet = true; m_item.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     BatchStatementError m_error;

@@ -39,54 +39,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the cluster from which to get the logging status.</p>
      * <p>Example: <code>examplecluster</code> </p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline DescribeLoggingStatusRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline DescribeLoggingStatusRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the cluster from which to get the logging status.</p>
-     * <p>Example: <code>examplecluster</code> </p>
-     */
     inline DescribeLoggingStatusRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

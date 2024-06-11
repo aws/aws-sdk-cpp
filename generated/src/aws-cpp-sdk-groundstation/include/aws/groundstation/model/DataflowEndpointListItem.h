@@ -38,87 +38,33 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>ARN of a dataflow endpoint group.</p>
      */
     inline const Aws::String& GetDataflowEndpointGroupArn() const{ return m_dataflowEndpointGroupArn; }
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline bool DataflowEndpointGroupArnHasBeenSet() const { return m_dataflowEndpointGroupArnHasBeenSet; }
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupArn(const Aws::String& value) { m_dataflowEndpointGroupArnHasBeenSet = true; m_dataflowEndpointGroupArn = value; }
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupArn(Aws::String&& value) { m_dataflowEndpointGroupArnHasBeenSet = true; m_dataflowEndpointGroupArn = std::move(value); }
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupArn(const char* value) { m_dataflowEndpointGroupArnHasBeenSet = true; m_dataflowEndpointGroupArn.assign(value); }
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline DataflowEndpointListItem& WithDataflowEndpointGroupArn(const Aws::String& value) { SetDataflowEndpointGroupArn(value); return *this;}
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline DataflowEndpointListItem& WithDataflowEndpointGroupArn(Aws::String&& value) { SetDataflowEndpointGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of a dataflow endpoint group.</p>
-     */
     inline DataflowEndpointListItem& WithDataflowEndpointGroupArn(const char* value) { SetDataflowEndpointGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>UUID of a dataflow endpoint group.</p>
      */
     inline const Aws::String& GetDataflowEndpointGroupId() const{ return m_dataflowEndpointGroupId; }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline bool DataflowEndpointGroupIdHasBeenSet() const { return m_dataflowEndpointGroupIdHasBeenSet; }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupId(const Aws::String& value) { m_dataflowEndpointGroupIdHasBeenSet = true; m_dataflowEndpointGroupId = value; }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupId(Aws::String&& value) { m_dataflowEndpointGroupIdHasBeenSet = true; m_dataflowEndpointGroupId = std::move(value); }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline void SetDataflowEndpointGroupId(const char* value) { m_dataflowEndpointGroupIdHasBeenSet = true; m_dataflowEndpointGroupId.assign(value); }
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline DataflowEndpointListItem& WithDataflowEndpointGroupId(const Aws::String& value) { SetDataflowEndpointGroupId(value); return *this;}
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline DataflowEndpointListItem& WithDataflowEndpointGroupId(Aws::String&& value) { SetDataflowEndpointGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of a dataflow endpoint group.</p>
-     */
     inline DataflowEndpointListItem& WithDataflowEndpointGroupId(const char* value) { SetDataflowEndpointGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataflowEndpointGroupArn;

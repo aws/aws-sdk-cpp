@@ -34,63 +34,29 @@ namespace Model
     AWS_DIRECTCONNECT_API DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the tags.</p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline void SetResourceTags(const Aws::Vector<ResourceTag>& value) { m_resourceTags = value; }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline void SetResourceTags(Aws::Vector<ResourceTag>&& value) { m_resourceTags = std::move(value); }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& WithResourceTags(const Aws::Vector<ResourceTag>& value) { SetResourceTags(value); return *this;}
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& WithResourceTags(Aws::Vector<ResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& AddResourceTags(const ResourceTag& value) { m_resourceTags.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the tags.</p>
-     */
     inline DescribeTagsResult& AddResourceTags(ResourceTag&& value) { m_resourceTags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ResourceTag> m_resourceTags;

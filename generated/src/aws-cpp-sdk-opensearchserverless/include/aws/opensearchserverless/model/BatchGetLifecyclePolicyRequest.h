@@ -35,46 +35,19 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifiers of policy types and policy names.</p>
      */
     inline const Aws::Vector<LifecyclePolicyIdentifier>& GetIdentifiers() const{ return m_identifiers; }
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline void SetIdentifiers(const Aws::Vector<LifecyclePolicyIdentifier>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline void SetIdentifiers(Aws::Vector<LifecyclePolicyIdentifier>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline BatchGetLifecyclePolicyRequest& WithIdentifiers(const Aws::Vector<LifecyclePolicyIdentifier>& value) { SetIdentifiers(value); return *this;}
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline BatchGetLifecyclePolicyRequest& WithIdentifiers(Aws::Vector<LifecyclePolicyIdentifier>&& value) { SetIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline BatchGetLifecyclePolicyRequest& AddIdentifiers(const LifecyclePolicyIdentifier& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-
-    /**
-     * <p>The unique identifiers of policy types and policy names.</p>
-     */
     inline BatchGetLifecyclePolicyRequest& AddIdentifiers(LifecyclePolicyIdentifier&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LifecyclePolicyIdentifier> m_identifiers;

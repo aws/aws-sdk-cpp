@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lookback window setup for an incremental refresh configuration.</p>
      */
     inline const LookbackWindow& GetLookbackWindow() const{ return m_lookbackWindow; }
-
-    /**
-     * <p>The lookback window setup for an incremental refresh configuration.</p>
-     */
     inline bool LookbackWindowHasBeenSet() const { return m_lookbackWindowHasBeenSet; }
-
-    /**
-     * <p>The lookback window setup for an incremental refresh configuration.</p>
-     */
     inline void SetLookbackWindow(const LookbackWindow& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = value; }
-
-    /**
-     * <p>The lookback window setup for an incremental refresh configuration.</p>
-     */
     inline void SetLookbackWindow(LookbackWindow&& value) { m_lookbackWindowHasBeenSet = true; m_lookbackWindow = std::move(value); }
-
-    /**
-     * <p>The lookback window setup for an incremental refresh configuration.</p>
-     */
     inline IncrementalRefresh& WithLookbackWindow(const LookbackWindow& value) { SetLookbackWindow(value); return *this;}
-
-    /**
-     * <p>The lookback window setup for an incremental refresh configuration.</p>
-     */
     inline IncrementalRefresh& WithLookbackWindow(LookbackWindow&& value) { SetLookbackWindow(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LookbackWindow m_lookbackWindow;

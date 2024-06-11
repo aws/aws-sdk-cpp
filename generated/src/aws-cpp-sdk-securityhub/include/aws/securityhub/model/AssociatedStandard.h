@@ -38,6 +38,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of a standard in which a control is enabled. This field
      * consists of the resource portion of the Amazon Resource Name (ARN) returned for
@@ -46,70 +47,14 @@ namespace Model
      * API response. </p>
      */
     inline const Aws::String& GetStandardsId() const{ return m_standardsId; }
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline bool StandardsIdHasBeenSet() const { return m_standardsIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline void SetStandardsId(const Aws::String& value) { m_standardsIdHasBeenSet = true; m_standardsId = value; }
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline void SetStandardsId(Aws::String&& value) { m_standardsIdHasBeenSet = true; m_standardsId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline void SetStandardsId(const char* value) { m_standardsIdHasBeenSet = true; m_standardsId.assign(value); }
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline AssociatedStandard& WithStandardsId(const Aws::String& value) { SetStandardsId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline AssociatedStandard& WithStandardsId(Aws::String&& value) { SetStandardsId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of a standard in which a control is enabled. This field
-     * consists of the resource portion of the Amazon Resource Name (ARN) returned for
-     * a standard in the <a
-     * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
-     * API response. </p>
-     */
     inline AssociatedStandard& WithStandardsId(const char* value) { SetStandardsId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_standardsId;

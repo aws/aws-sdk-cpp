@@ -33,91 +33,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account that you want to delete an identity
      * propagation configuration from.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline DeleteIdentityPropagationConfigRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline DeleteIdentityPropagationConfigRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that you want to delete an identity
-     * propagation configuration from.</p>
-     */
     inline DeleteIdentityPropagationConfigRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Web Services service that you want to delete the
      * associated access scopes and authorized targets from.</p>
      */
     inline const ServiceType& GetService() const{ return m_service; }
-
-    /**
-     * <p>The name of the Amazon Web Services service that you want to delete the
-     * associated access scopes and authorized targets from.</p>
-     */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Services service that you want to delete the
-     * associated access scopes and authorized targets from.</p>
-     */
     inline void SetService(const ServiceType& value) { m_serviceHasBeenSet = true; m_service = value; }
-
-    /**
-     * <p>The name of the Amazon Web Services service that you want to delete the
-     * associated access scopes and authorized targets from.</p>
-     */
     inline void SetService(ServiceType&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Services service that you want to delete the
-     * associated access scopes and authorized targets from.</p>
-     */
     inline DeleteIdentityPropagationConfigRequest& WithService(const ServiceType& value) { SetService(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Services service that you want to delete the
-     * associated access scopes and authorized targets from.</p>
-     */
     inline DeleteIdentityPropagationConfigRequest& WithService(ServiceType&& value) { SetService(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

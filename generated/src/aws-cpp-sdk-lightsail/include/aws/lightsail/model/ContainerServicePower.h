@@ -39,175 +39,74 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the power (<code>nano-1</code>).</p>
      */
     inline const Aws::String& GetPowerId() const{ return m_powerId; }
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline bool PowerIdHasBeenSet() const { return m_powerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline void SetPowerId(const Aws::String& value) { m_powerIdHasBeenSet = true; m_powerId = value; }
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline void SetPowerId(Aws::String&& value) { m_powerIdHasBeenSet = true; m_powerId = std::move(value); }
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline void SetPowerId(const char* value) { m_powerIdHasBeenSet = true; m_powerId.assign(value); }
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline ContainerServicePower& WithPowerId(const Aws::String& value) { SetPowerId(value); return *this;}
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline ContainerServicePower& WithPowerId(Aws::String&& value) { SetPowerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the power (<code>nano-1</code>).</p>
-     */
     inline ContainerServicePower& WithPowerId(const char* value) { SetPowerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The monthly price of the power in USD.</p>
      */
     inline double GetPrice() const{ return m_price; }
-
-    /**
-     * <p>The monthly price of the power in USD.</p>
-     */
     inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
-
-    /**
-     * <p>The monthly price of the power in USD.</p>
-     */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
-
-    /**
-     * <p>The monthly price of the power in USD.</p>
-     */
     inline ContainerServicePower& WithPrice(double value) { SetPrice(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of vCPUs included in the power.</p>
      */
     inline double GetCpuCount() const{ return m_cpuCount; }
-
-    /**
-     * <p>The number of vCPUs included in the power.</p>
-     */
     inline bool CpuCountHasBeenSet() const { return m_cpuCountHasBeenSet; }
-
-    /**
-     * <p>The number of vCPUs included in the power.</p>
-     */
     inline void SetCpuCount(double value) { m_cpuCountHasBeenSet = true; m_cpuCount = value; }
-
-    /**
-     * <p>The number of vCPUs included in the power.</p>
-     */
     inline ContainerServicePower& WithCpuCount(double value) { SetCpuCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of RAM (in GB) of the power.</p>
      */
     inline double GetRamSizeInGb() const{ return m_ramSizeInGb; }
-
-    /**
-     * <p>The amount of RAM (in GB) of the power.</p>
-     */
     inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
-
-    /**
-     * <p>The amount of RAM (in GB) of the power.</p>
-     */
     inline void SetRamSizeInGb(double value) { m_ramSizeInGbHasBeenSet = true; m_ramSizeInGb = value; }
-
-    /**
-     * <p>The amount of RAM (in GB) of the power.</p>
-     */
     inline ContainerServicePower& WithRamSizeInGb(double value) { SetRamSizeInGb(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The friendly name of the power (<code>nano</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline ContainerServicePower& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline ContainerServicePower& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The friendly name of the power (<code>nano</code>).</p>
-     */
     inline ContainerServicePower& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A Boolean value indicating whether the power is active and can be specified
      * for container services.</p>
      */
     inline bool GetIsActive() const{ return m_isActive; }
-
-    /**
-     * <p>A Boolean value indicating whether the power is active and can be specified
-     * for container services.</p>
-     */
     inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
-
-    /**
-     * <p>A Boolean value indicating whether the power is active and can be specified
-     * for container services.</p>
-     */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
-
-    /**
-     * <p>A Boolean value indicating whether the power is active and can be specified
-     * for container services.</p>
-     */
     inline ContainerServicePower& WithIsActive(bool value) { SetIsActive(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_powerId;

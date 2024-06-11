@@ -33,37 +33,23 @@ namespace Model
     AWS_REDSHIFT_API ResumeClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const Cluster& GetCluster() const{ return m_cluster; }
-
-    
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
-
-    
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-
-    
     inline ResumeClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-
-    
     inline ResumeClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ResumeClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ResumeClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Cluster m_cluster;

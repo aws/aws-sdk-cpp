@@ -33,99 +33,42 @@ namespace Model
     AWS_FSX_API DeleteFileCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the cache that's being deleted.</p>
      */
     inline const Aws::String& GetFileCacheId() const{ return m_fileCacheId; }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline void SetFileCacheId(const Aws::String& value) { m_fileCacheId = value; }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline void SetFileCacheId(Aws::String&& value) { m_fileCacheId = std::move(value); }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline void SetFileCacheId(const char* value) { m_fileCacheId.assign(value); }
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline DeleteFileCacheResult& WithFileCacheId(const Aws::String& value) { SetFileCacheId(value); return *this;}
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline DeleteFileCacheResult& WithFileCacheId(Aws::String&& value) { SetFileCacheId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the cache that's being deleted.</p>
-     */
     inline DeleteFileCacheResult& WithFileCacheId(const char* value) { SetFileCacheId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cache lifecycle for the deletion request. If the
      * <code>DeleteFileCache</code> operation is successful, this status is
      * <code>DELETING</code>.</p>
      */
     inline const FileCacheLifecycle& GetLifecycle() const{ return m_lifecycle; }
-
-    /**
-     * <p>The cache lifecycle for the deletion request. If the
-     * <code>DeleteFileCache</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline void SetLifecycle(const FileCacheLifecycle& value) { m_lifecycle = value; }
-
-    /**
-     * <p>The cache lifecycle for the deletion request. If the
-     * <code>DeleteFileCache</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline void SetLifecycle(FileCacheLifecycle&& value) { m_lifecycle = std::move(value); }
-
-    /**
-     * <p>The cache lifecycle for the deletion request. If the
-     * <code>DeleteFileCache</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline DeleteFileCacheResult& WithLifecycle(const FileCacheLifecycle& value) { SetLifecycle(value); return *this;}
-
-    /**
-     * <p>The cache lifecycle for the deletion request. If the
-     * <code>DeleteFileCache</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline DeleteFileCacheResult& WithLifecycle(FileCacheLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteFileCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteFileCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteFileCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileCacheId;

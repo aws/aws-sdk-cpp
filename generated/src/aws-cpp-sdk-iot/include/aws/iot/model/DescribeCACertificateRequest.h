@@ -36,46 +36,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The CA certificate identifier.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline DescribeCACertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline DescribeCACertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The CA certificate identifier.</p>
-     */
     inline DescribeCACertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_certificateId;

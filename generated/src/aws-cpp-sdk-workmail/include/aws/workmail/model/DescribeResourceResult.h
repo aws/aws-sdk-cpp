@@ -36,332 +36,135 @@ namespace Model
     AWS_WORKMAIL_API DescribeResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the described resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The identifier of the described resource.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceId = value; }
-
-    /**
-     * <p>The identifier of the described resource.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the described resource.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceId.assign(value); }
-
-    /**
-     * <p>The identifier of the described resource.</p>
-     */
     inline DescribeResourceResult& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the described resource.</p>
-     */
     inline DescribeResourceResult& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the described resource.</p>
-     */
     inline DescribeResourceResult& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The email of the described resource.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
-
-    /**
-     * <p>The email of the described resource.</p>
-     */
     inline void SetEmail(const Aws::String& value) { m_email = value; }
-
-    /**
-     * <p>The email of the described resource.</p>
-     */
     inline void SetEmail(Aws::String&& value) { m_email = std::move(value); }
-
-    /**
-     * <p>The email of the described resource.</p>
-     */
     inline void SetEmail(const char* value) { m_email.assign(value); }
-
-    /**
-     * <p>The email of the described resource.</p>
-     */
     inline DescribeResourceResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-
-    /**
-     * <p>The email of the described resource.</p>
-     */
     inline DescribeResourceResult& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-
-    /**
-     * <p>The email of the described resource.</p>
-     */
     inline DescribeResourceResult& WithEmail(const char* value) { SetEmail(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the described resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the described resource.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the described resource.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the described resource.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the described resource.</p>
-     */
     inline DescribeResourceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the described resource.</p>
-     */
     inline DescribeResourceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the described resource.</p>
-     */
     inline DescribeResourceResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the described resource.</p>
      */
     inline const ResourceType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the described resource.</p>
-     */
     inline void SetType(const ResourceType& value) { m_type = value; }
-
-    /**
-     * <p>The type of the described resource.</p>
-     */
     inline void SetType(ResourceType&& value) { m_type = std::move(value); }
-
-    /**
-     * <p>The type of the described resource.</p>
-     */
     inline DescribeResourceResult& WithType(const ResourceType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the described resource.</p>
-     */
     inline DescribeResourceResult& WithType(ResourceType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The booking options for the described resource.</p>
      */
     inline const BookingOptions& GetBookingOptions() const{ return m_bookingOptions; }
-
-    /**
-     * <p>The booking options for the described resource.</p>
-     */
     inline void SetBookingOptions(const BookingOptions& value) { m_bookingOptions = value; }
-
-    /**
-     * <p>The booking options for the described resource.</p>
-     */
     inline void SetBookingOptions(BookingOptions&& value) { m_bookingOptions = std::move(value); }
-
-    /**
-     * <p>The booking options for the described resource.</p>
-     */
     inline DescribeResourceResult& WithBookingOptions(const BookingOptions& value) { SetBookingOptions(value); return *this;}
-
-    /**
-     * <p>The booking options for the described resource.</p>
-     */
     inline DescribeResourceResult& WithBookingOptions(BookingOptions&& value) { SetBookingOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the resource: enabled (registered to WorkMail), disabled
      * (deregistered or never registered to WorkMail), or deleted.</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the resource: enabled (registered to WorkMail), disabled
-     * (deregistered or never registered to WorkMail), or deleted.</p>
-     */
     inline void SetState(const EntityState& value) { m_state = value; }
-
-    /**
-     * <p>The state of the resource: enabled (registered to WorkMail), disabled
-     * (deregistered or never registered to WorkMail), or deleted.</p>
-     */
     inline void SetState(EntityState&& value) { m_state = std::move(value); }
-
-    /**
-     * <p>The state of the resource: enabled (registered to WorkMail), disabled
-     * (deregistered or never registered to WorkMail), or deleted.</p>
-     */
     inline DescribeResourceResult& WithState(const EntityState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the resource: enabled (registered to WorkMail), disabled
-     * (deregistered or never registered to WorkMail), or deleted.</p>
-     */
     inline DescribeResourceResult& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch
      * time format.</p>
      */
     inline const Aws::Utils::DateTime& GetEnabledDate() const{ return m_enabledDate; }
-
-    /**
-     * <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline void SetEnabledDate(const Aws::Utils::DateTime& value) { m_enabledDate = value; }
-
-    /**
-     * <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline void SetEnabledDate(Aws::Utils::DateTime&& value) { m_enabledDate = std::move(value); }
-
-    /**
-     * <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline DescribeResourceResult& WithEnabledDate(const Aws::Utils::DateTime& value) { SetEnabledDate(value); return *this;}
-
-    /**
-     * <p>The date and time when a resource was enabled for WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline DescribeResourceResult& WithEnabledDate(Aws::Utils::DateTime&& value) { SetEnabledDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch
      * time format.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledDate() const{ return m_disabledDate; }
-
-    /**
-     * <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline void SetDisabledDate(const Aws::Utils::DateTime& value) { m_disabledDate = value; }
-
-    /**
-     * <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline void SetDisabledDate(Aws::Utils::DateTime&& value) { m_disabledDate = std::move(value); }
-
-    /**
-     * <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline DescribeResourceResult& WithDisabledDate(const Aws::Utils::DateTime& value) { SetDisabledDate(value); return *this;}
-
-    /**
-     * <p>The date and time when a resource was disabled from WorkMail, in UNIX epoch
-     * time format.</p>
-     */
     inline DescribeResourceResult& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Description of the resource.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Description of the resource.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>Description of the resource.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>Description of the resource.</p>
-     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>Description of the resource.</p>
-     */
     inline DescribeResourceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Description of the resource.</p>
-     */
     inline DescribeResourceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Description of the resource.</p>
-     */
     inline DescribeResourceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If enabled, the resource is hidden from the global address list.</p>
      */
     inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
-
-    /**
-     * <p>If enabled, the resource is hidden from the global address list.</p>
-     */
     inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressList = value; }
-
-    /**
-     * <p>If enabled, the resource is hidden from the global address list.</p>
-     */
     inline DescribeResourceResult& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceId;

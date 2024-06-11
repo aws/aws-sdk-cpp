@@ -43,95 +43,34 @@ namespace Model
     AWS_PROMETHEUSSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>A unique identifier that you can provide to ensure the idempotency of the
      * request. Case-sensitive.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline DeleteLoggingConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline DeleteLoggingConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier that you can provide to ensure the idempotency of the
-     * request. Case-sensitive.</p>
-     */
     inline DeleteLoggingConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the workspace containing the logging configuration to delete.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline DeleteLoggingConfigurationRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline DeleteLoggingConfigurationRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the workspace containing the logging configuration to delete.</p>
-     */
     inline DeleteLoggingConfigurationRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

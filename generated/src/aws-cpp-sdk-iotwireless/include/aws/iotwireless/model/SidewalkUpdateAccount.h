@@ -37,46 +37,19 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The new Sidewalk application server private key.</p>
      */
     inline const Aws::String& GetAppServerPrivateKey() const{ return m_appServerPrivateKey; }
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline bool AppServerPrivateKeyHasBeenSet() const { return m_appServerPrivateKeyHasBeenSet; }
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline void SetAppServerPrivateKey(const Aws::String& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = value; }
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline void SetAppServerPrivateKey(Aws::String&& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = std::move(value); }
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline void SetAppServerPrivateKey(const char* value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey.assign(value); }
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline SidewalkUpdateAccount& WithAppServerPrivateKey(const Aws::String& value) { SetAppServerPrivateKey(value); return *this;}
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline SidewalkUpdateAccount& WithAppServerPrivateKey(Aws::String&& value) { SetAppServerPrivateKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The new Sidewalk application server private key.</p>
-     */
     inline SidewalkUpdateAccount& WithAppServerPrivateKey(const char* value) { SetAppServerPrivateKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appServerPrivateKey;

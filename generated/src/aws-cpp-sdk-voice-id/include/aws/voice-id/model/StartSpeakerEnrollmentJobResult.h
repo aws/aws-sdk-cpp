@@ -33,53 +33,27 @@ namespace Model
     AWS_VOICEID_API StartSpeakerEnrollmentJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the started speaker enrollment job.</p>
      */
     inline const SpeakerEnrollmentJob& GetJob() const{ return m_job; }
-
-    /**
-     * <p>Details about the started speaker enrollment job.</p>
-     */
     inline void SetJob(const SpeakerEnrollmentJob& value) { m_job = value; }
-
-    /**
-     * <p>Details about the started speaker enrollment job.</p>
-     */
     inline void SetJob(SpeakerEnrollmentJob&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>Details about the started speaker enrollment job.</p>
-     */
     inline StartSpeakerEnrollmentJobResult& WithJob(const SpeakerEnrollmentJob& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>Details about the started speaker enrollment job.</p>
-     */
     inline StartSpeakerEnrollmentJobResult& WithJob(SpeakerEnrollmentJob&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartSpeakerEnrollmentJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartSpeakerEnrollmentJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartSpeakerEnrollmentJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SpeakerEnrollmentJob m_job;

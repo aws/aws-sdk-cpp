@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API DeleteTransitGatewayConnectResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the deleted Connect attachment.</p>
      */
     inline const TransitGatewayConnect& GetTransitGatewayConnect() const{ return m_transitGatewayConnect; }
-
-    /**
-     * <p>Information about the deleted Connect attachment.</p>
-     */
     inline void SetTransitGatewayConnect(const TransitGatewayConnect& value) { m_transitGatewayConnect = value; }
-
-    /**
-     * <p>Information about the deleted Connect attachment.</p>
-     */
     inline void SetTransitGatewayConnect(TransitGatewayConnect&& value) { m_transitGatewayConnect = std::move(value); }
-
-    /**
-     * <p>Information about the deleted Connect attachment.</p>
-     */
     inline DeleteTransitGatewayConnectResponse& WithTransitGatewayConnect(const TransitGatewayConnect& value) { SetTransitGatewayConnect(value); return *this;}
-
-    /**
-     * <p>Information about the deleted Connect attachment.</p>
-     */
     inline DeleteTransitGatewayConnectResponse& WithTransitGatewayConnect(TransitGatewayConnect&& value) { SetTransitGatewayConnect(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DeleteTransitGatewayConnectResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DeleteTransitGatewayConnectResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitGatewayConnect m_transitGatewayConnect;

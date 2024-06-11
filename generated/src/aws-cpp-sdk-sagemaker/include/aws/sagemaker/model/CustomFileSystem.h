@@ -39,36 +39,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A custom file system in Amazon EFS.</p>
      */
     inline const EFSFileSystem& GetEFSFileSystem() const{ return m_eFSFileSystem; }
-
-    /**
-     * <p>A custom file system in Amazon EFS.</p>
-     */
     inline bool EFSFileSystemHasBeenSet() const { return m_eFSFileSystemHasBeenSet; }
-
-    /**
-     * <p>A custom file system in Amazon EFS.</p>
-     */
     inline void SetEFSFileSystem(const EFSFileSystem& value) { m_eFSFileSystemHasBeenSet = true; m_eFSFileSystem = value; }
-
-    /**
-     * <p>A custom file system in Amazon EFS.</p>
-     */
     inline void SetEFSFileSystem(EFSFileSystem&& value) { m_eFSFileSystemHasBeenSet = true; m_eFSFileSystem = std::move(value); }
-
-    /**
-     * <p>A custom file system in Amazon EFS.</p>
-     */
     inline CustomFileSystem& WithEFSFileSystem(const EFSFileSystem& value) { SetEFSFileSystem(value); return *this;}
-
-    /**
-     * <p>A custom file system in Amazon EFS.</p>
-     */
     inline CustomFileSystem& WithEFSFileSystem(EFSFileSystem&& value) { SetEFSFileSystem(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EFSFileSystem m_eFSFileSystem;

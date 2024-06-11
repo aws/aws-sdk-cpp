@@ -34,46 +34,19 @@ namespace Model
     AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the environment to get status information about.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline DescribeEnvironmentStatusRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline DescribeEnvironmentStatusRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the environment to get status information about.</p>
-     */
     inline DescribeEnvironmentStatusRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_environmentId;

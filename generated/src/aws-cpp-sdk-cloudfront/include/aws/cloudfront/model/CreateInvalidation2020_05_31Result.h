@@ -39,96 +39,41 @@ namespace Model
     AWS_CLOUDFRONT_API CreateInvalidation2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The fully qualified URI of the distribution and invalidation batch request,
      * including the <code>Invalidation ID</code>.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>The fully qualified URI of the distribution and invalidation batch request,
-     * including the <code>Invalidation ID</code>.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_location = value; }
-
-    /**
-     * <p>The fully qualified URI of the distribution and invalidation batch request,
-     * including the <code>Invalidation ID</code>.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_location = std::move(value); }
-
-    /**
-     * <p>The fully qualified URI of the distribution and invalidation batch request,
-     * including the <code>Invalidation ID</code>.</p>
-     */
     inline void SetLocation(const char* value) { m_location.assign(value); }
-
-    /**
-     * <p>The fully qualified URI of the distribution and invalidation batch request,
-     * including the <code>Invalidation ID</code>.</p>
-     */
     inline CreateInvalidation2020_05_31Result& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>The fully qualified URI of the distribution and invalidation batch request,
-     * including the <code>Invalidation ID</code>.</p>
-     */
     inline CreateInvalidation2020_05_31Result& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The fully qualified URI of the distribution and invalidation batch request,
-     * including the <code>Invalidation ID</code>.</p>
-     */
     inline CreateInvalidation2020_05_31Result& WithLocation(const char* value) { SetLocation(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The invalidation's information.</p>
      */
     inline const Invalidation& GetInvalidation() const{ return m_invalidation; }
-
-    /**
-     * <p>The invalidation's information.</p>
-     */
     inline void SetInvalidation(const Invalidation& value) { m_invalidation = value; }
-
-    /**
-     * <p>The invalidation's information.</p>
-     */
     inline void SetInvalidation(Invalidation&& value) { m_invalidation = std::move(value); }
-
-    /**
-     * <p>The invalidation's information.</p>
-     */
     inline CreateInvalidation2020_05_31Result& WithInvalidation(const Invalidation& value) { SetInvalidation(value); return *this;}
-
-    /**
-     * <p>The invalidation's information.</p>
-     */
     inline CreateInvalidation2020_05_31Result& WithInvalidation(Invalidation&& value) { SetInvalidation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateInvalidation2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateInvalidation2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateInvalidation2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_location;

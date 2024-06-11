@@ -37,101 +37,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Auto Scaling group.</p>
-     */
     inline DescribeLifecycleHooksRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The names of one or more lifecycle hooks. If you omit this property, all
      * lifecycle hooks are described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLifecycleHookNames() const{ return m_lifecycleHookNames; }
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline bool LifecycleHookNamesHasBeenSet() const { return m_lifecycleHookNamesHasBeenSet; }
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline void SetLifecycleHookNames(const Aws::Vector<Aws::String>& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = value; }
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline void SetLifecycleHookNames(Aws::Vector<Aws::String>&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames = std::move(value); }
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(const Aws::Vector<Aws::String>& value) { SetLifecycleHookNames(value); return *this;}
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline DescribeLifecycleHooksRequest& WithLifecycleHookNames(Aws::Vector<Aws::String>&& value) { SetLifecycleHookNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const Aws::String& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(Aws::String&& value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of one or more lifecycle hooks. If you omit this property, all
-     * lifecycle hooks are described.</p>
-     */
     inline DescribeLifecycleHooksRequest& AddLifecycleHookNames(const char* value) { m_lifecycleHookNamesHasBeenSet = true; m_lifecycleHookNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_autoScalingGroupName;

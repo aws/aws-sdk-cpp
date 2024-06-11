@@ -32,99 +32,42 @@ namespace Model
     AWS_FRAUDDETECTOR_API DeleteEventsByEventTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Name of event type for which to delete the events.</p>
      */
     inline const Aws::String& GetEventTypeName() const{ return m_eventTypeName; }
-
-    /**
-     * <p>Name of event type for which to delete the events.</p>
-     */
     inline void SetEventTypeName(const Aws::String& value) { m_eventTypeName = value; }
-
-    /**
-     * <p>Name of event type for which to delete the events.</p>
-     */
     inline void SetEventTypeName(Aws::String&& value) { m_eventTypeName = std::move(value); }
-
-    /**
-     * <p>Name of event type for which to delete the events.</p>
-     */
     inline void SetEventTypeName(const char* value) { m_eventTypeName.assign(value); }
-
-    /**
-     * <p>Name of event type for which to delete the events.</p>
-     */
     inline DeleteEventsByEventTypeResult& WithEventTypeName(const Aws::String& value) { SetEventTypeName(value); return *this;}
-
-    /**
-     * <p>Name of event type for which to delete the events.</p>
-     */
     inline DeleteEventsByEventTypeResult& WithEventTypeName(Aws::String&& value) { SetEventTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of event type for which to delete the events.</p>
-     */
     inline DeleteEventsByEventTypeResult& WithEventTypeName(const char* value) { SetEventTypeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the delete request.</p>
      */
     inline const Aws::String& GetEventsDeletionStatus() const{ return m_eventsDeletionStatus; }
-
-    /**
-     * <p>The status of the delete request.</p>
-     */
     inline void SetEventsDeletionStatus(const Aws::String& value) { m_eventsDeletionStatus = value; }
-
-    /**
-     * <p>The status of the delete request.</p>
-     */
     inline void SetEventsDeletionStatus(Aws::String&& value) { m_eventsDeletionStatus = std::move(value); }
-
-    /**
-     * <p>The status of the delete request.</p>
-     */
     inline void SetEventsDeletionStatus(const char* value) { m_eventsDeletionStatus.assign(value); }
-
-    /**
-     * <p>The status of the delete request.</p>
-     */
     inline DeleteEventsByEventTypeResult& WithEventsDeletionStatus(const Aws::String& value) { SetEventsDeletionStatus(value); return *this;}
-
-    /**
-     * <p>The status of the delete request.</p>
-     */
     inline DeleteEventsByEventTypeResult& WithEventsDeletionStatus(Aws::String&& value) { SetEventsDeletionStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the delete request.</p>
-     */
     inline DeleteEventsByEventTypeResult& WithEventsDeletionStatus(const char* value) { SetEventsDeletionStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteEventsByEventTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteEventsByEventTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteEventsByEventTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventTypeName;

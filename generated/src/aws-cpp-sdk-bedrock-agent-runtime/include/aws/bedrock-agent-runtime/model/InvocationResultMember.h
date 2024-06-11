@@ -45,67 +45,29 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The result from the API response from the action group invocation.</p>
      */
     inline const ApiResult& GetApiResult() const{ return m_apiResult; }
-
-    /**
-     * <p>The result from the API response from the action group invocation.</p>
-     */
     inline bool ApiResultHasBeenSet() const { return m_apiResultHasBeenSet; }
-
-    /**
-     * <p>The result from the API response from the action group invocation.</p>
-     */
     inline void SetApiResult(const ApiResult& value) { m_apiResultHasBeenSet = true; m_apiResult = value; }
-
-    /**
-     * <p>The result from the API response from the action group invocation.</p>
-     */
     inline void SetApiResult(ApiResult&& value) { m_apiResultHasBeenSet = true; m_apiResult = std::move(value); }
-
-    /**
-     * <p>The result from the API response from the action group invocation.</p>
-     */
     inline InvocationResultMember& WithApiResult(const ApiResult& value) { SetApiResult(value); return *this;}
-
-    /**
-     * <p>The result from the API response from the action group invocation.</p>
-     */
     inline InvocationResultMember& WithApiResult(ApiResult&& value) { SetApiResult(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The result from the function from the action group invocation.</p>
      */
     inline const FunctionResult& GetFunctionResult() const{ return m_functionResult; }
-
-    /**
-     * <p>The result from the function from the action group invocation.</p>
-     */
     inline bool FunctionResultHasBeenSet() const { return m_functionResultHasBeenSet; }
-
-    /**
-     * <p>The result from the function from the action group invocation.</p>
-     */
     inline void SetFunctionResult(const FunctionResult& value) { m_functionResultHasBeenSet = true; m_functionResult = value; }
-
-    /**
-     * <p>The result from the function from the action group invocation.</p>
-     */
     inline void SetFunctionResult(FunctionResult&& value) { m_functionResultHasBeenSet = true; m_functionResult = std::move(value); }
-
-    /**
-     * <p>The result from the function from the action group invocation.</p>
-     */
     inline InvocationResultMember& WithFunctionResult(const FunctionResult& value) { SetFunctionResult(value); return *this;}
-
-    /**
-     * <p>The result from the function from the action group invocation.</p>
-     */
     inline InvocationResultMember& WithFunctionResult(FunctionResult&& value) { SetFunctionResult(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApiResult m_apiResult;

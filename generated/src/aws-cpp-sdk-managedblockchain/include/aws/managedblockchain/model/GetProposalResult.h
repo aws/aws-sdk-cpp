@@ -33,53 +33,27 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API GetProposalResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about a proposal.</p>
      */
     inline const Proposal& GetProposal() const{ return m_proposal; }
-
-    /**
-     * <p>Information about a proposal.</p>
-     */
     inline void SetProposal(const Proposal& value) { m_proposal = value; }
-
-    /**
-     * <p>Information about a proposal.</p>
-     */
     inline void SetProposal(Proposal&& value) { m_proposal = std::move(value); }
-
-    /**
-     * <p>Information about a proposal.</p>
-     */
     inline GetProposalResult& WithProposal(const Proposal& value) { SetProposal(value); return *this;}
-
-    /**
-     * <p>Information about a proposal.</p>
-     */
     inline GetProposalResult& WithProposal(Proposal&& value) { SetProposal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetProposalResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetProposalResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetProposalResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Proposal m_proposal;

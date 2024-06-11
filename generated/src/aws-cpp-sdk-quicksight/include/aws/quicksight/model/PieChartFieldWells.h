@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field well configuration of a pie chart.</p>
      */
     inline const PieChartAggregatedFieldWells& GetPieChartAggregatedFieldWells() const{ return m_pieChartAggregatedFieldWells; }
-
-    /**
-     * <p>The field well configuration of a pie chart.</p>
-     */
     inline bool PieChartAggregatedFieldWellsHasBeenSet() const { return m_pieChartAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The field well configuration of a pie chart.</p>
-     */
     inline void SetPieChartAggregatedFieldWells(const PieChartAggregatedFieldWells& value) { m_pieChartAggregatedFieldWellsHasBeenSet = true; m_pieChartAggregatedFieldWells = value; }
-
-    /**
-     * <p>The field well configuration of a pie chart.</p>
-     */
     inline void SetPieChartAggregatedFieldWells(PieChartAggregatedFieldWells&& value) { m_pieChartAggregatedFieldWellsHasBeenSet = true; m_pieChartAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The field well configuration of a pie chart.</p>
-     */
     inline PieChartFieldWells& WithPieChartAggregatedFieldWells(const PieChartAggregatedFieldWells& value) { SetPieChartAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The field well configuration of a pie chart.</p>
-     */
     inline PieChartFieldWells& WithPieChartAggregatedFieldWells(PieChartAggregatedFieldWells&& value) { SetPieChartAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PieChartAggregatedFieldWells m_pieChartAggregatedFieldWells;

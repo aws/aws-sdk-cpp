@@ -39,119 +39,51 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type specified for the offering status.</p>
      */
     inline const OfferingTransactionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type specified for the offering status.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type specified for the offering status.</p>
-     */
     inline void SetType(const OfferingTransactionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type specified for the offering status.</p>
-     */
     inline void SetType(OfferingTransactionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type specified for the offering status.</p>
-     */
     inline OfferingStatus& WithType(const OfferingTransactionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type specified for the offering status.</p>
-     */
     inline OfferingStatus& WithType(OfferingTransactionType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the metadata of an offering status.</p>
      */
     inline const Offering& GetOffering() const{ return m_offering; }
-
-    /**
-     * <p>Represents the metadata of an offering status.</p>
-     */
     inline bool OfferingHasBeenSet() const { return m_offeringHasBeenSet; }
-
-    /**
-     * <p>Represents the metadata of an offering status.</p>
-     */
     inline void SetOffering(const Offering& value) { m_offeringHasBeenSet = true; m_offering = value; }
-
-    /**
-     * <p>Represents the metadata of an offering status.</p>
-     */
     inline void SetOffering(Offering&& value) { m_offeringHasBeenSet = true; m_offering = std::move(value); }
-
-    /**
-     * <p>Represents the metadata of an offering status.</p>
-     */
     inline OfferingStatus& WithOffering(const Offering& value) { SetOffering(value); return *this;}
-
-    /**
-     * <p>Represents the metadata of an offering status.</p>
-     */
     inline OfferingStatus& WithOffering(Offering&& value) { SetOffering(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of available devices in the offering.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of available devices in the offering.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of available devices in the offering.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of available devices in the offering.</p>
-     */
     inline OfferingStatus& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date on which the offering is effective.</p>
      */
     inline const Aws::Utils::DateTime& GetEffectiveOn() const{ return m_effectiveOn; }
-
-    /**
-     * <p>The date on which the offering is effective.</p>
-     */
     inline bool EffectiveOnHasBeenSet() const { return m_effectiveOnHasBeenSet; }
-
-    /**
-     * <p>The date on which the offering is effective.</p>
-     */
     inline void SetEffectiveOn(const Aws::Utils::DateTime& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
-
-    /**
-     * <p>The date on which the offering is effective.</p>
-     */
     inline void SetEffectiveOn(Aws::Utils::DateTime&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = std::move(value); }
-
-    /**
-     * <p>The date on which the offering is effective.</p>
-     */
     inline OfferingStatus& WithEffectiveOn(const Aws::Utils::DateTime& value) { SetEffectiveOn(value); return *this;}
-
-    /**
-     * <p>The date on which the offering is effective.</p>
-     */
     inline OfferingStatus& WithEffectiveOn(Aws::Utils::DateTime&& value) { SetEffectiveOn(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OfferingTransactionType m_type;

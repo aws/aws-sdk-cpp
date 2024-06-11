@@ -40,87 +40,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The chart color options for the visual palette.</p>
      */
     inline const Aws::String& GetChartColor() const{ return m_chartColor; }
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline bool ChartColorHasBeenSet() const { return m_chartColorHasBeenSet; }
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline void SetChartColor(const Aws::String& value) { m_chartColorHasBeenSet = true; m_chartColor = value; }
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline void SetChartColor(Aws::String&& value) { m_chartColorHasBeenSet = true; m_chartColor = std::move(value); }
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline void SetChartColor(const char* value) { m_chartColorHasBeenSet = true; m_chartColor.assign(value); }
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline VisualPalette& WithChartColor(const Aws::String& value) { SetChartColor(value); return *this;}
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline VisualPalette& WithChartColor(Aws::String&& value) { SetChartColor(std::move(value)); return *this;}
-
-    /**
-     * <p>The chart color options for the visual palette.</p>
-     */
     inline VisualPalette& WithChartColor(const char* value) { SetChartColor(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The color map options for the visual palette.</p>
      */
     inline const Aws::Vector<DataPathColor>& GetColorMap() const{ return m_colorMap; }
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline bool ColorMapHasBeenSet() const { return m_colorMapHasBeenSet; }
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline void SetColorMap(const Aws::Vector<DataPathColor>& value) { m_colorMapHasBeenSet = true; m_colorMap = value; }
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline void SetColorMap(Aws::Vector<DataPathColor>&& value) { m_colorMapHasBeenSet = true; m_colorMap = std::move(value); }
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline VisualPalette& WithColorMap(const Aws::Vector<DataPathColor>& value) { SetColorMap(value); return *this;}
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline VisualPalette& WithColorMap(Aws::Vector<DataPathColor>&& value) { SetColorMap(std::move(value)); return *this;}
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline VisualPalette& AddColorMap(const DataPathColor& value) { m_colorMapHasBeenSet = true; m_colorMap.push_back(value); return *this; }
-
-    /**
-     * <p>The color map options for the visual palette.</p>
-     */
     inline VisualPalette& AddColorMap(DataPathColor&& value) { m_colorMapHasBeenSet = true; m_colorMap.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_chartColor;

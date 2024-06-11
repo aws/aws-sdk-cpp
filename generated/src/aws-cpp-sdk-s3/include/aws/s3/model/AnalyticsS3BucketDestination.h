@@ -39,37 +39,19 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies the file format used when exporting data to Amazon S3.</p>
      */
     inline const AnalyticsS3ExportFileFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
-     */
     inline void SetFormat(const AnalyticsS3ExportFileFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
-     */
     inline void SetFormat(AnalyticsS3ExportFileFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
-     */
     inline AnalyticsS3BucketDestination& WithFormat(const AnalyticsS3ExportFileFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>Specifies the file format used when exporting data to Amazon S3.</p>
-     */
     inline AnalyticsS3BucketDestination& WithFormat(AnalyticsS3ExportFileFormat&& value) { SetFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The account ID that owns the destination S3 bucket. If no account ID is
      * provided, the owner is not validated before exporting data.</p>  <p>
@@ -77,153 +59,43 @@ namespace Model
      * prevent problems if the destination bucket ownership changes. </p> 
      */
     inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline void SetBucketAccountId(const Aws::String& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = value; }
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline void SetBucketAccountId(Aws::String&& value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId = std::move(value); }
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline void SetBucketAccountId(const char* value) { m_bucketAccountIdHasBeenSet = true; m_bucketAccountId.assign(value); }
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(const Aws::String& value) { SetBucketAccountId(value); return *this;}
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(Aws::String&& value) { SetBucketAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The account ID that owns the destination S3 bucket. If no account ID is
-     * provided, the owner is not validated before exporting data.</p>  <p>
-     * Although this value is optional, we strongly recommend that you set it to help
-     * prevent problems if the destination bucket ownership changes. </p> 
-     */
     inline AnalyticsS3BucketDestination& WithBucketAccountId(const char* value) { SetBucketAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline AnalyticsS3BucketDestination& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline AnalyticsS3BucketDestination& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the bucket to which data is exported.</p>
-     */
     inline AnalyticsS3BucketDestination& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The prefix to use when exporting data. The prefix is prepended to all
      * results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline AnalyticsS3BucketDestination& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline AnalyticsS3BucketDestination& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix to use when exporting data. The prefix is prepended to all
-     * results.</p>
-     */
     inline AnalyticsS3BucketDestination& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     AnalyticsS3ExportFileFormat m_format;

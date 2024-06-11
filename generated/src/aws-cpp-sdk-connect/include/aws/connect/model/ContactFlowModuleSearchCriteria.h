@@ -39,122 +39,45 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
     inline const Aws::Vector<ContactFlowModuleSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline void SetOrConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline void SetOrConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& WithOrConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { SetOrConditions(value); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& WithOrConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& AddOrConditions(const ContactFlowModuleSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>OR</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& AddOrConditions(ContactFlowModuleSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
     inline const Aws::Vector<ContactFlowModuleSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline void SetAndConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline void SetAndConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& WithAndConditions(const Aws::Vector<ContactFlowModuleSearchCriteria>& value) { SetAndConditions(value); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& WithAndConditions(Aws::Vector<ContactFlowModuleSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& AddAndConditions(const ContactFlowModuleSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of conditions which would be applied together with an <code>AND</code>
-     * condition.</p>
-     */
     inline ContactFlowModuleSearchCriteria& AddAndConditions(ContactFlowModuleSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
-
-    
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-
-    
     inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-
-    
     inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-
-    
     inline ContactFlowModuleSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-
-    
     inline ContactFlowModuleSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ContactFlowModuleSearchCriteria> m_orConditions;

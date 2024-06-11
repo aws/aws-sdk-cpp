@@ -38,87 +38,33 @@ namespace Model
     AWS_EMR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The cluster identifier for the bootstrap actions to list.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline ListBootstrapActionsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline ListBootstrapActionsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The cluster identifier for the bootstrap actions to list.</p>
-     */
     inline ListBootstrapActionsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListBootstrapActionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListBootstrapActionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that indicates the next set of results to retrieve.</p>
-     */
     inline ListBootstrapActionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterId;

@@ -41,42 +41,20 @@ namespace Model
     AWS_IAM_API CreateSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-     */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-     */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-     */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-     */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
-     */
     inline CreateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags that are attached to the new IAM SAML provider. The returned
      * list of tags is sorted by tag key. For more information about tagging, see <a
@@ -84,71 +62,22 @@ namespace Model
      * resources</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags that are attached to the new IAM SAML provider. The returned
-     * list of tags is sorted by tag key. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * resources</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-
-    /**
-     * <p>A list of tags that are attached to the new IAM SAML provider. The returned
-     * list of tags is sorted by tag key. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * resources</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags that are attached to the new IAM SAML provider. The returned
-     * list of tags is sorted by tag key. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * resources</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline CreateSAMLProviderResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags that are attached to the new IAM SAML provider. The returned
-     * list of tags is sorted by tag key. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * resources</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline CreateSAMLProviderResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags that are attached to the new IAM SAML provider. The returned
-     * list of tags is sorted by tag key. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * resources</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline CreateSAMLProviderResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags that are attached to the new IAM SAML provider. The returned
-     * list of tags is sorted by tag key. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * resources</a> in the <i>IAM User Guide</i>.</p>
-     */
     inline CreateSAMLProviderResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sAMLProviderArn;

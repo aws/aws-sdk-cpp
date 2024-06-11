@@ -38,6 +38,7 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
      * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
@@ -45,104 +46,28 @@ namespace Model
      * might want to delete the bucket and create a new one.</p> </li> </ul>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline BucketState& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline BucketState& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The state code of the bucket.</p> <p>The following codes are possible:</p>
-     * <ul> <li> <p> <code>OK</code> - The bucket is in a running state.</p> </li> <li>
-     * <p> <code>Unknown</code> - Creation of the bucket might have timed-out. You
-     * might want to delete the bucket and create a new one.</p> </li> </ul>
-     */
     inline BucketState& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message that describes the state of the bucket.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline BucketState& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline BucketState& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message that describes the state of the bucket.</p>
-     */
     inline BucketState& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_code;

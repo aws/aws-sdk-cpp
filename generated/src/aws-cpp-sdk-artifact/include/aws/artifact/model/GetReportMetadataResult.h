@@ -33,53 +33,27 @@ namespace Model
     AWS_ARTIFACT_API GetReportMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Report resource detail.</p>
      */
     inline const ReportDetail& GetReportDetails() const{ return m_reportDetails; }
-
-    /**
-     * <p>Report resource detail.</p>
-     */
     inline void SetReportDetails(const ReportDetail& value) { m_reportDetails = value; }
-
-    /**
-     * <p>Report resource detail.</p>
-     */
     inline void SetReportDetails(ReportDetail&& value) { m_reportDetails = std::move(value); }
-
-    /**
-     * <p>Report resource detail.</p>
-     */
     inline GetReportMetadataResult& WithReportDetails(const ReportDetail& value) { SetReportDetails(value); return *this;}
-
-    /**
-     * <p>Report resource detail.</p>
-     */
     inline GetReportMetadataResult& WithReportDetails(ReportDetail&& value) { SetReportDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetReportMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetReportMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetReportMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReportDetail m_reportDetails;

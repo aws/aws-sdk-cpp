@@ -34,106 +34,43 @@ namespace Model
     AWS_IOT_API ListTopicRuleDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about a topic rule destination.</p>
      */
     inline const Aws::Vector<TopicRuleDestinationSummary>& GetDestinationSummaries() const{ return m_destinationSummaries; }
-
-    /**
-     * <p>Information about a topic rule destination.</p>
-     */
     inline void SetDestinationSummaries(const Aws::Vector<TopicRuleDestinationSummary>& value) { m_destinationSummaries = value; }
-
-    /**
-     * <p>Information about a topic rule destination.</p>
-     */
     inline void SetDestinationSummaries(Aws::Vector<TopicRuleDestinationSummary>&& value) { m_destinationSummaries = std::move(value); }
-
-    /**
-     * <p>Information about a topic rule destination.</p>
-     */
     inline ListTopicRuleDestinationsResult& WithDestinationSummaries(const Aws::Vector<TopicRuleDestinationSummary>& value) { SetDestinationSummaries(value); return *this;}
-
-    /**
-     * <p>Information about a topic rule destination.</p>
-     */
     inline ListTopicRuleDestinationsResult& WithDestinationSummaries(Aws::Vector<TopicRuleDestinationSummary>&& value) { SetDestinationSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about a topic rule destination.</p>
-     */
     inline ListTopicRuleDestinationsResult& AddDestinationSummaries(const TopicRuleDestinationSummary& value) { m_destinationSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>Information about a topic rule destination.</p>
-     */
     inline ListTopicRuleDestinationsResult& AddDestinationSummaries(TopicRuleDestinationSummary&& value) { m_destinationSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use to get the next set of results, or <b>null</b> if there are
      * no additional results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use to get the next set of results, or <b>null</b> if there are
-     * no additional results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use to get the next set of results, or <b>null</b> if there are
-     * no additional results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use to get the next set of results, or <b>null</b> if there are
-     * no additional results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use to get the next set of results, or <b>null</b> if there are
-     * no additional results.</p>
-     */
     inline ListTopicRuleDestinationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use to get the next set of results, or <b>null</b> if there are
-     * no additional results.</p>
-     */
     inline ListTopicRuleDestinationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use to get the next set of results, or <b>null</b> if there are
-     * no additional results.</p>
-     */
     inline ListTopicRuleDestinationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTopicRuleDestinationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTopicRuleDestinationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTopicRuleDestinationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TopicRuleDestinationSummary> m_destinationSummaries;

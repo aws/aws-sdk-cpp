@@ -32,63 +32,29 @@ namespace Model
     AWS_FORECASTSERVICE_API CreateForecastExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the export job.</p>
      */
     inline const Aws::String& GetForecastExportJobArn() const{ return m_forecastExportJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export job.</p>
-     */
     inline void SetForecastExportJobArn(const Aws::String& value) { m_forecastExportJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export job.</p>
-     */
     inline void SetForecastExportJobArn(Aws::String&& value) { m_forecastExportJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export job.</p>
-     */
     inline void SetForecastExportJobArn(const char* value) { m_forecastExportJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export job.</p>
-     */
     inline CreateForecastExportJobResult& WithForecastExportJobArn(const Aws::String& value) { SetForecastExportJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export job.</p>
-     */
     inline CreateForecastExportJobResult& WithForecastExportJobArn(Aws::String&& value) { SetForecastExportJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the export job.</p>
-     */
     inline CreateForecastExportJobResult& WithForecastExportJobArn(const char* value) { SetForecastExportJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateForecastExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateForecastExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateForecastExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_forecastExportJobArn;

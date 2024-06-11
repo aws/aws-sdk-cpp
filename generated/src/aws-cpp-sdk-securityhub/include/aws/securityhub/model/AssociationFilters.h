@@ -42,126 +42,46 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The ARN or UUID of the configuration policy. </p>
      */
     inline const Aws::String& GetConfigurationPolicyId() const{ return m_configurationPolicyId; }
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline bool ConfigurationPolicyIdHasBeenSet() const { return m_configurationPolicyIdHasBeenSet; }
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline void SetConfigurationPolicyId(const Aws::String& value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId = value; }
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline void SetConfigurationPolicyId(Aws::String&& value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId = std::move(value); }
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline void SetConfigurationPolicyId(const char* value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId.assign(value); }
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline AssociationFilters& WithConfigurationPolicyId(const Aws::String& value) { SetConfigurationPolicyId(value); return *this;}
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline AssociationFilters& WithConfigurationPolicyId(Aws::String&& value) { SetConfigurationPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ARN or UUID of the configuration policy. </p>
-     */
     inline AssociationFilters& WithConfigurationPolicyId(const char* value) { SetConfigurationPolicyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Indicates whether the association between a target and a configuration was
      * directly applied by the Security Hub delegated administrator or inherited from a
      * parent. </p>
      */
     inline const AssociationType& GetAssociationType() const{ return m_associationType; }
-
-    /**
-     * <p> Indicates whether the association between a target and a configuration was
-     * directly applied by the Security Hub delegated administrator or inherited from a
-     * parent. </p>
-     */
     inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
-
-    /**
-     * <p> Indicates whether the association between a target and a configuration was
-     * directly applied by the Security Hub delegated administrator or inherited from a
-     * parent. </p>
-     */
     inline void SetAssociationType(const AssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
-
-    /**
-     * <p> Indicates whether the association between a target and a configuration was
-     * directly applied by the Security Hub delegated administrator or inherited from a
-     * parent. </p>
-     */
     inline void SetAssociationType(AssociationType&& value) { m_associationTypeHasBeenSet = true; m_associationType = std::move(value); }
-
-    /**
-     * <p> Indicates whether the association between a target and a configuration was
-     * directly applied by the Security Hub delegated administrator or inherited from a
-     * parent. </p>
-     */
     inline AssociationFilters& WithAssociationType(const AssociationType& value) { SetAssociationType(value); return *this;}
-
-    /**
-     * <p> Indicates whether the association between a target and a configuration was
-     * directly applied by the Security Hub delegated administrator or inherited from a
-     * parent. </p>
-     */
     inline AssociationFilters& WithAssociationType(AssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The current status of the association between a target and a configuration
      * policy. </p>
      */
     inline const ConfigurationPolicyAssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
-
-    /**
-     * <p> The current status of the association between a target and a configuration
-     * policy. </p>
-     */
     inline bool AssociationStatusHasBeenSet() const { return m_associationStatusHasBeenSet; }
-
-    /**
-     * <p> The current status of the association between a target and a configuration
-     * policy. </p>
-     */
     inline void SetAssociationStatus(const ConfigurationPolicyAssociationStatus& value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
-
-    /**
-     * <p> The current status of the association between a target and a configuration
-     * policy. </p>
-     */
     inline void SetAssociationStatus(ConfigurationPolicyAssociationStatus&& value) { m_associationStatusHasBeenSet = true; m_associationStatus = std::move(value); }
-
-    /**
-     * <p> The current status of the association between a target and a configuration
-     * policy. </p>
-     */
     inline AssociationFilters& WithAssociationStatus(const ConfigurationPolicyAssociationStatus& value) { SetAssociationStatus(value); return *this;}
-
-    /**
-     * <p> The current status of the association between a target and a configuration
-     * policy. </p>
-     */
     inline AssociationFilters& WithAssociationStatus(ConfigurationPolicyAssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationPolicyId;

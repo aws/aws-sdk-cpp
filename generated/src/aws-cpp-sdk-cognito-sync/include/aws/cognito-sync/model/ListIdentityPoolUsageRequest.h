@@ -41,67 +41,29 @@ namespace Model
     AWS_COGNITOSYNC_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * A pagination token for obtaining the next page of results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline ListIdentityPoolUsageRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline ListIdentityPoolUsageRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A pagination token for obtaining the next page of results.
-     */
     inline ListIdentityPoolUsageRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The maximum number of results to be returned.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * The maximum number of results to be returned.
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * The maximum number of results to be returned.
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * The maximum number of results to be returned.
-     */
     inline ListIdentityPoolUsageRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

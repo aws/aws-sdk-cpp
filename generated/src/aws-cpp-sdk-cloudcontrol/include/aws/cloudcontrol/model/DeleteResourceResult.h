@@ -33,6 +33,7 @@ namespace Model
     AWS_CLOUDCONTROLAPI_API DeleteResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the current status of the resource deletion request.</p> <p>After
      * you have initiated a resource deletion request, you can monitor the progress of
@@ -42,69 +43,22 @@ namespace Model
      * by <code>DeleteResource</code>.</p>
      */
     inline const ProgressEvent& GetProgressEvent() const{ return m_progressEvent; }
-
-    /**
-     * <p>Represents the current status of the resource deletion request.</p> <p>After
-     * you have initiated a resource deletion request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>DeleteResource</code>.</p>
-     */
     inline void SetProgressEvent(const ProgressEvent& value) { m_progressEvent = value; }
-
-    /**
-     * <p>Represents the current status of the resource deletion request.</p> <p>After
-     * you have initiated a resource deletion request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>DeleteResource</code>.</p>
-     */
     inline void SetProgressEvent(ProgressEvent&& value) { m_progressEvent = std::move(value); }
-
-    /**
-     * <p>Represents the current status of the resource deletion request.</p> <p>After
-     * you have initiated a resource deletion request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>DeleteResource</code>.</p>
-     */
     inline DeleteResourceResult& WithProgressEvent(const ProgressEvent& value) { SetProgressEvent(value); return *this;}
-
-    /**
-     * <p>Represents the current status of the resource deletion request.</p> <p>After
-     * you have initiated a resource deletion request, you can monitor the progress of
-     * your request by calling <a
-     * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
-     * using the <code>RequestToken</code> of the <code>ProgressEvent</code> returned
-     * by <code>DeleteResource</code>.</p>
-     */
     inline DeleteResourceResult& WithProgressEvent(ProgressEvent&& value) { SetProgressEvent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProgressEvent m_progressEvent;

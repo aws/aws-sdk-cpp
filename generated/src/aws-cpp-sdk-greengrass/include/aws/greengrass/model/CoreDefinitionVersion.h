@@ -38,46 +38,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of cores in the core definition version.
      */
     inline const Aws::Vector<Core>& GetCores() const{ return m_cores; }
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline bool CoresHasBeenSet() const { return m_coresHasBeenSet; }
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline void SetCores(const Aws::Vector<Core>& value) { m_coresHasBeenSet = true; m_cores = value; }
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline void SetCores(Aws::Vector<Core>&& value) { m_coresHasBeenSet = true; m_cores = std::move(value); }
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline CoreDefinitionVersion& WithCores(const Aws::Vector<Core>& value) { SetCores(value); return *this;}
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline CoreDefinitionVersion& WithCores(Aws::Vector<Core>&& value) { SetCores(std::move(value)); return *this;}
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline CoreDefinitionVersion& AddCores(const Core& value) { m_coresHasBeenSet = true; m_cores.push_back(value); return *this; }
-
-    /**
-     * A list of cores in the core definition version.
-     */
     inline CoreDefinitionVersion& AddCores(Core&& value) { m_coresHasBeenSet = true; m_cores.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Core> m_cores;

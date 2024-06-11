@@ -41,61 +41,28 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object containing information about a metric.</p>
      */
     inline const MetricSpecification& GetMetricSpecification() const{ return m_metricSpecification; }
-
-    /**
-     * <p>An object containing information about a metric.</p>
-     */
     inline bool MetricSpecificationHasBeenSet() const { return m_metricSpecificationHasBeenSet; }
-
-    /**
-     * <p>An object containing information about a metric.</p>
-     */
     inline void SetMetricSpecification(const MetricSpecification& value) { m_metricSpecificationHasBeenSet = true; m_metricSpecification = value; }
-
-    /**
-     * <p>An object containing information about a metric.</p>
-     */
     inline void SetMetricSpecification(MetricSpecification&& value) { m_metricSpecificationHasBeenSet = true; m_metricSpecification = std::move(value); }
-
-    /**
-     * <p>An object containing information about a metric.</p>
-     */
     inline TargetTrackingScalingPolicyConfiguration& WithMetricSpecification(const MetricSpecification& value) { SetMetricSpecification(value); return *this;}
-
-    /**
-     * <p>An object containing information about a metric.</p>
-     */
     inline TargetTrackingScalingPolicyConfiguration& WithMetricSpecification(MetricSpecification&& value) { SetMetricSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The recommended target value to specify for the metric when creating a
      * scaling policy.</p>
      */
     inline double GetTargetValue() const{ return m_targetValue; }
-
-    /**
-     * <p>The recommended target value to specify for the metric when creating a
-     * scaling policy.</p>
-     */
     inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
-
-    /**
-     * <p>The recommended target value to specify for the metric when creating a
-     * scaling policy.</p>
-     */
     inline void SetTargetValue(double value) { m_targetValueHasBeenSet = true; m_targetValue = value; }
-
-    /**
-     * <p>The recommended target value to specify for the metric when creating a
-     * scaling policy.</p>
-     */
     inline TargetTrackingScalingPolicyConfiguration& WithTargetValue(double value) { SetTargetValue(value); return *this;}
-
+    ///@}
   private:
 
     MetricSpecification m_metricSpecification;

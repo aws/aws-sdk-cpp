@@ -37,36 +37,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the run command configuration for the cluster.</p>
      */
     inline const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& GetExecuteCommandConfiguration() const{ return m_executeCommandConfiguration; }
-
-    /**
-     * <p>Contains the run command configuration for the cluster.</p>
-     */
     inline bool ExecuteCommandConfigurationHasBeenSet() const { return m_executeCommandConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains the run command configuration for the cluster.</p>
-     */
     inline void SetExecuteCommandConfiguration(const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = value; }
-
-    /**
-     * <p>Contains the run command configuration for the cluster.</p>
-     */
     inline void SetExecuteCommandConfiguration(AwsEcsClusterConfigurationExecuteCommandConfigurationDetails&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains the run command configuration for the cluster.</p>
-     */
     inline AwsEcsClusterConfigurationDetails& WithExecuteCommandConfiguration(const AwsEcsClusterConfigurationExecuteCommandConfigurationDetails& value) { SetExecuteCommandConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains the run command configuration for the cluster.</p>
-     */
     inline AwsEcsClusterConfigurationDetails& WithExecuteCommandConfiguration(AwsEcsClusterConfigurationExecuteCommandConfigurationDetails&& value) { SetExecuteCommandConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsEcsClusterConfigurationExecuteCommandConfigurationDetails m_executeCommandConfiguration;

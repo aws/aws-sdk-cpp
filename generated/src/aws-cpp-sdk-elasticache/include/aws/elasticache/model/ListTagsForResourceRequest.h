@@ -40,6 +40,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
      * tags, for example
@@ -50,84 +51,14 @@ namespace Model
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource for which you want the list of
-     * tags, for example
-     * <code>arn:aws:elasticache:us-west-2:0123456789:cluster:myCluster</code> or
-     * <code>arn:aws:elasticache:us-west-2:0123456789:snapshot:mySnapshot</code>.</p>
-     * <p>For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceName;

@@ -34,83 +34,32 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
      * to update.</p>
      */
     inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline bool DiscoveryJobArnHasBeenSet() const { return m_discoveryJobArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline UpdateDiscoveryJobRequest& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline UpdateDiscoveryJobRequest& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the discovery job that you want
-     * to update.</p>
-     */
     inline UpdateDiscoveryJobRequest& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies in minutes how long that you want the discovery job to run. (You
      * can't set this parameter to less than the number of minutes that the job has
      * already run for.)</p>
      */
     inline int GetCollectionDurationMinutes() const{ return m_collectionDurationMinutes; }
-
-    /**
-     * <p>Specifies in minutes how long that you want the discovery job to run. (You
-     * can't set this parameter to less than the number of minutes that the job has
-     * already run for.)</p>
-     */
     inline bool CollectionDurationMinutesHasBeenSet() const { return m_collectionDurationMinutesHasBeenSet; }
-
-    /**
-     * <p>Specifies in minutes how long that you want the discovery job to run. (You
-     * can't set this parameter to less than the number of minutes that the job has
-     * already run for.)</p>
-     */
     inline void SetCollectionDurationMinutes(int value) { m_collectionDurationMinutesHasBeenSet = true; m_collectionDurationMinutes = value; }
-
-    /**
-     * <p>Specifies in minutes how long that you want the discovery job to run. (You
-     * can't set this parameter to less than the number of minutes that the job has
-     * already run for.)</p>
-     */
     inline UpdateDiscoveryJobRequest& WithCollectionDurationMinutes(int value) { SetCollectionDurationMinutes(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_discoveryJobArn;

@@ -34,106 +34,43 @@ namespace Model
     AWS_DATAEXCHANGE_API ListEventActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The event action objects listed by the request.</p>
      */
     inline const Aws::Vector<EventActionEntry>& GetEventActions() const{ return m_eventActions; }
-
-    /**
-     * <p>The event action objects listed by the request.</p>
-     */
     inline void SetEventActions(const Aws::Vector<EventActionEntry>& value) { m_eventActions = value; }
-
-    /**
-     * <p>The event action objects listed by the request.</p>
-     */
     inline void SetEventActions(Aws::Vector<EventActionEntry>&& value) { m_eventActions = std::move(value); }
-
-    /**
-     * <p>The event action objects listed by the request.</p>
-     */
     inline ListEventActionsResult& WithEventActions(const Aws::Vector<EventActionEntry>& value) { SetEventActions(value); return *this;}
-
-    /**
-     * <p>The event action objects listed by the request.</p>
-     */
     inline ListEventActionsResult& WithEventActions(Aws::Vector<EventActionEntry>&& value) { SetEventActions(std::move(value)); return *this;}
-
-    /**
-     * <p>The event action objects listed by the request.</p>
-     */
     inline ListEventActionsResult& AddEventActions(const EventActionEntry& value) { m_eventActions.push_back(value); return *this; }
-
-    /**
-     * <p>The event action objects listed by the request.</p>
-     */
     inline ListEventActionsResult& AddEventActions(EventActionEntry&& value) { m_eventActions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token value retrieved from a previous call to access the next page of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListEventActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListEventActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token value retrieved from a previous call to access the next page of
-     * results.</p>
-     */
     inline ListEventActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListEventActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListEventActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListEventActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EventActionEntry> m_eventActions;

@@ -41,97 +41,34 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Specifies the authentication type. Possible options are IAM authentication,
      * password and no password.</p>
      */
     inline const InputAuthenticationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Specifies the authentication type. Possible options are IAM authentication,
-     * password and no password.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Specifies the authentication type. Possible options are IAM authentication,
-     * password and no password.</p>
-     */
     inline void SetType(const InputAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Specifies the authentication type. Possible options are IAM authentication,
-     * password and no password.</p>
-     */
     inline void SetType(InputAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Specifies the authentication type. Possible options are IAM authentication,
-     * password and no password.</p>
-     */
     inline AuthenticationMode& WithType(const InputAuthenticationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Specifies the authentication type. Possible options are IAM authentication,
-     * password and no password.</p>
-     */
     inline AuthenticationMode& WithType(InputAuthenticationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
      * to <code>password</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPasswords() const{ return m_passwords; }
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline bool PasswordsHasBeenSet() const { return m_passwordsHasBeenSet; }
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline void SetPasswords(const Aws::Vector<Aws::String>& value) { m_passwordsHasBeenSet = true; m_passwords = value; }
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline void SetPasswords(Aws::Vector<Aws::String>&& value) { m_passwordsHasBeenSet = true; m_passwords = std::move(value); }
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline AuthenticationMode& WithPasswords(const Aws::Vector<Aws::String>& value) { SetPasswords(value); return *this;}
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline AuthenticationMode& WithPasswords(Aws::Vector<Aws::String>&& value) { SetPasswords(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline AuthenticationMode& AddPasswords(const Aws::String& value) { m_passwordsHasBeenSet = true; m_passwords.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline AuthenticationMode& AddPasswords(Aws::String&& value) { m_passwordsHasBeenSet = true; m_passwords.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies the passwords to use for authentication if <code>Type</code> is set
-     * to <code>password</code>.</p>
-     */
     inline AuthenticationMode& AddPasswords(const char* value) { m_passwordsHasBeenSet = true; m_passwords.push_back(value); return *this; }
-
+    ///@}
   private:
 
     InputAuthenticationType m_type;

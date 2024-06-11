@@ -40,67 +40,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The linear axis scale setup.</p>
      */
     inline const AxisLinearScale& GetLinear() const{ return m_linear; }
-
-    /**
-     * <p>The linear axis scale setup.</p>
-     */
     inline bool LinearHasBeenSet() const { return m_linearHasBeenSet; }
-
-    /**
-     * <p>The linear axis scale setup.</p>
-     */
     inline void SetLinear(const AxisLinearScale& value) { m_linearHasBeenSet = true; m_linear = value; }
-
-    /**
-     * <p>The linear axis scale setup.</p>
-     */
     inline void SetLinear(AxisLinearScale&& value) { m_linearHasBeenSet = true; m_linear = std::move(value); }
-
-    /**
-     * <p>The linear axis scale setup.</p>
-     */
     inline AxisScale& WithLinear(const AxisLinearScale& value) { SetLinear(value); return *this;}
-
-    /**
-     * <p>The linear axis scale setup.</p>
-     */
     inline AxisScale& WithLinear(AxisLinearScale&& value) { SetLinear(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The logarithmic axis scale setup.</p>
      */
     inline const AxisLogarithmicScale& GetLogarithmic() const{ return m_logarithmic; }
-
-    /**
-     * <p>The logarithmic axis scale setup.</p>
-     */
     inline bool LogarithmicHasBeenSet() const { return m_logarithmicHasBeenSet; }
-
-    /**
-     * <p>The logarithmic axis scale setup.</p>
-     */
     inline void SetLogarithmic(const AxisLogarithmicScale& value) { m_logarithmicHasBeenSet = true; m_logarithmic = value; }
-
-    /**
-     * <p>The logarithmic axis scale setup.</p>
-     */
     inline void SetLogarithmic(AxisLogarithmicScale&& value) { m_logarithmicHasBeenSet = true; m_logarithmic = std::move(value); }
-
-    /**
-     * <p>The logarithmic axis scale setup.</p>
-     */
     inline AxisScale& WithLogarithmic(const AxisLogarithmicScale& value) { SetLogarithmic(value); return *this;}
-
-    /**
-     * <p>The logarithmic axis scale setup.</p>
-     */
     inline AxisScale& WithLogarithmic(AxisLogarithmicScale&& value) { SetLogarithmic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AxisLinearScale m_linear;

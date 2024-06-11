@@ -38,42 +38,18 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The email message, represented as a raw MIME message. The entire message must
      * be base64 encoded.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The email message, represented as a raw MIME message. The entire message must
-     * be base64 encoded.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The email message, represented as a raw MIME message. The entire message must
-     * be base64 encoded.</p>
-     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The email message, represented as a raw MIME message. The entire message must
-     * be base64 encoded.</p>
-     */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The email message, represented as a raw MIME message. The entire message must
-     * be base64 encoded.</p>
-     */
     inline RawEmail& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The email message, represented as a raw MIME message. The entire message must
-     * be base64 encoded.</p>
-     */
     inline RawEmail& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_data;

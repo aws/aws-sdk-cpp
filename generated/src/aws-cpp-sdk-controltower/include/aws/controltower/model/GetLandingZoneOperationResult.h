@@ -33,53 +33,27 @@ namespace Model
     AWS_CONTROLTOWER_API GetLandingZoneOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about a landing zone operation.</p>
      */
     inline const LandingZoneOperationDetail& GetOperationDetails() const{ return m_operationDetails; }
-
-    /**
-     * <p>Details about a landing zone operation.</p>
-     */
     inline void SetOperationDetails(const LandingZoneOperationDetail& value) { m_operationDetails = value; }
-
-    /**
-     * <p>Details about a landing zone operation.</p>
-     */
     inline void SetOperationDetails(LandingZoneOperationDetail&& value) { m_operationDetails = std::move(value); }
-
-    /**
-     * <p>Details about a landing zone operation.</p>
-     */
     inline GetLandingZoneOperationResult& WithOperationDetails(const LandingZoneOperationDetail& value) { SetOperationDetails(value); return *this;}
-
-    /**
-     * <p>Details about a landing zone operation.</p>
-     */
     inline GetLandingZoneOperationResult& WithOperationDetails(LandingZoneOperationDetail&& value) { SetOperationDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetLandingZoneOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetLandingZoneOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetLandingZoneOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LandingZoneOperationDetail m_operationDetails;

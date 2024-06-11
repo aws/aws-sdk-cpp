@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API CreateComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detailed data of the created component.</p>
      */
     inline const Component& GetComponent() const{ return m_component; }
-
-    /**
-     * <p>The detailed data of the created component.</p>
-     */
     inline void SetComponent(const Component& value) { m_component = value; }
-
-    /**
-     * <p>The detailed data of the created component.</p>
-     */
     inline void SetComponent(Component&& value) { m_component = std::move(value); }
-
-    /**
-     * <p>The detailed data of the created component.</p>
-     */
     inline CreateComponentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
-
-    /**
-     * <p>The detailed data of the created component.</p>
-     */
     inline CreateComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Component m_component;

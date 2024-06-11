@@ -38,42 +38,18 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
      * (optional) where inventory results are published.</p>
      */
     inline const InventoryS3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
-
-    /**
-     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.</p>
-     */
     inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
-
-    /**
-     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.</p>
-     */
     inline void SetS3BucketDestination(const InventoryS3BucketDestination& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = value; }
-
-    /**
-     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.</p>
-     */
     inline void SetS3BucketDestination(InventoryS3BucketDestination&& value) { m_s3BucketDestinationHasBeenSet = true; m_s3BucketDestination = std::move(value); }
-
-    /**
-     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.</p>
-     */
     inline InventoryDestination& WithS3BucketDestination(const InventoryS3BucketDestination& value) { SetS3BucketDestination(value); return *this;}
-
-    /**
-     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
-     * (optional) where inventory results are published.</p>
-     */
     inline InventoryDestination& WithS3BucketDestination(InventoryS3BucketDestination&& value) { SetS3BucketDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InventoryS3BucketDestination m_s3BucketDestination;

@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A unique identifier of the snapshot schedule to delete.</p>
      */
     inline const Aws::String& GetScheduleIdentifier() const{ return m_scheduleIdentifier; }
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline void SetScheduleIdentifier(Aws::String&& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = std::move(value); }
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline void SetScheduleIdentifier(const char* value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier.assign(value); }
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline DeleteSnapshotScheduleRequest& WithScheduleIdentifier(const Aws::String& value) { SetScheduleIdentifier(value); return *this;}
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline DeleteSnapshotScheduleRequest& WithScheduleIdentifier(Aws::String&& value) { SetScheduleIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier of the snapshot schedule to delete.</p>
-     */
     inline DeleteSnapshotScheduleRequest& WithScheduleIdentifier(const char* value) { SetScheduleIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scheduleIdentifier;

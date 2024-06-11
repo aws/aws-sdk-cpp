@@ -35,85 +35,32 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list of workflow names, which may be the names returned from the
      * <code>ListWorkflows</code> operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline BatchGetWorkflowsRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline BatchGetWorkflowsRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline BatchGetWorkflowsRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline BatchGetWorkflowsRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of workflow names, which may be the names returned from the
-     * <code>ListWorkflows</code> operation.</p>
-     */
     inline BatchGetWorkflowsRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to include a graph when returning the workflow resource
      * metadata.</p>
      */
     inline bool GetIncludeGraph() const{ return m_includeGraph; }
-
-    /**
-     * <p>Specifies whether to include a graph when returning the workflow resource
-     * metadata.</p>
-     */
     inline bool IncludeGraphHasBeenSet() const { return m_includeGraphHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to include a graph when returning the workflow resource
-     * metadata.</p>
-     */
     inline void SetIncludeGraph(bool value) { m_includeGraphHasBeenSet = true; m_includeGraph = value; }
-
-    /**
-     * <p>Specifies whether to include a graph when returning the workflow resource
-     * metadata.</p>
-     */
     inline BatchGetWorkflowsRequest& WithIncludeGraph(bool value) { SetIncludeGraph(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_names;

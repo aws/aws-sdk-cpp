@@ -34,87 +34,33 @@ namespace Model
     AWS_TIMESTREAMWRITE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the database where the Timestream database is to be deleted.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline DeleteTableRequest& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline DeleteTableRequest& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the database where the Timestream database is to be deleted.</p>
-     */
     inline DeleteTableRequest& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Timestream table to be deleted.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline DeleteTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline DeleteTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Timestream table to be deleted.</p>
-     */
     inline DeleteTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_databaseName;

@@ -36,87 +36,33 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
     inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline UpdateControlPanelRequest& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline UpdateControlPanelRequest& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the control panel.</p>
-     */
     inline UpdateControlPanelRequest& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the control panel.</p>
      */
     inline const Aws::String& GetControlPanelName() const{ return m_controlPanelName; }
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline bool ControlPanelNameHasBeenSet() const { return m_controlPanelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline void SetControlPanelName(const Aws::String& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = value; }
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline void SetControlPanelName(Aws::String&& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = std::move(value); }
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline void SetControlPanelName(const char* value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName.assign(value); }
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline UpdateControlPanelRequest& WithControlPanelName(const Aws::String& value) { SetControlPanelName(value); return *this;}
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline UpdateControlPanelRequest& WithControlPanelName(Aws::String&& value) { SetControlPanelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the control panel.</p>
-     */
     inline UpdateControlPanelRequest& WithControlPanelName(const char* value) { SetControlPanelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_controlPanelArn;

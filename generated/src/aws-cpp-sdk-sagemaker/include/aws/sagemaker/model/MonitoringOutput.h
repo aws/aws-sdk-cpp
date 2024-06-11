@@ -37,42 +37,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 storage location where the results of a monitoring job are
      * saved.</p>
      */
     inline const MonitoringS3Output& GetS3Output() const{ return m_s3Output; }
-
-    /**
-     * <p>The Amazon S3 storage location where the results of a monitoring job are
-     * saved.</p>
-     */
     inline bool S3OutputHasBeenSet() const { return m_s3OutputHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 storage location where the results of a monitoring job are
-     * saved.</p>
-     */
     inline void SetS3Output(const MonitoringS3Output& value) { m_s3OutputHasBeenSet = true; m_s3Output = value; }
-
-    /**
-     * <p>The Amazon S3 storage location where the results of a monitoring job are
-     * saved.</p>
-     */
     inline void SetS3Output(MonitoringS3Output&& value) { m_s3OutputHasBeenSet = true; m_s3Output = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 storage location where the results of a monitoring job are
-     * saved.</p>
-     */
     inline MonitoringOutput& WithS3Output(const MonitoringS3Output& value) { SetS3Output(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 storage location where the results of a monitoring job are
-     * saved.</p>
-     */
     inline MonitoringOutput& WithS3Output(MonitoringS3Output&& value) { SetS3Output(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MonitoringS3Output m_s3Output;

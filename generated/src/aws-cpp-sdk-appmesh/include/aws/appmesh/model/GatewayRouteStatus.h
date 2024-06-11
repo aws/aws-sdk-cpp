@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status for the gateway route.</p>
      */
     inline const GatewayRouteStatusCode& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status for the gateway route.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status for the gateway route.</p>
-     */
     inline void SetStatus(const GatewayRouteStatusCode& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status for the gateway route.</p>
-     */
     inline void SetStatus(GatewayRouteStatusCode&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status for the gateway route.</p>
-     */
     inline GatewayRouteStatus& WithStatus(const GatewayRouteStatusCode& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status for the gateway route.</p>
-     */
     inline GatewayRouteStatus& WithStatus(GatewayRouteStatusCode&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GatewayRouteStatusCode m_status;

@@ -39,87 +39,33 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The provider schema attributes.</p>
      */
     inline const Aws::Vector<ProviderSchemaAttribute>& GetProviderSchemaAttributes() const{ return m_providerSchemaAttributes; }
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline bool ProviderSchemaAttributesHasBeenSet() const { return m_providerSchemaAttributesHasBeenSet; }
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline void SetProviderSchemaAttributes(const Aws::Vector<ProviderSchemaAttribute>& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = value; }
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline void SetProviderSchemaAttributes(Aws::Vector<ProviderSchemaAttribute>&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes = std::move(value); }
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline ProviderComponentSchema& WithProviderSchemaAttributes(const Aws::Vector<ProviderSchemaAttribute>& value) { SetProviderSchemaAttributes(value); return *this;}
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline ProviderComponentSchema& WithProviderSchemaAttributes(Aws::Vector<ProviderSchemaAttribute>&& value) { SetProviderSchemaAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline ProviderComponentSchema& AddProviderSchemaAttributes(const ProviderSchemaAttribute& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.push_back(value); return *this; }
-
-    /**
-     * <p>The provider schema attributes.</p>
-     */
     inline ProviderComponentSchema& AddProviderSchemaAttributes(ProviderSchemaAttribute&& value) { m_providerSchemaAttributesHasBeenSet = true; m_providerSchemaAttributes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Input schema for the provider service.</p>
      */
     inline const Aws::Vector<Aws::Vector<Aws::String>>& GetSchemas() const{ return m_schemas; }
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline bool SchemasHasBeenSet() const { return m_schemasHasBeenSet; }
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline void SetSchemas(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_schemasHasBeenSet = true; m_schemas = value; }
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline void SetSchemas(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_schemasHasBeenSet = true; m_schemas = std::move(value); }
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline ProviderComponentSchema& WithSchemas(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetSchemas(value); return *this;}
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline ProviderComponentSchema& WithSchemas(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetSchemas(std::move(value)); return *this;}
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline ProviderComponentSchema& AddSchemas(const Aws::Vector<Aws::String>& value) { m_schemasHasBeenSet = true; m_schemas.push_back(value); return *this; }
-
-    /**
-     * <p>Input schema for the provider service.</p>
-     */
     inline ProviderComponentSchema& AddSchemas(Aws::Vector<Aws::String>&& value) { m_schemasHasBeenSet = true; m_schemas.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ProviderSchemaAttribute> m_providerSchemaAttributes;

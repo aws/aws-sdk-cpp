@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API DescribeModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains the description of the model.</p>
      */
     inline const ModelDescription& GetModelDescription() const{ return m_modelDescription; }
-
-    /**
-     * <p>Contains the description of the model.</p>
-     */
     inline void SetModelDescription(const ModelDescription& value) { m_modelDescription = value; }
-
-    /**
-     * <p>Contains the description of the model.</p>
-     */
     inline void SetModelDescription(ModelDescription&& value) { m_modelDescription = std::move(value); }
-
-    /**
-     * <p>Contains the description of the model.</p>
-     */
     inline DescribeModelResult& WithModelDescription(const ModelDescription& value) { SetModelDescription(value); return *this;}
-
-    /**
-     * <p>Contains the description of the model.</p>
-     */
     inline DescribeModelResult& WithModelDescription(ModelDescription&& value) { SetModelDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ModelDescription m_modelDescription;

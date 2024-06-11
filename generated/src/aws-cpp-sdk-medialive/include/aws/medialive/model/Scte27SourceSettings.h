@@ -37,6 +37,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * If you will configure a WebVTT caption description that references this caption
      * selector, use this field to
@@ -44,48 +45,14 @@ provide the language to consider when translating
      * the image-based source to text.
      */
     inline const Scte27OcrLanguage& GetOcrLanguage() const{ return m_ocrLanguage; }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline bool OcrLanguageHasBeenSet() const { return m_ocrLanguageHasBeenSet; }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline void SetOcrLanguage(const Scte27OcrLanguage& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = value; }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline void SetOcrLanguage(Scte27OcrLanguage&& value) { m_ocrLanguageHasBeenSet = true; m_ocrLanguage = std::move(value); }
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline Scte27SourceSettings& WithOcrLanguage(const Scte27OcrLanguage& value) { SetOcrLanguage(value); return *this;}
-
-    /**
-     * If you will configure a WebVTT caption description that references this caption
-     * selector, use this field to
-provide the language to consider when translating
-     * the image-based source to text.
-     */
     inline Scte27SourceSettings& WithOcrLanguage(Scte27OcrLanguage&& value) { SetOcrLanguage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The pid field is used in conjunction with the caption selector languageCode
      * field as follows:
@@ -100,52 +67,10 @@ provide the language to consider when translating
      * be passed through.
      */
     inline int GetPid() const{ return m_pid; }
-
-    /**
-     * The pid field is used in conjunction with the caption selector languageCode
-     * field as follows:
-  - Specify PID and Language: Extracts captions from that PID;
-     * the language is "informational".
-  - Specify PID and omit Language: Extracts the
-     * specified PID.
-  - Omit PID and specify Language: Extracts the specified
-     * language, whichever PID that happens to be.
-  - Omit PID and omit Language:
-     * Valid only if source is DVB-Sub that is being passed through; all languages will
-     * be passed through.
-     */
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
-
-    /**
-     * The pid field is used in conjunction with the caption selector languageCode
-     * field as follows:
-  - Specify PID and Language: Extracts captions from that PID;
-     * the language is "informational".
-  - Specify PID and omit Language: Extracts the
-     * specified PID.
-  - Omit PID and specify Language: Extracts the specified
-     * language, whichever PID that happens to be.
-  - Omit PID and omit Language:
-     * Valid only if source is DVB-Sub that is being passed through; all languages will
-     * be passed through.
-     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
-
-    /**
-     * The pid field is used in conjunction with the caption selector languageCode
-     * field as follows:
-  - Specify PID and Language: Extracts captions from that PID;
-     * the language is "informational".
-  - Specify PID and omit Language: Extracts the
-     * specified PID.
-  - Omit PID and specify Language: Extracts the specified
-     * language, whichever PID that happens to be.
-  - Omit PID and omit Language:
-     * Valid only if source is DVB-Sub that is being passed through; all languages will
-     * be passed through.
-     */
     inline Scte27SourceSettings& WithPid(int value) { SetPid(value); return *this;}
-
+    ///@}
   private:
 
     Scte27OcrLanguage m_ocrLanguage;

@@ -34,54 +34,20 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the Medical Scribe job you want to delete. Job names are case
      * sensitive.</p>
      */
     inline const Aws::String& GetMedicalScribeJobName() const{ return m_medicalScribeJobName; }
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline bool MedicalScribeJobNameHasBeenSet() const { return m_medicalScribeJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline void SetMedicalScribeJobName(const Aws::String& value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName = value; }
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline void SetMedicalScribeJobName(Aws::String&& value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName = std::move(value); }
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline void SetMedicalScribeJobName(const char* value) { m_medicalScribeJobNameHasBeenSet = true; m_medicalScribeJobName.assign(value); }
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline DeleteMedicalScribeJobRequest& WithMedicalScribeJobName(const Aws::String& value) { SetMedicalScribeJobName(value); return *this;}
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline DeleteMedicalScribeJobRequest& WithMedicalScribeJobName(Aws::String&& value) { SetMedicalScribeJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Medical Scribe job you want to delete. Job names are case
-     * sensitive.</p>
-     */
     inline DeleteMedicalScribeJobRequest& WithMedicalScribeJobName(const char* value) { SetMedicalScribeJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_medicalScribeJobName;

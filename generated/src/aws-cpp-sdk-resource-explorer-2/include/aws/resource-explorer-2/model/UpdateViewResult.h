@@ -33,53 +33,27 @@ namespace Model
     AWS_RESOURCEEXPLORER2_API UpdateViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the view that you changed with this operation.</p>
      */
     inline const View& GetView() const{ return m_view; }
-
-    /**
-     * <p>Details about the view that you changed with this operation.</p>
-     */
     inline void SetView(const View& value) { m_view = value; }
-
-    /**
-     * <p>Details about the view that you changed with this operation.</p>
-     */
     inline void SetView(View&& value) { m_view = std::move(value); }
-
-    /**
-     * <p>Details about the view that you changed with this operation.</p>
-     */
     inline UpdateViewResult& WithView(const View& value) { SetView(value); return *this;}
-
-    /**
-     * <p>Details about the view that you changed with this operation.</p>
-     */
     inline UpdateViewResult& WithView(View&& value) { SetView(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     View m_view;

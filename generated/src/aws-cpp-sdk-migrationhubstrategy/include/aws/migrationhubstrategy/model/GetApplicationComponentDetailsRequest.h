@@ -32,54 +32,20 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The ID of the application component. The ID is unique within an AWS
      * account.</p>
      */
     inline const Aws::String& GetApplicationComponentId() const{ return m_applicationComponentId; }
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline bool ApplicationComponentIdHasBeenSet() const { return m_applicationComponentIdHasBeenSet; }
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline void SetApplicationComponentId(const Aws::String& value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId = value; }
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline void SetApplicationComponentId(Aws::String&& value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId = std::move(value); }
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline void SetApplicationComponentId(const char* value) { m_applicationComponentIdHasBeenSet = true; m_applicationComponentId.assign(value); }
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline GetApplicationComponentDetailsRequest& WithApplicationComponentId(const Aws::String& value) { SetApplicationComponentId(value); return *this;}
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline GetApplicationComponentDetailsRequest& WithApplicationComponentId(Aws::String&& value) { SetApplicationComponentId(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the application component. The ID is unique within an AWS
-     * account.</p>
-     */
     inline GetApplicationComponentDetailsRequest& WithApplicationComponentId(const char* value) { SetApplicationComponentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationComponentId;

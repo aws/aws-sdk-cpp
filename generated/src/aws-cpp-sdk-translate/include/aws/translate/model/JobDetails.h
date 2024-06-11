@@ -36,72 +36,36 @@ namespace Model
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of documents successfully processed during a translation job.</p>
      */
     inline int GetTranslatedDocumentsCount() const{ return m_translatedDocumentsCount; }
-
-    /**
-     * <p>The number of documents successfully processed during a translation job.</p>
-     */
     inline bool TranslatedDocumentsCountHasBeenSet() const { return m_translatedDocumentsCountHasBeenSet; }
-
-    /**
-     * <p>The number of documents successfully processed during a translation job.</p>
-     */
     inline void SetTranslatedDocumentsCount(int value) { m_translatedDocumentsCountHasBeenSet = true; m_translatedDocumentsCount = value; }
-
-    /**
-     * <p>The number of documents successfully processed during a translation job.</p>
-     */
     inline JobDetails& WithTranslatedDocumentsCount(int value) { SetTranslatedDocumentsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of documents that could not be processed during a translation
      * job.</p>
      */
     inline int GetDocumentsWithErrorsCount() const{ return m_documentsWithErrorsCount; }
-
-    /**
-     * <p>The number of documents that could not be processed during a translation
-     * job.</p>
-     */
     inline bool DocumentsWithErrorsCountHasBeenSet() const { return m_documentsWithErrorsCountHasBeenSet; }
-
-    /**
-     * <p>The number of documents that could not be processed during a translation
-     * job.</p>
-     */
     inline void SetDocumentsWithErrorsCount(int value) { m_documentsWithErrorsCountHasBeenSet = true; m_documentsWithErrorsCount = value; }
-
-    /**
-     * <p>The number of documents that could not be processed during a translation
-     * job.</p>
-     */
     inline JobDetails& WithDocumentsWithErrorsCount(int value) { SetDocumentsWithErrorsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of documents used as input in a translation job.</p>
      */
     inline int GetInputDocumentsCount() const{ return m_inputDocumentsCount; }
-
-    /**
-     * <p>The number of documents used as input in a translation job.</p>
-     */
     inline bool InputDocumentsCountHasBeenSet() const { return m_inputDocumentsCountHasBeenSet; }
-
-    /**
-     * <p>The number of documents used as input in a translation job.</p>
-     */
     inline void SetInputDocumentsCount(int value) { m_inputDocumentsCountHasBeenSet = true; m_inputDocumentsCount = value; }
-
-    /**
-     * <p>The number of documents used as input in a translation job.</p>
-     */
     inline JobDetails& WithInputDocumentsCount(int value) { SetInputDocumentsCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_translatedDocumentsCount;

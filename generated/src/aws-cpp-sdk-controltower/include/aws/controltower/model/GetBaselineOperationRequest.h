@@ -32,54 +32,20 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
      * Update, Reset).</p>
      */
     inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = value; }
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::move(value); }
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline void SetOperationIdentifier(const char* value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier.assign(value); }
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline GetBaselineOperationRequest& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline GetBaselineOperationRequest& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The operation ID returned from mutating asynchronous APIs (Enable, Disable,
-     * Update, Reset).</p>
-     */
     inline GetBaselineOperationRequest& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationIdentifier;

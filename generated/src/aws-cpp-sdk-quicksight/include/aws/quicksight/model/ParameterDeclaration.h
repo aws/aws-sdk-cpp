@@ -45,129 +45,53 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A parameter declaration for the <code>String</code> data type.</p>
      */
     inline const StringParameterDeclaration& GetStringParameterDeclaration() const{ return m_stringParameterDeclaration; }
-
-    /**
-     * <p>A parameter declaration for the <code>String</code> data type.</p>
-     */
     inline bool StringParameterDeclarationHasBeenSet() const { return m_stringParameterDeclarationHasBeenSet; }
-
-    /**
-     * <p>A parameter declaration for the <code>String</code> data type.</p>
-     */
     inline void SetStringParameterDeclaration(const StringParameterDeclaration& value) { m_stringParameterDeclarationHasBeenSet = true; m_stringParameterDeclaration = value; }
-
-    /**
-     * <p>A parameter declaration for the <code>String</code> data type.</p>
-     */
     inline void SetStringParameterDeclaration(StringParameterDeclaration&& value) { m_stringParameterDeclarationHasBeenSet = true; m_stringParameterDeclaration = std::move(value); }
-
-    /**
-     * <p>A parameter declaration for the <code>String</code> data type.</p>
-     */
     inline ParameterDeclaration& WithStringParameterDeclaration(const StringParameterDeclaration& value) { SetStringParameterDeclaration(value); return *this;}
-
-    /**
-     * <p>A parameter declaration for the <code>String</code> data type.</p>
-     */
     inline ParameterDeclaration& WithStringParameterDeclaration(StringParameterDeclaration&& value) { SetStringParameterDeclaration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter declaration for the <code>Decimal</code> data type.</p>
      */
     inline const DecimalParameterDeclaration& GetDecimalParameterDeclaration() const{ return m_decimalParameterDeclaration; }
-
-    /**
-     * <p>A parameter declaration for the <code>Decimal</code> data type.</p>
-     */
     inline bool DecimalParameterDeclarationHasBeenSet() const { return m_decimalParameterDeclarationHasBeenSet; }
-
-    /**
-     * <p>A parameter declaration for the <code>Decimal</code> data type.</p>
-     */
     inline void SetDecimalParameterDeclaration(const DecimalParameterDeclaration& value) { m_decimalParameterDeclarationHasBeenSet = true; m_decimalParameterDeclaration = value; }
-
-    /**
-     * <p>A parameter declaration for the <code>Decimal</code> data type.</p>
-     */
     inline void SetDecimalParameterDeclaration(DecimalParameterDeclaration&& value) { m_decimalParameterDeclarationHasBeenSet = true; m_decimalParameterDeclaration = std::move(value); }
-
-    /**
-     * <p>A parameter declaration for the <code>Decimal</code> data type.</p>
-     */
     inline ParameterDeclaration& WithDecimalParameterDeclaration(const DecimalParameterDeclaration& value) { SetDecimalParameterDeclaration(value); return *this;}
-
-    /**
-     * <p>A parameter declaration for the <code>Decimal</code> data type.</p>
-     */
     inline ParameterDeclaration& WithDecimalParameterDeclaration(DecimalParameterDeclaration&& value) { SetDecimalParameterDeclaration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter declaration for the <code>Integer</code> data type.</p>
      */
     inline const IntegerParameterDeclaration& GetIntegerParameterDeclaration() const{ return m_integerParameterDeclaration; }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline bool IntegerParameterDeclarationHasBeenSet() const { return m_integerParameterDeclarationHasBeenSet; }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline void SetIntegerParameterDeclaration(const IntegerParameterDeclaration& value) { m_integerParameterDeclarationHasBeenSet = true; m_integerParameterDeclaration = value; }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline void SetIntegerParameterDeclaration(IntegerParameterDeclaration&& value) { m_integerParameterDeclarationHasBeenSet = true; m_integerParameterDeclaration = std::move(value); }
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline ParameterDeclaration& WithIntegerParameterDeclaration(const IntegerParameterDeclaration& value) { SetIntegerParameterDeclaration(value); return *this;}
-
-    /**
-     * <p>A parameter declaration for the <code>Integer</code> data type.</p>
-     */
     inline ParameterDeclaration& WithIntegerParameterDeclaration(IntegerParameterDeclaration&& value) { SetIntegerParameterDeclaration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A parameter declaration for the <code>DateTime</code> data type.</p>
      */
     inline const DateTimeParameterDeclaration& GetDateTimeParameterDeclaration() const{ return m_dateTimeParameterDeclaration; }
-
-    /**
-     * <p>A parameter declaration for the <code>DateTime</code> data type.</p>
-     */
     inline bool DateTimeParameterDeclarationHasBeenSet() const { return m_dateTimeParameterDeclarationHasBeenSet; }
-
-    /**
-     * <p>A parameter declaration for the <code>DateTime</code> data type.</p>
-     */
     inline void SetDateTimeParameterDeclaration(const DateTimeParameterDeclaration& value) { m_dateTimeParameterDeclarationHasBeenSet = true; m_dateTimeParameterDeclaration = value; }
-
-    /**
-     * <p>A parameter declaration for the <code>DateTime</code> data type.</p>
-     */
     inline void SetDateTimeParameterDeclaration(DateTimeParameterDeclaration&& value) { m_dateTimeParameterDeclarationHasBeenSet = true; m_dateTimeParameterDeclaration = std::move(value); }
-
-    /**
-     * <p>A parameter declaration for the <code>DateTime</code> data type.</p>
-     */
     inline ParameterDeclaration& WithDateTimeParameterDeclaration(const DateTimeParameterDeclaration& value) { SetDateTimeParameterDeclaration(value); return *this;}
-
-    /**
-     * <p>A parameter declaration for the <code>DateTime</code> data type.</p>
-     */
     inline ParameterDeclaration& WithDateTimeParameterDeclaration(DateTimeParameterDeclaration&& value) { SetDateTimeParameterDeclaration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StringParameterDeclaration m_stringParameterDeclaration;

@@ -37,36 +37,17 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides <code>ConnectionType</code> details.</p>
      */
     inline const CodeStarParameters& GetCodeStar() const{ return m_codeStar; }
-
-    /**
-     * <p>Provides <code>ConnectionType</code> details.</p>
-     */
     inline bool CodeStarHasBeenSet() const { return m_codeStarHasBeenSet; }
-
-    /**
-     * <p>Provides <code>ConnectionType</code> details.</p>
-     */
     inline void SetCodeStar(const CodeStarParameters& value) { m_codeStarHasBeenSet = true; m_codeStar = value; }
-
-    /**
-     * <p>Provides <code>ConnectionType</code> details.</p>
-     */
     inline void SetCodeStar(CodeStarParameters&& value) { m_codeStarHasBeenSet = true; m_codeStar = std::move(value); }
-
-    /**
-     * <p>Provides <code>ConnectionType</code> details.</p>
-     */
     inline SourceConnectionParameters& WithCodeStar(const CodeStarParameters& value) { SetCodeStar(value); return *this;}
-
-    /**
-     * <p>Provides <code>ConnectionType</code> details.</p>
-     */
     inline SourceConnectionParameters& WithCodeStar(CodeStarParameters&& value) { SetCodeStar(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CodeStarParameters m_codeStar;

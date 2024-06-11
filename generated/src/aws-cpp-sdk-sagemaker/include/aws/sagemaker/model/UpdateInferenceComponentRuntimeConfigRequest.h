@@ -35,83 +35,32 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the inference component to update.</p>
      */
     inline const Aws::String& GetInferenceComponentName() const{ return m_inferenceComponentName; }
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline bool InferenceComponentNameHasBeenSet() const { return m_inferenceComponentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline void SetInferenceComponentName(const Aws::String& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = value; }
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline void SetInferenceComponentName(Aws::String&& value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName = std::move(value); }
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline void SetInferenceComponentName(const char* value) { m_inferenceComponentNameHasBeenSet = true; m_inferenceComponentName.assign(value); }
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(const Aws::String& value) { SetInferenceComponentName(value); return *this;}
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(Aws::String&& value) { SetInferenceComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the inference component to update.</p>
-     */
     inline UpdateInferenceComponentRuntimeConfigRequest& WithInferenceComponentName(const char* value) { SetInferenceComponentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Runtime settings for a model that is deployed with an inference
      * component.</p>
      */
     inline const InferenceComponentRuntimeConfig& GetDesiredRuntimeConfig() const{ return m_desiredRuntimeConfig; }
-
-    /**
-     * <p>Runtime settings for a model that is deployed with an inference
-     * component.</p>
-     */
     inline bool DesiredRuntimeConfigHasBeenSet() const { return m_desiredRuntimeConfigHasBeenSet; }
-
-    /**
-     * <p>Runtime settings for a model that is deployed with an inference
-     * component.</p>
-     */
     inline void SetDesiredRuntimeConfig(const InferenceComponentRuntimeConfig& value) { m_desiredRuntimeConfigHasBeenSet = true; m_desiredRuntimeConfig = value; }
-
-    /**
-     * <p>Runtime settings for a model that is deployed with an inference
-     * component.</p>
-     */
     inline void SetDesiredRuntimeConfig(InferenceComponentRuntimeConfig&& value) { m_desiredRuntimeConfigHasBeenSet = true; m_desiredRuntimeConfig = std::move(value); }
-
-    /**
-     * <p>Runtime settings for a model that is deployed with an inference
-     * component.</p>
-     */
     inline UpdateInferenceComponentRuntimeConfigRequest& WithDesiredRuntimeConfig(const InferenceComponentRuntimeConfig& value) { SetDesiredRuntimeConfig(value); return *this;}
-
-    /**
-     * <p>Runtime settings for a model that is deployed with an inference
-     * component.</p>
-     */
     inline UpdateInferenceComponentRuntimeConfigRequest& WithDesiredRuntimeConfig(InferenceComponentRuntimeConfig&& value) { SetDesiredRuntimeConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inferenceComponentName;

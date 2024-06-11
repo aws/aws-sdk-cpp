@@ -42,46 +42,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The email address to be verified.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline VerifyEmailIdentityRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline VerifyEmailIdentityRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The email address to be verified.</p>
-     */
     inline VerifyEmailIdentityRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_emailAddress;

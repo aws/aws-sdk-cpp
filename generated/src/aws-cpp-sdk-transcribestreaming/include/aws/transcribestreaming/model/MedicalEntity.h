@@ -40,146 +40,58 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The start time, in milliseconds, of the utterance that was identified as
      * PHI.</p>
      */
     inline double GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The start time, in milliseconds, of the utterance that was identified as
-     * PHI.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The start time, in milliseconds, of the utterance that was identified as
-     * PHI.</p>
-     */
     inline void SetStartTime(double value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The start time, in milliseconds, of the utterance that was identified as
-     * PHI.</p>
-     */
     inline MedicalEntity& WithStartTime(double value) { SetStartTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end time, in milliseconds, of the utterance that was identified as
      * PHI.</p>
      */
     inline double GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The end time, in milliseconds, of the utterance that was identified as
-     * PHI.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The end time, in milliseconds, of the utterance that was identified as
-     * PHI.</p>
-     */
     inline void SetEndTime(double value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The end time, in milliseconds, of the utterance that was identified as
-     * PHI.</p>
-     */
     inline MedicalEntity& WithEndTime(double value) { SetEndTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The category of information identified. The only category is
      * <code>PHI</code>.</p>
      */
     inline const Aws::String& GetCategory() const{ return m_category; }
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline MedicalEntity& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline MedicalEntity& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-
-    /**
-     * <p>The category of information identified. The only category is
-     * <code>PHI</code>.</p>
-     */
     inline MedicalEntity& WithCategory(const char* value) { SetCategory(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The word or words identified as PHI.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline MedicalEntity& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline MedicalEntity& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The word or words identified as PHI.</p>
-     */
     inline MedicalEntity& WithContent(const char* value) { SetContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The confidence score associated with the identified PHI entity in your
      * audio.</p> <p>Confidence scores are values between 0 and 1. A larger value
@@ -187,31 +99,10 @@ namespace Model
      * entity spoken in your media.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>The confidence score associated with the identified PHI entity in your
-     * audio.</p> <p>Confidence scores are values between 0 and 1. A larger value
-     * indicates a higher probability that the identified entity correctly matches the
-     * entity spoken in your media.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>The confidence score associated with the identified PHI entity in your
-     * audio.</p> <p>Confidence scores are values between 0 and 1. A larger value
-     * indicates a higher probability that the identified entity correctly matches the
-     * entity spoken in your media.</p>
-     */
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>The confidence score associated with the identified PHI entity in your
-     * audio.</p> <p>Confidence scores are values between 0 and 1. A larger value
-     * indicates a higher probability that the identified entity correctly matches the
-     * entity spoken in your media.</p>
-     */
     inline MedicalEntity& WithConfidence(double value) { SetConfidence(value); return *this;}
-
+    ///@}
   private:
 
     double m_startTime;

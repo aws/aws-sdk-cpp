@@ -35,6 +35,7 @@ namespace Model
     AWS_ECS_API UpdateTaskProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
@@ -44,125 +45,37 @@ namespace Model
      * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline const Aws::Vector<ProtectedTask>& GetProtectedTasks() const{ return m_protectedTasks; }
-
-    /**
-     * <p>A list of tasks with the following information.</p> <ul> <li> <p>
-     * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
-     * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
-     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
-     * epoch time when protection for the task will expire.</p> </li> </ul>
-     */
     inline void SetProtectedTasks(const Aws::Vector<ProtectedTask>& value) { m_protectedTasks = value; }
-
-    /**
-     * <p>A list of tasks with the following information.</p> <ul> <li> <p>
-     * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
-     * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
-     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
-     * epoch time when protection for the task will expire.</p> </li> </ul>
-     */
     inline void SetProtectedTasks(Aws::Vector<ProtectedTask>&& value) { m_protectedTasks = std::move(value); }
-
-    /**
-     * <p>A list of tasks with the following information.</p> <ul> <li> <p>
-     * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
-     * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
-     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
-     * epoch time when protection for the task will expire.</p> </li> </ul>
-     */
     inline UpdateTaskProtectionResult& WithProtectedTasks(const Aws::Vector<ProtectedTask>& value) { SetProtectedTasks(value); return *this;}
-
-    /**
-     * <p>A list of tasks with the following information.</p> <ul> <li> <p>
-     * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
-     * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
-     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
-     * epoch time when protection for the task will expire.</p> </li> </ul>
-     */
     inline UpdateTaskProtectionResult& WithProtectedTasks(Aws::Vector<ProtectedTask>&& value) { SetProtectedTasks(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tasks with the following information.</p> <ul> <li> <p>
-     * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
-     * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
-     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
-     * epoch time when protection for the task will expire.</p> </li> </ul>
-     */
     inline UpdateTaskProtectionResult& AddProtectedTasks(const ProtectedTask& value) { m_protectedTasks.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tasks with the following information.</p> <ul> <li> <p>
-     * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
-     * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
-     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
-     * epoch time when protection for the task will expire.</p> </li> </ul>
-     */
     inline UpdateTaskProtectionResult& AddProtectedTasks(ProtectedTask&& value) { m_protectedTasks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
     inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateTaskProtectionResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateTaskProtectionResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateTaskProtectionResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p>Any failures associated with the call.</p>
-     */
     inline UpdateTaskProtectionResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateTaskProtectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateTaskProtectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateTaskProtectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ProtectedTask> m_protectedTasks;

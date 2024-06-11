@@ -34,46 +34,19 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Python script to transform.</p>
      */
     inline const Aws::String& GetPythonScript() const{ return m_pythonScript; }
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline bool PythonScriptHasBeenSet() const { return m_pythonScriptHasBeenSet; }
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline void SetPythonScript(const Aws::String& value) { m_pythonScriptHasBeenSet = true; m_pythonScript = value; }
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline void SetPythonScript(Aws::String&& value) { m_pythonScriptHasBeenSet = true; m_pythonScript = std::move(value); }
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline void SetPythonScript(const char* value) { m_pythonScriptHasBeenSet = true; m_pythonScript.assign(value); }
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline GetDataflowGraphRequest& WithPythonScript(const Aws::String& value) { SetPythonScript(value); return *this;}
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline GetDataflowGraphRequest& WithPythonScript(Aws::String&& value) { SetPythonScript(std::move(value)); return *this;}
-
-    /**
-     * <p>The Python script to transform.</p>
-     */
     inline GetDataflowGraphRequest& WithPythonScript(const char* value) { SetPythonScript(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pythonScript;

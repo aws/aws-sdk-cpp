@@ -39,104 +39,42 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Model automatically decides if a tool should be called or to whether to
      * generate text instead.</p>
      */
     inline const AutoToolChoice& GetAuto() const{ return m_auto; }
-
-    /**
-     * <p>The Model automatically decides if a tool should be called or to whether to
-     * generate text instead.</p>
-     */
     inline bool AutoHasBeenSet() const { return m_autoHasBeenSet; }
-
-    /**
-     * <p>The Model automatically decides if a tool should be called or to whether to
-     * generate text instead.</p>
-     */
     inline void SetAuto(const AutoToolChoice& value) { m_autoHasBeenSet = true; m_auto = value; }
-
-    /**
-     * <p>The Model automatically decides if a tool should be called or to whether to
-     * generate text instead.</p>
-     */
     inline void SetAuto(AutoToolChoice&& value) { m_autoHasBeenSet = true; m_auto = std::move(value); }
-
-    /**
-     * <p>The Model automatically decides if a tool should be called or to whether to
-     * generate text instead.</p>
-     */
     inline ToolChoice& WithAuto(const AutoToolChoice& value) { SetAuto(value); return *this;}
-
-    /**
-     * <p>The Model automatically decides if a tool should be called or to whether to
-     * generate text instead.</p>
-     */
     inline ToolChoice& WithAuto(AutoToolChoice&& value) { SetAuto(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The model must request at least one tool (no text is generated).</p>
      */
     inline const AnyToolChoice& GetAny() const{ return m_any; }
-
-    /**
-     * <p>The model must request at least one tool (no text is generated).</p>
-     */
     inline bool AnyHasBeenSet() const { return m_anyHasBeenSet; }
-
-    /**
-     * <p>The model must request at least one tool (no text is generated).</p>
-     */
     inline void SetAny(const AnyToolChoice& value) { m_anyHasBeenSet = true; m_any = value; }
-
-    /**
-     * <p>The model must request at least one tool (no text is generated).</p>
-     */
     inline void SetAny(AnyToolChoice&& value) { m_anyHasBeenSet = true; m_any = std::move(value); }
-
-    /**
-     * <p>The model must request at least one tool (no text is generated).</p>
-     */
     inline ToolChoice& WithAny(const AnyToolChoice& value) { SetAny(value); return *this;}
-
-    /**
-     * <p>The model must request at least one tool (no text is generated).</p>
-     */
     inline ToolChoice& WithAny(AnyToolChoice&& value) { SetAny(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Model must request the specified tool.</p>
      */
     inline const SpecificToolChoice& GetTool() const{ return m_tool; }
-
-    /**
-     * <p>The Model must request the specified tool.</p>
-     */
     inline bool ToolHasBeenSet() const { return m_toolHasBeenSet; }
-
-    /**
-     * <p>The Model must request the specified tool.</p>
-     */
     inline void SetTool(const SpecificToolChoice& value) { m_toolHasBeenSet = true; m_tool = value; }
-
-    /**
-     * <p>The Model must request the specified tool.</p>
-     */
     inline void SetTool(SpecificToolChoice&& value) { m_toolHasBeenSet = true; m_tool = std::move(value); }
-
-    /**
-     * <p>The Model must request the specified tool.</p>
-     */
     inline ToolChoice& WithTool(const SpecificToolChoice& value) { SetTool(value); return *this;}
-
-    /**
-     * <p>The Model must request the specified tool.</p>
-     */
     inline ToolChoice& WithTool(SpecificToolChoice&& value) { SetTool(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoToolChoice m_auto;

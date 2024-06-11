@@ -40,6 +40,7 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
      *  <p>To specify an earlier version of the Lambda function than the latest,
@@ -49,77 +50,14 @@ namespace Model
      * ARNs: Amazon Lambda</a> </p> 
      */
     inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline LambdaOutputUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline LambdaOutputUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the destination Amazon Lambda function.</p>
-     *  <p>To specify an earlier version of the Lambda function than the latest,
-     * include the Lambda function version in the Lambda function ARN. For more
-     * information about Lambda ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-lambda">Example
-     * ARNs: Amazon Lambda</a> </p> 
-     */
     inline LambdaOutputUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceARNUpdate;

@@ -38,36 +38,17 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The tax registration number type. </p>
      */
     inline const SaudiArabiaTaxRegistrationNumberType& GetTaxRegistrationNumberType() const{ return m_taxRegistrationNumberType; }
-
-    /**
-     * <p> The tax registration number type. </p>
-     */
     inline bool TaxRegistrationNumberTypeHasBeenSet() const { return m_taxRegistrationNumberTypeHasBeenSet; }
-
-    /**
-     * <p> The tax registration number type. </p>
-     */
     inline void SetTaxRegistrationNumberType(const SaudiArabiaTaxRegistrationNumberType& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = value; }
-
-    /**
-     * <p> The tax registration number type. </p>
-     */
     inline void SetTaxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType&& value) { m_taxRegistrationNumberTypeHasBeenSet = true; m_taxRegistrationNumberType = std::move(value); }
-
-    /**
-     * <p> The tax registration number type. </p>
-     */
     inline SaudiArabiaAdditionalInfo& WithTaxRegistrationNumberType(const SaudiArabiaTaxRegistrationNumberType& value) { SetTaxRegistrationNumberType(value); return *this;}
-
-    /**
-     * <p> The tax registration number type. </p>
-     */
     inline SaudiArabiaAdditionalInfo& WithTaxRegistrationNumberType(SaudiArabiaTaxRegistrationNumberType&& value) { SetTaxRegistrationNumberType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SaudiArabiaTaxRegistrationNumberType m_taxRegistrationNumberType;

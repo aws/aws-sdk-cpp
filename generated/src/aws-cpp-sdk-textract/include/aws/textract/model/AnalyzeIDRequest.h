@@ -35,46 +35,19 @@ namespace Model
     AWS_TEXTRACT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The document being passed to AnalyzeID.</p>
      */
     inline const Aws::Vector<Document>& GetDocumentPages() const{ return m_documentPages; }
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline bool DocumentPagesHasBeenSet() const { return m_documentPagesHasBeenSet; }
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline void SetDocumentPages(const Aws::Vector<Document>& value) { m_documentPagesHasBeenSet = true; m_documentPages = value; }
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline void SetDocumentPages(Aws::Vector<Document>&& value) { m_documentPagesHasBeenSet = true; m_documentPages = std::move(value); }
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline AnalyzeIDRequest& WithDocumentPages(const Aws::Vector<Document>& value) { SetDocumentPages(value); return *this;}
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline AnalyzeIDRequest& WithDocumentPages(Aws::Vector<Document>&& value) { SetDocumentPages(std::move(value)); return *this;}
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline AnalyzeIDRequest& AddDocumentPages(const Document& value) { m_documentPagesHasBeenSet = true; m_documentPages.push_back(value); return *this; }
-
-    /**
-     * <p>The document being passed to AnalyzeID.</p>
-     */
     inline AnalyzeIDRequest& AddDocumentPages(Document&& value) { m_documentPagesHasBeenSet = true; m_documentPages.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Document> m_documentPages;

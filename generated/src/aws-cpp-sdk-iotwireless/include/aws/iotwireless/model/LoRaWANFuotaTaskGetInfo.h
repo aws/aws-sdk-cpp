@@ -39,49 +39,27 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetRfRegion() const{ return m_rfRegion; }
-
-    
     inline bool RfRegionHasBeenSet() const { return m_rfRegionHasBeenSet; }
-
-    
     inline void SetRfRegion(const Aws::String& value) { m_rfRegionHasBeenSet = true; m_rfRegion = value; }
-
-    
     inline void SetRfRegion(Aws::String&& value) { m_rfRegionHasBeenSet = true; m_rfRegion = std::move(value); }
-
-    
     inline void SetRfRegion(const char* value) { m_rfRegionHasBeenSet = true; m_rfRegion.assign(value); }
-
-    
     inline LoRaWANFuotaTaskGetInfo& WithRfRegion(const Aws::String& value) { SetRfRegion(value); return *this;}
-
-    
     inline LoRaWANFuotaTaskGetInfo& WithRfRegion(Aws::String&& value) { SetRfRegion(std::move(value)); return *this;}
-
-    
     inline LoRaWANFuotaTaskGetInfo& WithRfRegion(const char* value) { SetRfRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    
     inline LoRaWANFuotaTaskGetInfo& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    
     inline LoRaWANFuotaTaskGetInfo& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rfRegion;

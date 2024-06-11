@@ -35,47 +35,25 @@ namespace Model
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size start range (in bytes).</p>
      */
     inline long long GetStartValue() const{ return m_startValue; }
-
-    /**
-     * <p>The size start range (in bytes).</p>
-     */
     inline bool StartValueHasBeenSet() const { return m_startValueHasBeenSet; }
-
-    /**
-     * <p>The size start range (in bytes).</p>
-     */
     inline void SetStartValue(long long value) { m_startValueHasBeenSet = true; m_startValue = value; }
-
-    /**
-     * <p>The size start range (in bytes).</p>
-     */
     inline LongRangeType& WithStartValue(long long value) { SetStartValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The size end range (in bytes).</p>
      */
     inline long long GetEndValue() const{ return m_endValue; }
-
-    /**
-     * <p>The size end range (in bytes).</p>
-     */
     inline bool EndValueHasBeenSet() const { return m_endValueHasBeenSet; }
-
-    /**
-     * <p>The size end range (in bytes).</p>
-     */
     inline void SetEndValue(long long value) { m_endValueHasBeenSet = true; m_endValue = value; }
-
-    /**
-     * <p>The size end range (in bytes).</p>
-     */
     inline LongRangeType& WithEndValue(long long value) { SetEndValue(value); return *this;}
-
+    ///@}
   private:
 
     long long m_startValue;

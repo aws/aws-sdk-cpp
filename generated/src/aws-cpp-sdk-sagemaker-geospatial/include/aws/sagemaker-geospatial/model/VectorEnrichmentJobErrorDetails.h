@@ -39,85 +39,32 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A message that you define and then is processed and rendered by the Vector
      * Enrichment job when the error occurs.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline VectorEnrichmentJobErrorDetails& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline VectorEnrichmentJobErrorDetails& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message that you define and then is processed and rendered by the Vector
-     * Enrichment job when the error occurs.</p>
-     */
     inline VectorEnrichmentJobErrorDetails& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of error generated during the Vector Enrichment job.</p>
      */
     inline const VectorEnrichmentJobErrorType& GetErrorType() const{ return m_errorType; }
-
-    /**
-     * <p>The type of error generated during the Vector Enrichment job.</p>
-     */
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-
-    /**
-     * <p>The type of error generated during the Vector Enrichment job.</p>
-     */
     inline void SetErrorType(const VectorEnrichmentJobErrorType& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-
-    /**
-     * <p>The type of error generated during the Vector Enrichment job.</p>
-     */
     inline void SetErrorType(VectorEnrichmentJobErrorType&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-
-    /**
-     * <p>The type of error generated during the Vector Enrichment job.</p>
-     */
     inline VectorEnrichmentJobErrorDetails& WithErrorType(const VectorEnrichmentJobErrorType& value) { SetErrorType(value); return *this;}
-
-    /**
-     * <p>The type of error generated during the Vector Enrichment job.</p>
-     */
     inline VectorEnrichmentJobErrorDetails& WithErrorType(VectorEnrichmentJobErrorType&& value) { SetErrorType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorMessage;

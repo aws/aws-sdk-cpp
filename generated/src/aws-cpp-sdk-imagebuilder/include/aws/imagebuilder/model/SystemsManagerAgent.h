@@ -36,6 +36,7 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Controls whether the Systems Manager agent is removed from your final build
      * image, prior to creating the new AMI. If this is set to true, then the agent is
@@ -43,31 +44,10 @@ namespace Model
      * so that it is included in the new AMI. The default value is false.</p>
      */
     inline bool GetUninstallAfterBuild() const{ return m_uninstallAfterBuild; }
-
-    /**
-     * <p>Controls whether the Systems Manager agent is removed from your final build
-     * image, prior to creating the new AMI. If this is set to true, then the agent is
-     * removed from the final image. If it's set to false, then the agent is left in,
-     * so that it is included in the new AMI. The default value is false.</p>
-     */
     inline bool UninstallAfterBuildHasBeenSet() const { return m_uninstallAfterBuildHasBeenSet; }
-
-    /**
-     * <p>Controls whether the Systems Manager agent is removed from your final build
-     * image, prior to creating the new AMI. If this is set to true, then the agent is
-     * removed from the final image. If it's set to false, then the agent is left in,
-     * so that it is included in the new AMI. The default value is false.</p>
-     */
     inline void SetUninstallAfterBuild(bool value) { m_uninstallAfterBuildHasBeenSet = true; m_uninstallAfterBuild = value; }
-
-    /**
-     * <p>Controls whether the Systems Manager agent is removed from your final build
-     * image, prior to creating the new AMI. If this is set to true, then the agent is
-     * removed from the final image. If it's set to false, then the agent is left in,
-     * so that it is included in the new AMI. The default value is false.</p>
-     */
     inline SystemsManagerAgent& WithUninstallAfterBuild(bool value) { SetUninstallAfterBuild(value); return *this;}
-
+    ///@}
   private:
 
     bool m_uninstallAfterBuild;

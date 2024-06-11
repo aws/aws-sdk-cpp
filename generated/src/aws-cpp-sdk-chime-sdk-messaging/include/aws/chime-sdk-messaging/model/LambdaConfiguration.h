@@ -38,77 +38,31 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the Lambda message processing function.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline LambdaConfiguration& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline LambdaConfiguration& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Lambda message processing function.</p>
-     */
     inline LambdaConfiguration& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Controls how the Lambda function is invoked.</p>
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
-
-    /**
-     * <p>Controls how the Lambda function is invoked.</p>
-     */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
-
-    /**
-     * <p>Controls how the Lambda function is invoked.</p>
-     */
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
-
-    /**
-     * <p>Controls how the Lambda function is invoked.</p>
-     */
     inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
-
-    /**
-     * <p>Controls how the Lambda function is invoked.</p>
-     */
     inline LambdaConfiguration& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
-
-    /**
-     * <p>Controls how the Lambda function is invoked.</p>
-     */
     inline LambdaConfiguration& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

@@ -40,77 +40,31 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the document attribute that results are collapsed on.</p>
      */
     inline const DocumentAttribute& GetDocumentAttribute() const{ return m_documentAttribute; }
-
-    /**
-     * <p>The value of the document attribute that results are collapsed on.</p>
-     */
     inline bool DocumentAttributeHasBeenSet() const { return m_documentAttributeHasBeenSet; }
-
-    /**
-     * <p>The value of the document attribute that results are collapsed on.</p>
-     */
     inline void SetDocumentAttribute(const DocumentAttribute& value) { m_documentAttributeHasBeenSet = true; m_documentAttribute = value; }
-
-    /**
-     * <p>The value of the document attribute that results are collapsed on.</p>
-     */
     inline void SetDocumentAttribute(DocumentAttribute&& value) { m_documentAttributeHasBeenSet = true; m_documentAttribute = std::move(value); }
-
-    /**
-     * <p>The value of the document attribute that results are collapsed on.</p>
-     */
     inline CollapsedResultDetail& WithDocumentAttribute(const DocumentAttribute& value) { SetDocumentAttribute(value); return *this;}
-
-    /**
-     * <p>The value of the document attribute that results are collapsed on.</p>
-     */
     inline CollapsedResultDetail& WithDocumentAttribute(DocumentAttribute&& value) { SetDocumentAttribute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of results in the collapsed group.</p>
      */
     inline const Aws::Vector<ExpandedResultItem>& GetExpandedResults() const{ return m_expandedResults; }
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline bool ExpandedResultsHasBeenSet() const { return m_expandedResultsHasBeenSet; }
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline void SetExpandedResults(const Aws::Vector<ExpandedResultItem>& value) { m_expandedResultsHasBeenSet = true; m_expandedResults = value; }
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline void SetExpandedResults(Aws::Vector<ExpandedResultItem>&& value) { m_expandedResultsHasBeenSet = true; m_expandedResults = std::move(value); }
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline CollapsedResultDetail& WithExpandedResults(const Aws::Vector<ExpandedResultItem>& value) { SetExpandedResults(value); return *this;}
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline CollapsedResultDetail& WithExpandedResults(Aws::Vector<ExpandedResultItem>&& value) { SetExpandedResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline CollapsedResultDetail& AddExpandedResults(const ExpandedResultItem& value) { m_expandedResultsHasBeenSet = true; m_expandedResults.push_back(value); return *this; }
-
-    /**
-     * <p>A list of results in the collapsed group.</p>
-     */
     inline CollapsedResultDetail& AddExpandedResults(ExpandedResultItem&& value) { m_expandedResultsHasBeenSet = true; m_expandedResults.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DocumentAttribute m_documentAttribute;

@@ -38,67 +38,29 @@ namespace Model
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetRemovableAttributes() const{ return m_removableAttributes; }
-
-    /**
-     * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
-     */
     inline bool RemovableAttributesHasBeenSet() const { return m_removableAttributesHasBeenSet; }
-
-    /**
-     * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
-     */
     inline void SetRemovableAttributes(const Aws::Utils::CryptoBuffer& value) { m_removableAttributesHasBeenSet = true; m_removableAttributes = value; }
-
-    /**
-     * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
-     */
     inline void SetRemovableAttributes(Aws::Utils::CryptoBuffer&& value) { m_removableAttributesHasBeenSet = true; m_removableAttributes = std::move(value); }
-
-    /**
-     * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
-     */
     inline DICOMUpdates& WithRemovableAttributes(const Aws::Utils::CryptoBuffer& value) { SetRemovableAttributes(value); return *this;}
-
-    /**
-     * <p>The DICOM tags to be removed from <code>ImageSetMetadata</code>.</p>
-     */
     inline DICOMUpdates& WithRemovableAttributes(Aws::Utils::CryptoBuffer&& value) { SetRemovableAttributes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetUpdatableAttributes() const{ return m_updatableAttributes; }
-
-    /**
-     * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
-     */
     inline bool UpdatableAttributesHasBeenSet() const { return m_updatableAttributesHasBeenSet; }
-
-    /**
-     * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
-     */
     inline void SetUpdatableAttributes(const Aws::Utils::CryptoBuffer& value) { m_updatableAttributesHasBeenSet = true; m_updatableAttributes = value; }
-
-    /**
-     * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
-     */
     inline void SetUpdatableAttributes(Aws::Utils::CryptoBuffer&& value) { m_updatableAttributesHasBeenSet = true; m_updatableAttributes = std::move(value); }
-
-    /**
-     * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
-     */
     inline DICOMUpdates& WithUpdatableAttributes(const Aws::Utils::CryptoBuffer& value) { SetUpdatableAttributes(value); return *this;}
-
-    /**
-     * <p>The DICOM tags that need to be updated in <code>ImageSetMetadata</code>.</p>
-     */
     inline DICOMUpdates& WithUpdatableAttributes(Aws::Utils::CryptoBuffer&& value) { SetUpdatableAttributes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::CryptoBuffer m_removableAttributes;

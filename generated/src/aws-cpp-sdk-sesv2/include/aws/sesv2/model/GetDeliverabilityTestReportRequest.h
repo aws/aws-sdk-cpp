@@ -36,46 +36,19 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A unique string that identifies the predictive inbox placement test.</p>
      */
     inline const Aws::String& GetReportId() const{ return m_reportId; }
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline bool ReportIdHasBeenSet() const { return m_reportIdHasBeenSet; }
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline void SetReportId(const Aws::String& value) { m_reportIdHasBeenSet = true; m_reportId = value; }
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline void SetReportId(Aws::String&& value) { m_reportIdHasBeenSet = true; m_reportId = std::move(value); }
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline void SetReportId(const char* value) { m_reportIdHasBeenSet = true; m_reportId.assign(value); }
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline GetDeliverabilityTestReportRequest& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline GetDeliverabilityTestReportRequest& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique string that identifies the predictive inbox placement test.</p>
-     */
     inline GetDeliverabilityTestReportRequest& WithReportId(const char* value) { SetReportId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reportId;

@@ -33,57 +33,27 @@ namespace Model
     AWS_SNS_API GetDataProtectionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
      */
     inline const Aws::String& GetDataProtectionPolicy() const{ return m_dataProtectionPolicy; }
-
-    /**
-     * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-     */
     inline void SetDataProtectionPolicy(const Aws::String& value) { m_dataProtectionPolicy = value; }
-
-    /**
-     * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-     */
     inline void SetDataProtectionPolicy(Aws::String&& value) { m_dataProtectionPolicy = std::move(value); }
-
-    /**
-     * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-     */
     inline void SetDataProtectionPolicy(const char* value) { m_dataProtectionPolicy.assign(value); }
-
-    /**
-     * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-     */
     inline GetDataProtectionPolicyResult& WithDataProtectionPolicy(const Aws::String& value) { SetDataProtectionPolicy(value); return *this;}
-
-    /**
-     * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-     */
     inline GetDataProtectionPolicyResult& WithDataProtectionPolicy(Aws::String&& value) { SetDataProtectionPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>Retrieves the <code>DataProtectionPolicy</code> in JSON string format.</p>
-     */
     inline GetDataProtectionPolicyResult& WithDataProtectionPolicy(const char* value) { SetDataProtectionPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetDataProtectionPolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetDataProtectionPolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataProtectionPolicy;

@@ -37,57 +37,27 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the metric.</p>
      */
     inline const HistoricalMetric& GetMetric() const{ return m_metric; }
-
-    /**
-     * <p>Information about the metric.</p>
-     */
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-
-    /**
-     * <p>Information about the metric.</p>
-     */
     inline void SetMetric(const HistoricalMetric& value) { m_metricHasBeenSet = true; m_metric = value; }
-
-    /**
-     * <p>Information about the metric.</p>
-     */
     inline void SetMetric(HistoricalMetric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-
-    /**
-     * <p>Information about the metric.</p>
-     */
     inline HistoricalMetricData& WithMetric(const HistoricalMetric& value) { SetMetric(value); return *this;}
-
-    /**
-     * <p>Information about the metric.</p>
-     */
     inline HistoricalMetricData& WithMetric(HistoricalMetric&& value) { SetMetric(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the metric.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the metric.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the metric.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the metric.</p>
-     */
     inline HistoricalMetricData& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     HistoricalMetric m_metric;

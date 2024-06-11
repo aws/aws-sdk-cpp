@@ -34,112 +34,44 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the image.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline DescribeImageVersionRequest& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline DescribeImageVersionRequest& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the image.</p>
-     */
     inline DescribeImageVersionRequest& WithImageName(const char* value) { SetImageName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the image. If not specified, the latest version is
      * described.</p>
      */
     inline int GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the image. If not specified, the latest version is
-     * described.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the image. If not specified, the latest version is
-     * described.</p>
-     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the image. If not specified, the latest version is
-     * described.</p>
-     */
     inline DescribeImageVersionRequest& WithVersion(int value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The alias of the image version.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline DescribeImageVersionRequest& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline DescribeImageVersionRequest& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>The alias of the image version.</p>
-     */
     inline DescribeImageVersionRequest& WithAlias(const char* value) { SetAlias(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageName;

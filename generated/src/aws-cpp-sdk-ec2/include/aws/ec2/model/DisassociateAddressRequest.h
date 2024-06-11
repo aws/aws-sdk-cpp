@@ -36,88 +36,35 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The association ID. This parameter is required.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline DisassociateAddressRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline DisassociateAddressRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The association ID. This parameter is required.</p>
-     */
     inline DisassociateAddressRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Deprecated.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline DisassociateAddressRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline DisassociateAddressRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline DisassociateAddressRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -125,31 +72,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DisassociateAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

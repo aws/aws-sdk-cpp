@@ -33,53 +33,27 @@ namespace Model
     AWS_ROLESANYWHERE_API GetSubjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The state of the subject after a read or write operation.</p>
      */
     inline const SubjectDetail& GetSubject() const{ return m_subject; }
-
-    /**
-     * <p>The state of the subject after a read or write operation.</p>
-     */
     inline void SetSubject(const SubjectDetail& value) { m_subject = value; }
-
-    /**
-     * <p>The state of the subject after a read or write operation.</p>
-     */
     inline void SetSubject(SubjectDetail&& value) { m_subject = std::move(value); }
-
-    /**
-     * <p>The state of the subject after a read or write operation.</p>
-     */
     inline GetSubjectResult& WithSubject(const SubjectDetail& value) { SetSubject(value); return *this;}
-
-    /**
-     * <p>The state of the subject after a read or write operation.</p>
-     */
     inline GetSubjectResult& WithSubject(SubjectDetail&& value) { SetSubject(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSubjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSubjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSubjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SubjectDetail m_subject;

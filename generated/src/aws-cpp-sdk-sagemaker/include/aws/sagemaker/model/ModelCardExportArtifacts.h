@@ -37,46 +37,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 URI of the exported model artifacts.</p>
      */
     inline const Aws::String& GetS3ExportArtifacts() const{ return m_s3ExportArtifacts; }
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline bool S3ExportArtifactsHasBeenSet() const { return m_s3ExportArtifactsHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline void SetS3ExportArtifacts(const Aws::String& value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts = value; }
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline void SetS3ExportArtifacts(Aws::String&& value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline void SetS3ExportArtifacts(const char* value) { m_s3ExportArtifactsHasBeenSet = true; m_s3ExportArtifacts.assign(value); }
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline ModelCardExportArtifacts& WithS3ExportArtifacts(const Aws::String& value) { SetS3ExportArtifacts(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline ModelCardExportArtifacts& WithS3ExportArtifacts(Aws::String&& value) { SetS3ExportArtifacts(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 URI of the exported model artifacts.</p>
-     */
     inline ModelCardExportArtifacts& WithS3ExportArtifacts(const char* value) { SetS3ExportArtifacts(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3ExportArtifacts;

@@ -25,35 +25,17 @@ namespace Model
     AWS_LAMBDA_API InvokeResponseStreamUpdate() = default;
     AWS_LAMBDA_API InvokeResponseStreamUpdate(Aws::Vector<unsigned char>&& value) { m_payload = std::move(value); }
 
+    ///@{
     /**
      * <p>Data returned by your Lambda function.</p>
      */
     inline const Aws::Vector<unsigned char>& GetPayload() const { return m_payload; }
-
-    /**
-     * <p>Data returned by your Lambda function.</p>
-     */
     inline Aws::Vector<unsigned char>&& GetPayloadWithOwnership() { return std::move(m_payload); }
-
-    /**
-     * <p>Data returned by your Lambda function.</p>
-     */
     inline void SetPayload(const Aws::Vector<unsigned char>& value) { m_payloadHasBeenSet = true; m_payload = value; }
-
-    /**
-     * <p>Data returned by your Lambda function.</p>
-     */
     inline void SetPayload(Aws::Vector<unsigned char>&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-
-    /**
-     * <p>Data returned by your Lambda function.</p>
-     */
     inline InvokeResponseStreamUpdate& WithPayload(const Aws::Vector<unsigned char>& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>Data returned by your Lambda function.</p>
-     */
     inline InvokeResponseStreamUpdate& WithPayload(Aws::Vector<unsigned char>&& value) { SetPayload(std::move(value)); return *this;}
+    ///@}
 
   private:
 

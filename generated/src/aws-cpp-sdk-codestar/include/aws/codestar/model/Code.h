@@ -40,85 +40,32 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location where the source code files provided with the project request
      * are stored. AWS CodeStar retrieves the files during project creation.</p>
      */
     inline const CodeSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The location where the source code files provided with the project request
-     * are stored. AWS CodeStar retrieves the files during project creation.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The location where the source code files provided with the project request
-     * are stored. AWS CodeStar retrieves the files during project creation.</p>
-     */
     inline void SetSource(const CodeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The location where the source code files provided with the project request
-     * are stored. AWS CodeStar retrieves the files during project creation.</p>
-     */
     inline void SetSource(CodeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The location where the source code files provided with the project request
-     * are stored. AWS CodeStar retrieves the files during project creation.</p>
-     */
     inline Code& WithSource(const CodeSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The location where the source code files provided with the project request
-     * are stored. AWS CodeStar retrieves the files during project creation.</p>
-     */
     inline Code& WithSource(CodeSource&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit
      * or GitHub. After AWS CodeStar provisions the new repository, the source code
      * files provided with the project request are placed in the repository.</p>
      */
     inline const CodeDestination& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit
-     * or GitHub. After AWS CodeStar provisions the new repository, the source code
-     * files provided with the project request are placed in the repository.</p>
-     */
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    /**
-     * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit
-     * or GitHub. After AWS CodeStar provisions the new repository, the source code
-     * files provided with the project request are placed in the repository.</p>
-     */
     inline void SetDestination(const CodeDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    /**
-     * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit
-     * or GitHub. After AWS CodeStar provisions the new repository, the source code
-     * files provided with the project request are placed in the repository.</p>
-     */
     inline void SetDestination(CodeDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    /**
-     * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit
-     * or GitHub. After AWS CodeStar provisions the new repository, the source code
-     * files provided with the project request are placed in the repository.</p>
-     */
     inline Code& WithDestination(const CodeDestination& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit
-     * or GitHub. After AWS CodeStar provisions the new repository, the source code
-     * files provided with the project request are placed in the repository.</p>
-     */
     inline Code& WithDestination(CodeDestination&& value) { SetDestination(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CodeSource m_source;

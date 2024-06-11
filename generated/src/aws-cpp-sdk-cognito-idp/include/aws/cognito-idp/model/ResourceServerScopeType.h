@@ -37,87 +37,33 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the scope.</p>
      */
     inline const Aws::String& GetScopeName() const{ return m_scopeName; }
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline bool ScopeNameHasBeenSet() const { return m_scopeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline void SetScopeName(const Aws::String& value) { m_scopeNameHasBeenSet = true; m_scopeName = value; }
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline void SetScopeName(Aws::String&& value) { m_scopeNameHasBeenSet = true; m_scopeName = std::move(value); }
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline void SetScopeName(const char* value) { m_scopeNameHasBeenSet = true; m_scopeName.assign(value); }
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline ResourceServerScopeType& WithScopeName(const Aws::String& value) { SetScopeName(value); return *this;}
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline ResourceServerScopeType& WithScopeName(Aws::String&& value) { SetScopeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the scope.</p>
-     */
     inline ResourceServerScopeType& WithScopeName(const char* value) { SetScopeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the scope.</p>
      */
     inline const Aws::String& GetScopeDescription() const{ return m_scopeDescription; }
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline bool ScopeDescriptionHasBeenSet() const { return m_scopeDescriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline void SetScopeDescription(const Aws::String& value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription = value; }
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline void SetScopeDescription(Aws::String&& value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription = std::move(value); }
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline void SetScopeDescription(const char* value) { m_scopeDescriptionHasBeenSet = true; m_scopeDescription.assign(value); }
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline ResourceServerScopeType& WithScopeDescription(const Aws::String& value) { SetScopeDescription(value); return *this;}
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline ResourceServerScopeType& WithScopeDescription(Aws::String&& value) { SetScopeDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the scope.</p>
-     */
     inline ResourceServerScopeType& WithScopeDescription(const char* value) { SetScopeDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scopeName;

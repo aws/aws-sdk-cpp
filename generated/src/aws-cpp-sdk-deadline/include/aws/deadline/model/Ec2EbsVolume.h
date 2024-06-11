@@ -35,68 +35,35 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IOPS per volume.</p>
      */
     inline int GetIops() const{ return m_iops; }
-
-    /**
-     * <p>The IOPS per volume.</p>
-     */
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
-
-    /**
-     * <p>The IOPS per volume.</p>
-     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
-
-    /**
-     * <p>The IOPS per volume.</p>
-     */
     inline Ec2EbsVolume& WithIops(int value) { SetIops(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The EBS volume size in GiB.</p>
      */
     inline int GetSizeGiB() const{ return m_sizeGiB; }
-
-    /**
-     * <p>The EBS volume size in GiB.</p>
-     */
     inline bool SizeGiBHasBeenSet() const { return m_sizeGiBHasBeenSet; }
-
-    /**
-     * <p>The EBS volume size in GiB.</p>
-     */
     inline void SetSizeGiB(int value) { m_sizeGiBHasBeenSet = true; m_sizeGiB = value; }
-
-    /**
-     * <p>The EBS volume size in GiB.</p>
-     */
     inline Ec2EbsVolume& WithSizeGiB(int value) { SetSizeGiB(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The throughput per volume in MiB.</p>
      */
     inline int GetThroughputMiB() const{ return m_throughputMiB; }
-
-    /**
-     * <p>The throughput per volume in MiB.</p>
-     */
     inline bool ThroughputMiBHasBeenSet() const { return m_throughputMiBHasBeenSet; }
-
-    /**
-     * <p>The throughput per volume in MiB.</p>
-     */
     inline void SetThroughputMiB(int value) { m_throughputMiBHasBeenSet = true; m_throughputMiB = value; }
-
-    /**
-     * <p>The throughput per volume in MiB.</p>
-     */
     inline Ec2EbsVolume& WithThroughputMiB(int value) { SetThroughputMiB(value); return *this;}
-
+    ///@}
   private:
 
     int m_iops;

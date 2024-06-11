@@ -44,126 +44,46 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A display name for the logical table.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline LogicalTable& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline LogicalTable& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>A display name for the logical table.</p>
-     */
     inline LogicalTable& WithAlias(const char* value) { SetAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Transform operations that act on this logical table. For this structure to be
      * valid, only one of the attributes can be non-null. </p>
      */
     inline const Aws::Vector<TransformOperation>& GetDataTransforms() const{ return m_dataTransforms; }
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline bool DataTransformsHasBeenSet() const { return m_dataTransformsHasBeenSet; }
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline void SetDataTransforms(const Aws::Vector<TransformOperation>& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms = value; }
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline void SetDataTransforms(Aws::Vector<TransformOperation>&& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms = std::move(value); }
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline LogicalTable& WithDataTransforms(const Aws::Vector<TransformOperation>& value) { SetDataTransforms(value); return *this;}
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline LogicalTable& WithDataTransforms(Aws::Vector<TransformOperation>&& value) { SetDataTransforms(std::move(value)); return *this;}
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline LogicalTable& AddDataTransforms(const TransformOperation& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms.push_back(value); return *this; }
-
-    /**
-     * <p>Transform operations that act on this logical table. For this structure to be
-     * valid, only one of the attributes can be non-null. </p>
-     */
     inline LogicalTable& AddDataTransforms(TransformOperation&& value) { m_dataTransformsHasBeenSet = true; m_dataTransforms.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Source of this logical table.</p>
      */
     inline const LogicalTableSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p>Source of this logical table.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>Source of this logical table.</p>
-     */
     inline void SetSource(const LogicalTableSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>Source of this logical table.</p>
-     */
     inline void SetSource(LogicalTableSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>Source of this logical table.</p>
-     */
     inline LogicalTable& WithSource(const LogicalTableSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>Source of this logical table.</p>
-     */
     inline LogicalTable& WithSource(LogicalTableSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alias;

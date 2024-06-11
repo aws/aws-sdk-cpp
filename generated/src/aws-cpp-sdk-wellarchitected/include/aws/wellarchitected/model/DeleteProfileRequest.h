@@ -39,71 +39,31 @@ namespace Model
     AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The profile ARN.</p>
      */
     inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline DeleteProfileRequest& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline DeleteProfileRequest& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline DeleteProfileRequest& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    
     inline DeleteProfileRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    
     inline DeleteProfileRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    
     inline DeleteProfileRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileArn;

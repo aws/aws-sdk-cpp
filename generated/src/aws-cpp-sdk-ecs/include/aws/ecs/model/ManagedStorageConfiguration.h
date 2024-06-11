@@ -38,95 +38,34 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline ManagedStorageConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline ManagedStorageConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
-     */
     inline ManagedStorageConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify the Key Management Service key ID for the Fargate ephemeral
      * storage.</p>
      */
     inline const Aws::String& GetFargateEphemeralStorageKmsKeyId() const{ return m_fargateEphemeralStorageKmsKeyId; }
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline bool FargateEphemeralStorageKmsKeyIdHasBeenSet() const { return m_fargateEphemeralStorageKmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline void SetFargateEphemeralStorageKmsKeyId(const Aws::String& value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId = value; }
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline void SetFargateEphemeralStorageKmsKeyId(Aws::String&& value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId = std::move(value); }
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline void SetFargateEphemeralStorageKmsKeyId(const char* value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId.assign(value); }
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(const Aws::String& value) { SetFargateEphemeralStorageKmsKeyId(value); return *this;}
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(Aws::String&& value) { SetFargateEphemeralStorageKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the Key Management Service key ID for the Fargate ephemeral
-     * storage.</p>
-     */
     inline ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(const char* value) { SetFargateEphemeralStorageKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

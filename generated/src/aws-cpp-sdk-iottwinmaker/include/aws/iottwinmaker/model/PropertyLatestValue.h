@@ -38,67 +38,29 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that specifies information about a property.</p>
      */
     inline const EntityPropertyReference& GetPropertyReference() const{ return m_propertyReference; }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline bool PropertyReferenceHasBeenSet() const { return m_propertyReferenceHasBeenSet; }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline void SetPropertyReference(const EntityPropertyReference& value) { m_propertyReferenceHasBeenSet = true; m_propertyReference = value; }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline void SetPropertyReference(EntityPropertyReference&& value) { m_propertyReferenceHasBeenSet = true; m_propertyReference = std::move(value); }
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline PropertyLatestValue& WithPropertyReference(const EntityPropertyReference& value) { SetPropertyReference(value); return *this;}
-
-    /**
-     * <p>An object that specifies information about a property.</p>
-     */
     inline PropertyLatestValue& WithPropertyReference(EntityPropertyReference&& value) { SetPropertyReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the property.</p>
      */
     inline const DataValue& GetPropertyValue() const{ return m_propertyValue; }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline bool PropertyValueHasBeenSet() const { return m_propertyValueHasBeenSet; }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline void SetPropertyValue(const DataValue& value) { m_propertyValueHasBeenSet = true; m_propertyValue = value; }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline void SetPropertyValue(DataValue&& value) { m_propertyValueHasBeenSet = true; m_propertyValue = std::move(value); }
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline PropertyLatestValue& WithPropertyValue(const DataValue& value) { SetPropertyValue(value); return *this;}
-
-    /**
-     * <p>The value of the property.</p>
-     */
     inline PropertyLatestValue& WithPropertyValue(DataValue&& value) { SetPropertyValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EntityPropertyReference m_propertyReference;

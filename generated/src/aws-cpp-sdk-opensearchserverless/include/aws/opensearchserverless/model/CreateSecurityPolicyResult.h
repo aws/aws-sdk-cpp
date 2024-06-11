@@ -33,53 +33,27 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API CreateSecurityPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the created security policy.</p>
      */
     inline const SecurityPolicyDetail& GetSecurityPolicyDetail() const{ return m_securityPolicyDetail; }
-
-    /**
-     * <p>Details about the created security policy.</p>
-     */
     inline void SetSecurityPolicyDetail(const SecurityPolicyDetail& value) { m_securityPolicyDetail = value; }
-
-    /**
-     * <p>Details about the created security policy.</p>
-     */
     inline void SetSecurityPolicyDetail(SecurityPolicyDetail&& value) { m_securityPolicyDetail = std::move(value); }
-
-    /**
-     * <p>Details about the created security policy.</p>
-     */
     inline CreateSecurityPolicyResult& WithSecurityPolicyDetail(const SecurityPolicyDetail& value) { SetSecurityPolicyDetail(value); return *this;}
-
-    /**
-     * <p>Details about the created security policy.</p>
-     */
     inline CreateSecurityPolicyResult& WithSecurityPolicyDetail(SecurityPolicyDetail&& value) { SetSecurityPolicyDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSecurityPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSecurityPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSecurityPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SecurityPolicyDetail m_securityPolicyDetail;

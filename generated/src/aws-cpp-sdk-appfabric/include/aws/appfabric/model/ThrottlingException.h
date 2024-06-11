@@ -37,133 +37,55 @@ namespace Model
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ThrottlingException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ThrottlingException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ThrottlingException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code of the service.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The code of the service.</p>
-     */
     inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code for the quota exceeded.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline ThrottlingException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline ThrottlingException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The code for the quota exceeded.</p>
-     */
     inline ThrottlingException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The period of time after which you should retry your request.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
-
-    /**
-     * <p>The period of time after which you should retry your request.</p>
-     */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-
-    /**
-     * <p>The period of time after which you should retry your request.</p>
-     */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
-
-    /**
-     * <p>The period of time after which you should retry your request.</p>
-     */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

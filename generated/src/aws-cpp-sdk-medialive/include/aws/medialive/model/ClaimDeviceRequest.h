@@ -36,46 +36,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The id of the device you want to claim.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline ClaimDeviceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline ClaimDeviceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The id of the device you want to claim.
-     */
     inline ClaimDeviceRequest& WithId(const char* value) { SetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

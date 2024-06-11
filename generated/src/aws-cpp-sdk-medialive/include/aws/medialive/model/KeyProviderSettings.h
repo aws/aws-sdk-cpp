@@ -37,24 +37,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const StaticKeySettings& GetStaticKeySettings() const{ return m_staticKeySettings; }
-
-    
     inline bool StaticKeySettingsHasBeenSet() const { return m_staticKeySettingsHasBeenSet; }
-
-    
     inline void SetStaticKeySettings(const StaticKeySettings& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = value; }
-
-    
     inline void SetStaticKeySettings(StaticKeySettings&& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = std::move(value); }
-
-    
     inline KeyProviderSettings& WithStaticKeySettings(const StaticKeySettings& value) { SetStaticKeySettings(value); return *this;}
-
-    
     inline KeyProviderSettings& WithStaticKeySettings(StaticKeySettings&& value) { SetStaticKeySettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StaticKeySettings m_staticKeySettings;

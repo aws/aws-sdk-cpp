@@ -41,163 +41,59 @@ namespace Model
     AWS_DAX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The source of the event. For example, if the event occurred at the node
      * level, the source would be the node ID.</p>
      */
     inline const Aws::String& GetSourceName() const{ return m_sourceName; }
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline Event& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline Event& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The source of the event. For example, if the event occurred at the node
-     * level, the source would be the node ID.</p>
-     */
     inline Event& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
      * etc.</p>
      */
     inline const SourceType& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
-     * etc.</p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
-     * etc.</p>
-     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
-     * etc.</p>
-     */
     inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
-     * etc.</p>
-     */
     inline Event& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p>Specifies the origin of this event - a cluster, a parameter group, a node ID,
-     * etc.</p>
-     */
     inline Event& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-defined message associated with the event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline Event& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-defined message associated with the event.</p>
-     */
     inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
-
-    /**
-     * <p>The date and time when the event occurred.</p>
-     */
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-
-    /**
-     * <p>The date and time when the event occurred.</p>
-     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-
-    /**
-     * <p>The date and time when the event occurred.</p>
-     */
     inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-
-    /**
-     * <p>The date and time when the event occurred.</p>
-     */
     inline Event& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-
-    /**
-     * <p>The date and time when the event occurred.</p>
-     */
     inline Event& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceName;

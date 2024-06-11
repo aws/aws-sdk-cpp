@@ -40,36 +40,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines any Amazon S3 resource constraints.</p>
      */
     inline const S3Presign& GetS3Presign() const{ return m_s3Presign; }
-
-    /**
-     * <p>Defines any Amazon S3 resource constraints.</p>
-     */
     inline bool S3PresignHasBeenSet() const { return m_s3PresignHasBeenSet; }
-
-    /**
-     * <p>Defines any Amazon S3 resource constraints.</p>
-     */
     inline void SetS3Presign(const S3Presign& value) { m_s3PresignHasBeenSet = true; m_s3Presign = value; }
-
-    /**
-     * <p>Defines any Amazon S3 resource constraints.</p>
-     */
     inline void SetS3Presign(S3Presign&& value) { m_s3PresignHasBeenSet = true; m_s3Presign = std::move(value); }
-
-    /**
-     * <p>Defines any Amazon S3 resource constraints.</p>
-     */
     inline WorkerAccessConfiguration& WithS3Presign(const S3Presign& value) { SetS3Presign(value); return *this;}
-
-    /**
-     * <p>Defines any Amazon S3 resource constraints.</p>
-     */
     inline WorkerAccessConfiguration& WithS3Presign(S3Presign&& value) { SetS3Presign(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Presign m_s3Presign;

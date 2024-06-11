@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACESTHINCLIENT_API UpdateDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes a device.</p>
      */
     inline const DeviceSummary& GetDevice() const{ return m_device; }
-
-    /**
-     * <p>Describes a device.</p>
-     */
     inline void SetDevice(const DeviceSummary& value) { m_device = value; }
-
-    /**
-     * <p>Describes a device.</p>
-     */
     inline void SetDevice(DeviceSummary&& value) { m_device = std::move(value); }
-
-    /**
-     * <p>Describes a device.</p>
-     */
     inline UpdateDeviceResult& WithDevice(const DeviceSummary& value) { SetDevice(value); return *this;}
-
-    /**
-     * <p>Describes a device.</p>
-     */
     inline UpdateDeviceResult& WithDevice(DeviceSummary&& value) { SetDevice(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DeviceSummary m_device;

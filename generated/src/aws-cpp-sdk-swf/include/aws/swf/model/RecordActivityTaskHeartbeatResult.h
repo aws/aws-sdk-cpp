@@ -37,43 +37,25 @@ namespace Model
     AWS_SWF_API RecordActivityTaskHeartbeatResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
      */
     inline bool GetCancelRequested() const{ return m_cancelRequested; }
-
-    /**
-     * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-     */
     inline void SetCancelRequested(bool value) { m_cancelRequested = value; }
-
-    /**
-     * <p>Set to <code>true</code> if cancellation of the task is requested.</p>
-     */
     inline RecordActivityTaskHeartbeatResult& WithCancelRequested(bool value) { SetCancelRequested(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RecordActivityTaskHeartbeatResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RecordActivityTaskHeartbeatResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RecordActivityTaskHeartbeatResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_cancelRequested;

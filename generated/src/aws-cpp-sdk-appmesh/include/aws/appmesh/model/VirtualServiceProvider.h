@@ -39,67 +39,29 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The virtual node associated with a virtual service.</p>
      */
     inline const VirtualNodeServiceProvider& GetVirtualNode() const{ return m_virtualNode; }
-
-    /**
-     * <p>The virtual node associated with a virtual service.</p>
-     */
     inline bool VirtualNodeHasBeenSet() const { return m_virtualNodeHasBeenSet; }
-
-    /**
-     * <p>The virtual node associated with a virtual service.</p>
-     */
     inline void SetVirtualNode(const VirtualNodeServiceProvider& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = value; }
-
-    /**
-     * <p>The virtual node associated with a virtual service.</p>
-     */
     inline void SetVirtualNode(VirtualNodeServiceProvider&& value) { m_virtualNodeHasBeenSet = true; m_virtualNode = std::move(value); }
-
-    /**
-     * <p>The virtual node associated with a virtual service.</p>
-     */
     inline VirtualServiceProvider& WithVirtualNode(const VirtualNodeServiceProvider& value) { SetVirtualNode(value); return *this;}
-
-    /**
-     * <p>The virtual node associated with a virtual service.</p>
-     */
     inline VirtualServiceProvider& WithVirtualNode(VirtualNodeServiceProvider&& value) { SetVirtualNode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The virtual router associated with a virtual service.</p>
      */
     inline const VirtualRouterServiceProvider& GetVirtualRouter() const{ return m_virtualRouter; }
-
-    /**
-     * <p>The virtual router associated with a virtual service.</p>
-     */
     inline bool VirtualRouterHasBeenSet() const { return m_virtualRouterHasBeenSet; }
-
-    /**
-     * <p>The virtual router associated with a virtual service.</p>
-     */
     inline void SetVirtualRouter(const VirtualRouterServiceProvider& value) { m_virtualRouterHasBeenSet = true; m_virtualRouter = value; }
-
-    /**
-     * <p>The virtual router associated with a virtual service.</p>
-     */
     inline void SetVirtualRouter(VirtualRouterServiceProvider&& value) { m_virtualRouterHasBeenSet = true; m_virtualRouter = std::move(value); }
-
-    /**
-     * <p>The virtual router associated with a virtual service.</p>
-     */
     inline VirtualServiceProvider& WithVirtualRouter(const VirtualRouterServiceProvider& value) { SetVirtualRouter(value); return *this;}
-
-    /**
-     * <p>The virtual router associated with a virtual service.</p>
-     */
     inline VirtualServiceProvider& WithVirtualRouter(VirtualRouterServiceProvider&& value) { SetVirtualRouter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VirtualNodeServiceProvider m_virtualNode;

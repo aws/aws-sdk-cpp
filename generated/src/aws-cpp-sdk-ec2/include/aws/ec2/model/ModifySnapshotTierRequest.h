@@ -37,78 +37,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline ModifySnapshotTierRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline ModifySnapshotTierRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the snapshot.</p>
-     */
     inline ModifySnapshotTierRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the storage tier. You must specify <code>archive</code>.</p>
      */
     inline const TargetStorageTier& GetStorageTier() const{ return m_storageTier; }
-
-    /**
-     * <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-     */
     inline bool StorageTierHasBeenSet() const { return m_storageTierHasBeenSet; }
-
-    /**
-     * <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-     */
     inline void SetStorageTier(const TargetStorageTier& value) { m_storageTierHasBeenSet = true; m_storageTier = value; }
-
-    /**
-     * <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-     */
     inline void SetStorageTier(TargetStorageTier&& value) { m_storageTierHasBeenSet = true; m_storageTier = std::move(value); }
-
-    /**
-     * <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-     */
     inline ModifySnapshotTierRequest& WithStorageTier(const TargetStorageTier& value) { SetStorageTier(value); return *this;}
-
-    /**
-     * <p>The name of the storage tier. You must specify <code>archive</code>.</p>
-     */
     inline ModifySnapshotTierRequest& WithStorageTier(TargetStorageTier&& value) { SetStorageTier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -116,31 +71,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline ModifySnapshotTierRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_snapshotId;

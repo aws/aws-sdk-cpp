@@ -32,46 +32,19 @@ namespace Model
     AWS_PRIVATENETWORKS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the order.</p>
      */
     inline const Aws::String& GetOrderArn() const{ return m_orderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline bool OrderArnHasBeenSet() const { return m_orderArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline void SetOrderArn(const Aws::String& value) { m_orderArnHasBeenSet = true; m_orderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline void SetOrderArn(Aws::String&& value) { m_orderArnHasBeenSet = true; m_orderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline void SetOrderArn(const char* value) { m_orderArnHasBeenSet = true; m_orderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline GetOrderRequest& WithOrderArn(const Aws::String& value) { SetOrderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline GetOrderRequest& WithOrderArn(Aws::String&& value) { SetOrderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the order.</p>
-     */
     inline GetOrderRequest& WithOrderArn(const char* value) { SetOrderArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_orderArn;

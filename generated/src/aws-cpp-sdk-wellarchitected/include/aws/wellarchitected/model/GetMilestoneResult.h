@@ -38,65 +38,36 @@ namespace Model
     AWS_WELLARCHITECTED_API GetMilestoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-
-    
     inline GetMilestoneResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline GetMilestoneResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline GetMilestoneResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Milestone& GetMilestone() const{ return m_milestone; }
-
-    
     inline void SetMilestone(const Milestone& value) { m_milestone = value; }
-
-    
     inline void SetMilestone(Milestone&& value) { m_milestone = std::move(value); }
-
-    
     inline GetMilestoneResult& WithMilestone(const Milestone& value) { SetMilestone(value); return *this;}
-
-    
     inline GetMilestoneResult& WithMilestone(Milestone&& value) { SetMilestone(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMilestoneResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMilestoneResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMilestoneResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

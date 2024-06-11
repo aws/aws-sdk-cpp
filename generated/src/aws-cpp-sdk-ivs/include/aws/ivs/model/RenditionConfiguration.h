@@ -40,6 +40,7 @@ namespace Model
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates which set of renditions are recorded for a stream. For
      * <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If
@@ -47,48 +48,14 @@ namespace Model
      * <code>renditions</code> field. Default: <code>ALL</code>.</p>
      */
     inline const RenditionConfigurationRenditionSelection& GetRenditionSelection() const{ return m_renditionSelection; }
-
-    /**
-     * <p>Indicates which set of renditions are recorded for a stream. For
-     * <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If
-     * <code>CUSTOM</code> is specified, a set of renditions must be specified in the
-     * <code>renditions</code> field. Default: <code>ALL</code>.</p>
-     */
     inline bool RenditionSelectionHasBeenSet() const { return m_renditionSelectionHasBeenSet; }
-
-    /**
-     * <p>Indicates which set of renditions are recorded for a stream. For
-     * <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If
-     * <code>CUSTOM</code> is specified, a set of renditions must be specified in the
-     * <code>renditions</code> field. Default: <code>ALL</code>.</p>
-     */
     inline void SetRenditionSelection(const RenditionConfigurationRenditionSelection& value) { m_renditionSelectionHasBeenSet = true; m_renditionSelection = value; }
-
-    /**
-     * <p>Indicates which set of renditions are recorded for a stream. For
-     * <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If
-     * <code>CUSTOM</code> is specified, a set of renditions must be specified in the
-     * <code>renditions</code> field. Default: <code>ALL</code>.</p>
-     */
     inline void SetRenditionSelection(RenditionConfigurationRenditionSelection&& value) { m_renditionSelectionHasBeenSet = true; m_renditionSelection = std::move(value); }
-
-    /**
-     * <p>Indicates which set of renditions are recorded for a stream. For
-     * <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If
-     * <code>CUSTOM</code> is specified, a set of renditions must be specified in the
-     * <code>renditions</code> field. Default: <code>ALL</code>.</p>
-     */
     inline RenditionConfiguration& WithRenditionSelection(const RenditionConfigurationRenditionSelection& value) { SetRenditionSelection(value); return *this;}
-
-    /**
-     * <p>Indicates which set of renditions are recorded for a stream. For
-     * <code>BASIC</code> channels, the <code>CUSTOM</code> value has no effect. If
-     * <code>CUSTOM</code> is specified, a set of renditions must be specified in the
-     * <code>renditions</code> field. Default: <code>ALL</code>.</p>
-     */
     inline RenditionConfiguration& WithRenditionSelection(RenditionConfigurationRenditionSelection&& value) { SetRenditionSelection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates which renditions are recorded for a stream, if
      * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
@@ -99,84 +66,14 @@ namespace Model
      * to Amazon S3</a>.</p>
      */
     inline const Aws::Vector<RenditionConfigurationRendition>& GetRenditions() const{ return m_renditions; }
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline bool RenditionsHasBeenSet() const { return m_renditionsHasBeenSet; }
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline void SetRenditions(const Aws::Vector<RenditionConfigurationRendition>& value) { m_renditionsHasBeenSet = true; m_renditions = value; }
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline void SetRenditions(Aws::Vector<RenditionConfigurationRendition>&& value) { m_renditionsHasBeenSet = true; m_renditions = std::move(value); }
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline RenditionConfiguration& WithRenditions(const Aws::Vector<RenditionConfigurationRendition>& value) { SetRenditions(value); return *this;}
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline RenditionConfiguration& WithRenditions(Aws::Vector<RenditionConfigurationRendition>&& value) { SetRenditions(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline RenditionConfiguration& AddRenditions(const RenditionConfigurationRendition& value) { m_renditionsHasBeenSet = true; m_renditions.push_back(value); return *this; }
-
-    /**
-     * <p>Indicates which renditions are recorded for a stream, if
-     * <code>renditionSelection</code> is <code>CUSTOM</code>; otherwise, this field is
-     * irrelevant. The selected renditions are recorded if they are available during
-     * the stream. If a selected rendition is unavailable, the best available rendition
-     * is recorded. For details on the resolution dimensions of each rendition, see <a
-     * href="https://docs.aws.amazon.com/ivs/latest/userguide/record-to-s3.html">Auto-Record
-     * to Amazon S3</a>.</p>
-     */
     inline RenditionConfiguration& AddRenditions(RenditionConfigurationRendition&& value) { m_renditionsHasBeenSet = true; m_renditions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     RenditionConfigurationRenditionSelection m_renditionSelection;

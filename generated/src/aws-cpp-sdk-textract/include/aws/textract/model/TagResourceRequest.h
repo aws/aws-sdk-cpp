@@ -35,112 +35,38 @@ namespace Model
     AWS_TEXTRACT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline TagResourceRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline TagResourceRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that specifies the resource to be tagged.</p>
-     */
     inline TagResourceRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A set of tags (key-value pairs) that you want to assign to the resource.</p>
-     */
     inline TagResourceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_resourceARN;

@@ -34,95 +34,34 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
      * feature.</p>
      */
     inline const Aws::String& GetFeatureGroupName() const{ return m_featureGroupName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline bool FeatureGroupNameHasBeenSet() const { return m_featureGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline void SetFeatureGroupName(const Aws::String& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline void SetFeatureGroupName(Aws::String&& value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline void SetFeatureGroupName(const char* value) { m_featureGroupNameHasBeenSet = true; m_featureGroupName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline DescribeFeatureMetadataRequest& WithFeatureGroupName(const Aws::String& value) { SetFeatureGroupName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline DescribeFeatureMetadataRequest& WithFeatureGroupName(Aws::String&& value) { SetFeatureGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the feature group containing the
-     * feature.</p>
-     */
     inline DescribeFeatureMetadataRequest& WithFeatureGroupName(const char* value) { SetFeatureGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the feature.</p>
      */
     inline const Aws::String& GetFeatureName() const{ return m_featureName; }
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline DescribeFeatureMetadataRequest& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline DescribeFeatureMetadataRequest& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the feature.</p>
-     */
     inline DescribeFeatureMetadataRequest& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_featureGroupName;

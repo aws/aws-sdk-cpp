@@ -39,108 +39,43 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field's value.</p>
      */
     inline const AttributeValue& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The field's value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The field's value.</p>
-     */
     inline void SetValue(const AttributeValue& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The field's value.</p>
-     */
     inline void SetValue(AttributeValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The field's value.</p>
-     */
     inline DetectedField& WithValue(const AttributeValue& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The field's value.</p>
-     */
     inline DetectedField& WithValue(AttributeValue&& value) { SetValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field's confidence.</p>
      */
     inline const Confidence& GetConfidence() const{ return m_confidence; }
-
-    /**
-     * <p>The field's confidence.</p>
-     */
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-
-    /**
-     * <p>The field's confidence.</p>
-     */
     inline void SetConfidence(const Confidence& value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-
-    /**
-     * <p>The field's confidence.</p>
-     */
     inline void SetConfidence(Confidence&& value) { m_confidenceHasBeenSet = true; m_confidence = std::move(value); }
-
-    /**
-     * <p>The field's confidence.</p>
-     */
     inline DetectedField& WithConfidence(const Confidence& value) { SetConfidence(value); return *this;}
-
-    /**
-     * <p>The field's confidence.</p>
-     */
     inline DetectedField& WithConfidence(Confidence&& value) { SetConfidence(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field's message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline DetectedField& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline DetectedField& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The field's message.</p>
-     */
     inline DetectedField& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     AttributeValue m_value;

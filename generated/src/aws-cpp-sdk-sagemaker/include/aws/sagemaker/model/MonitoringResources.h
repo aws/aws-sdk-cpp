@@ -38,42 +38,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for the cluster resources used to run the processing
      * job.</p>
      */
     inline const MonitoringClusterConfig& GetClusterConfig() const{ return m_clusterConfig; }
-
-    /**
-     * <p>The configuration for the cluster resources used to run the processing
-     * job.</p>
-     */
     inline bool ClusterConfigHasBeenSet() const { return m_clusterConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for the cluster resources used to run the processing
-     * job.</p>
-     */
     inline void SetClusterConfig(const MonitoringClusterConfig& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = value; }
-
-    /**
-     * <p>The configuration for the cluster resources used to run the processing
-     * job.</p>
-     */
     inline void SetClusterConfig(MonitoringClusterConfig&& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for the cluster resources used to run the processing
-     * job.</p>
-     */
     inline MonitoringResources& WithClusterConfig(const MonitoringClusterConfig& value) { SetClusterConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for the cluster resources used to run the processing
-     * job.</p>
-     */
     inline MonitoringResources& WithClusterConfig(MonitoringClusterConfig&& value) { SetClusterConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MonitoringClusterConfig m_clusterConfig;

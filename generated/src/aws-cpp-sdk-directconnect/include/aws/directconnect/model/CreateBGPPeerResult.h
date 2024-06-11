@@ -33,53 +33,27 @@ namespace Model
     AWS_DIRECTCONNECT_API CreateBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The virtual interface.</p>
      */
     inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
-
-    /**
-     * <p>The virtual interface.</p>
-     */
     inline void SetVirtualInterface(const VirtualInterface& value) { m_virtualInterface = value; }
-
-    /**
-     * <p>The virtual interface.</p>
-     */
     inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = std::move(value); }
-
-    /**
-     * <p>The virtual interface.</p>
-     */
     inline CreateBGPPeerResult& WithVirtualInterface(const VirtualInterface& value) { SetVirtualInterface(value); return *this;}
-
-    /**
-     * <p>The virtual interface.</p>
-     */
     inline CreateBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateBGPPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateBGPPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateBGPPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VirtualInterface m_virtualInterface;

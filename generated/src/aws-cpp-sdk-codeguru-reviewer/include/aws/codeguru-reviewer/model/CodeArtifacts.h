@@ -41,55 +41,22 @@ namespace Model
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 object key for a source code .zip file. This is required for all code
      * reviews.</p>
      */
     inline const Aws::String& GetSourceCodeArtifactsObjectKey() const{ return m_sourceCodeArtifactsObjectKey; }
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline bool SourceCodeArtifactsObjectKeyHasBeenSet() const { return m_sourceCodeArtifactsObjectKeyHasBeenSet; }
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline void SetSourceCodeArtifactsObjectKey(const Aws::String& value) { m_sourceCodeArtifactsObjectKeyHasBeenSet = true; m_sourceCodeArtifactsObjectKey = value; }
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline void SetSourceCodeArtifactsObjectKey(Aws::String&& value) { m_sourceCodeArtifactsObjectKeyHasBeenSet = true; m_sourceCodeArtifactsObjectKey = std::move(value); }
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline void SetSourceCodeArtifactsObjectKey(const char* value) { m_sourceCodeArtifactsObjectKeyHasBeenSet = true; m_sourceCodeArtifactsObjectKey.assign(value); }
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline CodeArtifacts& WithSourceCodeArtifactsObjectKey(const Aws::String& value) { SetSourceCodeArtifactsObjectKey(value); return *this;}
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline CodeArtifacts& WithSourceCodeArtifactsObjectKey(Aws::String&& value) { SetSourceCodeArtifactsObjectKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3 object key for a source code .zip file. This is required for all code
-     * reviews.</p>
-     */
     inline CodeArtifacts& WithSourceCodeArtifactsObjectKey(const char* value) { SetSourceCodeArtifactsObjectKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 object key for a build artifacts .zip file that contains .jar or
      * .class files. This is required for a code review with security analysis. For
@@ -99,77 +66,14 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetBuildArtifactsObjectKey() const{ return m_buildArtifactsObjectKey; }
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline bool BuildArtifactsObjectKeyHasBeenSet() const { return m_buildArtifactsObjectKeyHasBeenSet; }
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline void SetBuildArtifactsObjectKey(const Aws::String& value) { m_buildArtifactsObjectKeyHasBeenSet = true; m_buildArtifactsObjectKey = value; }
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline void SetBuildArtifactsObjectKey(Aws::String&& value) { m_buildArtifactsObjectKeyHasBeenSet = true; m_buildArtifactsObjectKey = std::move(value); }
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline void SetBuildArtifactsObjectKey(const char* value) { m_buildArtifactsObjectKeyHasBeenSet = true; m_buildArtifactsObjectKey.assign(value); }
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline CodeArtifacts& WithBuildArtifactsObjectKey(const Aws::String& value) { SetBuildArtifactsObjectKey(value); return *this;}
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline CodeArtifacts& WithBuildArtifactsObjectKey(Aws::String&& value) { SetBuildArtifactsObjectKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3 object key for a build artifacts .zip file that contains .jar or
-     * .class files. This is required for a code review with security analysis. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/working-with-cicd.html">Create
-     * code reviews with GitHub Actions</a> in the <i>Amazon CodeGuru Reviewer User
-     * Guide</i>.</p>
-     */
     inline CodeArtifacts& WithBuildArtifactsObjectKey(const char* value) { SetBuildArtifactsObjectKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceCodeArtifactsObjectKey;

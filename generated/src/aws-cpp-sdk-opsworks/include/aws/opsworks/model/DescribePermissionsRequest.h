@@ -34,6 +34,7 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
      * information about IAM ARNs, see <a
@@ -41,104 +42,28 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline DescribePermissionsRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline DescribePermissionsRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The user's IAM ARN. This can also be a federated user's ARN. For more
-     * information about IAM ARNs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
-     * Identifiers</a>.</p>
-     */
     inline DescribePermissionsRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline DescribePermissionsRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline DescribePermissionsRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-
-    /**
-     * <p>The stack ID.</p>
-     */
     inline DescribePermissionsRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iamUserArn;

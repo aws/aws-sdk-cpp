@@ -34,46 +34,19 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of your Config Custom Policy rule.</p>
      */
     inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline GetCustomRulePolicyRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline GetCustomRulePolicyRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your Config Custom Policy rule.</p>
-     */
     inline GetCustomRulePolicyRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configRuleName;

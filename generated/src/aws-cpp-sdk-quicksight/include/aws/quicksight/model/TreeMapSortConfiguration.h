@@ -39,77 +39,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sort configuration of group by fields.</p>
      */
     inline const Aws::Vector<FieldSortOptions>& GetTreeMapSort() const{ return m_treeMapSort; }
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline bool TreeMapSortHasBeenSet() const { return m_treeMapSortHasBeenSet; }
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline void SetTreeMapSort(const Aws::Vector<FieldSortOptions>& value) { m_treeMapSortHasBeenSet = true; m_treeMapSort = value; }
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline void SetTreeMapSort(Aws::Vector<FieldSortOptions>&& value) { m_treeMapSortHasBeenSet = true; m_treeMapSort = std::move(value); }
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline TreeMapSortConfiguration& WithTreeMapSort(const Aws::Vector<FieldSortOptions>& value) { SetTreeMapSort(value); return *this;}
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline TreeMapSortConfiguration& WithTreeMapSort(Aws::Vector<FieldSortOptions>&& value) { SetTreeMapSort(std::move(value)); return *this;}
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline TreeMapSortConfiguration& AddTreeMapSort(const FieldSortOptions& value) { m_treeMapSortHasBeenSet = true; m_treeMapSort.push_back(value); return *this; }
-
-    /**
-     * <p>The sort configuration of group by fields.</p>
-     */
     inline TreeMapSortConfiguration& AddTreeMapSort(FieldSortOptions&& value) { m_treeMapSortHasBeenSet = true; m_treeMapSort.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The limit on the number of groups that are displayed.</p>
      */
     inline const ItemsLimitConfiguration& GetTreeMapGroupItemsLimitConfiguration() const{ return m_treeMapGroupItemsLimitConfiguration; }
-
-    /**
-     * <p>The limit on the number of groups that are displayed.</p>
-     */
     inline bool TreeMapGroupItemsLimitConfigurationHasBeenSet() const { return m_treeMapGroupItemsLimitConfigurationHasBeenSet; }
-
-    /**
-     * <p>The limit on the number of groups that are displayed.</p>
-     */
     inline void SetTreeMapGroupItemsLimitConfiguration(const ItemsLimitConfiguration& value) { m_treeMapGroupItemsLimitConfigurationHasBeenSet = true; m_treeMapGroupItemsLimitConfiguration = value; }
-
-    /**
-     * <p>The limit on the number of groups that are displayed.</p>
-     */
     inline void SetTreeMapGroupItemsLimitConfiguration(ItemsLimitConfiguration&& value) { m_treeMapGroupItemsLimitConfigurationHasBeenSet = true; m_treeMapGroupItemsLimitConfiguration = std::move(value); }
-
-    /**
-     * <p>The limit on the number of groups that are displayed.</p>
-     */
     inline TreeMapSortConfiguration& WithTreeMapGroupItemsLimitConfiguration(const ItemsLimitConfiguration& value) { SetTreeMapGroupItemsLimitConfiguration(value); return *this;}
-
-    /**
-     * <p>The limit on the number of groups that are displayed.</p>
-     */
     inline TreeMapSortConfiguration& WithTreeMapGroupItemsLimitConfiguration(ItemsLimitConfiguration&& value) { SetTreeMapGroupItemsLimitConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FieldSortOptions> m_treeMapSort;

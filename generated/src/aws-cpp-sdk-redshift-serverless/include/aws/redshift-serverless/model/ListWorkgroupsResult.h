@@ -34,113 +34,44 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API ListWorkgroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> If <code>nextToken</code> is returned, there are more results available. The
      * value of <code>nextToken</code> is a unique pagination token for each page. To
      * retrieve the next page, make the call again using the returned token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. To
-     * retrieve the next page, make the call again using the returned token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. To
-     * retrieve the next page, make the call again using the returned token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. To
-     * retrieve the next page, make the call again using the returned token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. To
-     * retrieve the next page, make the call again using the returned token.</p>
-     */
     inline ListWorkgroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. To
-     * retrieve the next page, make the call again using the returned token.</p>
-     */
     inline ListWorkgroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. To
-     * retrieve the next page, make the call again using the returned token.</p>
-     */
     inline ListWorkgroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The returned array of workgroups.</p>
      */
     inline const Aws::Vector<Workgroup>& GetWorkgroups() const{ return m_workgroups; }
-
-    /**
-     * <p>The returned array of workgroups.</p>
-     */
     inline void SetWorkgroups(const Aws::Vector<Workgroup>& value) { m_workgroups = value; }
-
-    /**
-     * <p>The returned array of workgroups.</p>
-     */
     inline void SetWorkgroups(Aws::Vector<Workgroup>&& value) { m_workgroups = std::move(value); }
-
-    /**
-     * <p>The returned array of workgroups.</p>
-     */
     inline ListWorkgroupsResult& WithWorkgroups(const Aws::Vector<Workgroup>& value) { SetWorkgroups(value); return *this;}
-
-    /**
-     * <p>The returned array of workgroups.</p>
-     */
     inline ListWorkgroupsResult& WithWorkgroups(Aws::Vector<Workgroup>&& value) { SetWorkgroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The returned array of workgroups.</p>
-     */
     inline ListWorkgroupsResult& AddWorkgroups(const Workgroup& value) { m_workgroups.push_back(value); return *this; }
-
-    /**
-     * <p>The returned array of workgroups.</p>
-     */
     inline ListWorkgroupsResult& AddWorkgroups(Workgroup&& value) { m_workgroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListWorkgroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListWorkgroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListWorkgroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -39,58 +39,28 @@ namespace Model
     AWS_DIRECTORYSERVICE_API GetDirectoryLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
      * current Region.</p>
      */
     inline const DirectoryLimits& GetDirectoryLimits() const{ return m_directoryLimits; }
-
-    /**
-     * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current Region.</p>
-     */
     inline void SetDirectoryLimits(const DirectoryLimits& value) { m_directoryLimits = value; }
-
-    /**
-     * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current Region.</p>
-     */
     inline void SetDirectoryLimits(DirectoryLimits&& value) { m_directoryLimits = std::move(value); }
-
-    /**
-     * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current Region.</p>
-     */
     inline GetDirectoryLimitsResult& WithDirectoryLimits(const DirectoryLimits& value) { SetDirectoryLimits(value); return *this;}
-
-    /**
-     * <p>A <a>DirectoryLimits</a> object that contains the directory limits for the
-     * current Region.</p>
-     */
     inline GetDirectoryLimitsResult& WithDirectoryLimits(DirectoryLimits&& value) { SetDirectoryLimits(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDirectoryLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDirectoryLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDirectoryLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DirectoryLimits m_directoryLimits;

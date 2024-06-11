@@ -40,96 +40,36 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The metric's event type.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline MetricAttribute& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline MetricAttribute& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-
-    /**
-     * <p>The metric's event type.</p>
-     */
     inline MetricAttribute& WithEventType(const char* value) { SetEventType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The metric's name. The name helps you identify the metric in Amazon
      * CloudWatch or Amazon S3.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline MetricAttribute& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline MetricAttribute& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>The metric's name. The name helps you identify the metric in Amazon
-     * CloudWatch or Amazon S3.</p>
-     */
     inline MetricAttribute& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The attribute's expression. Available functions are <code>SUM()</code> or
      * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
@@ -137,63 +77,14 @@ namespace Model
      * SUM(Items.PRICE).</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline MetricAttribute& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline MetricAttribute& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>The attribute's expression. Available functions are <code>SUM()</code> or
-     * <code>SAMPLECOUNT()</code>. For SUM() functions, provide the dataset type
-     * (either Interactions or Items) and column to sum as a parameter. For example
-     * SUM(Items.PRICE).</p>
-     */
     inline MetricAttribute& WithExpression(const char* value) { SetExpression(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventType;

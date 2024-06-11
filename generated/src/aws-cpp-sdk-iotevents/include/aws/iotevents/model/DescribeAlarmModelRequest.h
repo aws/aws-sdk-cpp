@@ -38,87 +38,33 @@ namespace Model
     AWS_IOTEVENTS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the alarm model.</p>
      */
     inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DescribeAlarmModelRequest& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DescribeAlarmModelRequest& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DescribeAlarmModelRequest& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the alarm model.</p>
      */
     inline const Aws::String& GetAlarmModelVersion() const{ return m_alarmModelVersion; }
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline bool AlarmModelVersionHasBeenSet() const { return m_alarmModelVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline void SetAlarmModelVersion(const Aws::String& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = value; }
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline void SetAlarmModelVersion(Aws::String&& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = std::move(value); }
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline void SetAlarmModelVersion(const char* value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion.assign(value); }
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline DescribeAlarmModelRequest& WithAlarmModelVersion(const Aws::String& value) { SetAlarmModelVersion(value); return *this;}
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline DescribeAlarmModelRequest& WithAlarmModelVersion(Aws::String&& value) { SetAlarmModelVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the alarm model.</p>
-     */
     inline DescribeAlarmModelRequest& WithAlarmModelVersion(const char* value) { SetAlarmModelVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alarmModelName;

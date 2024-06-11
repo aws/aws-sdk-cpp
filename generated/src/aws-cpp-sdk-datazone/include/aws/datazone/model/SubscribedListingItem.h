@@ -38,36 +38,17 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The asset for which the subscription grant is created.</p>
      */
     inline const SubscribedAssetListing& GetAssetListing() const{ return m_assetListing; }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline bool AssetListingHasBeenSet() const { return m_assetListingHasBeenSet; }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline void SetAssetListing(const SubscribedAssetListing& value) { m_assetListingHasBeenSet = true; m_assetListing = value; }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline void SetAssetListing(SubscribedAssetListing&& value) { m_assetListingHasBeenSet = true; m_assetListing = std::move(value); }
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline SubscribedListingItem& WithAssetListing(const SubscribedAssetListing& value) { SetAssetListing(value); return *this;}
-
-    /**
-     * <p>The asset for which the subscription grant is created.</p>
-     */
     inline SubscribedListingItem& WithAssetListing(SubscribedAssetListing&& value) { SetAssetListing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SubscribedAssetListing m_assetListing;

@@ -33,53 +33,27 @@ namespace Model
     AWS_GUARDDUTY_API GetAdministratorAccountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The administrator account details.</p>
      */
     inline const Administrator& GetAdministrator() const{ return m_administrator; }
-
-    /**
-     * <p>The administrator account details.</p>
-     */
     inline void SetAdministrator(const Administrator& value) { m_administrator = value; }
-
-    /**
-     * <p>The administrator account details.</p>
-     */
     inline void SetAdministrator(Administrator&& value) { m_administrator = std::move(value); }
-
-    /**
-     * <p>The administrator account details.</p>
-     */
     inline GetAdministratorAccountResult& WithAdministrator(const Administrator& value) { SetAdministrator(value); return *this;}
-
-    /**
-     * <p>The administrator account details.</p>
-     */
     inline GetAdministratorAccountResult& WithAdministrator(Administrator&& value) { SetAdministrator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAdministratorAccountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAdministratorAccountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAdministratorAccountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Administrator m_administrator;

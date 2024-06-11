@@ -35,77 +35,31 @@ namespace Model
     AWS_SWF_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline DescribeWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline DescribeWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain containing the workflow execution.</p>
-     */
     inline DescribeWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The workflow execution to describe.</p>
      */
     inline const WorkflowExecution& GetExecution() const{ return m_execution; }
-
-    /**
-     * <p>The workflow execution to describe.</p>
-     */
     inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
-
-    /**
-     * <p>The workflow execution to describe.</p>
-     */
     inline void SetExecution(const WorkflowExecution& value) { m_executionHasBeenSet = true; m_execution = value; }
-
-    /**
-     * <p>The workflow execution to describe.</p>
-     */
     inline void SetExecution(WorkflowExecution&& value) { m_executionHasBeenSet = true; m_execution = std::move(value); }
-
-    /**
-     * <p>The workflow execution to describe.</p>
-     */
     inline DescribeWorkflowExecutionRequest& WithExecution(const WorkflowExecution& value) { SetExecution(value); return *this;}
-
-    /**
-     * <p>The workflow execution to describe.</p>
-     */
     inline DescribeWorkflowExecutionRequest& WithExecution(WorkflowExecution&& value) { SetExecution(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domain;

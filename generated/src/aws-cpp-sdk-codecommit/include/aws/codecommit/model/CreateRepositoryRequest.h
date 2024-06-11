@@ -39,6 +39,7 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the new repository to be created.</p>  <p>The repository
      * name must be unique across the calling Amazon Web Services account. Repository
@@ -49,85 +50,16 @@ namespace Model
      * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline CreateRepositoryRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline CreateRepositoryRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the new repository to be created.</p>  <p>The repository
-     * name must be unique across the calling Amazon Web Services account. Repository
-     * names are limited to 100 alphanumeric, dash, and underscore characters, and
-     * cannot include certain characters. For more information about the limits on
-     * repository names, see <a
-     * href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Quotas</a>
-     * in the <i>CodeCommit User Guide</i>. The suffix .git is prohibited.</p> 
-     */
     inline CreateRepositoryRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A comment or description about the new repository.</p>  <p>The
      * description field for a repository accepts all HTML characters and all valid
@@ -137,144 +69,35 @@ namespace Model
      * this API to display the repository description on a webpage.</p> 
      */
     inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline bool RepositoryDescriptionHasBeenSet() const { return m_repositoryDescriptionHasBeenSet; }
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline void SetRepositoryDescription(const Aws::String& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = value; }
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline void SetRepositoryDescription(Aws::String&& value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription = std::move(value); }
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline void SetRepositoryDescription(const char* value) { m_repositoryDescriptionHasBeenSet = true; m_repositoryDescription.assign(value); }
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline CreateRepositoryRequest& WithRepositoryDescription(const Aws::String& value) { SetRepositoryDescription(value); return *this;}
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline CreateRepositoryRequest& WithRepositoryDescription(Aws::String&& value) { SetRepositoryDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A comment or description about the new repository.</p>  <p>The
-     * description field for a repository accepts all HTML characters and all valid
-     * Unicode characters. Applications that do not HTML-encode the description and
-     * display it in a webpage can expose users to potentially malicious code. Make
-     * sure that you HTML-encode the description field in any application that uses
-     * this API to display the repository description on a webpage.</p> 
-     */
     inline CreateRepositoryRequest& WithRepositoryDescription(const char* value) { SetRepositoryDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more tag key-value pairs to use when tagging this repository.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>One or more tag key-value pairs to use when tagging this repository.</p>
-     */
     inline CreateRepositoryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the encryption key. You can view the ID of an encryption key in the
      * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
@@ -285,84 +108,14 @@ namespace Model
      * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline CreateRepositoryRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline CreateRepositoryRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the encryption key. You can view the ID of an encryption key in the
-     * KMS console, or use the KMS APIs to programmatically retrieve a key ID. For more
-     * information about acceptable values for kmsKeyID, see <a
-     * href="https://docs.aws.amazon.com/APIReference/API_Decrypt.html#KMS-Decrypt-request-KeyId">KeyId</a>
-     * in the Decrypt API description in the <i>Key Management Service API
-     * Reference</i>.</p> <p>If no key is specified, the default
-     * <code>aws/codecommit</code> Amazon Web Services managed key is used.</p>
-     */
     inline CreateRepositoryRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryName;

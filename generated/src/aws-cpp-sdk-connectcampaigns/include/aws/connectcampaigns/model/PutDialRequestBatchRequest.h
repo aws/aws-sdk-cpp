@@ -37,55 +37,29 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetId() const{ return m_id; }
-
-    
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    
     inline PutDialRequestBatchRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    
     inline PutDialRequestBatchRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    
     inline PutDialRequestBatchRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::Vector<DialRequest>& GetDialRequests() const{ return m_dialRequests; }
-
-    
     inline bool DialRequestsHasBeenSet() const { return m_dialRequestsHasBeenSet; }
-
-    
     inline void SetDialRequests(const Aws::Vector<DialRequest>& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = value; }
-
-    
     inline void SetDialRequests(Aws::Vector<DialRequest>&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests = std::move(value); }
-
-    
     inline PutDialRequestBatchRequest& WithDialRequests(const Aws::Vector<DialRequest>& value) { SetDialRequests(value); return *this;}
-
-    
     inline PutDialRequestBatchRequest& WithDialRequests(Aws::Vector<DialRequest>&& value) { SetDialRequests(std::move(value)); return *this;}
-
-    
     inline PutDialRequestBatchRequest& AddDialRequests(const DialRequest& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(value); return *this; }
-
-    
     inline PutDialRequestBatchRequest& AddDialRequests(DialRequest&& value) { m_dialRequestsHasBeenSet = true; m_dialRequests.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_id;

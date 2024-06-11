@@ -33,53 +33,27 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API CreateThemeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the configuration of the new theme.</p>
      */
     inline const Theme& GetEntity() const{ return m_entity; }
-
-    /**
-     * <p>Describes the configuration of the new theme.</p>
-     */
     inline void SetEntity(const Theme& value) { m_entity = value; }
-
-    /**
-     * <p>Describes the configuration of the new theme.</p>
-     */
     inline void SetEntity(Theme&& value) { m_entity = std::move(value); }
-
-    /**
-     * <p>Describes the configuration of the new theme.</p>
-     */
     inline CreateThemeResult& WithEntity(const Theme& value) { SetEntity(value); return *this;}
-
-    /**
-     * <p>Describes the configuration of the new theme.</p>
-     */
     inline CreateThemeResult& WithEntity(Theme&& value) { SetEntity(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateThemeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateThemeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateThemeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Theme m_entity;

@@ -37,87 +37,33 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The list of entitlements that you want to grant.
      */
     inline const Aws::Vector<GrantEntitlementRequest>& GetEntitlements() const{ return m_entitlements; }
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline bool EntitlementsHasBeenSet() const { return m_entitlementsHasBeenSet; }
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline void SetEntitlements(const Aws::Vector<GrantEntitlementRequest>& value) { m_entitlementsHasBeenSet = true; m_entitlements = value; }
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline void SetEntitlements(Aws::Vector<GrantEntitlementRequest>&& value) { m_entitlementsHasBeenSet = true; m_entitlements = std::move(value); }
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline GrantFlowEntitlementsRequest& WithEntitlements(const Aws::Vector<GrantEntitlementRequest>& value) { SetEntitlements(value); return *this;}
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline GrantFlowEntitlementsRequest& WithEntitlements(Aws::Vector<GrantEntitlementRequest>&& value) { SetEntitlements(std::move(value)); return *this;}
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline GrantFlowEntitlementsRequest& AddEntitlements(const GrantEntitlementRequest& value) { m_entitlementsHasBeenSet = true; m_entitlements.push_back(value); return *this; }
-
-    /**
-     * The list of entitlements that you want to grant.
-     */
     inline GrantFlowEntitlementsRequest& AddEntitlements(GrantEntitlementRequest&& value) { m_entitlementsHasBeenSet = true; m_entitlements.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * The flow that you want to grant entitlements on.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline GrantFlowEntitlementsRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline GrantFlowEntitlementsRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The flow that you want to grant entitlements on.
-     */
     inline GrantFlowEntitlementsRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<GrantEntitlementRequest> m_entitlements;

@@ -42,160 +42,61 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Fargate profile.</p>
      */
     inline const Aws::String& GetFargateProfileName() const{ return m_fargateProfileName; }
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline bool FargateProfileNameHasBeenSet() const { return m_fargateProfileNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline void SetFargateProfileName(const Aws::String& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = value; }
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline void SetFargateProfileName(Aws::String&& value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName = std::move(value); }
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline void SetFargateProfileName(const char* value) { m_fargateProfileNameHasBeenSet = true; m_fargateProfileName.assign(value); }
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline FargateProfile& WithFargateProfileName(const Aws::String& value) { SetFargateProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline FargateProfile& WithFargateProfileName(Aws::String&& value) { SetFargateProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Fargate profile.</p>
-     */
     inline FargateProfile& WithFargateProfileName(const char* value) { SetFargateProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
      */
     inline const Aws::String& GetFargateProfileArn() const{ return m_fargateProfileArn; }
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline bool FargateProfileArnHasBeenSet() const { return m_fargateProfileArnHasBeenSet; }
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline void SetFargateProfileArn(const Aws::String& value) { m_fargateProfileArnHasBeenSet = true; m_fargateProfileArn = value; }
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline void SetFargateProfileArn(Aws::String&& value) { m_fargateProfileArnHasBeenSet = true; m_fargateProfileArn = std::move(value); }
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline void SetFargateProfileArn(const char* value) { m_fargateProfileArnHasBeenSet = true; m_fargateProfileArn.assign(value); }
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline FargateProfile& WithFargateProfileArn(const Aws::String& value) { SetFargateProfileArn(value); return *this;}
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline FargateProfile& WithFargateProfileArn(Aws::String&& value) { SetFargateProfileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The full Amazon Resource Name (ARN) of the Fargate profile.</p>
-     */
     inline FargateProfile& WithFargateProfileArn(const char* value) { SetFargateProfileArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline FargateProfile& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline FargateProfile& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline FargateProfile& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Unix epoch timestamp at object creation.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The Unix epoch timestamp at object creation.</p>
-     */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The Unix epoch timestamp at object creation.</p>
-     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The Unix epoch timestamp at object creation.</p>
-     */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The Unix epoch timestamp at object creation.</p>
-     */
     inline FargateProfile& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The Unix epoch timestamp at object creation.</p>
-     */
     inline FargateProfile& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
      * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
@@ -204,288 +105,77 @@ namespace Model
      * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
      */
     inline const Aws::String& GetPodExecutionRoleArn() const{ return m_podExecutionRoleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline bool PodExecutionRoleArnHasBeenSet() const { return m_podExecutionRoleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline void SetPodExecutionRoleArn(const Aws::String& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline void SetPodExecutionRoleArn(Aws::String&& value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline void SetPodExecutionRoleArn(const char* value) { m_podExecutionRoleArnHasBeenSet = true; m_podExecutionRoleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline FargateProfile& WithPodExecutionRoleArn(const Aws::String& value) { SetPodExecutionRoleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline FargateProfile& WithPodExecutionRoleArn(Aws::String&& value) { SetPodExecutionRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the <code>Pod</code> execution role to use
-     * for any <code>Pod</code> that matches the selectors in the Fargate profile. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/pod-execution-role.html">
-     * <code>Pod</code> execution role</a> in the <i>Amazon EKS User Guide</i>.</p>
-     */
     inline FargateProfile& WithPodExecutionRoleArn(const char* value) { SetPodExecutionRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnetsHasBeenSet = true; m_subnets = value; }
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnetsHasBeenSet = true; m_subnets = std::move(value); }
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline FargateProfile& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline FargateProfile& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline FargateProfile& AddSubnets(const Aws::String& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline FargateProfile& AddSubnets(Aws::String&& value) { m_subnetsHasBeenSet = true; m_subnets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of subnets to launch a <code>Pod</code> into.</p>
-     */
     inline FargateProfile& AddSubnets(const char* value) { m_subnetsHasBeenSet = true; m_subnets.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The selectors to match for a <code>Pod</code> to use this Fargate
      * profile.</p>
      */
     inline const Aws::Vector<FargateProfileSelector>& GetSelectors() const{ return m_selectors; }
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline bool SelectorsHasBeenSet() const { return m_selectorsHasBeenSet; }
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline void SetSelectors(const Aws::Vector<FargateProfileSelector>& value) { m_selectorsHasBeenSet = true; m_selectors = value; }
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline void SetSelectors(Aws::Vector<FargateProfileSelector>&& value) { m_selectorsHasBeenSet = true; m_selectors = std::move(value); }
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline FargateProfile& WithSelectors(const Aws::Vector<FargateProfileSelector>& value) { SetSelectors(value); return *this;}
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline FargateProfile& WithSelectors(Aws::Vector<FargateProfileSelector>&& value) { SetSelectors(std::move(value)); return *this;}
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline FargateProfile& AddSelectors(const FargateProfileSelector& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(value); return *this; }
-
-    /**
-     * <p>The selectors to match for a <code>Pod</code> to use this Fargate
-     * profile.</p>
-     */
     inline FargateProfile& AddSelectors(FargateProfileSelector&& value) { m_selectorsHasBeenSet = true; m_selectors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the Fargate profile.</p>
      */
     inline const FargateProfileStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the Fargate profile.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the Fargate profile.</p>
-     */
     inline void SetStatus(const FargateProfileStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the Fargate profile.</p>
-     */
     inline void SetStatus(FargateProfileStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the Fargate profile.</p>
-     */
     inline FargateProfile& WithStatus(const FargateProfileStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the Fargate profile.</p>
-     */
     inline FargateProfile& WithStatus(FargateProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Metadata that assists with categorization and organization. Each tag consists
      * of a key and an optional value. You define both. Tags don't propagate to any
      * other cluster or Amazon Web Services resources.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Metadata that assists with categorization and organization. Each tag consists
-     * of a key and an optional value. You define both. Tags don't propagate to any
-     * other cluster or Amazon Web Services resources.</p>
-     */
     inline FargateProfile& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_fargateProfileName;

@@ -35,144 +35,49 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The principal ID of the user.</p>
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal ID of the user.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID for the Amazon Web Services account that the user is in. Currently,
      * you use the ID for the Amazon Web Services account that contains your Amazon
      * QuickSight account.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the Amazon Web Services account that the user is in. Currently,
-     * you use the ID for the Amazon Web Services account that contains your Amazon
-     * QuickSight account.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The namespace. Currently, you should set this to <code>default</code>.</p>
-     */
     inline DeleteUserByPrincipalIdRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_principalId;

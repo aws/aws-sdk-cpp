@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API GetLaunchTemplateDataResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The instance data.</p>
      */
     inline const ResponseLaunchTemplateData& GetLaunchTemplateData() const{ return m_launchTemplateData; }
-
-    /**
-     * <p>The instance data.</p>
-     */
     inline void SetLaunchTemplateData(const ResponseLaunchTemplateData& value) { m_launchTemplateData = value; }
-
-    /**
-     * <p>The instance data.</p>
-     */
     inline void SetLaunchTemplateData(ResponseLaunchTemplateData&& value) { m_launchTemplateData = std::move(value); }
-
-    /**
-     * <p>The instance data.</p>
-     */
     inline GetLaunchTemplateDataResponse& WithLaunchTemplateData(const ResponseLaunchTemplateData& value) { SetLaunchTemplateData(value); return *this;}
-
-    /**
-     * <p>The instance data.</p>
-     */
     inline GetLaunchTemplateDataResponse& WithLaunchTemplateData(ResponseLaunchTemplateData&& value) { SetLaunchTemplateData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetLaunchTemplateDataResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetLaunchTemplateDataResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResponseLaunchTemplateData m_launchTemplateData;

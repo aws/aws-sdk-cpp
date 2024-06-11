@@ -38,36 +38,17 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 bucket location for the manifest file.</p>
      */
     inline const InputS3Object& GetS3Object() const{ return m_s3Object; }
-
-    /**
-     * <p>The S3 bucket location for the manifest file.</p>
-     */
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket location for the manifest file.</p>
-     */
     inline void SetS3Object(const InputS3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-
-    /**
-     * <p>The S3 bucket location for the manifest file.</p>
-     */
     inline void SetS3Object(InputS3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-
-    /**
-     * <p>The S3 bucket location for the manifest file.</p>
-     */
     inline DatasetGroundTruthManifest& WithS3Object(const InputS3Object& value) { SetS3Object(value); return *this;}
-
-    /**
-     * <p>The S3 bucket location for the manifest file.</p>
-     */
     inline DatasetGroundTruthManifest& WithS3Object(InputS3Object&& value) { SetS3Object(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InputS3Object m_s3Object;

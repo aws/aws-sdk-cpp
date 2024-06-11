@@ -38,54 +38,20 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines whether this instance type is the Amazon Web Services default
      * recommendation.</p>
      */
     inline const Aws::Vector<TargetInstance>& GetTargetInstances() const{ return m_targetInstances; }
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline bool TargetInstancesHasBeenSet() const { return m_targetInstancesHasBeenSet; }
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline void SetTargetInstances(const Aws::Vector<TargetInstance>& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = value; }
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline void SetTargetInstances(Aws::Vector<TargetInstance>&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances = std::move(value); }
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline ModifyRecommendationDetail& WithTargetInstances(const Aws::Vector<TargetInstance>& value) { SetTargetInstances(value); return *this;}
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline ModifyRecommendationDetail& WithTargetInstances(Aws::Vector<TargetInstance>&& value) { SetTargetInstances(std::move(value)); return *this;}
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline ModifyRecommendationDetail& AddTargetInstances(const TargetInstance& value) { m_targetInstancesHasBeenSet = true; m_targetInstances.push_back(value); return *this; }
-
-    /**
-     * <p>Determines whether this instance type is the Amazon Web Services default
-     * recommendation.</p>
-     */
     inline ModifyRecommendationDetail& AddTargetInstances(TargetInstance&& value) { m_targetInstancesHasBeenSet = true; m_targetInstances.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TargetInstance> m_targetInstances;

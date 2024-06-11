@@ -112,71 +112,31 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline TransactionCanceledException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline TransactionCanceledException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline TransactionCanceledException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of cancellation reasons.</p>
      */
     inline const Aws::Vector<CancellationReason>& GetCancellationReasons() const{ return m_cancellationReasons; }
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline bool CancellationReasonsHasBeenSet() const { return m_cancellationReasonsHasBeenSet; }
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline void SetCancellationReasons(const Aws::Vector<CancellationReason>& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons = value; }
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline void SetCancellationReasons(Aws::Vector<CancellationReason>&& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons = std::move(value); }
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline TransactionCanceledException& WithCancellationReasons(const Aws::Vector<CancellationReason>& value) { SetCancellationReasons(value); return *this;}
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline TransactionCanceledException& WithCancellationReasons(Aws::Vector<CancellationReason>&& value) { SetCancellationReasons(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline TransactionCanceledException& AddCancellationReasons(const CancellationReason& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons.push_back(value); return *this; }
-
-    /**
-     * <p>A list of cancellation reasons.</p>
-     */
     inline TransactionCanceledException& AddCancellationReasons(CancellationReason&& value) { m_cancellationReasonsHasBeenSet = true; m_cancellationReasons.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

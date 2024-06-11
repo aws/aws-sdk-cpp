@@ -37,145 +37,56 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the traffic policy instance that you want to update.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the traffic policy instance that you want to update.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The TTL that you want Amazon Route 53 to assign to all of the updated
      * resource record sets.</p>
      */
     inline long long GetTTL() const{ return m_tTL; }
-
-    /**
-     * <p>The TTL that you want Amazon Route 53 to assign to all of the updated
-     * resource record sets.</p>
-     */
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
-
-    /**
-     * <p>The TTL that you want Amazon Route 53 to assign to all of the updated
-     * resource record sets.</p>
-     */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
-
-    /**
-     * <p>The TTL that you want Amazon Route 53 to assign to all of the updated
-     * resource record sets.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithTTL(long long value) { SetTTL(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
      * resource record sets for the specified traffic policy instance.</p>
      */
     inline const Aws::String& GetTrafficPolicyId() const{ return m_trafficPolicyId; }
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline bool TrafficPolicyIdHasBeenSet() const { return m_trafficPolicyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline void SetTrafficPolicyId(const Aws::String& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = value; }
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline void SetTrafficPolicyId(Aws::String&& value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId = std::move(value); }
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline void SetTrafficPolicyId(const char* value) { m_trafficPolicyIdHasBeenSet = true; m_trafficPolicyId.assign(value); }
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(const Aws::String& value) { SetTrafficPolicyId(value); return *this;}
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(Aws::String&& value) { SetTrafficPolicyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the traffic policy that you want Amazon Route 53 to use to update
-     * resource record sets for the specified traffic policy instance.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyId(const char* value) { SetTrafficPolicyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the traffic policy that you want Amazon Route 53 to use to
      * update resource record sets for the specified traffic policy instance.</p>
      */
     inline int GetTrafficPolicyVersion() const{ return m_trafficPolicyVersion; }
-
-    /**
-     * <p>The version of the traffic policy that you want Amazon Route 53 to use to
-     * update resource record sets for the specified traffic policy instance.</p>
-     */
     inline bool TrafficPolicyVersionHasBeenSet() const { return m_trafficPolicyVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the traffic policy that you want Amazon Route 53 to use to
-     * update resource record sets for the specified traffic policy instance.</p>
-     */
     inline void SetTrafficPolicyVersion(int value) { m_trafficPolicyVersionHasBeenSet = true; m_trafficPolicyVersion = value; }
-
-    /**
-     * <p>The version of the traffic policy that you want Amazon Route 53 to use to
-     * update resource record sets for the specified traffic policy instance.</p>
-     */
     inline UpdateTrafficPolicyInstanceRequest& WithTrafficPolicyVersion(int value) { SetTrafficPolicyVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

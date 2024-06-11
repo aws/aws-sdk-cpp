@@ -35,47 +35,21 @@ namespace Model
     AWS_PERSONALIZE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the campaign.</p>
      */
     inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline bool CampaignArnHasBeenSet() const { return m_campaignArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline void SetCampaignArn(const Aws::String& value) { m_campaignArnHasBeenSet = true; m_campaignArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline void SetCampaignArn(Aws::String&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline void SetCampaignArn(const char* value) { m_campaignArnHasBeenSet = true; m_campaignArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
      * latest solution version of your solution, specify the ARN of your
@@ -90,113 +64,16 @@ namespace Model
      * automatic campaign updates</a>. </p>
      */
     inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline UpdateCampaignRequest& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline UpdateCampaignRequest& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a new model to deploy. To specify the
-     * latest solution version of your solution, specify the ARN of your
-     * <i>solution</i> in <code>SolutionArn/$LATEST</code> format. You must use this
-     * format if you set <code>syncWithLatestSolutionVersion</code> to
-     * <code>True</code> in the <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CampaignConfig.html">CampaignConfig</a>.
-     * </p> <p> To deploy a model that isn't the latest solution version of your
-     * solution, specify the ARN of the solution version. </p> <p> For more information
-     * about automatic campaign updates, see <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
-     * automatic campaign updates</a>. </p>
-     */
     inline UpdateCampaignRequest& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
      * per second that Amazon Personalize will support. A high
@@ -206,68 +83,22 @@ namespace Model
      * necessary.</p>
      */
     inline int GetMinProvisionedTPS() const{ return m_minProvisionedTPS; }
-
-    /**
-     * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support. A high
-     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
-     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
-     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
-     * necessary.</p>
-     */
     inline bool MinProvisionedTPSHasBeenSet() const { return m_minProvisionedTPSHasBeenSet; }
-
-    /**
-     * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support. A high
-     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
-     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
-     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
-     * necessary.</p>
-     */
     inline void SetMinProvisionedTPS(int value) { m_minProvisionedTPSHasBeenSet = true; m_minProvisionedTPS = value; }
-
-    /**
-     * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support. A high
-     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
-     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
-     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
-     * necessary.</p>
-     */
     inline UpdateCampaignRequest& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration details of a campaign.</p>
      */
     inline const CampaignConfig& GetCampaignConfig() const{ return m_campaignConfig; }
-
-    /**
-     * <p>The configuration details of a campaign.</p>
-     */
     inline bool CampaignConfigHasBeenSet() const { return m_campaignConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration details of a campaign.</p>
-     */
     inline void SetCampaignConfig(const CampaignConfig& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = value; }
-
-    /**
-     * <p>The configuration details of a campaign.</p>
-     */
     inline void SetCampaignConfig(CampaignConfig&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::move(value); }
-
-    /**
-     * <p>The configuration details of a campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignConfig(const CampaignConfig& value) { SetCampaignConfig(value); return *this;}
-
-    /**
-     * <p>The configuration details of a campaign.</p>
-     */
     inline UpdateCampaignRequest& WithCampaignConfig(CampaignConfig&& value) { SetCampaignConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_campaignArn;

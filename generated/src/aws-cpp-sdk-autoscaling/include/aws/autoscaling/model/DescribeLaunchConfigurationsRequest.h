@@ -37,143 +37,48 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The launch configuration names. If you omit this property, all launch
      * configurations are described.</p> <p>Array Members: Maximum number of 50
      * items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLaunchConfigurationNames() const{ return m_launchConfigurationNames; }
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline bool LaunchConfigurationNamesHasBeenSet() const { return m_launchConfigurationNamesHasBeenSet; }
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline void SetLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = value; }
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline void SetLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = std::move(value); }
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { SetLaunchConfigurationNames(value); return *this;}
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline DescribeLaunchConfigurationsRequest& WithLaunchConfigurationNames(Aws::Vector<Aws::String>&& value) { SetLaunchConfigurationNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const Aws::String& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(Aws::String&& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The launch configuration names. If you omit this property, all launch
-     * configurations are described.</p> <p>Array Members: Maximum number of 50
-     * items.</p>
-     */
     inline DescribeLaunchConfigurationsRequest& AddLaunchConfigurationNames(const char* value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline DescribeLaunchConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline DescribeLaunchConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline DescribeLaunchConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return with this call. The default value is
      * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p>The maximum number of items to return with this call. The default value is
-     * <code>50</code> and the maximum value is <code>100</code>.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return with this call. The default value is
-     * <code>50</code> and the maximum value is <code>100</code>.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p>The maximum number of items to return with this call. The default value is
-     * <code>50</code> and the maximum value is <code>100</code>.</p>
-     */
     inline DescribeLaunchConfigurationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_launchConfigurationNames;

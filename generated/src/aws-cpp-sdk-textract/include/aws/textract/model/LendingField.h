@@ -40,106 +40,43 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the lending document.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline LendingField& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline LendingField& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the lending document.</p>
-     */
     inline LendingField& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const LendingDetection& GetKeyDetection() const{ return m_keyDetection; }
-
-    
     inline bool KeyDetectionHasBeenSet() const { return m_keyDetectionHasBeenSet; }
-
-    
     inline void SetKeyDetection(const LendingDetection& value) { m_keyDetectionHasBeenSet = true; m_keyDetection = value; }
-
-    
     inline void SetKeyDetection(LendingDetection&& value) { m_keyDetectionHasBeenSet = true; m_keyDetection = std::move(value); }
-
-    
     inline LendingField& WithKeyDetection(const LendingDetection& value) { SetKeyDetection(value); return *this;}
-
-    
     inline LendingField& WithKeyDetection(LendingDetection&& value) { SetKeyDetection(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of LendingDetection objects.</p>
      */
     inline const Aws::Vector<LendingDetection>& GetValueDetections() const{ return m_valueDetections; }
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline bool ValueDetectionsHasBeenSet() const { return m_valueDetectionsHasBeenSet; }
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline void SetValueDetections(const Aws::Vector<LendingDetection>& value) { m_valueDetectionsHasBeenSet = true; m_valueDetections = value; }
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline void SetValueDetections(Aws::Vector<LendingDetection>&& value) { m_valueDetectionsHasBeenSet = true; m_valueDetections = std::move(value); }
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline LendingField& WithValueDetections(const Aws::Vector<LendingDetection>& value) { SetValueDetections(value); return *this;}
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline LendingField& WithValueDetections(Aws::Vector<LendingDetection>&& value) { SetValueDetections(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline LendingField& AddValueDetections(const LendingDetection& value) { m_valueDetectionsHasBeenSet = true; m_valueDetections.push_back(value); return *this; }
-
-    /**
-     * <p>An array of LendingDetection objects.</p>
-     */
     inline LendingField& AddValueDetections(LendingDetection&& value) { m_valueDetectionsHasBeenSet = true; m_valueDetections.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_type;

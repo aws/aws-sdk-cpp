@@ -38,67 +38,29 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reason why the model stopped generating output.</p>
      */
     inline const StopReason& GetStopReason() const{ return m_stopReason; }
-
-    /**
-     * <p>The reason why the model stopped generating output.</p>
-     */
     inline bool StopReasonHasBeenSet() const { return m_stopReasonHasBeenSet; }
-
-    /**
-     * <p>The reason why the model stopped generating output.</p>
-     */
     inline void SetStopReason(const StopReason& value) { m_stopReasonHasBeenSet = true; m_stopReason = value; }
-
-    /**
-     * <p>The reason why the model stopped generating output.</p>
-     */
     inline void SetStopReason(StopReason&& value) { m_stopReasonHasBeenSet = true; m_stopReason = std::move(value); }
-
-    /**
-     * <p>The reason why the model stopped generating output.</p>
-     */
     inline MessageStopEvent& WithStopReason(const StopReason& value) { SetStopReason(value); return *this;}
-
-    /**
-     * <p>The reason why the model stopped generating output.</p>
-     */
     inline MessageStopEvent& WithStopReason(StopReason&& value) { SetStopReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The additional model response fields.</p>
      */
     inline Aws::Utils::DocumentView GetAdditionalModelResponseFields() const{ return m_additionalModelResponseFields; }
-
-    /**
-     * <p>The additional model response fields.</p>
-     */
     inline bool AdditionalModelResponseFieldsHasBeenSet() const { return m_additionalModelResponseFieldsHasBeenSet; }
-
-    /**
-     * <p>The additional model response fields.</p>
-     */
     inline void SetAdditionalModelResponseFields(const Aws::Utils::Document& value) { m_additionalModelResponseFieldsHasBeenSet = true; m_additionalModelResponseFields = value; }
-
-    /**
-     * <p>The additional model response fields.</p>
-     */
     inline void SetAdditionalModelResponseFields(Aws::Utils::Document&& value) { m_additionalModelResponseFieldsHasBeenSet = true; m_additionalModelResponseFields = std::move(value); }
-
-    /**
-     * <p>The additional model response fields.</p>
-     */
     inline MessageStopEvent& WithAdditionalModelResponseFields(const Aws::Utils::Document& value) { SetAdditionalModelResponseFields(value); return *this;}
-
-    /**
-     * <p>The additional model response fields.</p>
-     */
     inline MessageStopEvent& WithAdditionalModelResponseFields(Aws::Utils::Document&& value) { SetAdditionalModelResponseFields(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StopReason m_stopReason;

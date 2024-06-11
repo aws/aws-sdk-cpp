@@ -37,87 +37,33 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the trigger that did not run.</p>
      */
     inline const Aws::String& GetTrigger() const{ return m_trigger; }
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline void SetTrigger(const Aws::String& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline void SetTrigger(Aws::String&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline void SetTrigger(const char* value) { m_triggerHasBeenSet = true; m_trigger.assign(value); }
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline RepositoryTriggerExecutionFailure& WithTrigger(const Aws::String& value) { SetTrigger(value); return *this;}
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline RepositoryTriggerExecutionFailure& WithTrigger(Aws::String&& value) { SetTrigger(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the trigger that did not run.</p>
-     */
     inline RepositoryTriggerExecutionFailure& WithTrigger(const char* value) { SetTrigger(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Message information about the trigger that did not run.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Message information about the trigger that did not run.</p>
-     */
     inline RepositoryTriggerExecutionFailure& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trigger;

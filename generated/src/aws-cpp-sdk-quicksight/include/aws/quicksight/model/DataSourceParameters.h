@@ -64,817 +64,318 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parameters for OpenSearch.</p>
      */
     inline const AmazonElasticsearchParameters& GetAmazonElasticsearchParameters() const{ return m_amazonElasticsearchParameters; }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline bool AmazonElasticsearchParametersHasBeenSet() const { return m_amazonElasticsearchParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline void SetAmazonElasticsearchParameters(const AmazonElasticsearchParameters& value) { m_amazonElasticsearchParametersHasBeenSet = true; m_amazonElasticsearchParameters = value; }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline void SetAmazonElasticsearchParameters(AmazonElasticsearchParameters&& value) { m_amazonElasticsearchParametersHasBeenSet = true; m_amazonElasticsearchParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline DataSourceParameters& WithAmazonElasticsearchParameters(const AmazonElasticsearchParameters& value) { SetAmazonElasticsearchParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline DataSourceParameters& WithAmazonElasticsearchParameters(AmazonElasticsearchParameters&& value) { SetAmazonElasticsearchParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Amazon Athena.</p>
      */
     inline const AthenaParameters& GetAthenaParameters() const{ return m_athenaParameters; }
-
-    /**
-     * <p>The parameters for Amazon Athena.</p>
-     */
     inline bool AthenaParametersHasBeenSet() const { return m_athenaParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Amazon Athena.</p>
-     */
     inline void SetAthenaParameters(const AthenaParameters& value) { m_athenaParametersHasBeenSet = true; m_athenaParameters = value; }
-
-    /**
-     * <p>The parameters for Amazon Athena.</p>
-     */
     inline void SetAthenaParameters(AthenaParameters&& value) { m_athenaParametersHasBeenSet = true; m_athenaParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Amazon Athena.</p>
-     */
     inline DataSourceParameters& WithAthenaParameters(const AthenaParameters& value) { SetAthenaParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Amazon Athena.</p>
-     */
     inline DataSourceParameters& WithAthenaParameters(AthenaParameters&& value) { SetAthenaParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Amazon Aurora MySQL.</p>
      */
     inline const AuroraParameters& GetAuroraParameters() const{ return m_auroraParameters; }
-
-    /**
-     * <p>The parameters for Amazon Aurora MySQL.</p>
-     */
     inline bool AuroraParametersHasBeenSet() const { return m_auroraParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Amazon Aurora MySQL.</p>
-     */
     inline void SetAuroraParameters(const AuroraParameters& value) { m_auroraParametersHasBeenSet = true; m_auroraParameters = value; }
-
-    /**
-     * <p>The parameters for Amazon Aurora MySQL.</p>
-     */
     inline void SetAuroraParameters(AuroraParameters&& value) { m_auroraParametersHasBeenSet = true; m_auroraParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Amazon Aurora MySQL.</p>
-     */
     inline DataSourceParameters& WithAuroraParameters(const AuroraParameters& value) { SetAuroraParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Amazon Aurora MySQL.</p>
-     */
     inline DataSourceParameters& WithAuroraParameters(AuroraParameters&& value) { SetAuroraParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Amazon Aurora.</p>
      */
     inline const AuroraPostgreSqlParameters& GetAuroraPostgreSqlParameters() const{ return m_auroraPostgreSqlParameters; }
-
-    /**
-     * <p>The parameters for Amazon Aurora.</p>
-     */
     inline bool AuroraPostgreSqlParametersHasBeenSet() const { return m_auroraPostgreSqlParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Amazon Aurora.</p>
-     */
     inline void SetAuroraPostgreSqlParameters(const AuroraPostgreSqlParameters& value) { m_auroraPostgreSqlParametersHasBeenSet = true; m_auroraPostgreSqlParameters = value; }
-
-    /**
-     * <p>The parameters for Amazon Aurora.</p>
-     */
     inline void SetAuroraPostgreSqlParameters(AuroraPostgreSqlParameters&& value) { m_auroraPostgreSqlParametersHasBeenSet = true; m_auroraPostgreSqlParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Amazon Aurora.</p>
-     */
     inline DataSourceParameters& WithAuroraPostgreSqlParameters(const AuroraPostgreSqlParameters& value) { SetAuroraPostgreSqlParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Amazon Aurora.</p>
-     */
     inline DataSourceParameters& WithAuroraPostgreSqlParameters(AuroraPostgreSqlParameters&& value) { SetAuroraPostgreSqlParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for IoT Analytics.</p>
      */
     inline const AwsIotAnalyticsParameters& GetAwsIotAnalyticsParameters() const{ return m_awsIotAnalyticsParameters; }
-
-    /**
-     * <p>The parameters for IoT Analytics.</p>
-     */
     inline bool AwsIotAnalyticsParametersHasBeenSet() const { return m_awsIotAnalyticsParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for IoT Analytics.</p>
-     */
     inline void SetAwsIotAnalyticsParameters(const AwsIotAnalyticsParameters& value) { m_awsIotAnalyticsParametersHasBeenSet = true; m_awsIotAnalyticsParameters = value; }
-
-    /**
-     * <p>The parameters for IoT Analytics.</p>
-     */
     inline void SetAwsIotAnalyticsParameters(AwsIotAnalyticsParameters&& value) { m_awsIotAnalyticsParametersHasBeenSet = true; m_awsIotAnalyticsParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for IoT Analytics.</p>
-     */
     inline DataSourceParameters& WithAwsIotAnalyticsParameters(const AwsIotAnalyticsParameters& value) { SetAwsIotAnalyticsParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for IoT Analytics.</p>
-     */
     inline DataSourceParameters& WithAwsIotAnalyticsParameters(AwsIotAnalyticsParameters&& value) { SetAwsIotAnalyticsParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Jira.</p>
      */
     inline const JiraParameters& GetJiraParameters() const{ return m_jiraParameters; }
-
-    /**
-     * <p>The parameters for Jira.</p>
-     */
     inline bool JiraParametersHasBeenSet() const { return m_jiraParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Jira.</p>
-     */
     inline void SetJiraParameters(const JiraParameters& value) { m_jiraParametersHasBeenSet = true; m_jiraParameters = value; }
-
-    /**
-     * <p>The parameters for Jira.</p>
-     */
     inline void SetJiraParameters(JiraParameters&& value) { m_jiraParametersHasBeenSet = true; m_jiraParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Jira.</p>
-     */
     inline DataSourceParameters& WithJiraParameters(const JiraParameters& value) { SetJiraParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Jira.</p>
-     */
     inline DataSourceParameters& WithJiraParameters(JiraParameters&& value) { SetJiraParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for MariaDB.</p>
      */
     inline const MariaDbParameters& GetMariaDbParameters() const{ return m_mariaDbParameters; }
-
-    /**
-     * <p>The parameters for MariaDB.</p>
-     */
     inline bool MariaDbParametersHasBeenSet() const { return m_mariaDbParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for MariaDB.</p>
-     */
     inline void SetMariaDbParameters(const MariaDbParameters& value) { m_mariaDbParametersHasBeenSet = true; m_mariaDbParameters = value; }
-
-    /**
-     * <p>The parameters for MariaDB.</p>
-     */
     inline void SetMariaDbParameters(MariaDbParameters&& value) { m_mariaDbParametersHasBeenSet = true; m_mariaDbParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for MariaDB.</p>
-     */
     inline DataSourceParameters& WithMariaDbParameters(const MariaDbParameters& value) { SetMariaDbParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for MariaDB.</p>
-     */
     inline DataSourceParameters& WithMariaDbParameters(MariaDbParameters&& value) { SetMariaDbParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for MySQL.</p>
      */
     inline const MySqlParameters& GetMySqlParameters() const{ return m_mySqlParameters; }
-
-    /**
-     * <p>The parameters for MySQL.</p>
-     */
     inline bool MySqlParametersHasBeenSet() const { return m_mySqlParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for MySQL.</p>
-     */
     inline void SetMySqlParameters(const MySqlParameters& value) { m_mySqlParametersHasBeenSet = true; m_mySqlParameters = value; }
-
-    /**
-     * <p>The parameters for MySQL.</p>
-     */
     inline void SetMySqlParameters(MySqlParameters&& value) { m_mySqlParametersHasBeenSet = true; m_mySqlParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for MySQL.</p>
-     */
     inline DataSourceParameters& WithMySqlParameters(const MySqlParameters& value) { SetMySqlParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for MySQL.</p>
-     */
     inline DataSourceParameters& WithMySqlParameters(MySqlParameters&& value) { SetMySqlParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Oracle.</p>
      */
     inline const OracleParameters& GetOracleParameters() const{ return m_oracleParameters; }
-
-    /**
-     * <p>The parameters for Oracle.</p>
-     */
     inline bool OracleParametersHasBeenSet() const { return m_oracleParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Oracle.</p>
-     */
     inline void SetOracleParameters(const OracleParameters& value) { m_oracleParametersHasBeenSet = true; m_oracleParameters = value; }
-
-    /**
-     * <p>The parameters for Oracle.</p>
-     */
     inline void SetOracleParameters(OracleParameters&& value) { m_oracleParametersHasBeenSet = true; m_oracleParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Oracle.</p>
-     */
     inline DataSourceParameters& WithOracleParameters(const OracleParameters& value) { SetOracleParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Oracle.</p>
-     */
     inline DataSourceParameters& WithOracleParameters(OracleParameters&& value) { SetOracleParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for PostgreSQL.</p>
      */
     inline const PostgreSqlParameters& GetPostgreSqlParameters() const{ return m_postgreSqlParameters; }
-
-    /**
-     * <p>The parameters for PostgreSQL.</p>
-     */
     inline bool PostgreSqlParametersHasBeenSet() const { return m_postgreSqlParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for PostgreSQL.</p>
-     */
     inline void SetPostgreSqlParameters(const PostgreSqlParameters& value) { m_postgreSqlParametersHasBeenSet = true; m_postgreSqlParameters = value; }
-
-    /**
-     * <p>The parameters for PostgreSQL.</p>
-     */
     inline void SetPostgreSqlParameters(PostgreSqlParameters&& value) { m_postgreSqlParametersHasBeenSet = true; m_postgreSqlParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for PostgreSQL.</p>
-     */
     inline DataSourceParameters& WithPostgreSqlParameters(const PostgreSqlParameters& value) { SetPostgreSqlParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for PostgreSQL.</p>
-     */
     inline DataSourceParameters& WithPostgreSqlParameters(PostgreSqlParameters&& value) { SetPostgreSqlParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Presto.</p>
      */
     inline const PrestoParameters& GetPrestoParameters() const{ return m_prestoParameters; }
-
-    /**
-     * <p>The parameters for Presto.</p>
-     */
     inline bool PrestoParametersHasBeenSet() const { return m_prestoParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Presto.</p>
-     */
     inline void SetPrestoParameters(const PrestoParameters& value) { m_prestoParametersHasBeenSet = true; m_prestoParameters = value; }
-
-    /**
-     * <p>The parameters for Presto.</p>
-     */
     inline void SetPrestoParameters(PrestoParameters&& value) { m_prestoParametersHasBeenSet = true; m_prestoParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Presto.</p>
-     */
     inline DataSourceParameters& WithPrestoParameters(const PrestoParameters& value) { SetPrestoParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Presto.</p>
-     */
     inline DataSourceParameters& WithPrestoParameters(PrestoParameters&& value) { SetPrestoParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Amazon RDS.</p>
      */
     inline const RdsParameters& GetRdsParameters() const{ return m_rdsParameters; }
-
-    /**
-     * <p>The parameters for Amazon RDS.</p>
-     */
     inline bool RdsParametersHasBeenSet() const { return m_rdsParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Amazon RDS.</p>
-     */
     inline void SetRdsParameters(const RdsParameters& value) { m_rdsParametersHasBeenSet = true; m_rdsParameters = value; }
-
-    /**
-     * <p>The parameters for Amazon RDS.</p>
-     */
     inline void SetRdsParameters(RdsParameters&& value) { m_rdsParametersHasBeenSet = true; m_rdsParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Amazon RDS.</p>
-     */
     inline DataSourceParameters& WithRdsParameters(const RdsParameters& value) { SetRdsParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Amazon RDS.</p>
-     */
     inline DataSourceParameters& WithRdsParameters(RdsParameters&& value) { SetRdsParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Amazon Redshift.</p>
      */
     inline const RedshiftParameters& GetRedshiftParameters() const{ return m_redshiftParameters; }
-
-    /**
-     * <p>The parameters for Amazon Redshift.</p>
-     */
     inline bool RedshiftParametersHasBeenSet() const { return m_redshiftParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Amazon Redshift.</p>
-     */
     inline void SetRedshiftParameters(const RedshiftParameters& value) { m_redshiftParametersHasBeenSet = true; m_redshiftParameters = value; }
-
-    /**
-     * <p>The parameters for Amazon Redshift.</p>
-     */
     inline void SetRedshiftParameters(RedshiftParameters&& value) { m_redshiftParametersHasBeenSet = true; m_redshiftParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Amazon Redshift.</p>
-     */
     inline DataSourceParameters& WithRedshiftParameters(const RedshiftParameters& value) { SetRedshiftParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Amazon Redshift.</p>
-     */
     inline DataSourceParameters& WithRedshiftParameters(RedshiftParameters&& value) { SetRedshiftParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for S3.</p>
      */
     inline const S3Parameters& GetS3Parameters() const{ return m_s3Parameters; }
-
-    /**
-     * <p>The parameters for S3.</p>
-     */
     inline bool S3ParametersHasBeenSet() const { return m_s3ParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for S3.</p>
-     */
     inline void SetS3Parameters(const S3Parameters& value) { m_s3ParametersHasBeenSet = true; m_s3Parameters = value; }
-
-    /**
-     * <p>The parameters for S3.</p>
-     */
     inline void SetS3Parameters(S3Parameters&& value) { m_s3ParametersHasBeenSet = true; m_s3Parameters = std::move(value); }
-
-    /**
-     * <p>The parameters for S3.</p>
-     */
     inline DataSourceParameters& WithS3Parameters(const S3Parameters& value) { SetS3Parameters(value); return *this;}
-
-    /**
-     * <p>The parameters for S3.</p>
-     */
     inline DataSourceParameters& WithS3Parameters(S3Parameters&& value) { SetS3Parameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for ServiceNow.</p>
      */
     inline const ServiceNowParameters& GetServiceNowParameters() const{ return m_serviceNowParameters; }
-
-    /**
-     * <p>The parameters for ServiceNow.</p>
-     */
     inline bool ServiceNowParametersHasBeenSet() const { return m_serviceNowParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for ServiceNow.</p>
-     */
     inline void SetServiceNowParameters(const ServiceNowParameters& value) { m_serviceNowParametersHasBeenSet = true; m_serviceNowParameters = value; }
-
-    /**
-     * <p>The parameters for ServiceNow.</p>
-     */
     inline void SetServiceNowParameters(ServiceNowParameters&& value) { m_serviceNowParametersHasBeenSet = true; m_serviceNowParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for ServiceNow.</p>
-     */
     inline DataSourceParameters& WithServiceNowParameters(const ServiceNowParameters& value) { SetServiceNowParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for ServiceNow.</p>
-     */
     inline DataSourceParameters& WithServiceNowParameters(ServiceNowParameters&& value) { SetServiceNowParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Snowflake.</p>
      */
     inline const SnowflakeParameters& GetSnowflakeParameters() const{ return m_snowflakeParameters; }
-
-    /**
-     * <p>The parameters for Snowflake.</p>
-     */
     inline bool SnowflakeParametersHasBeenSet() const { return m_snowflakeParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Snowflake.</p>
-     */
     inline void SetSnowflakeParameters(const SnowflakeParameters& value) { m_snowflakeParametersHasBeenSet = true; m_snowflakeParameters = value; }
-
-    /**
-     * <p>The parameters for Snowflake.</p>
-     */
     inline void SetSnowflakeParameters(SnowflakeParameters&& value) { m_snowflakeParametersHasBeenSet = true; m_snowflakeParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Snowflake.</p>
-     */
     inline DataSourceParameters& WithSnowflakeParameters(const SnowflakeParameters& value) { SetSnowflakeParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Snowflake.</p>
-     */
     inline DataSourceParameters& WithSnowflakeParameters(SnowflakeParameters&& value) { SetSnowflakeParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Spark.</p>
      */
     inline const SparkParameters& GetSparkParameters() const{ return m_sparkParameters; }
-
-    /**
-     * <p>The parameters for Spark.</p>
-     */
     inline bool SparkParametersHasBeenSet() const { return m_sparkParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Spark.</p>
-     */
     inline void SetSparkParameters(const SparkParameters& value) { m_sparkParametersHasBeenSet = true; m_sparkParameters = value; }
-
-    /**
-     * <p>The parameters for Spark.</p>
-     */
     inline void SetSparkParameters(SparkParameters&& value) { m_sparkParametersHasBeenSet = true; m_sparkParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Spark.</p>
-     */
     inline DataSourceParameters& WithSparkParameters(const SparkParameters& value) { SetSparkParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Spark.</p>
-     */
     inline DataSourceParameters& WithSparkParameters(SparkParameters&& value) { SetSparkParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for SQL Server.</p>
      */
     inline const SqlServerParameters& GetSqlServerParameters() const{ return m_sqlServerParameters; }
-
-    /**
-     * <p>The parameters for SQL Server.</p>
-     */
     inline bool SqlServerParametersHasBeenSet() const { return m_sqlServerParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for SQL Server.</p>
-     */
     inline void SetSqlServerParameters(const SqlServerParameters& value) { m_sqlServerParametersHasBeenSet = true; m_sqlServerParameters = value; }
-
-    /**
-     * <p>The parameters for SQL Server.</p>
-     */
     inline void SetSqlServerParameters(SqlServerParameters&& value) { m_sqlServerParametersHasBeenSet = true; m_sqlServerParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for SQL Server.</p>
-     */
     inline DataSourceParameters& WithSqlServerParameters(const SqlServerParameters& value) { SetSqlServerParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for SQL Server.</p>
-     */
     inline DataSourceParameters& WithSqlServerParameters(SqlServerParameters&& value) { SetSqlServerParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Teradata.</p>
      */
     inline const TeradataParameters& GetTeradataParameters() const{ return m_teradataParameters; }
-
-    /**
-     * <p>The parameters for Teradata.</p>
-     */
     inline bool TeradataParametersHasBeenSet() const { return m_teradataParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Teradata.</p>
-     */
     inline void SetTeradataParameters(const TeradataParameters& value) { m_teradataParametersHasBeenSet = true; m_teradataParameters = value; }
-
-    /**
-     * <p>The parameters for Teradata.</p>
-     */
     inline void SetTeradataParameters(TeradataParameters&& value) { m_teradataParametersHasBeenSet = true; m_teradataParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Teradata.</p>
-     */
     inline DataSourceParameters& WithTeradataParameters(const TeradataParameters& value) { SetTeradataParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Teradata.</p>
-     */
     inline DataSourceParameters& WithTeradataParameters(TeradataParameters&& value) { SetTeradataParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Twitter.</p>
      */
     inline const TwitterParameters& GetTwitterParameters() const{ return m_twitterParameters; }
-
-    /**
-     * <p>The parameters for Twitter.</p>
-     */
     inline bool TwitterParametersHasBeenSet() const { return m_twitterParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Twitter.</p>
-     */
     inline void SetTwitterParameters(const TwitterParameters& value) { m_twitterParametersHasBeenSet = true; m_twitterParameters = value; }
-
-    /**
-     * <p>The parameters for Twitter.</p>
-     */
     inline void SetTwitterParameters(TwitterParameters&& value) { m_twitterParametersHasBeenSet = true; m_twitterParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Twitter.</p>
-     */
     inline DataSourceParameters& WithTwitterParameters(const TwitterParameters& value) { SetTwitterParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Twitter.</p>
-     */
     inline DataSourceParameters& WithTwitterParameters(TwitterParameters&& value) { SetTwitterParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for OpenSearch.</p>
      */
     inline const AmazonOpenSearchParameters& GetAmazonOpenSearchParameters() const{ return m_amazonOpenSearchParameters; }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline bool AmazonOpenSearchParametersHasBeenSet() const { return m_amazonOpenSearchParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline void SetAmazonOpenSearchParameters(const AmazonOpenSearchParameters& value) { m_amazonOpenSearchParametersHasBeenSet = true; m_amazonOpenSearchParameters = value; }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline void SetAmazonOpenSearchParameters(AmazonOpenSearchParameters&& value) { m_amazonOpenSearchParametersHasBeenSet = true; m_amazonOpenSearchParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline DataSourceParameters& WithAmazonOpenSearchParameters(const AmazonOpenSearchParameters& value) { SetAmazonOpenSearchParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for OpenSearch.</p>
-     */
     inline DataSourceParameters& WithAmazonOpenSearchParameters(AmazonOpenSearchParameters&& value) { SetAmazonOpenSearchParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters for Exasol.</p>
      */
     inline const ExasolParameters& GetExasolParameters() const{ return m_exasolParameters; }
-
-    /**
-     * <p>The parameters for Exasol.</p>
-     */
     inline bool ExasolParametersHasBeenSet() const { return m_exasolParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters for Exasol.</p>
-     */
     inline void SetExasolParameters(const ExasolParameters& value) { m_exasolParametersHasBeenSet = true; m_exasolParameters = value; }
-
-    /**
-     * <p>The parameters for Exasol.</p>
-     */
     inline void SetExasolParameters(ExasolParameters&& value) { m_exasolParametersHasBeenSet = true; m_exasolParameters = std::move(value); }
-
-    /**
-     * <p>The parameters for Exasol.</p>
-     */
     inline DataSourceParameters& WithExasolParameters(const ExasolParameters& value) { SetExasolParameters(value); return *this;}
-
-    /**
-     * <p>The parameters for Exasol.</p>
-     */
     inline DataSourceParameters& WithExasolParameters(ExasolParameters&& value) { SetExasolParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters that are required to connect to a Databricks data source.</p>
      */
     inline const DatabricksParameters& GetDatabricksParameters() const{ return m_databricksParameters; }
-
-    /**
-     * <p>The parameters that are required to connect to a Databricks data source.</p>
-     */
     inline bool DatabricksParametersHasBeenSet() const { return m_databricksParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters that are required to connect to a Databricks data source.</p>
-     */
     inline void SetDatabricksParameters(const DatabricksParameters& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = value; }
-
-    /**
-     * <p>The parameters that are required to connect to a Databricks data source.</p>
-     */
     inline void SetDatabricksParameters(DatabricksParameters&& value) { m_databricksParametersHasBeenSet = true; m_databricksParameters = std::move(value); }
-
-    /**
-     * <p>The parameters that are required to connect to a Databricks data source.</p>
-     */
     inline DataSourceParameters& WithDatabricksParameters(const DatabricksParameters& value) { SetDatabricksParameters(value); return *this;}
-
-    /**
-     * <p>The parameters that are required to connect to a Databricks data source.</p>
-     */
     inline DataSourceParameters& WithDatabricksParameters(DatabricksParameters&& value) { SetDatabricksParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters that are required to connect to a Starburst data source.</p>
      */
     inline const StarburstParameters& GetStarburstParameters() const{ return m_starburstParameters; }
-
-    /**
-     * <p>The parameters that are required to connect to a Starburst data source.</p>
-     */
     inline bool StarburstParametersHasBeenSet() const { return m_starburstParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters that are required to connect to a Starburst data source.</p>
-     */
     inline void SetStarburstParameters(const StarburstParameters& value) { m_starburstParametersHasBeenSet = true; m_starburstParameters = value; }
-
-    /**
-     * <p>The parameters that are required to connect to a Starburst data source.</p>
-     */
     inline void SetStarburstParameters(StarburstParameters&& value) { m_starburstParametersHasBeenSet = true; m_starburstParameters = std::move(value); }
-
-    /**
-     * <p>The parameters that are required to connect to a Starburst data source.</p>
-     */
     inline DataSourceParameters& WithStarburstParameters(const StarburstParameters& value) { SetStarburstParameters(value); return *this;}
-
-    /**
-     * <p>The parameters that are required to connect to a Starburst data source.</p>
-     */
     inline DataSourceParameters& WithStarburstParameters(StarburstParameters&& value) { SetStarburstParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters that are required to connect to a Trino data source.</p>
      */
     inline const TrinoParameters& GetTrinoParameters() const{ return m_trinoParameters; }
-
-    /**
-     * <p>The parameters that are required to connect to a Trino data source.</p>
-     */
     inline bool TrinoParametersHasBeenSet() const { return m_trinoParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters that are required to connect to a Trino data source.</p>
-     */
     inline void SetTrinoParameters(const TrinoParameters& value) { m_trinoParametersHasBeenSet = true; m_trinoParameters = value; }
-
-    /**
-     * <p>The parameters that are required to connect to a Trino data source.</p>
-     */
     inline void SetTrinoParameters(TrinoParameters&& value) { m_trinoParametersHasBeenSet = true; m_trinoParameters = std::move(value); }
-
-    /**
-     * <p>The parameters that are required to connect to a Trino data source.</p>
-     */
     inline DataSourceParameters& WithTrinoParameters(const TrinoParameters& value) { SetTrinoParameters(value); return *this;}
-
-    /**
-     * <p>The parameters that are required to connect to a Trino data source.</p>
-     */
     inline DataSourceParameters& WithTrinoParameters(TrinoParameters&& value) { SetTrinoParameters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters that are required to connect to a Google BigQuery data
      * source.</p>
      */
     inline const BigQueryParameters& GetBigQueryParameters() const{ return m_bigQueryParameters; }
-
-    /**
-     * <p>The parameters that are required to connect to a Google BigQuery data
-     * source.</p>
-     */
     inline bool BigQueryParametersHasBeenSet() const { return m_bigQueryParametersHasBeenSet; }
-
-    /**
-     * <p>The parameters that are required to connect to a Google BigQuery data
-     * source.</p>
-     */
     inline void SetBigQueryParameters(const BigQueryParameters& value) { m_bigQueryParametersHasBeenSet = true; m_bigQueryParameters = value; }
-
-    /**
-     * <p>The parameters that are required to connect to a Google BigQuery data
-     * source.</p>
-     */
     inline void SetBigQueryParameters(BigQueryParameters&& value) { m_bigQueryParametersHasBeenSet = true; m_bigQueryParameters = std::move(value); }
-
-    /**
-     * <p>The parameters that are required to connect to a Google BigQuery data
-     * source.</p>
-     */
     inline DataSourceParameters& WithBigQueryParameters(const BigQueryParameters& value) { SetBigQueryParameters(value); return *this;}
-
-    /**
-     * <p>The parameters that are required to connect to a Google BigQuery data
-     * source.</p>
-     */
     inline DataSourceParameters& WithBigQueryParameters(BigQueryParameters&& value) { SetBigQueryParameters(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AmazonElasticsearchParameters m_amazonElasticsearchParameters;

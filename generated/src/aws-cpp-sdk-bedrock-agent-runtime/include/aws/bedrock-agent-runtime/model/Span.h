@@ -42,47 +42,25 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Where the text with a citation ends in the generated output.</p>
      */
     inline int GetEnd() const{ return m_end; }
-
-    /**
-     * <p>Where the text with a citation ends in the generated output.</p>
-     */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>Where the text with a citation ends in the generated output.</p>
-     */
     inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>Where the text with a citation ends in the generated output.</p>
-     */
     inline Span& WithEnd(int value) { SetEnd(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Where the text with a citation starts in the generated output.</p>
      */
     inline int GetStart() const{ return m_start; }
-
-    /**
-     * <p>Where the text with a citation starts in the generated output.</p>
-     */
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-
-    /**
-     * <p>Where the text with a citation starts in the generated output.</p>
-     */
     inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
-
-    /**
-     * <p>Where the text with a citation starts in the generated output.</p>
-     */
     inline Span& WithStart(int value) { SetStart(value); return *this;}
-
+    ///@}
   private:
 
     int m_end;

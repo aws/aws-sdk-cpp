@@ -37,36 +37,17 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value is a resource ID.</p>
      */
     inline const ResourceValueType& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value is a resource ID.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value is a resource ID.</p>
-     */
     inline void SetValue(const ResourceValueType& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value is a resource ID.</p>
-     */
     inline void SetValue(ResourceValueType&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value is a resource ID.</p>
-     */
     inline ResourceValue& WithValue(const ResourceValueType& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value is a resource ID.</p>
-     */
     inline ResourceValue& WithValue(ResourceValueType&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceValueType m_value;

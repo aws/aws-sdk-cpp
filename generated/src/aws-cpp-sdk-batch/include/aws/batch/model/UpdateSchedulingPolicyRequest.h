@@ -37,77 +37,31 @@ namespace Model
     AWS_BATCH_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline UpdateSchedulingPolicyRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline UpdateSchedulingPolicyRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the scheduling policy to update.</p>
-     */
     inline UpdateSchedulingPolicyRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fair share policy.</p>
      */
     inline const FairsharePolicy& GetFairsharePolicy() const{ return m_fairsharePolicy; }
-
-    /**
-     * <p>The fair share policy.</p>
-     */
     inline bool FairsharePolicyHasBeenSet() const { return m_fairsharePolicyHasBeenSet; }
-
-    /**
-     * <p>The fair share policy.</p>
-     */
     inline void SetFairsharePolicy(const FairsharePolicy& value) { m_fairsharePolicyHasBeenSet = true; m_fairsharePolicy = value; }
-
-    /**
-     * <p>The fair share policy.</p>
-     */
     inline void SetFairsharePolicy(FairsharePolicy&& value) { m_fairsharePolicyHasBeenSet = true; m_fairsharePolicy = std::move(value); }
-
-    /**
-     * <p>The fair share policy.</p>
-     */
     inline UpdateSchedulingPolicyRequest& WithFairsharePolicy(const FairsharePolicy& value) { SetFairsharePolicy(value); return *this;}
-
-    /**
-     * <p>The fair share policy.</p>
-     */
     inline UpdateSchedulingPolicyRequest& WithFairsharePolicy(FairsharePolicy&& value) { SetFairsharePolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

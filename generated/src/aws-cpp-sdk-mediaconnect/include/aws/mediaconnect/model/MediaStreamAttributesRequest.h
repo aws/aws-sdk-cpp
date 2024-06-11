@@ -38,77 +38,31 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The settings that you want to use to define the media stream.
      */
     inline const FmtpRequest& GetFmtp() const{ return m_fmtp; }
-
-    /**
-     * The settings that you want to use to define the media stream.
-     */
     inline bool FmtpHasBeenSet() const { return m_fmtpHasBeenSet; }
-
-    /**
-     * The settings that you want to use to define the media stream.
-     */
     inline void SetFmtp(const FmtpRequest& value) { m_fmtpHasBeenSet = true; m_fmtp = value; }
-
-    /**
-     * The settings that you want to use to define the media stream.
-     */
     inline void SetFmtp(FmtpRequest&& value) { m_fmtpHasBeenSet = true; m_fmtp = std::move(value); }
-
-    /**
-     * The settings that you want to use to define the media stream.
-     */
     inline MediaStreamAttributesRequest& WithFmtp(const FmtpRequest& value) { SetFmtp(value); return *this;}
-
-    /**
-     * The settings that you want to use to define the media stream.
-     */
     inline MediaStreamAttributesRequest& WithFmtp(FmtpRequest&& value) { SetFmtp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The audio language, in a format that is recognized by the receiver.
      */
     inline const Aws::String& GetLang() const{ return m_lang; }
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline bool LangHasBeenSet() const { return m_langHasBeenSet; }
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline void SetLang(const Aws::String& value) { m_langHasBeenSet = true; m_lang = value; }
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline void SetLang(Aws::String&& value) { m_langHasBeenSet = true; m_lang = std::move(value); }
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline void SetLang(const char* value) { m_langHasBeenSet = true; m_lang.assign(value); }
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline MediaStreamAttributesRequest& WithLang(const Aws::String& value) { SetLang(value); return *this;}
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline MediaStreamAttributesRequest& WithLang(Aws::String&& value) { SetLang(std::move(value)); return *this;}
-
-    /**
-     * The audio language, in a format that is recognized by the receiver.
-     */
     inline MediaStreamAttributesRequest& WithLang(const char* value) { SetLang(value); return *this;}
-
+    ///@}
   private:
 
     FmtpRequest m_fmtp;

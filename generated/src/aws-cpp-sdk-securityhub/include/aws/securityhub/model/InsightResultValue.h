@@ -38,79 +38,31 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the attribute that the findings are grouped by for the insight
      * whose results are returned by the <code>GetInsightResults</code> operation.</p>
      */
     inline const Aws::String& GetGroupByAttributeValue() const{ return m_groupByAttributeValue; }
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline bool GroupByAttributeValueHasBeenSet() const { return m_groupByAttributeValueHasBeenSet; }
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline void SetGroupByAttributeValue(const Aws::String& value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue = value; }
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline void SetGroupByAttributeValue(Aws::String&& value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue = std::move(value); }
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline void SetGroupByAttributeValue(const char* value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue.assign(value); }
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline InsightResultValue& WithGroupByAttributeValue(const Aws::String& value) { SetGroupByAttributeValue(value); return *this;}
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline InsightResultValue& WithGroupByAttributeValue(Aws::String&& value) { SetGroupByAttributeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the attribute that the findings are grouped by for the insight
-     * whose results are returned by the <code>GetInsightResults</code> operation.</p>
-     */
     inline InsightResultValue& WithGroupByAttributeValue(const char* value) { SetGroupByAttributeValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of findings returned for each
      * <code>GroupByAttributeValue</code>.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of findings returned for each
-     * <code>GroupByAttributeValue</code>.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of findings returned for each
-     * <code>GroupByAttributeValue</code>.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of findings returned for each
-     * <code>GroupByAttributeValue</code>.</p>
-     */
     inline InsightResultValue& WithCount(int value) { SetCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupByAttributeValue;

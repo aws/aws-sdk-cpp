@@ -39,66 +39,35 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines whether audio logging in enabled for the bot.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Determines whether audio logging in enabled for the bot.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Determines whether audio logging in enabled for the bot.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Determines whether audio logging in enabled for the bot.</p>
-     */
     inline AudioLogSetting& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AudioLogDestination& GetDestination() const{ return m_destination; }
-
-    
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    
     inline void SetDestination(const AudioLogDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    
     inline void SetDestination(AudioLogDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    
     inline AudioLogSetting& WithDestination(const AudioLogDestination& value) { SetDestination(value); return *this;}
-
-    
     inline AudioLogSetting& WithDestination(AudioLogDestination&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The option to enable selective conversation log capture for audio.</p>
      */
     inline bool GetSelectiveLoggingEnabled() const{ return m_selectiveLoggingEnabled; }
-
-    /**
-     * <p>The option to enable selective conversation log capture for audio.</p>
-     */
     inline bool SelectiveLoggingEnabledHasBeenSet() const { return m_selectiveLoggingEnabledHasBeenSet; }
-
-    /**
-     * <p>The option to enable selective conversation log capture for audio.</p>
-     */
     inline void SetSelectiveLoggingEnabled(bool value) { m_selectiveLoggingEnabledHasBeenSet = true; m_selectiveLoggingEnabled = value; }
-
-    /**
-     * <p>The option to enable selective conversation log capture for audio.</p>
-     */
     inline AudioLogSetting& WithSelectiveLoggingEnabled(bool value) { SetSelectiveLoggingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

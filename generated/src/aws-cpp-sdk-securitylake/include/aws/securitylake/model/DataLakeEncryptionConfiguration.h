@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
      * Security Lake object.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline DataLakeEncryptionConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline DataLakeEncryptionConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The id of KMS encryption key used by Amazon Security Lake to encrypt the
-     * Security Lake object.</p>
-     */
     inline DataLakeEncryptionConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

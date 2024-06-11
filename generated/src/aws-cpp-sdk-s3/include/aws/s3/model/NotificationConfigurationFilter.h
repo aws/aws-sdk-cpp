@@ -41,24 +41,15 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     
     inline const S3KeyFilter& GetKey() const{ return m_key; }
-
-    
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    
     inline void SetKey(const S3KeyFilter& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    
     inline void SetKey(S3KeyFilter&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    
     inline NotificationConfigurationFilter& WithKey(const S3KeyFilter& value) { SetKey(value); return *this;}
-
-    
     inline NotificationConfigurationFilter& WithKey(S3KeyFilter&& value) { SetKey(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3KeyFilter m_key;

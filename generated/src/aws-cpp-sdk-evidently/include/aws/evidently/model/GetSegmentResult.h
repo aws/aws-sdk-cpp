@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API GetSegmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains the complete information about the segment.</p>
      */
     inline const Segment& GetSegment() const{ return m_segment; }
-
-    /**
-     * <p>A structure that contains the complete information about the segment.</p>
-     */
     inline void SetSegment(const Segment& value) { m_segment = value; }
-
-    /**
-     * <p>A structure that contains the complete information about the segment.</p>
-     */
     inline void SetSegment(Segment&& value) { m_segment = std::move(value); }
-
-    /**
-     * <p>A structure that contains the complete information about the segment.</p>
-     */
     inline GetSegmentResult& WithSegment(const Segment& value) { SetSegment(value); return *this;}
-
-    /**
-     * <p>A structure that contains the complete information about the segment.</p>
-     */
     inline GetSegmentResult& WithSegment(Segment&& value) { SetSegment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSegmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSegmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSegmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Segment m_segment;

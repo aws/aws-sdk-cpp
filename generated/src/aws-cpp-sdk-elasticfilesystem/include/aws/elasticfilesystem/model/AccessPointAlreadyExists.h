@@ -39,80 +39,41 @@ namespace Model
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    
     inline AccessPointAlreadyExists& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    
     inline AccessPointAlreadyExists& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    
     inline AccessPointAlreadyExists& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline AccessPointAlreadyExists& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline AccessPointAlreadyExists& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline AccessPointAlreadyExists& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetAccessPointId() const{ return m_accessPointId; }
-
-    
     inline bool AccessPointIdHasBeenSet() const { return m_accessPointIdHasBeenSet; }
-
-    
     inline void SetAccessPointId(const Aws::String& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = value; }
-
-    
     inline void SetAccessPointId(Aws::String&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::move(value); }
-
-    
     inline void SetAccessPointId(const char* value) { m_accessPointIdHasBeenSet = true; m_accessPointId.assign(value); }
-
-    
     inline AccessPointAlreadyExists& WithAccessPointId(const Aws::String& value) { SetAccessPointId(value); return *this;}
-
-    
     inline AccessPointAlreadyExists& WithAccessPointId(Aws::String&& value) { SetAccessPointId(std::move(value)); return *this;}
-
-    
     inline AccessPointAlreadyExists& WithAccessPointId(const char* value) { SetAccessPointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorCode;

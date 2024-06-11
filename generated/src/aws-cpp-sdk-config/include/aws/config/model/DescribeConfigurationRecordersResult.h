@@ -40,70 +40,30 @@ namespace Model
     AWS_CONFIGSERVICE_API DescribeConfigurationRecordersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that contains the descriptions of the specified configuration
      * recorders.</p>
      */
     inline const Aws::Vector<ConfigurationRecorder>& GetConfigurationRecorders() const{ return m_configurationRecorders; }
-
-    /**
-     * <p>A list that contains the descriptions of the specified configuration
-     * recorders.</p>
-     */
     inline void SetConfigurationRecorders(const Aws::Vector<ConfigurationRecorder>& value) { m_configurationRecorders = value; }
-
-    /**
-     * <p>A list that contains the descriptions of the specified configuration
-     * recorders.</p>
-     */
     inline void SetConfigurationRecorders(Aws::Vector<ConfigurationRecorder>&& value) { m_configurationRecorders = std::move(value); }
-
-    /**
-     * <p>A list that contains the descriptions of the specified configuration
-     * recorders.</p>
-     */
     inline DescribeConfigurationRecordersResult& WithConfigurationRecorders(const Aws::Vector<ConfigurationRecorder>& value) { SetConfigurationRecorders(value); return *this;}
-
-    /**
-     * <p>A list that contains the descriptions of the specified configuration
-     * recorders.</p>
-     */
     inline DescribeConfigurationRecordersResult& WithConfigurationRecorders(Aws::Vector<ConfigurationRecorder>&& value) { SetConfigurationRecorders(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that contains the descriptions of the specified configuration
-     * recorders.</p>
-     */
     inline DescribeConfigurationRecordersResult& AddConfigurationRecorders(const ConfigurationRecorder& value) { m_configurationRecorders.push_back(value); return *this; }
-
-    /**
-     * <p>A list that contains the descriptions of the specified configuration
-     * recorders.</p>
-     */
     inline DescribeConfigurationRecordersResult& AddConfigurationRecorders(ConfigurationRecorder&& value) { m_configurationRecorders.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeConfigurationRecordersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeConfigurationRecordersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeConfigurationRecordersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ConfigurationRecorder> m_configurationRecorders;

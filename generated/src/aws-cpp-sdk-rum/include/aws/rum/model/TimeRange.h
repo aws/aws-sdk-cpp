@@ -36,51 +36,26 @@ namespace Model
     AWS_CLOUDWATCHRUM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The beginning of the time range to retrieve performance events from.</p>
      */
     inline long long GetAfter() const{ return m_after; }
-
-    /**
-     * <p>The beginning of the time range to retrieve performance events from.</p>
-     */
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
-
-    /**
-     * <p>The beginning of the time range to retrieve performance events from.</p>
-     */
     inline void SetAfter(long long value) { m_afterHasBeenSet = true; m_after = value; }
-
-    /**
-     * <p>The beginning of the time range to retrieve performance events from.</p>
-     */
     inline TimeRange& WithAfter(long long value) { SetAfter(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The end of the time range to retrieve performance events from. If you omit
      * this, the time range extends to the time that this operation is performed.</p>
      */
     inline long long GetBefore() const{ return m_before; }
-
-    /**
-     * <p>The end of the time range to retrieve performance events from. If you omit
-     * this, the time range extends to the time that this operation is performed.</p>
-     */
     inline bool BeforeHasBeenSet() const { return m_beforeHasBeenSet; }
-
-    /**
-     * <p>The end of the time range to retrieve performance events from. If you omit
-     * this, the time range extends to the time that this operation is performed.</p>
-     */
     inline void SetBefore(long long value) { m_beforeHasBeenSet = true; m_before = value; }
-
-    /**
-     * <p>The end of the time range to retrieve performance events from. If you omit
-     * this, the time range extends to the time that this operation is performed.</p>
-     */
     inline TimeRange& WithBefore(long long value) { SetBefore(value); return *this;}
-
+    ///@}
   private:
 
     long long m_after;

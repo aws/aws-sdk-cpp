@@ -38,75 +38,30 @@ namespace Model
     AWS_QUICKSIGHT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account that contains the customer managed
      * key registration that you want to describe.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline DescribeKeyRegistrationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline DescribeKeyRegistrationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to describe.</p>
-     */
     inline DescribeKeyRegistrationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether the request returns the default key only.</p>
      */
     inline bool GetDefaultKeyOnly() const{ return m_defaultKeyOnly; }
-
-    /**
-     * <p>Determines whether the request returns the default key only.</p>
-     */
     inline bool DefaultKeyOnlyHasBeenSet() const { return m_defaultKeyOnlyHasBeenSet; }
-
-    /**
-     * <p>Determines whether the request returns the default key only.</p>
-     */
     inline void SetDefaultKeyOnly(bool value) { m_defaultKeyOnlyHasBeenSet = true; m_defaultKeyOnly = value; }
-
-    /**
-     * <p>Determines whether the request returns the default key only.</p>
-     */
     inline DescribeKeyRegistrationRequest& WithDefaultKeyOnly(bool value) { SetDefaultKeyOnly(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

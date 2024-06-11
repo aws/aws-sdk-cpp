@@ -39,54 +39,20 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of objects that contain information about errors returned by the
      * <code>BatchPutProperty</code> action.</p>
      */
     inline const Aws::Vector<BatchPutPropertyError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline void SetErrors(const Aws::Vector<BatchPutPropertyError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline void SetErrors(Aws::Vector<BatchPutPropertyError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline BatchPutPropertyErrorEntry& WithErrors(const Aws::Vector<BatchPutPropertyError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline BatchPutPropertyErrorEntry& WithErrors(Aws::Vector<BatchPutPropertyError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline BatchPutPropertyErrorEntry& AddErrors(const BatchPutPropertyError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects that contain information about errors returned by the
-     * <code>BatchPutProperty</code> action.</p>
-     */
     inline BatchPutPropertyErrorEntry& AddErrors(BatchPutPropertyError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<BatchPutPropertyError> m_errors;

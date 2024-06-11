@@ -42,6 +42,7 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum video resolution for the meeting. Applies to all attendees.</p>
      *  <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also
@@ -49,47 +50,12 @@ namespace Model
      * default size limit of 250 attendees.</p> 
      */
     inline const VideoResolution& GetMaxResolution() const{ return m_maxResolution; }
-
-    /**
-     * <p>The maximum video resolution for the meeting. Applies to all attendees.</p>
-     *  <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also
-     * provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the
-     * default size limit of 250 attendees.</p> 
-     */
     inline bool MaxResolutionHasBeenSet() const { return m_maxResolutionHasBeenSet; }
-
-    /**
-     * <p>The maximum video resolution for the meeting. Applies to all attendees.</p>
-     *  <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also
-     * provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the
-     * default size limit of 250 attendees.</p> 
-     */
     inline void SetMaxResolution(const VideoResolution& value) { m_maxResolutionHasBeenSet = true; m_maxResolution = value; }
-
-    /**
-     * <p>The maximum video resolution for the meeting. Applies to all attendees.</p>
-     *  <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also
-     * provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the
-     * default size limit of 250 attendees.</p> 
-     */
     inline void SetMaxResolution(VideoResolution&& value) { m_maxResolutionHasBeenSet = true; m_maxResolution = std::move(value); }
-
-    /**
-     * <p>The maximum video resolution for the meeting. Applies to all attendees.</p>
-     *  <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also
-     * provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the
-     * default size limit of 250 attendees.</p> 
-     */
     inline VideoFeatures& WithMaxResolution(const VideoResolution& value) { SetMaxResolution(value); return *this;}
-
-    /**
-     * <p>The maximum video resolution for the meeting. Applies to all attendees.</p>
-     *  <p>Defaults to <code>HD</code>. To use <code>FHD</code>, you must also
-     * provide a <code>MeetingFeatures:Attendee:MaxCount</code> value and override the
-     * default size limit of 250 attendees.</p> 
-     */
     inline VideoFeatures& WithMaxResolution(VideoResolution&& value) { SetMaxResolution(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VideoResolution m_maxResolution;

@@ -39,53 +39,27 @@ namespace Model
     AWS_CLOUDFRONT_API ListStreamingDistributions2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The <code>StreamingDistributionList</code> type.</p>
      */
     inline const StreamingDistributionList& GetStreamingDistributionList() const{ return m_streamingDistributionList; }
-
-    /**
-     * <p>The <code>StreamingDistributionList</code> type.</p>
-     */
     inline void SetStreamingDistributionList(const StreamingDistributionList& value) { m_streamingDistributionList = value; }
-
-    /**
-     * <p>The <code>StreamingDistributionList</code> type.</p>
-     */
     inline void SetStreamingDistributionList(StreamingDistributionList&& value) { m_streamingDistributionList = std::move(value); }
-
-    /**
-     * <p>The <code>StreamingDistributionList</code> type.</p>
-     */
     inline ListStreamingDistributions2020_05_31Result& WithStreamingDistributionList(const StreamingDistributionList& value) { SetStreamingDistributionList(value); return *this;}
-
-    /**
-     * <p>The <code>StreamingDistributionList</code> type.</p>
-     */
     inline ListStreamingDistributions2020_05_31Result& WithStreamingDistributionList(StreamingDistributionList&& value) { SetStreamingDistributionList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListStreamingDistributions2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListStreamingDistributions2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListStreamingDistributions2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StreamingDistributionList m_streamingDistributionList;

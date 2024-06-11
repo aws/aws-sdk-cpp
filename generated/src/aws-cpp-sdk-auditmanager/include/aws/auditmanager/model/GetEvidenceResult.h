@@ -33,53 +33,27 @@ namespace Model
     AWS_AUDITMANAGER_API GetEvidenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The evidence that the <code>GetEvidence</code> API returned. </p>
      */
     inline const Evidence& GetEvidence() const{ return m_evidence; }
-
-    /**
-     * <p> The evidence that the <code>GetEvidence</code> API returned. </p>
-     */
     inline void SetEvidence(const Evidence& value) { m_evidence = value; }
-
-    /**
-     * <p> The evidence that the <code>GetEvidence</code> API returned. </p>
-     */
     inline void SetEvidence(Evidence&& value) { m_evidence = std::move(value); }
-
-    /**
-     * <p> The evidence that the <code>GetEvidence</code> API returned. </p>
-     */
     inline GetEvidenceResult& WithEvidence(const Evidence& value) { SetEvidence(value); return *this;}
-
-    /**
-     * <p> The evidence that the <code>GetEvidence</code> API returned. </p>
-     */
     inline GetEvidenceResult& WithEvidence(Evidence&& value) { SetEvidence(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEvidenceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEvidenceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEvidenceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Evidence m_evidence;

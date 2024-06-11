@@ -38,108 +38,43 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
      */
     inline int GetDataTransferSubscriberFeePercent() const{ return m_dataTransferSubscriberFeePercent; }
-
-    /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-     */
     inline bool DataTransferSubscriberFeePercentHasBeenSet() const { return m_dataTransferSubscriberFeePercentHasBeenSet; }
-
-    /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-     */
     inline void SetDataTransferSubscriberFeePercent(int value) { m_dataTransferSubscriberFeePercentHasBeenSet = true; m_dataTransferSubscriberFeePercent = value; }
-
-    /**
-     * Percentage from 0-100 of the data transfer cost to be billed to the subscriber.
-     */
     inline ListedEntitlement& WithDataTransferSubscriberFeePercent(int value) { SetDataTransferSubscriberFeePercent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ARN of the entitlement.
      */
     inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline void SetEntitlementArn(const Aws::String& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = value; }
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline void SetEntitlementArn(Aws::String&& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = std::move(value); }
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline void SetEntitlementArn(const char* value) { m_entitlementArnHasBeenSet = true; m_entitlementArn.assign(value); }
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline ListedEntitlement& WithEntitlementArn(const Aws::String& value) { SetEntitlementArn(value); return *this;}
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline ListedEntitlement& WithEntitlementArn(Aws::String&& value) { SetEntitlementArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the entitlement.
-     */
     inline ListedEntitlement& WithEntitlementArn(const char* value) { SetEntitlementArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the entitlement.
      */
     inline const Aws::String& GetEntitlementName() const{ return m_entitlementName; }
-
-    /**
-     * The name of the entitlement.
-     */
     inline bool EntitlementNameHasBeenSet() const { return m_entitlementNameHasBeenSet; }
-
-    /**
-     * The name of the entitlement.
-     */
     inline void SetEntitlementName(const Aws::String& value) { m_entitlementNameHasBeenSet = true; m_entitlementName = value; }
-
-    /**
-     * The name of the entitlement.
-     */
     inline void SetEntitlementName(Aws::String&& value) { m_entitlementNameHasBeenSet = true; m_entitlementName = std::move(value); }
-
-    /**
-     * The name of the entitlement.
-     */
     inline void SetEntitlementName(const char* value) { m_entitlementNameHasBeenSet = true; m_entitlementName.assign(value); }
-
-    /**
-     * The name of the entitlement.
-     */
     inline ListedEntitlement& WithEntitlementName(const Aws::String& value) { SetEntitlementName(value); return *this;}
-
-    /**
-     * The name of the entitlement.
-     */
     inline ListedEntitlement& WithEntitlementName(Aws::String&& value) { SetEntitlementName(std::move(value)); return *this;}
-
-    /**
-     * The name of the entitlement.
-     */
     inline ListedEntitlement& WithEntitlementName(const char* value) { SetEntitlementName(value); return *this;}
-
+    ///@}
   private:
 
     int m_dataTransferSubscriberFeePercent;

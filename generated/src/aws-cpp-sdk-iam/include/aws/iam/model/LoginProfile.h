@@ -42,110 +42,43 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the user, which can be used for signing in to the Amazon Web
      * Services Management Console.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline LoginProfile& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline LoginProfile& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the user, which can be used for signing in to the Amazon Web
-     * Services Management Console.</p>
-     */
     inline LoginProfile& WithUserName(const char* value) { SetUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date when the password for the user was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
-
-    /**
-     * <p>The date when the password for the user was created.</p>
-     */
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-
-    /**
-     * <p>The date when the password for the user was created.</p>
-     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-
-    /**
-     * <p>The date when the password for the user was created.</p>
-     */
     inline void SetCreateDate(Aws::Utils::DateTime&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-
-    /**
-     * <p>The date when the password for the user was created.</p>
-     */
     inline LoginProfile& WithCreateDate(const Aws::Utils::DateTime& value) { SetCreateDate(value); return *this;}
-
-    /**
-     * <p>The date when the password for the user was created.</p>
-     */
     inline LoginProfile& WithCreateDate(Aws::Utils::DateTime&& value) { SetCreateDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the user is required to set a new password on next
      * sign-in.</p>
      */
     inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
-
-    /**
-     * <p>Specifies whether the user is required to set a new password on next
-     * sign-in.</p>
-     */
     inline bool PasswordResetRequiredHasBeenSet() const { return m_passwordResetRequiredHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the user is required to set a new password on next
-     * sign-in.</p>
-     */
     inline void SetPasswordResetRequired(bool value) { m_passwordResetRequiredHasBeenSet = true; m_passwordResetRequired = value; }
-
-    /**
-     * <p>Specifies whether the user is required to set a new password on next
-     * sign-in.</p>
-     */
     inline LoginProfile& WithPasswordResetRequired(bool value) { SetPasswordResetRequired(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userName;

@@ -32,70 +32,30 @@ namespace Model
     AWS_QLDB_API StreamJournalToKinesisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
      * journal stream.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
-
-    /**
-     * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
-     * journal stream.</p>
-     */
     inline void SetStreamId(const Aws::String& value) { m_streamId = value; }
-
-    /**
-     * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
-     * journal stream.</p>
-     */
     inline void SetStreamId(Aws::String&& value) { m_streamId = std::move(value); }
-
-    /**
-     * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
-     * journal stream.</p>
-     */
     inline void SetStreamId(const char* value) { m_streamId.assign(value); }
-
-    /**
-     * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
-     * journal stream.</p>
-     */
     inline StreamJournalToKinesisResult& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-
-    /**
-     * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
-     * journal stream.</p>
-     */
     inline StreamJournalToKinesisResult& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-
-    /**
-     * <p>The UUID (represented in Base62-encoded text) that QLDB assigns to each QLDB
-     * journal stream.</p>
-     */
     inline StreamJournalToKinesisResult& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StreamJournalToKinesisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StreamJournalToKinesisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StreamJournalToKinesisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamId;

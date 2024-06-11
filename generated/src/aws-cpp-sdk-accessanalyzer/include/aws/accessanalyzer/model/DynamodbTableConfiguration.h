@@ -48,54 +48,20 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The proposed resource policy defining who can access or manage the DynamoDB
      * table.</p>
      */
     inline const Aws::String& GetTablePolicy() const{ return m_tablePolicy; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline bool TablePolicyHasBeenSet() const { return m_tablePolicyHasBeenSet; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline void SetTablePolicy(const Aws::String& value) { m_tablePolicyHasBeenSet = true; m_tablePolicy = value; }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline void SetTablePolicy(Aws::String&& value) { m_tablePolicyHasBeenSet = true; m_tablePolicy = std::move(value); }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline void SetTablePolicy(const char* value) { m_tablePolicyHasBeenSet = true; m_tablePolicy.assign(value); }
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline DynamodbTableConfiguration& WithTablePolicy(const Aws::String& value) { SetTablePolicy(value); return *this;}
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline DynamodbTableConfiguration& WithTablePolicy(Aws::String&& value) { SetTablePolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The proposed resource policy defining who can access or manage the DynamoDB
-     * table.</p>
-     */
     inline DynamodbTableConfiguration& WithTablePolicy(const char* value) { SetTablePolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tablePolicy;

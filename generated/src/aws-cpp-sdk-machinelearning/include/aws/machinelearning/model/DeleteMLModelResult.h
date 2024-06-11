@@ -40,77 +40,31 @@ namespace Model
     AWS_MACHINELEARNING_API DeleteMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
      * value should be identical to the value of the <code>MLModelID</code> in the
      * request.</p>
      */
     inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
-     * value should be identical to the value of the <code>MLModelID</code> in the
-     * request.</p>
-     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelId = value; }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
-     * value should be identical to the value of the <code>MLModelID</code> in the
-     * request.</p>
-     */
     inline void SetMLModelId(Aws::String&& value) { m_mLModelId = std::move(value); }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
-     * value should be identical to the value of the <code>MLModelID</code> in the
-     * request.</p>
-     */
     inline void SetMLModelId(const char* value) { m_mLModelId.assign(value); }
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
-     * value should be identical to the value of the <code>MLModelID</code> in the
-     * request.</p>
-     */
     inline DeleteMLModelResult& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
-     * value should be identical to the value of the <code>MLModelID</code> in the
-     * request.</p>
-     */
     inline DeleteMLModelResult& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-supplied ID that uniquely identifies the <code>MLModel</code>. This
-     * value should be identical to the value of the <code>MLModelID</code> in the
-     * request.</p>
-     */
     inline DeleteMLModelResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteMLModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteMLModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteMLModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mLModelId;

@@ -32,46 +32,19 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>ID of the Source Network to replicate.</p>
      */
     inline const Aws::String& GetSourceNetworkID() const{ return m_sourceNetworkID; }
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline bool SourceNetworkIDHasBeenSet() const { return m_sourceNetworkIDHasBeenSet; }
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline void SetSourceNetworkID(const Aws::String& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = value; }
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline void SetSourceNetworkID(Aws::String&& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = std::move(value); }
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline void SetSourceNetworkID(const char* value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID.assign(value); }
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline StartSourceNetworkReplicationRequest& WithSourceNetworkID(const Aws::String& value) { SetSourceNetworkID(value); return *this;}
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline StartSourceNetworkReplicationRequest& WithSourceNetworkID(Aws::String&& value) { SetSourceNetworkID(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the Source Network to replicate.</p>
-     */
     inline StartSourceNetworkReplicationRequest& WithSourceNetworkID(const char* value) { SetSourceNetworkID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceNetworkID;

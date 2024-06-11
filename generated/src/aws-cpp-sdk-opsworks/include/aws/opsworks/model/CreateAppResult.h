@@ -38,63 +38,29 @@ namespace Model
     AWS_OPSWORKS_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The app ID.</p>
      */
     inline const Aws::String& GetAppId() const{ return m_appId; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(const Aws::String& value) { m_appId = value; }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline void SetAppId(const char* value) { m_appId.assign(value); }
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline CreateAppResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline CreateAppResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-
-    /**
-     * <p>The app ID.</p>
-     */
     inline CreateAppResult& WithAppId(const char* value) { SetAppId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appId;

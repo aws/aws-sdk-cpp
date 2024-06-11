@@ -40,185 +40,70 @@ namespace Model
     AWS_KINESIS_API DisableEnhancedMonitoringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the Kinesis data stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * <p>The name of the Kinesis data stream.</p>
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamName = value; }
-
-    /**
-     * <p>The name of the Kinesis data stream.</p>
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamName = std::move(value); }
-
-    /**
-     * <p>The name of the Kinesis data stream.</p>
-     */
     inline void SetStreamName(const char* value) { m_streamName.assign(value); }
-
-    /**
-     * <p>The name of the Kinesis data stream.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * <p>The name of the Kinesis data stream.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Kinesis data stream.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the current state of the metrics that are in the enhanced state
      * before the operation.</p>
      */
     inline const Aws::Vector<MetricsName>& GetCurrentShardLevelMetrics() const{ return m_currentShardLevelMetrics; }
-
-    /**
-     * <p>Represents the current state of the metrics that are in the enhanced state
-     * before the operation.</p>
-     */
     inline void SetCurrentShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_currentShardLevelMetrics = value; }
-
-    /**
-     * <p>Represents the current state of the metrics that are in the enhanced state
-     * before the operation.</p>
-     */
     inline void SetCurrentShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_currentShardLevelMetrics = std::move(value); }
-
-    /**
-     * <p>Represents the current state of the metrics that are in the enhanced state
-     * before the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithCurrentShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetCurrentShardLevelMetrics(value); return *this;}
-
-    /**
-     * <p>Represents the current state of the metrics that are in the enhanced state
-     * before the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithCurrentShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetCurrentShardLevelMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents the current state of the metrics that are in the enhanced state
-     * before the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& AddCurrentShardLevelMetrics(const MetricsName& value) { m_currentShardLevelMetrics.push_back(value); return *this; }
-
-    /**
-     * <p>Represents the current state of the metrics that are in the enhanced state
-     * before the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& AddCurrentShardLevelMetrics(MetricsName&& value) { m_currentShardLevelMetrics.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Represents the list of all the metrics that would be in the enhanced state
      * after the operation.</p>
      */
     inline const Aws::Vector<MetricsName>& GetDesiredShardLevelMetrics() const{ return m_desiredShardLevelMetrics; }
-
-    /**
-     * <p>Represents the list of all the metrics that would be in the enhanced state
-     * after the operation.</p>
-     */
     inline void SetDesiredShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_desiredShardLevelMetrics = value; }
-
-    /**
-     * <p>Represents the list of all the metrics that would be in the enhanced state
-     * after the operation.</p>
-     */
     inline void SetDesiredShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_desiredShardLevelMetrics = std::move(value); }
-
-    /**
-     * <p>Represents the list of all the metrics that would be in the enhanced state
-     * after the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithDesiredShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetDesiredShardLevelMetrics(value); return *this;}
-
-    /**
-     * <p>Represents the list of all the metrics that would be in the enhanced state
-     * after the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithDesiredShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetDesiredShardLevelMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents the list of all the metrics that would be in the enhanced state
-     * after the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(const MetricsName& value) { m_desiredShardLevelMetrics.push_back(value); return *this; }
-
-    /**
-     * <p>Represents the list of all the metrics that would be in the enhanced state
-     * after the operation.</p>
-     */
     inline DisableEnhancedMonitoringResult& AddDesiredShardLevelMetrics(MetricsName&& value) { m_desiredShardLevelMetrics.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline DisableEnhancedMonitoringResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisableEnhancedMonitoringResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisableEnhancedMonitoringResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisableEnhancedMonitoringResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamName;

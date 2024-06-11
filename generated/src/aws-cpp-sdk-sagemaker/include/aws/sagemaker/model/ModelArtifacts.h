@@ -43,54 +43,20 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path of the S3 object that contains the model artifacts. For example,
      * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
      */
     inline const Aws::String& GetS3ModelArtifacts() const{ return m_s3ModelArtifacts; }
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline bool S3ModelArtifactsHasBeenSet() const { return m_s3ModelArtifactsHasBeenSet; }
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline void SetS3ModelArtifacts(const Aws::String& value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts = value; }
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline void SetS3ModelArtifacts(Aws::String&& value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts = std::move(value); }
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline void SetS3ModelArtifacts(const char* value) { m_s3ModelArtifactsHasBeenSet = true; m_s3ModelArtifacts.assign(value); }
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline ModelArtifacts& WithS3ModelArtifacts(const Aws::String& value) { SetS3ModelArtifacts(value); return *this;}
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline ModelArtifacts& WithS3ModelArtifacts(Aws::String&& value) { SetS3ModelArtifacts(std::move(value)); return *this;}
-
-    /**
-     * <p>The path of the S3 object that contains the model artifacts. For example,
-     * <code>s3://bucket-name/keynameprefix/model.tar.gz</code>.</p>
-     */
     inline ModelArtifacts& WithS3ModelArtifacts(const char* value) { SetS3ModelArtifacts(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3ModelArtifacts;

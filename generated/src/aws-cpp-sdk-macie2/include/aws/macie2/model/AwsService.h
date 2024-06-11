@@ -38,46 +38,19 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the Amazon Web Service that performed the action.</p>
      */
     inline const Aws::String& GetInvokedBy() const{ return m_invokedBy; }
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline bool InvokedByHasBeenSet() const { return m_invokedByHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline void SetInvokedBy(const Aws::String& value) { m_invokedByHasBeenSet = true; m_invokedBy = value; }
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline void SetInvokedBy(Aws::String&& value) { m_invokedByHasBeenSet = true; m_invokedBy = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline void SetInvokedBy(const char* value) { m_invokedByHasBeenSet = true; m_invokedBy.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline AwsService& WithInvokedBy(const Aws::String& value) { SetInvokedBy(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline AwsService& WithInvokedBy(Aws::String&& value) { SetInvokedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Web Service that performed the action.</p>
-     */
     inline AwsService& WithInvokedBy(const char* value) { SetInvokedBy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_invokedBy;

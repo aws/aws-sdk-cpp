@@ -37,24 +37,15 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ItemsLimitConfiguration& GetScatterPlotLimitConfiguration() const{ return m_scatterPlotLimitConfiguration; }
-
-    
     inline bool ScatterPlotLimitConfigurationHasBeenSet() const { return m_scatterPlotLimitConfigurationHasBeenSet; }
-
-    
     inline void SetScatterPlotLimitConfiguration(const ItemsLimitConfiguration& value) { m_scatterPlotLimitConfigurationHasBeenSet = true; m_scatterPlotLimitConfiguration = value; }
-
-    
     inline void SetScatterPlotLimitConfiguration(ItemsLimitConfiguration&& value) { m_scatterPlotLimitConfigurationHasBeenSet = true; m_scatterPlotLimitConfiguration = std::move(value); }
-
-    
     inline ScatterPlotSortConfiguration& WithScatterPlotLimitConfiguration(const ItemsLimitConfiguration& value) { SetScatterPlotLimitConfiguration(value); return *this;}
-
-    
     inline ScatterPlotSortConfiguration& WithScatterPlotLimitConfiguration(ItemsLimitConfiguration&& value) { SetScatterPlotLimitConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ItemsLimitConfiguration m_scatterPlotLimitConfiguration;

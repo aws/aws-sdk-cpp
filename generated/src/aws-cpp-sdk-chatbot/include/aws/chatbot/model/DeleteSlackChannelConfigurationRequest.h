@@ -32,46 +32,19 @@ namespace Model
     AWS_CHATBOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The ARN of the SlackChannelConfiguration to delete.
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline DeleteSlackChannelConfigurationRequest& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline DeleteSlackChannelConfigurationRequest& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the SlackChannelConfiguration to delete.
-     */
     inline DeleteSlackChannelConfigurationRequest& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_chatConfigurationArn;

@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The name of the queue that you want information about.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline GetQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline GetQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the queue that you want information about.
-     */
     inline GetQueueRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

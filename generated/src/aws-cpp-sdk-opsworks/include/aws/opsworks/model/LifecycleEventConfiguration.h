@@ -37,42 +37,18 @@ namespace Model
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
      * event configuration.</p>
      */
     inline const ShutdownEventConfiguration& GetShutdown() const{ return m_shutdown; }
-
-    /**
-     * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
-     * event configuration.</p>
-     */
     inline bool ShutdownHasBeenSet() const { return m_shutdownHasBeenSet; }
-
-    /**
-     * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
-     * event configuration.</p>
-     */
     inline void SetShutdown(const ShutdownEventConfiguration& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
-
-    /**
-     * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
-     * event configuration.</p>
-     */
     inline void SetShutdown(ShutdownEventConfiguration&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::move(value); }
-
-    /**
-     * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
-     * event configuration.</p>
-     */
     inline LifecycleEventConfiguration& WithShutdown(const ShutdownEventConfiguration& value) { SetShutdown(value); return *this;}
-
-    /**
-     * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
-     * event configuration.</p>
-     */
     inline LifecycleEventConfiguration& WithShutdown(ShutdownEventConfiguration&& value) { SetShutdown(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ShutdownEventConfiguration m_shutdown;

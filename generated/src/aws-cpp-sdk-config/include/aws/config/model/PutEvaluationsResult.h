@@ -39,63 +39,29 @@ namespace Model
     AWS_CONFIGSERVICE_API PutEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Requests that failed because of a client or server error.</p>
      */
     inline const Aws::Vector<Evaluation>& GetFailedEvaluations() const{ return m_failedEvaluations; }
-
-    /**
-     * <p>Requests that failed because of a client or server error.</p>
-     */
     inline void SetFailedEvaluations(const Aws::Vector<Evaluation>& value) { m_failedEvaluations = value; }
-
-    /**
-     * <p>Requests that failed because of a client or server error.</p>
-     */
     inline void SetFailedEvaluations(Aws::Vector<Evaluation>&& value) { m_failedEvaluations = std::move(value); }
-
-    /**
-     * <p>Requests that failed because of a client or server error.</p>
-     */
     inline PutEvaluationsResult& WithFailedEvaluations(const Aws::Vector<Evaluation>& value) { SetFailedEvaluations(value); return *this;}
-
-    /**
-     * <p>Requests that failed because of a client or server error.</p>
-     */
     inline PutEvaluationsResult& WithFailedEvaluations(Aws::Vector<Evaluation>&& value) { SetFailedEvaluations(std::move(value)); return *this;}
-
-    /**
-     * <p>Requests that failed because of a client or server error.</p>
-     */
     inline PutEvaluationsResult& AddFailedEvaluations(const Evaluation& value) { m_failedEvaluations.push_back(value); return *this; }
-
-    /**
-     * <p>Requests that failed because of a client or server error.</p>
-     */
     inline PutEvaluationsResult& AddFailedEvaluations(Evaluation&& value) { m_failedEvaluations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutEvaluationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutEvaluationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutEvaluationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Evaluation> m_failedEvaluations;

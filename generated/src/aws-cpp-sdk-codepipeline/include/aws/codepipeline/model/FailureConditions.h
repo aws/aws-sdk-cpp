@@ -38,42 +38,18 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The specified result for when the failure conditions are met, such as rolling
      * back the stage.</p>
      */
     inline const Result& GetResult() const{ return m_result; }
-
-    /**
-     * <p>The specified result for when the failure conditions are met, such as rolling
-     * back the stage.</p>
-     */
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-
-    /**
-     * <p>The specified result for when the failure conditions are met, such as rolling
-     * back the stage.</p>
-     */
     inline void SetResult(const Result& value) { m_resultHasBeenSet = true; m_result = value; }
-
-    /**
-     * <p>The specified result for when the failure conditions are met, such as rolling
-     * back the stage.</p>
-     */
     inline void SetResult(Result&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-
-    /**
-     * <p>The specified result for when the failure conditions are met, such as rolling
-     * back the stage.</p>
-     */
     inline FailureConditions& WithResult(const Result& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>The specified result for when the failure conditions are met, such as rolling
-     * back the stage.</p>
-     */
     inline FailureConditions& WithResult(Result&& value) { SetResult(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Result m_result;

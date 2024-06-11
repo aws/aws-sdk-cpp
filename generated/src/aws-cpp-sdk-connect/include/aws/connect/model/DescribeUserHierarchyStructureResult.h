@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECT_API DescribeUserHierarchyStructureResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the hierarchy structure.</p>
      */
     inline const HierarchyStructure& GetHierarchyStructure() const{ return m_hierarchyStructure; }
-
-    /**
-     * <p>Information about the hierarchy structure.</p>
-     */
     inline void SetHierarchyStructure(const HierarchyStructure& value) { m_hierarchyStructure = value; }
-
-    /**
-     * <p>Information about the hierarchy structure.</p>
-     */
     inline void SetHierarchyStructure(HierarchyStructure&& value) { m_hierarchyStructure = std::move(value); }
-
-    /**
-     * <p>Information about the hierarchy structure.</p>
-     */
     inline DescribeUserHierarchyStructureResult& WithHierarchyStructure(const HierarchyStructure& value) { SetHierarchyStructure(value); return *this;}
-
-    /**
-     * <p>Information about the hierarchy structure.</p>
-     */
     inline DescribeUserHierarchyStructureResult& WithHierarchyStructure(HierarchyStructure&& value) { SetHierarchyStructure(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeUserHierarchyStructureResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeUserHierarchyStructureResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeUserHierarchyStructureResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     HierarchyStructure m_hierarchyStructure;

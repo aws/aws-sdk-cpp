@@ -38,51 +38,20 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>List Connectors Request Filters connector IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectorIDs() const{ return m_connectorIDs; }
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline bool ConnectorIDsHasBeenSet() const { return m_connectorIDsHasBeenSet; }
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline void SetConnectorIDs(const Aws::Vector<Aws::String>& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs = value; }
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline void SetConnectorIDs(Aws::Vector<Aws::String>&& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs = std::move(value); }
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline ListConnectorsRequestFilters& WithConnectorIDs(const Aws::Vector<Aws::String>& value) { SetConnectorIDs(value); return *this;}
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline ListConnectorsRequestFilters& WithConnectorIDs(Aws::Vector<Aws::String>&& value) { SetConnectorIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline ListConnectorsRequestFilters& AddConnectorIDs(const Aws::String& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.push_back(value); return *this; }
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline ListConnectorsRequestFilters& AddConnectorIDs(Aws::String&& value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List Connectors Request Filters connector IDs.</p>
-     */
     inline ListConnectorsRequestFilters& AddConnectorIDs(const char* value) { m_connectorIDsHasBeenSet = true; m_connectorIDs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_connectorIDs;

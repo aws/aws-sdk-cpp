@@ -35,106 +35,43 @@ namespace Model
     AWS_DETECTIVE_API BatchGetGraphMemberDatasourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details on the status of data source packages for members of the behavior
      * graph.</p>
      */
     inline const Aws::Vector<MembershipDatasources>& GetMemberDatasources() const{ return m_memberDatasources; }
-
-    /**
-     * <p>Details on the status of data source packages for members of the behavior
-     * graph.</p>
-     */
     inline void SetMemberDatasources(const Aws::Vector<MembershipDatasources>& value) { m_memberDatasources = value; }
-
-    /**
-     * <p>Details on the status of data source packages for members of the behavior
-     * graph.</p>
-     */
     inline void SetMemberDatasources(Aws::Vector<MembershipDatasources>&& value) { m_memberDatasources = std::move(value); }
-
-    /**
-     * <p>Details on the status of data source packages for members of the behavior
-     * graph.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& WithMemberDatasources(const Aws::Vector<MembershipDatasources>& value) { SetMemberDatasources(value); return *this;}
-
-    /**
-     * <p>Details on the status of data source packages for members of the behavior
-     * graph.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& WithMemberDatasources(Aws::Vector<MembershipDatasources>&& value) { SetMemberDatasources(std::move(value)); return *this;}
-
-    /**
-     * <p>Details on the status of data source packages for members of the behavior
-     * graph.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& AddMemberDatasources(const MembershipDatasources& value) { m_memberDatasources.push_back(value); return *this; }
-
-    /**
-     * <p>Details on the status of data source packages for members of the behavior
-     * graph.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& AddMemberDatasources(MembershipDatasources&& value) { m_memberDatasources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Accounts that data source package information could not be retrieved for.</p>
      */
     inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
-
-    /**
-     * <p>Accounts that data source package information could not be retrieved for.</p>
-     */
     inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
-
-    /**
-     * <p>Accounts that data source package information could not be retrieved for.</p>
-     */
     inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
-
-    /**
-     * <p>Accounts that data source package information could not be retrieved for.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
-
-    /**
-     * <p>Accounts that data source package information could not be retrieved for.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>Accounts that data source package information could not be retrieved for.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
-
-    /**
-     * <p>Accounts that data source package information could not be retrieved for.</p>
-     */
     inline BatchGetGraphMemberDatasourcesResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetGraphMemberDatasourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetGraphMemberDatasourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetGraphMemberDatasourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MembershipDatasources> m_memberDatasources;

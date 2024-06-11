@@ -37,103 +37,35 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Issuer name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline Issuer& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline Issuer& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Issuer name.</p>
-     */
     inline Issuer& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
      * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
      * algorithm.</p>
      */
     inline const Aws::String& GetSignKey() const{ return m_signKey; }
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline bool SignKeyHasBeenSet() const { return m_signKeyHasBeenSet; }
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline void SetSignKey(const Aws::String& value) { m_signKeyHasBeenSet = true; m_signKey = value; }
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline void SetSignKey(Aws::String&& value) { m_signKeyHasBeenSet = true; m_signKey = std::move(value); }
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline void SetSignKey(const char* value) { m_signKeyHasBeenSet = true; m_signKey.assign(value); }
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline Issuer& WithSignKey(const Aws::String& value) { SetSignKey(value); return *this;}
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline Issuer& WithSignKey(Aws::String&& value) { SetSignKey(std::move(value)); return *this;}
-
-    /**
-     * <p>Asymmetric KMS key from Key Management Service. The KMS key must have a key
-     * usage of sign and verify, and support the RSASSA-PSS SHA-256 signing
-     * algorithm.</p>
-     */
     inline Issuer& WithSignKey(const char* value) { SetSignKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

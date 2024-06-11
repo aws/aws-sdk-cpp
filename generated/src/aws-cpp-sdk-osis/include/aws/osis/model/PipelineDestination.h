@@ -38,87 +38,33 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the service receiving data from the pipeline.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline PipelineDestination& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline PipelineDestination& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service receiving data from the pipeline.</p>
-     */
     inline PipelineDestination& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The endpoint receiving data from the pipeline.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline PipelineDestination& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline PipelineDestination& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The endpoint receiving data from the pipeline.</p>
-     */
     inline PipelineDestination& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceName;

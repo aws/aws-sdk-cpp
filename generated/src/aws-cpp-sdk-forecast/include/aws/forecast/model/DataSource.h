@@ -39,42 +39,18 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3)
      * bucket along with the credentials to access the data.</p>
      */
     inline const S3Config& GetS3Config() const{ return m_s3Config; }
-
-    /**
-     * <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3)
-     * bucket along with the credentials to access the data.</p>
-     */
     inline bool S3ConfigHasBeenSet() const { return m_s3ConfigHasBeenSet; }
-
-    /**
-     * <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3)
-     * bucket along with the credentials to access the data.</p>
-     */
     inline void SetS3Config(const S3Config& value) { m_s3ConfigHasBeenSet = true; m_s3Config = value; }
-
-    /**
-     * <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3)
-     * bucket along with the credentials to access the data.</p>
-     */
     inline void SetS3Config(S3Config&& value) { m_s3ConfigHasBeenSet = true; m_s3Config = std::move(value); }
-
-    /**
-     * <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3)
-     * bucket along with the credentials to access the data.</p>
-     */
     inline DataSource& WithS3Config(const S3Config& value) { SetS3Config(value); return *this;}
-
-    /**
-     * <p>The path to the data stored in an Amazon Simple Storage Service (Amazon S3)
-     * bucket along with the credentials to access the data.</p>
-     */
     inline DataSource& WithS3Config(S3Config&& value) { SetS3Config(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Config m_s3Config;

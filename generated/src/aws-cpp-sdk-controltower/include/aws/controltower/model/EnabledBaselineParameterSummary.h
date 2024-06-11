@@ -39,77 +39,31 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string denoting the parameter key.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline EnabledBaselineParameterSummary& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline EnabledBaselineParameterSummary& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-
-    /**
-     * <p>A string denoting the parameter key.</p>
-     */
     inline EnabledBaselineParameterSummary& WithKey(const char* value) { SetKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A low-level document object of any type (for example, a Java Object).</p>
      */
     inline Aws::Utils::DocumentView GetValue() const{ return m_value; }
-
-    /**
-     * <p>A low-level document object of any type (for example, a Java Object).</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>A low-level document object of any type (for example, a Java Object).</p>
-     */
     inline void SetValue(const Aws::Utils::Document& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>A low-level document object of any type (for example, a Java Object).</p>
-     */
     inline void SetValue(Aws::Utils::Document&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>A low-level document object of any type (for example, a Java Object).</p>
-     */
     inline EnabledBaselineParameterSummary& WithValue(const Aws::Utils::Document& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>A low-level document object of any type (for example, a Java Object).</p>
-     */
     inline EnabledBaselineParameterSummary& WithValue(Aws::Utils::Document&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_key;

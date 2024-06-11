@@ -38,114 +38,44 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This value is set to <code>true</code> if the generated policy contains all
      * possible actions for a service that IAM Access Analyzer identified from the
      * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
      */
     inline bool GetIsComplete() const{ return m_isComplete; }
-
-    /**
-     * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that IAM Access Analyzer identified from the
-     * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
-     */
     inline bool IsCompleteHasBeenSet() const { return m_isCompleteHasBeenSet; }
-
-    /**
-     * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that IAM Access Analyzer identified from the
-     * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
-     */
     inline void SetIsComplete(bool value) { m_isCompleteHasBeenSet = true; m_isComplete = value; }
-
-    /**
-     * <p>This value is set to <code>true</code> if the generated policy contains all
-     * possible actions for a service that IAM Access Analyzer identified from the
-     * CloudTrail trail that you specified, and <code>false</code> otherwise.</p>
-     */
     inline GeneratedPolicyProperties& WithIsComplete(bool value) { SetIsComplete(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the IAM entity (user or role) for which you are generating a
      * policy.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline GeneratedPolicyProperties& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline GeneratedPolicyProperties& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM entity (user or role) for which you are generating a
-     * policy.</p>
-     */
     inline GeneratedPolicyProperties& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
      */
     inline const CloudTrailProperties& GetCloudTrailProperties() const{ return m_cloudTrailProperties; }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
     inline bool CloudTrailPropertiesHasBeenSet() const { return m_cloudTrailPropertiesHasBeenSet; }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
     inline void SetCloudTrailProperties(const CloudTrailProperties& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = value; }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
     inline void SetCloudTrailProperties(CloudTrailProperties&& value) { m_cloudTrailPropertiesHasBeenSet = true; m_cloudTrailProperties = std::move(value); }
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
     inline GeneratedPolicyProperties& WithCloudTrailProperties(const CloudTrailProperties& value) { SetCloudTrailProperties(value); return *this;}
-
-    /**
-     * <p>Lists details about the <code>Trail</code> used to generated policy.</p>
-     */
     inline GeneratedPolicyProperties& WithCloudTrailProperties(CloudTrailProperties&& value) { SetCloudTrailProperties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_isComplete;

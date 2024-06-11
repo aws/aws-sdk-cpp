@@ -39,219 +39,82 @@ namespace Model
     AWS_SMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location of the validation script.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline SSMValidationParameters& WithSource(const Source& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The location of the validation script.</p>
-     */
     inline SSMValidationParameters& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the instance. The instance must have the following tag:
      * UserForSMSApplicationValidation=true.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline SSMValidationParameters& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline SSMValidationParameters& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the instance. The instance must have the following tag:
-     * UserForSMSApplicationValidation=true.</p>
-     */
     inline SSMValidationParameters& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of validation script.</p>
      */
     inline const ScriptType& GetScriptType() const{ return m_scriptType; }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline bool ScriptTypeHasBeenSet() const { return m_scriptTypeHasBeenSet; }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline void SetScriptType(const ScriptType& value) { m_scriptTypeHasBeenSet = true; m_scriptType = value; }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline void SetScriptType(ScriptType&& value) { m_scriptTypeHasBeenSet = true; m_scriptType = std::move(value); }
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline SSMValidationParameters& WithScriptType(const ScriptType& value) { SetScriptType(value); return *this;}
-
-    /**
-     * <p>The type of validation script.</p>
-     */
     inline SSMValidationParameters& WithScriptType(ScriptType&& value) { SetScriptType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The command to run the validation script.</p>
      */
     inline const Aws::String& GetCommand() const{ return m_command; }
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline void SetCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command = value; }
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline void SetCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline void SetCommand(const char* value) { m_commandHasBeenSet = true; m_command.assign(value); }
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline SSMValidationParameters& WithCommand(const Aws::String& value) { SetCommand(value); return *this;}
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline SSMValidationParameters& WithCommand(Aws::String&& value) { SetCommand(std::move(value)); return *this;}
-
-    /**
-     * <p>The command to run the validation script.</p>
-     */
     inline SSMValidationParameters& WithCommand(const char* value) { SetCommand(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timeout interval, in seconds.</p>
      */
     inline int GetExecutionTimeoutSeconds() const{ return m_executionTimeoutSeconds; }
-
-    /**
-     * <p>The timeout interval, in seconds.</p>
-     */
     inline bool ExecutionTimeoutSecondsHasBeenSet() const { return m_executionTimeoutSecondsHasBeenSet; }
-
-    /**
-     * <p>The timeout interval, in seconds.</p>
-     */
     inline void SetExecutionTimeoutSeconds(int value) { m_executionTimeoutSecondsHasBeenSet = true; m_executionTimeoutSeconds = value; }
-
-    /**
-     * <p>The timeout interval, in seconds.</p>
-     */
     inline SSMValidationParameters& WithExecutionTimeoutSeconds(int value) { SetExecutionTimeoutSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the S3 bucket for output.</p>
      */
     inline const Aws::String& GetOutputS3BucketName() const{ return m_outputS3BucketName; }
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline bool OutputS3BucketNameHasBeenSet() const { return m_outputS3BucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline void SetOutputS3BucketName(const Aws::String& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = value; }
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline void SetOutputS3BucketName(Aws::String&& value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName = std::move(value); }
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline void SetOutputS3BucketName(const char* value) { m_outputS3BucketNameHasBeenSet = true; m_outputS3BucketName.assign(value); }
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline SSMValidationParameters& WithOutputS3BucketName(const Aws::String& value) { SetOutputS3BucketName(value); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline SSMValidationParameters& WithOutputS3BucketName(Aws::String&& value) { SetOutputS3BucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket for output.</p>
-     */
     inline SSMValidationParameters& WithOutputS3BucketName(const char* value) { SetOutputS3BucketName(value); return *this;}
-
+    ///@}
   private:
 
     Source m_source;

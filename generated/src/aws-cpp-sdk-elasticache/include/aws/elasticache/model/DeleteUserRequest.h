@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the user.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline DeleteUserRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline DeleteUserRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the user.</p>
-     */
     inline DeleteUserRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userId;

@@ -39,60 +39,21 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the specified object prefixes. The S3 object will be
      * scanned only if it belongs to any of the specified object prefixes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const{ return m_objectPrefixes; }
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline bool ObjectPrefixesHasBeenSet() const { return m_objectPrefixesHasBeenSet; }
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline void SetObjectPrefixes(const Aws::Vector<Aws::String>& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = value; }
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline void SetObjectPrefixes(Aws::Vector<Aws::String>&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::move(value); }
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline UpdateS3BucketResource& WithObjectPrefixes(const Aws::Vector<Aws::String>& value) { SetObjectPrefixes(value); return *this;}
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline UpdateS3BucketResource& WithObjectPrefixes(Aws::Vector<Aws::String>&& value) { SetObjectPrefixes(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline UpdateS3BucketResource& AddObjectPrefixes(const Aws::String& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline UpdateS3BucketResource& AddObjectPrefixes(Aws::String&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Information about the specified object prefixes. The S3 object will be
-     * scanned only if it belongs to any of the specified object prefixes.</p>
-     */
     inline UpdateS3BucketResource& AddObjectPrefixes(const char* value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_objectPrefixes;

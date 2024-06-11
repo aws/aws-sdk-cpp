@@ -36,26 +36,15 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of recommended intents associated with the bot recommendation.</p>
      */
     inline int GetDiscoveredIntentCount() const{ return m_discoveredIntentCount; }
-
-    /**
-     * <p>The number of recommended intents associated with the bot recommendation.</p>
-     */
     inline bool DiscoveredIntentCountHasBeenSet() const { return m_discoveredIntentCountHasBeenSet; }
-
-    /**
-     * <p>The number of recommended intents associated with the bot recommendation.</p>
-     */
     inline void SetDiscoveredIntentCount(int value) { m_discoveredIntentCountHasBeenSet = true; m_discoveredIntentCount = value; }
-
-    /**
-     * <p>The number of recommended intents associated with the bot recommendation.</p>
-     */
     inline IntentStatistics& WithDiscoveredIntentCount(int value) { SetDiscoveredIntentCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_discoveredIntentCount;

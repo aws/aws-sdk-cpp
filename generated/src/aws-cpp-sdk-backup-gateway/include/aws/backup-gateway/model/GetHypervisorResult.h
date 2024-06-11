@@ -33,53 +33,27 @@ namespace Model
     AWS_BACKUPGATEWAY_API GetHypervisorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the requested hypervisor.</p>
      */
     inline const HypervisorDetails& GetHypervisor() const{ return m_hypervisor; }
-
-    /**
-     * <p>Details about the requested hypervisor.</p>
-     */
     inline void SetHypervisor(const HypervisorDetails& value) { m_hypervisor = value; }
-
-    /**
-     * <p>Details about the requested hypervisor.</p>
-     */
     inline void SetHypervisor(HypervisorDetails&& value) { m_hypervisor = std::move(value); }
-
-    /**
-     * <p>Details about the requested hypervisor.</p>
-     */
     inline GetHypervisorResult& WithHypervisor(const HypervisorDetails& value) { SetHypervisor(value); return *this;}
-
-    /**
-     * <p>Details about the requested hypervisor.</p>
-     */
     inline GetHypervisorResult& WithHypervisor(HypervisorDetails&& value) { SetHypervisor(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetHypervisorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetHypervisorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetHypervisorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     HypervisorDetails m_hypervisor;

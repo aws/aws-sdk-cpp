@@ -34,104 +34,43 @@ namespace Model
     AWS_REKOGNITION_API DeleteFacesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of strings (face IDs) of the faces that were deleted.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeletedFaces() const{ return m_deletedFaces; }
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline void SetDeletedFaces(const Aws::Vector<Aws::String>& value) { m_deletedFaces = value; }
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline void SetDeletedFaces(Aws::Vector<Aws::String>&& value) { m_deletedFaces = std::move(value); }
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline DeleteFacesResult& WithDeletedFaces(const Aws::Vector<Aws::String>& value) { SetDeletedFaces(value); return *this;}
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline DeleteFacesResult& WithDeletedFaces(Aws::Vector<Aws::String>&& value) { SetDeletedFaces(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline DeleteFacesResult& AddDeletedFaces(const Aws::String& value) { m_deletedFaces.push_back(value); return *this; }
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline DeleteFacesResult& AddDeletedFaces(Aws::String&& value) { m_deletedFaces.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of strings (face IDs) of the faces that were deleted.</p>
-     */
     inline DeleteFacesResult& AddDeletedFaces(const char* value) { m_deletedFaces.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of any faces that weren't deleted.</p>
      */
     inline const Aws::Vector<UnsuccessfulFaceDeletion>& GetUnsuccessfulFaceDeletions() const{ return m_unsuccessfulFaceDeletions; }
-
-    /**
-     * <p>An array of any faces that weren't deleted.</p>
-     */
     inline void SetUnsuccessfulFaceDeletions(const Aws::Vector<UnsuccessfulFaceDeletion>& value) { m_unsuccessfulFaceDeletions = value; }
-
-    /**
-     * <p>An array of any faces that weren't deleted.</p>
-     */
     inline void SetUnsuccessfulFaceDeletions(Aws::Vector<UnsuccessfulFaceDeletion>&& value) { m_unsuccessfulFaceDeletions = std::move(value); }
-
-    /**
-     * <p>An array of any faces that weren't deleted.</p>
-     */
     inline DeleteFacesResult& WithUnsuccessfulFaceDeletions(const Aws::Vector<UnsuccessfulFaceDeletion>& value) { SetUnsuccessfulFaceDeletions(value); return *this;}
-
-    /**
-     * <p>An array of any faces that weren't deleted.</p>
-     */
     inline DeleteFacesResult& WithUnsuccessfulFaceDeletions(Aws::Vector<UnsuccessfulFaceDeletion>&& value) { SetUnsuccessfulFaceDeletions(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of any faces that weren't deleted.</p>
-     */
     inline DeleteFacesResult& AddUnsuccessfulFaceDeletions(const UnsuccessfulFaceDeletion& value) { m_unsuccessfulFaceDeletions.push_back(value); return *this; }
-
-    /**
-     * <p>An array of any faces that weren't deleted.</p>
-     */
     inline DeleteFacesResult& AddUnsuccessfulFaceDeletions(UnsuccessfulFaceDeletion&& value) { m_unsuccessfulFaceDeletions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteFacesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteFacesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteFacesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_deletedFaces;

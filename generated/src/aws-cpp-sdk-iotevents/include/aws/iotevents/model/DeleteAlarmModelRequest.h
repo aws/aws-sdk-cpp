@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTEVENTS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the alarm model.</p>
      */
     inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DeleteAlarmModelRequest& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DeleteAlarmModelRequest& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline DeleteAlarmModelRequest& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alarmModelName;

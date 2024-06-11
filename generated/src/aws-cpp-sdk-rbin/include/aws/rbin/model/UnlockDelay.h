@@ -40,67 +40,29 @@ namespace Model
     AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unlock delay period, measured in the unit specified for <b>
      * UnlockDelayUnit</b>.</p>
      */
     inline int GetUnlockDelayValue() const{ return m_unlockDelayValue; }
-
-    /**
-     * <p>The unlock delay period, measured in the unit specified for <b>
-     * UnlockDelayUnit</b>.</p>
-     */
     inline bool UnlockDelayValueHasBeenSet() const { return m_unlockDelayValueHasBeenSet; }
-
-    /**
-     * <p>The unlock delay period, measured in the unit specified for <b>
-     * UnlockDelayUnit</b>.</p>
-     */
     inline void SetUnlockDelayValue(int value) { m_unlockDelayValueHasBeenSet = true; m_unlockDelayValue = value; }
-
-    /**
-     * <p>The unlock delay period, measured in the unit specified for <b>
-     * UnlockDelayUnit</b>.</p>
-     */
     inline UnlockDelay& WithUnlockDelayValue(int value) { SetUnlockDelayValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
      * delay can be measure only in days.</p>
      */
     inline const UnlockDelayUnit& GetUnlockDelayUnit() const{ return m_unlockDelayUnit; }
-
-    /**
-     * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
-     * delay can be measure only in days.</p>
-     */
     inline bool UnlockDelayUnitHasBeenSet() const { return m_unlockDelayUnitHasBeenSet; }
-
-    /**
-     * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
-     * delay can be measure only in days.</p>
-     */
     inline void SetUnlockDelayUnit(const UnlockDelayUnit& value) { m_unlockDelayUnitHasBeenSet = true; m_unlockDelayUnit = value; }
-
-    /**
-     * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
-     * delay can be measure only in days.</p>
-     */
     inline void SetUnlockDelayUnit(UnlockDelayUnit&& value) { m_unlockDelayUnitHasBeenSet = true; m_unlockDelayUnit = std::move(value); }
-
-    /**
-     * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
-     * delay can be measure only in days.</p>
-     */
     inline UnlockDelay& WithUnlockDelayUnit(const UnlockDelayUnit& value) { SetUnlockDelayUnit(value); return *this;}
-
-    /**
-     * <p>The unit of time in which to measure the unlock delay. Currently, the unlock
-     * delay can be measure only in days.</p>
-     */
     inline UnlockDelay& WithUnlockDelayUnit(UnlockDelayUnit&& value) { SetUnlockDelayUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_unlockDelayValue;

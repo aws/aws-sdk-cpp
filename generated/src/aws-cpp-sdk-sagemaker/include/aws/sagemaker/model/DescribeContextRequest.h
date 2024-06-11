@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the context to describe.</p>
      */
     inline const Aws::String& GetContextName() const{ return m_contextName; }
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline bool ContextNameHasBeenSet() const { return m_contextNameHasBeenSet; }
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline void SetContextName(const Aws::String& value) { m_contextNameHasBeenSet = true; m_contextName = value; }
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline void SetContextName(Aws::String&& value) { m_contextNameHasBeenSet = true; m_contextName = std::move(value); }
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline void SetContextName(const char* value) { m_contextNameHasBeenSet = true; m_contextName.assign(value); }
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline DescribeContextRequest& WithContextName(const Aws::String& value) { SetContextName(value); return *this;}
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline DescribeContextRequest& WithContextName(Aws::String&& value) { SetContextName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the context to describe.</p>
-     */
     inline DescribeContextRequest& WithContextName(const char* value) { SetContextName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contextName;

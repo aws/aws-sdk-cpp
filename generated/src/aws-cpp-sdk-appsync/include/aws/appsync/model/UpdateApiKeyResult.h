@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSYNC_API UpdateApiKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The API key.</p>
      */
     inline const ApiKey& GetApiKey() const{ return m_apiKey; }
-
-    /**
-     * <p>The API key.</p>
-     */
     inline void SetApiKey(const ApiKey& value) { m_apiKey = value; }
-
-    /**
-     * <p>The API key.</p>
-     */
     inline void SetApiKey(ApiKey&& value) { m_apiKey = std::move(value); }
-
-    /**
-     * <p>The API key.</p>
-     */
     inline UpdateApiKeyResult& WithApiKey(const ApiKey& value) { SetApiKey(value); return *this;}
-
-    /**
-     * <p>The API key.</p>
-     */
     inline UpdateApiKeyResult& WithApiKey(ApiKey&& value) { SetApiKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateApiKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateApiKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateApiKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ApiKey m_apiKey;

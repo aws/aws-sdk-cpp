@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The default target host name to write to.</p>
      */
     inline const DefaultGatewayRouteRewrite& GetDefaultTargetHostname() const{ return m_defaultTargetHostname; }
-
-    /**
-     * <p>The default target host name to write to.</p>
-     */
     inline bool DefaultTargetHostnameHasBeenSet() const { return m_defaultTargetHostnameHasBeenSet; }
-
-    /**
-     * <p>The default target host name to write to.</p>
-     */
     inline void SetDefaultTargetHostname(const DefaultGatewayRouteRewrite& value) { m_defaultTargetHostnameHasBeenSet = true; m_defaultTargetHostname = value; }
-
-    /**
-     * <p>The default target host name to write to.</p>
-     */
     inline void SetDefaultTargetHostname(DefaultGatewayRouteRewrite&& value) { m_defaultTargetHostnameHasBeenSet = true; m_defaultTargetHostname = std::move(value); }
-
-    /**
-     * <p>The default target host name to write to.</p>
-     */
     inline GatewayRouteHostnameRewrite& WithDefaultTargetHostname(const DefaultGatewayRouteRewrite& value) { SetDefaultTargetHostname(value); return *this;}
-
-    /**
-     * <p>The default target host name to write to.</p>
-     */
     inline GatewayRouteHostnameRewrite& WithDefaultTargetHostname(DefaultGatewayRouteRewrite&& value) { SetDefaultTargetHostname(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DefaultGatewayRouteRewrite m_defaultTargetHostname;

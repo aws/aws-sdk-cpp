@@ -34,56 +34,22 @@ namespace Model
     AWS_KAFKA_API BatchDisassociateScramSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * 
             <p>The Amazon Resource Name (ARN) of the cluster.</p>
          
      */
     inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) of the cluster.</p>
-         
-     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) of the cluster.</p>
-         
-     */
     inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) of the cluster.</p>
-         
-     */
     inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) of the cluster.</p>
-         
-     */
     inline BatchDisassociateScramSecretResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) of the cluster.</p>
-         
-     */
     inline BatchDisassociateScramSecretResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The Amazon Resource Name (ARN) of the cluster.</p>
-         
-     */
     inline BatchDisassociateScramSecretResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>List of errors when disassociating secrets to cluster.</p>
@@ -91,77 +57,24 @@ namespace Model
      *    
      */
     inline const Aws::Vector<UnprocessedScramSecret>& GetUnprocessedScramSecrets() const{ return m_unprocessedScramSecrets; }
-
-    /**
-     * 
-            <p>List of errors when disassociating secrets to cluster.</p>
-     
-     *    
-     */
     inline void SetUnprocessedScramSecrets(const Aws::Vector<UnprocessedScramSecret>& value) { m_unprocessedScramSecrets = value; }
-
-    /**
-     * 
-            <p>List of errors when disassociating secrets to cluster.</p>
-     
-     *    
-     */
     inline void SetUnprocessedScramSecrets(Aws::Vector<UnprocessedScramSecret>&& value) { m_unprocessedScramSecrets = std::move(value); }
-
-    /**
-     * 
-            <p>List of errors when disassociating secrets to cluster.</p>
-     
-     *    
-     */
     inline BatchDisassociateScramSecretResult& WithUnprocessedScramSecrets(const Aws::Vector<UnprocessedScramSecret>& value) { SetUnprocessedScramSecrets(value); return *this;}
-
-    /**
-     * 
-            <p>List of errors when disassociating secrets to cluster.</p>
-     
-     *    
-     */
     inline BatchDisassociateScramSecretResult& WithUnprocessedScramSecrets(Aws::Vector<UnprocessedScramSecret>&& value) { SetUnprocessedScramSecrets(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>List of errors when disassociating secrets to cluster.</p>
-     
-     *    
-     */
     inline BatchDisassociateScramSecretResult& AddUnprocessedScramSecrets(const UnprocessedScramSecret& value) { m_unprocessedScramSecrets.push_back(value); return *this; }
-
-    /**
-     * 
-            <p>List of errors when disassociating secrets to cluster.</p>
-     
-     *    
-     */
     inline BatchDisassociateScramSecretResult& AddUnprocessedScramSecrets(UnprocessedScramSecret&& value) { m_unprocessedScramSecrets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchDisassociateScramSecretResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchDisassociateScramSecretResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchDisassociateScramSecretResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterArn;

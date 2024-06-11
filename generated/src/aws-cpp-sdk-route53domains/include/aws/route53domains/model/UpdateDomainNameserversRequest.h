@@ -45,87 +45,33 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the domain that you want to change name servers for.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline UpdateDomainNameserversRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline UpdateDomainNameserversRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain that you want to change name servers for.</p>
-     */
     inline UpdateDomainNameserversRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of new name servers for the domain.</p>
      */
     inline const Aws::Vector<Nameserver>& GetNameservers() const{ return m_nameservers; }
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline bool NameserversHasBeenSet() const { return m_nameserversHasBeenSet; }
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline void SetNameservers(const Aws::Vector<Nameserver>& value) { m_nameserversHasBeenSet = true; m_nameservers = value; }
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline void SetNameservers(Aws::Vector<Nameserver>&& value) { m_nameserversHasBeenSet = true; m_nameservers = std::move(value); }
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline UpdateDomainNameserversRequest& WithNameservers(const Aws::Vector<Nameserver>& value) { SetNameservers(value); return *this;}
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline UpdateDomainNameserversRequest& WithNameservers(Aws::Vector<Nameserver>&& value) { SetNameservers(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline UpdateDomainNameserversRequest& AddNameservers(const Nameserver& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(value); return *this; }
-
-    /**
-     * <p>A list of new name servers for the domain.</p>
-     */
     inline UpdateDomainNameserversRequest& AddNameservers(Nameserver&& value) { m_nameserversHasBeenSet = true; m_nameservers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_domainName;

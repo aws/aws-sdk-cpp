@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The member being banned from a channel.</p>
      */
     inline const Identity& GetMember() const{ return m_member; }
-
-    /**
-     * <p>The member being banned from a channel.</p>
-     */
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
-
-    /**
-     * <p>The member being banned from a channel.</p>
-     */
     inline void SetMember(const Identity& value) { m_memberHasBeenSet = true; m_member = value; }
-
-    /**
-     * <p>The member being banned from a channel.</p>
-     */
     inline void SetMember(Identity&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
-
-    /**
-     * <p>The member being banned from a channel.</p>
-     */
     inline ChannelBanSummary& WithMember(const Identity& value) { SetMember(value); return *this;}
-
-    /**
-     * <p>The member being banned from a channel.</p>
-     */
     inline ChannelBanSummary& WithMember(Identity&& value) { SetMember(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Identity m_member;

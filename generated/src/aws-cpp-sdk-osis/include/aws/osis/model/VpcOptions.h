@@ -40,128 +40,47 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of subnet IDs associated with the VPC endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of subnet IDs associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of security groups associated with the VPC endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of security groups associated with the VPC endpoint.</p>
-     */
     inline VpcOptions& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Options for attaching a VPC to a pipeline.</p>
      */
     inline const VpcAttachmentOptions& GetVpcAttachmentOptions() const{ return m_vpcAttachmentOptions; }
-
-    /**
-     * <p>Options for attaching a VPC to a pipeline.</p>
-     */
     inline bool VpcAttachmentOptionsHasBeenSet() const { return m_vpcAttachmentOptionsHasBeenSet; }
-
-    /**
-     * <p>Options for attaching a VPC to a pipeline.</p>
-     */
     inline void SetVpcAttachmentOptions(const VpcAttachmentOptions& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = value; }
-
-    /**
-     * <p>Options for attaching a VPC to a pipeline.</p>
-     */
     inline void SetVpcAttachmentOptions(VpcAttachmentOptions&& value) { m_vpcAttachmentOptionsHasBeenSet = true; m_vpcAttachmentOptions = std::move(value); }
-
-    /**
-     * <p>Options for attaching a VPC to a pipeline.</p>
-     */
     inline VpcOptions& WithVpcAttachmentOptions(const VpcAttachmentOptions& value) { SetVpcAttachmentOptions(value); return *this;}
-
-    /**
-     * <p>Options for attaching a VPC to a pipeline.</p>
-     */
     inline VpcOptions& WithVpcAttachmentOptions(VpcAttachmentOptions&& value) { SetVpcAttachmentOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnetIds;

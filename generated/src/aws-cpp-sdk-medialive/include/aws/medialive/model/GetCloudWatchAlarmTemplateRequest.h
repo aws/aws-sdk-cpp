@@ -36,54 +36,20 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * A cloudwatch alarm template's identifier. Can be either be its id or current
      * name.
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline GetCloudWatchAlarmTemplateRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline GetCloudWatchAlarmTemplateRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * A cloudwatch alarm template's identifier. Can be either be its id or current
-     * name.
-     */
     inline GetCloudWatchAlarmTemplateRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

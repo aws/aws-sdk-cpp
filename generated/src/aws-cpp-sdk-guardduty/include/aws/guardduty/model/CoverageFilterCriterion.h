@@ -39,79 +39,31 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An enum value representing possible filter fields.</p>  <p>Replace the
      * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
      * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
     inline const CoverageFilterCriterionKey& GetCriterionKey() const{ return m_criterionKey; }
-
-    /**
-     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
-     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
-     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
-     */
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }
-
-    /**
-     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
-     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
-     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
-     */
     inline void SetCriterionKey(const CoverageFilterCriterionKey& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
-
-    /**
-     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
-     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
-     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
-     */
     inline void SetCriterionKey(CoverageFilterCriterionKey&& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = std::move(value); }
-
-    /**
-     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
-     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
-     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
-     */
     inline CoverageFilterCriterion& WithCriterionKey(const CoverageFilterCriterionKey& value) { SetCriterionKey(value); return *this;}
-
-    /**
-     * <p>An enum value representing possible filter fields.</p>  <p>Replace the
-     * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
-     * <code>CLUSTER_NAME</code> has been deprecated.</p> 
-     */
     inline CoverageFilterCriterion& WithCriterionKey(CoverageFilterCriterionKey&& value) { SetCriterionKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the condition.</p>
      */
     inline const CoverageFilterCondition& GetFilterCondition() const{ return m_filterCondition; }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline bool FilterConditionHasBeenSet() const { return m_filterConditionHasBeenSet; }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline void SetFilterCondition(const CoverageFilterCondition& value) { m_filterConditionHasBeenSet = true; m_filterCondition = value; }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline void SetFilterCondition(CoverageFilterCondition&& value) { m_filterConditionHasBeenSet = true; m_filterCondition = std::move(value); }
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline CoverageFilterCriterion& WithFilterCondition(const CoverageFilterCondition& value) { SetFilterCondition(value); return *this;}
-
-    /**
-     * <p>Contains information about the condition.</p>
-     */
     inline CoverageFilterCriterion& WithFilterCondition(CoverageFilterCondition&& value) { SetFilterCondition(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CoverageFilterCriterionKey m_criterionKey;

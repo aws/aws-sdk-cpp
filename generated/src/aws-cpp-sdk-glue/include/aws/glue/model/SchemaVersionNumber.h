@@ -36,47 +36,25 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The latest version available for the schema.</p>
      */
     inline bool GetLatestVersion() const{ return m_latestVersion; }
-
-    /**
-     * <p>The latest version available for the schema.</p>
-     */
     inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
-
-    /**
-     * <p>The latest version available for the schema.</p>
-     */
     inline void SetLatestVersion(bool value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
-
-    /**
-     * <p>The latest version available for the schema.</p>
-     */
     inline SchemaVersionNumber& WithLatestVersion(bool value) { SetLatestVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the schema.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline SchemaVersionNumber& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
-
+    ///@}
   private:
 
     bool m_latestVersion;

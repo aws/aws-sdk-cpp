@@ -38,133 +38,48 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The event number.</p>
      */
     inline long long GetEventNumber() const{ return m_eventNumber; }
-
-    /**
-     * <p>The event number.</p>
-     */
     inline bool EventNumberHasBeenSet() const { return m_eventNumberHasBeenSet; }
-
-    /**
-     * <p>The event number.</p>
-     */
     inline void SetEventNumber(long long value) { m_eventNumberHasBeenSet = true; m_eventNumber = value; }
-
-    /**
-     * <p>The event number.</p>
-     */
     inline MetricFilterMatchRecord& WithEventNumber(long long value) { SetEventNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The raw event data.</p>
      */
     inline const Aws::String& GetEventMessage() const{ return m_eventMessage; }
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline bool EventMessageHasBeenSet() const { return m_eventMessageHasBeenSet; }
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline void SetEventMessage(const Aws::String& value) { m_eventMessageHasBeenSet = true; m_eventMessage = value; }
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline void SetEventMessage(Aws::String&& value) { m_eventMessageHasBeenSet = true; m_eventMessage = std::move(value); }
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline void SetEventMessage(const char* value) { m_eventMessageHasBeenSet = true; m_eventMessage.assign(value); }
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline MetricFilterMatchRecord& WithEventMessage(const Aws::String& value) { SetEventMessage(value); return *this;}
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline MetricFilterMatchRecord& WithEventMessage(Aws::String&& value) { SetEventMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The raw event data.</p>
-     */
     inline MetricFilterMatchRecord& WithEventMessage(const char* value) { SetEventMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The values extracted from the event data by the filter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExtractedValues() const{ return m_extractedValues; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline bool ExtractedValuesHasBeenSet() const { return m_extractedValuesHasBeenSet; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline void SetExtractedValues(const Aws::Map<Aws::String, Aws::String>& value) { m_extractedValuesHasBeenSet = true; m_extractedValues = value; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline void SetExtractedValues(Aws::Map<Aws::String, Aws::String>&& value) { m_extractedValuesHasBeenSet = true; m_extractedValues = std::move(value); }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& WithExtractedValues(const Aws::Map<Aws::String, Aws::String>& value) { SetExtractedValues(value); return *this;}
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& WithExtractedValues(Aws::Map<Aws::String, Aws::String>&& value) { SetExtractedValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(const Aws::String& key, const Aws::String& value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(key, value); return *this; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(Aws::String&& key, const Aws::String& value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(const Aws::String& key, Aws::String&& value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(Aws::String&& key, Aws::String&& value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(const char* key, Aws::String&& value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(Aws::String&& key, const char* value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The values extracted from the event data by the filter.</p>
-     */
     inline MetricFilterMatchRecord& AddExtractedValues(const char* key, const char* value) { m_extractedValuesHasBeenSet = true; m_extractedValues.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     long long m_eventNumber;

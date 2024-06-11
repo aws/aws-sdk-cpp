@@ -46,6 +46,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies agreement to the model end-user license agreement (EULA). The
      * <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in
@@ -54,34 +55,10 @@ namespace Model
      * are acceptable for your use case before downloading or using a model.</p>
      */
     inline bool GetAcceptEula() const{ return m_acceptEula; }
-
-    /**
-     * <p>Specifies agreement to the model end-user license agreement (EULA). The
-     * <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in
-     * order to accept the EULA that this model requires. You are responsible for
-     * reviewing and complying with any applicable license terms and making sure they
-     * are acceptable for your use case before downloading or using a model.</p>
-     */
     inline bool AcceptEulaHasBeenSet() const { return m_acceptEulaHasBeenSet; }
-
-    /**
-     * <p>Specifies agreement to the model end-user license agreement (EULA). The
-     * <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in
-     * order to accept the EULA that this model requires. You are responsible for
-     * reviewing and complying with any applicable license terms and making sure they
-     * are acceptable for your use case before downloading or using a model.</p>
-     */
     inline void SetAcceptEula(bool value) { m_acceptEulaHasBeenSet = true; m_acceptEula = value; }
-
-    /**
-     * <p>Specifies agreement to the model end-user license agreement (EULA). The
-     * <code>AcceptEula</code> value must be explicitly defined as <code>True</code> in
-     * order to accept the EULA that this model requires. You are responsible for
-     * reviewing and complying with any applicable license terms and making sure they
-     * are acceptable for your use case before downloading or using a model.</p>
-     */
     inline ModelAccessConfig& WithAcceptEula(bool value) { SetAcceptEula(value); return *this;}
-
+    ///@}
   private:
 
     bool m_acceptEula;

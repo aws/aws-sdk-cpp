@@ -38,24 +38,15 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const S3Object& GetManifestS3Object() const{ return m_manifestS3Object; }
-
-    
     inline bool ManifestS3ObjectHasBeenSet() const { return m_manifestS3ObjectHasBeenSet; }
-
-    
     inline void SetManifestS3Object(const S3Object& value) { m_manifestS3ObjectHasBeenSet = true; m_manifestS3Object = value; }
-
-    
     inline void SetManifestS3Object(S3Object&& value) { m_manifestS3ObjectHasBeenSet = true; m_manifestS3Object = std::move(value); }
-
-    
     inline AdapterVersionDatasetConfig& WithManifestS3Object(const S3Object& value) { SetManifestS3Object(value); return *this;}
-
-    
     inline AdapterVersionDatasetConfig& WithManifestS3Object(S3Object&& value) { SetManifestS3Object(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Object m_manifestS3Object;

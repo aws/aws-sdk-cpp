@@ -37,54 +37,20 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A unique name for the location the RTMP stream is being pushed
 to.
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline InputDestinationRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline InputDestinationRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * A unique name for the location the RTMP stream is being pushed
-to.
-     */
     inline InputDestinationRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamName;

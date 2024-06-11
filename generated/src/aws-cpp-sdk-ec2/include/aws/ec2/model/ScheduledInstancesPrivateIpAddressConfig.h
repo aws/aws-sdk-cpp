@@ -40,71 +40,30 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
      * secondary IPv4 address.</p>
      */
     inline bool GetPrimary() const{ return m_primary; }
-
-    /**
-     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
-     * secondary IPv4 address.</p>
-     */
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
-
-    /**
-     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
-     * secondary IPv4 address.</p>
-     */
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
-
-    /**
-     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
-     * secondary IPv4 address.</p>
-     */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrimary(bool value) { SetPrimary(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPv4 address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv4 address.</p>
-     */
     inline ScheduledInstancesPrivateIpAddressConfig& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
-
+    ///@}
   private:
 
     bool m_primary;

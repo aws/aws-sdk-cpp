@@ -40,54 +40,20 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Policies that don't contain a matching allow or deny statement for the
      * specified action on the specified resource. </p>
      */
     inline const Aws::Vector<Policy>& GetPolicies() const{ return m_policies; }
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline void SetPolicies(Aws::Vector<Policy>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline ImplicitDeny& WithPolicies(const Aws::Vector<Policy>& value) { SetPolicies(value); return *this;}
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline ImplicitDeny& WithPolicies(Aws::Vector<Policy>&& value) { SetPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline ImplicitDeny& AddPolicies(const Policy& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
-
-    /**
-     * <p>Policies that don't contain a matching allow or deny statement for the
-     * specified action on the specified resource. </p>
-     */
     inline ImplicitDeny& AddPolicies(Policy&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Policy> m_policies;

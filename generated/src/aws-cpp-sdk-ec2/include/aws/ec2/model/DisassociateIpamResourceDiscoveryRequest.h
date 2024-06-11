@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A check for whether you have the required permissions for the action without
      * actually making the request and provides an error response. If you have the
@@ -43,72 +44,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>A check for whether you have the required permissions for the action without
-     * actually making the request and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DisassociateIpamResourceDiscoveryRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A resource discovery association ID.</p>
      */
     inline const Aws::String& GetIpamResourceDiscoveryAssociationId() const{ return m_ipamResourceDiscoveryAssociationId; }
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline bool IpamResourceDiscoveryAssociationIdHasBeenSet() const { return m_ipamResourceDiscoveryAssociationIdHasBeenSet; }
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline void SetIpamResourceDiscoveryAssociationId(const Aws::String& value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId = value; }
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline void SetIpamResourceDiscoveryAssociationId(Aws::String&& value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId = std::move(value); }
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline void SetIpamResourceDiscoveryAssociationId(const char* value) { m_ipamResourceDiscoveryAssociationIdHasBeenSet = true; m_ipamResourceDiscoveryAssociationId.assign(value); }
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(const Aws::String& value) { SetIpamResourceDiscoveryAssociationId(value); return *this;}
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(Aws::String&& value) { SetIpamResourceDiscoveryAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>A resource discovery association ID.</p>
-     */
     inline DisassociateIpamResourceDiscoveryRequest& WithIpamResourceDiscoveryAssociationId(const char* value) { SetIpamResourceDiscoveryAssociationId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

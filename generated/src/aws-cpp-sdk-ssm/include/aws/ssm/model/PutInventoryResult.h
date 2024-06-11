@@ -32,63 +32,29 @@ namespace Model
     AWS_SSM_API PutInventoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the request.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Information about the request.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_message = value; }
-
-    /**
-     * <p>Information about the request.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-
-    /**
-     * <p>Information about the request.</p>
-     */
     inline void SetMessage(const char* value) { m_message.assign(value); }
-
-    /**
-     * <p>Information about the request.</p>
-     */
     inline PutInventoryResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Information about the request.</p>
-     */
     inline PutInventoryResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the request.</p>
-     */
     inline PutInventoryResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutInventoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutInventoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutInventoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

@@ -39,79 +39,31 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
      * network that uses Hyperledger Fabric.</p>
      */
     inline const NodeFabricAttributes& GetFabric() const{ return m_fabric; }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
-     * network that uses Hyperledger Fabric.</p>
-     */
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
-     * network that uses Hyperledger Fabric.</p>
-     */
     inline void SetFabric(const NodeFabricAttributes& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
-     * network that uses Hyperledger Fabric.</p>
-     */
     inline void SetFabric(NodeFabricAttributes&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
-     * network that uses Hyperledger Fabric.</p>
-     */
     inline NodeFrameworkAttributes& WithFabric(const NodeFabricAttributes& value) { SetFabric(value); return *this;}
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a peer node on a Managed Blockchain
-     * network that uses Hyperledger Fabric.</p>
-     */
     inline NodeFrameworkAttributes& WithFabric(NodeFabricAttributes&& value) { SetFabric(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
      * Ethereum. </p>
      */
     inline const NodeEthereumAttributes& GetEthereum() const{ return m_ethereum; }
-
-    /**
-     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. </p>
-     */
     inline bool EthereumHasBeenSet() const { return m_ethereumHasBeenSet; }
-
-    /**
-     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. </p>
-     */
     inline void SetEthereum(const NodeEthereumAttributes& value) { m_ethereumHasBeenSet = true; m_ethereum = value; }
-
-    /**
-     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. </p>
-     */
     inline void SetEthereum(NodeEthereumAttributes&& value) { m_ethereumHasBeenSet = true; m_ethereum = std::move(value); }
-
-    /**
-     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. </p>
-     */
     inline NodeFrameworkAttributes& WithEthereum(const NodeEthereumAttributes& value) { SetEthereum(value); return *this;}
-
-    /**
-     * <p>Attributes of Ethereum for a node on a Managed Blockchain network that uses
-     * Ethereum. </p>
-     */
     inline NodeFrameworkAttributes& WithEthereum(NodeEthereumAttributes&& value) { SetEthereum(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NodeFabricAttributes m_fabric;

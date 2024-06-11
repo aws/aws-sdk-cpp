@@ -32,103 +32,35 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline AssociateApprovedOriginRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline AssociateApprovedOriginRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline AssociateApprovedOriginRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain to add to your allow list.</p>
      */
     inline const Aws::String& GetOrigin() const{ return m_origin; }
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline bool OriginHasBeenSet() const { return m_originHasBeenSet; }
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline void SetOrigin(const Aws::String& value) { m_originHasBeenSet = true; m_origin = value; }
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline void SetOrigin(Aws::String&& value) { m_originHasBeenSet = true; m_origin = std::move(value); }
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline void SetOrigin(const char* value) { m_originHasBeenSet = true; m_origin.assign(value); }
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline AssociateApprovedOriginRequest& WithOrigin(const Aws::String& value) { SetOrigin(value); return *this;}
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline AssociateApprovedOriginRequest& WithOrigin(Aws::String&& value) { SetOrigin(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain to add to your allow list.</p>
-     */
     inline AssociateApprovedOriginRequest& WithOrigin(const char* value) { SetOrigin(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

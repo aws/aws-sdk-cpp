@@ -35,91 +35,33 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The domain name (<code>example.com</code>) for which you want to create the
      * domain entry.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline CreateDomainEntryRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline CreateDomainEntryRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain name (<code>example.com</code>) for which you want to create the
-     * domain entry.</p>
-     */
     inline CreateDomainEntryRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of key-value pairs containing information about the domain entry
      * request.</p>
      */
     inline const DomainEntry& GetDomainEntry() const{ return m_domainEntry; }
-
-    /**
-     * <p>An array of key-value pairs containing information about the domain entry
-     * request.</p>
-     */
     inline bool DomainEntryHasBeenSet() const { return m_domainEntryHasBeenSet; }
-
-    /**
-     * <p>An array of key-value pairs containing information about the domain entry
-     * request.</p>
-     */
     inline void SetDomainEntry(const DomainEntry& value) { m_domainEntryHasBeenSet = true; m_domainEntry = value; }
-
-    /**
-     * <p>An array of key-value pairs containing information about the domain entry
-     * request.</p>
-     */
     inline void SetDomainEntry(DomainEntry&& value) { m_domainEntryHasBeenSet = true; m_domainEntry = std::move(value); }
-
-    /**
-     * <p>An array of key-value pairs containing information about the domain entry
-     * request.</p>
-     */
     inline CreateDomainEntryRequest& WithDomainEntry(const DomainEntry& value) { SetDomainEntry(value); return *this;}
-
-    /**
-     * <p>An array of key-value pairs containing information about the domain entry
-     * request.</p>
-     */
     inline CreateDomainEntryRequest& WithDomainEntry(DomainEntry&& value) { SetDomainEntry(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

@@ -37,36 +37,17 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies who pays for the download and request fees.</p>
      */
     inline const Payer& GetPayer() const{ return m_payer; }
-
-    /**
-     * <p>Specifies who pays for the download and request fees.</p>
-     */
     inline bool PayerHasBeenSet() const { return m_payerHasBeenSet; }
-
-    /**
-     * <p>Specifies who pays for the download and request fees.</p>
-     */
     inline void SetPayer(const Payer& value) { m_payerHasBeenSet = true; m_payer = value; }
-
-    /**
-     * <p>Specifies who pays for the download and request fees.</p>
-     */
     inline void SetPayer(Payer&& value) { m_payerHasBeenSet = true; m_payer = std::move(value); }
-
-    /**
-     * <p>Specifies who pays for the download and request fees.</p>
-     */
     inline RequestPaymentConfiguration& WithPayer(const Payer& value) { SetPayer(value); return *this;}
-
-    /**
-     * <p>Specifies who pays for the download and request fees.</p>
-     */
     inline RequestPaymentConfiguration& WithPayer(Payer&& value) { SetPayer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Payer m_payer;

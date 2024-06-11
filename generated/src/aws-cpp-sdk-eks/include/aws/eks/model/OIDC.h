@@ -39,46 +39,19 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The issuer URL for the OIDC identity provider.</p>
      */
     inline const Aws::String& GetIssuer() const{ return m_issuer; }
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline OIDC& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline OIDC& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-
-    /**
-     * <p>The issuer URL for the OIDC identity provider.</p>
-     */
     inline OIDC& WithIssuer(const char* value) { SetIssuer(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_issuer;

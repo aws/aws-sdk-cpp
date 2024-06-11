@@ -35,77 +35,31 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline UpdateDatasetEntriesRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline UpdateDatasetEntriesRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the dataset that you want to update. </p>
-     */
     inline UpdateDatasetEntriesRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The changes that you want to make to the dataset. </p>
      */
     inline const DatasetChanges& GetChanges() const{ return m_changes; }
-
-    /**
-     * <p> The changes that you want to make to the dataset. </p>
-     */
     inline bool ChangesHasBeenSet() const { return m_changesHasBeenSet; }
-
-    /**
-     * <p> The changes that you want to make to the dataset. </p>
-     */
     inline void SetChanges(const DatasetChanges& value) { m_changesHasBeenSet = true; m_changes = value; }
-
-    /**
-     * <p> The changes that you want to make to the dataset. </p>
-     */
     inline void SetChanges(DatasetChanges&& value) { m_changesHasBeenSet = true; m_changes = std::move(value); }
-
-    /**
-     * <p> The changes that you want to make to the dataset. </p>
-     */
     inline UpdateDatasetEntriesRequest& WithChanges(const DatasetChanges& value) { SetChanges(value); return *this;}
-
-    /**
-     * <p> The changes that you want to make to the dataset. </p>
-     */
     inline UpdateDatasetEntriesRequest& WithChanges(DatasetChanges&& value) { SetChanges(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetArn;

@@ -39,105 +39,35 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of destination for events arriving from a channel. For channels used
      * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
      * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
      */
     inline const DestinationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
-     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
-     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-     */
     inline void SetType(const DestinationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
-     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-     */
     inline void SetType(DestinationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
-     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-     */
     inline Destination& WithType(const DestinationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of destination for events arriving from a channel. For channels used
-     * for a CloudTrail Lake integration, the value is <code>EVENT_DATA_STORE</code>.
-     * For service-linked channels, the value is <code>AWS_SERVICE</code>. </p>
-     */
     inline Destination& WithType(DestinationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
      * of an event data store that receives events from a channel. For service-linked
      * channels, the location is the name of the Amazon Web Services service.</p>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline Destination& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline Destination& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-
-    /**
-     * <p> For channels used for a CloudTrail Lake integration, the location is the ARN
-     * of an event data store that receives events from a channel. For service-linked
-     * channels, the location is the name of the Amazon Web Services service.</p>
-     */
     inline Destination& WithLocation(const char* value) { SetLocation(value); return *this;}
-
+    ///@}
   private:
 
     DestinationType m_type;

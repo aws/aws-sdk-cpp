@@ -33,234 +33,77 @@ namespace Model
     AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An ARN that uniquely identifies a backup vault; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
      */
     inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
-
-    /**
-     * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-     */
     inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
-
-    /**
-     * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-     */
     inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArn = std::move(value); }
-
-    /**
-     * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-     */
     inline void SetBackupVaultArn(const char* value) { m_backupVaultArn.assign(value); }
-
-    /**
-     * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-
-    /**
-     * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An ARN that uniquely identifies a backup vault; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:vault:aBackupVault</code>.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An ARN that uniquely identifies a recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
     inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
-
-    /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-     */
     inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArn = value; }
-
-    /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-     */
     inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArn = std::move(value); }
-
-    /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-     */
     inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArn.assign(value); }
-
-    /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-
-    /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-
-    /**
-     * <p>An ARN that uniquely identifies a recovery point; for example,
-     * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The set of metadata key-value pairs that describe the original configuration
      * of the backed-up resource. These values vary depending on the service that is
      * being restored.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRestoreMetadata() const{ return m_restoreMetadata; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline void SetRestoreMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_restoreMetadata = value; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline void SetRestoreMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_restoreMetadata = std::move(value); }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetRestoreMetadata(value); return *this;}
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetRestoreMetadata(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const Aws::String& key, const Aws::String& value) { m_restoreMetadata.emplace(key, value); return *this; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, const Aws::String& value) { m_restoreMetadata.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const Aws::String& key, Aws::String&& value) { m_restoreMetadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, Aws::String&& value) { m_restoreMetadata.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, Aws::String&& value) { m_restoreMetadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, const char* value) { m_restoreMetadata.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The set of metadata key-value pairs that describe the original configuration
-     * of the backed-up resource. These values vary depending on the service that is
-     * being restored.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, const char* value) { m_restoreMetadata.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is the resource type associated with the recovery point.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>This is the resource type associated with the recovery point.</p>
-     */
     inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
-
-    /**
-     * <p>This is the resource type associated with the recovery point.</p>
-     */
     inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
-
-    /**
-     * <p>This is the resource type associated with the recovery point.</p>
-     */
     inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
-
-    /**
-     * <p>This is the resource type associated with the recovery point.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>This is the resource type associated with the recovery point.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-
-    /**
-     * <p>This is the resource type associated with the recovery point.</p>
-     */
     inline GetRecoveryPointRestoreMetadataResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRecoveryPointRestoreMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRecoveryPointRestoreMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRecoveryPointRestoreMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupVaultArn;

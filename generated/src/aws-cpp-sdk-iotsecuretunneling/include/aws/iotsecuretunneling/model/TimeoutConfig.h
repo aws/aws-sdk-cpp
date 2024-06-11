@@ -35,34 +35,17 @@ namespace Model
     AWS_IOTSECURETUNNELING_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum amount of time (in minutes) a tunnel can remain open. If not
      * specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are
      * from 1 minute to 12 hours (720 minutes) </p>
      */
     inline int GetMaxLifetimeTimeoutMinutes() const{ return m_maxLifetimeTimeoutMinutes; }
-
-    /**
-     * <p>The maximum amount of time (in minutes) a tunnel can remain open. If not
-     * specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are
-     * from 1 minute to 12 hours (720 minutes) </p>
-     */
     inline bool MaxLifetimeTimeoutMinutesHasBeenSet() const { return m_maxLifetimeTimeoutMinutesHasBeenSet; }
-
-    /**
-     * <p>The maximum amount of time (in minutes) a tunnel can remain open. If not
-     * specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are
-     * from 1 minute to 12 hours (720 minutes) </p>
-     */
     inline void SetMaxLifetimeTimeoutMinutes(int value) { m_maxLifetimeTimeoutMinutesHasBeenSet = true; m_maxLifetimeTimeoutMinutes = value; }
-
-    /**
-     * <p>The maximum amount of time (in minutes) a tunnel can remain open. If not
-     * specified, maxLifetimeTimeoutMinutes defaults to 720 minutes. Valid values are
-     * from 1 minute to 12 hours (720 minutes) </p>
-     */
     inline TimeoutConfig& WithMaxLifetimeTimeoutMinutes(int value) { SetMaxLifetimeTimeoutMinutes(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxLifetimeTimeoutMinutes;

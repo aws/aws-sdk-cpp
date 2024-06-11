@@ -44,77 +44,31 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether to minimize or maximize the objective metric.</p>
      */
     inline const HyperParameterTuningJobObjectiveType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Whether to minimize or maximize the objective metric.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Whether to minimize or maximize the objective metric.</p>
-     */
     inline void SetType(const HyperParameterTuningJobObjectiveType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Whether to minimize or maximize the objective metric.</p>
-     */
     inline void SetType(HyperParameterTuningJobObjectiveType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Whether to minimize or maximize the objective metric.</p>
-     */
     inline HyperParameterTuningJobObjective& WithType(const HyperParameterTuningJobObjectiveType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Whether to minimize or maximize the objective metric.</p>
-     */
     inline HyperParameterTuningJobObjective& WithType(HyperParameterTuningJobObjectiveType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the metric to use for the objective metric.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline HyperParameterTuningJobObjective& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline HyperParameterTuningJobObjective& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the metric to use for the objective metric.</p>
-     */
     inline HyperParameterTuningJobObjective& WithMetricName(const char* value) { SetMetricName(value); return *this;}
-
+    ///@}
   private:
 
     HyperParameterTuningJobObjectiveType m_type;

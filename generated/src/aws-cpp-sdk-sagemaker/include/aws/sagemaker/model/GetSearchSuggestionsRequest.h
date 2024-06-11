@@ -35,67 +35,29 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the SageMaker resource to search for.</p>
      */
     inline const ResourceType& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>The name of the SageMaker resource to search for.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>The name of the SageMaker resource to search for.</p>
-     */
     inline void SetResource(const ResourceType& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>The name of the SageMaker resource to search for.</p>
-     */
     inline void SetResource(ResourceType&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>The name of the SageMaker resource to search for.</p>
-     */
     inline GetSearchSuggestionsRequest& WithResource(const ResourceType& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>The name of the SageMaker resource to search for.</p>
-     */
     inline GetSearchSuggestionsRequest& WithResource(ResourceType&& value) { SetResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Limits the property names that are included in the response.</p>
      */
     inline const SuggestionQuery& GetSuggestionQuery() const{ return m_suggestionQuery; }
-
-    /**
-     * <p>Limits the property names that are included in the response.</p>
-     */
     inline bool SuggestionQueryHasBeenSet() const { return m_suggestionQueryHasBeenSet; }
-
-    /**
-     * <p>Limits the property names that are included in the response.</p>
-     */
     inline void SetSuggestionQuery(const SuggestionQuery& value) { m_suggestionQueryHasBeenSet = true; m_suggestionQuery = value; }
-
-    /**
-     * <p>Limits the property names that are included in the response.</p>
-     */
     inline void SetSuggestionQuery(SuggestionQuery&& value) { m_suggestionQueryHasBeenSet = true; m_suggestionQuery = std::move(value); }
-
-    /**
-     * <p>Limits the property names that are included in the response.</p>
-     */
     inline GetSearchSuggestionsRequest& WithSuggestionQuery(const SuggestionQuery& value) { SetSuggestionQuery(value); return *this;}
-
-    /**
-     * <p>Limits the property names that are included in the response.</p>
-     */
     inline GetSearchSuggestionsRequest& WithSuggestionQuery(SuggestionQuery&& value) { SetSuggestionQuery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ResourceType m_resource;

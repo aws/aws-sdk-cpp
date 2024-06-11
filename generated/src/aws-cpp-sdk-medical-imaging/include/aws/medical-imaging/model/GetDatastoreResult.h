@@ -33,53 +33,27 @@ namespace Model
     AWS_MEDICALIMAGING_API GetDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The data store properties.</p>
      */
     inline const DatastoreProperties& GetDatastoreProperties() const{ return m_datastoreProperties; }
-
-    /**
-     * <p>The data store properties.</p>
-     */
     inline void SetDatastoreProperties(const DatastoreProperties& value) { m_datastoreProperties = value; }
-
-    /**
-     * <p>The data store properties.</p>
-     */
     inline void SetDatastoreProperties(DatastoreProperties&& value) { m_datastoreProperties = std::move(value); }
-
-    /**
-     * <p>The data store properties.</p>
-     */
     inline GetDatastoreResult& WithDatastoreProperties(const DatastoreProperties& value) { SetDatastoreProperties(value); return *this;}
-
-    /**
-     * <p>The data store properties.</p>
-     */
     inline GetDatastoreResult& WithDatastoreProperties(DatastoreProperties&& value) { SetDatastoreProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDatastoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDatastoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDatastoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DatastoreProperties m_datastoreProperties;

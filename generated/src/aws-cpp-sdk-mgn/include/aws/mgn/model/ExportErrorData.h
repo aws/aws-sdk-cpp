@@ -37,46 +37,19 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Export errors data raw error.</p>
      */
     inline const Aws::String& GetRawError() const{ return m_rawError; }
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline bool RawErrorHasBeenSet() const { return m_rawErrorHasBeenSet; }
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline void SetRawError(const Aws::String& value) { m_rawErrorHasBeenSet = true; m_rawError = value; }
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline void SetRawError(Aws::String&& value) { m_rawErrorHasBeenSet = true; m_rawError = std::move(value); }
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline void SetRawError(const char* value) { m_rawErrorHasBeenSet = true; m_rawError.assign(value); }
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline ExportErrorData& WithRawError(const Aws::String& value) { SetRawError(value); return *this;}
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline ExportErrorData& WithRawError(Aws::String&& value) { SetRawError(std::move(value)); return *this;}
-
-    /**
-     * <p>Export errors data raw error.</p>
-     */
     inline ExportErrorData& WithRawError(const char* value) { SetRawError(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rawError;

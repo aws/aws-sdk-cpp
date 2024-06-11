@@ -32,54 +32,20 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the training dataset that you are
      * interested in.</p>
      */
     inline const Aws::String& GetTrainingDatasetArn() const{ return m_trainingDatasetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline bool TrainingDatasetArnHasBeenSet() const { return m_trainingDatasetArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline void SetTrainingDatasetArn(const Aws::String& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline void SetTrainingDatasetArn(Aws::String&& value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline void SetTrainingDatasetArn(const char* value) { m_trainingDatasetArnHasBeenSet = true; m_trainingDatasetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline GetTrainingDatasetRequest& WithTrainingDatasetArn(const Aws::String& value) { SetTrainingDatasetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline GetTrainingDatasetRequest& WithTrainingDatasetArn(Aws::String&& value) { SetTrainingDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the training dataset that you are
-     * interested in.</p>
-     */
     inline GetTrainingDatasetRequest& WithTrainingDatasetArn(const char* value) { SetTrainingDatasetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_trainingDatasetArn;

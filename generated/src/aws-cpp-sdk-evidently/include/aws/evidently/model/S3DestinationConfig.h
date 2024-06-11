@@ -39,87 +39,33 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the bucket in which Evidently stores evaluation events.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline S3DestinationConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline S3DestinationConfig& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the bucket in which Evidently stores evaluation events.</p>
-     */
     inline S3DestinationConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The bucket prefix in which Evidently stores evaluation events.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline S3DestinationConfig& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline S3DestinationConfig& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The bucket prefix in which Evidently stores evaluation events.</p>
-     */
     inline S3DestinationConfig& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucket;

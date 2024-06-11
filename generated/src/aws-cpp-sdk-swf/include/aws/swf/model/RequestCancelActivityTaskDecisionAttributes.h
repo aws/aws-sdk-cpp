@@ -51,46 +51,19 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>activityId</code> of the activity task to be canceled.</p>
      */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>activityId</code> of the activity task to be canceled.</p>
-     */
     inline RequestCancelActivityTaskDecisionAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_activityId;

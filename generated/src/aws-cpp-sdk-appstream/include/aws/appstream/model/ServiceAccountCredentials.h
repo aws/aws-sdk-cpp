@@ -38,6 +38,7 @@ namespace Model
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The user name of the account. This account must have the following
      * privileges: create computer objects, join computers to the domain, and
@@ -45,104 +46,28 @@ namespace Model
      * units specified.</p>
      */
     inline const Aws::String& GetAccountName() const{ return m_accountName; }
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline ServiceAccountCredentials& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline ServiceAccountCredentials& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
-
-    /**
-     * <p>The user name of the account. This account must have the following
-     * privileges: create computer objects, join computers to the domain, and
-     * change/reset the password on descendant computer objects for the organizational
-     * units specified.</p>
-     */
     inline ServiceAccountCredentials& WithAccountName(const char* value) { SetAccountName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The password for the account.</p>
      */
     inline const Aws::String& GetAccountPassword() const{ return m_accountPassword; }
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline bool AccountPasswordHasBeenSet() const { return m_accountPasswordHasBeenSet; }
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline void SetAccountPassword(const Aws::String& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = value; }
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline void SetAccountPassword(Aws::String&& value) { m_accountPasswordHasBeenSet = true; m_accountPassword = std::move(value); }
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline void SetAccountPassword(const char* value) { m_accountPasswordHasBeenSet = true; m_accountPassword.assign(value); }
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline ServiceAccountCredentials& WithAccountPassword(const Aws::String& value) { SetAccountPassword(value); return *this;}
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline ServiceAccountCredentials& WithAccountPassword(Aws::String&& value) { SetAccountPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The password for the account.</p>
-     */
     inline ServiceAccountCredentials& WithAccountPassword(const char* value) { SetAccountPassword(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountName;

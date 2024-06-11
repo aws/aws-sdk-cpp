@@ -32,127 +32,46 @@ namespace Model
     AWS_KAFKA_API GetClusterPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * 
             <p>The version of cluster policy.</p>
             
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
-
-    /**
-     * 
-            <p>The version of cluster policy.</p>
-            
-     */
     inline void SetCurrentVersion(const Aws::String& value) { m_currentVersion = value; }
-
-    /**
-     * 
-            <p>The version of cluster policy.</p>
-            
-     */
     inline void SetCurrentVersion(Aws::String&& value) { m_currentVersion = std::move(value); }
-
-    /**
-     * 
-            <p>The version of cluster policy.</p>
-            
-     */
     inline void SetCurrentVersion(const char* value) { m_currentVersion.assign(value); }
-
-    /**
-     * 
-            <p>The version of cluster policy.</p>
-            
-     */
     inline GetClusterPolicyResult& WithCurrentVersion(const Aws::String& value) { SetCurrentVersion(value); return *this;}
-
-    /**
-     * 
-            <p>The version of cluster policy.</p>
-            
-     */
     inline GetClusterPolicyResult& WithCurrentVersion(Aws::String&& value) { SetCurrentVersion(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The version of cluster policy.</p>
-            
-     */
     inline GetClusterPolicyResult& WithCurrentVersion(const char* value) { SetCurrentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * 
             <p>The cluster policy.</p>
             
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * 
-            <p>The cluster policy.</p>
-            
-     */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-
-    /**
-     * 
-            <p>The cluster policy.</p>
-            
-     */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-
-    /**
-     * 
-            <p>The cluster policy.</p>
-            
-     */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
-
-    /**
-     * 
-            <p>The cluster policy.</p>
-            
-     */
     inline GetClusterPolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * 
-            <p>The cluster policy.</p>
-            
-     */
     inline GetClusterPolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The cluster policy.</p>
-            
-     */
     inline GetClusterPolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetClusterPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetClusterPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetClusterPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_currentVersion;

@@ -39,71 +39,30 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number used to identify a specific table in a document. The first table
      * encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
      */
     inline int GetLineItemGroupIndex() const{ return m_lineItemGroupIndex; }
-
-    /**
-     * <p>The number used to identify a specific table in a document. The first table
-     * encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
-     */
     inline bool LineItemGroupIndexHasBeenSet() const { return m_lineItemGroupIndexHasBeenSet; }
-
-    /**
-     * <p>The number used to identify a specific table in a document. The first table
-     * encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
-     */
     inline void SetLineItemGroupIndex(int value) { m_lineItemGroupIndexHasBeenSet = true; m_lineItemGroupIndex = value; }
-
-    /**
-     * <p>The number used to identify a specific table in a document. The first table
-     * encountered will have a LineItemGroupIndex of 1, the second 2, etc.</p>
-     */
     inline LineItemGroup& WithLineItemGroupIndex(int value) { SetLineItemGroupIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The breakdown of information on a particular line of a table. </p>
      */
     inline const Aws::Vector<LineItemFields>& GetLineItems() const{ return m_lineItems; }
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline bool LineItemsHasBeenSet() const { return m_lineItemsHasBeenSet; }
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline void SetLineItems(const Aws::Vector<LineItemFields>& value) { m_lineItemsHasBeenSet = true; m_lineItems = value; }
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline void SetLineItems(Aws::Vector<LineItemFields>&& value) { m_lineItemsHasBeenSet = true; m_lineItems = std::move(value); }
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline LineItemGroup& WithLineItems(const Aws::Vector<LineItemFields>& value) { SetLineItems(value); return *this;}
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline LineItemGroup& WithLineItems(Aws::Vector<LineItemFields>&& value) { SetLineItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline LineItemGroup& AddLineItems(const LineItemFields& value) { m_lineItemsHasBeenSet = true; m_lineItems.push_back(value); return *this; }
-
-    /**
-     * <p>The breakdown of information on a particular line of a table. </p>
-     */
     inline LineItemGroup& AddLineItems(LineItemFields&& value) { m_lineItemsHasBeenSet = true; m_lineItems.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_lineItemGroupIndex;

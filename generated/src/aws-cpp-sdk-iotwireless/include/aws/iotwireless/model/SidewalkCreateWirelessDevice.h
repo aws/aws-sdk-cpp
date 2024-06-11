@@ -37,46 +37,19 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the Sidewalk device profile.</p>
      */
     inline const Aws::String& GetDeviceProfileId() const{ return m_deviceProfileId; }
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline bool DeviceProfileIdHasBeenSet() const { return m_deviceProfileIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline void SetDeviceProfileId(const Aws::String& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = value; }
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline void SetDeviceProfileId(Aws::String&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::move(value); }
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline void SetDeviceProfileId(const char* value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId.assign(value); }
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline SidewalkCreateWirelessDevice& WithDeviceProfileId(const Aws::String& value) { SetDeviceProfileId(value); return *this;}
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline SidewalkCreateWirelessDevice& WithDeviceProfileId(Aws::String&& value) { SetDeviceProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Sidewalk device profile.</p>
-     */
     inline SidewalkCreateWirelessDevice& WithDeviceProfileId(const char* value) { SetDeviceProfileId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceProfileId;

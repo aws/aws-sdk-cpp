@@ -44,78 +44,31 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of the different audience output sizes.</p>
      */
     inline const Aws::Vector<int>& GetAudienceSizeBins() const{ return m_audienceSizeBins; }
-
-    /**
-     * <p>An array of the different audience output sizes.</p>
-     */
     inline bool AudienceSizeBinsHasBeenSet() const { return m_audienceSizeBinsHasBeenSet; }
-
-    /**
-     * <p>An array of the different audience output sizes.</p>
-     */
     inline void SetAudienceSizeBins(const Aws::Vector<int>& value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins = value; }
-
-    /**
-     * <p>An array of the different audience output sizes.</p>
-     */
     inline void SetAudienceSizeBins(Aws::Vector<int>&& value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins = std::move(value); }
-
-    /**
-     * <p>An array of the different audience output sizes.</p>
-     */
     inline AudienceSizeConfig& WithAudienceSizeBins(const Aws::Vector<int>& value) { SetAudienceSizeBins(value); return *this;}
-
-    /**
-     * <p>An array of the different audience output sizes.</p>
-     */
     inline AudienceSizeConfig& WithAudienceSizeBins(Aws::Vector<int>&& value) { SetAudienceSizeBins(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the different audience output sizes.</p>
-     */
     inline AudienceSizeConfig& AddAudienceSizeBins(int value) { m_audienceSizeBinsHasBeenSet = true; m_audienceSizeBins.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether the audience output sizes are defined as an absolute number or a
      * percentage.</p>
      */
     inline const AudienceSizeType& GetAudienceSizeType() const{ return m_audienceSizeType; }
-
-    /**
-     * <p>Whether the audience output sizes are defined as an absolute number or a
-     * percentage.</p>
-     */
     inline bool AudienceSizeTypeHasBeenSet() const { return m_audienceSizeTypeHasBeenSet; }
-
-    /**
-     * <p>Whether the audience output sizes are defined as an absolute number or a
-     * percentage.</p>
-     */
     inline void SetAudienceSizeType(const AudienceSizeType& value) { m_audienceSizeTypeHasBeenSet = true; m_audienceSizeType = value; }
-
-    /**
-     * <p>Whether the audience output sizes are defined as an absolute number or a
-     * percentage.</p>
-     */
     inline void SetAudienceSizeType(AudienceSizeType&& value) { m_audienceSizeTypeHasBeenSet = true; m_audienceSizeType = std::move(value); }
-
-    /**
-     * <p>Whether the audience output sizes are defined as an absolute number or a
-     * percentage.</p>
-     */
     inline AudienceSizeConfig& WithAudienceSizeType(const AudienceSizeType& value) { SetAudienceSizeType(value); return *this;}
-
-    /**
-     * <p>Whether the audience output sizes are defined as an absolute number or a
-     * percentage.</p>
-     */
     inline AudienceSizeConfig& WithAudienceSizeType(AudienceSizeType&& value) { SetAudienceSizeType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<int> m_audienceSizeBins;

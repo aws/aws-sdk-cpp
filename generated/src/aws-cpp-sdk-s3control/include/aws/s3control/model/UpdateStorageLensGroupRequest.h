@@ -39,118 +39,45 @@ namespace Model
      */
     AWS_S3CONTROL_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p> The name of the Storage Lens group that you want to update. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the Storage Lens group that you want to update. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Web Services account ID of the Storage Lens group owner. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The JSON file that contains the Storage Lens group configuration. </p>
      */
     inline const StorageLensGroup& GetStorageLensGroup() const{ return m_storageLensGroup; }
-
-    /**
-     * <p> The JSON file that contains the Storage Lens group configuration. </p>
-     */
     inline bool StorageLensGroupHasBeenSet() const { return m_storageLensGroupHasBeenSet; }
-
-    /**
-     * <p> The JSON file that contains the Storage Lens group configuration. </p>
-     */
     inline void SetStorageLensGroup(const StorageLensGroup& value) { m_storageLensGroupHasBeenSet = true; m_storageLensGroup = value; }
-
-    /**
-     * <p> The JSON file that contains the Storage Lens group configuration. </p>
-     */
     inline void SetStorageLensGroup(StorageLensGroup&& value) { m_storageLensGroupHasBeenSet = true; m_storageLensGroup = std::move(value); }
-
-    /**
-     * <p> The JSON file that contains the Storage Lens group configuration. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithStorageLensGroup(const StorageLensGroup& value) { SetStorageLensGroup(value); return *this;}
-
-    /**
-     * <p> The JSON file that contains the Storage Lens group configuration. </p>
-     */
     inline UpdateStorageLensGroupRequest& WithStorageLensGroup(StorageLensGroup&& value) { SetStorageLensGroup(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

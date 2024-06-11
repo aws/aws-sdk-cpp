@@ -38,46 +38,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of loggers.
      */
     inline const Aws::Vector<Logger>& GetLoggers() const{ return m_loggers; }
-
-    /**
-     * A list of loggers.
-     */
     inline bool LoggersHasBeenSet() const { return m_loggersHasBeenSet; }
-
-    /**
-     * A list of loggers.
-     */
     inline void SetLoggers(const Aws::Vector<Logger>& value) { m_loggersHasBeenSet = true; m_loggers = value; }
-
-    /**
-     * A list of loggers.
-     */
     inline void SetLoggers(Aws::Vector<Logger>&& value) { m_loggersHasBeenSet = true; m_loggers = std::move(value); }
-
-    /**
-     * A list of loggers.
-     */
     inline LoggerDefinitionVersion& WithLoggers(const Aws::Vector<Logger>& value) { SetLoggers(value); return *this;}
-
-    /**
-     * A list of loggers.
-     */
     inline LoggerDefinitionVersion& WithLoggers(Aws::Vector<Logger>&& value) { SetLoggers(std::move(value)); return *this;}
-
-    /**
-     * A list of loggers.
-     */
     inline LoggerDefinitionVersion& AddLoggers(const Logger& value) { m_loggersHasBeenSet = true; m_loggers.push_back(value); return *this; }
-
-    /**
-     * A list of loggers.
-     */
     inline LoggerDefinitionVersion& AddLoggers(Logger&& value) { m_loggersHasBeenSet = true; m_loggers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Logger> m_loggers;

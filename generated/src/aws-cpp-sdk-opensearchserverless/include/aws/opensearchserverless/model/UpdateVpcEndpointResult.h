@@ -33,53 +33,27 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API UpdateVpcEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the updated VPC endpoint.</p>
      */
     inline const UpdateVpcEndpointDetail& GetUpdateVpcEndpointDetail() const{ return m_updateVpcEndpointDetail; }
-
-    /**
-     * <p>Details about the updated VPC endpoint.</p>
-     */
     inline void SetUpdateVpcEndpointDetail(const UpdateVpcEndpointDetail& value) { m_updateVpcEndpointDetail = value; }
-
-    /**
-     * <p>Details about the updated VPC endpoint.</p>
-     */
     inline void SetUpdateVpcEndpointDetail(UpdateVpcEndpointDetail&& value) { m_updateVpcEndpointDetail = std::move(value); }
-
-    /**
-     * <p>Details about the updated VPC endpoint.</p>
-     */
     inline UpdateVpcEndpointResult& WithUpdateVpcEndpointDetail(const UpdateVpcEndpointDetail& value) { SetUpdateVpcEndpointDetail(value); return *this;}
-
-    /**
-     * <p>Details about the updated VPC endpoint.</p>
-     */
     inline UpdateVpcEndpointResult& WithUpdateVpcEndpointDetail(UpdateVpcEndpointDetail&& value) { SetUpdateVpcEndpointDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateVpcEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateVpcEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateVpcEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UpdateVpcEndpointDetail m_updateVpcEndpointDetail;

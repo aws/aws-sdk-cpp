@@ -34,54 +34,20 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Identifier of the shared directory in the directory consumer account. This
      * identifier is different for each directory owner account. </p>
      */
     inline const Aws::String& GetSharedDirectoryId() const{ return m_sharedDirectoryId; }
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline bool SharedDirectoryIdHasBeenSet() const { return m_sharedDirectoryIdHasBeenSet; }
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline void SetSharedDirectoryId(const Aws::String& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = value; }
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline void SetSharedDirectoryId(Aws::String&& value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId = std::move(value); }
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline void SetSharedDirectoryId(const char* value) { m_sharedDirectoryIdHasBeenSet = true; m_sharedDirectoryId.assign(value); }
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline AcceptSharedDirectoryRequest& WithSharedDirectoryId(const Aws::String& value) { SetSharedDirectoryId(value); return *this;}
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline AcceptSharedDirectoryRequest& WithSharedDirectoryId(Aws::String&& value) { SetSharedDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier of the shared directory in the directory consumer account. This
-     * identifier is different for each directory owner account. </p>
-     */
     inline AcceptSharedDirectoryRequest& WithSharedDirectoryId(const char* value) { SetSharedDirectoryId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sharedDirectoryId;

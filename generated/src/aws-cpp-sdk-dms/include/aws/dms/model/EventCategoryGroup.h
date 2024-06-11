@@ -41,108 +41,36 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The type of DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | replication-server | security-group |
      * replication-task</p>
      */
     inline const Aws::String& GetSourceType() const{ return m_sourceType; }
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline EventCategoryGroup& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline EventCategoryGroup& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-
-    /**
-     * <p> The type of DMS resource that generates events. </p> <p>Valid values:
-     * replication-instance | replication-server | security-group |
-     * replication-task</p>
-     */
     inline EventCategoryGroup& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> A list of event categories from a source type that you've chosen.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline EventCategoryGroup& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline EventCategoryGroup& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline EventCategoryGroup& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline EventCategoryGroup& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of event categories from a source type that you've chosen.</p>
-     */
     inline EventCategoryGroup& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_sourceType;

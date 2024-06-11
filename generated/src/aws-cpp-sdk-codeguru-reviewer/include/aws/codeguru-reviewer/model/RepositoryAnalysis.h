@@ -42,67 +42,29 @@ namespace Model
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
      * that specifies the tip of a branch in an associated repository.</p>
      */
     inline const RepositoryHeadSourceCodeType& GetRepositoryHead() const{ return m_repositoryHead; }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
-     * that specifies the tip of a branch in an associated repository.</p>
-     */
     inline bool RepositoryHeadHasBeenSet() const { return m_repositoryHeadHasBeenSet; }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
-     * that specifies the tip of a branch in an associated repository.</p>
-     */
     inline void SetRepositoryHead(const RepositoryHeadSourceCodeType& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = value; }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
-     * that specifies the tip of a branch in an associated repository.</p>
-     */
     inline void SetRepositoryHead(RepositoryHeadSourceCodeType&& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = std::move(value); }
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
-     * that specifies the tip of a branch in an associated repository.</p>
-     */
     inline RepositoryAnalysis& WithRepositoryHead(const RepositoryHeadSourceCodeType& value) { SetRepositoryHead(value); return *this;}
-
-    /**
-     * <p>A <a
-     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
-     * that specifies the tip of a branch in an associated repository.</p>
-     */
     inline RepositoryAnalysis& WithRepositoryHead(RepositoryHeadSourceCodeType&& value) { SetRepositoryHead(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SourceCodeType& GetSourceCodeType() const{ return m_sourceCodeType; }
-
-    
     inline bool SourceCodeTypeHasBeenSet() const { return m_sourceCodeTypeHasBeenSet; }
-
-    
     inline void SetSourceCodeType(const SourceCodeType& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = value; }
-
-    
     inline void SetSourceCodeType(SourceCodeType&& value) { m_sourceCodeTypeHasBeenSet = true; m_sourceCodeType = std::move(value); }
-
-    
     inline RepositoryAnalysis& WithSourceCodeType(const SourceCodeType& value) { SetSourceCodeType(value); return *this;}
-
-    
     inline RepositoryAnalysis& WithSourceCodeType(SourceCodeType&& value) { SetSourceCodeType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RepositoryHeadSourceCodeType m_repositoryHead;

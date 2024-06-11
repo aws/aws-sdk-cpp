@@ -39,42 +39,18 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
      * 2019-11-08T02:41:28.172Z.</p>
      */
     inline const Aws::Utils::DateTime& GetAbsoluteTime() const{ return m_absoluteTime; }
-
-    /**
-     * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-     * 2019-11-08T02:41:28.172Z.</p>
-     */
     inline bool AbsoluteTimeHasBeenSet() const { return m_absoluteTimeHasBeenSet; }
-
-    /**
-     * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-     * 2019-11-08T02:41:28.172Z.</p>
-     */
     inline void SetAbsoluteTime(const Aws::Utils::DateTime& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = value; }
-
-    /**
-     * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-     * 2019-11-08T02:41:28.172Z.</p>
-     */
     inline void SetAbsoluteTime(Aws::Utils::DateTime&& value) { m_absoluteTimeHasBeenSet = true; m_absoluteTime = std::move(value); }
-
-    /**
-     * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-     * 2019-11-08T02:41:28.172Z.</p>
-     */
     inline RealTimeContactAnalysisTimeData& WithAbsoluteTime(const Aws::Utils::DateTime& value) { SetAbsoluteTime(value); return *this;}
-
-    /**
-     * <p>Time represented in ISO 8601 format: yyyy-MM-ddThh:mm:ss.SSSZ. For example,
-     * 2019-11-08T02:41:28.172Z.</p>
-     */
     inline RealTimeContactAnalysisTimeData& WithAbsoluteTime(Aws::Utils::DateTime&& value) { SetAbsoluteTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_absoluteTime;

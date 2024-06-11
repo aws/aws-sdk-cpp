@@ -32,132 +32,47 @@ namespace Model
     AWS_CHATBOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The maximum number of results to include in the response. If more results exist
      * than the specified MaxResults value, a token is included in the response so that
      * the remaining results can be retrieved.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * The maximum number of results to include in the response. If more results exist
-     * than the specified MaxResults value, a token is included in the response so that
-     * the remaining results can be retrieved.
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * The maximum number of results to include in the response. If more results exist
-     * than the specified MaxResults value, a token is included in the response so that
-     * the remaining results can be retrieved.
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * The maximum number of results to include in the response. If more results exist
-     * than the specified MaxResults value, a token is included in the response so that
-     * the remaining results can be retrieved.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * An optional token returned from a prior request. Use this token for pagination
      * of results from this action. If this parameter is specified, the response
      * includes only results beyond the token, up to the value specified by MaxResults.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * An optional token returned from a prior request. Use this token for pagination
-     * of results from this action. If this parameter is specified, the response
-     * includes only results beyond the token, up to the value specified by MaxResults.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * An optional ARN of a SlackChannelConfiguration to describe.
      */
     inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * An optional ARN of a SlackChannelConfiguration to describe.
-     */
     inline DescribeSlackChannelConfigurationsRequest& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

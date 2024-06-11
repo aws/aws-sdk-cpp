@@ -35,26 +35,15 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Loss metric associated with the custom job.</p>
      */
     inline double GetTrainingLoss() const{ return m_trainingLoss; }
-
-    /**
-     * <p>Loss metric associated with the custom job.</p>
-     */
     inline bool TrainingLossHasBeenSet() const { return m_trainingLossHasBeenSet; }
-
-    /**
-     * <p>Loss metric associated with the custom job.</p>
-     */
     inline void SetTrainingLoss(double value) { m_trainingLossHasBeenSet = true; m_trainingLoss = value; }
-
-    /**
-     * <p>Loss metric associated with the custom job.</p>
-     */
     inline TrainingMetrics& WithTrainingLoss(double value) { SetTrainingLoss(value); return *this;}
-
+    ///@}
   private:
 
     double m_trainingLoss;

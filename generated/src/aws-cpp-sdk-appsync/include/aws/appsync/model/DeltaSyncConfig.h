@@ -37,92 +37,40 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of minutes that an Item is stored in the data source.</p>
      */
     inline long long GetBaseTableTTL() const{ return m_baseTableTTL; }
-
-    /**
-     * <p>The number of minutes that an Item is stored in the data source.</p>
-     */
     inline bool BaseTableTTLHasBeenSet() const { return m_baseTableTTLHasBeenSet; }
-
-    /**
-     * <p>The number of minutes that an Item is stored in the data source.</p>
-     */
     inline void SetBaseTableTTL(long long value) { m_baseTableTTLHasBeenSet = true; m_baseTableTTL = value; }
-
-    /**
-     * <p>The number of minutes that an Item is stored in the data source.</p>
-     */
     inline DeltaSyncConfig& WithBaseTableTTL(long long value) { SetBaseTableTTL(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Delta Sync table name.</p>
      */
     inline const Aws::String& GetDeltaSyncTableName() const{ return m_deltaSyncTableName; }
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline bool DeltaSyncTableNameHasBeenSet() const { return m_deltaSyncTableNameHasBeenSet; }
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline void SetDeltaSyncTableName(const Aws::String& value) { m_deltaSyncTableNameHasBeenSet = true; m_deltaSyncTableName = value; }
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline void SetDeltaSyncTableName(Aws::String&& value) { m_deltaSyncTableNameHasBeenSet = true; m_deltaSyncTableName = std::move(value); }
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline void SetDeltaSyncTableName(const char* value) { m_deltaSyncTableNameHasBeenSet = true; m_deltaSyncTableName.assign(value); }
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline DeltaSyncConfig& WithDeltaSyncTableName(const Aws::String& value) { SetDeltaSyncTableName(value); return *this;}
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline DeltaSyncConfig& WithDeltaSyncTableName(Aws::String&& value) { SetDeltaSyncTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Delta Sync table name.</p>
-     */
     inline DeltaSyncConfig& WithDeltaSyncTableName(const char* value) { SetDeltaSyncTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync
      * table.</p>
      */
     inline long long GetDeltaSyncTableTTL() const{ return m_deltaSyncTableTTL; }
-
-    /**
-     * <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync
-     * table.</p>
-     */
     inline bool DeltaSyncTableTTLHasBeenSet() const { return m_deltaSyncTableTTLHasBeenSet; }
-
-    /**
-     * <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync
-     * table.</p>
-     */
     inline void SetDeltaSyncTableTTL(long long value) { m_deltaSyncTableTTLHasBeenSet = true; m_deltaSyncTableTTL = value; }
-
-    /**
-     * <p>The number of minutes that a Delta Sync log entry is stored in the Delta Sync
-     * table.</p>
-     */
     inline DeltaSyncConfig& WithDeltaSyncTableTTL(long long value) { SetDeltaSyncTableTTL(value); return *this;}
-
+    ///@}
   private:
 
     long long m_baseTableTTL;

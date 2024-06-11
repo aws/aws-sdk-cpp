@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the edge packaging job.</p>
      */
     inline const Aws::String& GetEdgePackagingJobName() const{ return m_edgePackagingJobName; }
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline bool EdgePackagingJobNameHasBeenSet() const { return m_edgePackagingJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline void SetEdgePackagingJobName(const Aws::String& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = value; }
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline void SetEdgePackagingJobName(Aws::String&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::move(value); }
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline void SetEdgePackagingJobName(const char* value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName.assign(value); }
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline DescribeEdgePackagingJobRequest& WithEdgePackagingJobName(const Aws::String& value) { SetEdgePackagingJobName(value); return *this;}
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline DescribeEdgePackagingJobRequest& WithEdgePackagingJobName(Aws::String&& value) { SetEdgePackagingJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the edge packaging job.</p>
-     */
     inline DescribeEdgePackagingJobRequest& WithEdgePackagingJobName(const char* value) { SetEdgePackagingJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_edgePackagingJobName;

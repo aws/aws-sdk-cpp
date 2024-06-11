@@ -38,163 +38,59 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An access token generated for a federated user to access Amazon Connect.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline Credentials& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline Credentials& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An access token generated for a federated user to access Amazon Connect.</p>
-     */
     inline Credentials& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token generated with an expiration time for the session a user is logged in
      * to Amazon Connect.</p>
      */
     inline const Aws::Utils::DateTime& GetAccessTokenExpiration() const{ return m_accessTokenExpiration; }
-
-    /**
-     * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect.</p>
-     */
     inline bool AccessTokenExpirationHasBeenSet() const { return m_accessTokenExpirationHasBeenSet; }
-
-    /**
-     * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect.</p>
-     */
     inline void SetAccessTokenExpiration(const Aws::Utils::DateTime& value) { m_accessTokenExpirationHasBeenSet = true; m_accessTokenExpiration = value; }
-
-    /**
-     * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect.</p>
-     */
     inline void SetAccessTokenExpiration(Aws::Utils::DateTime&& value) { m_accessTokenExpirationHasBeenSet = true; m_accessTokenExpiration = std::move(value); }
-
-    /**
-     * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect.</p>
-     */
     inline Credentials& WithAccessTokenExpiration(const Aws::Utils::DateTime& value) { SetAccessTokenExpiration(value); return *this;}
-
-    /**
-     * <p>A token generated with an expiration time for the session a user is logged in
-     * to Amazon Connect.</p>
-     */
     inline Credentials& WithAccessTokenExpiration(Aws::Utils::DateTime&& value) { SetAccessTokenExpiration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Renews a token generated for a user to access the Amazon Connect
      * instance.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline Credentials& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline Credentials& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Renews a token generated for a user to access the Amazon Connect
-     * instance.</p>
-     */
     inline Credentials& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Renews the expiration timer for a generated token.</p>
      */
     inline const Aws::Utils::DateTime& GetRefreshTokenExpiration() const{ return m_refreshTokenExpiration; }
-
-    /**
-     * <p>Renews the expiration timer for a generated token.</p>
-     */
     inline bool RefreshTokenExpirationHasBeenSet() const { return m_refreshTokenExpirationHasBeenSet; }
-
-    /**
-     * <p>Renews the expiration timer for a generated token.</p>
-     */
     inline void SetRefreshTokenExpiration(const Aws::Utils::DateTime& value) { m_refreshTokenExpirationHasBeenSet = true; m_refreshTokenExpiration = value; }
-
-    /**
-     * <p>Renews the expiration timer for a generated token.</p>
-     */
     inline void SetRefreshTokenExpiration(Aws::Utils::DateTime&& value) { m_refreshTokenExpirationHasBeenSet = true; m_refreshTokenExpiration = std::move(value); }
-
-    /**
-     * <p>Renews the expiration timer for a generated token.</p>
-     */
     inline Credentials& WithRefreshTokenExpiration(const Aws::Utils::DateTime& value) { SetRefreshTokenExpiration(value); return *this;}
-
-    /**
-     * <p>Renews the expiration timer for a generated token.</p>
-     */
     inline Credentials& WithRefreshTokenExpiration(Aws::Utils::DateTime&& value) { SetRefreshTokenExpiration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessToken;

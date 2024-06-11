@@ -38,87 +38,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the cluster security group.</p>
      */
     inline const Aws::String& GetClusterSecurityGroupName() const{ return m_clusterSecurityGroupName; }
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline void SetClusterSecurityGroupName(Aws::String&& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline void SetClusterSecurityGroupName(const char* value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName.assign(value); }
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline AwsRedshiftClusterClusterSecurityGroup& WithClusterSecurityGroupName(const Aws::String& value) { SetClusterSecurityGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline AwsRedshiftClusterClusterSecurityGroup& WithClusterSecurityGroupName(Aws::String&& value) { SetClusterSecurityGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the cluster security group.</p>
-     */
     inline AwsRedshiftClusterClusterSecurityGroup& WithClusterSecurityGroupName(const char* value) { SetClusterSecurityGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the cluster security group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline AwsRedshiftClusterClusterSecurityGroup& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline AwsRedshiftClusterClusterSecurityGroup& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the cluster security group.</p>
-     */
     inline AwsRedshiftClusterClusterSecurityGroup& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterSecurityGroupName;

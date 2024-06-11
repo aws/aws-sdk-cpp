@@ -34,54 +34,20 @@ namespace Model
     AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the index with query suggestions that you want to get
      * information on.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline DescribeQuerySuggestionsConfigRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline DescribeQuerySuggestionsConfigRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index with query suggestions that you want to get
-     * information on.</p>
-     */
     inline DescribeQuerySuggestionsConfigRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_indexId;

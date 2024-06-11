@@ -33,53 +33,27 @@ namespace Model
     AWS_VOICEID_API DescribeSpeakerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specified speaker.</p>
      */
     inline const Speaker& GetSpeaker() const{ return m_speaker; }
-
-    /**
-     * <p>Information about the specified speaker.</p>
-     */
     inline void SetSpeaker(const Speaker& value) { m_speaker = value; }
-
-    /**
-     * <p>Information about the specified speaker.</p>
-     */
     inline void SetSpeaker(Speaker&& value) { m_speaker = std::move(value); }
-
-    /**
-     * <p>Information about the specified speaker.</p>
-     */
     inline DescribeSpeakerResult& WithSpeaker(const Speaker& value) { SetSpeaker(value); return *this;}
-
-    /**
-     * <p>Information about the specified speaker.</p>
-     */
     inline DescribeSpeakerResult& WithSpeaker(Speaker&& value) { SetSpeaker(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeSpeakerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeSpeakerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeSpeakerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Speaker m_speaker;

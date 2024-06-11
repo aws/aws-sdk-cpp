@@ -32,36 +32,17 @@ namespace Model
     AWS_APPLICATIONCOSTPROFILER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Amazon S3 location to import application usage data from.</p>
      */
     inline const SourceS3Location& GetSourceS3Location() const{ return m_sourceS3Location; }
-
-    /**
-     * <p>Amazon S3 location to import application usage data from.</p>
-     */
     inline bool SourceS3LocationHasBeenSet() const { return m_sourceS3LocationHasBeenSet; }
-
-    /**
-     * <p>Amazon S3 location to import application usage data from.</p>
-     */
     inline void SetSourceS3Location(const SourceS3Location& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = value; }
-
-    /**
-     * <p>Amazon S3 location to import application usage data from.</p>
-     */
     inline void SetSourceS3Location(SourceS3Location&& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = std::move(value); }
-
-    /**
-     * <p>Amazon S3 location to import application usage data from.</p>
-     */
     inline ImportApplicationUsageRequest& WithSourceS3Location(const SourceS3Location& value) { SetSourceS3Location(value); return *this;}
-
-    /**
-     * <p>Amazon S3 location to import application usage data from.</p>
-     */
     inline ImportApplicationUsageRequest& WithSourceS3Location(SourceS3Location&& value) { SetSourceS3Location(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SourceS3Location m_sourceS3Location;

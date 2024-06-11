@@ -44,640 +44,224 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of the DRS agent installed on the recovery instance</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline RecoveryInstance& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline RecoveryInstance& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the DRS agent installed on the recovery instance</p>
-     */
     inline RecoveryInstance& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the Recovery Instance.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Data Replication Info of the Recovery Instance.</p>
      */
     inline const RecoveryInstanceDataReplicationInfo& GetDataReplicationInfo() const{ return m_dataReplicationInfo; }
-
-    /**
-     * <p>The Data Replication Info of the Recovery Instance.</p>
-     */
     inline bool DataReplicationInfoHasBeenSet() const { return m_dataReplicationInfoHasBeenSet; }
-
-    /**
-     * <p>The Data Replication Info of the Recovery Instance.</p>
-     */
     inline void SetDataReplicationInfo(const RecoveryInstanceDataReplicationInfo& value) { m_dataReplicationInfoHasBeenSet = true; m_dataReplicationInfo = value; }
-
-    /**
-     * <p>The Data Replication Info of the Recovery Instance.</p>
-     */
     inline void SetDataReplicationInfo(RecoveryInstanceDataReplicationInfo&& value) { m_dataReplicationInfoHasBeenSet = true; m_dataReplicationInfo = std::move(value); }
-
-    /**
-     * <p>The Data Replication Info of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithDataReplicationInfo(const RecoveryInstanceDataReplicationInfo& value) { SetDataReplicationInfo(value); return *this;}
-
-    /**
-     * <p>The Data Replication Info of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithDataReplicationInfo(RecoveryInstanceDataReplicationInfo&& value) { SetDataReplicationInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The EC2 instance ID of the Recovery Instance.</p>
      */
     inline const Aws::String& GetEc2InstanceID() const{ return m_ec2InstanceID; }
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline bool Ec2InstanceIDHasBeenSet() const { return m_ec2InstanceIDHasBeenSet; }
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline void SetEc2InstanceID(const Aws::String& value) { m_ec2InstanceIDHasBeenSet = true; m_ec2InstanceID = value; }
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline void SetEc2InstanceID(Aws::String&& value) { m_ec2InstanceIDHasBeenSet = true; m_ec2InstanceID = std::move(value); }
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline void SetEc2InstanceID(const char* value) { m_ec2InstanceIDHasBeenSet = true; m_ec2InstanceID.assign(value); }
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithEc2InstanceID(const Aws::String& value) { SetEc2InstanceID(value); return *this;}
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithEc2InstanceID(Aws::String&& value) { SetEc2InstanceID(std::move(value)); return *this;}
-
-    /**
-     * <p>The EC2 instance ID of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithEc2InstanceID(const char* value) { SetEc2InstanceID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the EC2 instance for this Recovery Instance.</p>
      */
     inline const EC2InstanceState& GetEc2InstanceState() const{ return m_ec2InstanceState; }
-
-    /**
-     * <p>The state of the EC2 instance for this Recovery Instance.</p>
-     */
     inline bool Ec2InstanceStateHasBeenSet() const { return m_ec2InstanceStateHasBeenSet; }
-
-    /**
-     * <p>The state of the EC2 instance for this Recovery Instance.</p>
-     */
     inline void SetEc2InstanceState(const EC2InstanceState& value) { m_ec2InstanceStateHasBeenSet = true; m_ec2InstanceState = value; }
-
-    /**
-     * <p>The state of the EC2 instance for this Recovery Instance.</p>
-     */
     inline void SetEc2InstanceState(EC2InstanceState&& value) { m_ec2InstanceStateHasBeenSet = true; m_ec2InstanceState = std::move(value); }
-
-    /**
-     * <p>The state of the EC2 instance for this Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithEc2InstanceState(const EC2InstanceState& value) { SetEc2InstanceState(value); return *this;}
-
-    /**
-     * <p>The state of the EC2 instance for this Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithEc2InstanceState(EC2InstanceState&& value) { SetEc2InstanceState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object representing failback related information of the Recovery
      * Instance.</p>
      */
     inline const RecoveryInstanceFailback& GetFailback() const{ return m_failback; }
-
-    /**
-     * <p>An object representing failback related information of the Recovery
-     * Instance.</p>
-     */
     inline bool FailbackHasBeenSet() const { return m_failbackHasBeenSet; }
-
-    /**
-     * <p>An object representing failback related information of the Recovery
-     * Instance.</p>
-     */
     inline void SetFailback(const RecoveryInstanceFailback& value) { m_failbackHasBeenSet = true; m_failback = value; }
-
-    /**
-     * <p>An object representing failback related information of the Recovery
-     * Instance.</p>
-     */
     inline void SetFailback(RecoveryInstanceFailback&& value) { m_failbackHasBeenSet = true; m_failback = std::move(value); }
-
-    /**
-     * <p>An object representing failback related information of the Recovery
-     * Instance.</p>
-     */
     inline RecoveryInstance& WithFailback(const RecoveryInstanceFailback& value) { SetFailback(value); return *this;}
-
-    /**
-     * <p>An object representing failback related information of the Recovery
-     * Instance.</p>
-     */
     inline RecoveryInstance& WithFailback(RecoveryInstanceFailback&& value) { SetFailback(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether this Recovery Instance was created for a drill or for an actual
      * Recovery event.</p>
      */
     inline bool GetIsDrill() const{ return m_isDrill; }
-
-    /**
-     * <p>Whether this Recovery Instance was created for a drill or for an actual
-     * Recovery event.</p>
-     */
     inline bool IsDrillHasBeenSet() const { return m_isDrillHasBeenSet; }
-
-    /**
-     * <p>Whether this Recovery Instance was created for a drill or for an actual
-     * Recovery event.</p>
-     */
     inline void SetIsDrill(bool value) { m_isDrillHasBeenSet = true; m_isDrill = value; }
-
-    /**
-     * <p>Whether this Recovery Instance was created for a drill or for an actual
-     * Recovery event.</p>
-     */
     inline RecoveryInstance& WithIsDrill(bool value) { SetIsDrill(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Job that created the Recovery Instance.</p>
      */
     inline const Aws::String& GetJobID() const{ return m_jobID; }
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline void SetJobID(const Aws::String& value) { m_jobIDHasBeenSet = true; m_jobID = value; }
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline void SetJobID(Aws::String&& value) { m_jobIDHasBeenSet = true; m_jobID = std::move(value); }
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline void SetJobID(const char* value) { m_jobIDHasBeenSet = true; m_jobID.assign(value); }
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithJobID(const Aws::String& value) { SetJobID(value); return *this;}
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithJobID(Aws::String&& value) { SetJobID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Job that created the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithJobID(const char* value) { SetJobID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>AWS availability zone associated with the recovery instance.</p>
      */
     inline const Aws::String& GetOriginAvailabilityZone() const{ return m_originAvailabilityZone; }
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline bool OriginAvailabilityZoneHasBeenSet() const { return m_originAvailabilityZoneHasBeenSet; }
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline void SetOriginAvailabilityZone(const Aws::String& value) { m_originAvailabilityZoneHasBeenSet = true; m_originAvailabilityZone = value; }
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline void SetOriginAvailabilityZone(Aws::String&& value) { m_originAvailabilityZoneHasBeenSet = true; m_originAvailabilityZone = std::move(value); }
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline void SetOriginAvailabilityZone(const char* value) { m_originAvailabilityZoneHasBeenSet = true; m_originAvailabilityZone.assign(value); }
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline RecoveryInstance& WithOriginAvailabilityZone(const Aws::String& value) { SetOriginAvailabilityZone(value); return *this;}
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline RecoveryInstance& WithOriginAvailabilityZone(Aws::String&& value) { SetOriginAvailabilityZone(std::move(value)); return *this;}
-
-    /**
-     * <p>AWS availability zone associated with the recovery instance.</p>
-     */
     inline RecoveryInstance& WithOriginAvailabilityZone(const char* value) { SetOriginAvailabilityZone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Environment (On Premises / AWS) of the instance that the recovery instance
      * originated from.</p>
      */
     inline const OriginEnvironment& GetOriginEnvironment() const{ return m_originEnvironment; }
-
-    /**
-     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from.</p>
-     */
     inline bool OriginEnvironmentHasBeenSet() const { return m_originEnvironmentHasBeenSet; }
-
-    /**
-     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from.</p>
-     */
     inline void SetOriginEnvironment(const OriginEnvironment& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = value; }
-
-    /**
-     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from.</p>
-     */
     inline void SetOriginEnvironment(OriginEnvironment&& value) { m_originEnvironmentHasBeenSet = true; m_originEnvironment = std::move(value); }
-
-    /**
-     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from.</p>
-     */
     inline RecoveryInstance& WithOriginEnvironment(const OriginEnvironment& value) { SetOriginEnvironment(value); return *this;}
-
-    /**
-     * <p>Environment (On Premises / AWS) of the instance that the recovery instance
-     * originated from.</p>
-     */
     inline RecoveryInstance& WithOriginEnvironment(OriginEnvironment&& value) { SetOriginEnvironment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
      * Instance was launched from.</p>
      */
     inline const Aws::String& GetPointInTimeSnapshotDateTime() const{ return m_pointInTimeSnapshotDateTime; }
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline bool PointInTimeSnapshotDateTimeHasBeenSet() const { return m_pointInTimeSnapshotDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline void SetPointInTimeSnapshotDateTime(const Aws::String& value) { m_pointInTimeSnapshotDateTimeHasBeenSet = true; m_pointInTimeSnapshotDateTime = value; }
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline void SetPointInTimeSnapshotDateTime(Aws::String&& value) { m_pointInTimeSnapshotDateTimeHasBeenSet = true; m_pointInTimeSnapshotDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline void SetPointInTimeSnapshotDateTime(const char* value) { m_pointInTimeSnapshotDateTimeHasBeenSet = true; m_pointInTimeSnapshotDateTime.assign(value); }
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline RecoveryInstance& WithPointInTimeSnapshotDateTime(const Aws::String& value) { SetPointInTimeSnapshotDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline RecoveryInstance& WithPointInTimeSnapshotDateTime(Aws::String&& value) { SetPointInTimeSnapshotDateTime(std::move(value)); return *this;}
-
-    /**
-     * <p>The date and time of the Point in Time (PIT) snapshot that this Recovery
-     * Instance was launched from.</p>
-     */
     inline RecoveryInstance& WithPointInTimeSnapshotDateTime(const char* value) { SetPointInTimeSnapshotDateTime(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Recovery Instance.</p>
      */
     inline const Aws::String& GetRecoveryInstanceID() const{ return m_recoveryInstanceID; }
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline bool RecoveryInstanceIDHasBeenSet() const { return m_recoveryInstanceIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline void SetRecoveryInstanceID(const Aws::String& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = value; }
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline void SetRecoveryInstanceID(Aws::String&& value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID = std::move(value); }
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline void SetRecoveryInstanceID(const char* value) { m_recoveryInstanceIDHasBeenSet = true; m_recoveryInstanceID.assign(value); }
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithRecoveryInstanceID(const Aws::String& value) { SetRecoveryInstanceID(value); return *this;}
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithRecoveryInstanceID(Aws::String&& value) { SetRecoveryInstanceID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithRecoveryInstanceID(const char* value) { SetRecoveryInstanceID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Properties of the Recovery Instance machine.</p>
      */
     inline const RecoveryInstanceProperties& GetRecoveryInstanceProperties() const{ return m_recoveryInstanceProperties; }
-
-    /**
-     * <p>Properties of the Recovery Instance machine.</p>
-     */
     inline bool RecoveryInstancePropertiesHasBeenSet() const { return m_recoveryInstancePropertiesHasBeenSet; }
-
-    /**
-     * <p>Properties of the Recovery Instance machine.</p>
-     */
     inline void SetRecoveryInstanceProperties(const RecoveryInstanceProperties& value) { m_recoveryInstancePropertiesHasBeenSet = true; m_recoveryInstanceProperties = value; }
-
-    /**
-     * <p>Properties of the Recovery Instance machine.</p>
-     */
     inline void SetRecoveryInstanceProperties(RecoveryInstanceProperties&& value) { m_recoveryInstancePropertiesHasBeenSet = true; m_recoveryInstanceProperties = std::move(value); }
-
-    /**
-     * <p>Properties of the Recovery Instance machine.</p>
-     */
     inline RecoveryInstance& WithRecoveryInstanceProperties(const RecoveryInstanceProperties& value) { SetRecoveryInstanceProperties(value); return *this;}
-
-    /**
-     * <p>Properties of the Recovery Instance machine.</p>
-     */
     inline RecoveryInstance& WithRecoveryInstanceProperties(RecoveryInstanceProperties&& value) { SetRecoveryInstanceProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the source Outpost</p>
      */
     inline const Aws::String& GetSourceOutpostArn() const{ return m_sourceOutpostArn; }
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline bool SourceOutpostArnHasBeenSet() const { return m_sourceOutpostArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline void SetSourceOutpostArn(const Aws::String& value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn = value; }
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline void SetSourceOutpostArn(Aws::String&& value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline void SetSourceOutpostArn(const char* value) { m_sourceOutpostArnHasBeenSet = true; m_sourceOutpostArn.assign(value); }
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline RecoveryInstance& WithSourceOutpostArn(const Aws::String& value) { SetSourceOutpostArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline RecoveryInstance& WithSourceOutpostArn(Aws::String&& value) { SetSourceOutpostArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the source Outpost</p>
-     */
     inline RecoveryInstance& WithSourceOutpostArn(const char* value) { SetSourceOutpostArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Source Server ID that this Recovery Instance is associated with.</p>
      */
     inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline RecoveryInstance& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline RecoveryInstance& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-
-    /**
-     * <p>The Source Server ID that this Recovery Instance is associated with.</p>
-     */
     inline RecoveryInstance& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of tags that are associated with the Recovery Instance.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>An array of tags that are associated with the Recovery Instance.</p>
-     */
     inline RecoveryInstance& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_agentVersion;

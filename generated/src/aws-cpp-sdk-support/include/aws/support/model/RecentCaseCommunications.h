@@ -40,87 +40,33 @@ namespace Model
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The five most recent communications associated with the case.</p>
      */
     inline const Aws::Vector<Communication>& GetCommunications() const{ return m_communications; }
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline bool CommunicationsHasBeenSet() const { return m_communicationsHasBeenSet; }
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline void SetCommunications(const Aws::Vector<Communication>& value) { m_communicationsHasBeenSet = true; m_communications = value; }
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline void SetCommunications(Aws::Vector<Communication>&& value) { m_communicationsHasBeenSet = true; m_communications = std::move(value); }
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline RecentCaseCommunications& WithCommunications(const Aws::Vector<Communication>& value) { SetCommunications(value); return *this;}
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline RecentCaseCommunications& WithCommunications(Aws::Vector<Communication>&& value) { SetCommunications(std::move(value)); return *this;}
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline RecentCaseCommunications& AddCommunications(const Communication& value) { m_communicationsHasBeenSet = true; m_communications.push_back(value); return *this; }
-
-    /**
-     * <p>The five most recent communications associated with the case.</p>
-     */
     inline RecentCaseCommunications& AddCommunications(Communication&& value) { m_communicationsHasBeenSet = true; m_communications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A resumption point for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline RecentCaseCommunications& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline RecentCaseCommunications& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A resumption point for pagination.</p>
-     */
     inline RecentCaseCommunications& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Communication> m_communications;

@@ -38,42 +38,18 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
      * can write output from a job.</p>
      */
     inline const S3Location& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
-     * can write output from a job.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
-     * can write output from a job.</p>
-     */
     inline void SetLocation(const S3Location& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
-     * can write output from a job.</p>
-     */
     inline void SetLocation(S3Location&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
-     * can write output from a job.</p>
-     */
     inline S3TableOutputOptions& WithLocation(const S3Location& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>Represents an Amazon S3 location (bucket name and object key) where DataBrew
-     * can write output from a job.</p>
-     */
     inline S3TableOutputOptions& WithLocation(S3Location&& value) { SetLocation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Location m_location;

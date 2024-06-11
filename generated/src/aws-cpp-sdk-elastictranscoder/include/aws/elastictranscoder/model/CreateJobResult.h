@@ -38,58 +38,28 @@ namespace Model
     AWS_ELASTICTRANSCODER_API CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A section of the response body that provides information about the job that
      * is created.</p>
      */
     inline const Job& GetJob() const{ return m_job; }
-
-    /**
-     * <p>A section of the response body that provides information about the job that
-     * is created.</p>
-     */
     inline void SetJob(const Job& value) { m_job = value; }
-
-    /**
-     * <p>A section of the response body that provides information about the job that
-     * is created.</p>
-     */
     inline void SetJob(Job&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>A section of the response body that provides information about the job that
-     * is created.</p>
-     */
     inline CreateJobResult& WithJob(const Job& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>A section of the response body that provides information about the job that
-     * is created.</p>
-     */
     inline CreateJobResult& WithJob(Job&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Job m_job;

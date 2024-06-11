@@ -35,36 +35,17 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
      */
     inline const VdmAttributes& GetVdmAttributes() const{ return m_vdmAttributes; }
-
-    /**
-     * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-     */
     inline bool VdmAttributesHasBeenSet() const { return m_vdmAttributesHasBeenSet; }
-
-    /**
-     * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-     */
     inline void SetVdmAttributes(const VdmAttributes& value) { m_vdmAttributesHasBeenSet = true; m_vdmAttributes = value; }
-
-    /**
-     * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-     */
     inline void SetVdmAttributes(VdmAttributes&& value) { m_vdmAttributesHasBeenSet = true; m_vdmAttributes = std::move(value); }
-
-    /**
-     * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-     */
     inline PutAccountVdmAttributesRequest& WithVdmAttributes(const VdmAttributes& value) { SetVdmAttributes(value); return *this;}
-
-    /**
-     * <p>The VDM attributes that you wish to apply to your Amazon SES account.</p>
-     */
     inline PutAccountVdmAttributesRequest& WithVdmAttributes(VdmAttributes&& value) { SetVdmAttributes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VdmAttributes m_vdmAttributes;

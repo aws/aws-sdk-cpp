@@ -38,42 +38,18 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
      * query suggestion text and highlights.</p>
      */
     inline const SuggestionTextWithHighlights& GetText() const{ return m_text; }
-
-    /**
-     * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
-     * query suggestion text and highlights.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
-     * query suggestion text and highlights.</p>
-     */
     inline void SetText(const SuggestionTextWithHighlights& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
-     * query suggestion text and highlights.</p>
-     */
     inline void SetText(SuggestionTextWithHighlights&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
-     * query suggestion text and highlights.</p>
-     */
     inline SuggestionValue& WithText(const SuggestionTextWithHighlights& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The <code>SuggestionTextWithHighlights</code> structure that contains the
-     * query suggestion text and highlights.</p>
-     */
     inline SuggestionValue& WithText(SuggestionTextWithHighlights&& value) { SetText(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SuggestionTextWithHighlights m_text;

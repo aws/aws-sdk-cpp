@@ -35,122 +35,52 @@ namespace Model
     AWS_TEXTRACT_API AnalyzeIDResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of documents processed by AnalyzeID. Includes a number denoting
      * their place in the list and the response structure for the document.</p>
      */
     inline const Aws::Vector<IdentityDocument>& GetIdentityDocuments() const{ return m_identityDocuments; }
-
-    /**
-     * <p>The list of documents processed by AnalyzeID. Includes a number denoting
-     * their place in the list and the response structure for the document.</p>
-     */
     inline void SetIdentityDocuments(const Aws::Vector<IdentityDocument>& value) { m_identityDocuments = value; }
-
-    /**
-     * <p>The list of documents processed by AnalyzeID. Includes a number denoting
-     * their place in the list and the response structure for the document.</p>
-     */
     inline void SetIdentityDocuments(Aws::Vector<IdentityDocument>&& value) { m_identityDocuments = std::move(value); }
-
-    /**
-     * <p>The list of documents processed by AnalyzeID. Includes a number denoting
-     * their place in the list and the response structure for the document.</p>
-     */
     inline AnalyzeIDResult& WithIdentityDocuments(const Aws::Vector<IdentityDocument>& value) { SetIdentityDocuments(value); return *this;}
-
-    /**
-     * <p>The list of documents processed by AnalyzeID. Includes a number denoting
-     * their place in the list and the response structure for the document.</p>
-     */
     inline AnalyzeIDResult& WithIdentityDocuments(Aws::Vector<IdentityDocument>&& value) { SetIdentityDocuments(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of documents processed by AnalyzeID. Includes a number denoting
-     * their place in the list and the response structure for the document.</p>
-     */
     inline AnalyzeIDResult& AddIdentityDocuments(const IdentityDocument& value) { m_identityDocuments.push_back(value); return *this; }
-
-    /**
-     * <p>The list of documents processed by AnalyzeID. Includes a number denoting
-     * their place in the list and the response structure for the document.</p>
-     */
     inline AnalyzeIDResult& AddIdentityDocuments(IdentityDocument&& value) { m_identityDocuments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const DocumentMetadata& GetDocumentMetadata() const{ return m_documentMetadata; }
-
-    
     inline void SetDocumentMetadata(const DocumentMetadata& value) { m_documentMetadata = value; }
-
-    
     inline void SetDocumentMetadata(DocumentMetadata&& value) { m_documentMetadata = std::move(value); }
-
-    
     inline AnalyzeIDResult& WithDocumentMetadata(const DocumentMetadata& value) { SetDocumentMetadata(value); return *this;}
-
-    
     inline AnalyzeIDResult& WithDocumentMetadata(DocumentMetadata&& value) { SetDocumentMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
      */
     inline const Aws::String& GetAnalyzeIDModelVersion() const{ return m_analyzeIDModelVersion; }
-
-    /**
-     * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-     */
     inline void SetAnalyzeIDModelVersion(const Aws::String& value) { m_analyzeIDModelVersion = value; }
-
-    /**
-     * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-     */
     inline void SetAnalyzeIDModelVersion(Aws::String&& value) { m_analyzeIDModelVersion = std::move(value); }
-
-    /**
-     * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-     */
     inline void SetAnalyzeIDModelVersion(const char* value) { m_analyzeIDModelVersion.assign(value); }
-
-    /**
-     * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-     */
     inline AnalyzeIDResult& WithAnalyzeIDModelVersion(const Aws::String& value) { SetAnalyzeIDModelVersion(value); return *this;}
-
-    /**
-     * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-     */
     inline AnalyzeIDResult& WithAnalyzeIDModelVersion(Aws::String&& value) { SetAnalyzeIDModelVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the AnalyzeIdentity API being used to process documents.</p>
-     */
     inline AnalyzeIDResult& WithAnalyzeIDModelVersion(const char* value) { SetAnalyzeIDModelVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AnalyzeIDResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AnalyzeIDResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AnalyzeIDResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IdentityDocument> m_identityDocuments;

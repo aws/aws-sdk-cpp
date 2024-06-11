@@ -35,97 +35,47 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Business goal to reduce license costs. </p>
      */
     inline int GetLicenseCostReduction() const{ return m_licenseCostReduction; }
-
-    /**
-     * <p> Business goal to reduce license costs. </p>
-     */
     inline bool LicenseCostReductionHasBeenSet() const { return m_licenseCostReductionHasBeenSet; }
-
-    /**
-     * <p> Business goal to reduce license costs. </p>
-     */
     inline void SetLicenseCostReduction(int value) { m_licenseCostReductionHasBeenSet = true; m_licenseCostReduction = value; }
-
-    /**
-     * <p> Business goal to reduce license costs. </p>
-     */
     inline BusinessGoals& WithLicenseCostReduction(int value) { SetLicenseCostReduction(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Business goal to modernize infrastructure by moving to cloud native
      * technologies. </p>
      */
     inline int GetModernizeInfrastructureWithCloudNativeTechnologies() const{ return m_modernizeInfrastructureWithCloudNativeTechnologies; }
-
-    /**
-     * <p> Business goal to modernize infrastructure by moving to cloud native
-     * technologies. </p>
-     */
     inline bool ModernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet() const { return m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet; }
-
-    /**
-     * <p> Business goal to modernize infrastructure by moving to cloud native
-     * technologies. </p>
-     */
     inline void SetModernizeInfrastructureWithCloudNativeTechnologies(int value) { m_modernizeInfrastructureWithCloudNativeTechnologiesHasBeenSet = true; m_modernizeInfrastructureWithCloudNativeTechnologies = value; }
-
-    /**
-     * <p> Business goal to modernize infrastructure by moving to cloud native
-     * technologies. </p>
-     */
     inline BusinessGoals& WithModernizeInfrastructureWithCloudNativeTechnologies(int value) { SetModernizeInfrastructureWithCloudNativeTechnologies(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Business goal to reduce the operational overhead on the team by moving into
      * managed services. </p>
      */
     inline int GetReduceOperationalOverheadWithManagedServices() const{ return m_reduceOperationalOverheadWithManagedServices; }
-
-    /**
-     * <p> Business goal to reduce the operational overhead on the team by moving into
-     * managed services. </p>
-     */
     inline bool ReduceOperationalOverheadWithManagedServicesHasBeenSet() const { return m_reduceOperationalOverheadWithManagedServicesHasBeenSet; }
-
-    /**
-     * <p> Business goal to reduce the operational overhead on the team by moving into
-     * managed services. </p>
-     */
     inline void SetReduceOperationalOverheadWithManagedServices(int value) { m_reduceOperationalOverheadWithManagedServicesHasBeenSet = true; m_reduceOperationalOverheadWithManagedServices = value; }
-
-    /**
-     * <p> Business goal to reduce the operational overhead on the team by moving into
-     * managed services. </p>
-     */
     inline BusinessGoals& WithReduceOperationalOverheadWithManagedServices(int value) { SetReduceOperationalOverheadWithManagedServices(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Business goal to achieve migration at a fast pace. </p>
      */
     inline int GetSpeedOfMigration() const{ return m_speedOfMigration; }
-
-    /**
-     * <p> Business goal to achieve migration at a fast pace. </p>
-     */
     inline bool SpeedOfMigrationHasBeenSet() const { return m_speedOfMigrationHasBeenSet; }
-
-    /**
-     * <p> Business goal to achieve migration at a fast pace. </p>
-     */
     inline void SetSpeedOfMigration(int value) { m_speedOfMigrationHasBeenSet = true; m_speedOfMigration = value; }
-
-    /**
-     * <p> Business goal to achieve migration at a fast pace. </p>
-     */
     inline BusinessGoals& WithSpeedOfMigration(int value) { SetSpeedOfMigration(value); return *this;}
-
+    ///@}
   private:
 
     int m_licenseCostReduction;

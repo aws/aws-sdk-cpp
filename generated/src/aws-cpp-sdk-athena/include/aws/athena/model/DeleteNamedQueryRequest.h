@@ -35,46 +35,19 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of the query to delete.</p>
      */
     inline const Aws::String& GetNamedQueryId() const{ return m_namedQueryId; }
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline bool NamedQueryIdHasBeenSet() const { return m_namedQueryIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline void SetNamedQueryId(const Aws::String& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = value; }
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline void SetNamedQueryId(Aws::String&& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline void SetNamedQueryId(const char* value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId.assign(value); }
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline DeleteNamedQueryRequest& WithNamedQueryId(const Aws::String& value) { SetNamedQueryId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline DeleteNamedQueryRequest& WithNamedQueryId(Aws::String&& value) { SetNamedQueryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the query to delete.</p>
-     */
     inline DeleteNamedQueryRequest& WithNamedQueryId(const char* value) { SetNamedQueryId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namedQueryId;

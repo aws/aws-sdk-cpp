@@ -36,59 +36,28 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Set the InsightsEnabled value to true to enable insights or false to disable
      * insights.</p>
      */
     inline bool GetInsightsEnabled() const{ return m_insightsEnabled; }
-
-    /**
-     * <p>Set the InsightsEnabled value to true to enable insights or false to disable
-     * insights.</p>
-     */
     inline bool InsightsEnabledHasBeenSet() const { return m_insightsEnabledHasBeenSet; }
-
-    /**
-     * <p>Set the InsightsEnabled value to true to enable insights or false to disable
-     * insights.</p>
-     */
     inline void SetInsightsEnabled(bool value) { m_insightsEnabledHasBeenSet = true; m_insightsEnabled = value; }
-
-    /**
-     * <p>Set the InsightsEnabled value to true to enable insights or false to disable
-     * insights.</p>
-     */
     inline InsightsConfiguration& WithInsightsEnabled(bool value) { SetInsightsEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set the NotificationsEnabled value to true to enable insights notifications.
      * Notifications can only be enabled on a group with InsightsEnabled set to
      * true.</p>
      */
     inline bool GetNotificationsEnabled() const{ return m_notificationsEnabled; }
-
-    /**
-     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
-     * Notifications can only be enabled on a group with InsightsEnabled set to
-     * true.</p>
-     */
     inline bool NotificationsEnabledHasBeenSet() const { return m_notificationsEnabledHasBeenSet; }
-
-    /**
-     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
-     * Notifications can only be enabled on a group with InsightsEnabled set to
-     * true.</p>
-     */
     inline void SetNotificationsEnabled(bool value) { m_notificationsEnabledHasBeenSet = true; m_notificationsEnabled = value; }
-
-    /**
-     * <p>Set the NotificationsEnabled value to true to enable insights notifications.
-     * Notifications can only be enabled on a group with InsightsEnabled set to
-     * true.</p>
-     */
     inline InsightsConfiguration& WithNotificationsEnabled(bool value) { SetNotificationsEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_insightsEnabled;

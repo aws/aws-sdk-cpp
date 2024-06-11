@@ -36,75 +36,31 @@ namespace Model
      */
     AWS_NEPTUNEGRAPH_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>ID of the graph to reset.</p>
      */
     inline const Aws::String& GetGraphIdentifier() const{ return m_graphIdentifier; }
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline bool GraphIdentifierHasBeenSet() const { return m_graphIdentifierHasBeenSet; }
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline void SetGraphIdentifier(const Aws::String& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = value; }
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline void SetGraphIdentifier(Aws::String&& value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier = std::move(value); }
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline void SetGraphIdentifier(const char* value) { m_graphIdentifierHasBeenSet = true; m_graphIdentifier.assign(value); }
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline ResetGraphRequest& WithGraphIdentifier(const Aws::String& value) { SetGraphIdentifier(value); return *this;}
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline ResetGraphRequest& WithGraphIdentifier(Aws::String&& value) { SetGraphIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the graph to reset.</p>
-     */
     inline ResetGraphRequest& WithGraphIdentifier(const char* value) { SetGraphIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether a final graph snapshot is created before the graph data is
      * deleted. If set to <code>true</code>, no graph snapshot is created. If set to
      * <code>false</code>, a graph snapshot is created before the data is deleted.</p>
      */
     inline bool GetSkipSnapshot() const{ return m_skipSnapshot; }
-
-    /**
-     * <p>Determines whether a final graph snapshot is created before the graph data is
-     * deleted. If set to <code>true</code>, no graph snapshot is created. If set to
-     * <code>false</code>, a graph snapshot is created before the data is deleted.</p>
-     */
     inline bool SkipSnapshotHasBeenSet() const { return m_skipSnapshotHasBeenSet; }
-
-    /**
-     * <p>Determines whether a final graph snapshot is created before the graph data is
-     * deleted. If set to <code>true</code>, no graph snapshot is created. If set to
-     * <code>false</code>, a graph snapshot is created before the data is deleted.</p>
-     */
     inline void SetSkipSnapshot(bool value) { m_skipSnapshotHasBeenSet = true; m_skipSnapshot = value; }
-
-    /**
-     * <p>Determines whether a final graph snapshot is created before the graph data is
-     * deleted. If set to <code>true</code>, no graph snapshot is created. If set to
-     * <code>false</code>, a graph snapshot is created before the data is deleted.</p>
-     */
     inline ResetGraphRequest& WithSkipSnapshot(bool value) { SetSkipSnapshot(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_graphIdentifier;

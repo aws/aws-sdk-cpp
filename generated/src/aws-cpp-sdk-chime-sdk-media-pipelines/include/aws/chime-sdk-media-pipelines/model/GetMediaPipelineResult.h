@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API GetMediaPipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The media pipeline object.</p>
      */
     inline const MediaPipeline& GetMediaPipeline() const{ return m_mediaPipeline; }
-
-    /**
-     * <p>The media pipeline object.</p>
-     */
     inline void SetMediaPipeline(const MediaPipeline& value) { m_mediaPipeline = value; }
-
-    /**
-     * <p>The media pipeline object.</p>
-     */
     inline void SetMediaPipeline(MediaPipeline&& value) { m_mediaPipeline = std::move(value); }
-
-    /**
-     * <p>The media pipeline object.</p>
-     */
     inline GetMediaPipelineResult& WithMediaPipeline(const MediaPipeline& value) { SetMediaPipeline(value); return *this;}
-
-    /**
-     * <p>The media pipeline object.</p>
-     */
     inline GetMediaPipelineResult& WithMediaPipeline(MediaPipeline&& value) { SetMediaPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMediaPipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMediaPipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMediaPipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MediaPipeline m_mediaPipeline;

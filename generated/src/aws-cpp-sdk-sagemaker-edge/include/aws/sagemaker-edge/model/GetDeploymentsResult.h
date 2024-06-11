@@ -34,70 +34,30 @@ namespace Model
     AWS_SAGEMAKEREDGEMANAGER_API GetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns a list of the configurations of the active deployments on the
      * device.</p>
      */
     inline const Aws::Vector<EdgeDeployment>& GetDeployments() const{ return m_deployments; }
-
-    /**
-     * <p>Returns a list of the configurations of the active deployments on the
-     * device.</p>
-     */
     inline void SetDeployments(const Aws::Vector<EdgeDeployment>& value) { m_deployments = value; }
-
-    /**
-     * <p>Returns a list of the configurations of the active deployments on the
-     * device.</p>
-     */
     inline void SetDeployments(Aws::Vector<EdgeDeployment>&& value) { m_deployments = std::move(value); }
-
-    /**
-     * <p>Returns a list of the configurations of the active deployments on the
-     * device.</p>
-     */
     inline GetDeploymentsResult& WithDeployments(const Aws::Vector<EdgeDeployment>& value) { SetDeployments(value); return *this;}
-
-    /**
-     * <p>Returns a list of the configurations of the active deployments on the
-     * device.</p>
-     */
     inline GetDeploymentsResult& WithDeployments(Aws::Vector<EdgeDeployment>&& value) { SetDeployments(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns a list of the configurations of the active deployments on the
-     * device.</p>
-     */
     inline GetDeploymentsResult& AddDeployments(const EdgeDeployment& value) { m_deployments.push_back(value); return *this; }
-
-    /**
-     * <p>Returns a list of the configurations of the active deployments on the
-     * device.</p>
-     */
     inline GetDeploymentsResult& AddDeployments(EdgeDeployment&& value) { m_deployments.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EdgeDeployment> m_deployments;

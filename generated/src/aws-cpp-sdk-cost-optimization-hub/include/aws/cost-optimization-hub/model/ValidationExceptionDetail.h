@@ -38,87 +38,33 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field name where the invalid entry was detected.</p>
      */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline ValidationExceptionDetail& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline ValidationExceptionDetail& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-
-    /**
-     * <p>The field name where the invalid entry was detected.</p>
-     */
     inline ValidationExceptionDetail& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message with the reason for the validation exception error.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline ValidationExceptionDetail& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline ValidationExceptionDetail& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A message with the reason for the validation exception error.</p>
-     */
     inline ValidationExceptionDetail& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldName;

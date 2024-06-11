@@ -38,36 +38,17 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IP version to use to control traffic within the mesh.</p>
      */
     inline const IpPreference& GetIpPreference() const{ return m_ipPreference; }
-
-    /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
-     */
     inline bool IpPreferenceHasBeenSet() const { return m_ipPreferenceHasBeenSet; }
-
-    /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
-     */
     inline void SetIpPreference(const IpPreference& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = value; }
-
-    /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
-     */
     inline void SetIpPreference(IpPreference&& value) { m_ipPreferenceHasBeenSet = true; m_ipPreference = std::move(value); }
-
-    /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
-     */
     inline MeshServiceDiscovery& WithIpPreference(const IpPreference& value) { SetIpPreference(value); return *this;}
-
-    /**
-     * <p>The IP version to use to control traffic within the mesh.</p>
-     */
     inline MeshServiceDiscovery& WithIpPreference(IpPreference&& value) { SetIpPreference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpPreference m_ipPreference;

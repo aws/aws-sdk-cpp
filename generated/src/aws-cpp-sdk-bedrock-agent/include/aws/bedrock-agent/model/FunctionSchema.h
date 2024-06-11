@@ -50,46 +50,19 @@ namespace Model
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of functions that each define an action in the action group.</p>
      */
     inline const Aws::Vector<Function>& GetFunctions() const{ return m_functions; }
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline void SetFunctions(const Aws::Vector<Function>& value) { m_functionsHasBeenSet = true; m_functions = value; }
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline void SetFunctions(Aws::Vector<Function>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline FunctionSchema& WithFunctions(const Aws::Vector<Function>& value) { SetFunctions(value); return *this;}
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline FunctionSchema& WithFunctions(Aws::Vector<Function>&& value) { SetFunctions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline FunctionSchema& AddFunctions(const Function& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of functions that each define an action in the action group.</p>
-     */
     inline FunctionSchema& AddFunctions(Function&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Function> m_functions;

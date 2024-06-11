@@ -32,63 +32,29 @@ namespace Model
     AWS_SAVINGSPLANS_API CreateSavingsPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the Savings Plan.</p>
      */
     inline const Aws::String& GetSavingsPlanId() const{ return m_savingsPlanId; }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline void SetSavingsPlanId(const Aws::String& value) { m_savingsPlanId = value; }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline void SetSavingsPlanId(Aws::String&& value) { m_savingsPlanId = std::move(value); }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline void SetSavingsPlanId(const char* value) { m_savingsPlanId.assign(value); }
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline CreateSavingsPlanResult& WithSavingsPlanId(const Aws::String& value) { SetSavingsPlanId(value); return *this;}
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline CreateSavingsPlanResult& WithSavingsPlanId(Aws::String&& value) { SetSavingsPlanId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Savings Plan.</p>
-     */
     inline CreateSavingsPlanResult& WithSavingsPlanId(const char* value) { SetSavingsPlanId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSavingsPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSavingsPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSavingsPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_savingsPlanId;

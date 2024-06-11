@@ -39,81 +39,31 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of parameter values sent to targets that resolved during the
      * Automation execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetParameterValues() const{ return m_parameterValues; }
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline bool ParameterValuesHasBeenSet() const { return m_parameterValuesHasBeenSet; }
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline void SetParameterValues(const Aws::Vector<Aws::String>& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = value; }
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline void SetParameterValues(Aws::Vector<Aws::String>&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues = std::move(value); }
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline ResolvedTargets& WithParameterValues(const Aws::Vector<Aws::String>& value) { SetParameterValues(value); return *this;}
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline ResolvedTargets& WithParameterValues(Aws::Vector<Aws::String>&& value) { SetParameterValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline ResolvedTargets& AddParameterValues(const Aws::String& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline ResolvedTargets& AddParameterValues(Aws::String&& value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of parameter values sent to targets that resolved during the
-     * Automation execution.</p>
-     */
     inline ResolvedTargets& AddParameterValues(const char* value) { m_parameterValuesHasBeenSet = true; m_parameterValues.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A boolean value indicating whether the resolved target list is truncated.</p>
      */
     inline bool GetTruncated() const{ return m_truncated; }
-
-    /**
-     * <p>A boolean value indicating whether the resolved target list is truncated.</p>
-     */
     inline bool TruncatedHasBeenSet() const { return m_truncatedHasBeenSet; }
-
-    /**
-     * <p>A boolean value indicating whether the resolved target list is truncated.</p>
-     */
     inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
-
-    /**
-     * <p>A boolean value indicating whether the resolved target list is truncated.</p>
-     */
     inline ResolvedTargets& WithTruncated(bool value) { SetTruncated(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_parameterValues;

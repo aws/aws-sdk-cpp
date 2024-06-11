@@ -33,53 +33,27 @@ namespace Model
     AWS_PRIVATENETWORKS_API StartNetworkResourceUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The network resource.</p>
      */
     inline const NetworkResource& GetNetworkResource() const{ return m_networkResource; }
-
-    /**
-     * <p>The network resource.</p>
-     */
     inline void SetNetworkResource(const NetworkResource& value) { m_networkResource = value; }
-
-    /**
-     * <p>The network resource.</p>
-     */
     inline void SetNetworkResource(NetworkResource&& value) { m_networkResource = std::move(value); }
-
-    /**
-     * <p>The network resource.</p>
-     */
     inline StartNetworkResourceUpdateResult& WithNetworkResource(const NetworkResource& value) { SetNetworkResource(value); return *this;}
-
-    /**
-     * <p>The network resource.</p>
-     */
     inline StartNetworkResourceUpdateResult& WithNetworkResource(NetworkResource&& value) { SetNetworkResource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartNetworkResourceUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartNetworkResourceUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartNetworkResourceUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     NetworkResource m_networkResource;

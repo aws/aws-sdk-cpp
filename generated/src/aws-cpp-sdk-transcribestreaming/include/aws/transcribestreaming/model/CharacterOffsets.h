@@ -37,63 +37,29 @@ namespace Model
     AWS_TRANSCRIBESTREAMINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides the character count of the first character where a match is
      * identified. For example, the first character associated with an issue or a
      * category match in a segment transcript.</p>
      */
     inline int GetBegin() const{ return m_begin; }
-
-    /**
-     * <p>Provides the character count of the first character where a match is
-     * identified. For example, the first character associated with an issue or a
-     * category match in a segment transcript.</p>
-     */
     inline bool BeginHasBeenSet() const { return m_beginHasBeenSet; }
-
-    /**
-     * <p>Provides the character count of the first character where a match is
-     * identified. For example, the first character associated with an issue or a
-     * category match in a segment transcript.</p>
-     */
     inline void SetBegin(int value) { m_beginHasBeenSet = true; m_begin = value; }
-
-    /**
-     * <p>Provides the character count of the first character where a match is
-     * identified. For example, the first character associated with an issue or a
-     * category match in a segment transcript.</p>
-     */
     inline CharacterOffsets& WithBegin(int value) { SetBegin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Provides the character count of the last character where a match is
      * identified. For example, the last character associated with an issue or a
      * category match in a segment transcript.</p>
      */
     inline int GetEnd() const{ return m_end; }
-
-    /**
-     * <p>Provides the character count of the last character where a match is
-     * identified. For example, the last character associated with an issue or a
-     * category match in a segment transcript.</p>
-     */
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
-
-    /**
-     * <p>Provides the character count of the last character where a match is
-     * identified. For example, the last character associated with an issue or a
-     * category match in a segment transcript.</p>
-     */
     inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
-
-    /**
-     * <p>Provides the character count of the last character where a match is
-     * identified. For example, the last character associated with an issue or a
-     * category match in a segment transcript.</p>
-     */
     inline CharacterOffsets& WithEnd(int value) { SetEnd(value); return *this;}
-
+    ///@}
   private:
 
     int m_begin;

@@ -34,113 +34,44 @@ namespace Model
     AWS_SAGEMAKER_API ListAlgorithmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
      * algorithm.</p>
      */
     inline const Aws::Vector<AlgorithmSummary>& GetAlgorithmSummaryList() const{ return m_algorithmSummaryList; }
-
-    /**
-     * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
-     * algorithm.</p>
-     */
     inline void SetAlgorithmSummaryList(const Aws::Vector<AlgorithmSummary>& value) { m_algorithmSummaryList = value; }
-
-    /**
-     * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
-     * algorithm.</p>
-     */
     inline void SetAlgorithmSummaryList(Aws::Vector<AlgorithmSummary>&& value) { m_algorithmSummaryList = std::move(value); }
-
-    /**
-     * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
-     * algorithm.</p>
-     */
     inline ListAlgorithmsResult& WithAlgorithmSummaryList(const Aws::Vector<AlgorithmSummary>& value) { SetAlgorithmSummaryList(value); return *this;}
-
-    /**
-     * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
-     * algorithm.</p>
-     */
     inline ListAlgorithmsResult& WithAlgorithmSummaryList(Aws::Vector<AlgorithmSummary>&& value) { SetAlgorithmSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
-     * algorithm.</p>
-     */
     inline ListAlgorithmsResult& AddAlgorithmSummaryList(const AlgorithmSummary& value) { m_algorithmSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>&gt;An array of <code>AlgorithmSummary</code> objects, each of which lists an
-     * algorithm.</p>
-     */
     inline ListAlgorithmsResult& AddAlgorithmSummaryList(AlgorithmSummary&& value) { m_algorithmSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response is truncated, SageMaker returns this token. To retrieve the
      * next set of algorithms, use it in the subsequent request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of algorithms, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of algorithms, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of algorithms, use it in the subsequent request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of algorithms, use it in the subsequent request.</p>
-     */
     inline ListAlgorithmsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of algorithms, use it in the subsequent request.</p>
-     */
     inline ListAlgorithmsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, SageMaker returns this token. To retrieve the
-     * next set of algorithms, use it in the subsequent request.</p>
-     */
     inline ListAlgorithmsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAlgorithmsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAlgorithmsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAlgorithmsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AlgorithmSummary> m_algorithmSummaryList;

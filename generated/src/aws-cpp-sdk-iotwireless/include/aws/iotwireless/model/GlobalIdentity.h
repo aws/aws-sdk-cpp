@@ -35,47 +35,25 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Location area code of the global identity.</p>
      */
     inline int GetLac() const{ return m_lac; }
-
-    /**
-     * <p>Location area code of the global identity.</p>
-     */
     inline bool LacHasBeenSet() const { return m_lacHasBeenSet; }
-
-    /**
-     * <p>Location area code of the global identity.</p>
-     */
     inline void SetLac(int value) { m_lacHasBeenSet = true; m_lac = value; }
-
-    /**
-     * <p>Location area code of the global identity.</p>
-     */
     inline GlobalIdentity& WithLac(int value) { SetLac(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
      */
     inline int GetGeranCid() const{ return m_geranCid; }
-
-    /**
-     * <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-     */
     inline bool GeranCidHasBeenSet() const { return m_geranCidHasBeenSet; }
-
-    /**
-     * <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-     */
     inline void SetGeranCid(int value) { m_geranCidHasBeenSet = true; m_geranCid = value; }
-
-    /**
-     * <p>GERAN (GSM EDGE Radio Access Network) cell global identifier.</p>
-     */
     inline GlobalIdentity& WithGeranCid(int value) { SetGeranCid(value); return *this;}
-
+    ///@}
   private:
 
     int m_lac;

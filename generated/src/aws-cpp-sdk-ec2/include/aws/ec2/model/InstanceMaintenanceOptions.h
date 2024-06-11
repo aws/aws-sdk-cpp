@@ -39,42 +39,18 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Provides information on the current automatic recovery behavior of your
      * instance.</p>
      */
     inline const InstanceAutoRecoveryState& GetAutoRecovery() const{ return m_autoRecovery; }
-
-    /**
-     * <p>Provides information on the current automatic recovery behavior of your
-     * instance.</p>
-     */
     inline bool AutoRecoveryHasBeenSet() const { return m_autoRecoveryHasBeenSet; }
-
-    /**
-     * <p>Provides information on the current automatic recovery behavior of your
-     * instance.</p>
-     */
     inline void SetAutoRecovery(const InstanceAutoRecoveryState& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = value; }
-
-    /**
-     * <p>Provides information on the current automatic recovery behavior of your
-     * instance.</p>
-     */
     inline void SetAutoRecovery(InstanceAutoRecoveryState&& value) { m_autoRecoveryHasBeenSet = true; m_autoRecovery = std::move(value); }
-
-    /**
-     * <p>Provides information on the current automatic recovery behavior of your
-     * instance.</p>
-     */
     inline InstanceMaintenanceOptions& WithAutoRecovery(const InstanceAutoRecoveryState& value) { SetAutoRecovery(value); return *this;}
-
-    /**
-     * <p>Provides information on the current automatic recovery behavior of your
-     * instance.</p>
-     */
     inline InstanceMaintenanceOptions& WithAutoRecovery(InstanceAutoRecoveryState&& value) { SetAutoRecovery(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceAutoRecoveryState m_autoRecovery;

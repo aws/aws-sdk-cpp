@@ -41,144 +41,49 @@ namespace Model
     AWS_MOBILE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> Name of the project. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline CreateProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline CreateProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> Name of the project. </p>
-     */
     inline CreateProjectRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Default region where project resources should be created. </p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline CreateProjectRequest& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline CreateProjectRequest& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-
-    /**
-     * <p> Default region where project resources should be created. </p>
-     */
     inline CreateProjectRequest& WithRegion(const char* value) { SetRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Unique identifier for an exported snapshot of project configuration. This
      * snapshot identifier is included in the share URL when a project is exported.
      * </p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline CreateProjectRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline CreateProjectRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-
-    /**
-     * <p> Unique identifier for an exported snapshot of project configuration. This
-     * snapshot identifier is included in the share URL when a project is exported.
-     * </p>
-     */
     inline CreateProjectRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

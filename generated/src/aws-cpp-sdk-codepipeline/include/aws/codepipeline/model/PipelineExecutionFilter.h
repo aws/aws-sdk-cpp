@@ -37,42 +37,18 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filter for pipeline executions where the stage was successful in the current
      * pipeline version.</p>
      */
     inline const SucceededInStageFilter& GetSucceededInStage() const{ return m_succeededInStage; }
-
-    /**
-     * <p>Filter for pipeline executions where the stage was successful in the current
-     * pipeline version.</p>
-     */
     inline bool SucceededInStageHasBeenSet() const { return m_succeededInStageHasBeenSet; }
-
-    /**
-     * <p>Filter for pipeline executions where the stage was successful in the current
-     * pipeline version.</p>
-     */
     inline void SetSucceededInStage(const SucceededInStageFilter& value) { m_succeededInStageHasBeenSet = true; m_succeededInStage = value; }
-
-    /**
-     * <p>Filter for pipeline executions where the stage was successful in the current
-     * pipeline version.</p>
-     */
     inline void SetSucceededInStage(SucceededInStageFilter&& value) { m_succeededInStageHasBeenSet = true; m_succeededInStage = std::move(value); }
-
-    /**
-     * <p>Filter for pipeline executions where the stage was successful in the current
-     * pipeline version.</p>
-     */
     inline PipelineExecutionFilter& WithSucceededInStage(const SucceededInStageFilter& value) { SetSucceededInStage(value); return *this;}
-
-    /**
-     * <p>Filter for pipeline executions where the stage was successful in the current
-     * pipeline version.</p>
-     */
     inline PipelineExecutionFilter& WithSucceededInStage(SucceededInStageFilter&& value) { SetSucceededInStage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SucceededInStageFilter m_succeededInStage;

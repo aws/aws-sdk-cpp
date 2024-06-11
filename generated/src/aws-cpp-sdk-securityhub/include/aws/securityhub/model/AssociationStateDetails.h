@@ -38,87 +38,33 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The state of the association. </p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline AssociationStateDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline AssociationStateDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-
-    /**
-     * <p> The state of the association. </p>
-     */
     inline AssociationStateDetails& WithState(const char* value) { SetState(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The status message, if applicable. </p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline AssociationStateDetails& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline AssociationStateDetails& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p> The status message, if applicable. </p>
-     */
     inline AssociationStateDetails& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_state;

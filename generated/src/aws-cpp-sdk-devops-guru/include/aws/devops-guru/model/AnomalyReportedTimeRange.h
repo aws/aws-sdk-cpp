@@ -40,67 +40,29 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The time when an anomaly is opened. </p>
      */
     inline const Aws::Utils::DateTime& GetOpenTime() const{ return m_openTime; }
-
-    /**
-     * <p> The time when an anomaly is opened. </p>
-     */
     inline bool OpenTimeHasBeenSet() const { return m_openTimeHasBeenSet; }
-
-    /**
-     * <p> The time when an anomaly is opened. </p>
-     */
     inline void SetOpenTime(const Aws::Utils::DateTime& value) { m_openTimeHasBeenSet = true; m_openTime = value; }
-
-    /**
-     * <p> The time when an anomaly is opened. </p>
-     */
     inline void SetOpenTime(Aws::Utils::DateTime&& value) { m_openTimeHasBeenSet = true; m_openTime = std::move(value); }
-
-    /**
-     * <p> The time when an anomaly is opened. </p>
-     */
     inline AnomalyReportedTimeRange& WithOpenTime(const Aws::Utils::DateTime& value) { SetOpenTime(value); return *this;}
-
-    /**
-     * <p> The time when an anomaly is opened. </p>
-     */
     inline AnomalyReportedTimeRange& WithOpenTime(Aws::Utils::DateTime&& value) { SetOpenTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The time when an anomaly is closed. </p>
      */
     inline const Aws::Utils::DateTime& GetCloseTime() const{ return m_closeTime; }
-
-    /**
-     * <p> The time when an anomaly is closed. </p>
-     */
     inline bool CloseTimeHasBeenSet() const { return m_closeTimeHasBeenSet; }
-
-    /**
-     * <p> The time when an anomaly is closed. </p>
-     */
     inline void SetCloseTime(const Aws::Utils::DateTime& value) { m_closeTimeHasBeenSet = true; m_closeTime = value; }
-
-    /**
-     * <p> The time when an anomaly is closed. </p>
-     */
     inline void SetCloseTime(Aws::Utils::DateTime&& value) { m_closeTimeHasBeenSet = true; m_closeTime = std::move(value); }
-
-    /**
-     * <p> The time when an anomaly is closed. </p>
-     */
     inline AnomalyReportedTimeRange& WithCloseTime(const Aws::Utils::DateTime& value) { SetCloseTime(value); return *this;}
-
-    /**
-     * <p> The time when an anomaly is closed. </p>
-     */
     inline AnomalyReportedTimeRange& WithCloseTime(Aws::Utils::DateTime&& value) { SetCloseTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_openTime;

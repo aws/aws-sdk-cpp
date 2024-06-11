@@ -37,63 +37,23 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
      * generate information about when the resource was last used in an attempt to
      * access an Amazon Web Services service.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline GenerateServiceLastAccessedDetailsRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline GenerateServiceLastAccessedDetailsRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM resource (user, group, role, or managed policy) used to
-     * generate information about when the resource was last used in an attempt to
-     * access an Amazon Web Services service.</p>
-     */
     inline GenerateServiceLastAccessedDetailsRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of detail that you want to generate. You can specify whether you
      * want to generate information about the last attempt to access services or
@@ -103,57 +63,12 @@ namespace Model
      * generates service data.</p>
      */
     inline const AccessAdvisorUsageGranularityType& GetGranularity() const{ return m_granularity; }
-
-    /**
-     * <p>The level of detail that you want to generate. You can specify whether you
-     * want to generate information about the last attempt to access services or
-     * actions. If you specify service-level granularity, this operation generates only
-     * service data. If you specify action-level granularity, it generates service and
-     * action data. If you don't include this optional parameter, the operation
-     * generates service data.</p>
-     */
     inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
-
-    /**
-     * <p>The level of detail that you want to generate. You can specify whether you
-     * want to generate information about the last attempt to access services or
-     * actions. If you specify service-level granularity, this operation generates only
-     * service data. If you specify action-level granularity, it generates service and
-     * action data. If you don't include this optional parameter, the operation
-     * generates service data.</p>
-     */
     inline void SetGranularity(const AccessAdvisorUsageGranularityType& value) { m_granularityHasBeenSet = true; m_granularity = value; }
-
-    /**
-     * <p>The level of detail that you want to generate. You can specify whether you
-     * want to generate information about the last attempt to access services or
-     * actions. If you specify service-level granularity, this operation generates only
-     * service data. If you specify action-level granularity, it generates service and
-     * action data. If you don't include this optional parameter, the operation
-     * generates service data.</p>
-     */
     inline void SetGranularity(AccessAdvisorUsageGranularityType&& value) { m_granularityHasBeenSet = true; m_granularity = std::move(value); }
-
-    /**
-     * <p>The level of detail that you want to generate. You can specify whether you
-     * want to generate information about the last attempt to access services or
-     * actions. If you specify service-level granularity, this operation generates only
-     * service data. If you specify action-level granularity, it generates service and
-     * action data. If you don't include this optional parameter, the operation
-     * generates service data.</p>
-     */
     inline GenerateServiceLastAccessedDetailsRequest& WithGranularity(const AccessAdvisorUsageGranularityType& value) { SetGranularity(value); return *this;}
-
-    /**
-     * <p>The level of detail that you want to generate. You can specify whether you
-     * want to generate information about the last attempt to access services or
-     * actions. If you specify service-level granularity, this operation generates only
-     * service data. If you specify action-level granularity, it generates service and
-     * action data. If you don't include this optional parameter, the operation
-     * generates service data.</p>
-     */
     inline GenerateServiceLastAccessedDetailsRequest& WithGranularity(AccessAdvisorUsageGranularityType&& value) { SetGranularity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

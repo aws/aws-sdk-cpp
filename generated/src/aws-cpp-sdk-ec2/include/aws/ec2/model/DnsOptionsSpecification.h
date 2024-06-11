@@ -39,37 +39,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The DNS records created for the endpoint.</p>
      */
     inline const DnsRecordIpType& GetDnsRecordIpType() const{ return m_dnsRecordIpType; }
-
-    /**
-     * <p>The DNS records created for the endpoint.</p>
-     */
     inline bool DnsRecordIpTypeHasBeenSet() const { return m_dnsRecordIpTypeHasBeenSet; }
-
-    /**
-     * <p>The DNS records created for the endpoint.</p>
-     */
     inline void SetDnsRecordIpType(const DnsRecordIpType& value) { m_dnsRecordIpTypeHasBeenSet = true; m_dnsRecordIpType = value; }
-
-    /**
-     * <p>The DNS records created for the endpoint.</p>
-     */
     inline void SetDnsRecordIpType(DnsRecordIpType&& value) { m_dnsRecordIpTypeHasBeenSet = true; m_dnsRecordIpType = std::move(value); }
-
-    /**
-     * <p>The DNS records created for the endpoint.</p>
-     */
     inline DnsOptionsSpecification& WithDnsRecordIpType(const DnsRecordIpType& value) { SetDnsRecordIpType(value); return *this;}
-
-    /**
-     * <p>The DNS records created for the endpoint.</p>
-     */
     inline DnsOptionsSpecification& WithDnsRecordIpType(DnsRecordIpType&& value) { SetDnsRecordIpType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to enable private DNS only for inbound endpoints. This
      * option is available only for services that support both gateway and interface
@@ -78,34 +60,10 @@ namespace Model
      * endpoint.</p>
      */
     inline bool GetPrivateDnsOnlyForInboundResolverEndpoint() const{ return m_privateDnsOnlyForInboundResolverEndpoint; }
-
-    /**
-     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
-     * option is available only for services that support both gateway and interface
-     * endpoints. It routes traffic that originates from the VPC to the gateway
-     * endpoint and traffic that originates from on-premises to the interface
-     * endpoint.</p>
-     */
     inline bool PrivateDnsOnlyForInboundResolverEndpointHasBeenSet() const { return m_privateDnsOnlyForInboundResolverEndpointHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
-     * option is available only for services that support both gateway and interface
-     * endpoints. It routes traffic that originates from the VPC to the gateway
-     * endpoint and traffic that originates from on-premises to the interface
-     * endpoint.</p>
-     */
     inline void SetPrivateDnsOnlyForInboundResolverEndpoint(bool value) { m_privateDnsOnlyForInboundResolverEndpointHasBeenSet = true; m_privateDnsOnlyForInboundResolverEndpoint = value; }
-
-    /**
-     * <p>Indicates whether to enable private DNS only for inbound endpoints. This
-     * option is available only for services that support both gateway and interface
-     * endpoints. It routes traffic that originates from the VPC to the gateway
-     * endpoint and traffic that originates from on-premises to the interface
-     * endpoint.</p>
-     */
     inline DnsOptionsSpecification& WithPrivateDnsOnlyForInboundResolverEndpoint(bool value) { SetPrivateDnsOnlyForInboundResolverEndpoint(value); return *this;}
-
+    ///@}
   private:
 
     DnsRecordIpType m_dnsRecordIpType;

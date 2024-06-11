@@ -40,87 +40,33 @@ namespace Model
     AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the application associated with the configuration.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline SourceConfiguration& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline SourceConfiguration& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application associated with the configuration.</p>
-     */
     inline SourceConfiguration& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the configuration template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline SourceConfiguration& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline SourceConfiguration& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration template.</p>
-     */
     inline SourceConfiguration& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

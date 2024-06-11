@@ -39,87 +39,33 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The CIDR block.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline PrefixListEntry& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline PrefixListEntry& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR block.</p>
-     */
     inline PrefixListEntry& WithCidr(const char* value) { SetCidr(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description.</p>
-     */
     inline PrefixListEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description.</p>
-     */
     inline PrefixListEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description.</p>
-     */
     inline PrefixListEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

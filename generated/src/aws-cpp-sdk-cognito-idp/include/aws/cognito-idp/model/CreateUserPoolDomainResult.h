@@ -32,6 +32,7 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
      * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
@@ -40,83 +41,24 @@ namespace Model
      * response.</p>
      */
     inline const Aws::String& GetCloudFrontDomain() const{ return m_cloudFrontDomain; }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
-     */
     inline void SetCloudFrontDomain(const Aws::String& value) { m_cloudFrontDomain = value; }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
-     */
     inline void SetCloudFrontDomain(Aws::String&& value) { m_cloudFrontDomain = std::move(value); }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
-     */
     inline void SetCloudFrontDomain(const char* value) { m_cloudFrontDomain.assign(value); }
-
-    /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
-     */
     inline CreateUserPoolDomainResult& WithCloudFrontDomain(const Aws::String& value) { SetCloudFrontDomain(value); return *this;}
-
-    /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
-     */
     inline CreateUserPoolDomainResult& WithCloudFrontDomain(Aws::String&& value) { SetCloudFrontDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon CloudFront endpoint that you use as the target of the alias that
-     * you set up with your Domain Name Service (DNS) provider. Amazon Cognito returns
-     * this value if you set a custom domain with <code>CustomDomainConfig</code>. If
-     * you set an Amazon Cognito prefix domain, this operation returns a blank
-     * response.</p>
-     */
     inline CreateUserPoolDomainResult& WithCloudFrontDomain(const char* value) { SetCloudFrontDomain(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateUserPoolDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateUserPoolDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateUserPoolDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cloudFrontDomain;

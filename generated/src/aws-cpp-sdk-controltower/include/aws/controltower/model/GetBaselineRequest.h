@@ -32,46 +32,19 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
      */
     inline const Aws::String& GetBaselineIdentifier() const{ return m_baselineIdentifier; }
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline bool BaselineIdentifierHasBeenSet() const { return m_baselineIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline void SetBaselineIdentifier(const Aws::String& value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier = value; }
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline void SetBaselineIdentifier(Aws::String&& value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier = std::move(value); }
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline void SetBaselineIdentifier(const char* value) { m_baselineIdentifierHasBeenSet = true; m_baselineIdentifier.assign(value); }
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline GetBaselineRequest& WithBaselineIdentifier(const Aws::String& value) { SetBaselineIdentifier(value); return *this;}
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline GetBaselineRequest& WithBaselineIdentifier(Aws::String&& value) { SetBaselineIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the <code>Baseline</code> resource to be retrieved.</p>
-     */
     inline GetBaselineRequest& WithBaselineIdentifier(const char* value) { SetBaselineIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_baselineIdentifier;

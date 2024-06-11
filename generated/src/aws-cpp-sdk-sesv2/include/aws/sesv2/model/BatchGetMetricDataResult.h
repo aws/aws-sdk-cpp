@@ -41,106 +41,43 @@ namespace Model
     AWS_SESV2_API BatchGetMetricDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
      */
     inline const Aws::Vector<MetricDataResult>& GetResults() const{ return m_results; }
-
-    /**
-     * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-     */
     inline void SetResults(const Aws::Vector<MetricDataResult>& value) { m_results = value; }
-
-    /**
-     * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-     */
     inline void SetResults(Aws::Vector<MetricDataResult>&& value) { m_results = std::move(value); }
-
-    /**
-     * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-     */
     inline BatchGetMetricDataResult& WithResults(const Aws::Vector<MetricDataResult>& value) { SetResults(value); return *this;}
-
-    /**
-     * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-     */
     inline BatchGetMetricDataResult& WithResults(Aws::Vector<MetricDataResult>&& value) { SetResults(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-     */
     inline BatchGetMetricDataResult& AddResults(const MetricDataResult& value) { m_results.push_back(value); return *this; }
-
-    /**
-     * <p>A list of successfully retrieved <code>MetricDataResult</code>.</p>
-     */
     inline BatchGetMetricDataResult& AddResults(MetricDataResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>MetricDataError</code> encountered while processing your
      * metric data batch request.</p>
      */
     inline const Aws::Vector<MetricDataError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>A list of <code>MetricDataError</code> encountered while processing your
-     * metric data batch request.</p>
-     */
     inline void SetErrors(const Aws::Vector<MetricDataError>& value) { m_errors = value; }
-
-    /**
-     * <p>A list of <code>MetricDataError</code> encountered while processing your
-     * metric data batch request.</p>
-     */
     inline void SetErrors(Aws::Vector<MetricDataError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>A list of <code>MetricDataError</code> encountered while processing your
-     * metric data batch request.</p>
-     */
     inline BatchGetMetricDataResult& WithErrors(const Aws::Vector<MetricDataError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>A list of <code>MetricDataError</code> encountered while processing your
-     * metric data batch request.</p>
-     */
     inline BatchGetMetricDataResult& WithErrors(Aws::Vector<MetricDataError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>MetricDataError</code> encountered while processing your
-     * metric data batch request.</p>
-     */
     inline BatchGetMetricDataResult& AddErrors(const MetricDataError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>MetricDataError</code> encountered while processing your
-     * metric data batch request.</p>
-     */
     inline BatchGetMetricDataResult& AddErrors(MetricDataError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetMetricDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetMetricDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetMetricDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<MetricDataResult> m_results;

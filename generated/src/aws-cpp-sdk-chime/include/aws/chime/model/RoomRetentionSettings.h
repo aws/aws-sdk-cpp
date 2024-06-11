@@ -36,26 +36,15 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of days for which to retain chat-room messages.</p>
      */
     inline int GetRetentionDays() const{ return m_retentionDays; }
-
-    /**
-     * <p>The number of days for which to retain chat-room messages.</p>
-     */
     inline bool RetentionDaysHasBeenSet() const { return m_retentionDaysHasBeenSet; }
-
-    /**
-     * <p>The number of days for which to retain chat-room messages.</p>
-     */
     inline void SetRetentionDays(int value) { m_retentionDaysHasBeenSet = true; m_retentionDays = value; }
-
-    /**
-     * <p>The number of days for which to retain chat-room messages.</p>
-     */
     inline RoomRetentionSettings& WithRetentionDays(int value) { SetRetentionDays(value); return *this;}
-
+    ///@}
   private:
 
     int m_retentionDays;

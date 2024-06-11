@@ -39,46 +39,19 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The rules that make up the rule group.</p>
      */
     inline const Aws::Vector<PatchRule>& GetPatchRules() const{ return m_patchRules; }
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline bool PatchRulesHasBeenSet() const { return m_patchRulesHasBeenSet; }
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline void SetPatchRules(const Aws::Vector<PatchRule>& value) { m_patchRulesHasBeenSet = true; m_patchRules = value; }
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline void SetPatchRules(Aws::Vector<PatchRule>&& value) { m_patchRulesHasBeenSet = true; m_patchRules = std::move(value); }
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline PatchRuleGroup& WithPatchRules(const Aws::Vector<PatchRule>& value) { SetPatchRules(value); return *this;}
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline PatchRuleGroup& WithPatchRules(Aws::Vector<PatchRule>&& value) { SetPatchRules(std::move(value)); return *this;}
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline PatchRuleGroup& AddPatchRules(const PatchRule& value) { m_patchRulesHasBeenSet = true; m_patchRules.push_back(value); return *this; }
-
-    /**
-     * <p>The rules that make up the rule group.</p>
-     */
     inline PatchRuleGroup& AddPatchRules(PatchRule&& value) { m_patchRulesHasBeenSet = true; m_patchRules.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PatchRule> m_patchRules;

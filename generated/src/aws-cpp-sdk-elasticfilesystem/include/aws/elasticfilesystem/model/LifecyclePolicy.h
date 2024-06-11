@@ -49,6 +49,7 @@ namespace Model
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of days after files were last accessed in primary storage (the
      * Standard storage class) at which to move them to Infrequent Access (IA) storage.
@@ -56,91 +57,28 @@ namespace Model
      * file access events.</p>
      */
     inline const TransitionToIARules& GetTransitionToIA() const{ return m_transitionToIA; }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) at which to move them to Infrequent Access (IA) storage.
-     * Metadata operations such as listing the contents of a directory don't count as
-     * file access events.</p>
-     */
     inline bool TransitionToIAHasBeenSet() const { return m_transitionToIAHasBeenSet; }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) at which to move them to Infrequent Access (IA) storage.
-     * Metadata operations such as listing the contents of a directory don't count as
-     * file access events.</p>
-     */
     inline void SetTransitionToIA(const TransitionToIARules& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = value; }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) at which to move them to Infrequent Access (IA) storage.
-     * Metadata operations such as listing the contents of a directory don't count as
-     * file access events.</p>
-     */
     inline void SetTransitionToIA(TransitionToIARules&& value) { m_transitionToIAHasBeenSet = true; m_transitionToIA = std::move(value); }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) at which to move them to Infrequent Access (IA) storage.
-     * Metadata operations such as listing the contents of a directory don't count as
-     * file access events.</p>
-     */
     inline LifecyclePolicy& WithTransitionToIA(const TransitionToIARules& value) { SetTransitionToIA(value); return *this;}
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) at which to move them to Infrequent Access (IA) storage.
-     * Metadata operations such as listing the contents of a directory don't count as
-     * file access events.</p>
-     */
     inline LifecyclePolicy& WithTransitionToIA(TransitionToIARules&& value) { SetTransitionToIA(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to move files back to primary (Standard) storage after they are
      * accessed in IA or Archive storage. Metadata operations such as listing the
      * contents of a directory don't count as file access events.</p>
      */
     inline const TransitionToPrimaryStorageClassRules& GetTransitionToPrimaryStorageClass() const{ return m_transitionToPrimaryStorageClass; }
-
-    /**
-     * <p>Whether to move files back to primary (Standard) storage after they are
-     * accessed in IA or Archive storage. Metadata operations such as listing the
-     * contents of a directory don't count as file access events.</p>
-     */
     inline bool TransitionToPrimaryStorageClassHasBeenSet() const { return m_transitionToPrimaryStorageClassHasBeenSet; }
-
-    /**
-     * <p>Whether to move files back to primary (Standard) storage after they are
-     * accessed in IA or Archive storage. Metadata operations such as listing the
-     * contents of a directory don't count as file access events.</p>
-     */
     inline void SetTransitionToPrimaryStorageClass(const TransitionToPrimaryStorageClassRules& value) { m_transitionToPrimaryStorageClassHasBeenSet = true; m_transitionToPrimaryStorageClass = value; }
-
-    /**
-     * <p>Whether to move files back to primary (Standard) storage after they are
-     * accessed in IA or Archive storage. Metadata operations such as listing the
-     * contents of a directory don't count as file access events.</p>
-     */
     inline void SetTransitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules&& value) { m_transitionToPrimaryStorageClassHasBeenSet = true; m_transitionToPrimaryStorageClass = std::move(value); }
-
-    /**
-     * <p>Whether to move files back to primary (Standard) storage after they are
-     * accessed in IA or Archive storage. Metadata operations such as listing the
-     * contents of a directory don't count as file access events.</p>
-     */
     inline LifecyclePolicy& WithTransitionToPrimaryStorageClass(const TransitionToPrimaryStorageClassRules& value) { SetTransitionToPrimaryStorageClass(value); return *this;}
-
-    /**
-     * <p>Whether to move files back to primary (Standard) storage after they are
-     * accessed in IA or Archive storage. Metadata operations such as listing the
-     * contents of a directory don't count as file access events.</p>
-     */
     inline LifecyclePolicy& WithTransitionToPrimaryStorageClass(TransitionToPrimaryStorageClassRules&& value) { SetTransitionToPrimaryStorageClass(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of days after files were last accessed in primary storage (the
      * Standard storage class) files at which to move them to Archive storage. Metadata
@@ -148,47 +86,12 @@ namespace Model
      * access events.</p>
      */
     inline const TransitionToArchiveRules& GetTransitionToArchive() const{ return m_transitionToArchive; }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) files at which to move them to Archive storage. Metadata
-     * operations such as listing the contents of a directory don't count as file
-     * access events.</p>
-     */
     inline bool TransitionToArchiveHasBeenSet() const { return m_transitionToArchiveHasBeenSet; }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) files at which to move them to Archive storage. Metadata
-     * operations such as listing the contents of a directory don't count as file
-     * access events.</p>
-     */
     inline void SetTransitionToArchive(const TransitionToArchiveRules& value) { m_transitionToArchiveHasBeenSet = true; m_transitionToArchive = value; }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) files at which to move them to Archive storage. Metadata
-     * operations such as listing the contents of a directory don't count as file
-     * access events.</p>
-     */
     inline void SetTransitionToArchive(TransitionToArchiveRules&& value) { m_transitionToArchiveHasBeenSet = true; m_transitionToArchive = std::move(value); }
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) files at which to move them to Archive storage. Metadata
-     * operations such as listing the contents of a directory don't count as file
-     * access events.</p>
-     */
     inline LifecyclePolicy& WithTransitionToArchive(const TransitionToArchiveRules& value) { SetTransitionToArchive(value); return *this;}
-
-    /**
-     * <p>The number of days after files were last accessed in primary storage (the
-     * Standard storage class) files at which to move them to Archive storage. Metadata
-     * operations such as listing the contents of a directory don't count as file
-     * access events.</p>
-     */
     inline LifecyclePolicy& WithTransitionToArchive(TransitionToArchiveRules&& value) { SetTransitionToArchive(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TransitionToIARules m_transitionToIA;

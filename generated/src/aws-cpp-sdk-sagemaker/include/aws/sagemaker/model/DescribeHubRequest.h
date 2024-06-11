@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the hub to describe.</p>
      */
     inline const Aws::String& GetHubName() const{ return m_hubName; }
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline bool HubNameHasBeenSet() const { return m_hubNameHasBeenSet; }
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline void SetHubName(const Aws::String& value) { m_hubNameHasBeenSet = true; m_hubName = value; }
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline void SetHubName(Aws::String&& value) { m_hubNameHasBeenSet = true; m_hubName = std::move(value); }
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline void SetHubName(const char* value) { m_hubNameHasBeenSet = true; m_hubName.assign(value); }
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline DescribeHubRequest& WithHubName(const Aws::String& value) { SetHubName(value); return *this;}
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline DescribeHubRequest& WithHubName(Aws::String&& value) { SetHubName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the hub to describe.</p>
-     */
     inline DescribeHubRequest& WithHubName(const char* value) { SetHubName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hubName;

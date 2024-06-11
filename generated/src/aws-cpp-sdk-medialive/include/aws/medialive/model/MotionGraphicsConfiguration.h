@@ -38,55 +38,27 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const MotionGraphicsInsertion& GetMotionGraphicsInsertion() const{ return m_motionGraphicsInsertion; }
-
-    
     inline bool MotionGraphicsInsertionHasBeenSet() const { return m_motionGraphicsInsertionHasBeenSet; }
-
-    
     inline void SetMotionGraphicsInsertion(const MotionGraphicsInsertion& value) { m_motionGraphicsInsertionHasBeenSet = true; m_motionGraphicsInsertion = value; }
-
-    
     inline void SetMotionGraphicsInsertion(MotionGraphicsInsertion&& value) { m_motionGraphicsInsertionHasBeenSet = true; m_motionGraphicsInsertion = std::move(value); }
-
-    
     inline MotionGraphicsConfiguration& WithMotionGraphicsInsertion(const MotionGraphicsInsertion& value) { SetMotionGraphicsInsertion(value); return *this;}
-
-    
     inline MotionGraphicsConfiguration& WithMotionGraphicsInsertion(MotionGraphicsInsertion&& value) { SetMotionGraphicsInsertion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Motion Graphics Settings
      */
     inline const MotionGraphicsSettings& GetMotionGraphicsSettings() const{ return m_motionGraphicsSettings; }
-
-    /**
-     * Motion Graphics Settings
-     */
     inline bool MotionGraphicsSettingsHasBeenSet() const { return m_motionGraphicsSettingsHasBeenSet; }
-
-    /**
-     * Motion Graphics Settings
-     */
     inline void SetMotionGraphicsSettings(const MotionGraphicsSettings& value) { m_motionGraphicsSettingsHasBeenSet = true; m_motionGraphicsSettings = value; }
-
-    /**
-     * Motion Graphics Settings
-     */
     inline void SetMotionGraphicsSettings(MotionGraphicsSettings&& value) { m_motionGraphicsSettingsHasBeenSet = true; m_motionGraphicsSettings = std::move(value); }
-
-    /**
-     * Motion Graphics Settings
-     */
     inline MotionGraphicsConfiguration& WithMotionGraphicsSettings(const MotionGraphicsSettings& value) { SetMotionGraphicsSettings(value); return *this;}
-
-    /**
-     * Motion Graphics Settings
-     */
     inline MotionGraphicsConfiguration& WithMotionGraphicsSettings(MotionGraphicsSettings&& value) { SetMotionGraphicsSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MotionGraphicsInsertion m_motionGraphicsInsertion;

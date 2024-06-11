@@ -39,115 +39,37 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of security group IDs that are associated with the VPC endpoints for
      * the domain.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of security group IDs that are associated with the VPC endpoints for
-     * the domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of subnet IDs that are associated with the VPC endpoints for the
      * domain.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of subnet IDs that are associated with the VPC endpoints for the
-     * domain.</p>
-     */
     inline AwsOpenSearchServiceDomainVpcOptionsDetails& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;

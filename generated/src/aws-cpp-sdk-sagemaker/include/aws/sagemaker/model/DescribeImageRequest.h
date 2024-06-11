@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the image to describe.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline void SetImageName(const Aws::String& value) { m_imageNameHasBeenSet = true; m_imageName = value; }
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline void SetImageName(Aws::String&& value) { m_imageNameHasBeenSet = true; m_imageName = std::move(value); }
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline void SetImageName(const char* value) { m_imageNameHasBeenSet = true; m_imageName.assign(value); }
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline DescribeImageRequest& WithImageName(const Aws::String& value) { SetImageName(value); return *this;}
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline DescribeImageRequest& WithImageName(Aws::String&& value) { SetImageName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the image to describe.</p>
-     */
     inline DescribeImageRequest& WithImageName(const char* value) { SetImageName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageName;

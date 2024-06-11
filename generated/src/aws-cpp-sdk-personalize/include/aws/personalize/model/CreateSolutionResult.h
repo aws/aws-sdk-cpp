@@ -32,63 +32,29 @@ namespace Model
     AWS_PERSONALIZE_API CreateSolutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the solution.</p>
      */
     inline const Aws::String& GetSolutionArn() const{ return m_solutionArn; }
-
-    /**
-     * <p>The ARN of the solution.</p>
-     */
     inline void SetSolutionArn(const Aws::String& value) { m_solutionArn = value; }
-
-    /**
-     * <p>The ARN of the solution.</p>
-     */
     inline void SetSolutionArn(Aws::String&& value) { m_solutionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the solution.</p>
-     */
     inline void SetSolutionArn(const char* value) { m_solutionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the solution.</p>
-     */
     inline CreateSolutionResult& WithSolutionArn(const Aws::String& value) { SetSolutionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the solution.</p>
-     */
     inline CreateSolutionResult& WithSolutionArn(Aws::String&& value) { SetSolutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the solution.</p>
-     */
     inline CreateSolutionResult& WithSolutionArn(const char* value) { SetSolutionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSolutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSolutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSolutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_solutionArn;

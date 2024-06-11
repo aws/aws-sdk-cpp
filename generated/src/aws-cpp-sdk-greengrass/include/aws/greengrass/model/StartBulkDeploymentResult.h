@@ -32,99 +32,42 @@ namespace Model
     AWS_GREENGRASS_API StartBulkDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The ARN of the bulk deployment.
      */
     inline const Aws::String& GetBulkDeploymentArn() const{ return m_bulkDeploymentArn; }
-
-    /**
-     * The ARN of the bulk deployment.
-     */
     inline void SetBulkDeploymentArn(const Aws::String& value) { m_bulkDeploymentArn = value; }
-
-    /**
-     * The ARN of the bulk deployment.
-     */
     inline void SetBulkDeploymentArn(Aws::String&& value) { m_bulkDeploymentArn = std::move(value); }
-
-    /**
-     * The ARN of the bulk deployment.
-     */
     inline void SetBulkDeploymentArn(const char* value) { m_bulkDeploymentArn.assign(value); }
-
-    /**
-     * The ARN of the bulk deployment.
-     */
     inline StartBulkDeploymentResult& WithBulkDeploymentArn(const Aws::String& value) { SetBulkDeploymentArn(value); return *this;}
-
-    /**
-     * The ARN of the bulk deployment.
-     */
     inline StartBulkDeploymentResult& WithBulkDeploymentArn(Aws::String&& value) { SetBulkDeploymentArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the bulk deployment.
-     */
     inline StartBulkDeploymentResult& WithBulkDeploymentArn(const char* value) { SetBulkDeploymentArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the bulk deployment.
      */
     inline const Aws::String& GetBulkDeploymentId() const{ return m_bulkDeploymentId; }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentId = value; }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline void SetBulkDeploymentId(Aws::String&& value) { m_bulkDeploymentId = std::move(value); }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline void SetBulkDeploymentId(const char* value) { m_bulkDeploymentId.assign(value); }
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline StartBulkDeploymentResult& WithBulkDeploymentId(const Aws::String& value) { SetBulkDeploymentId(value); return *this;}
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline StartBulkDeploymentResult& WithBulkDeploymentId(Aws::String&& value) { SetBulkDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the bulk deployment.
-     */
     inline StartBulkDeploymentResult& WithBulkDeploymentId(const char* value) { SetBulkDeploymentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartBulkDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartBulkDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartBulkDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bulkDeploymentArn;

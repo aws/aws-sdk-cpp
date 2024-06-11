@@ -32,113 +32,44 @@ namespace Model
     AWS_APPREGISTRY_API AssociateAttributeGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon resource name (ARN) of the application that was augmented with
      * attributes.</p>
      */
     inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
-     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArn = value; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
-     */
     inline void SetApplicationArn(Aws::String&& value) { m_applicationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
-     */
     inline void SetApplicationArn(const char* value) { m_applicationArn.assign(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
-     */
     inline AssociateAttributeGroupResult& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
-     */
     inline AssociateAttributeGroupResult& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the application that was augmented with
-     * attributes.</p>
-     */
     inline AssociateAttributeGroupResult& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon resource name (ARN) of the attribute group that contains the
      * application's new attributes.</p>
      */
     inline const Aws::String& GetAttributeGroupArn() const{ return m_attributeGroupArn; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
-     */
     inline void SetAttributeGroupArn(const Aws::String& value) { m_attributeGroupArn = value; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
-     */
     inline void SetAttributeGroupArn(Aws::String&& value) { m_attributeGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
-     */
     inline void SetAttributeGroupArn(const char* value) { m_attributeGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
-     */
     inline AssociateAttributeGroupResult& WithAttributeGroupArn(const Aws::String& value) { SetAttributeGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
-     */
     inline AssociateAttributeGroupResult& WithAttributeGroupArn(Aws::String&& value) { SetAttributeGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the attribute group that contains the
-     * application's new attributes.</p>
-     */
     inline AssociateAttributeGroupResult& WithAttributeGroupArn(const char* value) { SetAttributeGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateAttributeGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateAttributeGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateAttributeGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationArn;

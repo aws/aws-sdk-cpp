@@ -32,46 +32,19 @@ namespace Model
     AWS_MEDIACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the gateway that you want to describe.
      */
     inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline DescribeGatewayRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline DescribeGatewayRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the gateway that you want to describe.
-     */
     inline DescribeGatewayRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayArn;

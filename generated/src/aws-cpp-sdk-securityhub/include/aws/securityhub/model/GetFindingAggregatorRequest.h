@@ -32,54 +32,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
      * use <code>ListFindingAggregators</code>.</p>
      */
     inline const Aws::String& GetFindingAggregatorArn() const{ return m_findingAggregatorArn; }
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline bool FindingAggregatorArnHasBeenSet() const { return m_findingAggregatorArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline void SetFindingAggregatorArn(const Aws::String& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = value; }
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline void SetFindingAggregatorArn(Aws::String&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline void SetFindingAggregatorArn(const char* value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn.assign(value); }
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline GetFindingAggregatorRequest& WithFindingAggregatorArn(const Aws::String& value) { SetFindingAggregatorArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline GetFindingAggregatorRequest& WithFindingAggregatorArn(Aws::String&& value) { SetFindingAggregatorArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the finding aggregator to return details for. To obtain the ARN,
-     * use <code>ListFindingAggregators</code>.</p>
-     */
     inline GetFindingAggregatorRequest& WithFindingAggregatorArn(const char* value) { SetFindingAggregatorArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_findingAggregatorArn;

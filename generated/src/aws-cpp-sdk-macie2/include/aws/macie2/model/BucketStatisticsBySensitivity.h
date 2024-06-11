@@ -40,153 +40,57 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of -1.</p>
      */
     inline const SensitivityAggregations& GetClassificationError() const{ return m_classificationError; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of -1.</p>
-     */
     inline bool ClassificationErrorHasBeenSet() const { return m_classificationErrorHasBeenSet; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of -1.</p>
-     */
     inline void SetClassificationError(const SensitivityAggregations& value) { m_classificationErrorHasBeenSet = true; m_classificationError = value; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of -1.</p>
-     */
     inline void SetClassificationError(SensitivityAggregations&& value) { m_classificationErrorHasBeenSet = true; m_classificationError = std::move(value); }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of -1.</p>
-     */
     inline BucketStatisticsBySensitivity& WithClassificationError(const SensitivityAggregations& value) { SetClassificationError(value); return *this;}
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of -1.</p>
-     */
     inline BucketStatisticsBySensitivity& WithClassificationError(SensitivityAggregations&& value) { SetClassificationError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of 50.</p>
      */
     inline const SensitivityAggregations& GetNotClassified() const{ return m_notClassified; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 50.</p>
-     */
     inline bool NotClassifiedHasBeenSet() const { return m_notClassifiedHasBeenSet; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 50.</p>
-     */
     inline void SetNotClassified(const SensitivityAggregations& value) { m_notClassifiedHasBeenSet = true; m_notClassified = value; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 50.</p>
-     */
     inline void SetNotClassified(SensitivityAggregations&& value) { m_notClassifiedHasBeenSet = true; m_notClassified = std::move(value); }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 50.</p>
-     */
     inline BucketStatisticsBySensitivity& WithNotClassified(const SensitivityAggregations& value) { SetNotClassified(value); return *this;}
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 50.</p>
-     */
     inline BucketStatisticsBySensitivity& WithNotClassified(SensitivityAggregations&& value) { SetNotClassified(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of 1-49.</p>
      */
     inline const SensitivityAggregations& GetNotSensitive() const{ return m_notSensitive; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 1-49.</p>
-     */
     inline bool NotSensitiveHasBeenSet() const { return m_notSensitiveHasBeenSet; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 1-49.</p>
-     */
     inline void SetNotSensitive(const SensitivityAggregations& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = value; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 1-49.</p>
-     */
     inline void SetNotSensitive(SensitivityAggregations&& value) { m_notSensitiveHasBeenSet = true; m_notSensitive = std::move(value); }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 1-49.</p>
-     */
     inline BucketStatisticsBySensitivity& WithNotSensitive(const SensitivityAggregations& value) { SetNotSensitive(value); return *this;}
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 1-49.</p>
-     */
     inline BucketStatisticsBySensitivity& WithNotSensitive(SensitivityAggregations&& value) { SetNotSensitive(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The aggregated statistical data for all buckets that have a sensitivity score
      * of 51-100.</p>
      */
     inline const SensitivityAggregations& GetSensitive() const{ return m_sensitive; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 51-100.</p>
-     */
     inline bool SensitiveHasBeenSet() const { return m_sensitiveHasBeenSet; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 51-100.</p>
-     */
     inline void SetSensitive(const SensitivityAggregations& value) { m_sensitiveHasBeenSet = true; m_sensitive = value; }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 51-100.</p>
-     */
     inline void SetSensitive(SensitivityAggregations&& value) { m_sensitiveHasBeenSet = true; m_sensitive = std::move(value); }
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 51-100.</p>
-     */
     inline BucketStatisticsBySensitivity& WithSensitive(const SensitivityAggregations& value) { SetSensitive(value); return *this;}
-
-    /**
-     * <p>The aggregated statistical data for all buckets that have a sensitivity score
-     * of 51-100.</p>
-     */
     inline BucketStatisticsBySensitivity& WithSensitive(SensitivityAggregations&& value) { SetSensitive(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SensitivityAggregations m_classificationError;

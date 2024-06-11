@@ -40,63 +40,29 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API ListDataSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of data sources associated with specified domain.</p>
      */
     inline const Aws::Vector<DataSourceDetails>& GetDataSources() const{ return m_dataSources; }
-
-    /**
-     * <p>A list of data sources associated with specified domain.</p>
-     */
     inline void SetDataSources(const Aws::Vector<DataSourceDetails>& value) { m_dataSources = value; }
-
-    /**
-     * <p>A list of data sources associated with specified domain.</p>
-     */
     inline void SetDataSources(Aws::Vector<DataSourceDetails>&& value) { m_dataSources = std::move(value); }
-
-    /**
-     * <p>A list of data sources associated with specified domain.</p>
-     */
     inline ListDataSourcesResult& WithDataSources(const Aws::Vector<DataSourceDetails>& value) { SetDataSources(value); return *this;}
-
-    /**
-     * <p>A list of data sources associated with specified domain.</p>
-     */
     inline ListDataSourcesResult& WithDataSources(Aws::Vector<DataSourceDetails>&& value) { SetDataSources(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of data sources associated with specified domain.</p>
-     */
     inline ListDataSourcesResult& AddDataSources(const DataSourceDetails& value) { m_dataSources.push_back(value); return *this; }
-
-    /**
-     * <p>A list of data sources associated with specified domain.</p>
-     */
     inline ListDataSourcesResult& AddDataSources(DataSourceDetails&& value) { m_dataSources.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDataSourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDataSourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDataSourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DataSourceDetails> m_dataSources;

@@ -41,132 +41,47 @@ namespace Model
      */
     AWS_KINESIS_API EndpointParameters GetEndpointContextParams() const override;
 
+    ///@{
     /**
      * <p>The position in the shard from which you want to start sequentially reading
      * data records. A shard iterator specifies this position using the sequence number
      * of a data record in the shard.</p>
      */
     inline const Aws::String& GetShardIterator() const{ return m_shardIterator; }
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline bool ShardIteratorHasBeenSet() const { return m_shardIteratorHasBeenSet; }
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline void SetShardIterator(const Aws::String& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = value; }
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline void SetShardIterator(Aws::String&& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = std::move(value); }
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline void SetShardIterator(const char* value) { m_shardIteratorHasBeenSet = true; m_shardIterator.assign(value); }
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline GetRecordsRequest& WithShardIterator(const Aws::String& value) { SetShardIterator(value); return *this;}
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline GetRecordsRequest& WithShardIterator(Aws::String&& value) { SetShardIterator(std::move(value)); return *this;}
-
-    /**
-     * <p>The position in the shard from which you want to start sequentially reading
-     * data records. A shard iterator specifies this position using the sequence number
-     * of a data record in the shard.</p>
-     */
     inline GetRecordsRequest& WithShardIterator(const char* value) { SetShardIterator(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of records to return. Specify a value of up to 10,000. If
      * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
      * <code>InvalidArgumentException</code>. The default value is 10,000.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>The maximum number of records to return. Specify a value of up to 10,000. If
-     * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
-     * <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>The maximum number of records to return. Specify a value of up to 10,000. If
-     * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
-     * <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>The maximum number of records to return. Specify a value of up to 10,000. If
-     * you specify a value that is greater than 10,000, <a>GetRecords</a> throws
-     * <code>InvalidArgumentException</code>. The default value is 10,000.</p>
-     */
     inline GetRecordsRequest& WithLimit(int value) { SetLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline GetRecordsRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline GetRecordsRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the stream.</p>
-     */
     inline GetRecordsRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shardIterator;

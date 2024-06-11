@@ -37,54 +37,20 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A valid access token that Amazon Cognito issued to the user who you want to
      * sign out.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline GlobalSignOutRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline GlobalSignOutRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A valid access token that Amazon Cognito issued to the user who you want to
-     * sign out.</p>
-     */
     inline GlobalSignOutRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accessToken;

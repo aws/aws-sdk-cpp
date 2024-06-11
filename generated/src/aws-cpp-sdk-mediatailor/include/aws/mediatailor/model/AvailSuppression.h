@@ -42,6 +42,7 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the policy to apply to the avail suppression mode.
      * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
@@ -49,48 +50,14 @@ namespace Model
      * when a session starts mid-break.</p>
      */
     inline const FillPolicy& GetFillPolicy() const{ return m_fillPolicy; }
-
-    /**
-     * <p>Defines the policy to apply to the avail suppression mode.
-     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
-     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
-     * when a session starts mid-break.</p>
-     */
     inline bool FillPolicyHasBeenSet() const { return m_fillPolicyHasBeenSet; }
-
-    /**
-     * <p>Defines the policy to apply to the avail suppression mode.
-     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
-     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
-     * when a session starts mid-break.</p>
-     */
     inline void SetFillPolicy(const FillPolicy& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = value; }
-
-    /**
-     * <p>Defines the policy to apply to the avail suppression mode.
-     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
-     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
-     * when a session starts mid-break.</p>
-     */
     inline void SetFillPolicy(FillPolicy&& value) { m_fillPolicyHasBeenSet = true; m_fillPolicy = std::move(value); }
-
-    /**
-     * <p>Defines the policy to apply to the avail suppression mode.
-     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
-     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
-     * when a session starts mid-break.</p>
-     */
     inline AvailSuppression& WithFillPolicy(const FillPolicy& value) { SetFillPolicy(value); return *this;}
-
-    /**
-     * <p>Defines the policy to apply to the avail suppression mode.
-     * <code>BEHIND_LIVE_EDGE</code> will always use the full avail suppression policy.
-     * <code>AFTER_LIVE_EDGE</code> mode can be used to invoke partial ad break fills
-     * when a session starts mid-break.</p>
-     */
     inline AvailSuppression& WithFillPolicy(FillPolicy&& value) { SetFillPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
      * breaks are filled with ads or slate. When Mode is set to
@@ -101,63 +68,14 @@ namespace Model
      * live edge plus the avail suppression value.</p>
      */
     inline const Mode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to
-     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     * fill ad breaks on or behind the ad suppression Value time in the manifest
-     * lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>, ad
-     * suppression is active and MediaTailor won't fill ad breaks that are within the
-     * live edge plus the avail suppression value.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to
-     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     * fill ad breaks on or behind the ad suppression Value time in the manifest
-     * lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>, ad
-     * suppression is active and MediaTailor won't fill ad breaks that are within the
-     * live edge plus the avail suppression value.</p>
-     */
     inline void SetMode(const Mode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to
-     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     * fill ad breaks on or behind the ad suppression Value time in the manifest
-     * lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>, ad
-     * suppression is active and MediaTailor won't fill ad breaks that are within the
-     * live edge plus the avail suppression value.</p>
-     */
     inline void SetMode(Mode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to
-     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     * fill ad breaks on or behind the ad suppression Value time in the manifest
-     * lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>, ad
-     * suppression is active and MediaTailor won't fill ad breaks that are within the
-     * live edge plus the avail suppression value.</p>
-     */
     inline AvailSuppression& WithMode(const Mode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>Sets the ad suppression mode. By default, ad suppression is off and all ad
-     * breaks are filled with ads or slate. When Mode is set to
-     * <code>BEHIND_LIVE_EDGE</code>, ad suppression is active and MediaTailor won't
-     * fill ad breaks on or behind the ad suppression Value time in the manifest
-     * lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>, ad
-     * suppression is active and MediaTailor won't fill ad breaks that are within the
-     * live edge plus the avail suppression value.</p>
-     */
     inline AvailSuppression& WithMode(Mode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
      * behind this time in the manifest lookback window. If Value is set to 00:00:00,
@@ -169,91 +87,14 @@ namespace Model
      * behind the live edge.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline AvailSuppression& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline AvailSuppression& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A live edge offset time in HH:MM:SS. MediaTailor won't fill ad breaks on or
-     * behind this time in the manifest lookback window. If Value is set to 00:00:00,
-     * it is in sync with the live edge, and MediaTailor won't fill any ad breaks on or
-     * behind the live edge. If you set a Value time, MediaTailor won't fill any ad
-     * breaks on or behind this time in the manifest lookback window. For example, if
-     * you set 00:45:00, then MediaTailor will fill ad breaks that occur within 45
-     * minutes behind the live edge, but won't fill ad breaks on or behind 45 minutes
-     * behind the live edge.</p>
-     */
     inline AvailSuppression& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     FillPolicy m_fillPolicy;

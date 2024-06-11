@@ -38,51 +38,20 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Action IDs to filter template post migration custom actions by.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActionIDs() const{ return m_actionIDs; }
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline bool ActionIDsHasBeenSet() const { return m_actionIDsHasBeenSet; }
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline void SetActionIDs(const Aws::Vector<Aws::String>& value) { m_actionIDsHasBeenSet = true; m_actionIDs = value; }
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline void SetActionIDs(Aws::Vector<Aws::String>&& value) { m_actionIDsHasBeenSet = true; m_actionIDs = std::move(value); }
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline TemplateActionsRequestFilters& WithActionIDs(const Aws::Vector<Aws::String>& value) { SetActionIDs(value); return *this;}
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline TemplateActionsRequestFilters& WithActionIDs(Aws::Vector<Aws::String>&& value) { SetActionIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline TemplateActionsRequestFilters& AddActionIDs(const Aws::String& value) { m_actionIDsHasBeenSet = true; m_actionIDs.push_back(value); return *this; }
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline TemplateActionsRequestFilters& AddActionIDs(Aws::String&& value) { m_actionIDsHasBeenSet = true; m_actionIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Action IDs to filter template post migration custom actions by.</p>
-     */
     inline TemplateActionsRequestFilters& AddActionIDs(const char* value) { m_actionIDsHasBeenSet = true; m_actionIDs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_actionIDs;

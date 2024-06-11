@@ -38,46 +38,19 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about the validators.</p>
      */
     inline const Aws::Vector<Validator>& GetValidators() const{ return m_validators; }
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline bool ValidatorsHasBeenSet() const { return m_validatorsHasBeenSet; }
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline void SetValidators(const Aws::Vector<Validator>& value) { m_validatorsHasBeenSet = true; m_validators = value; }
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline void SetValidators(Aws::Vector<Validator>&& value) { m_validatorsHasBeenSet = true; m_validators = std::move(value); }
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline ValidationDataConfig& WithValidators(const Aws::Vector<Validator>& value) { SetValidators(value); return *this;}
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline ValidationDataConfig& WithValidators(Aws::Vector<Validator>&& value) { SetValidators(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline ValidationDataConfig& AddValidators(const Validator& value) { m_validatorsHasBeenSet = true; m_validators.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the validators.</p>
-     */
     inline ValidationDataConfig& AddValidators(Validator&& value) { m_validatorsHasBeenSet = true; m_validators.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Validator> m_validators;

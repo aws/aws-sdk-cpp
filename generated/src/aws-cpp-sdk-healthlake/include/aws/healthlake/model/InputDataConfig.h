@@ -37,54 +37,20 @@ namespace Model
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
      * into AWS HealthLake. </p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline InputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline InputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3Uri is the user specified S3 location of the FHIR data to be imported
-     * into AWS HealthLake. </p>
-     */
     inline InputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_s3Uri;

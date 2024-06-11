@@ -34,46 +34,19 @@ namespace Model
     AWS_CLOUDWATCHEVENTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the replay to retrieve.</p>
      */
     inline const Aws::String& GetReplayName() const{ return m_replayName; }
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline bool ReplayNameHasBeenSet() const { return m_replayNameHasBeenSet; }
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline void SetReplayName(const Aws::String& value) { m_replayNameHasBeenSet = true; m_replayName = value; }
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline void SetReplayName(Aws::String&& value) { m_replayNameHasBeenSet = true; m_replayName = std::move(value); }
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline void SetReplayName(const char* value) { m_replayNameHasBeenSet = true; m_replayName.assign(value); }
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline DescribeReplayRequest& WithReplayName(const Aws::String& value) { SetReplayName(value); return *this;}
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline DescribeReplayRequest& WithReplayName(Aws::String&& value) { SetReplayName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the replay to retrieve.</p>
-     */
     inline DescribeReplayRequest& WithReplayName(const char* value) { SetReplayName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replayName;

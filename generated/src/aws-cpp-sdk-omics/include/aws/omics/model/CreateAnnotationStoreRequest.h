@@ -37,326 +37,115 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The genome reference for the store's annotations.</p>
      */
     inline const ReferenceItem& GetReference() const{ return m_reference; }
-
-    /**
-     * <p>The genome reference for the store's annotations.</p>
-     */
     inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
-
-    /**
-     * <p>The genome reference for the store's annotations.</p>
-     */
     inline void SetReference(const ReferenceItem& value) { m_referenceHasBeenSet = true; m_reference = value; }
-
-    /**
-     * <p>The genome reference for the store's annotations.</p>
-     */
     inline void SetReference(ReferenceItem&& value) { m_referenceHasBeenSet = true; m_reference = std::move(value); }
-
-    /**
-     * <p>The genome reference for the store's annotations.</p>
-     */
     inline CreateAnnotationStoreRequest& WithReference(const ReferenceItem& value) { SetReference(value); return *this;}
-
-    /**
-     * <p>The genome reference for the store's annotations.</p>
-     */
     inline CreateAnnotationStoreRequest& WithReference(ReferenceItem&& value) { SetReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A name for the store.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description for the store.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Tags for the store.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Tags for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The name given to an annotation store version to distinguish it from other
      * versions. </p>
      */
     inline const Aws::String& GetVersionName() const{ return m_versionName; }
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline CreateAnnotationStoreRequest& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline CreateAnnotationStoreRequest& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name given to an annotation store version to distinguish it from other
-     * versions. </p>
-     */
     inline CreateAnnotationStoreRequest& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Server-side encryption (SSE) settings for the store.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The annotation file format of the store.</p>
      */
     inline const StoreFormat& GetStoreFormat() const{ return m_storeFormat; }
-
-    /**
-     * <p>The annotation file format of the store.</p>
-     */
     inline bool StoreFormatHasBeenSet() const { return m_storeFormatHasBeenSet; }
-
-    /**
-     * <p>The annotation file format of the store.</p>
-     */
     inline void SetStoreFormat(const StoreFormat& value) { m_storeFormatHasBeenSet = true; m_storeFormat = value; }
-
-    /**
-     * <p>The annotation file format of the store.</p>
-     */
     inline void SetStoreFormat(StoreFormat&& value) { m_storeFormatHasBeenSet = true; m_storeFormat = std::move(value); }
-
-    /**
-     * <p>The annotation file format of the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithStoreFormat(const StoreFormat& value) { SetStoreFormat(value); return *this;}
-
-    /**
-     * <p>The annotation file format of the store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithStoreFormat(StoreFormat&& value) { SetStoreFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>File parsing options for the annotation store.</p>
      */
     inline const StoreOptions& GetStoreOptions() const{ return m_storeOptions; }
-
-    /**
-     * <p>File parsing options for the annotation store.</p>
-     */
     inline bool StoreOptionsHasBeenSet() const { return m_storeOptionsHasBeenSet; }
-
-    /**
-     * <p>File parsing options for the annotation store.</p>
-     */
     inline void SetStoreOptions(const StoreOptions& value) { m_storeOptionsHasBeenSet = true; m_storeOptions = value; }
-
-    /**
-     * <p>File parsing options for the annotation store.</p>
-     */
     inline void SetStoreOptions(StoreOptions&& value) { m_storeOptionsHasBeenSet = true; m_storeOptions = std::move(value); }
-
-    /**
-     * <p>File parsing options for the annotation store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithStoreOptions(const StoreOptions& value) { SetStoreOptions(value); return *this;}
-
-    /**
-     * <p>File parsing options for the annotation store.</p>
-     */
     inline CreateAnnotationStoreRequest& WithStoreOptions(StoreOptions&& value) { SetStoreOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReferenceItem m_reference;

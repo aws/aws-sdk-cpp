@@ -38,46 +38,19 @@ namespace Model
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object containing the identifiers of resources that can be members.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline MemberId& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline MemberId& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>An object containing the identifiers of resources that can be members.</p>
-     */
     inline MemberId& WithUserId(const char* value) { SetUserId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userId;

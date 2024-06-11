@@ -39,79 +39,31 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies advanced security options for the specified Elasticsearch
      * domain.</p>
      */
     inline const AdvancedSecurityOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p> Specifies advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p> Specifies advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetOptions(const AdvancedSecurityOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p> Specifies advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetOptions(AdvancedSecurityOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p> Specifies advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline AdvancedSecurityOptionsStatus& WithOptions(const AdvancedSecurityOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p> Specifies advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline AdvancedSecurityOptionsStatus& WithOptions(AdvancedSecurityOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Status of the advanced security options for the specified Elasticsearch
      * domain.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> Status of the advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> Status of the advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> Status of the advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> Status of the advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline AdvancedSecurityOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> Status of the advanced security options for the specified Elasticsearch
-     * domain.</p>
-     */
     inline AdvancedSecurityOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AdvancedSecurityOptions m_options;

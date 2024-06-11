@@ -33,53 +33,27 @@ namespace Model
     AWS_DEVICEFARM_API GetTestGridProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <a>TestGridProject</a>.</p>
      */
     inline const TestGridProject& GetTestGridProject() const{ return m_testGridProject; }
-
-    /**
-     * <p>A <a>TestGridProject</a>.</p>
-     */
     inline void SetTestGridProject(const TestGridProject& value) { m_testGridProject = value; }
-
-    /**
-     * <p>A <a>TestGridProject</a>.</p>
-     */
     inline void SetTestGridProject(TestGridProject&& value) { m_testGridProject = std::move(value); }
-
-    /**
-     * <p>A <a>TestGridProject</a>.</p>
-     */
     inline GetTestGridProjectResult& WithTestGridProject(const TestGridProject& value) { SetTestGridProject(value); return *this;}
-
-    /**
-     * <p>A <a>TestGridProject</a>.</p>
-     */
     inline GetTestGridProjectResult& WithTestGridProject(TestGridProject&& value) { SetTestGridProject(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetTestGridProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetTestGridProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetTestGridProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     TestGridProject m_testGridProject;

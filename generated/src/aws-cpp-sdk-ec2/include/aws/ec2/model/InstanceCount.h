@@ -39,61 +39,28 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
-
-    /**
-     * <p>The number of listed Reserved Instances in the state specified by the
-     * <code>state</code>.</p>
-     */
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
-
-    /**
-     * <p>The number of listed Reserved Instances in the state specified by the
-     * <code>state</code>.</p>
-     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
-
-    /**
-     * <p>The number of listed Reserved Instances in the state specified by the
-     * <code>state</code>.</p>
-     */
     inline InstanceCount& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The states of the listed Reserved Instances.</p>
      */
     inline const ListingState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The states of the listed Reserved Instances.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The states of the listed Reserved Instances.</p>
-     */
     inline void SetState(const ListingState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The states of the listed Reserved Instances.</p>
-     */
     inline void SetState(ListingState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The states of the listed Reserved Instances.</p>
-     */
     inline InstanceCount& WithState(const ListingState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The states of the listed Reserved Instances.</p>
-     */
     inline InstanceCount& WithState(ListingState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_instanceCount;

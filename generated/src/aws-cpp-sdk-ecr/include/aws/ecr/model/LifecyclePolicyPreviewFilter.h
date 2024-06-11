@@ -37,36 +37,17 @@ namespace Model
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tag status of the image.</p>
      */
     inline const TagStatus& GetTagStatus() const{ return m_tagStatus; }
-
-    /**
-     * <p>The tag status of the image.</p>
-     */
     inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
-
-    /**
-     * <p>The tag status of the image.</p>
-     */
     inline void SetTagStatus(const TagStatus& value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
-
-    /**
-     * <p>The tag status of the image.</p>
-     */
     inline void SetTagStatus(TagStatus&& value) { m_tagStatusHasBeenSet = true; m_tagStatus = std::move(value); }
-
-    /**
-     * <p>The tag status of the image.</p>
-     */
     inline LifecyclePolicyPreviewFilter& WithTagStatus(const TagStatus& value) { SetTagStatus(value); return *this;}
-
-    /**
-     * <p>The tag status of the image.</p>
-     */
     inline LifecyclePolicyPreviewFilter& WithTagStatus(TagStatus&& value) { SetTagStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TagStatus m_tagStatus;

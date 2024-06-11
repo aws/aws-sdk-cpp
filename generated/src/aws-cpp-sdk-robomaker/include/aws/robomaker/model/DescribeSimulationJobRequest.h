@@ -32,46 +32,19 @@ namespace Model
     AWS_ROBOMAKER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
      */
     inline const Aws::String& GetJob() const{ return m_job; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline void SetJob(const Aws::String& value) { m_jobHasBeenSet = true; m_job = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline void SetJob(Aws::String&& value) { m_jobHasBeenSet = true; m_job = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline void SetJob(const char* value) { m_jobHasBeenSet = true; m_job.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline DescribeSimulationJobRequest& WithJob(const Aws::String& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline DescribeSimulationJobRequest& WithJob(Aws::String&& value) { SetJob(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the simulation job to be described.</p>
-     */
     inline DescribeSimulationJobRequest& WithJob(const char* value) { SetJob(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_job;

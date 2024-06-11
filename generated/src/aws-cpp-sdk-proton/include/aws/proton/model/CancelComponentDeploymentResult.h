@@ -33,58 +33,28 @@ namespace Model
     AWS_PROTON_API CancelComponentDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detailed data of the component with the deployment that is being
      * canceled.</p>
      */
     inline const Component& GetComponent() const{ return m_component; }
-
-    /**
-     * <p>The detailed data of the component with the deployment that is being
-     * canceled.</p>
-     */
     inline void SetComponent(const Component& value) { m_component = value; }
-
-    /**
-     * <p>The detailed data of the component with the deployment that is being
-     * canceled.</p>
-     */
     inline void SetComponent(Component&& value) { m_component = std::move(value); }
-
-    /**
-     * <p>The detailed data of the component with the deployment that is being
-     * canceled.</p>
-     */
     inline CancelComponentDeploymentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
-
-    /**
-     * <p>The detailed data of the component with the deployment that is being
-     * canceled.</p>
-     */
     inline CancelComponentDeploymentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelComponentDeploymentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelComponentDeploymentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelComponentDeploymentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Component m_component;

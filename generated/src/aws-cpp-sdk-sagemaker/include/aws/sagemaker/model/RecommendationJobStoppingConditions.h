@@ -40,27 +40,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of requests per minute expected for the endpoint.</p>
      */
     inline int GetMaxInvocations() const{ return m_maxInvocations; }
-
-    /**
-     * <p>The maximum number of requests per minute expected for the endpoint.</p>
-     */
     inline bool MaxInvocationsHasBeenSet() const { return m_maxInvocationsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of requests per minute expected for the endpoint.</p>
-     */
     inline void SetMaxInvocations(int value) { m_maxInvocationsHasBeenSet = true; m_maxInvocations = value; }
-
-    /**
-     * <p>The maximum number of requests per minute expected for the endpoint.</p>
-     */
     inline RecommendationJobStoppingConditions& WithMaxInvocations(int value) { SetMaxInvocations(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The interval of time taken by a model to respond as viewed from SageMaker.
      * The interval includes the local communication time taken to send the request and
@@ -68,64 +58,16 @@ namespace Model
      * complete the inference in the container.</p>
      */
     inline const Aws::Vector<ModelLatencyThreshold>& GetModelLatencyThresholds() const{ return m_modelLatencyThresholds; }
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline bool ModelLatencyThresholdsHasBeenSet() const { return m_modelLatencyThresholdsHasBeenSet; }
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline void SetModelLatencyThresholds(const Aws::Vector<ModelLatencyThreshold>& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds = value; }
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline void SetModelLatencyThresholds(Aws::Vector<ModelLatencyThreshold>&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds = std::move(value); }
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline RecommendationJobStoppingConditions& WithModelLatencyThresholds(const Aws::Vector<ModelLatencyThreshold>& value) { SetModelLatencyThresholds(value); return *this;}
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline RecommendationJobStoppingConditions& WithModelLatencyThresholds(Aws::Vector<ModelLatencyThreshold>&& value) { SetModelLatencyThresholds(std::move(value)); return *this;}
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline RecommendationJobStoppingConditions& AddModelLatencyThresholds(const ModelLatencyThreshold& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds.push_back(value); return *this; }
-
-    /**
-     * <p>The interval of time taken by a model to respond as viewed from SageMaker.
-     * The interval includes the local communication time taken to send the request and
-     * to fetch the response from the container of a model and the time taken to
-     * complete the inference in the container.</p>
-     */
     inline RecommendationJobStoppingConditions& AddModelLatencyThresholds(ModelLatencyThreshold&& value) { m_modelLatencyThresholdsHasBeenSet = true; m_modelLatencyThresholds.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
      * which means that the instance has reached capacity. The default value is
@@ -133,47 +75,12 @@ namespace Model
      * flattened, set the value to <code>Continue</code>.</p>
      */
     inline const FlatInvocations& GetFlatInvocations() const{ return m_flatInvocations; }
-
-    /**
-     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
-     * which means that the instance has reached capacity. The default value is
-     * <code>Stop</code>. If you want the load test to continue after invocations have
-     * flattened, set the value to <code>Continue</code>.</p>
-     */
     inline bool FlatInvocationsHasBeenSet() const { return m_flatInvocationsHasBeenSet; }
-
-    /**
-     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
-     * which means that the instance has reached capacity. The default value is
-     * <code>Stop</code>. If you want the load test to continue after invocations have
-     * flattened, set the value to <code>Continue</code>.</p>
-     */
     inline void SetFlatInvocations(const FlatInvocations& value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = value; }
-
-    /**
-     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
-     * which means that the instance has reached capacity. The default value is
-     * <code>Stop</code>. If you want the load test to continue after invocations have
-     * flattened, set the value to <code>Continue</code>.</p>
-     */
     inline void SetFlatInvocations(FlatInvocations&& value) { m_flatInvocationsHasBeenSet = true; m_flatInvocations = std::move(value); }
-
-    /**
-     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
-     * which means that the instance has reached capacity. The default value is
-     * <code>Stop</code>. If you want the load test to continue after invocations have
-     * flattened, set the value to <code>Continue</code>.</p>
-     */
     inline RecommendationJobStoppingConditions& WithFlatInvocations(const FlatInvocations& value) { SetFlatInvocations(value); return *this;}
-
-    /**
-     * <p>Stops a load test when the number of invocations (TPS) peaks and flattens,
-     * which means that the instance has reached capacity. The default value is
-     * <code>Stop</code>. If you want the load test to continue after invocations have
-     * flattened, set the value to <code>Continue</code>.</p>
-     */
     inline RecommendationJobStoppingConditions& WithFlatInvocations(FlatInvocations&& value) { SetFlatInvocations(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maxInvocations;

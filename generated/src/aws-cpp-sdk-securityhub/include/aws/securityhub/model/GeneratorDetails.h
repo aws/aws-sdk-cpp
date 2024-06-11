@@ -42,159 +42,51 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The name of the detector used to identify the code vulnerability. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline GeneratorDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline GeneratorDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the detector used to identify the code vulnerability. </p>
-     */
     inline GeneratorDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The description of the detector used to identify the code vulnerability.
      * </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline GeneratorDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline GeneratorDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p> The description of the detector used to identify the code vulnerability.
-     * </p>
-     */
     inline GeneratorDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An array of tags used to identify the detector associated with the finding.
      * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
      * items.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline GeneratorDetails& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline GeneratorDetails& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline GeneratorDetails& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline GeneratorDetails& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> An array of tags used to identify the detector associated with the finding.
-     * </p> <p>Array Members: Minimum number of 0 items. Maximum number of 10
-     * items.</p>
-     */
     inline GeneratorDetails& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

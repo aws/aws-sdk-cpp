@@ -38,54 +38,20 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
      * encrypted using an Amazon Web Services owned key.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline EncryptionAtRestOptions& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline EncryptionAtRestOptions& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key used to encrypt buffer data. By default, data is
-     * encrypted using an Amazon Web Services owned key.</p>
-     */
     inline EncryptionAtRestOptions& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyArn;

@@ -38,6 +38,7 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A single point geometry specifies a location for a Place using <a
      * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
@@ -46,61 +47,13 @@ namespace Model
      * latitude. </p> </li> </ul>
      */
     inline const Aws::Vector<double>& GetPoint() const{ return m_point; }
-
-    /**
-     * <p>A single point geometry specifies a location for a Place using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates:</p> <ul> <li> <p> <i>x</i> — Specifies the x coordinate or
-     * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
-     * latitude. </p> </li> </ul>
-     */
     inline bool PointHasBeenSet() const { return m_pointHasBeenSet; }
-
-    /**
-     * <p>A single point geometry specifies a location for a Place using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates:</p> <ul> <li> <p> <i>x</i> — Specifies the x coordinate or
-     * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
-     * latitude. </p> </li> </ul>
-     */
     inline void SetPoint(const Aws::Vector<double>& value) { m_pointHasBeenSet = true; m_point = value; }
-
-    /**
-     * <p>A single point geometry specifies a location for a Place using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates:</p> <ul> <li> <p> <i>x</i> — Specifies the x coordinate or
-     * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
-     * latitude. </p> </li> </ul>
-     */
     inline void SetPoint(Aws::Vector<double>&& value) { m_pointHasBeenSet = true; m_point = std::move(value); }
-
-    /**
-     * <p>A single point geometry specifies a location for a Place using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates:</p> <ul> <li> <p> <i>x</i> — Specifies the x coordinate or
-     * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
-     * latitude. </p> </li> </ul>
-     */
     inline PlaceGeometry& WithPoint(const Aws::Vector<double>& value) { SetPoint(value); return *this;}
-
-    /**
-     * <p>A single point geometry specifies a location for a Place using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates:</p> <ul> <li> <p> <i>x</i> — Specifies the x coordinate or
-     * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
-     * latitude. </p> </li> </ul>
-     */
     inline PlaceGeometry& WithPoint(Aws::Vector<double>&& value) { SetPoint(std::move(value)); return *this;}
-
-    /**
-     * <p>A single point geometry specifies a location for a Place using <a
-     * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
-     * coordinates:</p> <ul> <li> <p> <i>x</i> — Specifies the x coordinate or
-     * longitude. </p> </li> <li> <p> <i>y</i> — Specifies the y coordinate or
-     * latitude. </p> </li> </ul>
-     */
     inline PlaceGeometry& AddPoint(double value) { m_pointHasBeenSet = true; m_point.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<double> m_point;

@@ -32,99 +32,42 @@ namespace Model
     AWS_MEDIACONNECT_API RemoveFlowMediaStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of the flow.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline void SetFlowArn(const Aws::String& value) { m_flowArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline void SetFlowArn(Aws::String&& value) { m_flowArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline void SetFlowArn(const char* value) { m_flowArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline RemoveFlowMediaStreamResult& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline RemoveFlowMediaStreamResult& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of the flow.
-     */
     inline RemoveFlowMediaStreamResult& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the media stream that was removed.
      */
     inline const Aws::String& GetMediaStreamName() const{ return m_mediaStreamName; }
-
-    /**
-     * The name of the media stream that was removed.
-     */
     inline void SetMediaStreamName(const Aws::String& value) { m_mediaStreamName = value; }
-
-    /**
-     * The name of the media stream that was removed.
-     */
     inline void SetMediaStreamName(Aws::String&& value) { m_mediaStreamName = std::move(value); }
-
-    /**
-     * The name of the media stream that was removed.
-     */
     inline void SetMediaStreamName(const char* value) { m_mediaStreamName.assign(value); }
-
-    /**
-     * The name of the media stream that was removed.
-     */
     inline RemoveFlowMediaStreamResult& WithMediaStreamName(const Aws::String& value) { SetMediaStreamName(value); return *this;}
-
-    /**
-     * The name of the media stream that was removed.
-     */
     inline RemoveFlowMediaStreamResult& WithMediaStreamName(Aws::String&& value) { SetMediaStreamName(std::move(value)); return *this;}
-
-    /**
-     * The name of the media stream that was removed.
-     */
     inline RemoveFlowMediaStreamResult& WithMediaStreamName(const char* value) { SetMediaStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RemoveFlowMediaStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RemoveFlowMediaStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RemoveFlowMediaStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_flowArn;

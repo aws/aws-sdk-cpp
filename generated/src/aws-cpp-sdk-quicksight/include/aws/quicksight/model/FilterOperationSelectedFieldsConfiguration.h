@@ -43,61 +43,23 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Chooses the fields that are filtered in
      * <code>CustomActionFilterOperation</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSelectedFields() const{ return m_selectedFields; }
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline bool SelectedFieldsHasBeenSet() const { return m_selectedFieldsHasBeenSet; }
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline void SetSelectedFields(const Aws::Vector<Aws::String>& value) { m_selectedFieldsHasBeenSet = true; m_selectedFields = value; }
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline void SetSelectedFields(Aws::Vector<Aws::String>&& value) { m_selectedFieldsHasBeenSet = true; m_selectedFields = std::move(value); }
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedFields(const Aws::Vector<Aws::String>& value) { SetSelectedFields(value); return *this;}
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedFields(Aws::Vector<Aws::String>&& value) { SetSelectedFields(std::move(value)); return *this;}
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& AddSelectedFields(const Aws::String& value) { m_selectedFieldsHasBeenSet = true; m_selectedFields.push_back(value); return *this; }
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& AddSelectedFields(Aws::String&& value) { m_selectedFieldsHasBeenSet = true; m_selectedFields.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Chooses the fields that are filtered in
-     * <code>CustomActionFilterOperation</code>.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& AddSelectedFields(const char* value) { m_selectedFieldsHasBeenSet = true; m_selectedFields.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A structure that contains the options that choose which fields are filtered
      * in the <code>CustomActionFilterOperation</code>.</p> <p>Valid values are defined
@@ -105,88 +67,26 @@ namespace Model
      * operation to all fields.</p> </li> </ul>
      */
     inline const SelectedFieldOptions& GetSelectedFieldOptions() const{ return m_selectedFieldOptions; }
-
-    /**
-     * <p>A structure that contains the options that choose which fields are filtered
-     * in the <code>CustomActionFilterOperation</code>.</p> <p>Valid values are defined
-     * as follows:</p> <ul> <li> <p> <code>ALL_FIELDS</code>: Applies the filter
-     * operation to all fields.</p> </li> </ul>
-     */
     inline bool SelectedFieldOptionsHasBeenSet() const { return m_selectedFieldOptionsHasBeenSet; }
-
-    /**
-     * <p>A structure that contains the options that choose which fields are filtered
-     * in the <code>CustomActionFilterOperation</code>.</p> <p>Valid values are defined
-     * as follows:</p> <ul> <li> <p> <code>ALL_FIELDS</code>: Applies the filter
-     * operation to all fields.</p> </li> </ul>
-     */
     inline void SetSelectedFieldOptions(const SelectedFieldOptions& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions = value; }
-
-    /**
-     * <p>A structure that contains the options that choose which fields are filtered
-     * in the <code>CustomActionFilterOperation</code>.</p> <p>Valid values are defined
-     * as follows:</p> <ul> <li> <p> <code>ALL_FIELDS</code>: Applies the filter
-     * operation to all fields.</p> </li> </ul>
-     */
     inline void SetSelectedFieldOptions(SelectedFieldOptions&& value) { m_selectedFieldOptionsHasBeenSet = true; m_selectedFieldOptions = std::move(value); }
-
-    /**
-     * <p>A structure that contains the options that choose which fields are filtered
-     * in the <code>CustomActionFilterOperation</code>.</p> <p>Valid values are defined
-     * as follows:</p> <ul> <li> <p> <code>ALL_FIELDS</code>: Applies the filter
-     * operation to all fields.</p> </li> </ul>
-     */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedFieldOptions(const SelectedFieldOptions& value) { SetSelectedFieldOptions(value); return *this;}
-
-    /**
-     * <p>A structure that contains the options that choose which fields are filtered
-     * in the <code>CustomActionFilterOperation</code>.</p> <p>Valid values are defined
-     * as follows:</p> <ul> <li> <p> <code>ALL_FIELDS</code>: Applies the filter
-     * operation to all fields.</p> </li> </ul>
-     */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedFieldOptions(SelectedFieldOptions&& value) { SetSelectedFieldOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The selected columns of a dataset.</p>
      */
     inline const Aws::Vector<ColumnIdentifier>& GetSelectedColumns() const{ return m_selectedColumns; }
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline bool SelectedColumnsHasBeenSet() const { return m_selectedColumnsHasBeenSet; }
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline void SetSelectedColumns(const Aws::Vector<ColumnIdentifier>& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = value; }
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline void SetSelectedColumns(Aws::Vector<ColumnIdentifier>&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns = std::move(value); }
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedColumns(const Aws::Vector<ColumnIdentifier>& value) { SetSelectedColumns(value); return *this;}
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& WithSelectedColumns(Aws::Vector<ColumnIdentifier>&& value) { SetSelectedColumns(std::move(value)); return *this;}
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& AddSelectedColumns(const ColumnIdentifier& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.push_back(value); return *this; }
-
-    /**
-     * <p>The selected columns of a dataset.</p>
-     */
     inline FilterOperationSelectedFieldsConfiguration& AddSelectedColumns(ColumnIdentifier&& value) { m_selectedColumnsHasBeenSet = true; m_selectedColumns.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_selectedFields;

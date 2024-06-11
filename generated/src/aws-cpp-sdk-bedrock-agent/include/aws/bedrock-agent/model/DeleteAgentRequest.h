@@ -38,75 +38,31 @@ namespace Model
     AWS_BEDROCKAGENT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the agent to delete.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline DeleteAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline DeleteAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent to delete.</p>
-     */
     inline DeleteAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>By default, this value is <code>false</code> and deletion is stopped if the
      * resource is in use. If you set it to <code>true</code>, the resource will be
      * deleted even if the resource is in use.</p>
      */
     inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
-
-    /**
-     * <p>By default, this value is <code>false</code> and deletion is stopped if the
-     * resource is in use. If you set it to <code>true</code>, the resource will be
-     * deleted even if the resource is in use.</p>
-     */
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
-
-    /**
-     * <p>By default, this value is <code>false</code> and deletion is stopped if the
-     * resource is in use. If you set it to <code>true</code>, the resource will be
-     * deleted even if the resource is in use.</p>
-     */
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
-
-    /**
-     * <p>By default, this value is <code>false</code> and deletion is stopped if the
-     * resource is in use. If you set it to <code>true</code>, the resource will be
-     * deleted even if the resource is in use.</p>
-     */
     inline DeleteAgentRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

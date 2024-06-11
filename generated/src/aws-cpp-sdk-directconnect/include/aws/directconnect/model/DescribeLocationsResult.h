@@ -34,63 +34,29 @@ namespace Model
     AWS_DIRECTCONNECT_API DescribeLocationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The locations.</p>
      */
     inline const Aws::Vector<Location>& GetLocations() const{ return m_locations; }
-
-    /**
-     * <p>The locations.</p>
-     */
     inline void SetLocations(const Aws::Vector<Location>& value) { m_locations = value; }
-
-    /**
-     * <p>The locations.</p>
-     */
     inline void SetLocations(Aws::Vector<Location>&& value) { m_locations = std::move(value); }
-
-    /**
-     * <p>The locations.</p>
-     */
     inline DescribeLocationsResult& WithLocations(const Aws::Vector<Location>& value) { SetLocations(value); return *this;}
-
-    /**
-     * <p>The locations.</p>
-     */
     inline DescribeLocationsResult& WithLocations(Aws::Vector<Location>&& value) { SetLocations(std::move(value)); return *this;}
-
-    /**
-     * <p>The locations.</p>
-     */
     inline DescribeLocationsResult& AddLocations(const Location& value) { m_locations.push_back(value); return *this; }
-
-    /**
-     * <p>The locations.</p>
-     */
     inline DescribeLocationsResult& AddLocations(Location&& value) { m_locations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeLocationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeLocationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeLocationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Location> m_locations;

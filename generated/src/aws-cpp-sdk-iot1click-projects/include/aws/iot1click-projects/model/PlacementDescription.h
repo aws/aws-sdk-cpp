@@ -39,233 +39,79 @@ namespace Model
     AWS_IOT1CLICKPROJECTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the project containing the placement.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline PlacementDescription& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline PlacementDescription& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project containing the placement.</p>
-     */
     inline PlacementDescription& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the placement.</p>
      */
     inline const Aws::String& GetPlacementName() const{ return m_placementName; }
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline void SetPlacementName(Aws::String&& value) { m_placementNameHasBeenSet = true; m_placementName = std::move(value); }
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline void SetPlacementName(const char* value) { m_placementNameHasBeenSet = true; m_placementName.assign(value); }
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline PlacementDescription& WithPlacementName(const Aws::String& value) { SetPlacementName(value); return *this;}
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline PlacementDescription& WithPlacementName(Aws::String&& value) { SetPlacementName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the placement.</p>
-     */
     inline PlacementDescription& WithPlacementName(const char* value) { SetPlacementName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The user-defined attributes associated with the placement.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The user-defined attributes associated with the placement.</p>
-     */
     inline PlacementDescription& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date when the placement was initially created, in UNIX epoch time
      * format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-
-    /**
-     * <p>The date when the placement was initially created, in UNIX epoch time
-     * format.</p>
-     */
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-
-    /**
-     * <p>The date when the placement was initially created, in UNIX epoch time
-     * format.</p>
-     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-
-    /**
-     * <p>The date when the placement was initially created, in UNIX epoch time
-     * format.</p>
-     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-
-    /**
-     * <p>The date when the placement was initially created, in UNIX epoch time
-     * format.</p>
-     */
     inline PlacementDescription& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-
-    /**
-     * <p>The date when the placement was initially created, in UNIX epoch time
-     * format.</p>
-     */
     inline PlacementDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date when the placement was last updated, in UNIX epoch time format. If
      * the placement was not updated, then <code>createdDate</code> and
      * <code>updatedDate</code> are the same.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
-
-    /**
-     * <p>The date when the placement was last updated, in UNIX epoch time format. If
-     * the placement was not updated, then <code>createdDate</code> and
-     * <code>updatedDate</code> are the same.</p>
-     */
     inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
-
-    /**
-     * <p>The date when the placement was last updated, in UNIX epoch time format. If
-     * the placement was not updated, then <code>createdDate</code> and
-     * <code>updatedDate</code> are the same.</p>
-     */
     inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDateHasBeenSet = true; m_updatedDate = value; }
-
-    /**
-     * <p>The date when the placement was last updated, in UNIX epoch time format. If
-     * the placement was not updated, then <code>createdDate</code> and
-     * <code>updatedDate</code> are the same.</p>
-     */
     inline void SetUpdatedDate(Aws::Utils::DateTime&& value) { m_updatedDateHasBeenSet = true; m_updatedDate = std::move(value); }
-
-    /**
-     * <p>The date when the placement was last updated, in UNIX epoch time format. If
-     * the placement was not updated, then <code>createdDate</code> and
-     * <code>updatedDate</code> are the same.</p>
-     */
     inline PlacementDescription& WithUpdatedDate(const Aws::Utils::DateTime& value) { SetUpdatedDate(value); return *this;}
-
-    /**
-     * <p>The date when the placement was last updated, in UNIX epoch time format. If
-     * the placement was not updated, then <code>createdDate</code> and
-     * <code>updatedDate</code> are the same.</p>
-     */
     inline PlacementDescription& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectName;

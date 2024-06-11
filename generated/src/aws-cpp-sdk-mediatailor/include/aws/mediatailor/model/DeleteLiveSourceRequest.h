@@ -32,87 +32,33 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the live source.</p>
      */
     inline const Aws::String& GetLiveSourceName() const{ return m_liveSourceName; }
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline bool LiveSourceNameHasBeenSet() const { return m_liveSourceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline void SetLiveSourceName(const Aws::String& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = value; }
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline void SetLiveSourceName(Aws::String&& value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName = std::move(value); }
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline void SetLiveSourceName(const char* value) { m_liveSourceNameHasBeenSet = true; m_liveSourceName.assign(value); }
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline DeleteLiveSourceRequest& WithLiveSourceName(const Aws::String& value) { SetLiveSourceName(value); return *this;}
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline DeleteLiveSourceRequest& WithLiveSourceName(Aws::String&& value) { SetLiveSourceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the live source.</p>
-     */
     inline DeleteLiveSourceRequest& WithLiveSourceName(const char* value) { SetLiveSourceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the source location associated with this Live Source.</p>
      */
     inline const Aws::String& GetSourceLocationName() const{ return m_sourceLocationName; }
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline bool SourceLocationNameHasBeenSet() const { return m_sourceLocationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline void SetSourceLocationName(const Aws::String& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = value; }
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline void SetSourceLocationName(Aws::String&& value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName = std::move(value); }
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline void SetSourceLocationName(const char* value) { m_sourceLocationNameHasBeenSet = true; m_sourceLocationName.assign(value); }
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline DeleteLiveSourceRequest& WithSourceLocationName(const Aws::String& value) { SetSourceLocationName(value); return *this;}
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline DeleteLiveSourceRequest& WithSourceLocationName(Aws::String&& value) { SetSourceLocationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the source location associated with this Live Source.</p>
-     */
     inline DeleteLiveSourceRequest& WithSourceLocationName(const char* value) { SetSourceLocationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_liveSourceName;

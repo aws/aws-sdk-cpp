@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetCampaignDateRangeKpiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const CampaignDateRangeKpiResponse& GetCampaignDateRangeKpiResponse() const{ return m_campaignDateRangeKpiResponse; }
-
-    
     inline void SetCampaignDateRangeKpiResponse(const CampaignDateRangeKpiResponse& value) { m_campaignDateRangeKpiResponse = value; }
-
-    
     inline void SetCampaignDateRangeKpiResponse(CampaignDateRangeKpiResponse&& value) { m_campaignDateRangeKpiResponse = std::move(value); }
-
-    
     inline GetCampaignDateRangeKpiResult& WithCampaignDateRangeKpiResponse(const CampaignDateRangeKpiResponse& value) { SetCampaignDateRangeKpiResponse(value); return *this;}
-
-    
     inline GetCampaignDateRangeKpiResult& WithCampaignDateRangeKpiResponse(CampaignDateRangeKpiResponse&& value) { SetCampaignDateRangeKpiResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCampaignDateRangeKpiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCampaignDateRangeKpiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCampaignDateRangeKpiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CampaignDateRangeKpiResponse m_campaignDateRangeKpiResponse;

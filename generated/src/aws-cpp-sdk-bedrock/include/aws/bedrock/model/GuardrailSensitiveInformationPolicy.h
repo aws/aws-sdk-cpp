@@ -40,87 +40,33 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of PII entities configured for the guardrail.</p>
      */
     inline const Aws::Vector<GuardrailPiiEntity>& GetPiiEntities() const{ return m_piiEntities; }
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline bool PiiEntitiesHasBeenSet() const { return m_piiEntitiesHasBeenSet; }
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline void SetPiiEntities(const Aws::Vector<GuardrailPiiEntity>& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = value; }
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline void SetPiiEntities(Aws::Vector<GuardrailPiiEntity>&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities = std::move(value); }
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& WithPiiEntities(const Aws::Vector<GuardrailPiiEntity>& value) { SetPiiEntities(value); return *this;}
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& WithPiiEntities(Aws::Vector<GuardrailPiiEntity>&& value) { SetPiiEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& AddPiiEntities(const GuardrailPiiEntity& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.push_back(value); return *this; }
-
-    /**
-     * <p>The list of PII entities configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& AddPiiEntities(GuardrailPiiEntity&& value) { m_piiEntitiesHasBeenSet = true; m_piiEntities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of regular expressions configured for the guardrail.</p>
      */
     inline const Aws::Vector<GuardrailRegex>& GetRegexes() const{ return m_regexes; }
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline bool RegexesHasBeenSet() const { return m_regexesHasBeenSet; }
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline void SetRegexes(const Aws::Vector<GuardrailRegex>& value) { m_regexesHasBeenSet = true; m_regexes = value; }
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline void SetRegexes(Aws::Vector<GuardrailRegex>&& value) { m_regexesHasBeenSet = true; m_regexes = std::move(value); }
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& WithRegexes(const Aws::Vector<GuardrailRegex>& value) { SetRegexes(value); return *this;}
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& WithRegexes(Aws::Vector<GuardrailRegex>&& value) { SetRegexes(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& AddRegexes(const GuardrailRegex& value) { m_regexesHasBeenSet = true; m_regexes.push_back(value); return *this; }
-
-    /**
-     * <p>The list of regular expressions configured for the guardrail.</p>
-     */
     inline GuardrailSensitiveInformationPolicy& AddRegexes(GuardrailRegex&& value) { m_regexesHasBeenSet = true; m_regexes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GuardrailPiiEntity> m_piiEntities;

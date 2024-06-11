@@ -34,113 +34,44 @@ namespace Model
     AWS_MAILMANAGER_API ListRelaysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If NextToken is returned, there are more results available. The value of
      * NextToken is a unique pagination token for each page. Make the call again using
      * the returned token to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline ListRelaysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline ListRelaysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If NextToken is returned, there are more results available. The value of
-     * NextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline ListRelaysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of returned relays.</p>
      */
     inline const Aws::Vector<Relay>& GetRelays() const{ return m_relays; }
-
-    /**
-     * <p>The list of returned relays.</p>
-     */
     inline void SetRelays(const Aws::Vector<Relay>& value) { m_relays = value; }
-
-    /**
-     * <p>The list of returned relays.</p>
-     */
     inline void SetRelays(Aws::Vector<Relay>&& value) { m_relays = std::move(value); }
-
-    /**
-     * <p>The list of returned relays.</p>
-     */
     inline ListRelaysResult& WithRelays(const Aws::Vector<Relay>& value) { SetRelays(value); return *this;}
-
-    /**
-     * <p>The list of returned relays.</p>
-     */
     inline ListRelaysResult& WithRelays(Aws::Vector<Relay>&& value) { SetRelays(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of returned relays.</p>
-     */
     inline ListRelaysResult& AddRelays(const Relay& value) { m_relays.push_back(value); return *this; }
-
-    /**
-     * <p>The list of returned relays.</p>
-     */
     inline ListRelaysResult& AddRelays(Relay&& value) { m_relays.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRelaysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRelaysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRelaysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

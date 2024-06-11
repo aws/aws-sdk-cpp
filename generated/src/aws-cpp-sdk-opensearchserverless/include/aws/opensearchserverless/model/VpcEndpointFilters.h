@@ -38,36 +38,17 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current status of the endpoint.</p>
      */
     inline const VpcEndpointStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline void SetStatus(const VpcEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline void SetStatus(VpcEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline VpcEndpointFilters& WithStatus(const VpcEndpointStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the endpoint.</p>
-     */
     inline VpcEndpointFilters& WithStatus(VpcEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     VpcEndpointStatus m_status;

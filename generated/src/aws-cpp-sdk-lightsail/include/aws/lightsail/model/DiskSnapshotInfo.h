@@ -35,26 +35,15 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of the disk in GB (<code>32</code>).</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
-
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
-
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
-
-    /**
-     * <p>The size of the disk in GB (<code>32</code>).</p>
-     */
     inline DiskSnapshotInfo& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
-
+    ///@}
   private:
 
     int m_sizeInGb;

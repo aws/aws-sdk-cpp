@@ -37,36 +37,17 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The operating system.</p>
      */
     inline const OperatingSystemType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline void SetType(const OperatingSystemType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline void SetType(OperatingSystemType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline OperatingSystem& WithType(const OperatingSystemType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The operating system.</p>
-     */
     inline OperatingSystem& WithType(OperatingSystemType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OperatingSystemType m_type;

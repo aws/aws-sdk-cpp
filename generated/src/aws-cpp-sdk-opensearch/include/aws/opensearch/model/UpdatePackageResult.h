@@ -39,53 +39,27 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API UpdatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about a package.</p>
      */
     inline const PackageDetails& GetPackageDetails() const{ return m_packageDetails; }
-
-    /**
-     * <p>Information about a package.</p>
-     */
     inline void SetPackageDetails(const PackageDetails& value) { m_packageDetails = value; }
-
-    /**
-     * <p>Information about a package.</p>
-     */
     inline void SetPackageDetails(PackageDetails&& value) { m_packageDetails = std::move(value); }
-
-    /**
-     * <p>Information about a package.</p>
-     */
     inline UpdatePackageResult& WithPackageDetails(const PackageDetails& value) { SetPackageDetails(value); return *this;}
-
-    /**
-     * <p>Information about a package.</p>
-     */
     inline UpdatePackageResult& WithPackageDetails(PackageDetails&& value) { SetPackageDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PackageDetails m_packageDetails;

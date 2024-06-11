@@ -33,53 +33,27 @@ namespace Model
     AWS_GAMELIFT_API CreateMatchmakingRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly created matchmaking rule set.</p>
      */
     inline const MatchmakingRuleSet& GetRuleSet() const{ return m_ruleSet; }
-
-    /**
-     * <p>The newly created matchmaking rule set.</p>
-     */
     inline void SetRuleSet(const MatchmakingRuleSet& value) { m_ruleSet = value; }
-
-    /**
-     * <p>The newly created matchmaking rule set.</p>
-     */
     inline void SetRuleSet(MatchmakingRuleSet&& value) { m_ruleSet = std::move(value); }
-
-    /**
-     * <p>The newly created matchmaking rule set.</p>
-     */
     inline CreateMatchmakingRuleSetResult& WithRuleSet(const MatchmakingRuleSet& value) { SetRuleSet(value); return *this;}
-
-    /**
-     * <p>The newly created matchmaking rule set.</p>
-     */
     inline CreateMatchmakingRuleSetResult& WithRuleSet(MatchmakingRuleSet&& value) { SetRuleSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateMatchmakingRuleSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateMatchmakingRuleSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateMatchmakingRuleSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     MatchmakingRuleSet m_ruleSet;

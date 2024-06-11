@@ -34,129 +34,49 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the proposal.</p>
      */
     inline const Aws::String& GetProposalId() const{ return m_proposalId; }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline bool ProposalIdHasBeenSet() const { return m_proposalIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline void SetProposalId(const Aws::String& value) { m_proposalIdHasBeenSet = true; m_proposalId = value; }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline void SetProposalId(Aws::String&& value) { m_proposalIdHasBeenSet = true; m_proposalId = std::move(value); }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline void SetProposalId(const char* value) { m_proposalIdHasBeenSet = true; m_proposalId.assign(value); }
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithProposalId(const Aws::String& value) { SetProposalId(value); return *this;}
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithProposalId(Aws::String&& value) { SetProposalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the proposal.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithProposalId(const char* value) { SetProposalId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the associated gateway.</p>
      */
     inline const Aws::String& GetAssociatedGatewayId() const{ return m_associatedGatewayId; }
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline bool AssociatedGatewayIdHasBeenSet() const { return m_associatedGatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline void SetAssociatedGatewayId(const Aws::String& value) { m_associatedGatewayIdHasBeenSet = true; m_associatedGatewayId = value; }
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline void SetAssociatedGatewayId(Aws::String&& value) { m_associatedGatewayIdHasBeenSet = true; m_associatedGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline void SetAssociatedGatewayId(const char* value) { m_associatedGatewayIdHasBeenSet = true; m_associatedGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithAssociatedGatewayId(const Aws::String& value) { SetAssociatedGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithAssociatedGatewayId(Aws::String&& value) { SetAssociatedGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the associated gateway.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithAssociatedGatewayId(const char* value) { SetAssociatedGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the
      * remaining results, make another call with the returned <code>nextToken</code>
@@ -164,72 +84,24 @@ namespace Model
      * 100 results are returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
-     * 100 results are returned.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
-     * 100 results are returned.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return with a single call. To retrieve the
-     * remaining results, make another call with the returned <code>nextToken</code>
-     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
-     * 100 results are returned.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next page of results.</p>
-     */
     inline DescribeDirectConnectGatewayAssociationProposalsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directConnectGatewayId;

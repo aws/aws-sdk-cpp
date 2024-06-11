@@ -32,87 +32,33 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The farm ID for the fleet's farm.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline AssumeFleetRoleForReadRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline AssumeFleetRoleForReadRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline AssumeFleetRoleForReadRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fleet ID.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline AssumeFleetRoleForReadRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline AssumeFleetRoleForReadRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline AssumeFleetRoleForReadRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

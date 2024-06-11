@@ -34,87 +34,33 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline CancelSchemaExtensionRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline CancelSchemaExtensionRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the directory whose schema extension will be canceled.</p>
-     */
     inline CancelSchemaExtensionRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>
      */
     inline const Aws::String& GetSchemaExtensionId() const{ return m_schemaExtensionId; }
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline bool SchemaExtensionIdHasBeenSet() const { return m_schemaExtensionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline void SetSchemaExtensionId(const Aws::String& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = value; }
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline void SetSchemaExtensionId(Aws::String&& value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId = std::move(value); }
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline void SetSchemaExtensionId(const char* value) { m_schemaExtensionIdHasBeenSet = true; m_schemaExtensionId.assign(value); }
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline CancelSchemaExtensionRequest& WithSchemaExtensionId(const Aws::String& value) { SetSchemaExtensionId(value); return *this;}
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline CancelSchemaExtensionRequest& WithSchemaExtensionId(Aws::String&& value) { SetSchemaExtensionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the schema extension that will be canceled.</p>
-     */
     inline CancelSchemaExtensionRequest& WithSchemaExtensionId(const char* value) { SetSchemaExtensionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

@@ -40,54 +40,20 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Sets whether the input image is free of personally identifiable
      * information.</p>
      */
     inline const Aws::Vector<ContentClassifier>& GetContentClassifiers() const{ return m_contentClassifiers; }
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline bool ContentClassifiersHasBeenSet() const { return m_contentClassifiersHasBeenSet; }
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline void SetContentClassifiers(const Aws::Vector<ContentClassifier>& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = value; }
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline void SetContentClassifiers(Aws::Vector<ContentClassifier>&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers = std::move(value); }
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline HumanLoopDataAttributes& WithContentClassifiers(const Aws::Vector<ContentClassifier>& value) { SetContentClassifiers(value); return *this;}
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline HumanLoopDataAttributes& WithContentClassifiers(Aws::Vector<ContentClassifier>&& value) { SetContentClassifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline HumanLoopDataAttributes& AddContentClassifiers(const ContentClassifier& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(value); return *this; }
-
-    /**
-     * <p>Sets whether the input image is free of personally identifiable
-     * information.</p>
-     */
     inline HumanLoopDataAttributes& AddContentClassifiers(ContentClassifier&& value) { m_contentClassifiersHasBeenSet = true; m_contentClassifiers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ContentClassifier> m_contentClassifiers;

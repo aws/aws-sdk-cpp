@@ -32,87 +32,33 @@ namespace Model
     AWS_FIS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the experiment template.</p>
      */
     inline const Aws::String& GetExperimentTemplateId() const{ return m_experimentTemplateId; }
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline bool ExperimentTemplateIdHasBeenSet() const { return m_experimentTemplateIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline void SetExperimentTemplateId(const Aws::String& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = value; }
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline void SetExperimentTemplateId(Aws::String&& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = std::move(value); }
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline void SetExperimentTemplateId(const char* value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId.assign(value); }
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline DeleteTargetAccountConfigurationRequest& WithExperimentTemplateId(const Aws::String& value) { SetExperimentTemplateId(value); return *this;}
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline DeleteTargetAccountConfigurationRequest& WithExperimentTemplateId(Aws::String&& value) { SetExperimentTemplateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the experiment template.</p>
-     */
     inline DeleteTargetAccountConfigurationRequest& WithExperimentTemplateId(const char* value) { SetExperimentTemplateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the target account.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline DeleteTargetAccountConfigurationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline DeleteTargetAccountConfigurationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the target account.</p>
-     */
     inline DeleteTargetAccountConfigurationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_experimentTemplateId;

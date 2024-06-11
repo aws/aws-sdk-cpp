@@ -38,36 +38,17 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Provides information about a cluster.</p>
      */
     inline const AwsMskClusterClusterInfoDetails& GetClusterInfo() const{ return m_clusterInfo; }
-
-    /**
-     * <p> Provides information about a cluster.</p>
-     */
     inline bool ClusterInfoHasBeenSet() const { return m_clusterInfoHasBeenSet; }
-
-    /**
-     * <p> Provides information about a cluster.</p>
-     */
     inline void SetClusterInfo(const AwsMskClusterClusterInfoDetails& value) { m_clusterInfoHasBeenSet = true; m_clusterInfo = value; }
-
-    /**
-     * <p> Provides information about a cluster.</p>
-     */
     inline void SetClusterInfo(AwsMskClusterClusterInfoDetails&& value) { m_clusterInfoHasBeenSet = true; m_clusterInfo = std::move(value); }
-
-    /**
-     * <p> Provides information about a cluster.</p>
-     */
     inline AwsMskClusterDetails& WithClusterInfo(const AwsMskClusterClusterInfoDetails& value) { SetClusterInfo(value); return *this;}
-
-    /**
-     * <p> Provides information about a cluster.</p>
-     */
     inline AwsMskClusterDetails& WithClusterInfo(AwsMskClusterClusterInfoDetails&& value) { SetClusterInfo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsMskClusterClusterInfoDetails m_clusterInfo;

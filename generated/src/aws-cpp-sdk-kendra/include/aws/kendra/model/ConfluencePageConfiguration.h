@@ -39,6 +39,7 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
      * field names. To create custom fields, use the <code>UpdateIndex</code> API
@@ -50,91 +51,14 @@ namespace Model
      * mapping.</p>
      */
     inline const Aws::Vector<ConfluencePageToIndexFieldMapping>& GetPageFieldMappings() const{ return m_pageFieldMappings; }
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline bool PageFieldMappingsHasBeenSet() const { return m_pageFieldMappingsHasBeenSet; }
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline void SetPageFieldMappings(const Aws::Vector<ConfluencePageToIndexFieldMapping>& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings = value; }
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline void SetPageFieldMappings(Aws::Vector<ConfluencePageToIndexFieldMapping>&& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings = std::move(value); }
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline ConfluencePageConfiguration& WithPageFieldMappings(const Aws::Vector<ConfluencePageToIndexFieldMapping>& value) { SetPageFieldMappings(value); return *this;}
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline ConfluencePageConfiguration& WithPageFieldMappings(Aws::Vector<ConfluencePageToIndexFieldMapping>&& value) { SetPageFieldMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline ConfluencePageConfiguration& AddPageFieldMappings(const ConfluencePageToIndexFieldMapping& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings.push_back(value); return *this; }
-
-    /**
-     * <p>Maps attributes or field names of Confluence pages to Amazon Kendra index
-     * field names. To create custom fields, use the <code>UpdateIndex</code> API
-     * before you map to Confluence fields. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping
-     * data source fields</a>. The Confluence data source field names must exist in
-     * your Confluence custom metadata.</p> <p>If you specify the
-     * <code>PageFieldMappings</code> parameter, you must specify at least one field
-     * mapping.</p>
-     */
     inline ConfluencePageConfiguration& AddPageFieldMappings(ConfluencePageToIndexFieldMapping&& value) { m_pageFieldMappingsHasBeenSet = true; m_pageFieldMappings.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ConfluencePageToIndexFieldMapping> m_pageFieldMappings;

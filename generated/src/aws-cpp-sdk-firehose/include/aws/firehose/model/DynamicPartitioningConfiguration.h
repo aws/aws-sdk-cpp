@@ -40,67 +40,29 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3
      * prefix.</p>
      */
     inline const RetryOptions& GetRetryOptions() const{ return m_retryOptions; }
-
-    /**
-     * <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3
-     * prefix.</p>
-     */
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-
-    /**
-     * <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3
-     * prefix.</p>
-     */
     inline void SetRetryOptions(const RetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-
-    /**
-     * <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3
-     * prefix.</p>
-     */
     inline void SetRetryOptions(RetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-
-    /**
-     * <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3
-     * prefix.</p>
-     */
     inline DynamicPartitioningConfiguration& WithRetryOptions(const RetryOptions& value) { SetRetryOptions(value); return *this;}
-
-    /**
-     * <p>The retry behavior in case Firehose is unable to deliver data to an Amazon S3
-     * prefix.</p>
-     */
     inline DynamicPartitioningConfiguration& WithRetryOptions(RetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery
      * stream.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery
-     * stream.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery
-     * stream.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies that the dynamic partitioning is enabled for this Firehose delivery
-     * stream.</p>
-     */
     inline DynamicPartitioningConfiguration& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     RetryOptions m_retryOptions;

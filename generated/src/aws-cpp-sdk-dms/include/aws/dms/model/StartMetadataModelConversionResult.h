@@ -32,63 +32,29 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelConversionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier for the conversion operation.</p>
      */
     inline const Aws::String& GetRequestIdentifier() const{ return m_requestIdentifier; }
-
-    /**
-     * <p>The identifier for the conversion operation.</p>
-     */
     inline void SetRequestIdentifier(const Aws::String& value) { m_requestIdentifier = value; }
-
-    /**
-     * <p>The identifier for the conversion operation.</p>
-     */
     inline void SetRequestIdentifier(Aws::String&& value) { m_requestIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier for the conversion operation.</p>
-     */
     inline void SetRequestIdentifier(const char* value) { m_requestIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier for the conversion operation.</p>
-     */
     inline StartMetadataModelConversionResult& WithRequestIdentifier(const Aws::String& value) { SetRequestIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier for the conversion operation.</p>
-     */
     inline StartMetadataModelConversionResult& WithRequestIdentifier(Aws::String&& value) { SetRequestIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the conversion operation.</p>
-     */
     inline StartMetadataModelConversionResult& WithRequestIdentifier(const char* value) { SetRequestIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartMetadataModelConversionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartMetadataModelConversionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartMetadataModelConversionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_requestIdentifier;

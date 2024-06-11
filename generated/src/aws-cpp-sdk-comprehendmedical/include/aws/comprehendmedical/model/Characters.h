@@ -36,30 +36,16 @@ namespace Model
     AWS_COMPREHENDMEDICAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The number of characters present in the input text document as processed by
      * Amazon Comprehend Medical. </p>
      */
     inline int GetOriginalTextCharacters() const{ return m_originalTextCharacters; }
-
-    /**
-     * <p> The number of characters present in the input text document as processed by
-     * Amazon Comprehend Medical. </p>
-     */
     inline bool OriginalTextCharactersHasBeenSet() const { return m_originalTextCharactersHasBeenSet; }
-
-    /**
-     * <p> The number of characters present in the input text document as processed by
-     * Amazon Comprehend Medical. </p>
-     */
     inline void SetOriginalTextCharacters(int value) { m_originalTextCharactersHasBeenSet = true; m_originalTextCharacters = value; }
-
-    /**
-     * <p> The number of characters present in the input text document as processed by
-     * Amazon Comprehend Medical. </p>
-     */
     inline Characters& WithOriginalTextCharacters(int value) { SetOriginalTextCharacters(value); return *this;}
-
+    ///@}
   private:
 
     int m_originalTextCharacters;

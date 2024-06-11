@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
      */
     inline const Aws::String& GetResourceScanId() const{ return m_resourceScanId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline bool ResourceScanIdHasBeenSet() const { return m_resourceScanIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline void SetResourceScanId(const Aws::String& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline void SetResourceScanId(Aws::String&& value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline void SetResourceScanId(const char* value) { m_resourceScanIdHasBeenSet = true; m_resourceScanId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline DescribeResourceScanRequest& WithResourceScanId(const Aws::String& value) { SetResourceScanId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline DescribeResourceScanRequest& WithResourceScanId(Aws::String&& value) { SetResourceScanId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource scan.</p>
-     */
     inline DescribeResourceScanRequest& WithResourceScanId(const char* value) { SetResourceScanId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceScanId;

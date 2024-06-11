@@ -49,212 +49,68 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline Application& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline Application& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application.</p>
-     */
     inline Application& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the application.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline Application& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline Application& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the application.</p>
-     */
     inline Application& WithVersion(const char* value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Arguments for Amazon EMR to pass to the application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline void SetArgs(const Aws::Vector<Aws::String>& value) { m_argsHasBeenSet = true; m_args = value; }
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline void SetArgs(Aws::Vector<Aws::String>&& value) { m_argsHasBeenSet = true; m_args = std::move(value); }
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline Application& WithArgs(const Aws::Vector<Aws::String>& value) { SetArgs(value); return *this;}
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline Application& WithArgs(Aws::Vector<Aws::String>&& value) { SetArgs(std::move(value)); return *this;}
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline Application& AddArgs(const Aws::String& value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline Application& AddArgs(Aws::String&& value) { m_argsHasBeenSet = true; m_args.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Arguments for Amazon EMR to pass to the application.</p>
-     */
     inline Application& AddArgs(const char* value) { m_argsHasBeenSet = true; m_args.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>This option is for advanced users only. This is meta information about
      * third-party applications that third-party vendors use for testing purposes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalInfo() const{ return m_additionalInfo; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline void SetAdditionalInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline void SetAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& WithAdditionalInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalInfo(value); return *this;}
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& WithAdditionalInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(const Aws::String& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(Aws::String&& key, const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(const Aws::String& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(Aws::String&& key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(const char* key, Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(Aws::String&& key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>This option is for advanced users only. This is meta information about
-     * third-party applications that third-party vendors use for testing purposes.</p>
-     */
     inline Application& AddAdditionalInfo(const char* key, const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -32,62 +32,21 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Unique account identifier for the TRN information that needs to be deleted.
      * If this isn't passed, the account ID corresponding to the credentials of the API
      * caller will be used for this parameter.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline DeleteTaxRegistrationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline DeleteTaxRegistrationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>Unique account identifier for the TRN information that needs to be deleted.
-     * If this isn't passed, the account ID corresponding to the credentials of the API
-     * caller will be used for this parameter.</p>
-     */
     inline DeleteTaxRegistrationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

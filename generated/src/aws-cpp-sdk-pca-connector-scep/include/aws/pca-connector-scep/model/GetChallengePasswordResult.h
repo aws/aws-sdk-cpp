@@ -32,63 +32,29 @@ namespace Model
     AWS_PCACONNECTORSCEP_API GetChallengePasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The SCEP challenge password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
-
-    /**
-     * <p>The SCEP challenge password.</p>
-     */
     inline void SetPassword(const Aws::String& value) { m_password = value; }
-
-    /**
-     * <p>The SCEP challenge password.</p>
-     */
     inline void SetPassword(Aws::String&& value) { m_password = std::move(value); }
-
-    /**
-     * <p>The SCEP challenge password.</p>
-     */
     inline void SetPassword(const char* value) { m_password.assign(value); }
-
-    /**
-     * <p>The SCEP challenge password.</p>
-     */
     inline GetChallengePasswordResult& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-
-    /**
-     * <p>The SCEP challenge password.</p>
-     */
     inline GetChallengePasswordResult& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>The SCEP challenge password.</p>
-     */
     inline GetChallengePasswordResult& WithPassword(const char* value) { SetPassword(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetChallengePasswordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetChallengePasswordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetChallengePasswordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_password;

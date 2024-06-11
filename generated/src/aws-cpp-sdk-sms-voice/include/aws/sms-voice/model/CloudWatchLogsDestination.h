@@ -38,95 +38,34 @@ namespace Model
     AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
      * role that is able to write event data to an Amazon CloudWatch destination.
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline CloudWatchLogsDestination& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline CloudWatchLogsDestination& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-
-    /**
-     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
-     * role that is able to write event data to an Amazon CloudWatch destination.
-     */
     inline CloudWatchLogsDestination& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The name of the Amazon CloudWatch Log Group that you want to record events in.
      */
     inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline CloudWatchLogsDestination& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline CloudWatchLogsDestination& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-
-    /**
-     * The name of the Amazon CloudWatch Log Group that you want to record events in.
-     */
     inline CloudWatchLogsDestination& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_iamRoleArn;

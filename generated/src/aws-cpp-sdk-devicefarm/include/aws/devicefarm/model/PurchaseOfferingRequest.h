@@ -37,108 +37,43 @@ namespace Model
     AWS_DEVICEFARM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline PurchaseOfferingRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline PurchaseOfferingRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the offering.</p>
-     */
     inline PurchaseOfferingRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of device slots to purchase in an offering request.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of device slots to purchase in an offering request.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of device slots to purchase in an offering request.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of device slots to purchase in an offering request.</p>
-     */
     inline PurchaseOfferingRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the offering promotion to be applied to the purchase.</p>
      */
     inline const Aws::String& GetOfferingPromotionId() const{ return m_offeringPromotionId; }
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline bool OfferingPromotionIdHasBeenSet() const { return m_offeringPromotionIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline void SetOfferingPromotionId(const Aws::String& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = value; }
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline void SetOfferingPromotionId(Aws::String&& value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId = std::move(value); }
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline void SetOfferingPromotionId(const char* value) { m_offeringPromotionIdHasBeenSet = true; m_offeringPromotionId.assign(value); }
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline PurchaseOfferingRequest& WithOfferingPromotionId(const Aws::String& value) { SetOfferingPromotionId(value); return *this;}
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline PurchaseOfferingRequest& WithOfferingPromotionId(Aws::String&& value) { SetOfferingPromotionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the offering promotion to be applied to the purchase.</p>
-     */
     inline PurchaseOfferingRequest& WithOfferingPromotionId(const char* value) { SetOfferingPromotionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_offeringId;

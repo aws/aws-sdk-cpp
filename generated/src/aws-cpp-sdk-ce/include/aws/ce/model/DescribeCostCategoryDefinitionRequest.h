@@ -34,87 +34,33 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for your Cost Category. </p>
      */
     inline const Aws::String& GetCostCategoryArn() const{ return m_costCategoryArn; }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline bool CostCategoryArnHasBeenSet() const { return m_costCategoryArnHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline void SetCostCategoryArn(const Aws::String& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = value; }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline void SetCostCategoryArn(Aws::String&& value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline void SetCostCategoryArn(const char* value) { m_costCategoryArnHasBeenSet = true; m_costCategoryArn.assign(value); }
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(const Aws::String& value) { SetCostCategoryArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(Aws::String&& value) { SetCostCategoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for your Cost Category. </p>
-     */
     inline DescribeCostCategoryDefinitionRequest& WithCostCategoryArn(const char* value) { SetCostCategoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date when the Cost Category was effective. </p>
      */
     inline const Aws::String& GetEffectiveOn() const{ return m_effectiveOn; }
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline bool EffectiveOnHasBeenSet() const { return m_effectiveOnHasBeenSet; }
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline void SetEffectiveOn(const Aws::String& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = value; }
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline void SetEffectiveOn(Aws::String&& value) { m_effectiveOnHasBeenSet = true; m_effectiveOn = std::move(value); }
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline void SetEffectiveOn(const char* value) { m_effectiveOnHasBeenSet = true; m_effectiveOn.assign(value); }
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline DescribeCostCategoryDefinitionRequest& WithEffectiveOn(const Aws::String& value) { SetEffectiveOn(value); return *this;}
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline DescribeCostCategoryDefinitionRequest& WithEffectiveOn(Aws::String&& value) { SetEffectiveOn(std::move(value)); return *this;}
-
-    /**
-     * <p>The date when the Cost Category was effective. </p>
-     */
     inline DescribeCostCategoryDefinitionRequest& WithEffectiveOn(const char* value) { SetEffectiveOn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_costCategoryArn;

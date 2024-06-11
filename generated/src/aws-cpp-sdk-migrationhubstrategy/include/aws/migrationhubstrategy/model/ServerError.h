@@ -37,36 +37,17 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error category of server analysis.</p>
      */
     inline const ServerErrorCategory& GetServerErrorCategory() const{ return m_serverErrorCategory; }
-
-    /**
-     * <p>The error category of server analysis.</p>
-     */
     inline bool ServerErrorCategoryHasBeenSet() const { return m_serverErrorCategoryHasBeenSet; }
-
-    /**
-     * <p>The error category of server analysis.</p>
-     */
     inline void SetServerErrorCategory(const ServerErrorCategory& value) { m_serverErrorCategoryHasBeenSet = true; m_serverErrorCategory = value; }
-
-    /**
-     * <p>The error category of server analysis.</p>
-     */
     inline void SetServerErrorCategory(ServerErrorCategory&& value) { m_serverErrorCategoryHasBeenSet = true; m_serverErrorCategory = std::move(value); }
-
-    /**
-     * <p>The error category of server analysis.</p>
-     */
     inline ServerError& WithServerErrorCategory(const ServerErrorCategory& value) { SetServerErrorCategory(value); return *this;}
-
-    /**
-     * <p>The error category of server analysis.</p>
-     */
     inline ServerError& WithServerErrorCategory(ServerErrorCategory&& value) { SetServerErrorCategory(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ServerErrorCategory m_serverErrorCategory;

@@ -32,70 +32,30 @@ namespace Model
     AWS_SAGEMAKER_API CreateHyperParameterTuningJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
      * a hyperparameter tuning job when you create it.</p>
      */
     inline const Aws::String& GetHyperParameterTuningJobArn() const{ return m_hyperParameterTuningJobArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
-     * a hyperparameter tuning job when you create it.</p>
-     */
     inline void SetHyperParameterTuningJobArn(const Aws::String& value) { m_hyperParameterTuningJobArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
-     * a hyperparameter tuning job when you create it.</p>
-     */
     inline void SetHyperParameterTuningJobArn(Aws::String&& value) { m_hyperParameterTuningJobArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
-     * a hyperparameter tuning job when you create it.</p>
-     */
     inline void SetHyperParameterTuningJobArn(const char* value) { m_hyperParameterTuningJobArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
-     * a hyperparameter tuning job when you create it.</p>
-     */
     inline CreateHyperParameterTuningJobResult& WithHyperParameterTuningJobArn(const Aws::String& value) { SetHyperParameterTuningJobArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
-     * a hyperparameter tuning job when you create it.</p>
-     */
     inline CreateHyperParameterTuningJobResult& WithHyperParameterTuningJobArn(Aws::String&& value) { SetHyperParameterTuningJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the tuning job. SageMaker assigns an ARN to
-     * a hyperparameter tuning job when you create it.</p>
-     */
     inline CreateHyperParameterTuningJobResult& WithHyperParameterTuningJobArn(const char* value) { SetHyperParameterTuningJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateHyperParameterTuningJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateHyperParameterTuningJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateHyperParameterTuningJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_hyperParameterTuningJobArn;

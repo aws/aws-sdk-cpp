@@ -39,101 +39,43 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of metric with the best result.</p>
      */
     inline const AutoMLJobObjectiveType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of metric with the best result.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of metric with the best result.</p>
-     */
     inline void SetType(const AutoMLJobObjectiveType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of metric with the best result.</p>
-     */
     inline void SetType(AutoMLJobObjectiveType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of metric with the best result.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithType(const AutoMLJobObjectiveType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of metric with the best result.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithType(AutoMLJobObjectiveType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the metric with the best result. For a description of the
      * possible objective metrics, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
      */
     inline const AutoMLMetricEnum& GetMetricName() const{ return m_metricName; }
-
-    /**
-     * <p>The name of the metric with the best result. For a description of the
-     * possible objective metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-     */
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-
-    /**
-     * <p>The name of the metric with the best result. For a description of the
-     * possible objective metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-     */
     inline void SetMetricName(const AutoMLMetricEnum& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-
-    /**
-     * <p>The name of the metric with the best result. For a description of the
-     * possible objective metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-     */
     inline void SetMetricName(AutoMLMetricEnum&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-
-    /**
-     * <p>The name of the metric with the best result. For a description of the
-     * possible objective metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithMetricName(const AutoMLMetricEnum& value) { SetMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the metric with the best result. For a description of the
-     * possible objective metrics, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithMetricName(AutoMLMetricEnum&& value) { SetMetricName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the metric with the best result.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the metric with the best result.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the metric with the best result.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the metric with the best result.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithValue(double value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the standard metric. For a description of the standard metrics,
      * see <a
@@ -141,47 +83,12 @@ namespace Model
      * candidate metrics</a>.</p>
      */
     inline const AutoMLMetricEnum& GetStandardMetricName() const{ return m_standardMetricName; }
-
-    /**
-     * <p>The name of the standard metric. For a description of the standard metrics,
-     * see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
-     * candidate metrics</a>.</p>
-     */
     inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
-
-    /**
-     * <p>The name of the standard metric. For a description of the standard metrics,
-     * see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
-     * candidate metrics</a>.</p>
-     */
     inline void SetStandardMetricName(const AutoMLMetricEnum& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
-
-    /**
-     * <p>The name of the standard metric. For a description of the standard metrics,
-     * see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
-     * candidate metrics</a>.</p>
-     */
     inline void SetStandardMetricName(AutoMLMetricEnum&& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = std::move(value); }
-
-    /**
-     * <p>The name of the standard metric. For a description of the standard metrics,
-     * see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
-     * candidate metrics</a>.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(const AutoMLMetricEnum& value) { SetStandardMetricName(value); return *this;}
-
-    /**
-     * <p>The name of the standard metric. For a description of the standard metrics,
-     * see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
-     * candidate metrics</a>.</p>
-     */
     inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(AutoMLMetricEnum&& value) { SetStandardMetricName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoMLJobObjectiveType m_type;

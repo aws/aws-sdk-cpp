@@ -38,46 +38,19 @@ namespace Model
     AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The FIFO message group ID to use as the target.</p>
      */
     inline const Aws::String& GetMessageGroupId() const{ return m_messageGroupId; }
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline bool MessageGroupIdHasBeenSet() const { return m_messageGroupIdHasBeenSet; }
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline void SetMessageGroupId(const Aws::String& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = value; }
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline void SetMessageGroupId(Aws::String&& value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId = std::move(value); }
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline void SetMessageGroupId(const char* value) { m_messageGroupIdHasBeenSet = true; m_messageGroupId.assign(value); }
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline SqsParameters& WithMessageGroupId(const Aws::String& value) { SetMessageGroupId(value); return *this;}
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline SqsParameters& WithMessageGroupId(Aws::String&& value) { SetMessageGroupId(std::move(value)); return *this;}
-
-    /**
-     * <p>The FIFO message group ID to use as the target.</p>
-     */
     inline SqsParameters& WithMessageGroupId(const char* value) { SetMessageGroupId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageGroupId;

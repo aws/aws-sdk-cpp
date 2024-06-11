@@ -35,30 +35,16 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
     inline int GetRepInterval() const{ return m_repInterval; }
-
-    /**
-     * The number of milliseconds between instances of this table in the output
-     * transport stream.
-     */
     inline bool RepIntervalHasBeenSet() const { return m_repIntervalHasBeenSet; }
-
-    /**
-     * The number of milliseconds between instances of this table in the output
-     * transport stream.
-     */
     inline void SetRepInterval(int value) { m_repIntervalHasBeenSet = true; m_repInterval = value; }
-
-    /**
-     * The number of milliseconds between instances of this table in the output
-     * transport stream.
-     */
     inline DvbTdtSettings& WithRepInterval(int value) { SetRepInterval(value); return *this;}
-
+    ///@}
   private:
 
     int m_repInterval;

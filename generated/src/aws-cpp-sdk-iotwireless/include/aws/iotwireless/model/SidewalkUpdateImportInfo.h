@@ -38,54 +38,20 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The CSV file contained in an S3 bucket that's used for appending devices to
      * an existing import task.</p>
      */
     inline const Aws::String& GetDeviceCreationFile() const{ return m_deviceCreationFile; }
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline bool DeviceCreationFileHasBeenSet() const { return m_deviceCreationFileHasBeenSet; }
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline void SetDeviceCreationFile(const Aws::String& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = value; }
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline void SetDeviceCreationFile(Aws::String&& value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile = std::move(value); }
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline void SetDeviceCreationFile(const char* value) { m_deviceCreationFileHasBeenSet = true; m_deviceCreationFile.assign(value); }
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline SidewalkUpdateImportInfo& WithDeviceCreationFile(const Aws::String& value) { SetDeviceCreationFile(value); return *this;}
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline SidewalkUpdateImportInfo& WithDeviceCreationFile(Aws::String&& value) { SetDeviceCreationFile(std::move(value)); return *this;}
-
-    /**
-     * <p>The CSV file contained in an S3 bucket that's used for appending devices to
-     * an existing import task.</p>
-     */
     inline SidewalkUpdateImportInfo& WithDeviceCreationFile(const char* value) { SetDeviceCreationFile(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceCreationFile;

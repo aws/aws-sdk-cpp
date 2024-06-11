@@ -39,71 +39,31 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline CoreNetworkPolicyException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline CoreNetworkPolicyException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline CoreNetworkPolicyException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes a core network policy exception.</p>
      */
     inline const Aws::Vector<CoreNetworkPolicyError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline void SetErrors(const Aws::Vector<CoreNetworkPolicyError>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline void SetErrors(Aws::Vector<CoreNetworkPolicyError>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline CoreNetworkPolicyException& WithErrors(const Aws::Vector<CoreNetworkPolicyError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline CoreNetworkPolicyException& WithErrors(Aws::Vector<CoreNetworkPolicyError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline CoreNetworkPolicyException& AddErrors(const CoreNetworkPolicyError& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>Describes a core network policy exception.</p>
-     */
     inline CoreNetworkPolicyException& AddErrors(CoreNetworkPolicyError&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

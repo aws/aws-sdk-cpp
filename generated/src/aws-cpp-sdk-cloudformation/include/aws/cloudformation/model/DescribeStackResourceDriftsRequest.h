@@ -38,47 +38,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the stack for which you want drift information.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the stack for which you want drift information.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource drift status values to use as filters for the resource drift
      * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
@@ -90,133 +64,30 @@ namespace Model
      * CloudFormation doesn't currently return this value.</p> </li> </ul>
      */
     inline const Aws::Vector<StackResourceDriftStatus>& GetStackResourceDriftStatusFilters() const{ return m_stackResourceDriftStatusFilters; }
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline bool StackResourceDriftStatusFiltersHasBeenSet() const { return m_stackResourceDriftStatusFiltersHasBeenSet; }
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline void SetStackResourceDriftStatusFilters(const Aws::Vector<StackResourceDriftStatus>& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters = value; }
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline void SetStackResourceDriftStatusFilters(Aws::Vector<StackResourceDriftStatus>&& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters = std::move(value); }
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline DescribeStackResourceDriftsRequest& WithStackResourceDriftStatusFilters(const Aws::Vector<StackResourceDriftStatus>& value) { SetStackResourceDriftStatusFilters(value); return *this;}
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline DescribeStackResourceDriftsRequest& WithStackResourceDriftStatusFilters(Aws::Vector<StackResourceDriftStatus>&& value) { SetStackResourceDriftStatusFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline DescribeStackResourceDriftsRequest& AddStackResourceDriftStatusFilters(const StackResourceDriftStatus& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters.push_back(value); return *this; }
-
-    /**
-     * <p>The resource drift status values to use as filters for the resource drift
-     * results returned.</p> <ul> <li> <p> <code>DELETED</code>: The resource differs
-     * from its expected template configuration in that the resource has been
-     * deleted.</p> </li> <li> <p> <code>MODIFIED</code>: One or more resource
-     * properties differ from their expected template values.</p> </li> <li> <p>
-     * <code>IN_SYNC</code>: The resource's actual configuration matches its expected
-     * template configuration.</p> </li> <li> <p> <code>NOT_CHECKED</code>:
-     * CloudFormation doesn't currently return this value.</p> </li> </ul>
-     */
     inline DescribeStackResourceDriftsRequest& AddStackResourceDriftStatusFilters(StackResourceDriftStatus&& value) { m_stackResourceDriftStatusFiltersHasBeenSet = true; m_stackResourceDriftStatusFilters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string that identifies the next page of stack resource drift results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that identifies the next page of stack resource drift results.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to be returned with a single call. If the
      * number of available results exceeds this maximum, the response includes a
@@ -224,31 +95,10 @@ namespace Model
      * request parameter to get the next set of results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to be returned with a single call. If the
-     * number of available results exceeds this maximum, the response includes a
-     * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
-     * request parameter to get the next set of results.</p>
-     */
     inline DescribeStackResourceDriftsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stackName;

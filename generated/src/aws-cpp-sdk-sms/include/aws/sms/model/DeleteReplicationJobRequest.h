@@ -34,46 +34,19 @@ namespace Model
     AWS_SMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the replication job.</p>
      */
     inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline DeleteReplicationJobRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline DeleteReplicationJobRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the replication job.</p>
-     */
     inline DeleteReplicationJobRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationJobId;

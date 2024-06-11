@@ -34,46 +34,19 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the instance profile to delete.</p>
      */
     inline const Aws::String& GetInstanceProfileIdentifier() const{ return m_instanceProfileIdentifier; }
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline bool InstanceProfileIdentifierHasBeenSet() const { return m_instanceProfileIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline void SetInstanceProfileIdentifier(const Aws::String& value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier = value; }
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline void SetInstanceProfileIdentifier(Aws::String&& value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline void SetInstanceProfileIdentifier(const char* value) { m_instanceProfileIdentifierHasBeenSet = true; m_instanceProfileIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline DeleteInstanceProfileRequest& WithInstanceProfileIdentifier(const Aws::String& value) { SetInstanceProfileIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline DeleteInstanceProfileRequest& WithInstanceProfileIdentifier(Aws::String&& value) { SetInstanceProfileIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the instance profile to delete.</p>
-     */
     inline DeleteInstanceProfileRequest& WithInstanceProfileIdentifier(const char* value) { SetInstanceProfileIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceProfileIdentifier;

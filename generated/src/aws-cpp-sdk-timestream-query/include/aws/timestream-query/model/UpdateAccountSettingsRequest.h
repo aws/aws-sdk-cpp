@@ -34,6 +34,7 @@ namespace Model
     AWS_TIMESTREAMQUERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of compute units the service will use at any point in time
      * to serve your queries. To run queries, you must set a minimum capacity of 4 TCU.
@@ -45,74 +46,22 @@ namespace Model
      * quotas</a>.</p>
      */
     inline int GetMaxQueryTCU() const{ return m_maxQueryTCU; }
-
-    /**
-     * <p>The maximum number of compute units the service will use at any point in time
-     * to serve your queries. To run queries, you must set a minimum capacity of 4 TCU.
-     * You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16,
-     * 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code>
-     * is 1000. To request an increase to this soft limit, contact Amazon Web Services
-     * Support. For information about the default quota for maxQueryTCU, see <a
-     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
-     * quotas</a>.</p>
-     */
     inline bool MaxQueryTCUHasBeenSet() const { return m_maxQueryTCUHasBeenSet; }
-
-    /**
-     * <p>The maximum number of compute units the service will use at any point in time
-     * to serve your queries. To run queries, you must set a minimum capacity of 4 TCU.
-     * You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16,
-     * 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code>
-     * is 1000. To request an increase to this soft limit, contact Amazon Web Services
-     * Support. For information about the default quota for maxQueryTCU, see <a
-     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
-     * quotas</a>.</p>
-     */
     inline void SetMaxQueryTCU(int value) { m_maxQueryTCUHasBeenSet = true; m_maxQueryTCU = value; }
-
-    /**
-     * <p>The maximum number of compute units the service will use at any point in time
-     * to serve your queries. To run queries, you must set a minimum capacity of 4 TCU.
-     * You can set the maximum number of TCU in multiples of 4, for example, 4, 8, 16,
-     * 32, and so on.</p> <p>The maximum value supported for <code>MaxQueryTCU</code>
-     * is 1000. To request an increase to this soft limit, contact Amazon Web Services
-     * Support. For information about the default quota for maxQueryTCU, see <a
-     * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.default">Default
-     * quotas</a>.</p>
-     */
     inline UpdateAccountSettingsRequest& WithMaxQueryTCU(int value) { SetMaxQueryTCU(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pricing model for queries in an account.</p>
      */
     inline const QueryPricingModel& GetQueryPricingModel() const{ return m_queryPricingModel; }
-
-    /**
-     * <p>The pricing model for queries in an account.</p>
-     */
     inline bool QueryPricingModelHasBeenSet() const { return m_queryPricingModelHasBeenSet; }
-
-    /**
-     * <p>The pricing model for queries in an account.</p>
-     */
     inline void SetQueryPricingModel(const QueryPricingModel& value) { m_queryPricingModelHasBeenSet = true; m_queryPricingModel = value; }
-
-    /**
-     * <p>The pricing model for queries in an account.</p>
-     */
     inline void SetQueryPricingModel(QueryPricingModel&& value) { m_queryPricingModelHasBeenSet = true; m_queryPricingModel = std::move(value); }
-
-    /**
-     * <p>The pricing model for queries in an account.</p>
-     */
     inline UpdateAccountSettingsRequest& WithQueryPricingModel(const QueryPricingModel& value) { SetQueryPricingModel(value); return *this;}
-
-    /**
-     * <p>The pricing model for queries in an account.</p>
-     */
     inline UpdateAccountSettingsRequest& WithQueryPricingModel(QueryPricingModel&& value) { SetQueryPricingModel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_maxQueryTCU;

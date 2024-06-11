@@ -39,46 +39,19 @@ namespace Model
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Any issues that are associated with the node group. </p>
      */
     inline const Aws::Vector<Issue>& GetIssues() const{ return m_issues; }
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline void SetIssues(const Aws::Vector<Issue>& value) { m_issuesHasBeenSet = true; m_issues = value; }
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline void SetIssues(Aws::Vector<Issue>&& value) { m_issuesHasBeenSet = true; m_issues = std::move(value); }
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline NodegroupHealth& WithIssues(const Aws::Vector<Issue>& value) { SetIssues(value); return *this;}
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline NodegroupHealth& WithIssues(Aws::Vector<Issue>&& value) { SetIssues(std::move(value)); return *this;}
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline NodegroupHealth& AddIssues(const Issue& value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
-
-    /**
-     * <p>Any issues that are associated with the node group. </p>
-     */
     inline NodegroupHealth& AddIssues(Issue&& value) { m_issuesHasBeenSet = true; m_issues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Issue> m_issues;

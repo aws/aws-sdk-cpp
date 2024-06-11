@@ -38,46 +38,19 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the recording stream.</p>
      */
     inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline RecordingStreamConfiguration& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline RecordingStreamConfiguration& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the recording stream.</p>
-     */
     inline RecordingStreamConfiguration& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamArn;

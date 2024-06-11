@@ -38,201 +38,65 @@ namespace Model
     AWS_PINPOINT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetJourneyRunsRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetJourneyRunsRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetJourneyRunsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the journey.</p>
      */
     inline const Aws::String& GetJourneyId() const{ return m_journeyId; }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline bool JourneyIdHasBeenSet() const { return m_journeyIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline void SetJourneyId(const Aws::String& value) { m_journeyIdHasBeenSet = true; m_journeyId = value; }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline void SetJourneyId(Aws::String&& value) { m_journeyIdHasBeenSet = true; m_journeyId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline void SetJourneyId(const char* value) { m_journeyIdHasBeenSet = true; m_journeyId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline GetJourneyRunsRequest& WithJourneyId(const Aws::String& value) { SetJourneyId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline GetJourneyRunsRequest& WithJourneyId(Aws::String&& value) { SetJourneyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the journey.</p>
-     */
     inline GetJourneyRunsRequest& WithJourneyId(const char* value) { SetJourneyId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to include in each page of a paginated response.
      * This parameter is not supported for application, campaign, and journey
      * metrics.</p>
      */
     inline const Aws::String& GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline void SetPageSize(Aws::String&& value) { m_pageSizeHasBeenSet = true; m_pageSize = std::move(value); }
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline void SetPageSize(const char* value) { m_pageSizeHasBeenSet = true; m_pageSize.assign(value); }
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline GetJourneyRunsRequest& WithPageSize(const Aws::String& value) { SetPageSize(value); return *this;}
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline GetJourneyRunsRequest& WithPageSize(Aws::String&& value) { SetPageSize(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum number of items to include in each page of a paginated response.
-     * This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
-     */
     inline GetJourneyRunsRequest& WithPageSize(const char* value) { SetPageSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The NextToken string that specifies which page of results to return in a
      * paginated response.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline GetJourneyRunsRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline GetJourneyRunsRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The NextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline GetJourneyRunsRequest& WithToken(const char* value) { SetToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

@@ -38,6 +38,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the IAM server certificate to which you want to add tags.</p>
      * <p>This parameter allows (through its <a
@@ -46,119 +47,29 @@ namespace Model
      * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline bool ServerCertificateNameHasBeenSet() const { return m_serverCertificateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline TagServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline TagServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IAM server certificate to which you want to add tags.</p>
-     * <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline TagServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of tags that you want to attach to the IAM server certificate. Each
      * tag consists of a key name and an associated value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline TagServerCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline TagServerCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline TagServerCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The list of tags that you want to attach to the IAM server certificate. Each
-     * tag consists of a key name and an associated value.</p>
-     */
     inline TagServerCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_serverCertificateName;

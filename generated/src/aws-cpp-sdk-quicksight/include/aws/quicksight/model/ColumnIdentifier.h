@@ -37,87 +37,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data set that the column belongs to.</p>
      */
     inline const Aws::String& GetDataSetIdentifier() const{ return m_dataSetIdentifier; }
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline bool DataSetIdentifierHasBeenSet() const { return m_dataSetIdentifierHasBeenSet; }
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline void SetDataSetIdentifier(const Aws::String& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = value; }
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline void SetDataSetIdentifier(Aws::String&& value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier = std::move(value); }
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline void SetDataSetIdentifier(const char* value) { m_dataSetIdentifierHasBeenSet = true; m_dataSetIdentifier.assign(value); }
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline ColumnIdentifier& WithDataSetIdentifier(const Aws::String& value) { SetDataSetIdentifier(value); return *this;}
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline ColumnIdentifier& WithDataSetIdentifier(Aws::String&& value) { SetDataSetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The data set that the column belongs to.</p>
-     */
     inline ColumnIdentifier& WithDataSetIdentifier(const char* value) { SetDataSetIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the column.</p>
      */
     inline const Aws::String& GetColumnName() const{ return m_columnName; }
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline ColumnIdentifier& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline ColumnIdentifier& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the column.</p>
-     */
     inline ColumnIdentifier& WithColumnName(const char* value) { SetColumnName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSetIdentifier;

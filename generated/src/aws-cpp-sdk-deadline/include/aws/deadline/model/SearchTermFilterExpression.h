@@ -37,46 +37,19 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The term to search for.</p>
      */
     inline const Aws::String& GetSearchTerm() const{ return m_searchTerm; }
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline bool SearchTermHasBeenSet() const { return m_searchTermHasBeenSet; }
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline void SetSearchTerm(const Aws::String& value) { m_searchTermHasBeenSet = true; m_searchTerm = value; }
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline void SetSearchTerm(Aws::String&& value) { m_searchTermHasBeenSet = true; m_searchTerm = std::move(value); }
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline void SetSearchTerm(const char* value) { m_searchTermHasBeenSet = true; m_searchTerm.assign(value); }
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline SearchTermFilterExpression& WithSearchTerm(const Aws::String& value) { SetSearchTerm(value); return *this;}
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline SearchTermFilterExpression& WithSearchTerm(Aws::String&& value) { SetSearchTerm(std::move(value)); return *this;}
-
-    /**
-     * <p>The term to search for.</p>
-     */
     inline SearchTermFilterExpression& WithSearchTerm(const char* value) { SetSearchTerm(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_searchTerm;

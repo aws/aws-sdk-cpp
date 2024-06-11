@@ -39,53 +39,27 @@ namespace Model
     AWS_MOBILE_API UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Detailed information about the updated AWS Mobile Hub project. </p>
      */
     inline const ProjectDetails& GetDetails() const{ return m_details; }
-
-    /**
-     * <p> Detailed information about the updated AWS Mobile Hub project. </p>
-     */
     inline void SetDetails(const ProjectDetails& value) { m_details = value; }
-
-    /**
-     * <p> Detailed information about the updated AWS Mobile Hub project. </p>
-     */
     inline void SetDetails(ProjectDetails&& value) { m_details = std::move(value); }
-
-    /**
-     * <p> Detailed information about the updated AWS Mobile Hub project. </p>
-     */
     inline UpdateProjectResult& WithDetails(const ProjectDetails& value) { SetDetails(value); return *this;}
-
-    /**
-     * <p> Detailed information about the updated AWS Mobile Hub project. </p>
-     */
     inline UpdateProjectResult& WithDetails(ProjectDetails&& value) { SetDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProjectDetails m_details;

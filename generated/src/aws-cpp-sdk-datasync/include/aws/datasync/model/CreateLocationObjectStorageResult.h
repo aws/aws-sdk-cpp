@@ -37,63 +37,29 @@ namespace Model
     AWS_DATASYNC_API CreateLocationObjectStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Specifies the ARN of the object storage system location that you create.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
-
-    /**
-     * <p>Specifies the ARN of the object storage system location that you create.</p>
-     */
     inline void SetLocationArn(const Aws::String& value) { m_locationArn = value; }
-
-    /**
-     * <p>Specifies the ARN of the object storage system location that you create.</p>
-     */
     inline void SetLocationArn(Aws::String&& value) { m_locationArn = std::move(value); }
-
-    /**
-     * <p>Specifies the ARN of the object storage system location that you create.</p>
-     */
     inline void SetLocationArn(const char* value) { m_locationArn.assign(value); }
-
-    /**
-     * <p>Specifies the ARN of the object storage system location that you create.</p>
-     */
     inline CreateLocationObjectStorageResult& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the object storage system location that you create.</p>
-     */
     inline CreateLocationObjectStorageResult& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the ARN of the object storage system location that you create.</p>
-     */
     inline CreateLocationObjectStorageResult& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateLocationObjectStorageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateLocationObjectStorageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateLocationObjectStorageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_locationArn;

@@ -39,6 +39,7 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
      * underscores, and hyphens are allowed. This name is referenced in the
@@ -46,106 +47,28 @@ namespace Model
      * <code>mountPoints</code>. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline AwsEcsTaskVolumeDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline AwsEcsTaskVolumeDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
-     * underscores, and hyphens are allowed. This name is referenced in the
-     * <code>sourceVolume</code> parameter of container definition
-     * <code>mountPoints</code>. </p>
-     */
     inline AwsEcsTaskVolumeDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This parameter is specified when you use bind mount host volumes. The
      * contents of the <code>host</code> parameter determine whether your bind mount
      * host volume persists on the host container instance and where it's stored. </p>
      */
     inline const AwsEcsTaskVolumeHostDetails& GetHost() const{ return m_host; }
-
-    /**
-     * <p>This parameter is specified when you use bind mount host volumes. The
-     * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it's stored. </p>
-     */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-
-    /**
-     * <p>This parameter is specified when you use bind mount host volumes. The
-     * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it's stored. </p>
-     */
     inline void SetHost(const AwsEcsTaskVolumeHostDetails& value) { m_hostHasBeenSet = true; m_host = value; }
-
-    /**
-     * <p>This parameter is specified when you use bind mount host volumes. The
-     * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it's stored. </p>
-     */
     inline void SetHost(AwsEcsTaskVolumeHostDetails&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-
-    /**
-     * <p>This parameter is specified when you use bind mount host volumes. The
-     * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it's stored. </p>
-     */
     inline AwsEcsTaskVolumeDetails& WithHost(const AwsEcsTaskVolumeHostDetails& value) { SetHost(value); return *this;}
-
-    /**
-     * <p>This parameter is specified when you use bind mount host volumes. The
-     * contents of the <code>host</code> parameter determine whether your bind mount
-     * host volume persists on the host container instance and where it's stored. </p>
-     */
     inline AwsEcsTaskVolumeDetails& WithHost(AwsEcsTaskVolumeHostDetails&& value) { SetHost(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

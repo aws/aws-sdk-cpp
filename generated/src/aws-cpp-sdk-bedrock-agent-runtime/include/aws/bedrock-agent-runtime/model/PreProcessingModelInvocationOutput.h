@@ -39,83 +39,32 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the response from the Lambda parsing of the output of the
      * pre-processing step.</p>
      */
     inline const PreProcessingParsedResponse& GetParsedResponse() const{ return m_parsedResponse; }
-
-    /**
-     * <p>Details about the response from the Lambda parsing of the output of the
-     * pre-processing step.</p>
-     */
     inline bool ParsedResponseHasBeenSet() const { return m_parsedResponseHasBeenSet; }
-
-    /**
-     * <p>Details about the response from the Lambda parsing of the output of the
-     * pre-processing step.</p>
-     */
     inline void SetParsedResponse(const PreProcessingParsedResponse& value) { m_parsedResponseHasBeenSet = true; m_parsedResponse = value; }
-
-    /**
-     * <p>Details about the response from the Lambda parsing of the output of the
-     * pre-processing step.</p>
-     */
     inline void SetParsedResponse(PreProcessingParsedResponse&& value) { m_parsedResponseHasBeenSet = true; m_parsedResponse = std::move(value); }
-
-    /**
-     * <p>Details about the response from the Lambda parsing of the output of the
-     * pre-processing step.</p>
-     */
     inline PreProcessingModelInvocationOutput& WithParsedResponse(const PreProcessingParsedResponse& value) { SetParsedResponse(value); return *this;}
-
-    /**
-     * <p>Details about the response from the Lambda parsing of the output of the
-     * pre-processing step.</p>
-     */
     inline PreProcessingModelInvocationOutput& WithParsedResponse(PreProcessingParsedResponse&& value) { SetParsedResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the trace.</p>
      */
     inline const Aws::String& GetTraceId() const{ return m_traceId; }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline PreProcessingModelInvocationOutput& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline PreProcessingModelInvocationOutput& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline PreProcessingModelInvocationOutput& WithTraceId(const char* value) { SetTraceId(value); return *this;}
-
+    ///@}
   private:
 
     PreProcessingParsedResponse m_parsedResponse;

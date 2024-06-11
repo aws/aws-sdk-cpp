@@ -39,83 +39,32 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
      * or FAILED.</p>
      */
     inline const DatasetContentState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
-     * or FAILED.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
-     * or FAILED.</p>
-     */
     inline void SetState(const DatasetContentState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
-     * or FAILED.</p>
-     */
     inline void SetState(DatasetContentState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
-     * or FAILED.</p>
-     */
     inline DatasetContentStatus& WithState(const DatasetContentState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the dataset contents. Can be one of READY, CREATING, SUCCEEDED,
-     * or FAILED.</p>
-     */
     inline DatasetContentStatus& WithState(DatasetContentState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason the dataset contents are in this state.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline DatasetContentStatus& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline DatasetContentStatus& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason the dataset contents are in this state.</p>
-     */
     inline DatasetContentStatus& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     DatasetContentState m_state;

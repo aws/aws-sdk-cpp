@@ -39,57 +39,27 @@ namespace Model
     AWS_EC2_API AcceptReservedInstancesExchangeQuoteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the successful exchange.</p>
      */
     inline const Aws::String& GetExchangeId() const{ return m_exchangeId; }
-
-    /**
-     * <p>The ID of the successful exchange.</p>
-     */
     inline void SetExchangeId(const Aws::String& value) { m_exchangeId = value; }
-
-    /**
-     * <p>The ID of the successful exchange.</p>
-     */
     inline void SetExchangeId(Aws::String&& value) { m_exchangeId = std::move(value); }
-
-    /**
-     * <p>The ID of the successful exchange.</p>
-     */
     inline void SetExchangeId(const char* value) { m_exchangeId.assign(value); }
-
-    /**
-     * <p>The ID of the successful exchange.</p>
-     */
     inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(const Aws::String& value) { SetExchangeId(value); return *this;}
-
-    /**
-     * <p>The ID of the successful exchange.</p>
-     */
     inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(Aws::String&& value) { SetExchangeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the successful exchange.</p>
-     */
     inline AcceptReservedInstancesExchangeQuoteResponse& WithExchangeId(const char* value) { SetExchangeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AcceptReservedInstancesExchangeQuoteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exchangeId;

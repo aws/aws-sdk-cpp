@@ -34,106 +34,43 @@ namespace Model
     AWS_SSM_API GetResourcePoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline GetResourcePoliciesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline GetResourcePoliciesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline GetResourcePoliciesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of the <code>Policy</code> object.</p>
      */
     inline const Aws::Vector<GetResourcePoliciesResponseEntry>& GetPolicies() const{ return m_policies; }
-
-    /**
-     * <p>An array of the <code>Policy</code> object.</p>
-     */
     inline void SetPolicies(const Aws::Vector<GetResourcePoliciesResponseEntry>& value) { m_policies = value; }
-
-    /**
-     * <p>An array of the <code>Policy</code> object.</p>
-     */
     inline void SetPolicies(Aws::Vector<GetResourcePoliciesResponseEntry>&& value) { m_policies = std::move(value); }
-
-    /**
-     * <p>An array of the <code>Policy</code> object.</p>
-     */
     inline GetResourcePoliciesResult& WithPolicies(const Aws::Vector<GetResourcePoliciesResponseEntry>& value) { SetPolicies(value); return *this;}
-
-    /**
-     * <p>An array of the <code>Policy</code> object.</p>
-     */
     inline GetResourcePoliciesResult& WithPolicies(Aws::Vector<GetResourcePoliciesResponseEntry>&& value) { SetPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the <code>Policy</code> object.</p>
-     */
     inline GetResourcePoliciesResult& AddPolicies(const GetResourcePoliciesResponseEntry& value) { m_policies.push_back(value); return *this; }
-
-    /**
-     * <p>An array of the <code>Policy</code> object.</p>
-     */
     inline GetResourcePoliciesResult& AddPolicies(GetResourcePoliciesResponseEntry&& value) { m_policies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResourcePoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResourcePoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResourcePoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

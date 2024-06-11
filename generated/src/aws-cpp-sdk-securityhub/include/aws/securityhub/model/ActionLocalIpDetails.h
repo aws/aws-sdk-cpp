@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IP address.</p>
      */
     inline const Aws::String& GetIpAddressV4() const{ return m_ipAddressV4; }
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline bool IpAddressV4HasBeenSet() const { return m_ipAddressV4HasBeenSet; }
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline void SetIpAddressV4(const Aws::String& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = value; }
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline void SetIpAddressV4(Aws::String&& value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4 = std::move(value); }
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline void SetIpAddressV4(const char* value) { m_ipAddressV4HasBeenSet = true; m_ipAddressV4.assign(value); }
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline ActionLocalIpDetails& WithIpAddressV4(const Aws::String& value) { SetIpAddressV4(value); return *this;}
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline ActionLocalIpDetails& WithIpAddressV4(Aws::String&& value) { SetIpAddressV4(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP address.</p>
-     */
     inline ActionLocalIpDetails& WithIpAddressV4(const char* value) { SetIpAddressV4(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipAddressV4;

@@ -38,46 +38,19 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the CloudWatch log to receive application messages.</p>
      */
     inline const Aws::String& GetLogStreamARN() const{ return m_logStreamARN; }
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline bool LogStreamARNHasBeenSet() const { return m_logStreamARNHasBeenSet; }
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline void SetLogStreamARN(const Aws::String& value) { m_logStreamARNHasBeenSet = true; m_logStreamARN = value; }
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline void SetLogStreamARN(Aws::String&& value) { m_logStreamARNHasBeenSet = true; m_logStreamARN = std::move(value); }
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline void SetLogStreamARN(const char* value) { m_logStreamARNHasBeenSet = true; m_logStreamARN.assign(value); }
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline CloudWatchLoggingOption& WithLogStreamARN(const Aws::String& value) { SetLogStreamARN(value); return *this;}
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline CloudWatchLoggingOption& WithLogStreamARN(Aws::String&& value) { SetLogStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the CloudWatch log to receive application messages.</p>
-     */
     inline CloudWatchLoggingOption& WithLogStreamARN(const char* value) { SetLogStreamARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logStreamARN;

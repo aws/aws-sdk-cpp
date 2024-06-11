@@ -40,87 +40,33 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket prefix.</p>
      */
     inline const Aws::String& GetBucketPrefix() const{ return m_bucketPrefix; }
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline bool BucketPrefixHasBeenSet() const { return m_bucketPrefixHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline void SetBucketPrefix(const Aws::String& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = value; }
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline void SetBucketPrefix(Aws::String&& value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline void SetBucketPrefix(const char* value) { m_bucketPrefixHasBeenSet = true; m_bucketPrefix.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline SuccessResponseHandlingConfig& WithBucketPrefix(const Aws::String& value) { SetBucketPrefix(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline SuccessResponseHandlingConfig& WithBucketPrefix(Aws::String&& value) { SetBucketPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket prefix.</p>
-     */
     inline SuccessResponseHandlingConfig& WithBucketPrefix(const char* value) { SetBucketPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline SuccessResponseHandlingConfig& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline SuccessResponseHandlingConfig& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket.</p>
-     */
     inline SuccessResponseHandlingConfig& WithBucketName(const char* value) { SetBucketName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketPrefix;

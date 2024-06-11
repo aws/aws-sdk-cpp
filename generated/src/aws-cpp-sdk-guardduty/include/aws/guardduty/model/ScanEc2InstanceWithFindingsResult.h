@@ -39,36 +39,17 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the configuration of scanning EBS volumes as a data source.</p>
      */
     inline const EbsVolumesResult& GetEbsVolumes() const{ return m_ebsVolumes; }
-
-    /**
-     * <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-     */
     inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
-
-    /**
-     * <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-     */
     inline void SetEbsVolumes(const EbsVolumesResult& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = value; }
-
-    /**
-     * <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-     */
     inline void SetEbsVolumes(EbsVolumesResult&& value) { m_ebsVolumesHasBeenSet = true; m_ebsVolumes = std::move(value); }
-
-    /**
-     * <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-     */
     inline ScanEc2InstanceWithFindingsResult& WithEbsVolumes(const EbsVolumesResult& value) { SetEbsVolumes(value); return *this;}
-
-    /**
-     * <p>Describes the configuration of scanning EBS volumes as a data source.</p>
-     */
     inline ScanEc2InstanceWithFindingsResult& WithEbsVolumes(EbsVolumesResult&& value) { SetEbsVolumes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EbsVolumesResult m_ebsVolumes;

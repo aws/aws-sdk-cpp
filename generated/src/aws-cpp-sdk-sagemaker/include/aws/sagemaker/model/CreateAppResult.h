@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the app.</p>
      */
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the app.</p>
-     */
     inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the app.</p>
-     */
     inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the app.</p>
-     */
     inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the app.</p>
-     */
     inline CreateAppResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the app.</p>
-     */
     inline CreateAppResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the app.</p>
-     */
     inline CreateAppResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appArn;

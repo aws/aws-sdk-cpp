@@ -33,53 +33,27 @@ namespace Model
     AWS_FIS_API GetExperimentTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the experiment template.</p>
      */
     inline const ExperimentTemplate& GetExperimentTemplate() const{ return m_experimentTemplate; }
-
-    /**
-     * <p>Information about the experiment template.</p>
-     */
     inline void SetExperimentTemplate(const ExperimentTemplate& value) { m_experimentTemplate = value; }
-
-    /**
-     * <p>Information about the experiment template.</p>
-     */
     inline void SetExperimentTemplate(ExperimentTemplate&& value) { m_experimentTemplate = std::move(value); }
-
-    /**
-     * <p>Information about the experiment template.</p>
-     */
     inline GetExperimentTemplateResult& WithExperimentTemplate(const ExperimentTemplate& value) { SetExperimentTemplate(value); return *this;}
-
-    /**
-     * <p>Information about the experiment template.</p>
-     */
     inline GetExperimentTemplateResult& WithExperimentTemplate(ExperimentTemplate&& value) { SetExperimentTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetExperimentTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetExperimentTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetExperimentTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ExperimentTemplate m_experimentTemplate;

@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field wells of a bar chart.</p>
      */
     inline const BarChartAggregatedFieldWells& GetBarChartAggregatedFieldWells() const{ return m_barChartAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field wells of a bar chart.</p>
-     */
     inline bool BarChartAggregatedFieldWellsHasBeenSet() const { return m_barChartAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field wells of a bar chart.</p>
-     */
     inline void SetBarChartAggregatedFieldWells(const BarChartAggregatedFieldWells& value) { m_barChartAggregatedFieldWellsHasBeenSet = true; m_barChartAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field wells of a bar chart.</p>
-     */
     inline void SetBarChartAggregatedFieldWells(BarChartAggregatedFieldWells&& value) { m_barChartAggregatedFieldWellsHasBeenSet = true; m_barChartAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field wells of a bar chart.</p>
-     */
     inline BarChartFieldWells& WithBarChartAggregatedFieldWells(const BarChartAggregatedFieldWells& value) { SetBarChartAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field wells of a bar chart.</p>
-     */
     inline BarChartFieldWells& WithBarChartAggregatedFieldWells(BarChartAggregatedFieldWells&& value) { SetBarChartAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BarChartAggregatedFieldWells m_barChartAggregatedFieldWells;

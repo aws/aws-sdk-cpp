@@ -33,43 +33,25 @@ namespace Model
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API UpdateIdentityProviderSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const IdentityProviderSummary& GetIdentityProviderSummary() const{ return m_identityProviderSummary; }
-
-    
     inline void SetIdentityProviderSummary(const IdentityProviderSummary& value) { m_identityProviderSummary = value; }
-
-    
     inline void SetIdentityProviderSummary(IdentityProviderSummary&& value) { m_identityProviderSummary = std::move(value); }
-
-    
     inline UpdateIdentityProviderSettingsResult& WithIdentityProviderSummary(const IdentityProviderSummary& value) { SetIdentityProviderSummary(value); return *this;}
-
-    
     inline UpdateIdentityProviderSettingsResult& WithIdentityProviderSummary(IdentityProviderSummary&& value) { SetIdentityProviderSummary(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateIdentityProviderSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateIdentityProviderSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateIdentityProviderSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     IdentityProviderSummary m_identityProviderSummary;

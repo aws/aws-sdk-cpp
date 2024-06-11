@@ -38,118 +38,45 @@ namespace Model
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filter applications list by application ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetApplicationIDs() const{ return m_applicationIDs; }
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline bool ApplicationIDsHasBeenSet() const { return m_applicationIDsHasBeenSet; }
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline void SetApplicationIDs(const Aws::Vector<Aws::String>& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = value; }
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline void SetApplicationIDs(Aws::Vector<Aws::String>&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = std::move(value); }
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline ListApplicationsRequestFilters& WithApplicationIDs(const Aws::Vector<Aws::String>& value) { SetApplicationIDs(value); return *this;}
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline ListApplicationsRequestFilters& WithApplicationIDs(Aws::Vector<Aws::String>&& value) { SetApplicationIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline ListApplicationsRequestFilters& AddApplicationIDs(const Aws::String& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(value); return *this; }
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline ListApplicationsRequestFilters& AddApplicationIDs(Aws::String&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filter applications list by application ID.</p>
-     */
     inline ListApplicationsRequestFilters& AddApplicationIDs(const char* value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter applications list by archival status.</p>
      */
     inline bool GetIsArchived() const{ return m_isArchived; }
-
-    /**
-     * <p>Filter applications list by archival status.</p>
-     */
     inline bool IsArchivedHasBeenSet() const { return m_isArchivedHasBeenSet; }
-
-    /**
-     * <p>Filter applications list by archival status.</p>
-     */
     inline void SetIsArchived(bool value) { m_isArchivedHasBeenSet = true; m_isArchived = value; }
-
-    /**
-     * <p>Filter applications list by archival status.</p>
-     */
     inline ListApplicationsRequestFilters& WithIsArchived(bool value) { SetIsArchived(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter applications list by wave ID.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWaveIDs() const{ return m_waveIDs; }
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline bool WaveIDsHasBeenSet() const { return m_waveIDsHasBeenSet; }
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline void SetWaveIDs(const Aws::Vector<Aws::String>& value) { m_waveIDsHasBeenSet = true; m_waveIDs = value; }
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline void SetWaveIDs(Aws::Vector<Aws::String>&& value) { m_waveIDsHasBeenSet = true; m_waveIDs = std::move(value); }
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline ListApplicationsRequestFilters& WithWaveIDs(const Aws::Vector<Aws::String>& value) { SetWaveIDs(value); return *this;}
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline ListApplicationsRequestFilters& WithWaveIDs(Aws::Vector<Aws::String>&& value) { SetWaveIDs(std::move(value)); return *this;}
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline ListApplicationsRequestFilters& AddWaveIDs(const Aws::String& value) { m_waveIDsHasBeenSet = true; m_waveIDs.push_back(value); return *this; }
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline ListApplicationsRequestFilters& AddWaveIDs(Aws::String&& value) { m_waveIDsHasBeenSet = true; m_waveIDs.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Filter applications list by wave ID.</p>
-     */
     inline ListApplicationsRequestFilters& AddWaveIDs(const char* value) { m_waveIDsHasBeenSet = true; m_waveIDs.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_applicationIDs;

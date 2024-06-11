@@ -39,53 +39,27 @@ namespace Model
     AWS_CODEPIPELINE_API UpdatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The structure of the updated pipeline.</p>
      */
     inline const PipelineDeclaration& GetPipeline() const{ return m_pipeline; }
-
-    /**
-     * <p>The structure of the updated pipeline.</p>
-     */
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipeline = value; }
-
-    /**
-     * <p>The structure of the updated pipeline.</p>
-     */
     inline void SetPipeline(PipelineDeclaration&& value) { m_pipeline = std::move(value); }
-
-    /**
-     * <p>The structure of the updated pipeline.</p>
-     */
     inline UpdatePipelineResult& WithPipeline(const PipelineDeclaration& value) { SetPipeline(value); return *this;}
-
-    /**
-     * <p>The structure of the updated pipeline.</p>
-     */
     inline UpdatePipelineResult& WithPipeline(PipelineDeclaration&& value) { SetPipeline(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PipelineDeclaration m_pipeline;

@@ -44,46 +44,19 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The endpoint ID.</p>
      */
     inline const Aws::String& GetAnalyticsEndpointId() const{ return m_analyticsEndpointId; }
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline bool AnalyticsEndpointIdHasBeenSet() const { return m_analyticsEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline void SetAnalyticsEndpointId(const Aws::String& value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId = value; }
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline void SetAnalyticsEndpointId(Aws::String&& value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId = std::move(value); }
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline void SetAnalyticsEndpointId(const char* value) { m_analyticsEndpointIdHasBeenSet = true; m_analyticsEndpointId.assign(value); }
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline AnalyticsMetadataType& WithAnalyticsEndpointId(const Aws::String& value) { SetAnalyticsEndpointId(value); return *this;}
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline AnalyticsMetadataType& WithAnalyticsEndpointId(Aws::String&& value) { SetAnalyticsEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The endpoint ID.</p>
-     */
     inline AnalyticsMetadataType& WithAnalyticsEndpointId(const char* value) { SetAnalyticsEndpointId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analyticsEndpointId;

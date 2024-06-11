@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the workforce.</p>
      */
     inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline DeleteWorkforceRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline DeleteWorkforceRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the workforce.</p>
-     */
     inline DeleteWorkforceRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workforceName;

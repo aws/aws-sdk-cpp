@@ -43,104 +43,37 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the template. You will refer to this name when you send email
      * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations. </p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline Template& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline Template& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the template. You will refer to this name when you send email
-     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
-     * operations. </p>
-     */
     inline Template& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline Template& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline Template& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the template.</p>
-     */
     inline Template& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An object that defines the values to use for message variables in the
      * template. This object is a set of key-value pairs. Each key defines a message
@@ -148,104 +81,28 @@ namespace Model
      * that variable.</p>
      */
     inline const Aws::String& GetTemplateData() const{ return m_templateData; }
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline bool TemplateDataHasBeenSet() const { return m_templateDataHasBeenSet; }
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline void SetTemplateData(const Aws::String& value) { m_templateDataHasBeenSet = true; m_templateData = value; }
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline void SetTemplateData(Aws::String&& value) { m_templateDataHasBeenSet = true; m_templateData = std::move(value); }
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline void SetTemplateData(const char* value) { m_templateDataHasBeenSet = true; m_templateData.assign(value); }
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline Template& WithTemplateData(const Aws::String& value) { SetTemplateData(value); return *this;}
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline Template& WithTemplateData(Aws::String&& value) { SetTemplateData(std::move(value)); return *this;}
-
-    /**
-     * <p>An object that defines the values to use for message variables in the
-     * template. This object is a set of key-value pairs. Each key defines a message
-     * variable in the template. The corresponding value defines the value to use for
-     * that variable.</p>
-     */
     inline Template& WithTemplateData(const char* value) { SetTemplateData(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of message headers that will be added to the email message.</p>
      */
     inline const Aws::Vector<MessageHeader>& GetHeaders() const{ return m_headers; }
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline void SetHeaders(const Aws::Vector<MessageHeader>& value) { m_headersHasBeenSet = true; m_headers = value; }
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline void SetHeaders(Aws::Vector<MessageHeader>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline Template& WithHeaders(const Aws::Vector<MessageHeader>& value) { SetHeaders(value); return *this;}
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline Template& WithHeaders(Aws::Vector<MessageHeader>&& value) { SetHeaders(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline Template& AddHeaders(const MessageHeader& value) { m_headersHasBeenSet = true; m_headers.push_back(value); return *this; }
-
-    /**
-     * <p>The list of message headers that will be added to the email message.</p>
-     */
     inline Template& AddHeaders(MessageHeader&& value) { m_headersHasBeenSet = true; m_headers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_templateName;

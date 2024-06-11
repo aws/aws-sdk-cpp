@@ -35,55 +35,22 @@ namespace Model
     AWS_ECR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The repository name prefix to use when caching images from the source
      * registry.</p>
      */
     inline const Aws::String& GetEcrRepositoryPrefix() const{ return m_ecrRepositoryPrefix; }
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline bool EcrRepositoryPrefixHasBeenSet() const { return m_ecrRepositoryPrefixHasBeenSet; }
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline void SetEcrRepositoryPrefix(const Aws::String& value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix = value; }
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline void SetEcrRepositoryPrefix(Aws::String&& value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix = std::move(value); }
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline void SetEcrRepositoryPrefix(const char* value) { m_ecrRepositoryPrefixHasBeenSet = true; m_ecrRepositoryPrefix.assign(value); }
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithEcrRepositoryPrefix(const Aws::String& value) { SetEcrRepositoryPrefix(value); return *this;}
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithEcrRepositoryPrefix(Aws::String&& value) { SetEcrRepositoryPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The repository name prefix to use when caching images from the source
-     * registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithEcrRepositoryPrefix(const char* value) { SetEcrRepositoryPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The registry URL of the upstream public registry to use as the source for the
      * pull through cache rule. The following is the syntax to use for each supported
@@ -100,271 +67,58 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::String& GetUpstreamRegistryUrl() const{ return m_upstreamRegistryUrl; }
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline bool UpstreamRegistryUrlHasBeenSet() const { return m_upstreamRegistryUrlHasBeenSet; }
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline void SetUpstreamRegistryUrl(const Aws::String& value) { m_upstreamRegistryUrlHasBeenSet = true; m_upstreamRegistryUrl = value; }
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline void SetUpstreamRegistryUrl(Aws::String&& value) { m_upstreamRegistryUrlHasBeenSet = true; m_upstreamRegistryUrl = std::move(value); }
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline void SetUpstreamRegistryUrl(const char* value) { m_upstreamRegistryUrlHasBeenSet = true; m_upstreamRegistryUrl.assign(value); }
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistryUrl(const Aws::String& value) { SetUpstreamRegistryUrl(value); return *this;}
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistryUrl(Aws::String&& value) { SetUpstreamRegistryUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The registry URL of the upstream public registry to use as the source for the
-     * pull through cache rule. The following is the syntax to use for each supported
-     * upstream registry.</p> <ul> <li> <p>Amazon ECR Public (<code>ecr-public</code>)
-     * - <code>public.ecr.aws</code> </p> </li> <li> <p>Docker Hub
-     * (<code>docker-hub</code>) - <code>registry-1.docker.io</code> </p> </li> <li>
-     * <p>Quay (<code>quay</code>) - <code>quay.io</code> </p> </li> <li> <p>Kubernetes
-     * (<code>k8s</code>) - <code>registry.k8s.io</code> </p> </li> <li> <p>GitHub
-     * Container Registry (<code>github-container-registry</code>) -
-     * <code>ghcr.io</code> </p> </li> <li> <p>Microsoft Azure Container Registry
-     * (<code>azure-container-registry</code>) - <code>&lt;custom&gt;.azurecr.io</code>
-     * </p> </li> <li> <p>GitLab Container Registry
-     * (<code>gitlab-container-registry</code>) - <code>registry.gitlab.com</code> </p>
-     * </li> </ul>
-     */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistryUrl(const char* value) { SetUpstreamRegistryUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services account ID associated with the registry to create the
      * pull through cache rule for. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID associated with the registry to create the
-     * pull through cache rule for. If you do not specify a registry, the default
-     * registry is assumed.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the upstream registry.</p>
      */
     inline const UpstreamRegistry& GetUpstreamRegistry() const{ return m_upstreamRegistry; }
-
-    /**
-     * <p>The name of the upstream registry.</p>
-     */
     inline bool UpstreamRegistryHasBeenSet() const { return m_upstreamRegistryHasBeenSet; }
-
-    /**
-     * <p>The name of the upstream registry.</p>
-     */
     inline void SetUpstreamRegistry(const UpstreamRegistry& value) { m_upstreamRegistryHasBeenSet = true; m_upstreamRegistry = value; }
-
-    /**
-     * <p>The name of the upstream registry.</p>
-     */
     inline void SetUpstreamRegistry(UpstreamRegistry&& value) { m_upstreamRegistryHasBeenSet = true; m_upstreamRegistry = std::move(value); }
-
-    /**
-     * <p>The name of the upstream registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistry(const UpstreamRegistry& value) { SetUpstreamRegistry(value); return *this;}
-
-    /**
-     * <p>The name of the upstream registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithUpstreamRegistry(UpstreamRegistry&& value) { SetUpstreamRegistry(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
      * secret that identifies the credentials to authenticate to the upstream
      * registry.</p>
      */
     inline const Aws::String& GetCredentialArn() const{ return m_credentialArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline bool CredentialArnHasBeenSet() const { return m_credentialArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline void SetCredentialArn(const Aws::String& value) { m_credentialArnHasBeenSet = true; m_credentialArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline void SetCredentialArn(Aws::String&& value) { m_credentialArnHasBeenSet = true; m_credentialArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline void SetCredentialArn(const char* value) { m_credentialArnHasBeenSet = true; m_credentialArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithCredentialArn(const Aws::String& value) { SetCredentialArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithCredentialArn(Aws::String&& value) { SetCredentialArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Secrets Manager
-     * secret that identifies the credentials to authenticate to the upstream
-     * registry.</p>
-     */
     inline CreatePullThroughCacheRuleRequest& WithCredentialArn(const char* value) { SetCredentialArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ecrRepositoryPrefix;

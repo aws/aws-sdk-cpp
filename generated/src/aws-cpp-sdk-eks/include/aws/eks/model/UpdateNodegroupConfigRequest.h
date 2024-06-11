@@ -37,125 +37,48 @@ namespace Model
     AWS_EKS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of your cluster.</p>
      */
     inline const Aws::String& GetClusterName() const{ return m_clusterName; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of your cluster.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the managed node group to update.</p>
      */
     inline const Aws::String& GetNodegroupName() const{ return m_nodegroupName; }
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline bool NodegroupNameHasBeenSet() const { return m_nodegroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline void SetNodegroupName(const Aws::String& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = value; }
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline void SetNodegroupName(Aws::String&& value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName = std::move(value); }
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline void SetNodegroupName(const char* value) { m_nodegroupNameHasBeenSet = true; m_nodegroupName.assign(value); }
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithNodegroupName(const Aws::String& value) { SetNodegroupName(value); return *this;}
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithNodegroupName(Aws::String&& value) { SetNodegroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the managed node group to update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithNodegroupName(const char* value) { SetNodegroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
      * after the update.</p>
      */
     inline const UpdateLabelsPayload& GetLabels() const{ return m_labels; }
-
-    /**
-     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
-     * after the update.</p>
-     */
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-
-    /**
-     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
-     * after the update.</p>
-     */
     inline void SetLabels(const UpdateLabelsPayload& value) { m_labelsHasBeenSet = true; m_labels = value; }
-
-    /**
-     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
-     * after the update.</p>
-     */
     inline void SetLabels(UpdateLabelsPayload&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-
-    /**
-     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
-     * after the update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithLabels(const UpdateLabelsPayload& value) { SetLabels(value); return *this;}
-
-    /**
-     * <p>The Kubernetes <code>labels</code> to apply to the nodes in the node group
-     * after the update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithLabels(UpdateLabelsPayload&& value) { SetLabels(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Kubernetes taints to be applied to the nodes in the node group after the
      * update. For more information, see <a
@@ -163,164 +86,52 @@ namespace Model
      * taints on managed node groups</a>.</p>
      */
     inline const UpdateTaintsPayload& GetTaints() const{ return m_taints; }
-
-    /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-     * taints on managed node groups</a>.</p>
-     */
     inline bool TaintsHasBeenSet() const { return m_taintsHasBeenSet; }
-
-    /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-     * taints on managed node groups</a>.</p>
-     */
     inline void SetTaints(const UpdateTaintsPayload& value) { m_taintsHasBeenSet = true; m_taints = value; }
-
-    /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-     * taints on managed node groups</a>.</p>
-     */
     inline void SetTaints(UpdateTaintsPayload&& value) { m_taintsHasBeenSet = true; m_taints = std::move(value); }
-
-    /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-     * taints on managed node groups</a>.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithTaints(const UpdateTaintsPayload& value) { SetTaints(value); return *this;}
-
-    /**
-     * <p>The Kubernetes taints to be applied to the nodes in the node group after the
-     * update. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/node-taints-managed-node-groups.html">Node
-     * taints on managed node groups</a>.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithTaints(UpdateTaintsPayload&& value) { SetTaints(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scaling configuration details for the Auto Scaling group after the
      * update.</p>
      */
     inline const NodegroupScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
-
-    /**
-     * <p>The scaling configuration details for the Auto Scaling group after the
-     * update.</p>
-     */
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
-
-    /**
-     * <p>The scaling configuration details for the Auto Scaling group after the
-     * update.</p>
-     */
     inline void SetScalingConfig(const NodegroupScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
-
-    /**
-     * <p>The scaling configuration details for the Auto Scaling group after the
-     * update.</p>
-     */
     inline void SetScalingConfig(NodegroupScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
-
-    /**
-     * <p>The scaling configuration details for the Auto Scaling group after the
-     * update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithScalingConfig(const NodegroupScalingConfig& value) { SetScalingConfig(value); return *this;}
-
-    /**
-     * <p>The scaling configuration details for the Auto Scaling group after the
-     * update.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithScalingConfig(NodegroupScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The node group update configuration.</p>
      */
     inline const NodegroupUpdateConfig& GetUpdateConfig() const{ return m_updateConfig; }
-
-    /**
-     * <p>The node group update configuration.</p>
-     */
     inline bool UpdateConfigHasBeenSet() const { return m_updateConfigHasBeenSet; }
-
-    /**
-     * <p>The node group update configuration.</p>
-     */
     inline void SetUpdateConfig(const NodegroupUpdateConfig& value) { m_updateConfigHasBeenSet = true; m_updateConfig = value; }
-
-    /**
-     * <p>The node group update configuration.</p>
-     */
     inline void SetUpdateConfig(NodegroupUpdateConfig&& value) { m_updateConfigHasBeenSet = true; m_updateConfig = std::move(value); }
-
-    /**
-     * <p>The node group update configuration.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithUpdateConfig(const NodegroupUpdateConfig& value) { SetUpdateConfig(value); return *this;}
-
-    /**
-     * <p>The node group update configuration.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithUpdateConfig(NodegroupUpdateConfig&& value) { SetUpdateConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request.</p>
-     */
     inline UpdateNodegroupConfigRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterName;

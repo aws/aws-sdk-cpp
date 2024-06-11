@@ -39,42 +39,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A flag to stop a tuning job once AMT has detected that the job has
      * converged.</p>
      */
     inline const CompleteOnConvergence& GetCompleteOnConvergence() const{ return m_completeOnConvergence; }
-
-    /**
-     * <p>A flag to stop a tuning job once AMT has detected that the job has
-     * converged.</p>
-     */
     inline bool CompleteOnConvergenceHasBeenSet() const { return m_completeOnConvergenceHasBeenSet; }
-
-    /**
-     * <p>A flag to stop a tuning job once AMT has detected that the job has
-     * converged.</p>
-     */
     inline void SetCompleteOnConvergence(const CompleteOnConvergence& value) { m_completeOnConvergenceHasBeenSet = true; m_completeOnConvergence = value; }
-
-    /**
-     * <p>A flag to stop a tuning job once AMT has detected that the job has
-     * converged.</p>
-     */
     inline void SetCompleteOnConvergence(CompleteOnConvergence&& value) { m_completeOnConvergenceHasBeenSet = true; m_completeOnConvergence = std::move(value); }
-
-    /**
-     * <p>A flag to stop a tuning job once AMT has detected that the job has
-     * converged.</p>
-     */
     inline ConvergenceDetected& WithCompleteOnConvergence(const CompleteOnConvergence& value) { SetCompleteOnConvergence(value); return *this;}
-
-    /**
-     * <p>A flag to stop a tuning job once AMT has detected that the job has
-     * converged.</p>
-     */
     inline ConvergenceDetected& WithCompleteOnConvergence(CompleteOnConvergence&& value) { SetCompleteOnConvergence(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CompleteOnConvergence m_completeOnConvergence;

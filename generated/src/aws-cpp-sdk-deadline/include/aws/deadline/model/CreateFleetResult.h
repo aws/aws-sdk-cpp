@@ -32,63 +32,29 @@ namespace Model
     AWS_DEADLINE_API CreateFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The fleet ID.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetId = value; }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetId = std::move(value); }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetId.assign(value); }
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline CreateFleetResult& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline CreateFleetResult& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet ID.</p>
-     */
     inline CreateFleetResult& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fleetId;

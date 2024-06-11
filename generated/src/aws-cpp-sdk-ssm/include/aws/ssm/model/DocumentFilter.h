@@ -39,77 +39,31 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the filter.</p>
      */
     inline const DocumentFilterKey& GetKey() const{ return m_key; }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline void SetKey(const DocumentFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline void SetKey(DocumentFilterKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline DocumentFilter& WithKey(const DocumentFilterKey& value) { SetKey(value); return *this;}
-
-    /**
-     * <p>The name of the filter.</p>
-     */
     inline DocumentFilter& WithKey(DocumentFilterKey&& value) { SetKey(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline DocumentFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline DocumentFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the filter.</p>
-     */
     inline DocumentFilter& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     DocumentFilterKey m_key;

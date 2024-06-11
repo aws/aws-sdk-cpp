@@ -39,91 +39,33 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
      * or <code>Individual</code>. Use <code>Business</code>for entities such as
      * not-for-profit and financial institutions.</p>
      */
     inline const IsraelCustomerType& GetCustomerType() const{ return m_customerType; }
-
-    /**
-     * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
-     * or <code>Individual</code>. Use <code>Business</code>for entities such as
-     * not-for-profit and financial institutions.</p>
-     */
     inline bool CustomerTypeHasBeenSet() const { return m_customerTypeHasBeenSet; }
-
-    /**
-     * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
-     * or <code>Individual</code>. Use <code>Business</code>for entities such as
-     * not-for-profit and financial institutions.</p>
-     */
     inline void SetCustomerType(const IsraelCustomerType& value) { m_customerTypeHasBeenSet = true; m_customerType = value; }
-
-    /**
-     * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
-     * or <code>Individual</code>. Use <code>Business</code>for entities such as
-     * not-for-profit and financial institutions.</p>
-     */
     inline void SetCustomerType(IsraelCustomerType&& value) { m_customerTypeHasBeenSet = true; m_customerType = std::move(value); }
-
-    /**
-     * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
-     * or <code>Individual</code>. Use <code>Business</code>for entities such as
-     * not-for-profit and financial institutions.</p>
-     */
     inline IsraelAdditionalInfo& WithCustomerType(const IsraelCustomerType& value) { SetCustomerType(value); return *this;}
-
-    /**
-     * <p> Customer type for your TRN in Israel. The value can be <code>Business</code>
-     * or <code>Individual</code>. Use <code>Business</code>for entities such as
-     * not-for-profit and financial institutions.</p>
-     */
     inline IsraelAdditionalInfo& WithCustomerType(IsraelCustomerType&& value) { SetCustomerType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
      * with an Israeli VAT ID, specify your tax identification number so that Amazon
      * Web Services can send you a compliant tax invoice.</p>
      */
     inline const IsraelDealerType& GetDealerType() const{ return m_dealerType; }
-
-    /**
-     * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
-     * with an Israeli VAT ID, specify your tax identification number so that Amazon
-     * Web Services can send you a compliant tax invoice.</p>
-     */
     inline bool DealerTypeHasBeenSet() const { return m_dealerTypeHasBeenSet; }
-
-    /**
-     * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
-     * with an Israeli VAT ID, specify your tax identification number so that Amazon
-     * Web Services can send you a compliant tax invoice.</p>
-     */
     inline void SetDealerType(const IsraelDealerType& value) { m_dealerTypeHasBeenSet = true; m_dealerType = value; }
-
-    /**
-     * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
-     * with an Israeli VAT ID, specify your tax identification number so that Amazon
-     * Web Services can send you a compliant tax invoice.</p>
-     */
     inline void SetDealerType(IsraelDealerType&& value) { m_dealerTypeHasBeenSet = true; m_dealerType = std::move(value); }
-
-    /**
-     * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
-     * with an Israeli VAT ID, specify your tax identification number so that Amazon
-     * Web Services can send you a compliant tax invoice.</p>
-     */
     inline IsraelAdditionalInfo& WithDealerType(const IsraelDealerType& value) { SetDealerType(value); return *this;}
-
-    /**
-     * <p> Dealer type for your TRN in Israel. If you're not a local authorized dealer
-     * with an Israeli VAT ID, specify your tax identification number so that Amazon
-     * Web Services can send you a compliant tax invoice.</p>
-     */
     inline IsraelAdditionalInfo& WithDealerType(IsraelDealerType&& value) { SetDealerType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IsraelCustomerType m_customerType;

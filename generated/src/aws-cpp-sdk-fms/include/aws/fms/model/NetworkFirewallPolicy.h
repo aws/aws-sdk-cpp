@@ -41,6 +41,7 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the deployment model to use for the firewall policy. To use a
      * distributed model, set <a
@@ -48,47 +49,12 @@ namespace Model
      * to <code>NULL</code>.</p>
      */
     inline const FirewallDeploymentModel& GetFirewallDeploymentModel() const{ return m_firewallDeploymentModel; }
-
-    /**
-     * <p>Defines the deployment model to use for the firewall policy. To use a
-     * distributed model, set <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-     * to <code>NULL</code>.</p>
-     */
     inline bool FirewallDeploymentModelHasBeenSet() const { return m_firewallDeploymentModelHasBeenSet; }
-
-    /**
-     * <p>Defines the deployment model to use for the firewall policy. To use a
-     * distributed model, set <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-     * to <code>NULL</code>.</p>
-     */
     inline void SetFirewallDeploymentModel(const FirewallDeploymentModel& value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = value; }
-
-    /**
-     * <p>Defines the deployment model to use for the firewall policy. To use a
-     * distributed model, set <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-     * to <code>NULL</code>.</p>
-     */
     inline void SetFirewallDeploymentModel(FirewallDeploymentModel&& value) { m_firewallDeploymentModelHasBeenSet = true; m_firewallDeploymentModel = std::move(value); }
-
-    /**
-     * <p>Defines the deployment model to use for the firewall policy. To use a
-     * distributed model, set <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-     * to <code>NULL</code>.</p>
-     */
     inline NetworkFirewallPolicy& WithFirewallDeploymentModel(const FirewallDeploymentModel& value) { SetFirewallDeploymentModel(value); return *this;}
-
-    /**
-     * <p>Defines the deployment model to use for the firewall policy. To use a
-     * distributed model, set <a
-     * href="https://docs.aws.amazon.com/fms/2018-01-01/APIReference/API_PolicyOption.html">PolicyOption</a>
-     * to <code>NULL</code>.</p>
-     */
     inline NetworkFirewallPolicy& WithFirewallDeploymentModel(FirewallDeploymentModel&& value) { SetFirewallDeploymentModel(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FirewallDeploymentModel m_firewallDeploymentModel;

@@ -36,134 +36,61 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>DataEncipherment is asserted when the subject public key is used for directly
      * enciphering raw user data without the use of an intermediate symmetric
      * cipher.</p>
      */
     inline bool GetDataEncipherment() const{ return m_dataEncipherment; }
-
-    /**
-     * <p>DataEncipherment is asserted when the subject public key is used for directly
-     * enciphering raw user data without the use of an intermediate symmetric
-     * cipher.</p>
-     */
     inline bool DataEnciphermentHasBeenSet() const { return m_dataEnciphermentHasBeenSet; }
-
-    /**
-     * <p>DataEncipherment is asserted when the subject public key is used for directly
-     * enciphering raw user data without the use of an intermediate symmetric
-     * cipher.</p>
-     */
     inline void SetDataEncipherment(bool value) { m_dataEnciphermentHasBeenSet = true; m_dataEncipherment = value; }
-
-    /**
-     * <p>DataEncipherment is asserted when the subject public key is used for directly
-     * enciphering raw user data without the use of an intermediate symmetric
-     * cipher.</p>
-     */
     inline KeyUsageFlags& WithDataEncipherment(bool value) { SetDataEncipherment(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The digitalSignature is asserted when the subject public key is used for
      * verifying digital signatures.</p>
      */
     inline bool GetDigitalSignature() const{ return m_digitalSignature; }
-
-    /**
-     * <p>The digitalSignature is asserted when the subject public key is used for
-     * verifying digital signatures.</p>
-     */
     inline bool DigitalSignatureHasBeenSet() const { return m_digitalSignatureHasBeenSet; }
-
-    /**
-     * <p>The digitalSignature is asserted when the subject public key is used for
-     * verifying digital signatures.</p>
-     */
     inline void SetDigitalSignature(bool value) { m_digitalSignatureHasBeenSet = true; m_digitalSignature = value; }
-
-    /**
-     * <p>The digitalSignature is asserted when the subject public key is used for
-     * verifying digital signatures.</p>
-     */
     inline KeyUsageFlags& WithDigitalSignature(bool value) { SetDigitalSignature(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>KeyAgreement is asserted when the subject public key is used for key
      * agreement.</p>
      */
     inline bool GetKeyAgreement() const{ return m_keyAgreement; }
-
-    /**
-     * <p>KeyAgreement is asserted when the subject public key is used for key
-     * agreement.</p>
-     */
     inline bool KeyAgreementHasBeenSet() const { return m_keyAgreementHasBeenSet; }
-
-    /**
-     * <p>KeyAgreement is asserted when the subject public key is used for key
-     * agreement.</p>
-     */
     inline void SetKeyAgreement(bool value) { m_keyAgreementHasBeenSet = true; m_keyAgreement = value; }
-
-    /**
-     * <p>KeyAgreement is asserted when the subject public key is used for key
-     * agreement.</p>
-     */
     inline KeyUsageFlags& WithKeyAgreement(bool value) { SetKeyAgreement(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>KeyEncipherment is asserted when the subject public key is used for
      * enciphering private or secret keys, i.e., for key transport.</p>
      */
     inline bool GetKeyEncipherment() const{ return m_keyEncipherment; }
-
-    /**
-     * <p>KeyEncipherment is asserted when the subject public key is used for
-     * enciphering private or secret keys, i.e., for key transport.</p>
-     */
     inline bool KeyEnciphermentHasBeenSet() const { return m_keyEnciphermentHasBeenSet; }
-
-    /**
-     * <p>KeyEncipherment is asserted when the subject public key is used for
-     * enciphering private or secret keys, i.e., for key transport.</p>
-     */
     inline void SetKeyEncipherment(bool value) { m_keyEnciphermentHasBeenSet = true; m_keyEncipherment = value; }
-
-    /**
-     * <p>KeyEncipherment is asserted when the subject public key is used for
-     * enciphering private or secret keys, i.e., for key transport.</p>
-     */
     inline KeyUsageFlags& WithKeyEncipherment(bool value) { SetKeyEncipherment(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>NonRepudiation is asserted when the subject public key is used to verify
      * digital signatures.</p>
      */
     inline bool GetNonRepudiation() const{ return m_nonRepudiation; }
-
-    /**
-     * <p>NonRepudiation is asserted when the subject public key is used to verify
-     * digital signatures.</p>
-     */
     inline bool NonRepudiationHasBeenSet() const { return m_nonRepudiationHasBeenSet; }
-
-    /**
-     * <p>NonRepudiation is asserted when the subject public key is used to verify
-     * digital signatures.</p>
-     */
     inline void SetNonRepudiation(bool value) { m_nonRepudiationHasBeenSet = true; m_nonRepudiation = value; }
-
-    /**
-     * <p>NonRepudiation is asserted when the subject public key is used to verify
-     * digital signatures.</p>
-     */
     inline KeyUsageFlags& WithNonRepudiation(bool value) { SetNonRepudiation(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dataEncipherment;

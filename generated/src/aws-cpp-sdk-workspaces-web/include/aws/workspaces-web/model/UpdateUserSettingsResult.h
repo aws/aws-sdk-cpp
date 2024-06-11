@@ -33,53 +33,27 @@ namespace Model
     AWS_WORKSPACESWEB_API UpdateUserSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user settings.</p>
      */
     inline const UserSettings& GetUserSettings() const{ return m_userSettings; }
-
-    /**
-     * <p>The user settings.</p>
-     */
     inline void SetUserSettings(const UserSettings& value) { m_userSettings = value; }
-
-    /**
-     * <p>The user settings.</p>
-     */
     inline void SetUserSettings(UserSettings&& value) { m_userSettings = std::move(value); }
-
-    /**
-     * <p>The user settings.</p>
-     */
     inline UpdateUserSettingsResult& WithUserSettings(const UserSettings& value) { SetUserSettings(value); return *this;}
-
-    /**
-     * <p>The user settings.</p>
-     */
     inline UpdateUserSettingsResult& WithUserSettings(UserSettings&& value) { SetUserSettings(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateUserSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateUserSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateUserSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     UserSettings m_userSettings;

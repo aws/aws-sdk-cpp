@@ -36,55 +36,27 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 60 (1 minute).</p>
      */
     inline int GetIntervalInSeconds() const{ return m_intervalInSeconds; }
-
-    /**
-     * <p>Buffer incoming data for the specified period of time, in seconds, before
-     * delivering it to the destination. The default value is 60 (1 minute).</p>
-     */
     inline bool IntervalInSecondsHasBeenSet() const { return m_intervalInSecondsHasBeenSet; }
-
-    /**
-     * <p>Buffer incoming data for the specified period of time, in seconds, before
-     * delivering it to the destination. The default value is 60 (1 minute).</p>
-     */
     inline void SetIntervalInSeconds(int value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
-
-    /**
-     * <p>Buffer incoming data for the specified period of time, in seconds, before
-     * delivering it to the destination. The default value is 60 (1 minute).</p>
-     */
     inline SplunkBufferingHints& WithIntervalInSeconds(int value) { SetIntervalInSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
      * the destination. The default value is 5. </p>
      */
     inline int GetSizeInMBs() const{ return m_sizeInMBs; }
-
-    /**
-     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
-     * the destination. The default value is 5. </p>
-     */
     inline bool SizeInMBsHasBeenSet() const { return m_sizeInMBsHasBeenSet; }
-
-    /**
-     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
-     * the destination. The default value is 5. </p>
-     */
     inline void SetSizeInMBs(int value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
-
-    /**
-     * <p>Buffer incoming data to the specified size, in MBs, before delivering it to
-     * the destination. The default value is 5. </p>
-     */
     inline SplunkBufferingHints& WithSizeInMBs(int value) { SetSizeInMBs(value); return *this;}
-
+    ///@}
   private:
 
     int m_intervalInSeconds;

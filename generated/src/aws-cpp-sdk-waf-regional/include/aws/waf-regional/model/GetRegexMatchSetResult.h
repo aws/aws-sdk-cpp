@@ -33,63 +33,29 @@ namespace Model
     AWS_WAFREGIONAL_API GetRegexMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <a>RegexMatchSet</a> that you specified in the
      * <code>GetRegexMatchSet</code> request. For more information, see
      * <a>RegexMatchTuple</a>.</p>
      */
     inline const RegexMatchSet& GetRegexMatchSet() const{ return m_regexMatchSet; }
-
-    /**
-     * <p>Information about the <a>RegexMatchSet</a> that you specified in the
-     * <code>GetRegexMatchSet</code> request. For more information, see
-     * <a>RegexMatchTuple</a>.</p>
-     */
     inline void SetRegexMatchSet(const RegexMatchSet& value) { m_regexMatchSet = value; }
-
-    /**
-     * <p>Information about the <a>RegexMatchSet</a> that you specified in the
-     * <code>GetRegexMatchSet</code> request. For more information, see
-     * <a>RegexMatchTuple</a>.</p>
-     */
     inline void SetRegexMatchSet(RegexMatchSet&& value) { m_regexMatchSet = std::move(value); }
-
-    /**
-     * <p>Information about the <a>RegexMatchSet</a> that you specified in the
-     * <code>GetRegexMatchSet</code> request. For more information, see
-     * <a>RegexMatchTuple</a>.</p>
-     */
     inline GetRegexMatchSetResult& WithRegexMatchSet(const RegexMatchSet& value) { SetRegexMatchSet(value); return *this;}
-
-    /**
-     * <p>Information about the <a>RegexMatchSet</a> that you specified in the
-     * <code>GetRegexMatchSet</code> request. For more information, see
-     * <a>RegexMatchTuple</a>.</p>
-     */
     inline GetRegexMatchSetResult& WithRegexMatchSet(RegexMatchSet&& value) { SetRegexMatchSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRegexMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRegexMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRegexMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RegexMatchSet m_regexMatchSet;

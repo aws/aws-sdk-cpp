@@ -50,6 +50,7 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status code for the automated DNS record creation.</p> <p>Following are
      * the possible values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The validation
@@ -59,98 +60,26 @@ namespace Model
      * domain.</p> </li> </ul>
      */
     inline const DnsRecordCreationStateCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The status code for the automated DNS record creation.</p> <p>Following are
-     * the possible values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The validation
-     * records were successfully added to the domain.</p> </li> <li> <p>
-     * <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-     * <li> <p> <code>FAILED</code> - The validation records failed to be added to the
-     * domain.</p> </li> </ul>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The status code for the automated DNS record creation.</p> <p>Following are
-     * the possible values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The validation
-     * records were successfully added to the domain.</p> </li> <li> <p>
-     * <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-     * <li> <p> <code>FAILED</code> - The validation records failed to be added to the
-     * domain.</p> </li> </ul>
-     */
     inline void SetCode(const DnsRecordCreationStateCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The status code for the automated DNS record creation.</p> <p>Following are
-     * the possible values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The validation
-     * records were successfully added to the domain.</p> </li> <li> <p>
-     * <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-     * <li> <p> <code>FAILED</code> - The validation records failed to be added to the
-     * domain.</p> </li> </ul>
-     */
     inline void SetCode(DnsRecordCreationStateCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The status code for the automated DNS record creation.</p> <p>Following are
-     * the possible values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The validation
-     * records were successfully added to the domain.</p> </li> <li> <p>
-     * <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-     * <li> <p> <code>FAILED</code> - The validation records failed to be added to the
-     * domain.</p> </li> </ul>
-     */
     inline DnsRecordCreationState& WithCode(const DnsRecordCreationStateCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The status code for the automated DNS record creation.</p> <p>Following are
-     * the possible values:</p> <ul> <li> <p> <code>SUCCEEDED</code> - The validation
-     * records were successfully added to the domain.</p> </li> <li> <p>
-     * <code>STARTED</code> - The automatic DNS record creation has started.</p> </li>
-     * <li> <p> <code>FAILED</code> - The validation records failed to be added to the
-     * domain.</p> </li> </ul>
-     */
     inline DnsRecordCreationState& WithCode(DnsRecordCreationStateCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message that describes the reason for the status code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline DnsRecordCreationState& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline DnsRecordCreationState& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message that describes the reason for the status code.</p>
-     */
     inline DnsRecordCreationState& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     DnsRecordCreationStateCode m_code;

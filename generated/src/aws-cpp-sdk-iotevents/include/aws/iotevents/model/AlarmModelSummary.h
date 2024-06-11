@@ -38,118 +38,45 @@ namespace Model
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time the alarm model was created, in the Unix epoch format.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The time the alarm model was created, in the Unix epoch format.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The time the alarm model was created, in the Unix epoch format.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The time the alarm model was created, in the Unix epoch format.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>The time the alarm model was created, in the Unix epoch format.</p>
-     */
     inline AlarmModelSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The time the alarm model was created, in the Unix epoch format.</p>
-     */
     inline AlarmModelSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the alarm model.</p>
      */
     inline const Aws::String& GetAlarmModelDescription() const{ return m_alarmModelDescription; }
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline bool AlarmModelDescriptionHasBeenSet() const { return m_alarmModelDescriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline void SetAlarmModelDescription(const Aws::String& value) { m_alarmModelDescriptionHasBeenSet = true; m_alarmModelDescription = value; }
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline void SetAlarmModelDescription(Aws::String&& value) { m_alarmModelDescriptionHasBeenSet = true; m_alarmModelDescription = std::move(value); }
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline void SetAlarmModelDescription(const char* value) { m_alarmModelDescriptionHasBeenSet = true; m_alarmModelDescription.assign(value); }
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline AlarmModelSummary& WithAlarmModelDescription(const Aws::String& value) { SetAlarmModelDescription(value); return *this;}
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline AlarmModelSummary& WithAlarmModelDescription(Aws::String&& value) { SetAlarmModelDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the alarm model.</p>
-     */
     inline AlarmModelSummary& WithAlarmModelDescription(const char* value) { SetAlarmModelDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the alarm model.</p>
      */
     inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline bool AlarmModelNameHasBeenSet() const { return m_alarmModelNameHasBeenSet; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = value; }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::move(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline void SetAlarmModelName(const char* value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName.assign(value); }
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline AlarmModelSummary& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline AlarmModelSummary& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the alarm model.</p>
-     */
     inline AlarmModelSummary& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_creationTime;

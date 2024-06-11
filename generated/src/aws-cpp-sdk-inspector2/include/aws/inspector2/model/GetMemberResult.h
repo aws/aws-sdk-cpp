@@ -33,53 +33,27 @@ namespace Model
     AWS_INSPECTOR2_API GetMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details of the retrieved member account.</p>
      */
     inline const Member& GetMember() const{ return m_member; }
-
-    /**
-     * <p>Details of the retrieved member account.</p>
-     */
     inline void SetMember(const Member& value) { m_member = value; }
-
-    /**
-     * <p>Details of the retrieved member account.</p>
-     */
     inline void SetMember(Member&& value) { m_member = std::move(value); }
-
-    /**
-     * <p>Details of the retrieved member account.</p>
-     */
     inline GetMemberResult& WithMember(const Member& value) { SetMember(value); return *this;}
-
-    /**
-     * <p>Details of the retrieved member account.</p>
-     */
     inline GetMemberResult& WithMember(Member&& value) { SetMember(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetMemberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetMemberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetMemberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Member m_member;

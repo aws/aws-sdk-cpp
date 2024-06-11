@@ -37,89 +37,33 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
     inline const TagResourceType& GetResourceType() const{ return m_resourceType; }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline void SetResourceType(TagResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline ListTagsForResourceRequest& WithResourceType(const TagResourceType& value) { SetResourceType(value); return *this;}
-
-    /**
-     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
-     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
-     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
-     */
     inline ListTagsForResourceRequest& WithResourceType(TagResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the resource for which you want to retrieve tags.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
-
+    ///@}
   private:
 
     TagResourceType m_resourceType;

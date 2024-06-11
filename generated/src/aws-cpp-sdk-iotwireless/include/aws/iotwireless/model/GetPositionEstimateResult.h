@@ -37,6 +37,7 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>The position information of the resource, displayed as a JSON payload. The
      * payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a>
@@ -48,41 +49,20 @@ namespace Model
      * device location (console)</a>.</p>
      */
     inline Aws::IOStream& GetGeoJsonPayload() const { return m_geoJsonPayload.GetUnderlyingStream(); }
-
-    /**
-     * <p>The position information of the resource, displayed as a JSON payload. The
-     * payload is of type blob and uses the <a href="https://geojson.org/">GeoJSON</a>
-     * format, which a format that's used to encode geographic data structures. A
-     * sample payload contains the timestamp information, the WGS84 coordinates of the
-     * location, and the accuracy and confidence level. For more information and
-     * examples, see <a
-     * href="https://docs.aws.amazon.com/iot/latest/developerguide/location-resolve-console.html">Resolve
-     * device location (console)</a>.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_geoJsonPayload = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPositionEstimateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPositionEstimateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPositionEstimateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_geoJsonPayload;

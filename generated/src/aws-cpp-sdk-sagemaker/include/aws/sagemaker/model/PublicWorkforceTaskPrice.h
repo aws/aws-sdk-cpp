@@ -79,42 +79,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in
      * United States dollars.</p>
      */
     inline const USD& GetAmountInUsd() const{ return m_amountInUsd; }
-
-    /**
-     * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in
-     * United States dollars.</p>
-     */
     inline bool AmountInUsdHasBeenSet() const { return m_amountInUsdHasBeenSet; }
-
-    /**
-     * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in
-     * United States dollars.</p>
-     */
     inline void SetAmountInUsd(const USD& value) { m_amountInUsdHasBeenSet = true; m_amountInUsd = value; }
-
-    /**
-     * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in
-     * United States dollars.</p>
-     */
     inline void SetAmountInUsd(USD&& value) { m_amountInUsdHasBeenSet = true; m_amountInUsd = std::move(value); }
-
-    /**
-     * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in
-     * United States dollars.</p>
-     */
     inline PublicWorkforceTaskPrice& WithAmountInUsd(const USD& value) { SetAmountInUsd(value); return *this;}
-
-    /**
-     * <p>Defines the amount of money paid to an Amazon Mechanical Turk worker in
-     * United States dollars.</p>
-     */
     inline PublicWorkforceTaskPrice& WithAmountInUsd(USD&& value) { SetAmountInUsd(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     USD m_amountInUsd;

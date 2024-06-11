@@ -33,58 +33,28 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API UpdateLaunchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains the new configuration of the launch that was
      * updated.</p>
      */
     inline const Launch& GetLaunch() const{ return m_launch; }
-
-    /**
-     * <p>A structure that contains the new configuration of the launch that was
-     * updated.</p>
-     */
     inline void SetLaunch(const Launch& value) { m_launch = value; }
-
-    /**
-     * <p>A structure that contains the new configuration of the launch that was
-     * updated.</p>
-     */
     inline void SetLaunch(Launch&& value) { m_launch = std::move(value); }
-
-    /**
-     * <p>A structure that contains the new configuration of the launch that was
-     * updated.</p>
-     */
     inline UpdateLaunchResult& WithLaunch(const Launch& value) { SetLaunch(value); return *this;}
-
-    /**
-     * <p>A structure that contains the new configuration of the launch that was
-     * updated.</p>
-     */
     inline UpdateLaunchResult& WithLaunch(Launch&& value) { SetLaunch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateLaunchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateLaunchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateLaunchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Launch m_launch;

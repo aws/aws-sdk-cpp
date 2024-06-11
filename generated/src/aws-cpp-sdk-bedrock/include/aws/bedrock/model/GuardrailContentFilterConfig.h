@@ -68,80 +68,33 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The harmful category that the content filter is applied to.</p>
      */
     inline const GuardrailContentFilterType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The harmful category that the content filter is applied to.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The harmful category that the content filter is applied to.</p>
-     */
     inline void SetType(const GuardrailContentFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The harmful category that the content filter is applied to.</p>
-     */
     inline void SetType(GuardrailContentFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The harmful category that the content filter is applied to.</p>
-     */
     inline GuardrailContentFilterConfig& WithType(const GuardrailContentFilterType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The harmful category that the content filter is applied to.</p>
-     */
     inline GuardrailContentFilterConfig& WithType(GuardrailContentFilterType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The strength of the content filter to apply to prompts. As you increase the
      * filter strength, the likelihood of filtering harmful content increases and the
      * probability of seeing harmful content in your application reduces.</p>
      */
     inline const GuardrailFilterStrength& GetInputStrength() const{ return m_inputStrength; }
-
-    /**
-     * <p>The strength of the content filter to apply to prompts. As you increase the
-     * filter strength, the likelihood of filtering harmful content increases and the
-     * probability of seeing harmful content in your application reduces.</p>
-     */
     inline bool InputStrengthHasBeenSet() const { return m_inputStrengthHasBeenSet; }
-
-    /**
-     * <p>The strength of the content filter to apply to prompts. As you increase the
-     * filter strength, the likelihood of filtering harmful content increases and the
-     * probability of seeing harmful content in your application reduces.</p>
-     */
     inline void SetInputStrength(const GuardrailFilterStrength& value) { m_inputStrengthHasBeenSet = true; m_inputStrength = value; }
-
-    /**
-     * <p>The strength of the content filter to apply to prompts. As you increase the
-     * filter strength, the likelihood of filtering harmful content increases and the
-     * probability of seeing harmful content in your application reduces.</p>
-     */
     inline void SetInputStrength(GuardrailFilterStrength&& value) { m_inputStrengthHasBeenSet = true; m_inputStrength = std::move(value); }
-
-    /**
-     * <p>The strength of the content filter to apply to prompts. As you increase the
-     * filter strength, the likelihood of filtering harmful content increases and the
-     * probability of seeing harmful content in your application reduces.</p>
-     */
     inline GuardrailContentFilterConfig& WithInputStrength(const GuardrailFilterStrength& value) { SetInputStrength(value); return *this;}
-
-    /**
-     * <p>The strength of the content filter to apply to prompts. As you increase the
-     * filter strength, the likelihood of filtering harmful content increases and the
-     * probability of seeing harmful content in your application reduces.</p>
-     */
     inline GuardrailContentFilterConfig& WithInputStrength(GuardrailFilterStrength&& value) { SetInputStrength(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The strength of the content filter to apply to model responses. As you
      * increase the filter strength, the likelihood of filtering harmful content
@@ -149,47 +102,12 @@ namespace Model
      * reduces.</p>
      */
     inline const GuardrailFilterStrength& GetOutputStrength() const{ return m_outputStrength; }
-
-    /**
-     * <p>The strength of the content filter to apply to model responses. As you
-     * increase the filter strength, the likelihood of filtering harmful content
-     * increases and the probability of seeing harmful content in your application
-     * reduces.</p>
-     */
     inline bool OutputStrengthHasBeenSet() const { return m_outputStrengthHasBeenSet; }
-
-    /**
-     * <p>The strength of the content filter to apply to model responses. As you
-     * increase the filter strength, the likelihood of filtering harmful content
-     * increases and the probability of seeing harmful content in your application
-     * reduces.</p>
-     */
     inline void SetOutputStrength(const GuardrailFilterStrength& value) { m_outputStrengthHasBeenSet = true; m_outputStrength = value; }
-
-    /**
-     * <p>The strength of the content filter to apply to model responses. As you
-     * increase the filter strength, the likelihood of filtering harmful content
-     * increases and the probability of seeing harmful content in your application
-     * reduces.</p>
-     */
     inline void SetOutputStrength(GuardrailFilterStrength&& value) { m_outputStrengthHasBeenSet = true; m_outputStrength = std::move(value); }
-
-    /**
-     * <p>The strength of the content filter to apply to model responses. As you
-     * increase the filter strength, the likelihood of filtering harmful content
-     * increases and the probability of seeing harmful content in your application
-     * reduces.</p>
-     */
     inline GuardrailContentFilterConfig& WithOutputStrength(const GuardrailFilterStrength& value) { SetOutputStrength(value); return *this;}
-
-    /**
-     * <p>The strength of the content filter to apply to model responses. As you
-     * increase the filter strength, the likelihood of filtering harmful content
-     * increases and the probability of seeing harmful content in your application
-     * reduces.</p>
-     */
     inline GuardrailContentFilterConfig& WithOutputStrength(GuardrailFilterStrength&& value) { SetOutputStrength(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GuardrailContentFilterType m_type;

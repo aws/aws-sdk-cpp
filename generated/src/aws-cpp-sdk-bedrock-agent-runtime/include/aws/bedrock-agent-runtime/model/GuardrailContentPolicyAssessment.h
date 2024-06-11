@@ -39,54 +39,20 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The filter details of the policy assessment used in the Guardrails
      * filter.</p>
      */
     inline const Aws::Vector<GuardrailContentFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline void SetFilters(const Aws::Vector<GuardrailContentFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline void SetFilters(Aws::Vector<GuardrailContentFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline GuardrailContentPolicyAssessment& WithFilters(const Aws::Vector<GuardrailContentFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline GuardrailContentPolicyAssessment& WithFilters(Aws::Vector<GuardrailContentFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline GuardrailContentPolicyAssessment& AddFilters(const GuardrailContentFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The filter details of the policy assessment used in the Guardrails
-     * filter.</p>
-     */
     inline GuardrailContentPolicyAssessment& AddFilters(GuardrailContentFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<GuardrailContentFilter> m_filters;

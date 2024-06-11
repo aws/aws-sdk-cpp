@@ -32,48 +32,19 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> A <code>NotificationChannelConfig</code> object that specifies what type of
      * notification channel to add. The one supported notification channel is Amazon
      * Simple Notification Service (Amazon SNS). </p>
      */
     inline const NotificationChannelConfig& GetConfig() const{ return m_config; }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-     * notification channel to add. The one supported notification channel is Amazon
-     * Simple Notification Service (Amazon SNS). </p>
-     */
     inline bool ConfigHasBeenSet() const { return m_configHasBeenSet; }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-     * notification channel to add. The one supported notification channel is Amazon
-     * Simple Notification Service (Amazon SNS). </p>
-     */
     inline void SetConfig(const NotificationChannelConfig& value) { m_configHasBeenSet = true; m_config = value; }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-     * notification channel to add. The one supported notification channel is Amazon
-     * Simple Notification Service (Amazon SNS). </p>
-     */
     inline void SetConfig(NotificationChannelConfig&& value) { m_configHasBeenSet = true; m_config = std::move(value); }
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-     * notification channel to add. The one supported notification channel is Amazon
-     * Simple Notification Service (Amazon SNS). </p>
-     */
     inline AddNotificationChannelRequest& WithConfig(const NotificationChannelConfig& value) { SetConfig(value); return *this;}
-
-    /**
-     * <p> A <code>NotificationChannelConfig</code> object that specifies what type of
-     * notification channel to add. The one supported notification channel is Amazon
-     * Simple Notification Service (Amazon SNS). </p>
-     */
     inline AddNotificationChannelRequest& WithConfig(NotificationChannelConfig&& value) { SetConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NotificationChannelConfig m_config;

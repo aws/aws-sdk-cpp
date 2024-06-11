@@ -48,43 +48,25 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     
     inline const StorageClass& GetStorageClass() const{ return m_storageClass; }
-
-    
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-
-    
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-
-    
     inline void SetStorageClass(StorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-
-    
     inline InvalidObjectState& WithStorageClass(const StorageClass& value) { SetStorageClass(value); return *this;}
-
-    
     inline InvalidObjectState& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const IntelligentTieringAccessTier& GetAccessTier() const{ return m_accessTier; }
-
-    
     inline bool AccessTierHasBeenSet() const { return m_accessTierHasBeenSet; }
-
-    
     inline void SetAccessTier(const IntelligentTieringAccessTier& value) { m_accessTierHasBeenSet = true; m_accessTier = value; }
-
-    
     inline void SetAccessTier(IntelligentTieringAccessTier&& value) { m_accessTierHasBeenSet = true; m_accessTier = std::move(value); }
-
-    
     inline InvalidObjectState& WithAccessTier(const IntelligentTieringAccessTier& value) { SetAccessTier(value); return *this;}
-
-    
     inline InvalidObjectState& WithAccessTier(IntelligentTieringAccessTier&& value) { SetAccessTier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StorageClass m_storageClass;

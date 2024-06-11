@@ -38,64 +38,36 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>Indicates the media type of the resource.</p>
      */
     inline const DescriptorContentType& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline void SetContentType(const DescriptorContentType& value) { m_contentType = value; }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline void SetContentType(DescriptorContentType&& value) { m_contentType = std::move(value); }
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline GetSolFunctionPackageDescriptorResult& WithContentType(const DescriptorContentType& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>Indicates the media type of the resource.</p>
-     */
     inline GetSolFunctionPackageDescriptorResult& WithContentType(DescriptorContentType&& value) { SetContentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contents of the function package descriptor.</p>
      */
     inline Aws::IOStream& GetVnfd() const { return m_vnfd.GetUnderlyingStream(); }
-
-    /**
-     * <p>Contents of the function package descriptor.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_vnfd = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSolFunctionPackageDescriptorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSolFunctionPackageDescriptorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSolFunctionPackageDescriptorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DescriptorContentType m_contentType;

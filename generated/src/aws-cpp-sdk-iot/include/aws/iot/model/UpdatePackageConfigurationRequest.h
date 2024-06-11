@@ -40,99 +40,34 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Configuration to manage job's package version reporting. This updates the
      * thing's reserved named shadow that the job targets.</p>
      */
     inline const VersionUpdateByJobsConfig& GetVersionUpdateByJobsConfig() const{ return m_versionUpdateByJobsConfig; }
-
-    /**
-     * <p>Configuration to manage job's package version reporting. This updates the
-     * thing's reserved named shadow that the job targets.</p>
-     */
     inline bool VersionUpdateByJobsConfigHasBeenSet() const { return m_versionUpdateByJobsConfigHasBeenSet; }
-
-    /**
-     * <p>Configuration to manage job's package version reporting. This updates the
-     * thing's reserved named shadow that the job targets.</p>
-     */
     inline void SetVersionUpdateByJobsConfig(const VersionUpdateByJobsConfig& value) { m_versionUpdateByJobsConfigHasBeenSet = true; m_versionUpdateByJobsConfig = value; }
-
-    /**
-     * <p>Configuration to manage job's package version reporting. This updates the
-     * thing's reserved named shadow that the job targets.</p>
-     */
     inline void SetVersionUpdateByJobsConfig(VersionUpdateByJobsConfig&& value) { m_versionUpdateByJobsConfigHasBeenSet = true; m_versionUpdateByJobsConfig = std::move(value); }
-
-    /**
-     * <p>Configuration to manage job's package version reporting. This updates the
-     * thing's reserved named shadow that the job targets.</p>
-     */
     inline UpdatePackageConfigurationRequest& WithVersionUpdateByJobsConfig(const VersionUpdateByJobsConfig& value) { SetVersionUpdateByJobsConfig(value); return *this;}
-
-    /**
-     * <p>Configuration to manage job's package version reporting. This updates the
-     * thing's reserved named shadow that the job targets.</p>
-     */
     inline UpdatePackageConfigurationRequest& WithVersionUpdateByJobsConfig(VersionUpdateByJobsConfig&& value) { SetVersionUpdateByJobsConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique case-sensitive identifier that you can provide to ensure the
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline UpdatePackageConfigurationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline UpdatePackageConfigurationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique case-sensitive identifier that you can provide to ensure the
-     * idempotency of the request. Don't reuse this client token if a new idempotent
-     * request is required.</p>
-     */
     inline UpdatePackageConfigurationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     VersionUpdateByJobsConfig m_versionUpdateByJobsConfig;

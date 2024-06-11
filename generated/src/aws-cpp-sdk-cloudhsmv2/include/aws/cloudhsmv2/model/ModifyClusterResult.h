@@ -33,43 +33,25 @@ namespace Model
     AWS_CLOUDHSMV2_API ModifyClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Cluster& GetCluster() const{ return m_cluster; }
-
-    
     inline void SetCluster(const Cluster& value) { m_cluster = value; }
-
-    
     inline void SetCluster(Cluster&& value) { m_cluster = std::move(value); }
-
-    
     inline ModifyClusterResult& WithCluster(const Cluster& value) { SetCluster(value); return *this;}
-
-    
     inline ModifyClusterResult& WithCluster(Cluster&& value) { SetCluster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ModifyClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ModifyClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ModifyClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Cluster m_cluster;

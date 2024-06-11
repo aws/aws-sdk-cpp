@@ -45,68 +45,31 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains a chunk of text from a data source in the knowledge base.</p>
      */
     inline const RetrievalResultContent& GetContent() const{ return m_content; }
-
-    /**
-     * <p>Contains a chunk of text from a data source in the knowledge base.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>Contains a chunk of text from a data source in the knowledge base.</p>
-     */
     inline void SetContent(const RetrievalResultContent& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>Contains a chunk of text from a data source in the knowledge base.</p>
-     */
     inline void SetContent(RetrievalResultContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>Contains a chunk of text from a data source in the knowledge base.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithContent(const RetrievalResultContent& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>Contains a chunk of text from a data source in the knowledge base.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithContent(RetrievalResultContent&& value) { SetContent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the location of the data source.</p>
      */
     inline const RetrievalResultLocation& GetLocation() const{ return m_location; }
-
-    /**
-     * <p>Contains information about the location of the data source.</p>
-     */
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-
-    /**
-     * <p>Contains information about the location of the data source.</p>
-     */
     inline void SetLocation(const RetrievalResultLocation& value) { m_locationHasBeenSet = true; m_location = value; }
-
-    /**
-     * <p>Contains information about the location of the data source.</p>
-     */
     inline void SetLocation(RetrievalResultLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-
-    /**
-     * <p>Contains information about the location of the data source.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithLocation(const RetrievalResultLocation& value) { SetLocation(value); return *this;}
-
-    /**
-     * <p>Contains information about the location of the data source.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithLocation(RetrievalResultLocation&& value) { SetLocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains metadata attributes and their values for the file in the data
      * source. For more information, see <a
@@ -114,116 +77,28 @@ namespace Model
      * and filtering</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline void SetMetadata(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline void SetMetadata(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithMetadata(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithMetadata(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetMetadata(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& AddMetadata(const Aws::String& key, const Aws::Utils::Document& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& AddMetadata(Aws::String&& key, const Aws::Utils::Document& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& AddMetadata(const Aws::String& key, Aws::Utils::Document&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& AddMetadata(Aws::String&& key, Aws::Utils::Document&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& AddMetadata(const char* key, Aws::Utils::Document&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Contains metadata attributes and their values for the file in the data
-     * source. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/knowledge-base-ds.html#kb-ds-metadata">Metadata
-     * and filtering</a>.</p>
-     */
     inline KnowledgeBaseRetrievalResult& AddMetadata(const char* key, const Aws::Utils::Document& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of relevance of the result to the query.</p>
      */
     inline double GetScore() const{ return m_score; }
-
-    /**
-     * <p>The level of relevance of the result to the query.</p>
-     */
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-
-    /**
-     * <p>The level of relevance of the result to the query.</p>
-     */
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
-
-    /**
-     * <p>The level of relevance of the result to the query.</p>
-     */
     inline KnowledgeBaseRetrievalResult& WithScore(double value) { SetScore(value); return *this;}
-
+    ///@}
   private:
 
     RetrievalResultContent m_content;

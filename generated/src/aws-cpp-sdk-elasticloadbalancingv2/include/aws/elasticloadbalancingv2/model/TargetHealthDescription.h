@@ -42,151 +42,57 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The description of the target.</p>
      */
     inline const TargetDescription& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>The description of the target.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>The description of the target.</p>
-     */
     inline void SetTarget(const TargetDescription& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>The description of the target.</p>
-     */
     inline void SetTarget(TargetDescription&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>The description of the target.</p>
-     */
     inline TargetHealthDescription& WithTarget(const TargetDescription& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>The description of the target.</p>
-     */
     inline TargetHealthDescription& WithTarget(TargetDescription&& value) { SetTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port to use to connect with the target.</p>
      */
     inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline void SetHealthCheckPort(const Aws::String& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline void SetHealthCheckPort(Aws::String&& value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = std::move(value); }
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline void SetHealthCheckPort(const char* value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort.assign(value); }
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline TargetHealthDescription& WithHealthCheckPort(const Aws::String& value) { SetHealthCheckPort(value); return *this;}
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline TargetHealthDescription& WithHealthCheckPort(Aws::String&& value) { SetHealthCheckPort(std::move(value)); return *this;}
-
-    /**
-     * <p>The port to use to connect with the target.</p>
-     */
     inline TargetHealthDescription& WithHealthCheckPort(const char* value) { SetHealthCheckPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The health information for the target.</p>
      */
     inline const TargetHealth& GetTargetHealth() const{ return m_targetHealth; }
-
-    /**
-     * <p>The health information for the target.</p>
-     */
     inline bool TargetHealthHasBeenSet() const { return m_targetHealthHasBeenSet; }
-
-    /**
-     * <p>The health information for the target.</p>
-     */
     inline void SetTargetHealth(const TargetHealth& value) { m_targetHealthHasBeenSet = true; m_targetHealth = value; }
-
-    /**
-     * <p>The health information for the target.</p>
-     */
     inline void SetTargetHealth(TargetHealth&& value) { m_targetHealthHasBeenSet = true; m_targetHealth = std::move(value); }
-
-    /**
-     * <p>The health information for the target.</p>
-     */
     inline TargetHealthDescription& WithTargetHealth(const TargetHealth& value) { SetTargetHealth(value); return *this;}
-
-    /**
-     * <p>The health information for the target.</p>
-     */
     inline TargetHealthDescription& WithTargetHealth(TargetHealth&& value) { SetTargetHealth(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
      * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
      * the result is <code>anomalous</code>.</p>
      */
     inline const AnomalyDetection& GetAnomalyDetection() const{ return m_anomalyDetection; }
-
-    /**
-     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
-     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
-     * the result is <code>anomalous</code>.</p>
-     */
     inline bool AnomalyDetectionHasBeenSet() const { return m_anomalyDetectionHasBeenSet; }
-
-    /**
-     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
-     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
-     * the result is <code>anomalous</code>.</p>
-     */
     inline void SetAnomalyDetection(const AnomalyDetection& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = value; }
-
-    /**
-     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
-     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
-     * the result is <code>anomalous</code>.</p>
-     */
     inline void SetAnomalyDetection(AnomalyDetection&& value) { m_anomalyDetectionHasBeenSet = true; m_anomalyDetection = std::move(value); }
-
-    /**
-     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
-     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
-     * the result is <code>anomalous</code>.</p>
-     */
     inline TargetHealthDescription& WithAnomalyDetection(const AnomalyDetection& value) { SetAnomalyDetection(value); return *this;}
-
-    /**
-     * <p>The anomaly detection result for the target.</p> <p>If no anomalies were
-     * detected, the result is <code>normal</code>.</p> <p>If anomalies were detected,
-     * the result is <code>anomalous</code>.</p>
-     */
     inline TargetHealthDescription& WithAnomalyDetection(AnomalyDetection&& value) { SetAnomalyDetection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TargetDescription m_target;

@@ -33,89 +33,40 @@ namespace Model
     AWS_CLOUDFRONT_API GetKeyGroup2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The key group.</p>
      */
     inline const KeyGroup& GetKeyGroup() const{ return m_keyGroup; }
-
-    /**
-     * <p>The key group.</p>
-     */
     inline void SetKeyGroup(const KeyGroup& value) { m_keyGroup = value; }
-
-    /**
-     * <p>The key group.</p>
-     */
     inline void SetKeyGroup(KeyGroup&& value) { m_keyGroup = std::move(value); }
-
-    /**
-     * <p>The key group.</p>
-     */
     inline GetKeyGroup2020_05_31Result& WithKeyGroup(const KeyGroup& value) { SetKeyGroup(value); return *this;}
-
-    /**
-     * <p>The key group.</p>
-     */
     inline GetKeyGroup2020_05_31Result& WithKeyGroup(KeyGroup&& value) { SetKeyGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier for this version of the key group.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
     inline GetKeyGroup2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
     inline GetKeyGroup2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for this version of the key group.</p>
-     */
     inline GetKeyGroup2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetKeyGroup2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetKeyGroup2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetKeyGroup2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     KeyGroup m_keyGroup;

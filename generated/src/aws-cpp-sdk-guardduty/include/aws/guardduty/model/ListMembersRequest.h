@@ -38,72 +38,32 @@ namespace Model
     AWS_GUARDDUTY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of the detector the member is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline ListMembersRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline ListMembersRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the detector the member is associated with.</p>
-     */
     inline ListMembersRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 50. The maximum value is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>You can use this parameter to indicate the maximum number of items you want
-     * in the response. The default value is 50. The maximum value is 50.</p>
-     */
     inline ListMembersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
      * parameter to null on your first call to the list action. For subsequent calls to
@@ -111,64 +71,16 @@ namespace Model
      * previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline ListMembersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline ListMembersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>You can use this parameter when paginating results. Set the value of this
-     * parameter to null on your first call to the list action. For subsequent calls to
-     * the action, fill nextToken in the request with the value of NextToken from the
-     * previous response to continue listing data.</p>
-     */
     inline ListMembersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to only return associated members or to return all members
      * (including members who haven't been invited yet or have been disassociated).
@@ -178,77 +90,14 @@ namespace Model
      * <code>Create Members</code> </a>. </p>
      */
     inline const Aws::String& GetOnlyAssociated() const{ return m_onlyAssociated; }
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline bool OnlyAssociatedHasBeenSet() const { return m_onlyAssociatedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline void SetOnlyAssociated(const Aws::String& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = value; }
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline void SetOnlyAssociated(Aws::String&& value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated = std::move(value); }
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline void SetOnlyAssociated(const char* value) { m_onlyAssociatedHasBeenSet = true; m_onlyAssociated.assign(value); }
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline ListMembersRequest& WithOnlyAssociated(const Aws::String& value) { SetOnlyAssociated(value); return *this;}
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline ListMembersRequest& WithOnlyAssociated(Aws::String&& value) { SetOnlyAssociated(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies whether to only return associated members or to return all members
-     * (including members who haven't been invited yet or have been disassociated).
-     * Member accounts must have been previously associated with the GuardDuty
-     * administrator account using <a
-     * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_CreateMembers.html">
-     * <code>Create Members</code> </a>. </p>
-     */
     inline ListMembersRequest& WithOnlyAssociated(const char* value) { SetOnlyAssociated(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorId;

@@ -39,53 +39,27 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current status of the Elasticsearch domain.</p>
      */
     inline const ElasticsearchDomainStatus& GetDomainStatus() const{ return m_domainStatus; }
-
-    /**
-     * <p>The current status of the Elasticsearch domain.</p>
-     */
     inline void SetDomainStatus(const ElasticsearchDomainStatus& value) { m_domainStatus = value; }
-
-    /**
-     * <p>The current status of the Elasticsearch domain.</p>
-     */
     inline void SetDomainStatus(ElasticsearchDomainStatus&& value) { m_domainStatus = std::move(value); }
-
-    /**
-     * <p>The current status of the Elasticsearch domain.</p>
-     */
     inline DescribeElasticsearchDomainResult& WithDomainStatus(const ElasticsearchDomainStatus& value) { SetDomainStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the Elasticsearch domain.</p>
-     */
     inline DescribeElasticsearchDomainResult& WithDomainStatus(ElasticsearchDomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeElasticsearchDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeElasticsearchDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeElasticsearchDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ElasticsearchDomainStatus m_domainStatus;

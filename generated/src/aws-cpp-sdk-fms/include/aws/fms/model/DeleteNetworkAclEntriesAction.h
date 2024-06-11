@@ -42,119 +42,47 @@ namespace Model
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Brief description of this remediation action. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline DeleteNetworkAclEntriesAction& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline DeleteNetworkAclEntriesAction& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Brief description of this remediation action. </p>
-     */
     inline DeleteNetworkAclEntriesAction& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The network ACL that's associated with the remediation action.</p>
      */
     inline const ActionTarget& GetNetworkAclId() const{ return m_networkAclId; }
-
-    /**
-     * <p>The network ACL that's associated with the remediation action.</p>
-     */
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-
-    /**
-     * <p>The network ACL that's associated with the remediation action.</p>
-     */
     inline void SetNetworkAclId(const ActionTarget& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-
-    /**
-     * <p>The network ACL that's associated with the remediation action.</p>
-     */
     inline void SetNetworkAclId(ActionTarget&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-
-    /**
-     * <p>The network ACL that's associated with the remediation action.</p>
-     */
     inline DeleteNetworkAclEntriesAction& WithNetworkAclId(const ActionTarget& value) { SetNetworkAclId(value); return *this;}
-
-    /**
-     * <p>The network ACL that's associated with the remediation action.</p>
-     */
     inline DeleteNetworkAclEntriesAction& WithNetworkAclId(ActionTarget&& value) { SetNetworkAclId(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lists the entries that the remediation action would delete.</p>
      */
     inline const Aws::Vector<EntryDescription>& GetNetworkAclEntriesToBeDeleted() const{ return m_networkAclEntriesToBeDeleted; }
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline bool NetworkAclEntriesToBeDeletedHasBeenSet() const { return m_networkAclEntriesToBeDeletedHasBeenSet; }
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline void SetNetworkAclEntriesToBeDeleted(const Aws::Vector<EntryDescription>& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted = value; }
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline void SetNetworkAclEntriesToBeDeleted(Aws::Vector<EntryDescription>&& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted = std::move(value); }
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline DeleteNetworkAclEntriesAction& WithNetworkAclEntriesToBeDeleted(const Aws::Vector<EntryDescription>& value) { SetNetworkAclEntriesToBeDeleted(value); return *this;}
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline DeleteNetworkAclEntriesAction& WithNetworkAclEntriesToBeDeleted(Aws::Vector<EntryDescription>&& value) { SetNetworkAclEntriesToBeDeleted(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline DeleteNetworkAclEntriesAction& AddNetworkAclEntriesToBeDeleted(const EntryDescription& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the entries that the remediation action would delete.</p>
-     */
     inline DeleteNetworkAclEntriesAction& AddNetworkAclEntriesToBeDeleted(EntryDescription&& value) { m_networkAclEntriesToBeDeletedHasBeenSet = true; m_networkAclEntriesToBeDeleted.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether it is possible for Firewall Manager to perform this
      * remediation action. A false value indicates that auto remediation is disabled or
@@ -162,31 +90,10 @@ namespace Model
      * kind.</p>
      */
     inline bool GetFMSCanRemediate() const{ return m_fMSCanRemediate; }
-
-    /**
-     * <p>Indicates whether it is possible for Firewall Manager to perform this
-     * remediation action. A false value indicates that auto remediation is disabled or
-     * Firewall Manager is unable to perform the action due to a conflict of some
-     * kind.</p>
-     */
     inline bool FMSCanRemediateHasBeenSet() const { return m_fMSCanRemediateHasBeenSet; }
-
-    /**
-     * <p>Indicates whether it is possible for Firewall Manager to perform this
-     * remediation action. A false value indicates that auto remediation is disabled or
-     * Firewall Manager is unable to perform the action due to a conflict of some
-     * kind.</p>
-     */
     inline void SetFMSCanRemediate(bool value) { m_fMSCanRemediateHasBeenSet = true; m_fMSCanRemediate = value; }
-
-    /**
-     * <p>Indicates whether it is possible for Firewall Manager to perform this
-     * remediation action. A false value indicates that auto remediation is disabled or
-     * Firewall Manager is unable to perform the action due to a conflict of some
-     * kind.</p>
-     */
     inline DeleteNetworkAclEntriesAction& WithFMSCanRemediate(bool value) { SetFMSCanRemediate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

@@ -38,79 +38,31 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Application policies specify what the certificate is used for and its
      * purpose.</p>
      */
     inline const ApplicationPolicies& GetApplicationPolicies() const{ return m_applicationPolicies; }
-
-    /**
-     * <p>Application policies specify what the certificate is used for and its
-     * purpose.</p>
-     */
     inline bool ApplicationPoliciesHasBeenSet() const { return m_applicationPoliciesHasBeenSet; }
-
-    /**
-     * <p>Application policies specify what the certificate is used for and its
-     * purpose.</p>
-     */
     inline void SetApplicationPolicies(const ApplicationPolicies& value) { m_applicationPoliciesHasBeenSet = true; m_applicationPolicies = value; }
-
-    /**
-     * <p>Application policies specify what the certificate is used for and its
-     * purpose.</p>
-     */
     inline void SetApplicationPolicies(ApplicationPolicies&& value) { m_applicationPoliciesHasBeenSet = true; m_applicationPolicies = std::move(value); }
-
-    /**
-     * <p>Application policies specify what the certificate is used for and its
-     * purpose.</p>
-     */
     inline ExtensionsV3& WithApplicationPolicies(const ApplicationPolicies& value) { SetApplicationPolicies(value); return *this;}
-
-    /**
-     * <p>Application policies specify what the certificate is used for and its
-     * purpose.</p>
-     */
     inline ExtensionsV3& WithApplicationPolicies(ApplicationPolicies&& value) { SetApplicationPolicies(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
      * certificate signing) of the key contained in the certificate.</p>
      */
     inline const KeyUsage& GetKeyUsage() const{ return m_keyUsage; }
-
-    /**
-     * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
-     * certificate signing) of the key contained in the certificate.</p>
-     */
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
-
-    /**
-     * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
-     * certificate signing) of the key contained in the certificate.</p>
-     */
     inline void SetKeyUsage(const KeyUsage& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
-
-    /**
-     * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
-     * certificate signing) of the key contained in the certificate.</p>
-     */
     inline void SetKeyUsage(KeyUsage&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
-
-    /**
-     * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
-     * certificate signing) of the key contained in the certificate.</p>
-     */
     inline ExtensionsV3& WithKeyUsage(const KeyUsage& value) { SetKeyUsage(value); return *this;}
-
-    /**
-     * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
-     * certificate signing) of the key contained in the certificate.</p>
-     */
     inline ExtensionsV3& WithKeyUsage(KeyUsage&& value) { SetKeyUsage(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApplicationPolicies m_applicationPolicies;

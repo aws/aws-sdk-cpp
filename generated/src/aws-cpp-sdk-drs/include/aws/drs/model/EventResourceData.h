@@ -37,36 +37,17 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Source Network properties.</p>
      */
     inline const SourceNetworkData& GetSourceNetworkData() const{ return m_sourceNetworkData; }
-
-    /**
-     * <p>Source Network properties.</p>
-     */
     inline bool SourceNetworkDataHasBeenSet() const { return m_sourceNetworkDataHasBeenSet; }
-
-    /**
-     * <p>Source Network properties.</p>
-     */
     inline void SetSourceNetworkData(const SourceNetworkData& value) { m_sourceNetworkDataHasBeenSet = true; m_sourceNetworkData = value; }
-
-    /**
-     * <p>Source Network properties.</p>
-     */
     inline void SetSourceNetworkData(SourceNetworkData&& value) { m_sourceNetworkDataHasBeenSet = true; m_sourceNetworkData = std::move(value); }
-
-    /**
-     * <p>Source Network properties.</p>
-     */
     inline EventResourceData& WithSourceNetworkData(const SourceNetworkData& value) { SetSourceNetworkData(value); return *this;}
-
-    /**
-     * <p>Source Network properties.</p>
-     */
     inline EventResourceData& WithSourceNetworkData(SourceNetworkData&& value) { SetSourceNetworkData(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SourceNetworkData m_sourceNetworkData;

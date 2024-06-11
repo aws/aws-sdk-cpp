@@ -32,46 +32,19 @@ namespace Model
     AWS_APPCONFIG_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the deployment strategy to get.</p>
      */
     inline const Aws::String& GetDeploymentStrategyId() const{ return m_deploymentStrategyId; }
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline bool DeploymentStrategyIdHasBeenSet() const { return m_deploymentStrategyIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline void SetDeploymentStrategyId(const Aws::String& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = value; }
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline void SetDeploymentStrategyId(Aws::String&& value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId = std::move(value); }
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline void SetDeploymentStrategyId(const char* value) { m_deploymentStrategyIdHasBeenSet = true; m_deploymentStrategyId.assign(value); }
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline GetDeploymentStrategyRequest& WithDeploymentStrategyId(const Aws::String& value) { SetDeploymentStrategyId(value); return *this;}
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline GetDeploymentStrategyRequest& WithDeploymentStrategyId(Aws::String&& value) { SetDeploymentStrategyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the deployment strategy to get.</p>
-     */
     inline GetDeploymentStrategyRequest& WithDeploymentStrategyId(const char* value) { SetDeploymentStrategyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentStrategyId;

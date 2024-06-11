@@ -39,69 +39,22 @@ namespace Model
     AWS_CODECOMMIT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The names of the repositories to get information about.</p>  <p>The
      * length constraint limit is for each string in the array. The array itself can be
      * empty.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetRepositoryNames() const{ return m_repositoryNames; }
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline bool RepositoryNamesHasBeenSet() const { return m_repositoryNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline void SetRepositoryNames(const Aws::Vector<Aws::String>& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = value; }
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline void SetRepositoryNames(Aws::Vector<Aws::String>&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames = std::move(value); }
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline BatchGetRepositoriesRequest& WithRepositoryNames(const Aws::Vector<Aws::String>& value) { SetRepositoryNames(value); return *this;}
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline BatchGetRepositoriesRequest& WithRepositoryNames(Aws::Vector<Aws::String>&& value) { SetRepositoryNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline BatchGetRepositoriesRequest& AddRepositoryNames(const Aws::String& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline BatchGetRepositoriesRequest& AddRepositoryNames(Aws::String&& value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the repositories to get information about.</p>  <p>The
-     * length constraint limit is for each string in the array. The array itself can be
-     * empty.</p> 
-     */
     inline BatchGetRepositoriesRequest& AddRepositoryNames(const char* value) { m_repositoryNamesHasBeenSet = true; m_repositoryNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_repositoryNames;

@@ -33,37 +33,23 @@ namespace Model
     AWS_SES_API GetTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const Template& GetTemplate() const{ return m_template; }
-
-    
     inline void SetTemplate(const Template& value) { m_template = value; }
-
-    
     inline void SetTemplate(Template&& value) { m_template = std::move(value); }
-
-    
     inline GetTemplateResult& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-
-    
     inline GetTemplateResult& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetTemplateResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetTemplateResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Template m_template;

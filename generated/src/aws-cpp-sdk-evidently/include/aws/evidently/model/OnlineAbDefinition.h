@@ -41,55 +41,22 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the variation that is the default variation that the other
      * variations are compared to.</p>
      */
     inline const Aws::String& GetControlTreatmentName() const{ return m_controlTreatmentName; }
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline bool ControlTreatmentNameHasBeenSet() const { return m_controlTreatmentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline void SetControlTreatmentName(const Aws::String& value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName = value; }
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline void SetControlTreatmentName(Aws::String&& value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName = std::move(value); }
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline void SetControlTreatmentName(const char* value) { m_controlTreatmentNameHasBeenSet = true; m_controlTreatmentName.assign(value); }
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline OnlineAbDefinition& WithControlTreatmentName(const Aws::String& value) { SetControlTreatmentName(value); return *this;}
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline OnlineAbDefinition& WithControlTreatmentName(Aws::String&& value) { SetControlTreatmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the variation that is the default variation that the other
-     * variations are compared to.</p>
-     */
     inline OnlineAbDefinition& WithControlTreatmentName(const char* value) { SetControlTreatmentName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A set of key-value pairs. The keys are variation names, and the values are
      * the portion of experiment traffic to be assigned to that variation. The traffic
@@ -97,71 +64,15 @@ namespace Model
      * would allocate 20% of the experiment traffic to that variation.</p>
      */
     inline const Aws::Map<Aws::String, long long>& GetTreatmentWeights() const{ return m_treatmentWeights; }
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline bool TreatmentWeightsHasBeenSet() const { return m_treatmentWeightsHasBeenSet; }
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline void SetTreatmentWeights(const Aws::Map<Aws::String, long long>& value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights = value; }
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline void SetTreatmentWeights(Aws::Map<Aws::String, long long>&& value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights = std::move(value); }
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline OnlineAbDefinition& WithTreatmentWeights(const Aws::Map<Aws::String, long long>& value) { SetTreatmentWeights(value); return *this;}
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline OnlineAbDefinition& WithTreatmentWeights(Aws::Map<Aws::String, long long>&& value) { SetTreatmentWeights(std::move(value)); return *this;}
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline OnlineAbDefinition& AddTreatmentWeights(const Aws::String& key, long long value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(key, value); return *this; }
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline OnlineAbDefinition& AddTreatmentWeights(Aws::String&& key, long long value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A set of key-value pairs. The keys are variation names, and the values are
-     * the portion of experiment traffic to be assigned to that variation. The traffic
-     * portion is specified in thousandths of a percent, so 20,000 for a variation
-     * would allocate 20% of the experiment traffic to that variation.</p>
-     */
     inline OnlineAbDefinition& AddTreatmentWeights(const char* key, long long value) { m_treatmentWeightsHasBeenSet = true; m_treatmentWeights.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_controlTreatmentName;

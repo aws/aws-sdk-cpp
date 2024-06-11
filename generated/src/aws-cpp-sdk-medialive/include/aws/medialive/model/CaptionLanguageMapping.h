@@ -39,120 +39,45 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * The closed caption channel being described by this CaptionLanguageMapping.  Each
      * channel mapping must have a unique channel number (maximum of 4)
      */
     inline int GetCaptionChannel() const{ return m_captionChannel; }
-
-    /**
-     * The closed caption channel being described by this CaptionLanguageMapping.  Each
-     * channel mapping must have a unique channel number (maximum of 4)
-     */
     inline bool CaptionChannelHasBeenSet() const { return m_captionChannelHasBeenSet; }
-
-    /**
-     * The closed caption channel being described by this CaptionLanguageMapping.  Each
-     * channel mapping must have a unique channel number (maximum of 4)
-     */
     inline void SetCaptionChannel(int value) { m_captionChannelHasBeenSet = true; m_captionChannel = value; }
-
-    /**
-     * The closed caption channel being described by this CaptionLanguageMapping.  Each
-     * channel mapping must have a unique channel number (maximum of 4)
-     */
     inline CaptionLanguageMapping& WithCaptionChannel(int value) { SetCaptionChannel(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Three character ISO 639-2 language code (see
      * http://www.loc.gov/standards/iso639-2)
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline void SetLanguageCode(const Aws::String& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline void SetLanguageCode(Aws::String&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline void SetLanguageCode(const char* value) { m_languageCodeHasBeenSet = true; m_languageCode.assign(value); }
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline CaptionLanguageMapping& WithLanguageCode(const Aws::String& value) { SetLanguageCode(value); return *this;}
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline CaptionLanguageMapping& WithLanguageCode(Aws::String&& value) { SetLanguageCode(std::move(value)); return *this;}
-
-    /**
-     * Three character ISO 639-2 language code (see
-     * http://www.loc.gov/standards/iso639-2)
-     */
     inline CaptionLanguageMapping& WithLanguageCode(const char* value) { SetLanguageCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Textual description of language
      */
     inline const Aws::String& GetLanguageDescription() const{ return m_languageDescription; }
-
-    /**
-     * Textual description of language
-     */
     inline bool LanguageDescriptionHasBeenSet() const { return m_languageDescriptionHasBeenSet; }
-
-    /**
-     * Textual description of language
-     */
     inline void SetLanguageDescription(const Aws::String& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = value; }
-
-    /**
-     * Textual description of language
-     */
     inline void SetLanguageDescription(Aws::String&& value) { m_languageDescriptionHasBeenSet = true; m_languageDescription = std::move(value); }
-
-    /**
-     * Textual description of language
-     */
     inline void SetLanguageDescription(const char* value) { m_languageDescriptionHasBeenSet = true; m_languageDescription.assign(value); }
-
-    /**
-     * Textual description of language
-     */
     inline CaptionLanguageMapping& WithLanguageDescription(const Aws::String& value) { SetLanguageDescription(value); return *this;}
-
-    /**
-     * Textual description of language
-     */
     inline CaptionLanguageMapping& WithLanguageDescription(Aws::String&& value) { SetLanguageDescription(std::move(value)); return *this;}
-
-    /**
-     * Textual description of language
-     */
     inline CaptionLanguageMapping& WithLanguageDescription(const char* value) { SetLanguageDescription(value); return *this;}
-
+    ///@}
   private:
 
     int m_captionChannel;

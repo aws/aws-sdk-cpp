@@ -33,6 +33,7 @@ namespace Model
     AWS_CODEDEPLOY_API GetDeploymentTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A deployment target that contains information about a deployment such as its
      * status, lifecycle events, and when it was last updated. It also contains
@@ -41,65 +42,22 @@ namespace Model
      * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
      */
     inline const DeploymentTarget& GetDeploymentTarget() const{ return m_deploymentTarget; }
-
-    /**
-     * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecycle events, and when it was last updated. It also contains
-     * metadata about the deployment target. The deployment target metadata depends on
-     * the deployment target's type (<code>instanceTarget</code>,
-     * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-     */
     inline void SetDeploymentTarget(const DeploymentTarget& value) { m_deploymentTarget = value; }
-
-    /**
-     * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecycle events, and when it was last updated. It also contains
-     * metadata about the deployment target. The deployment target metadata depends on
-     * the deployment target's type (<code>instanceTarget</code>,
-     * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-     */
     inline void SetDeploymentTarget(DeploymentTarget&& value) { m_deploymentTarget = std::move(value); }
-
-    /**
-     * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecycle events, and when it was last updated. It also contains
-     * metadata about the deployment target. The deployment target metadata depends on
-     * the deployment target's type (<code>instanceTarget</code>,
-     * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-     */
     inline GetDeploymentTargetResult& WithDeploymentTarget(const DeploymentTarget& value) { SetDeploymentTarget(value); return *this;}
-
-    /**
-     * <p> A deployment target that contains information about a deployment such as its
-     * status, lifecycle events, and when it was last updated. It also contains
-     * metadata about the deployment target. The deployment target metadata depends on
-     * the deployment target's type (<code>instanceTarget</code>,
-     * <code>lambdaTarget</code>, or <code>ecsTarget</code>). </p>
-     */
     inline GetDeploymentTargetResult& WithDeploymentTarget(DeploymentTarget&& value) { SetDeploymentTarget(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDeploymentTargetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDeploymentTargetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDeploymentTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DeploymentTarget m_deploymentTarget;

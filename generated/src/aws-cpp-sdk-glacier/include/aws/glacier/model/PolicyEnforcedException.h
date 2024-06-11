@@ -39,128 +39,47 @@ namespace Model
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Client</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Client</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Client</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Client</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Client</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Client</p>
-     */
     inline PolicyEnforcedException& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Client</p>
-     */
     inline PolicyEnforcedException& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Client</p>
-     */
     inline PolicyEnforcedException& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>PolicyEnforcedException</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline PolicyEnforcedException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline PolicyEnforcedException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>PolicyEnforcedException</p>
-     */
     inline PolicyEnforcedException& WithCode(const char* value) { SetCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>InitiateJob request denied by current data retrieval policy.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline PolicyEnforcedException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline PolicyEnforcedException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>InitiateJob request denied by current data retrieval policy.</p>
-     */
     inline PolicyEnforcedException& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

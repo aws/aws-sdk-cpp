@@ -37,46 +37,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An IP address or a block of IP addresses.</p>
      */
     inline const Aws::String& GetAddressDefinition() const{ return m_addressDefinition; }
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline bool AddressDefinitionHasBeenSet() const { return m_addressDefinitionHasBeenSet; }
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline void SetAddressDefinition(const Aws::String& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = value; }
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline void SetAddressDefinition(Aws::String&& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = std::move(value); }
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline void SetAddressDefinition(const char* value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition.assign(value); }
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline RuleGroupSourceStatelessRuleMatchAttributesDestinations& WithAddressDefinition(const Aws::String& value) { SetAddressDefinition(value); return *this;}
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline RuleGroupSourceStatelessRuleMatchAttributesDestinations& WithAddressDefinition(Aws::String&& value) { SetAddressDefinition(std::move(value)); return *this;}
-
-    /**
-     * <p>An IP address or a block of IP addresses.</p>
-     */
     inline RuleGroupSourceStatelessRuleMatchAttributesDestinations& WithAddressDefinition(const char* value) { SetAddressDefinition(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_addressDefinition;

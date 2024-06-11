@@ -40,99 +40,34 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The quality of the image foreground as defined by brightness and
      * sharpness.</p>
      */
     inline const DetectLabelsImageQuality& GetQuality() const{ return m_quality; }
-
-    /**
-     * <p>The quality of the image foreground as defined by brightness and
-     * sharpness.</p>
-     */
     inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
-
-    /**
-     * <p>The quality of the image foreground as defined by brightness and
-     * sharpness.</p>
-     */
     inline void SetQuality(const DetectLabelsImageQuality& value) { m_qualityHasBeenSet = true; m_quality = value; }
-
-    /**
-     * <p>The quality of the image foreground as defined by brightness and
-     * sharpness.</p>
-     */
     inline void SetQuality(DetectLabelsImageQuality&& value) { m_qualityHasBeenSet = true; m_quality = std::move(value); }
-
-    /**
-     * <p>The quality of the image foreground as defined by brightness and
-     * sharpness.</p>
-     */
     inline DetectLabelsImageForeground& WithQuality(const DetectLabelsImageQuality& value) { SetQuality(value); return *this;}
-
-    /**
-     * <p>The quality of the image foreground as defined by brightness and
-     * sharpness.</p>
-     */
     inline DetectLabelsImageForeground& WithQuality(DetectLabelsImageQuality&& value) { SetQuality(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The dominant colors found in the foreground of an image, defined with RGB
      * values, CSS color name, simplified color name, and PixelPercentage (the
      * percentage of image pixels that have a particular color).</p>
      */
     inline const Aws::Vector<DominantColor>& GetDominantColors() const{ return m_dominantColors; }
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline bool DominantColorsHasBeenSet() const { return m_dominantColorsHasBeenSet; }
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline void SetDominantColors(const Aws::Vector<DominantColor>& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = value; }
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline void SetDominantColors(Aws::Vector<DominantColor>&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors = std::move(value); }
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline DetectLabelsImageForeground& WithDominantColors(const Aws::Vector<DominantColor>& value) { SetDominantColors(value); return *this;}
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline DetectLabelsImageForeground& WithDominantColors(Aws::Vector<DominantColor>&& value) { SetDominantColors(std::move(value)); return *this;}
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline DetectLabelsImageForeground& AddDominantColors(const DominantColor& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.push_back(value); return *this; }
-
-    /**
-     * <p>The dominant colors found in the foreground of an image, defined with RGB
-     * values, CSS color name, simplified color name, and PixelPercentage (the
-     * percentage of image pixels that have a particular color).</p>
-     */
     inline DetectLabelsImageForeground& AddDominantColors(DominantColor&& value) { m_dominantColorsHasBeenSet = true; m_dominantColors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DetectLabelsImageQuality m_quality;

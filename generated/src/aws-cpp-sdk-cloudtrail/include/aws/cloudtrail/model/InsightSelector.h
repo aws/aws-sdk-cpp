@@ -38,6 +38,7 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of Insights events to log on a trail or event data store.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
@@ -48,62 +49,12 @@ namespace Model
      * shown if the API call is unsuccessful.</p>
      */
     inline const InsightType& GetInsightType() const{ return m_insightType; }
-
-    /**
-     * <p>The type of Insights events to log on a trail or event data store.
-     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
-     * write-only management API calls that are aggregated per minute against a
-     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
-     * type analyzes management API calls that result in error codes. The error is
-     * shown if the API call is unsuccessful.</p>
-     */
     inline bool InsightTypeHasBeenSet() const { return m_insightTypeHasBeenSet; }
-
-    /**
-     * <p>The type of Insights events to log on a trail or event data store.
-     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
-     * write-only management API calls that are aggregated per minute against a
-     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
-     * type analyzes management API calls that result in error codes. The error is
-     * shown if the API call is unsuccessful.</p>
-     */
     inline void SetInsightType(const InsightType& value) { m_insightTypeHasBeenSet = true; m_insightType = value; }
-
-    /**
-     * <p>The type of Insights events to log on a trail or event data store.
-     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
-     * write-only management API calls that are aggregated per minute against a
-     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
-     * type analyzes management API calls that result in error codes. The error is
-     * shown if the API call is unsuccessful.</p>
-     */
     inline void SetInsightType(InsightType&& value) { m_insightTypeHasBeenSet = true; m_insightType = std::move(value); }
-
-    /**
-     * <p>The type of Insights events to log on a trail or event data store.
-     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
-     * write-only management API calls that are aggregated per minute against a
-     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
-     * type analyzes management API calls that result in error codes. The error is
-     * shown if the API call is unsuccessful.</p>
-     */
     inline InsightSelector& WithInsightType(const InsightType& value) { SetInsightType(value); return *this;}
-
-    /**
-     * <p>The type of Insights events to log on a trail or event data store.
-     * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
-     * write-only management API calls that are aggregated per minute against a
-     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
-     * type analyzes management API calls that result in error codes. The error is
-     * shown if the API call is unsuccessful.</p>
-     */
     inline InsightSelector& WithInsightType(InsightType&& value) { SetInsightType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InsightType m_insightType;

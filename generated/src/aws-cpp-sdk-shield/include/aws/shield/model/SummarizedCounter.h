@@ -37,171 +37,73 @@ namespace Model
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The counter name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline SummarizedCounter& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline SummarizedCounter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The counter name.</p>
-     */
     inline SummarizedCounter& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum value of the counter for a specified time period.</p>
      */
     inline double GetMax() const{ return m_max; }
-
-    /**
-     * <p>The maximum value of the counter for a specified time period.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The maximum value of the counter for a specified time period.</p>
-     */
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The maximum value of the counter for a specified time period.</p>
-     */
     inline SummarizedCounter& WithMax(double value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The average value of the counter for a specified time period.</p>
      */
     inline double GetAverage() const{ return m_average; }
-
-    /**
-     * <p>The average value of the counter for a specified time period.</p>
-     */
     inline bool AverageHasBeenSet() const { return m_averageHasBeenSet; }
-
-    /**
-     * <p>The average value of the counter for a specified time period.</p>
-     */
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
-
-    /**
-     * <p>The average value of the counter for a specified time period.</p>
-     */
     inline SummarizedCounter& WithAverage(double value) { SetAverage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total of counter values for a specified time period.</p>
      */
     inline double GetSum() const{ return m_sum; }
-
-    /**
-     * <p>The total of counter values for a specified time period.</p>
-     */
     inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
-
-    /**
-     * <p>The total of counter values for a specified time period.</p>
-     */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
-
-    /**
-     * <p>The total of counter values for a specified time period.</p>
-     */
     inline SummarizedCounter& WithSum(double value) { SetSum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of counters for a specified time period.</p>
      */
     inline int GetN() const{ return m_n; }
-
-    /**
-     * <p>The number of counters for a specified time period.</p>
-     */
     inline bool NHasBeenSet() const { return m_nHasBeenSet; }
-
-    /**
-     * <p>The number of counters for a specified time period.</p>
-     */
     inline void SetN(int value) { m_nHasBeenSet = true; m_n = value; }
-
-    /**
-     * <p>The number of counters for a specified time period.</p>
-     */
     inline SummarizedCounter& WithN(int value) { SetN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of the counters.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline SummarizedCounter& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline SummarizedCounter& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-
-    /**
-     * <p>The unit of the counters.</p>
-     */
     inline SummarizedCounter& WithUnit(const char* value) { SetUnit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -36,30 +36,16 @@ namespace Model
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Enables the application to automatically start on job submission. Defaults to
      * true.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Enables the application to automatically start on job submission. Defaults to
-     * true.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Enables the application to automatically start on job submission. Defaults to
-     * true.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Enables the application to automatically start on job submission. Defaults to
-     * true.</p>
-     */
     inline AutoStartConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

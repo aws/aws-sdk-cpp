@@ -34,63 +34,29 @@ namespace Model
     AWS_SERVICECATALOG_API DescribeServiceActionExecutionParametersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The parameters of the self-service action.</p>
      */
     inline const Aws::Vector<ExecutionParameter>& GetServiceActionParameters() const{ return m_serviceActionParameters; }
-
-    /**
-     * <p>The parameters of the self-service action.</p>
-     */
     inline void SetServiceActionParameters(const Aws::Vector<ExecutionParameter>& value) { m_serviceActionParameters = value; }
-
-    /**
-     * <p>The parameters of the self-service action.</p>
-     */
     inline void SetServiceActionParameters(Aws::Vector<ExecutionParameter>&& value) { m_serviceActionParameters = std::move(value); }
-
-    /**
-     * <p>The parameters of the self-service action.</p>
-     */
     inline DescribeServiceActionExecutionParametersResult& WithServiceActionParameters(const Aws::Vector<ExecutionParameter>& value) { SetServiceActionParameters(value); return *this;}
-
-    /**
-     * <p>The parameters of the self-service action.</p>
-     */
     inline DescribeServiceActionExecutionParametersResult& WithServiceActionParameters(Aws::Vector<ExecutionParameter>&& value) { SetServiceActionParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The parameters of the self-service action.</p>
-     */
     inline DescribeServiceActionExecutionParametersResult& AddServiceActionParameters(const ExecutionParameter& value) { m_serviceActionParameters.push_back(value); return *this; }
-
-    /**
-     * <p>The parameters of the self-service action.</p>
-     */
     inline DescribeServiceActionExecutionParametersResult& AddServiceActionParameters(ExecutionParameter&& value) { m_serviceActionParameters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeServiceActionExecutionParametersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeServiceActionExecutionParametersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeServiceActionExecutionParametersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ExecutionParameter> m_serviceActionParameters;

@@ -40,42 +40,18 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Describes whether dynamic routing is enabled or disabled for the transit
      * gateway peering attachment.</p>
      */
     inline const DynamicRoutingValue& GetDynamicRouting() const{ return m_dynamicRouting; }
-
-    /**
-     * <p>Describes whether dynamic routing is enabled or disabled for the transit
-     * gateway peering attachment.</p>
-     */
     inline bool DynamicRoutingHasBeenSet() const { return m_dynamicRoutingHasBeenSet; }
-
-    /**
-     * <p>Describes whether dynamic routing is enabled or disabled for the transit
-     * gateway peering attachment.</p>
-     */
     inline void SetDynamicRouting(const DynamicRoutingValue& value) { m_dynamicRoutingHasBeenSet = true; m_dynamicRouting = value; }
-
-    /**
-     * <p>Describes whether dynamic routing is enabled or disabled for the transit
-     * gateway peering attachment.</p>
-     */
     inline void SetDynamicRouting(DynamicRoutingValue&& value) { m_dynamicRoutingHasBeenSet = true; m_dynamicRouting = std::move(value); }
-
-    /**
-     * <p>Describes whether dynamic routing is enabled or disabled for the transit
-     * gateway peering attachment.</p>
-     */
     inline TransitGatewayPeeringAttachmentOptions& WithDynamicRouting(const DynamicRoutingValue& value) { SetDynamicRouting(value); return *this;}
-
-    /**
-     * <p>Describes whether dynamic routing is enabled or disabled for the transit
-     * gateway peering attachment.</p>
-     */
     inline TransitGatewayPeeringAttachmentOptions& WithDynamicRouting(DynamicRoutingValue&& value) { SetDynamicRouting(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DynamicRoutingValue m_dynamicRouting;

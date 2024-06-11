@@ -34,144 +34,49 @@ namespace Model
     AWS_KENDRA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline ListExperienceEntitiesRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline ListExperienceEntitiesRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of your Amazon Kendra experience.</p>
-     */
     inline ListExperienceEntitiesRequest& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the index for your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetIndexId() const{ return m_indexId; }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline bool IndexIdHasBeenSet() const { return m_indexIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline void SetIndexId(const Aws::String& value) { m_indexIdHasBeenSet = true; m_indexId = value; }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline void SetIndexId(Aws::String&& value) { m_indexIdHasBeenSet = true; m_indexId = std::move(value); }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline void SetIndexId(const char* value) { m_indexIdHasBeenSet = true; m_indexId.assign(value); }
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline ListExperienceEntitiesRequest& WithIndexId(const Aws::String& value) { SetIndexId(value); return *this;}
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline ListExperienceEntitiesRequest& WithIndexId(Aws::String&& value) { SetIndexId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the index for your Amazon Kendra experience.</p>
-     */
     inline ListExperienceEntitiesRequest& WithIndexId(const char* value) { SetIndexId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous response was incomplete (because there is more data to
      * retrieve), Amazon Kendra returns a pagination token in the response. You can use
      * this pagination token to retrieve the next set of users or groups.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline ListExperienceEntitiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline ListExperienceEntitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more data to
-     * retrieve), Amazon Kendra returns a pagination token in the response. You can use
-     * this pagination token to retrieve the next set of users or groups.</p>
-     */
     inline ListExperienceEntitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

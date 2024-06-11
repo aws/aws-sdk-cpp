@@ -37,36 +37,17 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
      */
     inline const OTAJobConfig& GetOTAJobConfig() const{ return m_oTAJobConfig; }
-
-    /**
-     * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-     */
     inline bool OTAJobConfigHasBeenSet() const { return m_oTAJobConfigHasBeenSet; }
-
-    /**
-     * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-     */
     inline void SetOTAJobConfig(const OTAJobConfig& value) { m_oTAJobConfigHasBeenSet = true; m_oTAJobConfig = value; }
-
-    /**
-     * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-     */
     inline void SetOTAJobConfig(OTAJobConfig&& value) { m_oTAJobConfigHasBeenSet = true; m_oTAJobConfig = std::move(value); }
-
-    /**
-     * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-     */
     inline DeviceJobConfig& WithOTAJobConfig(const OTAJobConfig& value) { SetOTAJobConfig(value); return *this;}
-
-    /**
-     * <p>A configuration for an over-the-air (OTA) upgrade. Required for OTA jobs.</p>
-     */
     inline DeviceJobConfig& WithOTAJobConfig(OTAJobConfig&& value) { SetOTAJobConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     OTAJobConfig m_oTAJobConfig;

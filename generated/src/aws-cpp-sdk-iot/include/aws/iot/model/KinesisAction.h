@@ -38,128 +38,47 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline KinesisAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline KinesisAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role that grants access to the Amazon Kinesis stream.</p>
-     */
     inline KinesisAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the Amazon Kinesis stream.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline KinesisAction& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline KinesisAction& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon Kinesis stream.</p>
-     */
     inline KinesisAction& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The partition key.</p>
      */
     inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline void SetPartitionKey(Aws::String&& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = std::move(value); }
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline void SetPartitionKey(const char* value) { m_partitionKeyHasBeenSet = true; m_partitionKey.assign(value); }
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline KinesisAction& WithPartitionKey(const Aws::String& value) { SetPartitionKey(value); return *this;}
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline KinesisAction& WithPartitionKey(Aws::String&& value) { SetPartitionKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The partition key.</p>
-     */
     inline KinesisAction& WithPartitionKey(const char* value) { SetPartitionKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_roleArn;

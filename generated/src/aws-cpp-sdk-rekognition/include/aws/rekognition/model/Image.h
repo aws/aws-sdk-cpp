@@ -56,73 +56,30 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
      * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
-
-    /**
-     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
-     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
-     */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-
-    /**
-     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
-     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
-     */
     inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
-     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
-     */
     inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-
-    /**
-     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
-     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
-     */
     inline Image& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-
-    /**
-     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
-     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
-     */
     inline Image& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifies an S3 object as the image source.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
-
-    /**
-     * <p>Identifies an S3 object as the image source.</p>
-     */
     inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
-
-    /**
-     * <p>Identifies an S3 object as the image source.</p>
-     */
     inline void SetS3Object(const S3Object& value) { m_s3ObjectHasBeenSet = true; m_s3Object = value; }
-
-    /**
-     * <p>Identifies an S3 object as the image source.</p>
-     */
     inline void SetS3Object(S3Object&& value) { m_s3ObjectHasBeenSet = true; m_s3Object = std::move(value); }
-
-    /**
-     * <p>Identifies an S3 object as the image source.</p>
-     */
     inline Image& WithS3Object(const S3Object& value) { SetS3Object(value); return *this;}
-
-    /**
-     * <p>Identifies an S3 object as the image source.</p>
-     */
     inline Image& WithS3Object(S3Object&& value) { SetS3Object(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_bytes;

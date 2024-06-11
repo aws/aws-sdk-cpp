@@ -35,51 +35,20 @@ namespace Model
     AWS_INSPECTOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAssessmentTargetArns() const{ return m_assessmentTargetArns; }
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline bool AssessmentTargetArnsHasBeenSet() const { return m_assessmentTargetArnsHasBeenSet; }
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline void SetAssessmentTargetArns(const Aws::Vector<Aws::String>& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns = value; }
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline void SetAssessmentTargetArns(Aws::Vector<Aws::String>&& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns = std::move(value); }
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline DescribeAssessmentTargetsRequest& WithAssessmentTargetArns(const Aws::Vector<Aws::String>& value) { SetAssessmentTargetArns(value); return *this;}
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline DescribeAssessmentTargetsRequest& WithAssessmentTargetArns(Aws::Vector<Aws::String>&& value) { SetAssessmentTargetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline DescribeAssessmentTargetsRequest& AddAssessmentTargetArns(const Aws::String& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(value); return *this; }
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline DescribeAssessmentTargetsRequest& AddAssessmentTargetArns(Aws::String&& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
-     */
     inline DescribeAssessmentTargetsRequest& AddAssessmentTargetArns(const char* value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_assessmentTargetArns;

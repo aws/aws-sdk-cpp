@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the experiment to describe.</p>
      */
     inline const Aws::String& GetExperimentName() const{ return m_experimentName; }
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline bool ExperimentNameHasBeenSet() const { return m_experimentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline void SetExperimentName(const Aws::String& value) { m_experimentNameHasBeenSet = true; m_experimentName = value; }
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline void SetExperimentName(Aws::String&& value) { m_experimentNameHasBeenSet = true; m_experimentName = std::move(value); }
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline void SetExperimentName(const char* value) { m_experimentNameHasBeenSet = true; m_experimentName.assign(value); }
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline DescribeExperimentRequest& WithExperimentName(const Aws::String& value) { SetExperimentName(value); return *this;}
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline DescribeExperimentRequest& WithExperimentName(Aws::String&& value) { SetExperimentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the experiment to describe.</p>
-     */
     inline DescribeExperimentRequest& WithExperimentName(const char* value) { SetExperimentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_experimentName;

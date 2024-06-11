@@ -34,49 +34,21 @@ namespace Model
     AWS_SERVICEDISCOVERY_API ListOperationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Summary information about the operations that match the specified
      * criteria.</p>
      */
     inline const Aws::Vector<OperationSummary>& GetOperations() const{ return m_operations; }
-
-    /**
-     * <p>Summary information about the operations that match the specified
-     * criteria.</p>
-     */
     inline void SetOperations(const Aws::Vector<OperationSummary>& value) { m_operations = value; }
-
-    /**
-     * <p>Summary information about the operations that match the specified
-     * criteria.</p>
-     */
     inline void SetOperations(Aws::Vector<OperationSummary>&& value) { m_operations = std::move(value); }
-
-    /**
-     * <p>Summary information about the operations that match the specified
-     * criteria.</p>
-     */
     inline ListOperationsResult& WithOperations(const Aws::Vector<OperationSummary>& value) { SetOperations(value); return *this;}
-
-    /**
-     * <p>Summary information about the operations that match the specified
-     * criteria.</p>
-     */
     inline ListOperationsResult& WithOperations(Aws::Vector<OperationSummary>&& value) { SetOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>Summary information about the operations that match the specified
-     * criteria.</p>
-     */
     inline ListOperationsResult& AddOperations(const OperationSummary& value) { m_operations.push_back(value); return *this; }
-
-    /**
-     * <p>Summary information about the operations that match the specified
-     * criteria.</p>
-     */
     inline ListOperationsResult& AddOperations(OperationSummary&& value) { m_operations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response contains <code>NextToken</code>, submit another
      * <code>ListOperations</code> request to get the next group of results. Specify
@@ -88,101 +60,24 @@ namespace Model
      * contain operations that match the criteria.</p> 
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response contains <code>NextToken</code>, submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify
-     * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
-     * then filters them based on the specified criteria. It's possible that no
-     * operations in the first <code>MaxResults</code> operations matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> 
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response contains <code>NextToken</code>, submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify
-     * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
-     * then filters them based on the specified criteria. It's possible that no
-     * operations in the first <code>MaxResults</code> operations matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> 
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response contains <code>NextToken</code>, submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify
-     * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
-     * then filters them based on the specified criteria. It's possible that no
-     * operations in the first <code>MaxResults</code> operations matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> 
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response contains <code>NextToken</code>, submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify
-     * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
-     * then filters them based on the specified criteria. It's possible that no
-     * operations in the first <code>MaxResults</code> operations matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> 
-     */
     inline ListOperationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response contains <code>NextToken</code>, submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify
-     * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
-     * then filters them based on the specified criteria. It's possible that no
-     * operations in the first <code>MaxResults</code> operations matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> 
-     */
     inline ListOperationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response contains <code>NextToken</code>, submit another
-     * <code>ListOperations</code> request to get the next group of results. Specify
-     * the value of <code>NextToken</code> from the previous response in the next
-     * request.</p>  <p>Cloud Map gets <code>MaxResults</code> operations and
-     * then filters them based on the specified criteria. It's possible that no
-     * operations in the first <code>MaxResults</code> operations matched the specified
-     * criteria but that subsequent groups of <code>MaxResults</code> operations do
-     * contain operations that match the criteria.</p> 
-     */
     inline ListOperationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListOperationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListOperationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListOperationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<OperationSummary> m_operations;

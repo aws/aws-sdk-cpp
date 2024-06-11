@@ -34,99 +34,42 @@ namespace Model
     AWS_SAGEMAKER_API ListStageDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of summaries of devices allocated to the stage.</p>
      */
     inline const Aws::Vector<DeviceDeploymentSummary>& GetDeviceDeploymentSummaries() const{ return m_deviceDeploymentSummaries; }
-
-    /**
-     * <p>List of summaries of devices allocated to the stage.</p>
-     */
     inline void SetDeviceDeploymentSummaries(const Aws::Vector<DeviceDeploymentSummary>& value) { m_deviceDeploymentSummaries = value; }
-
-    /**
-     * <p>List of summaries of devices allocated to the stage.</p>
-     */
     inline void SetDeviceDeploymentSummaries(Aws::Vector<DeviceDeploymentSummary>&& value) { m_deviceDeploymentSummaries = std::move(value); }
-
-    /**
-     * <p>List of summaries of devices allocated to the stage.</p>
-     */
     inline ListStageDevicesResult& WithDeviceDeploymentSummaries(const Aws::Vector<DeviceDeploymentSummary>& value) { SetDeviceDeploymentSummaries(value); return *this;}
-
-    /**
-     * <p>List of summaries of devices allocated to the stage.</p>
-     */
     inline ListStageDevicesResult& WithDeviceDeploymentSummaries(Aws::Vector<DeviceDeploymentSummary>&& value) { SetDeviceDeploymentSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>List of summaries of devices allocated to the stage.</p>
-     */
     inline ListStageDevicesResult& AddDeviceDeploymentSummaries(const DeviceDeploymentSummary& value) { m_deviceDeploymentSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>List of summaries of devices allocated to the stage.</p>
-     */
     inline ListStageDevicesResult& AddDeviceDeploymentSummaries(DeviceDeploymentSummary&& value) { m_deviceDeploymentSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to use when calling the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to use when calling the next page of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token to use when calling the next page of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to use when calling the next page of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to use when calling the next page of results.</p>
-     */
     inline ListStageDevicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to use when calling the next page of results.</p>
-     */
     inline ListStageDevicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to use when calling the next page of results.</p>
-     */
     inline ListStageDevicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListStageDevicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListStageDevicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListStageDevicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeviceDeploymentSummary> m_deviceDeploymentSummaries;

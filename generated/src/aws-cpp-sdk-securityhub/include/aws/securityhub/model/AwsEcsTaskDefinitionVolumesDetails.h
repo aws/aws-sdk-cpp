@@ -40,145 +40,56 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information about a Docker volume.</p>
      */
     inline const AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
-
-    /**
-     * <p>Information about a Docker volume.</p>
-     */
     inline bool DockerVolumeConfigurationHasBeenSet() const { return m_dockerVolumeConfigurationHasBeenSet; }
-
-    /**
-     * <p>Information about a Docker volume.</p>
-     */
     inline void SetDockerVolumeConfiguration(const AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = value; }
-
-    /**
-     * <p>Information about a Docker volume.</p>
-     */
     inline void SetDockerVolumeConfiguration(AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails&& value) { m_dockerVolumeConfigurationHasBeenSet = true; m_dockerVolumeConfiguration = std::move(value); }
-
-    /**
-     * <p>Information about a Docker volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithDockerVolumeConfiguration(const AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails& value) { SetDockerVolumeConfiguration(value); return *this;}
-
-    /**
-     * <p>Information about a Docker volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithDockerVolumeConfiguration(AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails&& value) { SetDockerVolumeConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the Amazon Elastic File System file system that is used for
      * task storage.</p>
      */
     inline const AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails& GetEfsVolumeConfiguration() const{ return m_efsVolumeConfiguration; }
-
-    /**
-     * <p>Information about the Amazon Elastic File System file system that is used for
-     * task storage.</p>
-     */
     inline bool EfsVolumeConfigurationHasBeenSet() const { return m_efsVolumeConfigurationHasBeenSet; }
-
-    /**
-     * <p>Information about the Amazon Elastic File System file system that is used for
-     * task storage.</p>
-     */
     inline void SetEfsVolumeConfiguration(const AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = value; }
-
-    /**
-     * <p>Information about the Amazon Elastic File System file system that is used for
-     * task storage.</p>
-     */
     inline void SetEfsVolumeConfiguration(AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails&& value) { m_efsVolumeConfigurationHasBeenSet = true; m_efsVolumeConfiguration = std::move(value); }
-
-    /**
-     * <p>Information about the Amazon Elastic File System file system that is used for
-     * task storage.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithEfsVolumeConfiguration(const AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails& value) { SetEfsVolumeConfiguration(value); return *this;}
-
-    /**
-     * <p>Information about the Amazon Elastic File System file system that is used for
-     * task storage.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithEfsVolumeConfiguration(AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetails&& value) { SetEfsVolumeConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about a bind mount host volume.</p>
      */
     inline const AwsEcsTaskDefinitionVolumesHostDetails& GetHost() const{ return m_host; }
-
-    /**
-     * <p>Information about a bind mount host volume.</p>
-     */
     inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
-
-    /**
-     * <p>Information about a bind mount host volume.</p>
-     */
     inline void SetHost(const AwsEcsTaskDefinitionVolumesHostDetails& value) { m_hostHasBeenSet = true; m_host = value; }
-
-    /**
-     * <p>Information about a bind mount host volume.</p>
-     */
     inline void SetHost(AwsEcsTaskDefinitionVolumesHostDetails&& value) { m_hostHasBeenSet = true; m_host = std::move(value); }
-
-    /**
-     * <p>Information about a bind mount host volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithHost(const AwsEcsTaskDefinitionVolumesHostDetails& value) { SetHost(value); return *this;}
-
-    /**
-     * <p>Information about a bind mount host volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithHost(AwsEcsTaskDefinitionVolumesHostDetails&& value) { SetHost(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the data volume.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data volume.</p>
-     */
     inline AwsEcsTaskDefinitionVolumesDetails& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetails m_dockerVolumeConfiguration;

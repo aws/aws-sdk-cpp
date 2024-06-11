@@ -40,46 +40,19 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the list of errors in the request.</p>
      */
     inline const Aws::Vector<CodeError>& GetCodeErrors() const{ return m_codeErrors; }
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline bool CodeErrorsHasBeenSet() const { return m_codeErrorsHasBeenSet; }
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline void SetCodeErrors(const Aws::Vector<CodeError>& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = value; }
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline void SetCodeErrors(Aws::Vector<CodeError>&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = std::move(value); }
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline BadRequestDetail& WithCodeErrors(const Aws::Vector<CodeError>& value) { SetCodeErrors(value); return *this;}
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline BadRequestDetail& WithCodeErrors(Aws::Vector<CodeError>&& value) { SetCodeErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline BadRequestDetail& AddCodeErrors(const CodeError& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(value); return *this; }
-
-    /**
-     * <p>Contains the list of errors in the request.</p>
-     */
     inline BadRequestDetail& AddCodeErrors(CodeError&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<CodeError> m_codeErrors;

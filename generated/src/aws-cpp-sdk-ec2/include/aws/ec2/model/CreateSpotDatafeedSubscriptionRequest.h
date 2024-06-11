@@ -40,6 +40,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
      * feed. For more information about bucket names, see <a
@@ -47,64 +48,16 @@ namespace Model
      * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Amazon S3 bucket in which to store the Spot Instance data
-     * feed. For more information about bucket names, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/BucketRestrictions.html#bucketnamingrules">Rules
-     * for bucket naming</a> in the <i>Amazon S3 Developer Guide</i>.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -112,72 +65,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The prefix for the data feed file names.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix for the data feed file names.</p>
-     */
     inline CreateSpotDatafeedSubscriptionRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucket;

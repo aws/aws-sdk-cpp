@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The SIP rule ID.</p>
      */
     inline const Aws::String& GetSipRuleId() const{ return m_sipRuleId; }
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline bool SipRuleIdHasBeenSet() const { return m_sipRuleIdHasBeenSet; }
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline void SetSipRuleId(const Aws::String& value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId = value; }
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline void SetSipRuleId(Aws::String&& value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId = std::move(value); }
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline void SetSipRuleId(const char* value) { m_sipRuleIdHasBeenSet = true; m_sipRuleId.assign(value); }
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline GetSipRuleRequest& WithSipRuleId(const Aws::String& value) { SetSipRuleId(value); return *this;}
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline GetSipRuleRequest& WithSipRuleId(Aws::String&& value) { SetSipRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The SIP rule ID.</p>
-     */
     inline GetSipRuleRequest& WithSipRuleId(const char* value) { SetSipRuleId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sipRuleId;

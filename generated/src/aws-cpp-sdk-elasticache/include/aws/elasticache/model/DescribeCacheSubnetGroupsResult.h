@@ -41,100 +41,41 @@ namespace Model
     AWS_ELASTICACHE_API DescribeCacheSubnetGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of cache subnet groups. Each element in the list contains detailed
      * information about one group.</p>
      */
     inline const Aws::Vector<CacheSubnetGroup>& GetCacheSubnetGroups() const{ return m_cacheSubnetGroups; }
-
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
     inline void SetCacheSubnetGroups(const Aws::Vector<CacheSubnetGroup>& value) { m_cacheSubnetGroups = value; }
-
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
     inline void SetCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { m_cacheSubnetGroups = std::move(value); }
-
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(const Aws::Vector<CacheSubnetGroup>& value) { SetCacheSubnetGroups(value); return *this;}
-
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& WithCacheSubnetGroups(Aws::Vector<CacheSubnetGroup>&& value) { SetCacheSubnetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(const CacheSubnetGroup& value) { m_cacheSubnetGroups.push_back(value); return *this; }
-
-    /**
-     * <p>A list of cache subnet groups. Each element in the list contains detailed
-     * information about one group.</p>
-     */
     inline DescribeCacheSubnetGroupsResult& AddCacheSubnetGroups(CacheSubnetGroup&& value) { m_cacheSubnetGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeCacheSubnetGroupsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeCacheSubnetGroupsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

@@ -34,46 +34,19 @@ namespace Model
     AWS_REKOGNITION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>ID of the collection to delete.</p>
      */
     inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline DeleteCollectionRequest& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline DeleteCollectionRequest& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the collection to delete.</p>
-     */
     inline DeleteCollectionRequest& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_collectionId;

@@ -34,42 +34,20 @@ namespace Model
     AWS_S3CONTROL_API ListRegionalBucketsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p/>
      */
     inline const Aws::Vector<RegionalBucket>& GetRegionalBucketList() const{ return m_regionalBucketList; }
-
-    /**
-     * <p/>
-     */
     inline void SetRegionalBucketList(const Aws::Vector<RegionalBucket>& value) { m_regionalBucketList = value; }
-
-    /**
-     * <p/>
-     */
     inline void SetRegionalBucketList(Aws::Vector<RegionalBucket>&& value) { m_regionalBucketList = std::move(value); }
-
-    /**
-     * <p/>
-     */
     inline ListRegionalBucketsResult& WithRegionalBucketList(const Aws::Vector<RegionalBucket>& value) { SetRegionalBucketList(value); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListRegionalBucketsResult& WithRegionalBucketList(Aws::Vector<RegionalBucket>&& value) { SetRegionalBucketList(std::move(value)); return *this;}
-
-    /**
-     * <p/>
-     */
     inline ListRegionalBucketsResult& AddRegionalBucketList(const RegionalBucket& value) { m_regionalBucketList.push_back(value); return *this; }
-
-    /**
-     * <p/>
-     */
     inline ListRegionalBucketsResult& AddRegionalBucketList(RegionalBucket&& value) { m_regionalBucketList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
      * means there are more buckets that can be listed. The next list requests to
@@ -77,77 +55,24 @@ namespace Model
      * <code>NextToken</code> is obfuscated and is not a real key.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
-     * means there are more buckets that can be listed. The next list requests to
-     * Amazon S3 can be continued with this <code>NextToken</code>.
-     * <code>NextToken</code> is obfuscated and is not a real key.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
-     * means there are more buckets that can be listed. The next list requests to
-     * Amazon S3 can be continued with this <code>NextToken</code>.
-     * <code>NextToken</code> is obfuscated and is not a real key.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
-     * means there are more buckets that can be listed. The next list requests to
-     * Amazon S3 can be continued with this <code>NextToken</code>.
-     * <code>NextToken</code> is obfuscated and is not a real key.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
-     * means there are more buckets that can be listed. The next list requests to
-     * Amazon S3 can be continued with this <code>NextToken</code>.
-     * <code>NextToken</code> is obfuscated and is not a real key.</p>
-     */
     inline ListRegionalBucketsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
-     * means there are more buckets that can be listed. The next list requests to
-     * Amazon S3 can be continued with this <code>NextToken</code>.
-     * <code>NextToken</code> is obfuscated and is not a real key.</p>
-     */
     inline ListRegionalBucketsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> <code>NextToken</code> is sent when <code>isTruncated</code> is true, which
-     * means there are more buckets that can be listed. The next list requests to
-     * Amazon S3 can be continued with this <code>NextToken</code>.
-     * <code>NextToken</code> is obfuscated and is not a real key.</p>
-     */
     inline ListRegionalBucketsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRegionalBucketsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRegionalBucketsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRegionalBucketsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RegionalBucket> m_regionalBucketList;

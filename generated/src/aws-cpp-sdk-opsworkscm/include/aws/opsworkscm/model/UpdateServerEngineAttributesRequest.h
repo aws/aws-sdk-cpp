@@ -34,128 +34,47 @@ namespace Model
     AWS_OPSWORKSCM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the server to update. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the server to update. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the engine attribute to update. </p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the engine attribute to update. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value to set for the attribute. </p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value to set for the attribute. </p>
-     */
     inline UpdateServerEngineAttributesRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverName;

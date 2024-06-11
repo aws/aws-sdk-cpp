@@ -39,83 +39,32 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The runtime status of the lifecycle action taken for the impacted
      * resource.</p>
      */
     inline const LifecycleExecutionResourceStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The runtime status of the lifecycle action taken for the impacted
-     * resource.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The runtime status of the lifecycle action taken for the impacted
-     * resource.</p>
-     */
     inline void SetStatus(const LifecycleExecutionResourceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The runtime status of the lifecycle action taken for the impacted
-     * resource.</p>
-     */
     inline void SetStatus(LifecycleExecutionResourceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The runtime status of the lifecycle action taken for the impacted
-     * resource.</p>
-     */
     inline LifecycleExecutionResourceState& WithStatus(const LifecycleExecutionResourceStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The runtime status of the lifecycle action taken for the impacted
-     * resource.</p>
-     */
     inline LifecycleExecutionResourceState& WithStatus(LifecycleExecutionResourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Messaging that clarifies the reason for the assigned status.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline LifecycleExecutionResourceState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline LifecycleExecutionResourceState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>Messaging that clarifies the reason for the assigned status.</p>
-     */
     inline LifecycleExecutionResourceState& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     LifecycleExecutionResourceStatus m_status;

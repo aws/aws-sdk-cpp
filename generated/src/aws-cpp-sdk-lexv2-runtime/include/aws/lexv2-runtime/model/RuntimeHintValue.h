@@ -38,54 +38,20 @@ namespace Model
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
      * bot.</p>
      */
     inline const Aws::String& GetPhrase() const{ return m_phrase; }
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline bool PhraseHasBeenSet() const { return m_phraseHasBeenSet; }
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline void SetPhrase(const Aws::String& value) { m_phraseHasBeenSet = true; m_phrase = value; }
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline void SetPhrase(Aws::String&& value) { m_phraseHasBeenSet = true; m_phrase = std::move(value); }
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline void SetPhrase(const char* value) { m_phraseHasBeenSet = true; m_phrase.assign(value); }
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline RuntimeHintValue& WithPhrase(const Aws::String& value) { SetPhrase(value); return *this;}
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline RuntimeHintValue& WithPhrase(Aws::String&& value) { SetPhrase(std::move(value)); return *this;}
-
-    /**
-     * <p>The phrase that Amazon Lex V2 should look for in the user's input to the
-     * bot.</p>
-     */
     inline RuntimeHintValue& WithPhrase(const char* value) { SetPhrase(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_phrase;

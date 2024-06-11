@@ -33,53 +33,27 @@ namespace Model
     AWS_CONNECTWISDOMSERVICE_API GetSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The session.</p>
      */
     inline const SessionData& GetSession() const{ return m_session; }
-
-    /**
-     * <p>The session.</p>
-     */
     inline void SetSession(const SessionData& value) { m_session = value; }
-
-    /**
-     * <p>The session.</p>
-     */
     inline void SetSession(SessionData&& value) { m_session = std::move(value); }
-
-    /**
-     * <p>The session.</p>
-     */
     inline GetSessionResult& WithSession(const SessionData& value) { SetSession(value); return *this;}
-
-    /**
-     * <p>The session.</p>
-     */
     inline GetSessionResult& WithSession(SessionData&& value) { SetSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SessionData m_session;

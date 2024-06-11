@@ -33,6 +33,7 @@ namespace Model
     AWS_WAF_API GetSizeConstraintSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
      * <code>GetSizeConstraintSet</code> request. For more information, see the
@@ -46,85 +47,22 @@ namespace Model
      * </ul>
      */
     inline const SizeConstraintSet& GetSizeConstraintSet() const{ return m_sizeConstraintSet; }
-
-    /**
-     * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
-     * <code>GetSizeConstraintSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SizeConstraintSet</a>: Contains
-     * <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code> </p> </li> <li> <p> <code>SizeConstraints</code>: Contains an
-     * array of <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code> object
-     * contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> <li> <p>
-     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
-     * </ul>
-     */
     inline void SetSizeConstraintSet(const SizeConstraintSet& value) { m_sizeConstraintSet = value; }
-
-    /**
-     * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
-     * <code>GetSizeConstraintSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SizeConstraintSet</a>: Contains
-     * <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code> </p> </li> <li> <p> <code>SizeConstraints</code>: Contains an
-     * array of <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code> object
-     * contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> <li> <p>
-     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
-     * </ul>
-     */
     inline void SetSizeConstraintSet(SizeConstraintSet&& value) { m_sizeConstraintSet = std::move(value); }
-
-    /**
-     * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
-     * <code>GetSizeConstraintSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SizeConstraintSet</a>: Contains
-     * <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code> </p> </li> <li> <p> <code>SizeConstraints</code>: Contains an
-     * array of <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code> object
-     * contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> <li> <p>
-     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
-     * </ul>
-     */
     inline GetSizeConstraintSetResult& WithSizeConstraintSet(const SizeConstraintSet& value) { SetSizeConstraintSet(value); return *this;}
-
-    /**
-     * <p>Information about the <a>SizeConstraintSet</a> that you specified in the
-     * <code>GetSizeConstraintSet</code> request. For more information, see the
-     * following topics:</p> <ul> <li> <p> <a>SizeConstraintSet</a>: Contains
-     * <code>SizeConstraintSetId</code>, <code>SizeConstraints</code>, and
-     * <code>Name</code> </p> </li> <li> <p> <code>SizeConstraints</code>: Contains an
-     * array of <a>SizeConstraint</a> objects. Each <code>SizeConstraint</code> object
-     * contains <a>FieldToMatch</a>, <code>TextTransformation</code>,
-     * <code>ComparisonOperator</code>, and <code>Size</code> </p> </li> <li> <p>
-     * <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p> </li>
-     * </ul>
-     */
     inline GetSizeConstraintSetResult& WithSizeConstraintSet(SizeConstraintSet&& value) { SetSizeConstraintSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSizeConstraintSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSizeConstraintSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSizeConstraintSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SizeConstraintSet m_sizeConstraintSet;

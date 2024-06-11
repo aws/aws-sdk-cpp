@@ -39,91 +39,33 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of version identifier.</p> <p>For a git-based repository, branches
      * represent versions.</p>
      */
     inline const SourceCodeVersionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of version identifier.</p> <p>For a git-based repository, branches
-     * represent versions.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of version identifier.</p> <p>For a git-based repository, branches
-     * represent versions.</p>
-     */
     inline void SetType(const SourceCodeVersionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of version identifier.</p> <p>For a git-based repository, branches
-     * represent versions.</p>
-     */
     inline void SetType(SourceCodeVersionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of version identifier.</p> <p>For a git-based repository, branches
-     * represent versions.</p>
-     */
     inline SourceCodeVersion& WithType(const SourceCodeVersionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of version identifier.</p> <p>For a git-based repository, branches
-     * represent versions.</p>
-     */
     inline SourceCodeVersion& WithType(SourceCodeVersionType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
      * to a specific version. App Runner uses the most recent commit to the branch.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline SourceCodeVersion& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline SourceCodeVersion& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>A source code version.</p> <p>For a git-based repository, a branch name maps
-     * to a specific version. App Runner uses the most recent commit to the branch.</p>
-     */
     inline SourceCodeVersion& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     SourceCodeVersionType m_type;

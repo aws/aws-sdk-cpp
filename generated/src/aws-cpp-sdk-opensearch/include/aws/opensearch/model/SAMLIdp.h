@@ -37,87 +37,33 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The metadata of the SAML application, in XML format.</p>
      */
     inline const Aws::String& GetMetadataContent() const{ return m_metadataContent; }
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline bool MetadataContentHasBeenSet() const { return m_metadataContentHasBeenSet; }
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline void SetMetadataContent(const Aws::String& value) { m_metadataContentHasBeenSet = true; m_metadataContent = value; }
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline void SetMetadataContent(Aws::String&& value) { m_metadataContentHasBeenSet = true; m_metadataContent = std::move(value); }
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline void SetMetadataContent(const char* value) { m_metadataContentHasBeenSet = true; m_metadataContent.assign(value); }
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline SAMLIdp& WithMetadataContent(const Aws::String& value) { SetMetadataContent(value); return *this;}
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline SAMLIdp& WithMetadataContent(Aws::String&& value) { SetMetadataContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The metadata of the SAML application, in XML format.</p>
-     */
     inline SAMLIdp& WithMetadataContent(const char* value) { SetMetadataContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique entity ID of the application in the SAML identity provider.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline SAMLIdp& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline SAMLIdp& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique entity ID of the application in the SAML identity provider.</p>
-     */
     inline SAMLIdp& WithEntityId(const char* value) { SetEntityId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metadataContent;

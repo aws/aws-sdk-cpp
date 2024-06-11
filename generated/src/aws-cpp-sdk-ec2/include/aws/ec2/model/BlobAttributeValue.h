@@ -34,24 +34,15 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     
     inline const Aws::Utils::ByteBuffer& GetValue() const{ return m_value; }
-
-    
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    
     inline void SetValue(const Aws::Utils::ByteBuffer& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    
     inline void SetValue(Aws::Utils::ByteBuffer&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    
     inline BlobAttributeValue& WithValue(const Aws::Utils::ByteBuffer& value) { SetValue(value); return *this;}
-
-    
     inline BlobAttributeValue& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_value;

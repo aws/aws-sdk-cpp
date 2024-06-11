@@ -38,42 +38,18 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
      * the top panel and More Info tab of Cases user interface.</p>
      */
     inline const BasicLayout& GetBasic() const{ return m_basic; }
-
-    /**
-     * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
-     * the top panel and More Info tab of Cases user interface.</p>
-     */
     inline bool BasicHasBeenSet() const { return m_basicHasBeenSet; }
-
-    /**
-     * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
-     * the top panel and More Info tab of Cases user interface.</p>
-     */
     inline void SetBasic(const BasicLayout& value) { m_basicHasBeenSet = true; m_basic = value; }
-
-    /**
-     * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
-     * the top panel and More Info tab of Cases user interface.</p>
-     */
     inline void SetBasic(BasicLayout&& value) { m_basicHasBeenSet = true; m_basic = std::move(value); }
-
-    /**
-     * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
-     * the top panel and More Info tab of Cases user interface.</p>
-     */
     inline LayoutContent& WithBasic(const BasicLayout& value) { SetBasic(value); return *this;}
-
-    /**
-     * <p>Content specific to <code>BasicLayout</code> type. It configures fields in
-     * the top panel and More Info tab of Cases user interface.</p>
-     */
     inline LayoutContent& WithBasic(BasicLayout&& value) { SetBasic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     BasicLayout m_basic;

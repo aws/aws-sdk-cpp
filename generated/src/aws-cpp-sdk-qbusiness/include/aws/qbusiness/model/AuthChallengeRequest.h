@@ -38,54 +38,20 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The URL sent by Amazon Q Business to the third party authentication server to
      * authenticate a custom plugin user through an OAuth protocol.</p>
      */
     inline const Aws::String& GetAuthorizationUrl() const{ return m_authorizationUrl; }
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline bool AuthorizationUrlHasBeenSet() const { return m_authorizationUrlHasBeenSet; }
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline void SetAuthorizationUrl(const Aws::String& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = value; }
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline void SetAuthorizationUrl(Aws::String&& value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl = std::move(value); }
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline void SetAuthorizationUrl(const char* value) { m_authorizationUrlHasBeenSet = true; m_authorizationUrl.assign(value); }
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline AuthChallengeRequest& WithAuthorizationUrl(const Aws::String& value) { SetAuthorizationUrl(value); return *this;}
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline AuthChallengeRequest& WithAuthorizationUrl(Aws::String&& value) { SetAuthorizationUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL sent by Amazon Q Business to the third party authentication server to
-     * authenticate a custom plugin user through an OAuth protocol.</p>
-     */
     inline AuthChallengeRequest& WithAuthorizationUrl(const char* value) { SetAuthorizationUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authorizationUrl;

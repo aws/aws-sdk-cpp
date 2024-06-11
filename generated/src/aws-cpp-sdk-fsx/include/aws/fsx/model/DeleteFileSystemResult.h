@@ -42,162 +42,72 @@ namespace Model
     AWS_FSX_API DeleteFileSystemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the file system that's being deleted.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>The ID of the file system that's being deleted.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemId = value; }
-
-    /**
-     * <p>The ID of the file system that's being deleted.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>The ID of the file system that's being deleted.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemId.assign(value); }
-
-    /**
-     * <p>The ID of the file system that's being deleted.</p>
-     */
     inline DeleteFileSystemResult& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>The ID of the file system that's being deleted.</p>
-     */
     inline DeleteFileSystemResult& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the file system that's being deleted.</p>
-     */
     inline DeleteFileSystemResult& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file system lifecycle for the deletion request. If the
      * <code>DeleteFileSystem</code> operation is successful, this status is
      * <code>DELETING</code>.</p>
      */
     inline const FileSystemLifecycle& GetLifecycle() const{ return m_lifecycle; }
-
-    /**
-     * <p>The file system lifecycle for the deletion request. If the
-     * <code>DeleteFileSystem</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline void SetLifecycle(const FileSystemLifecycle& value) { m_lifecycle = value; }
-
-    /**
-     * <p>The file system lifecycle for the deletion request. If the
-     * <code>DeleteFileSystem</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline void SetLifecycle(FileSystemLifecycle&& value) { m_lifecycle = std::move(value); }
-
-    /**
-     * <p>The file system lifecycle for the deletion request. If the
-     * <code>DeleteFileSystem</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline DeleteFileSystemResult& WithLifecycle(const FileSystemLifecycle& value) { SetLifecycle(value); return *this;}
-
-    /**
-     * <p>The file system lifecycle for the deletion request. If the
-     * <code>DeleteFileSystem</code> operation is successful, this status is
-     * <code>DELETING</code>.</p>
-     */
     inline DeleteFileSystemResult& WithLifecycle(FileSystemLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DeleteFileSystemWindowsResponse& GetWindowsResponse() const{ return m_windowsResponse; }
-
-    
     inline void SetWindowsResponse(const DeleteFileSystemWindowsResponse& value) { m_windowsResponse = value; }
-
-    
     inline void SetWindowsResponse(DeleteFileSystemWindowsResponse&& value) { m_windowsResponse = std::move(value); }
-
-    
     inline DeleteFileSystemResult& WithWindowsResponse(const DeleteFileSystemWindowsResponse& value) { SetWindowsResponse(value); return *this;}
-
-    
     inline DeleteFileSystemResult& WithWindowsResponse(DeleteFileSystemWindowsResponse&& value) { SetWindowsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DeleteFileSystemLustreResponse& GetLustreResponse() const{ return m_lustreResponse; }
-
-    
     inline void SetLustreResponse(const DeleteFileSystemLustreResponse& value) { m_lustreResponse = value; }
-
-    
     inline void SetLustreResponse(DeleteFileSystemLustreResponse&& value) { m_lustreResponse = std::move(value); }
-
-    
     inline DeleteFileSystemResult& WithLustreResponse(const DeleteFileSystemLustreResponse& value) { SetLustreResponse(value); return *this;}
-
-    
     inline DeleteFileSystemResult& WithLustreResponse(DeleteFileSystemLustreResponse&& value) { SetLustreResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The response object for the OpenZFS file system that's being deleted in the
      * <code>DeleteFileSystem</code> operation.</p>
      */
     inline const DeleteFileSystemOpenZFSResponse& GetOpenZFSResponse() const{ return m_openZFSResponse; }
-
-    /**
-     * <p>The response object for the OpenZFS file system that's being deleted in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline void SetOpenZFSResponse(const DeleteFileSystemOpenZFSResponse& value) { m_openZFSResponse = value; }
-
-    /**
-     * <p>The response object for the OpenZFS file system that's being deleted in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline void SetOpenZFSResponse(DeleteFileSystemOpenZFSResponse&& value) { m_openZFSResponse = std::move(value); }
-
-    /**
-     * <p>The response object for the OpenZFS file system that's being deleted in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline DeleteFileSystemResult& WithOpenZFSResponse(const DeleteFileSystemOpenZFSResponse& value) { SetOpenZFSResponse(value); return *this;}
-
-    /**
-     * <p>The response object for the OpenZFS file system that's being deleted in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline DeleteFileSystemResult& WithOpenZFSResponse(DeleteFileSystemOpenZFSResponse&& value) { SetOpenZFSResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteFileSystemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteFileSystemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteFileSystemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

@@ -38,51 +38,20 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The tables referenced in the analysis schema.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReferencedTables() const{ return m_referencedTables; }
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline bool ReferencedTablesHasBeenSet() const { return m_referencedTablesHasBeenSet; }
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline void SetReferencedTables(const Aws::Vector<Aws::String>& value) { m_referencedTablesHasBeenSet = true; m_referencedTables = value; }
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline void SetReferencedTables(Aws::Vector<Aws::String>&& value) { m_referencedTablesHasBeenSet = true; m_referencedTables = std::move(value); }
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline AnalysisSchema& WithReferencedTables(const Aws::Vector<Aws::String>& value) { SetReferencedTables(value); return *this;}
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline AnalysisSchema& WithReferencedTables(Aws::Vector<Aws::String>&& value) { SetReferencedTables(std::move(value)); return *this;}
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline AnalysisSchema& AddReferencedTables(const Aws::String& value) { m_referencedTablesHasBeenSet = true; m_referencedTables.push_back(value); return *this; }
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline AnalysisSchema& AddReferencedTables(Aws::String&& value) { m_referencedTablesHasBeenSet = true; m_referencedTables.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The tables referenced in the analysis schema.</p>
-     */
     inline AnalysisSchema& AddReferencedTables(const char* value) { m_referencedTablesHasBeenSet = true; m_referencedTables.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_referencedTables;

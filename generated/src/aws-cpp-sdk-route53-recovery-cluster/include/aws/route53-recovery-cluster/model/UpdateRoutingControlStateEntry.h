@@ -38,77 +38,31 @@ namespace Model
     AWS_ROUTE53RECOVERYCLUSTER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
      */
     inline const Aws::String& GetRoutingControlArn() const{ return m_routingControlArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline bool RoutingControlArnHasBeenSet() const { return m_routingControlArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline void SetRoutingControlArn(const Aws::String& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline void SetRoutingControlArn(Aws::String&& value) { m_routingControlArnHasBeenSet = true; m_routingControlArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline void SetRoutingControlArn(const char* value) { m_routingControlArnHasBeenSet = true; m_routingControlArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline UpdateRoutingControlStateEntry& WithRoutingControlArn(const Aws::String& value) { SetRoutingControlArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline UpdateRoutingControlStateEntry& WithRoutingControlArn(Aws::String&& value) { SetRoutingControlArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for a routing control state entry.</p>
-     */
     inline UpdateRoutingControlStateEntry& WithRoutingControlArn(const char* value) { SetRoutingControlArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The routing control state in a set of routing control state entries.</p>
      */
     inline const RoutingControlState& GetRoutingControlState() const{ return m_routingControlState; }
-
-    /**
-     * <p>The routing control state in a set of routing control state entries.</p>
-     */
     inline bool RoutingControlStateHasBeenSet() const { return m_routingControlStateHasBeenSet; }
-
-    /**
-     * <p>The routing control state in a set of routing control state entries.</p>
-     */
     inline void SetRoutingControlState(const RoutingControlState& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = value; }
-
-    /**
-     * <p>The routing control state in a set of routing control state entries.</p>
-     */
     inline void SetRoutingControlState(RoutingControlState&& value) { m_routingControlStateHasBeenSet = true; m_routingControlState = std::move(value); }
-
-    /**
-     * <p>The routing control state in a set of routing control state entries.</p>
-     */
     inline UpdateRoutingControlStateEntry& WithRoutingControlState(const RoutingControlState& value) { SetRoutingControlState(value); return *this;}
-
-    /**
-     * <p>The routing control state in a set of routing control state entries.</p>
-     */
     inline UpdateRoutingControlStateEntry& WithRoutingControlState(RoutingControlState&& value) { SetRoutingControlState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_routingControlArn;

@@ -33,134 +33,47 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The hash of a transaction. It is generated when a transaction is created.</p>
      */
     inline const Aws::String& GetTransactionHash() const{ return m_transactionHash; }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline bool TransactionHashHasBeenSet() const { return m_transactionHashHasBeenSet; }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline void SetTransactionHash(const Aws::String& value) { m_transactionHashHasBeenSet = true; m_transactionHash = value; }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline void SetTransactionHash(Aws::String&& value) { m_transactionHashHasBeenSet = true; m_transactionHash = std::move(value); }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline void SetTransactionHash(const char* value) { m_transactionHashHasBeenSet = true; m_transactionHash.assign(value); }
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline GetTransactionRequest& WithTransactionHash(const Aws::String& value) { SetTransactionHash(value); return *this;}
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline GetTransactionRequest& WithTransactionHash(Aws::String&& value) { SetTransactionHash(std::move(value)); return *this;}
-
-    /**
-     * <p>The hash of a transaction. It is generated when a transaction is created.</p>
-     */
     inline GetTransactionRequest& WithTransactionHash(const char* value) { SetTransactionHash(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
      * is created.</p>  <p> <code>transactionId</code> is only supported on the
      * Bitcoin networks.</p> 
      */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline GetTransactionRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline GetTransactionRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of a Bitcoin transaction. It is generated when a transaction
-     * is created.</p>  <p> <code>transactionId</code> is only supported on the
-     * Bitcoin networks.</p> 
-     */
     inline GetTransactionRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The blockchain network where the transaction occurred.</p>
      */
     inline const QueryNetwork& GetNetwork() const{ return m_network; }
-
-    /**
-     * <p>The blockchain network where the transaction occurred.</p>
-     */
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-
-    /**
-     * <p>The blockchain network where the transaction occurred.</p>
-     */
     inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-
-    /**
-     * <p>The blockchain network where the transaction occurred.</p>
-     */
     inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-
-    /**
-     * <p>The blockchain network where the transaction occurred.</p>
-     */
     inline GetTransactionRequest& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-
-    /**
-     * <p>The blockchain network where the transaction occurred.</p>
-     */
     inline GetTransactionRequest& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transactionHash;

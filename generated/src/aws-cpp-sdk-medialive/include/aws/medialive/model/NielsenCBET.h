@@ -38,124 +38,46 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Enter the CBET check digits to use in the watermark.
      */
     inline const Aws::String& GetCbetCheckDigitString() const{ return m_cbetCheckDigitString; }
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline bool CbetCheckDigitStringHasBeenSet() const { return m_cbetCheckDigitStringHasBeenSet; }
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline void SetCbetCheckDigitString(const Aws::String& value) { m_cbetCheckDigitStringHasBeenSet = true; m_cbetCheckDigitString = value; }
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline void SetCbetCheckDigitString(Aws::String&& value) { m_cbetCheckDigitStringHasBeenSet = true; m_cbetCheckDigitString = std::move(value); }
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline void SetCbetCheckDigitString(const char* value) { m_cbetCheckDigitStringHasBeenSet = true; m_cbetCheckDigitString.assign(value); }
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline NielsenCBET& WithCbetCheckDigitString(const Aws::String& value) { SetCbetCheckDigitString(value); return *this;}
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline NielsenCBET& WithCbetCheckDigitString(Aws::String&& value) { SetCbetCheckDigitString(std::move(value)); return *this;}
-
-    /**
-     * Enter the CBET check digits to use in the watermark.
-     */
     inline NielsenCBET& WithCbetCheckDigitString(const char* value) { SetCbetCheckDigitString(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Determines the method of CBET insertion mode when prior encoding is detected on
      * the same layer.
      */
     inline const NielsenWatermarksCbetStepaside& GetCbetStepaside() const{ return m_cbetStepaside; }
-
-    /**
-     * Determines the method of CBET insertion mode when prior encoding is detected on
-     * the same layer.
-     */
     inline bool CbetStepasideHasBeenSet() const { return m_cbetStepasideHasBeenSet; }
-
-    /**
-     * Determines the method of CBET insertion mode when prior encoding is detected on
-     * the same layer.
-     */
     inline void SetCbetStepaside(const NielsenWatermarksCbetStepaside& value) { m_cbetStepasideHasBeenSet = true; m_cbetStepaside = value; }
-
-    /**
-     * Determines the method of CBET insertion mode when prior encoding is detected on
-     * the same layer.
-     */
     inline void SetCbetStepaside(NielsenWatermarksCbetStepaside&& value) { m_cbetStepasideHasBeenSet = true; m_cbetStepaside = std::move(value); }
-
-    /**
-     * Determines the method of CBET insertion mode when prior encoding is detected on
-     * the same layer.
-     */
     inline NielsenCBET& WithCbetStepaside(const NielsenWatermarksCbetStepaside& value) { SetCbetStepaside(value); return *this;}
-
-    /**
-     * Determines the method of CBET insertion mode when prior encoding is detected on
-     * the same layer.
-     */
     inline NielsenCBET& WithCbetStepaside(NielsenWatermarksCbetStepaside&& value) { SetCbetStepaside(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Enter the CBET Source ID (CSID) to use in the watermark
      */
     inline const Aws::String& GetCsid() const{ return m_csid; }
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline bool CsidHasBeenSet() const { return m_csidHasBeenSet; }
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline void SetCsid(const Aws::String& value) { m_csidHasBeenSet = true; m_csid = value; }
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline void SetCsid(Aws::String&& value) { m_csidHasBeenSet = true; m_csid = std::move(value); }
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline void SetCsid(const char* value) { m_csidHasBeenSet = true; m_csid.assign(value); }
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline NielsenCBET& WithCsid(const Aws::String& value) { SetCsid(value); return *this;}
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline NielsenCBET& WithCsid(Aws::String&& value) { SetCsid(std::move(value)); return *this;}
-
-    /**
-     * Enter the CBET Source ID (CSID) to use in the watermark
-     */
     inline NielsenCBET& WithCsid(const char* value) { SetCsid(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cbetCheckDigitString;

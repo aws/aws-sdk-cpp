@@ -32,46 +32,26 @@ namespace Model
     AWS_SECURITYHUB_API GetInvitationsCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The number of all membership invitations sent to this Security Hub member
      * account, not including the currently accepted invitation.</p>
      */
     inline int GetInvitationsCount() const{ return m_invitationsCount; }
-
-    /**
-     * <p>The number of all membership invitations sent to this Security Hub member
-     * account, not including the currently accepted invitation.</p>
-     */
     inline void SetInvitationsCount(int value) { m_invitationsCount = value; }
-
-    /**
-     * <p>The number of all membership invitations sent to this Security Hub member
-     * account, not including the currently accepted invitation.</p>
-     */
     inline GetInvitationsCountResult& WithInvitationsCount(int value) { SetInvitationsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInvitationsCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInvitationsCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInvitationsCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_invitationsCount;

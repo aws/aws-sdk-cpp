@@ -32,36 +32,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A CloudFront public key configuration.</p>
      */
     inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
-
-    /**
-     * <p>A CloudFront public key configuration.</p>
-     */
     inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
-
-    /**
-     * <p>A CloudFront public key configuration.</p>
-     */
     inline void SetPublicKeyConfig(const PublicKeyConfig& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = value; }
-
-    /**
-     * <p>A CloudFront public key configuration.</p>
-     */
     inline void SetPublicKeyConfig(PublicKeyConfig&& value) { m_publicKeyConfigHasBeenSet = true; m_publicKeyConfig = std::move(value); }
-
-    /**
-     * <p>A CloudFront public key configuration.</p>
-     */
     inline CreatePublicKey2020_05_31Request& WithPublicKeyConfig(const PublicKeyConfig& value) { SetPublicKeyConfig(value); return *this;}
-
-    /**
-     * <p>A CloudFront public key configuration.</p>
-     */
     inline CreatePublicKey2020_05_31Request& WithPublicKeyConfig(PublicKeyConfig&& value) { SetPublicKeyConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PublicKeyConfig m_publicKeyConfig;

@@ -50,55 +50,22 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Name of the OpenSearch Service domain to create. Domain names are unique
      * across the domains owned by an account within an Amazon Web Services Region.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the OpenSearch Service domain to create. Domain names are unique
-     * across the domains owned by an account within an Amazon Web Services Region.</p>
-     */
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
      * version for the OpenSearch Service domain. For example,
@@ -108,195 +75,56 @@ namespace Model
      * and managing Amazon OpenSearch Service domains</a>.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline CreateDomainRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline CreateDomainRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine
-     * version for the OpenSearch Service domain. For example,
-     * <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating
-     * and managing Amazon OpenSearch Service domains</a>.</p>
-     */
     inline CreateDomainRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Container for the cluster configuration of a domain.</p>
      */
     inline const ClusterConfig& GetClusterConfig() const{ return m_clusterConfig; }
-
-    /**
-     * <p>Container for the cluster configuration of a domain.</p>
-     */
     inline bool ClusterConfigHasBeenSet() const { return m_clusterConfigHasBeenSet; }
-
-    /**
-     * <p>Container for the cluster configuration of a domain.</p>
-     */
     inline void SetClusterConfig(const ClusterConfig& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = value; }
-
-    /**
-     * <p>Container for the cluster configuration of a domain.</p>
-     */
     inline void SetClusterConfig(ClusterConfig&& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = std::move(value); }
-
-    /**
-     * <p>Container for the cluster configuration of a domain.</p>
-     */
     inline CreateDomainRequest& WithClusterConfig(const ClusterConfig& value) { SetClusterConfig(value); return *this;}
-
-    /**
-     * <p>Container for the cluster configuration of a domain.</p>
-     */
     inline CreateDomainRequest& WithClusterConfig(ClusterConfig&& value) { SetClusterConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Container for the parameters required to enable EBS-based storage for an
      * OpenSearch Service domain.</p>
      */
     inline const EBSOptions& GetEBSOptions() const{ return m_eBSOptions; }
-
-    /**
-     * <p>Container for the parameters required to enable EBS-based storage for an
-     * OpenSearch Service domain.</p>
-     */
     inline bool EBSOptionsHasBeenSet() const { return m_eBSOptionsHasBeenSet; }
-
-    /**
-     * <p>Container for the parameters required to enable EBS-based storage for an
-     * OpenSearch Service domain.</p>
-     */
     inline void SetEBSOptions(const EBSOptions& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = value; }
-
-    /**
-     * <p>Container for the parameters required to enable EBS-based storage for an
-     * OpenSearch Service domain.</p>
-     */
     inline void SetEBSOptions(EBSOptions&& value) { m_eBSOptionsHasBeenSet = true; m_eBSOptions = std::move(value); }
-
-    /**
-     * <p>Container for the parameters required to enable EBS-based storage for an
-     * OpenSearch Service domain.</p>
-     */
     inline CreateDomainRequest& WithEBSOptions(const EBSOptions& value) { SetEBSOptions(value); return *this;}
-
-    /**
-     * <p>Container for the parameters required to enable EBS-based storage for an
-     * OpenSearch Service domain.</p>
-     */
     inline CreateDomainRequest& WithEBSOptions(EBSOptions&& value) { SetEBSOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identity and Access Management (IAM) policy document specifying the access
      * policies for the new domain.</p>
      */
     inline const Aws::String& GetAccessPolicies() const{ return m_accessPolicies; }
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline bool AccessPoliciesHasBeenSet() const { return m_accessPoliciesHasBeenSet; }
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline void SetAccessPolicies(const Aws::String& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = value; }
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline void SetAccessPolicies(Aws::String&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::move(value); }
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline void SetAccessPolicies(const char* value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies.assign(value); }
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline CreateDomainRequest& WithAccessPolicies(const Aws::String& value) { SetAccessPolicies(value); return *this;}
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline CreateDomainRequest& WithAccessPolicies(Aws::String&& value) { SetAccessPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>Identity and Access Management (IAM) policy document specifying the access
-     * policies for the new domain.</p>
-     */
     inline CreateDomainRequest& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
      * you to share domain resources across IPv4 and IPv6 address types, and is the
@@ -304,85 +132,27 @@ namespace Model
      * change your address type later.</p>
      */
     inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
-
-    /**
-     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
-     * you to share domain resources across IPv4 and IPv6 address types, and is the
-     * recommended option. If you set your IP address type to dual stack, you can't
-     * change your address type later.</p>
-     */
     inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
-
-    /**
-     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
-     * you to share domain resources across IPv4 and IPv6 address types, and is the
-     * recommended option. If you set your IP address type to dual stack, you can't
-     * change your address type later.</p>
-     */
     inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
-
-    /**
-     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
-     * you to share domain resources across IPv4 and IPv6 address types, and is the
-     * recommended option. If you set your IP address type to dual stack, you can't
-     * change your address type later.</p>
-     */
     inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
-
-    /**
-     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
-     * you to share domain resources across IPv4 and IPv6 address types, and is the
-     * recommended option. If you set your IP address type to dual stack, you can't
-     * change your address type later.</p>
-     */
     inline CreateDomainRequest& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
-
-    /**
-     * <p>Specify either dual stack or IPv4 as your IP address type. Dual stack allows
-     * you to share domain resources across IPv4 and IPv6 address types, and is the
-     * recommended option. If you set your IP address type to dual stack, you can't
-     * change your address type later.</p>
-     */
     inline CreateDomainRequest& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>DEPRECATED. Container for the parameters required to configure automated
      * snapshots of domain indexes.</p>
      */
     inline const SnapshotOptions& GetSnapshotOptions() const{ return m_snapshotOptions; }
-
-    /**
-     * <p>DEPRECATED. Container for the parameters required to configure automated
-     * snapshots of domain indexes.</p>
-     */
     inline bool SnapshotOptionsHasBeenSet() const { return m_snapshotOptionsHasBeenSet; }
-
-    /**
-     * <p>DEPRECATED. Container for the parameters required to configure automated
-     * snapshots of domain indexes.</p>
-     */
     inline void SetSnapshotOptions(const SnapshotOptions& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = value; }
-
-    /**
-     * <p>DEPRECATED. Container for the parameters required to configure automated
-     * snapshots of domain indexes.</p>
-     */
     inline void SetSnapshotOptions(SnapshotOptions&& value) { m_snapshotOptionsHasBeenSet = true; m_snapshotOptions = std::move(value); }
-
-    /**
-     * <p>DEPRECATED. Container for the parameters required to configure automated
-     * snapshots of domain indexes.</p>
-     */
     inline CreateDomainRequest& WithSnapshotOptions(const SnapshotOptions& value) { SetSnapshotOptions(value); return *this;}
-
-    /**
-     * <p>DEPRECATED. Container for the parameters required to configure automated
-     * snapshots of domain indexes.</p>
-     */
     inline CreateDomainRequest& WithSnapshotOptions(SnapshotOptions&& value) { SetSnapshotOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Container for the values required to configure VPC access domains. If you
      * don't specify these values, OpenSearch Service creates the domain with a public
@@ -391,53 +161,14 @@ namespace Model
      * your Amazon OpenSearch Service domains using a VPC</a>.</p>
      */
     inline const VPCOptions& GetVPCOptions() const{ return m_vPCOptions; }
-
-    /**
-     * <p>Container for the values required to configure VPC access domains. If you
-     * don't specify these values, OpenSearch Service creates the domain with a public
-     * endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.</p>
-     */
     inline bool VPCOptionsHasBeenSet() const { return m_vPCOptionsHasBeenSet; }
-
-    /**
-     * <p>Container for the values required to configure VPC access domains. If you
-     * don't specify these values, OpenSearch Service creates the domain with a public
-     * endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.</p>
-     */
     inline void SetVPCOptions(const VPCOptions& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = value; }
-
-    /**
-     * <p>Container for the values required to configure VPC access domains. If you
-     * don't specify these values, OpenSearch Service creates the domain with a public
-     * endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.</p>
-     */
     inline void SetVPCOptions(VPCOptions&& value) { m_vPCOptionsHasBeenSet = true; m_vPCOptions = std::move(value); }
-
-    /**
-     * <p>Container for the values required to configure VPC access domains. If you
-     * don't specify these values, OpenSearch Service creates the domain with a public
-     * endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.</p>
-     */
     inline CreateDomainRequest& WithVPCOptions(const VPCOptions& value) { SetVPCOptions(value); return *this;}
-
-    /**
-     * <p>Container for the values required to configure VPC access domains. If you
-     * don't specify these values, OpenSearch Service creates the domain with a public
-     * endpoint. For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/vpc.html">Launching
-     * your Amazon OpenSearch Service domains using a VPC</a>.</p>
-     */
     inline CreateDomainRequest& WithVPCOptions(VPCOptions&& value) { SetVPCOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs to configure Amazon Cognito authentication. For more
      * information, see <a
@@ -445,110 +176,38 @@ namespace Model
      * Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
      */
     inline const CognitoOptions& GetCognitoOptions() const{ return m_cognitoOptions; }
-
-    /**
-     * <p>Key-value pairs to configure Amazon Cognito authentication. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
-     * Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-     */
     inline bool CognitoOptionsHasBeenSet() const { return m_cognitoOptionsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs to configure Amazon Cognito authentication. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
-     * Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-     */
     inline void SetCognitoOptions(const CognitoOptions& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = value; }
-
-    /**
-     * <p>Key-value pairs to configure Amazon Cognito authentication. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
-     * Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-     */
     inline void SetCognitoOptions(CognitoOptions&& value) { m_cognitoOptionsHasBeenSet = true; m_cognitoOptions = std::move(value); }
-
-    /**
-     * <p>Key-value pairs to configure Amazon Cognito authentication. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
-     * Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-     */
     inline CreateDomainRequest& WithCognitoOptions(const CognitoOptions& value) { SetCognitoOptions(value); return *this;}
-
-    /**
-     * <p>Key-value pairs to configure Amazon Cognito authentication. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cognito-auth.html">Configuring
-     * Amazon Cognito authentication for OpenSearch Dashboards</a>.</p>
-     */
     inline CreateDomainRequest& WithCognitoOptions(CognitoOptions&& value) { SetCognitoOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs to enable encryption at rest.</p>
      */
     inline const EncryptionAtRestOptions& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
-
-    /**
-     * <p>Key-value pairs to enable encryption at rest.</p>
-     */
     inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs to enable encryption at rest.</p>
-     */
     inline void SetEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
-
-    /**
-     * <p>Key-value pairs to enable encryption at rest.</p>
-     */
     inline void SetEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
-
-    /**
-     * <p>Key-value pairs to enable encryption at rest.</p>
-     */
     inline CreateDomainRequest& WithEncryptionAtRestOptions(const EncryptionAtRestOptions& value) { SetEncryptionAtRestOptions(value); return *this;}
-
-    /**
-     * <p>Key-value pairs to enable encryption at rest.</p>
-     */
     inline CreateDomainRequest& WithEncryptionAtRestOptions(EncryptionAtRestOptions&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enables node-to-node encryption.</p>
      */
     inline const NodeToNodeEncryptionOptions& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
-
-    /**
-     * <p>Enables node-to-node encryption.</p>
-     */
     inline bool NodeToNodeEncryptionOptionsHasBeenSet() const { return m_nodeToNodeEncryptionOptionsHasBeenSet; }
-
-    /**
-     * <p>Enables node-to-node encryption.</p>
-     */
     inline void SetNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
-
-    /**
-     * <p>Enables node-to-node encryption.</p>
-     */
     inline void SetNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::move(value); }
-
-    /**
-     * <p>Enables node-to-node encryption.</p>
-     */
     inline CreateDomainRequest& WithNodeToNodeEncryptionOptions(const NodeToNodeEncryptionOptions& value) { SetNodeToNodeEncryptionOptions(value); return *this;}
-
-    /**
-     * <p>Enables node-to-node encryption.</p>
-     */
     inline CreateDomainRequest& WithNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptions&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs to specify advanced configuration options. The following
      * key-value pairs are supported:</p> <ul> <li> <p>
@@ -573,499 +232,88 @@ namespace Model
      * cluster parameters</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdvancedOptions() const{ return m_advancedOptions; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline bool AdvancedOptionsHasBeenSet() const { return m_advancedOptionsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline void SetAdvancedOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = value; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline void SetAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions = std::move(value); }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& WithAdvancedOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdvancedOptions(value); return *this;}
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& WithAdvancedOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdvancedOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(const Aws::String& key, const Aws::String& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(Aws::String&& key, const Aws::String& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(const Aws::String& key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(Aws::String&& key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(const char* key, Aws::String&& value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(Aws::String&& key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Key-value pairs to specify advanced configuration options. The following
-     * key-value pairs are supported:</p> <ul> <li> <p>
-     * <code>"rest.action.multi.allow_explicit_index": "true" | "false"</code> - Note
-     * the use of a string rather than a boolean. Specifies whether explicit references
-     * to indexes are allowed inside the body of HTTP requests. If you want to
-     * configure access policies for domain sub-resources, such as specific indexes and
-     * domain APIs, you must disable this property. Default is true.</p> </li> <li> <p>
-     * <code>"indices.fielddata.cache.size": "80" </code> - Note the use of a string
-     * rather than a boolean. Specifies the percentage of heap space allocated to field
-     * data. Default is unbounded.</p> </li> <li> <p>
-     * <code>"indices.query.bool.max_clause_count": "1024"</code> - Note the use of a
-     * string rather than a boolean. Specifies the maximum number of clauses allowed in
-     * a Lucene boolean query. Default is 1,024. Queries with more than the permitted
-     * number of clauses result in a <code>TooManyClauses</code> error.</p> </li> <li>
-     * <p> <code>"override_main_response_version": "true" | "false"</code> - Note the
-     * use of a string rather than a boolean. Specifies whether the domain reports its
-     * version as 7.10 to allow Elasticsearch OSS clients and plugins to continue
-     * working with it. Default is false when creating a domain and true when upgrading
-     * a domain.</p> </li> </ul> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced
-     * cluster parameters</a>.</p>
-     */
     inline CreateDomainRequest& AddAdvancedOptions(const char* key, const char* value) { m_advancedOptionsHasBeenSet = true; m_advancedOptions.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Key-value pairs to configure log publishing.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline CreateDomainRequest& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline CreateDomainRequest& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline CreateDomainRequest& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline CreateDomainRequest& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline CreateDomainRequest& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Key-value pairs to configure log publishing.</p>
-     */
     inline CreateDomainRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional options for the domain endpoint, such as whether to require HTTPS
      * for all traffic.</p>
      */
     inline const DomainEndpointOptions& GetDomainEndpointOptions() const{ return m_domainEndpointOptions; }
-
-    /**
-     * <p>Additional options for the domain endpoint, such as whether to require HTTPS
-     * for all traffic.</p>
-     */
     inline bool DomainEndpointOptionsHasBeenSet() const { return m_domainEndpointOptionsHasBeenSet; }
-
-    /**
-     * <p>Additional options for the domain endpoint, such as whether to require HTTPS
-     * for all traffic.</p>
-     */
     inline void SetDomainEndpointOptions(const DomainEndpointOptions& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = value; }
-
-    /**
-     * <p>Additional options for the domain endpoint, such as whether to require HTTPS
-     * for all traffic.</p>
-     */
     inline void SetDomainEndpointOptions(DomainEndpointOptions&& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = std::move(value); }
-
-    /**
-     * <p>Additional options for the domain endpoint, such as whether to require HTTPS
-     * for all traffic.</p>
-     */
     inline CreateDomainRequest& WithDomainEndpointOptions(const DomainEndpointOptions& value) { SetDomainEndpointOptions(value); return *this;}
-
-    /**
-     * <p>Additional options for the domain endpoint, such as whether to require HTTPS
-     * for all traffic.</p>
-     */
     inline CreateDomainRequest& WithDomainEndpointOptions(DomainEndpointOptions&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Options for fine-grained access control.</p>
      */
     inline const AdvancedSecurityOptionsInput& GetAdvancedSecurityOptions() const{ return m_advancedSecurityOptions; }
-
-    /**
-     * <p>Options for fine-grained access control.</p>
-     */
     inline bool AdvancedSecurityOptionsHasBeenSet() const { return m_advancedSecurityOptionsHasBeenSet; }
-
-    /**
-     * <p>Options for fine-grained access control.</p>
-     */
     inline void SetAdvancedSecurityOptions(const AdvancedSecurityOptionsInput& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = value; }
-
-    /**
-     * <p>Options for fine-grained access control.</p>
-     */
     inline void SetAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::move(value); }
-
-    /**
-     * <p>Options for fine-grained access control.</p>
-     */
     inline CreateDomainRequest& WithAdvancedSecurityOptions(const AdvancedSecurityOptionsInput& value) { SetAdvancedSecurityOptions(value); return *this;}
-
-    /**
-     * <p>Options for fine-grained access control.</p>
-     */
     inline CreateDomainRequest& WithAdvancedSecurityOptions(AdvancedSecurityOptionsInput&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of tags to add to the domain upon creation.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline CreateDomainRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline CreateDomainRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline CreateDomainRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-
-    /**
-     * <p>List of tags to add to the domain upon creation.</p>
-     */
     inline CreateDomainRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Options for Auto-Tune.</p>
      */
     inline const AutoTuneOptionsInput& GetAutoTuneOptions() const{ return m_autoTuneOptions; }
-
-    /**
-     * <p>Options for Auto-Tune.</p>
-     */
     inline bool AutoTuneOptionsHasBeenSet() const { return m_autoTuneOptionsHasBeenSet; }
-
-    /**
-     * <p>Options for Auto-Tune.</p>
-     */
     inline void SetAutoTuneOptions(const AutoTuneOptionsInput& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = value; }
-
-    /**
-     * <p>Options for Auto-Tune.</p>
-     */
     inline void SetAutoTuneOptions(AutoTuneOptionsInput&& value) { m_autoTuneOptionsHasBeenSet = true; m_autoTuneOptions = std::move(value); }
-
-    /**
-     * <p>Options for Auto-Tune.</p>
-     */
     inline CreateDomainRequest& WithAutoTuneOptions(const AutoTuneOptionsInput& value) { SetAutoTuneOptions(value); return *this;}
-
-    /**
-     * <p>Options for Auto-Tune.</p>
-     */
     inline CreateDomainRequest& WithAutoTuneOptions(AutoTuneOptionsInput&& value) { SetAutoTuneOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
      * perform configuration changes on the domain, including service software updates
@@ -1074,83 +322,24 @@ namespace Model
      * that the domain is created in) is used.</p>
      */
     inline const OffPeakWindowOptions& GetOffPeakWindowOptions() const{ return m_offPeakWindowOptions; }
-
-    /**
-     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
-     * perform configuration changes on the domain, including service software updates
-     * and Auto-Tune enhancements that require a blue/green deployment. If no options
-     * are specified, the default start time of 10:00 P.M. local time (for the Region
-     * that the domain is created in) is used.</p>
-     */
     inline bool OffPeakWindowOptionsHasBeenSet() const { return m_offPeakWindowOptionsHasBeenSet; }
-
-    /**
-     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
-     * perform configuration changes on the domain, including service software updates
-     * and Auto-Tune enhancements that require a blue/green deployment. If no options
-     * are specified, the default start time of 10:00 P.M. local time (for the Region
-     * that the domain is created in) is used.</p>
-     */
     inline void SetOffPeakWindowOptions(const OffPeakWindowOptions& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = value; }
-
-    /**
-     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
-     * perform configuration changes on the domain, including service software updates
-     * and Auto-Tune enhancements that require a blue/green deployment. If no options
-     * are specified, the default start time of 10:00 P.M. local time (for the Region
-     * that the domain is created in) is used.</p>
-     */
     inline void SetOffPeakWindowOptions(OffPeakWindowOptions&& value) { m_offPeakWindowOptionsHasBeenSet = true; m_offPeakWindowOptions = std::move(value); }
-
-    /**
-     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
-     * perform configuration changes on the domain, including service software updates
-     * and Auto-Tune enhancements that require a blue/green deployment. If no options
-     * are specified, the default start time of 10:00 P.M. local time (for the Region
-     * that the domain is created in) is used.</p>
-     */
     inline CreateDomainRequest& WithOffPeakWindowOptions(const OffPeakWindowOptions& value) { SetOffPeakWindowOptions(value); return *this;}
-
-    /**
-     * <p>Specifies a daily 10-hour time block during which OpenSearch Service can
-     * perform configuration changes on the domain, including service software updates
-     * and Auto-Tune enhancements that require a blue/green deployment. If no options
-     * are specified, the default start time of 10:00 P.M. local time (for the Region
-     * that the domain is created in) is used.</p>
-     */
     inline CreateDomainRequest& WithOffPeakWindowOptions(OffPeakWindowOptions&& value) { SetOffPeakWindowOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Software update options for the domain.</p>
      */
     inline const SoftwareUpdateOptions& GetSoftwareUpdateOptions() const{ return m_softwareUpdateOptions; }
-
-    /**
-     * <p>Software update options for the domain.</p>
-     */
     inline bool SoftwareUpdateOptionsHasBeenSet() const { return m_softwareUpdateOptionsHasBeenSet; }
-
-    /**
-     * <p>Software update options for the domain.</p>
-     */
     inline void SetSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = value; }
-
-    /**
-     * <p>Software update options for the domain.</p>
-     */
     inline void SetSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { m_softwareUpdateOptionsHasBeenSet = true; m_softwareUpdateOptions = std::move(value); }
-
-    /**
-     * <p>Software update options for the domain.</p>
-     */
     inline CreateDomainRequest& WithSoftwareUpdateOptions(const SoftwareUpdateOptions& value) { SetSoftwareUpdateOptions(value); return *this;}
-
-    /**
-     * <p>Software update options for the domain.</p>
-     */
     inline CreateDomainRequest& WithSoftwareUpdateOptions(SoftwareUpdateOptions&& value) { SetSoftwareUpdateOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

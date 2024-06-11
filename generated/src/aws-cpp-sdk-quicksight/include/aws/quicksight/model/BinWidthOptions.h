@@ -36,47 +36,25 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The options that determine the bin width value.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The options that determine the bin width value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The options that determine the bin width value.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The options that determine the bin width value.</p>
-     */
     inline BinWidthOptions& WithValue(double value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options that determine the bin count limit.</p>
      */
     inline long long GetBinCountLimit() const{ return m_binCountLimit; }
-
-    /**
-     * <p>The options that determine the bin count limit.</p>
-     */
     inline bool BinCountLimitHasBeenSet() const { return m_binCountLimitHasBeenSet; }
-
-    /**
-     * <p>The options that determine the bin count limit.</p>
-     */
     inline void SetBinCountLimit(long long value) { m_binCountLimitHasBeenSet = true; m_binCountLimit = value; }
-
-    /**
-     * <p>The options that determine the bin count limit.</p>
-     */
     inline BinWidthOptions& WithBinCountLimit(long long value) { SetBinCountLimit(value); return *this;}
-
+    ///@}
   private:
 
     double m_value;

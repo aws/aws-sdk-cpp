@@ -34,87 +34,33 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the key value store.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline DeleteKeyValueStore2020_05_31Request& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline DeleteKeyValueStore2020_05_31Request& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the key value store.</p>
-     */
     inline DeleteKeyValueStore2020_05_31Request& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key value store to delete, if a match occurs.</p>
      */
     inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline DeleteKeyValueStore2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline DeleteKeyValueStore2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-
-    /**
-     * <p>The key value store to delete, if a match occurs.</p>
-     */
     inline DeleteKeyValueStore2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

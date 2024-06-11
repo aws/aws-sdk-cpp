@@ -34,55 +34,28 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    
     inline DescribeDeliveryDestinationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    
     inline DescribeDeliveryDestinationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    
     inline DescribeDeliveryDestinationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Optionally specify the maximum number of delivery destinations to return in
      * the response.</p>
      */
     inline int GetLimit() const{ return m_limit; }
-
-    /**
-     * <p>Optionally specify the maximum number of delivery destinations to return in
-     * the response.</p>
-     */
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-
-    /**
-     * <p>Optionally specify the maximum number of delivery destinations to return in
-     * the response.</p>
-     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
-
-    /**
-     * <p>Optionally specify the maximum number of delivery destinations to return in
-     * the response.</p>
-     */
     inline DescribeDeliveryDestinationsRequest& WithLimit(int value) { SetLimit(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

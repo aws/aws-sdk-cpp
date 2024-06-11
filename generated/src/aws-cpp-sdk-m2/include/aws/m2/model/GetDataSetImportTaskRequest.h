@@ -32,95 +32,34 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The application identifier.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline GetDataSetImportTaskRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline GetDataSetImportTaskRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The application identifier.</p>
-     */
     inline GetDataSetImportTaskRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
      * </p>
      */
     inline const Aws::String& GetTaskId() const{ return m_taskId; }
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline GetDataSetImportTaskRequest& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline GetDataSetImportTaskRequest& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task identifier returned by the <a>CreateDataSetImportTask</a> operation.
-     * </p>
-     */
     inline GetDataSetImportTaskRequest& WithTaskId(const char* value) { SetTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

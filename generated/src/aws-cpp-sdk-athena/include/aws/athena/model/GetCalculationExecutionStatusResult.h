@@ -34,79 +34,38 @@ namespace Model
     AWS_ATHENA_API GetCalculationExecutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains information about the calculation execution status.</p>
      */
     inline const CalculationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Contains information about the calculation execution status.</p>
-     */
     inline void SetStatus(const CalculationStatus& value) { m_status = value; }
-
-    /**
-     * <p>Contains information about the calculation execution status.</p>
-     */
     inline void SetStatus(CalculationStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>Contains information about the calculation execution status.</p>
-     */
     inline GetCalculationExecutionStatusResult& WithStatus(const CalculationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Contains information about the calculation execution status.</p>
-     */
     inline GetCalculationExecutionStatusResult& WithStatus(CalculationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains information about the DPU execution time and progress.</p>
      */
     inline const CalculationStatistics& GetStatistics() const{ return m_statistics; }
-
-    /**
-     * <p>Contains information about the DPU execution time and progress.</p>
-     */
     inline void SetStatistics(const CalculationStatistics& value) { m_statistics = value; }
-
-    /**
-     * <p>Contains information about the DPU execution time and progress.</p>
-     */
     inline void SetStatistics(CalculationStatistics&& value) { m_statistics = std::move(value); }
-
-    /**
-     * <p>Contains information about the DPU execution time and progress.</p>
-     */
     inline GetCalculationExecutionStatusResult& WithStatistics(const CalculationStatistics& value) { SetStatistics(value); return *this;}
-
-    /**
-     * <p>Contains information about the DPU execution time and progress.</p>
-     */
     inline GetCalculationExecutionStatusResult& WithStatistics(CalculationStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCalculationExecutionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCalculationExecutionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCalculationExecutionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CalculationStatus m_status;

@@ -39,83 +39,32 @@ namespace Model
     AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Represents the output of the PutReportDefinition operation. The content
      * consists of the detailed metadata and data file information. </p>
      */
     inline const ReportDefinition& GetReportDefinition() const{ return m_reportDefinition; }
-
-    /**
-     * <p>Represents the output of the PutReportDefinition operation. The content
-     * consists of the detailed metadata and data file information. </p>
-     */
     inline bool ReportDefinitionHasBeenSet() const { return m_reportDefinitionHasBeenSet; }
-
-    /**
-     * <p>Represents the output of the PutReportDefinition operation. The content
-     * consists of the detailed metadata and data file information. </p>
-     */
     inline void SetReportDefinition(const ReportDefinition& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = value; }
-
-    /**
-     * <p>Represents the output of the PutReportDefinition operation. The content
-     * consists of the detailed metadata and data file information. </p>
-     */
     inline void SetReportDefinition(ReportDefinition&& value) { m_reportDefinitionHasBeenSet = true; m_reportDefinition = std::move(value); }
-
-    /**
-     * <p>Represents the output of the PutReportDefinition operation. The content
-     * consists of the detailed metadata and data file information. </p>
-     */
     inline PutReportDefinitionRequest& WithReportDefinition(const ReportDefinition& value) { SetReportDefinition(value); return *this;}
-
-    /**
-     * <p>Represents the output of the PutReportDefinition operation. The content
-     * consists of the detailed metadata and data file information. </p>
-     */
     inline PutReportDefinitionRequest& WithReportDefinition(ReportDefinition&& value) { SetReportDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to be assigned to the report definition resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline PutReportDefinitionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline PutReportDefinitionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline PutReportDefinitionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to be assigned to the report definition resource.</p>
-     */
     inline PutReportDefinitionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     ReportDefinition m_reportDefinition;

@@ -41,6 +41,7 @@ namespace Model
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes how container ports map to connection ports on the fleet instance.
      * Incoming traffic connects to a game via a connection port. A
@@ -48,63 +49,14 @@ namespace Model
      * a port on the container that hosts the game session. </p>
      */
     inline const Aws::Vector<ContainerPortMapping>& GetContainerPortMappings() const{ return m_containerPortMappings; }
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline bool ContainerPortMappingsHasBeenSet() const { return m_containerPortMappingsHasBeenSet; }
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline void SetContainerPortMappings(const Aws::Vector<ContainerPortMapping>& value) { m_containerPortMappingsHasBeenSet = true; m_containerPortMappings = value; }
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline void SetContainerPortMappings(Aws::Vector<ContainerPortMapping>&& value) { m_containerPortMappingsHasBeenSet = true; m_containerPortMappings = std::move(value); }
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline ContainerAttributes& WithContainerPortMappings(const Aws::Vector<ContainerPortMapping>& value) { SetContainerPortMappings(value); return *this;}
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline ContainerAttributes& WithContainerPortMappings(Aws::Vector<ContainerPortMapping>&& value) { SetContainerPortMappings(std::move(value)); return *this;}
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline ContainerAttributes& AddContainerPortMappings(const ContainerPortMapping& value) { m_containerPortMappingsHasBeenSet = true; m_containerPortMappings.push_back(value); return *this; }
-
-    /**
-     * <p> Describes how container ports map to connection ports on the fleet instance.
-     * Incoming traffic connects to a game via a connection port. A
-     * <code>ContainerPortMapping</code> directs the traffic from a connection port to
-     * a port on the container that hosts the game session. </p>
-     */
     inline ContainerAttributes& AddContainerPortMappings(ContainerPortMapping&& value) { m_containerPortMappingsHasBeenSet = true; m_containerPortMappings.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ContainerPortMapping> m_containerPortMappings;

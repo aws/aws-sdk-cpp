@@ -36,130 +36,47 @@ namespace Model
     AWS_INSPECTOR_API DescribeRulesPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the rules package.</p>
      */
     inline const Aws::Vector<RulesPackage>& GetRulesPackages() const{ return m_rulesPackages; }
-
-    /**
-     * <p>Information about the rules package.</p>
-     */
     inline void SetRulesPackages(const Aws::Vector<RulesPackage>& value) { m_rulesPackages = value; }
-
-    /**
-     * <p>Information about the rules package.</p>
-     */
     inline void SetRulesPackages(Aws::Vector<RulesPackage>&& value) { m_rulesPackages = std::move(value); }
-
-    /**
-     * <p>Information about the rules package.</p>
-     */
     inline DescribeRulesPackagesResult& WithRulesPackages(const Aws::Vector<RulesPackage>& value) { SetRulesPackages(value); return *this;}
-
-    /**
-     * <p>Information about the rules package.</p>
-     */
     inline DescribeRulesPackagesResult& WithRulesPackages(Aws::Vector<RulesPackage>&& value) { SetRulesPackages(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the rules package.</p>
-     */
     inline DescribeRulesPackagesResult& AddRulesPackages(const RulesPackage& value) { m_rulesPackages.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the rules package.</p>
-     */
     inline DescribeRulesPackagesResult& AddRulesPackages(RulesPackage&& value) { m_rulesPackages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Rules package details that cannot be described. An error code is provided for
      * each failed item.</p>
      */
     inline const Aws::Map<Aws::String, FailedItemDetails>& GetFailedItems() const{ return m_failedItems; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline void SetFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { m_failedItems = value; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline void SetFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { m_failedItems = std::move(value); }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& WithFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { SetFailedItems(value); return *this;}
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& WithFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { SetFailedItems(std::move(value)); return *this;}
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& AddFailedItems(const Aws::String& key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& AddFailedItems(Aws::String&& key, const FailedItemDetails& value) { m_failedItems.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& AddFailedItems(const Aws::String& key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& AddFailedItems(Aws::String&& key, FailedItemDetails&& value) { m_failedItems.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& AddFailedItems(const char* key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Rules package details that cannot be described. An error code is provided for
-     * each failed item.</p>
-     */
     inline DescribeRulesPackagesResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeRulesPackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeRulesPackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeRulesPackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RulesPackage> m_rulesPackages;

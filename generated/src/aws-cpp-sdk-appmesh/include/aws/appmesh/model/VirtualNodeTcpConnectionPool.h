@@ -36,30 +36,16 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
      * with all hosts in upstream cluster.</p>
      */
     inline int GetMaxConnections() const{ return m_maxConnections; }
-
-    /**
-     * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
-     * with all hosts in upstream cluster.</p>
-     */
     inline bool MaxConnectionsHasBeenSet() const { return m_maxConnectionsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
-     * with all hosts in upstream cluster.</p>
-     */
     inline void SetMaxConnections(int value) { m_maxConnectionsHasBeenSet = true; m_maxConnections = value; }
-
-    /**
-     * <p>Maximum number of outbound TCP connections Envoy can establish concurrently
-     * with all hosts in upstream cluster.</p>
-     */
     inline VirtualNodeTcpConnectionPool& WithMaxConnections(int value) { SetMaxConnections(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxConnections;

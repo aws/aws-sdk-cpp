@@ -36,26 +36,15 @@ namespace Model
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of FAQ questions and answers contained in the index.</p>
      */
     inline int GetIndexedQuestionAnswersCount() const{ return m_indexedQuestionAnswersCount; }
-
-    /**
-     * <p>The total number of FAQ questions and answers contained in the index.</p>
-     */
     inline bool IndexedQuestionAnswersCountHasBeenSet() const { return m_indexedQuestionAnswersCountHasBeenSet; }
-
-    /**
-     * <p>The total number of FAQ questions and answers contained in the index.</p>
-     */
     inline void SetIndexedQuestionAnswersCount(int value) { m_indexedQuestionAnswersCountHasBeenSet = true; m_indexedQuestionAnswersCount = value; }
-
-    /**
-     * <p>The total number of FAQ questions and answers contained in the index.</p>
-     */
     inline FaqStatistics& WithIndexedQuestionAnswersCount(int value) { SetIndexedQuestionAnswersCount(value); return *this;}
-
+    ///@}
   private:
 
     int m_indexedQuestionAnswersCount;

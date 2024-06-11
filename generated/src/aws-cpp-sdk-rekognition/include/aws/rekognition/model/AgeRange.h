@@ -39,47 +39,25 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lowest estimated age.</p>
      */
     inline int GetLow() const{ return m_low; }
-
-    /**
-     * <p>The lowest estimated age.</p>
-     */
     inline bool LowHasBeenSet() const { return m_lowHasBeenSet; }
-
-    /**
-     * <p>The lowest estimated age.</p>
-     */
     inline void SetLow(int value) { m_lowHasBeenSet = true; m_low = value; }
-
-    /**
-     * <p>The lowest estimated age.</p>
-     */
     inline AgeRange& WithLow(int value) { SetLow(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The highest estimated age.</p>
      */
     inline int GetHigh() const{ return m_high; }
-
-    /**
-     * <p>The highest estimated age.</p>
-     */
     inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
-
-    /**
-     * <p>The highest estimated age.</p>
-     */
     inline void SetHigh(int value) { m_highHasBeenSet = true; m_high = value; }
-
-    /**
-     * <p>The highest estimated age.</p>
-     */
     inline AgeRange& WithHigh(int value) { SetHigh(value); return *this;}
-
+    ///@}
   private:
 
     int m_low;

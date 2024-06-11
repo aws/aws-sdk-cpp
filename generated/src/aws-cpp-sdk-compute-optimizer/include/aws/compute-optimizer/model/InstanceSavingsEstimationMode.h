@@ -38,42 +38,18 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Describes the source for calculating the savings opportunity for Amazon EC2
      * instances. </p>
      */
     inline const InstanceSavingsEstimationModeSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EC2
-     * instances. </p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EC2
-     * instances. </p>
-     */
     inline void SetSource(const InstanceSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EC2
-     * instances. </p>
-     */
     inline void SetSource(InstanceSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EC2
-     * instances. </p>
-     */
     inline InstanceSavingsEstimationMode& WithSource(const InstanceSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p> Describes the source for calculating the savings opportunity for Amazon EC2
-     * instances. </p>
-     */
     inline InstanceSavingsEstimationMode& WithSource(InstanceSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InstanceSavingsEstimationModeSource m_source;

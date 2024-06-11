@@ -37,152 +37,50 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Amazon Resource Name (ARN) for the master user. Only specify if
      * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
      */
     inline const Aws::String& GetMasterUserARN() const{ return m_masterUserARN; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline bool MasterUserARNHasBeenSet() const { return m_masterUserARNHasBeenSet; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline void SetMasterUserARN(const Aws::String& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = value; }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline void SetMasterUserARN(Aws::String&& value) { m_masterUserARNHasBeenSet = true; m_masterUserARN = std::move(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline void SetMasterUserARN(const char* value) { m_masterUserARNHasBeenSet = true; m_masterUserARN.assign(value); }
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserARN(const Aws::String& value) { SetMasterUserARN(value); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserARN(Aws::String&& value) { SetMasterUserARN(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon Resource Name (ARN) for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>false</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserARN(const char* value) { SetMasterUserARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>User name for the master user. Only specify if
      * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline const Aws::String& GetMasterUserName() const{ return m_masterUserName; }
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline bool MasterUserNameHasBeenSet() const { return m_masterUserNameHasBeenSet; }
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline void SetMasterUserName(const Aws::String& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = value; }
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline void SetMasterUserName(Aws::String&& value) { m_masterUserNameHasBeenSet = true; m_masterUserName = std::move(value); }
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline void SetMasterUserName(const char* value) { m_masterUserNameHasBeenSet = true; m_masterUserName.assign(value); }
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserName(const Aws::String& value) { SetMasterUserName(value); return *this;}
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserName(Aws::String&& value) { SetMasterUserName(std::move(value)); return *this;}
-
-    /**
-     * <p>User name for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserName(const char* value) { SetMasterUserName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Password for the master user. Only specify if
      * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-
-    /**
-     * <p>Password for the master user. Only specify if
-     * <code>InternalUserDatabaseEnabled</code> is <code>true</code>.</p>
-     */
     inline MasterUserOptions& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_masterUserARN;

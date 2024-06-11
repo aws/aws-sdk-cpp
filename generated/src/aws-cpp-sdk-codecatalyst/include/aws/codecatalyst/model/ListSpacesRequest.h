@@ -32,54 +32,20 @@ namespace Model
     AWS_CODECATALYST_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A token returned from a call to this API to indicate the next batch of
      * results to return, if any.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline ListSpacesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline ListSpacesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token returned from a call to this API to indicate the next batch of
-     * results to return, if any.</p>
-     */
     inline ListSpacesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

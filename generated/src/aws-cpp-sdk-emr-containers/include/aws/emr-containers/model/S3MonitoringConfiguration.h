@@ -38,46 +38,19 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Amazon S3 destination URI for log publishing.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline void SetLogUri(Aws::String&& value) { m_logUriHasBeenSet = true; m_logUri = std::move(value); }
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline void SetLogUri(const char* value) { m_logUriHasBeenSet = true; m_logUri.assign(value); }
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline S3MonitoringConfiguration& WithLogUri(const Aws::String& value) { SetLogUri(value); return *this;}
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline S3MonitoringConfiguration& WithLogUri(Aws::String&& value) { SetLogUri(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon S3 destination URI for log publishing.</p>
-     */
     inline S3MonitoringConfiguration& WithLogUri(const char* value) { SetLogUri(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_logUri;

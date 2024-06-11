@@ -65,36 +65,17 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The frequency with which Config delivers configuration snapshots.</p>
      */
     inline const MaximumExecutionFrequency& GetDeliveryFrequency() const{ return m_deliveryFrequency; }
-
-    /**
-     * <p>The frequency with which Config delivers configuration snapshots.</p>
-     */
     inline bool DeliveryFrequencyHasBeenSet() const { return m_deliveryFrequencyHasBeenSet; }
-
-    /**
-     * <p>The frequency with which Config delivers configuration snapshots.</p>
-     */
     inline void SetDeliveryFrequency(const MaximumExecutionFrequency& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = value; }
-
-    /**
-     * <p>The frequency with which Config delivers configuration snapshots.</p>
-     */
     inline void SetDeliveryFrequency(MaximumExecutionFrequency&& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = std::move(value); }
-
-    /**
-     * <p>The frequency with which Config delivers configuration snapshots.</p>
-     */
     inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(const MaximumExecutionFrequency& value) { SetDeliveryFrequency(value); return *this;}
-
-    /**
-     * <p>The frequency with which Config delivers configuration snapshots.</p>
-     */
     inline ConfigSnapshotDeliveryProperties& WithDeliveryFrequency(MaximumExecutionFrequency&& value) { SetDeliveryFrequency(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MaximumExecutionFrequency m_deliveryFrequency;

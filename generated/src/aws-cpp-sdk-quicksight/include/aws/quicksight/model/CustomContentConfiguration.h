@@ -41,165 +41,59 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The input URL that links to the custom content that you want in the custom
      * visual.</p>
      */
     inline const Aws::String& GetContentUrl() const{ return m_contentUrl; }
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline bool ContentUrlHasBeenSet() const { return m_contentUrlHasBeenSet; }
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline void SetContentUrl(const Aws::String& value) { m_contentUrlHasBeenSet = true; m_contentUrl = value; }
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline void SetContentUrl(Aws::String&& value) { m_contentUrlHasBeenSet = true; m_contentUrl = std::move(value); }
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline void SetContentUrl(const char* value) { m_contentUrlHasBeenSet = true; m_contentUrl.assign(value); }
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline CustomContentConfiguration& WithContentUrl(const Aws::String& value) { SetContentUrl(value); return *this;}
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline CustomContentConfiguration& WithContentUrl(Aws::String&& value) { SetContentUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The input URL that links to the custom content that you want in the custom
-     * visual.</p>
-     */
     inline CustomContentConfiguration& WithContentUrl(const char* value) { SetContentUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The content type of the custom content visual. You can use this to have the
      * visual render as an image.</p>
      */
     inline const CustomContentType& GetContentType() const{ return m_contentType; }
-
-    /**
-     * <p>The content type of the custom content visual. You can use this to have the
-     * visual render as an image.</p>
-     */
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-
-    /**
-     * <p>The content type of the custom content visual. You can use this to have the
-     * visual render as an image.</p>
-     */
     inline void SetContentType(const CustomContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-
-    /**
-     * <p>The content type of the custom content visual. You can use this to have the
-     * visual render as an image.</p>
-     */
     inline void SetContentType(CustomContentType&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-
-    /**
-     * <p>The content type of the custom content visual. You can use this to have the
-     * visual render as an image.</p>
-     */
     inline CustomContentConfiguration& WithContentType(const CustomContentType& value) { SetContentType(value); return *this;}
-
-    /**
-     * <p>The content type of the custom content visual. You can use this to have the
-     * visual render as an image.</p>
-     */
     inline CustomContentConfiguration& WithContentType(CustomContentType&& value) { SetContentType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sizing options for the size of the custom content visual. This structure
      * is required when the <code>ContentType</code> of the visual is
      * <code>'IMAGE'</code>.</p>
      */
     inline const CustomContentImageScalingConfiguration& GetImageScaling() const{ return m_imageScaling; }
-
-    /**
-     * <p>The sizing options for the size of the custom content visual. This structure
-     * is required when the <code>ContentType</code> of the visual is
-     * <code>'IMAGE'</code>.</p>
-     */
     inline bool ImageScalingHasBeenSet() const { return m_imageScalingHasBeenSet; }
-
-    /**
-     * <p>The sizing options for the size of the custom content visual. This structure
-     * is required when the <code>ContentType</code> of the visual is
-     * <code>'IMAGE'</code>.</p>
-     */
     inline void SetImageScaling(const CustomContentImageScalingConfiguration& value) { m_imageScalingHasBeenSet = true; m_imageScaling = value; }
-
-    /**
-     * <p>The sizing options for the size of the custom content visual. This structure
-     * is required when the <code>ContentType</code> of the visual is
-     * <code>'IMAGE'</code>.</p>
-     */
     inline void SetImageScaling(CustomContentImageScalingConfiguration&& value) { m_imageScalingHasBeenSet = true; m_imageScaling = std::move(value); }
-
-    /**
-     * <p>The sizing options for the size of the custom content visual. This structure
-     * is required when the <code>ContentType</code> of the visual is
-     * <code>'IMAGE'</code>.</p>
-     */
     inline CustomContentConfiguration& WithImageScaling(const CustomContentImageScalingConfiguration& value) { SetImageScaling(value); return *this;}
-
-    /**
-     * <p>The sizing options for the size of the custom content visual. This structure
-     * is required when the <code>ContentType</code> of the visual is
-     * <code>'IMAGE'</code>.</p>
-     */
     inline CustomContentConfiguration& WithImageScaling(CustomContentImageScalingConfiguration&& value) { SetImageScaling(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
     inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline CustomContentConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-
-    /**
-     * <p>The general visual interactions setup for a visual.</p>
-     */
     inline CustomContentConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contentUrl;

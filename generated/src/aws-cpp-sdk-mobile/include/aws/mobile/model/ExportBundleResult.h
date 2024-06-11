@@ -39,77 +39,31 @@ namespace Model
     AWS_MOBILE_API ExportBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> URL which contains the custom-generated SDK and tool packages used to
      * integrate the client mobile app or web app with the AWS resources created by the
      * AWS Mobile Hub project. </p>
      */
     inline const Aws::String& GetDownloadUrl() const{ return m_downloadUrl; }
-
-    /**
-     * <p> URL which contains the custom-generated SDK and tool packages used to
-     * integrate the client mobile app or web app with the AWS resources created by the
-     * AWS Mobile Hub project. </p>
-     */
     inline void SetDownloadUrl(const Aws::String& value) { m_downloadUrl = value; }
-
-    /**
-     * <p> URL which contains the custom-generated SDK and tool packages used to
-     * integrate the client mobile app or web app with the AWS resources created by the
-     * AWS Mobile Hub project. </p>
-     */
     inline void SetDownloadUrl(Aws::String&& value) { m_downloadUrl = std::move(value); }
-
-    /**
-     * <p> URL which contains the custom-generated SDK and tool packages used to
-     * integrate the client mobile app or web app with the AWS resources created by the
-     * AWS Mobile Hub project. </p>
-     */
     inline void SetDownloadUrl(const char* value) { m_downloadUrl.assign(value); }
-
-    /**
-     * <p> URL which contains the custom-generated SDK and tool packages used to
-     * integrate the client mobile app or web app with the AWS resources created by the
-     * AWS Mobile Hub project. </p>
-     */
     inline ExportBundleResult& WithDownloadUrl(const Aws::String& value) { SetDownloadUrl(value); return *this;}
-
-    /**
-     * <p> URL which contains the custom-generated SDK and tool packages used to
-     * integrate the client mobile app or web app with the AWS resources created by the
-     * AWS Mobile Hub project. </p>
-     */
     inline ExportBundleResult& WithDownloadUrl(Aws::String&& value) { SetDownloadUrl(std::move(value)); return *this;}
-
-    /**
-     * <p> URL which contains the custom-generated SDK and tool packages used to
-     * integrate the client mobile app or web app with the AWS resources created by the
-     * AWS Mobile Hub project. </p>
-     */
     inline ExportBundleResult& WithDownloadUrl(const char* value) { SetDownloadUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExportBundleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExportBundleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExportBundleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_downloadUrl;

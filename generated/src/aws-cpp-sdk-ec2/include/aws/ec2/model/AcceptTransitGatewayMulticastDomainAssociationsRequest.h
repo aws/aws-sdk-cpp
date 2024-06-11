@@ -37,143 +37,51 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the transit gateway multicast domain.</p>
      */
     inline const Aws::String& GetTransitGatewayMulticastDomainId() const{ return m_transitGatewayMulticastDomainId; }
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline bool TransitGatewayMulticastDomainIdHasBeenSet() const { return m_transitGatewayMulticastDomainIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline void SetTransitGatewayMulticastDomainId(const Aws::String& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = value; }
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline void SetTransitGatewayMulticastDomainId(Aws::String&& value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId = std::move(value); }
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline void SetTransitGatewayMulticastDomainId(const char* value) { m_transitGatewayMulticastDomainIdHasBeenSet = true; m_transitGatewayMulticastDomainId.assign(value); }
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithTransitGatewayMulticastDomainId(const Aws::String& value) { SetTransitGatewayMulticastDomainId(value); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithTransitGatewayMulticastDomainId(Aws::String&& value) { SetTransitGatewayMulticastDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway multicast domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithTransitGatewayMulticastDomainId(const char* value) { SetTransitGatewayMulticastDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the transit gateway attachment.</p>
      */
     inline const Aws::String& GetTransitGatewayAttachmentId() const{ return m_transitGatewayAttachmentId; }
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline void SetTransitGatewayAttachmentId(Aws::String&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline void SetTransitGatewayAttachmentId(const char* value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithTransitGatewayAttachmentId(const Aws::String& value) { SetTransitGatewayAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithTransitGatewayAttachmentId(Aws::String&& value) { SetTransitGatewayAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway attachment.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithTransitGatewayAttachmentId(const char* value) { SetTransitGatewayAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the subnets to associate with the transit gateway multicast
      * domain.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the subnets to associate with the transit gateway multicast
-     * domain.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -181,31 +89,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline AcceptTransitGatewayMulticastDomainAssociationsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transitGatewayMulticastDomainId;

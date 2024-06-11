@@ -40,129 +40,53 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Monitoring configurations for the persistent application UI. </p>
      */
     inline const PersistentAppUI& GetPersistentAppUI() const{ return m_persistentAppUI; }
-
-    /**
-     * <p>Monitoring configurations for the persistent application UI. </p>
-     */
     inline bool PersistentAppUIHasBeenSet() const { return m_persistentAppUIHasBeenSet; }
-
-    /**
-     * <p>Monitoring configurations for the persistent application UI. </p>
-     */
     inline void SetPersistentAppUI(const PersistentAppUI& value) { m_persistentAppUIHasBeenSet = true; m_persistentAppUI = value; }
-
-    /**
-     * <p>Monitoring configurations for the persistent application UI. </p>
-     */
     inline void SetPersistentAppUI(PersistentAppUI&& value) { m_persistentAppUIHasBeenSet = true; m_persistentAppUI = std::move(value); }
-
-    /**
-     * <p>Monitoring configurations for the persistent application UI. </p>
-     */
     inline MonitoringConfiguration& WithPersistentAppUI(const PersistentAppUI& value) { SetPersistentAppUI(value); return *this;}
-
-    /**
-     * <p>Monitoring configurations for the persistent application UI. </p>
-     */
     inline MonitoringConfiguration& WithPersistentAppUI(PersistentAppUI&& value) { SetPersistentAppUI(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Monitoring configurations for CloudWatch.</p>
      */
     inline const CloudWatchMonitoringConfiguration& GetCloudWatchMonitoringConfiguration() const{ return m_cloudWatchMonitoringConfiguration; }
-
-    /**
-     * <p>Monitoring configurations for CloudWatch.</p>
-     */
     inline bool CloudWatchMonitoringConfigurationHasBeenSet() const { return m_cloudWatchMonitoringConfigurationHasBeenSet; }
-
-    /**
-     * <p>Monitoring configurations for CloudWatch.</p>
-     */
     inline void SetCloudWatchMonitoringConfiguration(const CloudWatchMonitoringConfiguration& value) { m_cloudWatchMonitoringConfigurationHasBeenSet = true; m_cloudWatchMonitoringConfiguration = value; }
-
-    /**
-     * <p>Monitoring configurations for CloudWatch.</p>
-     */
     inline void SetCloudWatchMonitoringConfiguration(CloudWatchMonitoringConfiguration&& value) { m_cloudWatchMonitoringConfigurationHasBeenSet = true; m_cloudWatchMonitoringConfiguration = std::move(value); }
-
-    /**
-     * <p>Monitoring configurations for CloudWatch.</p>
-     */
     inline MonitoringConfiguration& WithCloudWatchMonitoringConfiguration(const CloudWatchMonitoringConfiguration& value) { SetCloudWatchMonitoringConfiguration(value); return *this;}
-
-    /**
-     * <p>Monitoring configurations for CloudWatch.</p>
-     */
     inline MonitoringConfiguration& WithCloudWatchMonitoringConfiguration(CloudWatchMonitoringConfiguration&& value) { SetCloudWatchMonitoringConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Amazon S3 configuration for monitoring log publishing.</p>
      */
     inline const S3MonitoringConfiguration& GetS3MonitoringConfiguration() const{ return m_s3MonitoringConfiguration; }
-
-    /**
-     * <p>Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline bool S3MonitoringConfigurationHasBeenSet() const { return m_s3MonitoringConfigurationHasBeenSet; }
-
-    /**
-     * <p>Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline void SetS3MonitoringConfiguration(const S3MonitoringConfiguration& value) { m_s3MonitoringConfigurationHasBeenSet = true; m_s3MonitoringConfiguration = value; }
-
-    /**
-     * <p>Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline void SetS3MonitoringConfiguration(S3MonitoringConfiguration&& value) { m_s3MonitoringConfigurationHasBeenSet = true; m_s3MonitoringConfiguration = std::move(value); }
-
-    /**
-     * <p>Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline MonitoringConfiguration& WithS3MonitoringConfiguration(const S3MonitoringConfiguration& value) { SetS3MonitoringConfiguration(value); return *this;}
-
-    /**
-     * <p>Amazon S3 configuration for monitoring log publishing.</p>
-     */
     inline MonitoringConfiguration& WithS3MonitoringConfiguration(S3MonitoringConfiguration&& value) { SetS3MonitoringConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Enable or disable container log rotation.</p>
      */
     inline const ContainerLogRotationConfiguration& GetContainerLogRotationConfiguration() const{ return m_containerLogRotationConfiguration; }
-
-    /**
-     * <p>Enable or disable container log rotation.</p>
-     */
     inline bool ContainerLogRotationConfigurationHasBeenSet() const { return m_containerLogRotationConfigurationHasBeenSet; }
-
-    /**
-     * <p>Enable or disable container log rotation.</p>
-     */
     inline void SetContainerLogRotationConfiguration(const ContainerLogRotationConfiguration& value) { m_containerLogRotationConfigurationHasBeenSet = true; m_containerLogRotationConfiguration = value; }
-
-    /**
-     * <p>Enable or disable container log rotation.</p>
-     */
     inline void SetContainerLogRotationConfiguration(ContainerLogRotationConfiguration&& value) { m_containerLogRotationConfigurationHasBeenSet = true; m_containerLogRotationConfiguration = std::move(value); }
-
-    /**
-     * <p>Enable or disable container log rotation.</p>
-     */
     inline MonitoringConfiguration& WithContainerLogRotationConfiguration(const ContainerLogRotationConfiguration& value) { SetContainerLogRotationConfiguration(value); return *this;}
-
-    /**
-     * <p>Enable or disable container log rotation.</p>
-     */
     inline MonitoringConfiguration& WithContainerLogRotationConfiguration(ContainerLogRotationConfiguration&& value) { SetContainerLogRotationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PersistentAppUI m_persistentAppUI;

@@ -37,36 +37,17 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The package version's input configuration.</p>
      */
     inline const PackageVersionInputConfig& GetPackageVersionInputConfig() const{ return m_packageVersionInputConfig; }
-
-    /**
-     * <p>The package version's input configuration.</p>
-     */
     inline bool PackageVersionInputConfigHasBeenSet() const { return m_packageVersionInputConfigHasBeenSet; }
-
-    /**
-     * <p>The package version's input configuration.</p>
-     */
     inline void SetPackageVersionInputConfig(const PackageVersionInputConfig& value) { m_packageVersionInputConfigHasBeenSet = true; m_packageVersionInputConfig = value; }
-
-    /**
-     * <p>The package version's input configuration.</p>
-     */
     inline void SetPackageVersionInputConfig(PackageVersionInputConfig&& value) { m_packageVersionInputConfigHasBeenSet = true; m_packageVersionInputConfig = std::move(value); }
-
-    /**
-     * <p>The package version's input configuration.</p>
-     */
     inline PackageImportJobInputConfig& WithPackageVersionInputConfig(const PackageVersionInputConfig& value) { SetPackageVersionInputConfig(value); return *this;}
-
-    /**
-     * <p>The package version's input configuration.</p>
-     */
     inline PackageImportJobInputConfig& WithPackageVersionInputConfig(PackageVersionInputConfig&& value) { SetPackageVersionInputConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PackageVersionInputConfig m_packageVersionInputConfig;

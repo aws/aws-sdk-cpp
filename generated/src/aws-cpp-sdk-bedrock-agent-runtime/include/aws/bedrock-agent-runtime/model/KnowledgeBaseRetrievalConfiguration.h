@@ -47,6 +47,7 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains details about how the results from the vector search should be
      * returned. For more information, see <a
@@ -54,47 +55,12 @@ namespace Model
      * configurations</a>.</p>
      */
     inline const KnowledgeBaseVectorSearchConfiguration& GetVectorSearchConfiguration() const{ return m_vectorSearchConfiguration; }
-
-    /**
-     * <p>Contains details about how the results from the vector search should be
-     * returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline bool VectorSearchConfigurationHasBeenSet() const { return m_vectorSearchConfigurationHasBeenSet; }
-
-    /**
-     * <p>Contains details about how the results from the vector search should be
-     * returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline void SetVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = value; }
-
-    /**
-     * <p>Contains details about how the results from the vector search should be
-     * returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline void SetVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { m_vectorSearchConfigurationHasBeenSet = true; m_vectorSearchConfiguration = std::move(value); }
-
-    /**
-     * <p>Contains details about how the results from the vector search should be
-     * returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(const KnowledgeBaseVectorSearchConfiguration& value) { SetVectorSearchConfiguration(value); return *this;}
-
-    /**
-     * <p>Contains details about how the results from the vector search should be
-     * returned. For more information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/kb-test-config.html">Query
-     * configurations</a>.</p>
-     */
     inline KnowledgeBaseRetrievalConfiguration& WithVectorSearchConfiguration(KnowledgeBaseVectorSearchConfiguration&& value) { SetVectorSearchConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KnowledgeBaseVectorSearchConfiguration m_vectorSearchConfiguration;

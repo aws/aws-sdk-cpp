@@ -40,73 +40,30 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A type that can be either <code>UPDATE_OR_CREATE</code> or
      * <code>DELETE</code>.</p>
      */
     inline const UpdateActionType& GetAttributeActionType() const{ return m_attributeActionType; }
-
-    /**
-     * <p>A type that can be either <code>UPDATE_OR_CREATE</code> or
-     * <code>DELETE</code>.</p>
-     */
     inline bool AttributeActionTypeHasBeenSet() const { return m_attributeActionTypeHasBeenSet; }
-
-    /**
-     * <p>A type that can be either <code>UPDATE_OR_CREATE</code> or
-     * <code>DELETE</code>.</p>
-     */
     inline void SetAttributeActionType(const UpdateActionType& value) { m_attributeActionTypeHasBeenSet = true; m_attributeActionType = value; }
-
-    /**
-     * <p>A type that can be either <code>UPDATE_OR_CREATE</code> or
-     * <code>DELETE</code>.</p>
-     */
     inline void SetAttributeActionType(UpdateActionType&& value) { m_attributeActionTypeHasBeenSet = true; m_attributeActionType = std::move(value); }
-
-    /**
-     * <p>A type that can be either <code>UPDATE_OR_CREATE</code> or
-     * <code>DELETE</code>.</p>
-     */
     inline LinkAttributeAction& WithAttributeActionType(const UpdateActionType& value) { SetAttributeActionType(value); return *this;}
-
-    /**
-     * <p>A type that can be either <code>UPDATE_OR_CREATE</code> or
-     * <code>DELETE</code>.</p>
-     */
     inline LinkAttributeAction& WithAttributeActionType(UpdateActionType&& value) { SetAttributeActionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value that you want to update to.</p>
      */
     inline const TypedAttributeValue& GetAttributeUpdateValue() const{ return m_attributeUpdateValue; }
-
-    /**
-     * <p>The value that you want to update to.</p>
-     */
     inline bool AttributeUpdateValueHasBeenSet() const { return m_attributeUpdateValueHasBeenSet; }
-
-    /**
-     * <p>The value that you want to update to.</p>
-     */
     inline void SetAttributeUpdateValue(const TypedAttributeValue& value) { m_attributeUpdateValueHasBeenSet = true; m_attributeUpdateValue = value; }
-
-    /**
-     * <p>The value that you want to update to.</p>
-     */
     inline void SetAttributeUpdateValue(TypedAttributeValue&& value) { m_attributeUpdateValueHasBeenSet = true; m_attributeUpdateValue = std::move(value); }
-
-    /**
-     * <p>The value that you want to update to.</p>
-     */
     inline LinkAttributeAction& WithAttributeUpdateValue(const TypedAttributeValue& value) { SetAttributeUpdateValue(value); return *this;}
-
-    /**
-     * <p>The value that you want to update to.</p>
-     */
     inline LinkAttributeAction& WithAttributeUpdateValue(TypedAttributeValue&& value) { SetAttributeUpdateValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateActionType m_attributeActionType;

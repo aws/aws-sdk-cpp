@@ -36,34 +36,17 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
      * when this activity task was scheduled. To help diagnose issues, use this
      * information to trace back the chain of events leading up to this event.</p>
      */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
-
-    /**
-     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
-     * when this activity task was scheduled. To help diagnose issues, use this
-     * information to trace back the chain of events leading up to this event.</p>
-     */
     inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
-     * when this activity task was scheduled. To help diagnose issues, use this
-     * information to trace back the chain of events leading up to this event.</p>
-     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
-
-    /**
-     * <p>The ID of the <code>LambdaFunctionScheduled</code> event that was recorded
-     * when this activity task was scheduled. To help diagnose issues, use this
-     * information to trace back the chain of events leading up to this event.</p>
-     */
     inline LambdaFunctionStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_scheduledEventId;

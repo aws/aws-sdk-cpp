@@ -39,53 +39,27 @@ namespace Model
     AWS_DEVICEFARM_API InstallToRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An app to upload or that has been uploaded.</p>
      */
     inline const Upload& GetAppUpload() const{ return m_appUpload; }
-
-    /**
-     * <p>An app to upload or that has been uploaded.</p>
-     */
     inline void SetAppUpload(const Upload& value) { m_appUpload = value; }
-
-    /**
-     * <p>An app to upload or that has been uploaded.</p>
-     */
     inline void SetAppUpload(Upload&& value) { m_appUpload = std::move(value); }
-
-    /**
-     * <p>An app to upload or that has been uploaded.</p>
-     */
     inline InstallToRemoteAccessSessionResult& WithAppUpload(const Upload& value) { SetAppUpload(value); return *this;}
-
-    /**
-     * <p>An app to upload or that has been uploaded.</p>
-     */
     inline InstallToRemoteAccessSessionResult& WithAppUpload(Upload&& value) { SetAppUpload(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline InstallToRemoteAccessSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline InstallToRemoteAccessSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline InstallToRemoteAccessSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Upload m_appUpload;

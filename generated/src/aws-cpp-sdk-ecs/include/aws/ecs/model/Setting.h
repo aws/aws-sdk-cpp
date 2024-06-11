@@ -39,135 +39,49 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon ECS resource name.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The Amazon ECS resource name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The Amazon ECS resource name.</p>
-     */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The Amazon ECS resource name.</p>
-     */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The Amazon ECS resource name.</p>
-     */
     inline Setting& WithName(const SettingName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The Amazon ECS resource name.</p>
-     */
     inline Setting& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether the account setting is on or off for the specified
      * resource.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline Setting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline Setting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Determines whether the account setting is on or off for the specified
-     * resource.</p>
-     */
     inline Setting& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the principal. It can be a user, role, or the root user. If this
      * field is omitted, the authenticated user is assumed.</p>
      */
     inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline Setting& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline Setting& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the principal. It can be a user, role, or the root user. If this
-     * field is omitted, the authenticated user is assumed.</p>
-     */
     inline Setting& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether Amazon Web Services manages the account setting, or if the
      * user manages it.</p> <p> <code>aws_managed</code> account settings are
@@ -176,52 +90,12 @@ namespace Model
      * Amazon Web Services manages.</p>
      */
     inline const SettingType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
-     * user manages it.</p> <p> <code>aws_managed</code> account settings are
-     * read-only, as Amazon Web Services manages such on the customer's behalf.
-     * Currently, the <code>guardDutyActivate</code> account setting is the only one
-     * Amazon Web Services manages.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
-     * user manages it.</p> <p> <code>aws_managed</code> account settings are
-     * read-only, as Amazon Web Services manages such on the customer's behalf.
-     * Currently, the <code>guardDutyActivate</code> account setting is the only one
-     * Amazon Web Services manages.</p>
-     */
     inline void SetType(const SettingType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
-     * user manages it.</p> <p> <code>aws_managed</code> account settings are
-     * read-only, as Amazon Web Services manages such on the customer's behalf.
-     * Currently, the <code>guardDutyActivate</code> account setting is the only one
-     * Amazon Web Services manages.</p>
-     */
     inline void SetType(SettingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
-     * user manages it.</p> <p> <code>aws_managed</code> account settings are
-     * read-only, as Amazon Web Services manages such on the customer's behalf.
-     * Currently, the <code>guardDutyActivate</code> account setting is the only one
-     * Amazon Web Services manages.</p>
-     */
     inline Setting& WithType(const SettingType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Indicates whether Amazon Web Services manages the account setting, or if the
-     * user manages it.</p> <p> <code>aws_managed</code> account settings are
-     * read-only, as Amazon Web Services manages such on the customer's behalf.
-     * Currently, the <code>guardDutyActivate</code> account setting is the only one
-     * Amazon Web Services manages.</p>
-     */
     inline Setting& WithType(SettingType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SettingName m_name;

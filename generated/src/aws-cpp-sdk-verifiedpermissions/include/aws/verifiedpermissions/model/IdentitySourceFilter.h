@@ -40,54 +40,20 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Cedar entity type of the principals returned by the identity provider
      * (IdP) associated with this identity source.</p>
      */
     inline const Aws::String& GetPrincipalEntityType() const{ return m_principalEntityType; }
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline bool PrincipalEntityTypeHasBeenSet() const { return m_principalEntityTypeHasBeenSet; }
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline void SetPrincipalEntityType(const Aws::String& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = value; }
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline void SetPrincipalEntityType(Aws::String&& value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType = std::move(value); }
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline void SetPrincipalEntityType(const char* value) { m_principalEntityTypeHasBeenSet = true; m_principalEntityType.assign(value); }
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline IdentitySourceFilter& WithPrincipalEntityType(const Aws::String& value) { SetPrincipalEntityType(value); return *this;}
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline IdentitySourceFilter& WithPrincipalEntityType(Aws::String&& value) { SetPrincipalEntityType(std::move(value)); return *this;}
-
-    /**
-     * <p>The Cedar entity type of the principals returned by the identity provider
-     * (IdP) associated with this identity source.</p>
-     */
     inline IdentitySourceFilter& WithPrincipalEntityType(const char* value) { SetPrincipalEntityType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_principalEntityType;

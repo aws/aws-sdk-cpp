@@ -38,55 +38,22 @@ namespace Model
     AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the application to which you want to add the output
      * configuration.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline AddApplicationOutputRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline AddApplicationOutputRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the application to which you want to add the output
-     * configuration.</p>
-     */
     inline AddApplicationOutputRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Version of the application to which you want to add the output configuration.
      * You can use the <a
@@ -96,38 +63,12 @@ namespace Model
      * returned. </p>
      */
     inline long long GetCurrentApplicationVersionId() const{ return m_currentApplicationVersionId; }
-
-    /**
-     * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the current application version. If the version specified is
-     * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned. </p>
-     */
     inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
-
-    /**
-     * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the current application version. If the version specified is
-     * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned. </p>
-     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
-
-    /**
-     * <p>Version of the application to which you want to add the output configuration.
-     * You can use the <a
-     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_DescribeApplication.html">DescribeApplication</a>
-     * operation to get the current application version. If the version specified is
-     * not the current version, the <code>ConcurrentModificationException</code> is
-     * returned. </p>
-     */
     inline AddApplicationOutputRequest& WithCurrentApplicationVersionId(long long value) { SetCurrentApplicationVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of objects, each describing one output configuration. In the output
      * configuration, you specify the name of an in-application stream, a destination
@@ -136,52 +77,12 @@ namespace Model
      * destination.</p>
      */
     inline const Output& GetOutput() const{ return m_output; }
-
-    /**
-     * <p>An array of objects, each describing one output configuration. In the output
-     * configuration, you specify the name of an in-application stream, a destination
-     * (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream,
-     * or an AWS Lambda function), and record the formation to use when writing to the
-     * destination.</p>
-     */
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-
-    /**
-     * <p>An array of objects, each describing one output configuration. In the output
-     * configuration, you specify the name of an in-application stream, a destination
-     * (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream,
-     * or an AWS Lambda function), and record the formation to use when writing to the
-     * destination.</p>
-     */
     inline void SetOutput(const Output& value) { m_outputHasBeenSet = true; m_output = value; }
-
-    /**
-     * <p>An array of objects, each describing one output configuration. In the output
-     * configuration, you specify the name of an in-application stream, a destination
-     * (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream,
-     * or an AWS Lambda function), and record the formation to use when writing to the
-     * destination.</p>
-     */
     inline void SetOutput(Output&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-
-    /**
-     * <p>An array of objects, each describing one output configuration. In the output
-     * configuration, you specify the name of an in-application stream, a destination
-     * (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream,
-     * or an AWS Lambda function), and record the formation to use when writing to the
-     * destination.</p>
-     */
     inline AddApplicationOutputRequest& WithOutput(const Output& value) { SetOutput(value); return *this;}
-
-    /**
-     * <p>An array of objects, each describing one output configuration. In the output
-     * configuration, you specify the name of an in-application stream, a destination
-     * (that is, an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream,
-     * or an AWS Lambda function), and record the formation to use when writing to the
-     * destination.</p>
-     */
     inline AddApplicationOutputRequest& WithOutput(Output&& value) { SetOutput(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

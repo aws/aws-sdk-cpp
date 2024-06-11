@@ -52,109 +52,36 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies how much a document attribute is boosted.</p>
      */
     inline const DocumentAttributeBoostingLevel& GetBoostingLevel() const{ return m_boostingLevel; }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
     inline bool BoostingLevelHasBeenSet() const { return m_boostingLevelHasBeenSet; }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
     inline void SetBoostingLevel(const DocumentAttributeBoostingLevel& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = value; }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
     inline void SetBoostingLevel(DocumentAttributeBoostingLevel&& value) { m_boostingLevelHasBeenSet = true; m_boostingLevel = std::move(value); }
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& WithBoostingLevel(const DocumentAttributeBoostingLevel& value) { SetBoostingLevel(value); return *this;}
-
-    /**
-     * <p>Specifies how much a document attribute is boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& WithBoostingLevel(DocumentAttributeBoostingLevel&& value) { SetBoostingLevel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies specific values of a <code>STRING</code> type document attribute
      * being boosted.</p>
      */
     inline const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& GetAttributeValueBoosting() const{ return m_attributeValueBoosting; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline bool AttributeValueBoostingHasBeenSet() const { return m_attributeValueBoostingHasBeenSet; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline void SetAttributeValueBoosting(const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting = value; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline void SetAttributeValueBoosting(Aws::Map<Aws::String, StringAttributeValueBoostingLevel>&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting = std::move(value); }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& WithAttributeValueBoosting(const Aws::Map<Aws::String, StringAttributeValueBoostingLevel>& value) { SetAttributeValueBoosting(value); return *this;}
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& WithAttributeValueBoosting(Aws::Map<Aws::String, StringAttributeValueBoostingLevel>&& value) { SetAttributeValueBoosting(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const Aws::String& key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, value); return *this; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(Aws::String&& key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const Aws::String& key, StringAttributeValueBoostingLevel&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(Aws::String&& key, StringAttributeValueBoostingLevel&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const char* key, StringAttributeValueBoostingLevel&& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies specific values of a <code>STRING</code> type document attribute
-     * being boosted.</p>
-     */
     inline StringAttributeBoostingConfiguration& AddAttributeValueBoosting(const char* key, const StringAttributeValueBoostingLevel& value) { m_attributeValueBoostingHasBeenSet = true; m_attributeValueBoosting.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     DocumentAttributeBoostingLevel m_boostingLevel;

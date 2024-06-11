@@ -41,89 +41,33 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account. </p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline AccountHealth& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline AccountHealth& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account. </p>
-     */
     inline AccountHealth& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Information about the health of the Amazon Web Services resources in your
      * account, including the number of open proactive, open reactive insights, and the
      * Mean Time to Recover (MTTR) of closed insights. </p>
      */
     inline const AccountInsightHealth& GetInsight() const{ return m_insight; }
-
-    /**
-     * <p> Information about the health of the Amazon Web Services resources in your
-     * account, including the number of open proactive, open reactive insights, and the
-     * Mean Time to Recover (MTTR) of closed insights. </p>
-     */
     inline bool InsightHasBeenSet() const { return m_insightHasBeenSet; }
-
-    /**
-     * <p> Information about the health of the Amazon Web Services resources in your
-     * account, including the number of open proactive, open reactive insights, and the
-     * Mean Time to Recover (MTTR) of closed insights. </p>
-     */
     inline void SetInsight(const AccountInsightHealth& value) { m_insightHasBeenSet = true; m_insight = value; }
-
-    /**
-     * <p> Information about the health of the Amazon Web Services resources in your
-     * account, including the number of open proactive, open reactive insights, and the
-     * Mean Time to Recover (MTTR) of closed insights. </p>
-     */
     inline void SetInsight(AccountInsightHealth&& value) { m_insightHasBeenSet = true; m_insight = std::move(value); }
-
-    /**
-     * <p> Information about the health of the Amazon Web Services resources in your
-     * account, including the number of open proactive, open reactive insights, and the
-     * Mean Time to Recover (MTTR) of closed insights. </p>
-     */
     inline AccountHealth& WithInsight(const AccountInsightHealth& value) { SetInsight(value); return *this;}
-
-    /**
-     * <p> Information about the health of the Amazon Web Services resources in your
-     * account, including the number of open proactive, open reactive insights, and the
-     * Mean Time to Recover (MTTR) of closed insights. </p>
-     */
     inline AccountHealth& WithInsight(AccountInsightHealth&& value) { SetInsight(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountId;

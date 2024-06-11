@@ -38,57 +38,27 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version number of the schema.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
-
-    /**
-     * <p>The version number of the schema.</p>
-     */
     inline SchemaVersionErrorItem& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of the error for the schema version.</p>
      */
     inline const ErrorDetails& GetErrorDetails() const{ return m_errorDetails; }
-
-    /**
-     * <p>The details of the error for the schema version.</p>
-     */
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-
-    /**
-     * <p>The details of the error for the schema version.</p>
-     */
     inline void SetErrorDetails(const ErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-
-    /**
-     * <p>The details of the error for the schema version.</p>
-     */
     inline void SetErrorDetails(ErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-
-    /**
-     * <p>The details of the error for the schema version.</p>
-     */
     inline SchemaVersionErrorItem& WithErrorDetails(const ErrorDetails& value) { SetErrorDetails(value); return *this;}
-
-    /**
-     * <p>The details of the error for the schema version.</p>
-     */
     inline SchemaVersionErrorItem& WithErrorDetails(ErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_versionNumber;

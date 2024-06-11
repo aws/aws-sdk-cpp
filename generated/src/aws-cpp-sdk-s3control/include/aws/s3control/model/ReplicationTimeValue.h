@@ -38,30 +38,16 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Contains an integer that specifies the time period in minutes. </p> <p>Valid
      * value: 15</p>
      */
     inline int GetMinutes() const{ return m_minutes; }
-
-    /**
-     * <p>Contains an integer that specifies the time period in minutes. </p> <p>Valid
-     * value: 15</p>
-     */
     inline bool MinutesHasBeenSet() const { return m_minutesHasBeenSet; }
-
-    /**
-     * <p>Contains an integer that specifies the time period in minutes. </p> <p>Valid
-     * value: 15</p>
-     */
     inline void SetMinutes(int value) { m_minutesHasBeenSet = true; m_minutes = value; }
-
-    /**
-     * <p>Contains an integer that specifies the time period in minutes. </p> <p>Valid
-     * value: 15</p>
-     */
     inline ReplicationTimeValue& WithMinutes(int value) { SetMinutes(value); return *this;}
-
+    ///@}
   private:
 
     int m_minutes;

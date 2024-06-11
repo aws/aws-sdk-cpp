@@ -33,58 +33,28 @@ namespace Model
     AWS_CODEARTIFACT_API DeleteDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Contains information about the deleted domain after processing the request.
      * </p>
      */
     inline const DomainDescription& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p> Contains information about the deleted domain after processing the request.
-     * </p>
-     */
     inline void SetDomain(const DomainDescription& value) { m_domain = value; }
-
-    /**
-     * <p> Contains information about the deleted domain after processing the request.
-     * </p>
-     */
     inline void SetDomain(DomainDescription&& value) { m_domain = std::move(value); }
-
-    /**
-     * <p> Contains information about the deleted domain after processing the request.
-     * </p>
-     */
     inline DeleteDomainResult& WithDomain(const DomainDescription& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p> Contains information about the deleted domain after processing the request.
-     * </p>
-     */
     inline DeleteDomainResult& WithDomain(DomainDescription&& value) { SetDomain(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DomainDescription m_domain;

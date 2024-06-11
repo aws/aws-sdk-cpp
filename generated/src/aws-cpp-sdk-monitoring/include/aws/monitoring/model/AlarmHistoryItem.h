@@ -42,221 +42,83 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The descriptive name for the alarm.</p>
      */
     inline const Aws::String& GetAlarmName() const{ return m_alarmName; }
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline void SetAlarmName(Aws::String&& value) { m_alarmNameHasBeenSet = true; m_alarmName = std::move(value); }
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline void SetAlarmName(const char* value) { m_alarmNameHasBeenSet = true; m_alarmName.assign(value); }
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline AlarmHistoryItem& WithAlarmName(const Aws::String& value) { SetAlarmName(value); return *this;}
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline AlarmHistoryItem& WithAlarmName(Aws::String&& value) { SetAlarmName(std::move(value)); return *this;}
-
-    /**
-     * <p>The descriptive name for the alarm.</p>
-     */
     inline AlarmHistoryItem& WithAlarmName(const char* value) { SetAlarmName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of alarm, either metric alarm or composite alarm.</p>
      */
     inline const AlarmType& GetAlarmType() const{ return m_alarmType; }
-
-    /**
-     * <p>The type of alarm, either metric alarm or composite alarm.</p>
-     */
     inline bool AlarmTypeHasBeenSet() const { return m_alarmTypeHasBeenSet; }
-
-    /**
-     * <p>The type of alarm, either metric alarm or composite alarm.</p>
-     */
     inline void SetAlarmType(const AlarmType& value) { m_alarmTypeHasBeenSet = true; m_alarmType = value; }
-
-    /**
-     * <p>The type of alarm, either metric alarm or composite alarm.</p>
-     */
     inline void SetAlarmType(AlarmType&& value) { m_alarmTypeHasBeenSet = true; m_alarmType = std::move(value); }
-
-    /**
-     * <p>The type of alarm, either metric alarm or composite alarm.</p>
-     */
     inline AlarmHistoryItem& WithAlarmType(const AlarmType& value) { SetAlarmType(value); return *this;}
-
-    /**
-     * <p>The type of alarm, either metric alarm or composite alarm.</p>
-     */
     inline AlarmHistoryItem& WithAlarmType(AlarmType&& value) { SetAlarmType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time stamp for the alarm history item.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time stamp for the alarm history item.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The time stamp for the alarm history item.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The time stamp for the alarm history item.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The time stamp for the alarm history item.</p>
-     */
     inline AlarmHistoryItem& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The time stamp for the alarm history item.</p>
-     */
     inline AlarmHistoryItem& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of alarm history item.</p>
      */
     inline const HistoryItemType& GetHistoryItemType() const{ return m_historyItemType; }
-
-    /**
-     * <p>The type of alarm history item.</p>
-     */
     inline bool HistoryItemTypeHasBeenSet() const { return m_historyItemTypeHasBeenSet; }
-
-    /**
-     * <p>The type of alarm history item.</p>
-     */
     inline void SetHistoryItemType(const HistoryItemType& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
-
-    /**
-     * <p>The type of alarm history item.</p>
-     */
     inline void SetHistoryItemType(HistoryItemType&& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = std::move(value); }
-
-    /**
-     * <p>The type of alarm history item.</p>
-     */
     inline AlarmHistoryItem& WithHistoryItemType(const HistoryItemType& value) { SetHistoryItemType(value); return *this;}
-
-    /**
-     * <p>The type of alarm history item.</p>
-     */
     inline AlarmHistoryItem& WithHistoryItemType(HistoryItemType&& value) { SetHistoryItemType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A summary of the alarm history, in text format.</p>
      */
     inline const Aws::String& GetHistorySummary() const{ return m_historySummary; }
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline bool HistorySummaryHasBeenSet() const { return m_historySummaryHasBeenSet; }
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline void SetHistorySummary(const Aws::String& value) { m_historySummaryHasBeenSet = true; m_historySummary = value; }
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline void SetHistorySummary(Aws::String&& value) { m_historySummaryHasBeenSet = true; m_historySummary = std::move(value); }
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline void SetHistorySummary(const char* value) { m_historySummaryHasBeenSet = true; m_historySummary.assign(value); }
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline AlarmHistoryItem& WithHistorySummary(const Aws::String& value) { SetHistorySummary(value); return *this;}
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline AlarmHistoryItem& WithHistorySummary(Aws::String&& value) { SetHistorySummary(std::move(value)); return *this;}
-
-    /**
-     * <p>A summary of the alarm history, in text format.</p>
-     */
     inline AlarmHistoryItem& WithHistorySummary(const char* value) { SetHistorySummary(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Data about the alarm, in JSON format.</p>
      */
     inline const Aws::String& GetHistoryData() const{ return m_historyData; }
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline bool HistoryDataHasBeenSet() const { return m_historyDataHasBeenSet; }
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline void SetHistoryData(const Aws::String& value) { m_historyDataHasBeenSet = true; m_historyData = value; }
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline void SetHistoryData(Aws::String&& value) { m_historyDataHasBeenSet = true; m_historyData = std::move(value); }
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline void SetHistoryData(const char* value) { m_historyDataHasBeenSet = true; m_historyData.assign(value); }
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline AlarmHistoryItem& WithHistoryData(const Aws::String& value) { SetHistoryData(value); return *this;}
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline AlarmHistoryItem& WithHistoryData(Aws::String&& value) { SetHistoryData(std::move(value)); return *this;}
-
-    /**
-     * <p>Data about the alarm, in JSON format.</p>
-     */
     inline AlarmHistoryItem& WithHistoryData(const char* value) { SetHistoryData(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alarmName;

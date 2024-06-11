@@ -41,68 +41,31 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string to evaluate in a string condition expression.</p>
      */
     inline const RuleStringToEvaluate& GetEvaluate() const{ return m_evaluate; }
-
-    /**
-     * <p>The string to evaluate in a string condition expression.</p>
-     */
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-
-    /**
-     * <p>The string to evaluate in a string condition expression.</p>
-     */
     inline void SetEvaluate(const RuleStringToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-
-    /**
-     * <p>The string to evaluate in a string condition expression.</p>
-     */
     inline void SetEvaluate(RuleStringToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-
-    /**
-     * <p>The string to evaluate in a string condition expression.</p>
-     */
     inline RuleStringExpression& WithEvaluate(const RuleStringToEvaluate& value) { SetEvaluate(value); return *this;}
-
-    /**
-     * <p>The string to evaluate in a string condition expression.</p>
-     */
     inline RuleStringExpression& WithEvaluate(RuleStringToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The matching operator for a string condition expression.</p>
      */
     inline const RuleStringOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The matching operator for a string condition expression.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The matching operator for a string condition expression.</p>
-     */
     inline void SetOperator(const RuleStringOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The matching operator for a string condition expression.</p>
-     */
     inline void SetOperator(RuleStringOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The matching operator for a string condition expression.</p>
-     */
     inline RuleStringExpression& WithOperator(const RuleStringOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The matching operator for a string condition expression.</p>
-     */
     inline RuleStringExpression& WithOperator(RuleStringOperator&& value) { SetOperator(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string(s) to be evaluated in a string condition expression. For all
      * operators, except for NOT_EQUALS, if multiple values are given, the values are
@@ -112,87 +75,15 @@ namespace Model
      * email's string.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline RuleStringExpression& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline RuleStringExpression& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline RuleStringExpression& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline RuleStringExpression& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The string(s) to be evaluated in a string condition expression. For all
-     * operators, except for NOT_EQUALS, if multiple values are given, the values are
-     * processed as an OR. That is, if any of the values match the email's string using
-     * the given operator, the condition is deemed to match. However, for NOT_EQUALS,
-     * the condition is only deemed to match if none of the given strings match the
-     * email's string.</p>
-     */
     inline RuleStringExpression& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     RuleStringToEvaluate m_evaluate;

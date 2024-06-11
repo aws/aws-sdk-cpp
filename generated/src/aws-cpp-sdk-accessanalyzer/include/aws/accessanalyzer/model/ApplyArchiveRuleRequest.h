@@ -36,128 +36,47 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon resource name (ARN) of the analyzer.</p>
      */
     inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline ApplyArchiveRuleRequest& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline ApplyArchiveRuleRequest& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon resource name (ARN) of the analyzer.</p>
-     */
     inline ApplyArchiveRuleRequest& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the rule to apply.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline ApplyArchiveRuleRequest& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline ApplyArchiveRuleRequest& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the rule to apply.</p>
-     */
     inline ApplyArchiveRuleRequest& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A client token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A client token.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A client token.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A client token.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A client token.</p>
-     */
     inline ApplyArchiveRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
     inline ApplyArchiveRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A client token.</p>
-     */
     inline ApplyArchiveRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_analyzerArn;

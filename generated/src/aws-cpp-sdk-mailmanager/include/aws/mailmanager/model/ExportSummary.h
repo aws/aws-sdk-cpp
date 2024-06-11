@@ -38,77 +38,31 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the export job.</p>
      */
     inline const Aws::String& GetExportId() const{ return m_exportId; }
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline void SetExportId(Aws::String&& value) { m_exportIdHasBeenSet = true; m_exportId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline void SetExportId(const char* value) { m_exportIdHasBeenSet = true; m_exportId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline ExportSummary& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline ExportSummary& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the export job.</p>
-     */
     inline ExportSummary& WithExportId(const char* value) { SetExportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current status of the export job.</p>
      */
     inline const ExportStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline void SetStatus(const ExportStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline void SetStatus(ExportStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline ExportSummary& WithStatus(const ExportStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the export job.</p>
-     */
     inline ExportSummary& WithStatus(ExportStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportId;

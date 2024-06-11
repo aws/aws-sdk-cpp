@@ -32,46 +32,19 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the dataset.</p>
      */
     inline const Aws::String& GetMetricSetArn() const{ return m_metricSetArn; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline bool MetricSetArnHasBeenSet() const { return m_metricSetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetMetricSetArn(const Aws::String& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = value; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetMetricSetArn(Aws::String&& value) { m_metricSetArnHasBeenSet = true; m_metricSetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetMetricSetArn(const char* value) { m_metricSetArnHasBeenSet = true; m_metricSetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline DescribeMetricSetRequest& WithMetricSetArn(const Aws::String& value) { SetMetricSetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline DescribeMetricSetRequest& WithMetricSetArn(Aws::String&& value) { SetMetricSetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline DescribeMetricSetRequest& WithMetricSetArn(const char* value) { SetMetricSetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricSetArn;

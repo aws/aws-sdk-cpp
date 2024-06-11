@@ -37,36 +37,17 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Configuration for telemetry service.
      */
     inline const TelemetryConfiguration& GetTelemetryConfiguration() const{ return m_telemetryConfiguration; }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline bool TelemetryConfigurationHasBeenSet() const { return m_telemetryConfigurationHasBeenSet; }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline void SetTelemetryConfiguration(const TelemetryConfiguration& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = value; }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline void SetTelemetryConfiguration(TelemetryConfiguration&& value) { m_telemetryConfigurationHasBeenSet = true; m_telemetryConfiguration = std::move(value); }
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline RuntimeConfiguration& WithTelemetryConfiguration(const TelemetryConfiguration& value) { SetTelemetryConfiguration(value); return *this;}
-
-    /**
-     * Configuration for telemetry service.
-     */
     inline RuntimeConfiguration& WithTelemetryConfiguration(TelemetryConfiguration&& value) { SetTelemetryConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TelemetryConfiguration m_telemetryConfiguration;

@@ -44,111 +44,36 @@ namespace Model
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The token claim that you want Verified Permissions to interpret as group
      * membership. For example, <code>groups</code>.</p>
      */
     inline const Aws::String& GetGroupClaim() const{ return m_groupClaim; }
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline bool GroupClaimHasBeenSet() const { return m_groupClaimHasBeenSet; }
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline void SetGroupClaim(const Aws::String& value) { m_groupClaimHasBeenSet = true; m_groupClaim = value; }
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline void SetGroupClaim(Aws::String&& value) { m_groupClaimHasBeenSet = true; m_groupClaim = std::move(value); }
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline void SetGroupClaim(const char* value) { m_groupClaimHasBeenSet = true; m_groupClaim.assign(value); }
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline OpenIdConnectGroupConfigurationItem& WithGroupClaim(const Aws::String& value) { SetGroupClaim(value); return *this;}
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline OpenIdConnectGroupConfigurationItem& WithGroupClaim(Aws::String&& value) { SetGroupClaim(std::move(value)); return *this;}
-
-    /**
-     * <p>The token claim that you want Verified Permissions to interpret as group
-     * membership. For example, <code>groups</code>.</p>
-     */
     inline OpenIdConnectGroupConfigurationItem& WithGroupClaim(const char* value) { SetGroupClaim(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy store entity type that you want to map your users' group claim to.
      * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
      * that can have a user entity type as a member.</p>
      */
     inline const Aws::String& GetGroupEntityType() const{ return m_groupEntityType; }
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline bool GroupEntityTypeHasBeenSet() const { return m_groupEntityTypeHasBeenSet; }
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline void SetGroupEntityType(const Aws::String& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = value; }
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline void SetGroupEntityType(Aws::String&& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = std::move(value); }
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline void SetGroupEntityType(const char* value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType.assign(value); }
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline OpenIdConnectGroupConfigurationItem& WithGroupEntityType(const Aws::String& value) { SetGroupEntityType(value); return *this;}
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline OpenIdConnectGroupConfigurationItem& WithGroupEntityType(Aws::String&& value) { SetGroupEntityType(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy store entity type that you want to map your users' group claim to.
-     * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
-     * that can have a user entity type as a member.</p>
-     */
     inline OpenIdConnectGroupConfigurationItem& WithGroupEntityType(const char* value) { SetGroupEntityType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_groupClaim;

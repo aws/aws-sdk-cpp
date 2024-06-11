@@ -33,125 +33,53 @@ namespace Model
     AWS_IOTANALYTICS_API CreateDatastoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the data store.</p>
      */
     inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
-
-    /**
-     * <p>The name of the data store.</p>
-     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreName = value; }
-
-    /**
-     * <p>The name of the data store.</p>
-     */
     inline void SetDatastoreName(Aws::String&& value) { m_datastoreName = std::move(value); }
-
-    /**
-     * <p>The name of the data store.</p>
-     */
     inline void SetDatastoreName(const char* value) { m_datastoreName.assign(value); }
-
-    /**
-     * <p>The name of the data store.</p>
-     */
     inline CreateDatastoreResult& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
-
-    /**
-     * <p>The name of the data store.</p>
-     */
     inline CreateDatastoreResult& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data store.</p>
-     */
     inline CreateDatastoreResult& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the data store.</p>
      */
     inline const Aws::String& GetDatastoreArn() const{ return m_datastoreArn; }
-
-    /**
-     * <p>The ARN of the data store.</p>
-     */
     inline void SetDatastoreArn(const Aws::String& value) { m_datastoreArn = value; }
-
-    /**
-     * <p>The ARN of the data store.</p>
-     */
     inline void SetDatastoreArn(Aws::String&& value) { m_datastoreArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the data store.</p>
-     */
     inline void SetDatastoreArn(const char* value) { m_datastoreArn.assign(value); }
-
-    /**
-     * <p>The ARN of the data store.</p>
-     */
     inline CreateDatastoreResult& WithDatastoreArn(const Aws::String& value) { SetDatastoreArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the data store.</p>
-     */
     inline CreateDatastoreResult& WithDatastoreArn(Aws::String&& value) { SetDatastoreArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the data store.</p>
-     */
     inline CreateDatastoreResult& WithDatastoreArn(const char* value) { SetDatastoreArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>How long, in days, message data is kept for the data store.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
-
-    /**
-     * <p>How long, in days, message data is kept for the data store.</p>
-     */
     inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriod = value; }
-
-    /**
-     * <p>How long, in days, message data is kept for the data store.</p>
-     */
     inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriod = std::move(value); }
-
-    /**
-     * <p>How long, in days, message data is kept for the data store.</p>
-     */
     inline CreateDatastoreResult& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-
-    /**
-     * <p>How long, in days, message data is kept for the data store.</p>
-     */
     inline CreateDatastoreResult& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDatastoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDatastoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDatastoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreName;

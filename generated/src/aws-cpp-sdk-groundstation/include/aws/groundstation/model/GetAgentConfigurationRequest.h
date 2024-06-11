@@ -32,46 +32,19 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>UUID of agent to get configuration information for.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline GetAgentConfigurationRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline GetAgentConfigurationRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>UUID of agent to get configuration information for.</p>
-     */
     inline GetAgentConfigurationRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

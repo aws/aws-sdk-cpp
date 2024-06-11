@@ -38,124 +38,45 @@ namespace Model
     AWS_QBUSINESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Q Business application using the retriever.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline ListRetrieversRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline ListRetrieversRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Q Business application using the retriever.</p>
-     */
     inline ListRetrieversRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
      * Q Business returns a next token as a pagination token to retrieve the next set
      * of retrievers.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline ListRetrieversRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline ListRetrieversRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the number of retrievers returned exceeds <code>maxResults</code>, Amazon
-     * Q Business returns a next token as a pagination token to retrieve the next set
-     * of retrievers.</p>
-     */
     inline ListRetrieversRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of retrievers returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of retrievers returned.</p>
-     */
     inline ListRetrieversRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

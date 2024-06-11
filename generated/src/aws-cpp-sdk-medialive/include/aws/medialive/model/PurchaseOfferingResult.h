@@ -38,43 +38,25 @@ namespace Model
     AWS_MEDIALIVE_API PurchaseOfferingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Reservation& GetReservation() const{ return m_reservation; }
-
-    
     inline void SetReservation(const Reservation& value) { m_reservation = value; }
-
-    
     inline void SetReservation(Reservation&& value) { m_reservation = std::move(value); }
-
-    
     inline PurchaseOfferingResult& WithReservation(const Reservation& value) { SetReservation(value); return *this;}
-
-    
     inline PurchaseOfferingResult& WithReservation(Reservation&& value) { SetReservation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PurchaseOfferingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PurchaseOfferingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PurchaseOfferingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Reservation m_reservation;

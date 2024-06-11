@@ -38,103 +38,35 @@ namespace Model
     AWS_CODESTAR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon S3 bucket name where the source code files provided with the
      * project request are stored.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline S3Location& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline S3Location& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket name where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline S3Location& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 object key where the source code files provided with the
      * project request are stored.</p>
      */
     inline const Aws::String& GetBucketKey() const{ return m_bucketKey; }
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline bool BucketKeyHasBeenSet() const { return m_bucketKeyHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline void SetBucketKey(const Aws::String& value) { m_bucketKeyHasBeenSet = true; m_bucketKey = value; }
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline void SetBucketKey(Aws::String&& value) { m_bucketKeyHasBeenSet = true; m_bucketKey = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline void SetBucketKey(const char* value) { m_bucketKeyHasBeenSet = true; m_bucketKey.assign(value); }
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline S3Location& WithBucketKey(const Aws::String& value) { SetBucketKey(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline S3Location& WithBucketKey(Aws::String&& value) { SetBucketKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon S3 object key where the source code files provided with the
-     * project request are stored.</p>
-     */
     inline S3Location& WithBucketKey(const char* value) { SetBucketKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketName;

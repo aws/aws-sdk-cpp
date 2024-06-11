@@ -40,36 +40,17 @@ namespace Model
     AWS_ELASTICBEANSTALK_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Describes the LoadBalancer.</p>
      */
     inline const LoadBalancerDescription& GetLoadBalancer() const{ return m_loadBalancer; }
-
-    /**
-     * <p>Describes the LoadBalancer.</p>
-     */
     inline bool LoadBalancerHasBeenSet() const { return m_loadBalancerHasBeenSet; }
-
-    /**
-     * <p>Describes the LoadBalancer.</p>
-     */
     inline void SetLoadBalancer(const LoadBalancerDescription& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = value; }
-
-    /**
-     * <p>Describes the LoadBalancer.</p>
-     */
     inline void SetLoadBalancer(LoadBalancerDescription&& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = std::move(value); }
-
-    /**
-     * <p>Describes the LoadBalancer.</p>
-     */
     inline EnvironmentResourcesDescription& WithLoadBalancer(const LoadBalancerDescription& value) { SetLoadBalancer(value); return *this;}
-
-    /**
-     * <p>Describes the LoadBalancer.</p>
-     */
     inline EnvironmentResourcesDescription& WithLoadBalancer(LoadBalancerDescription&& value) { SetLoadBalancer(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoadBalancerDescription m_loadBalancer;

@@ -38,87 +38,33 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the dataset to apply overrides to.</p>
      */
     inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDataSetOverrideParameters& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDataSetOverrideParameters& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the dataset to apply overrides to.</p>
-     */
     inline AssetBundleImportJobDataSetOverrideParameters& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new name for the dataset.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline AssetBundleImportJobDataSetOverrideParameters& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline AssetBundleImportJobDataSetOverrideParameters& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A new name for the dataset.</p>
-     */
     inline AssetBundleImportJobDataSetOverrideParameters& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataSetId;

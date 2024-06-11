@@ -39,106 +39,43 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * URI associated with a signal map's monitor deployment.
      */
     inline const Aws::String& GetDetailsUri() const{ return m_detailsUri; }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline bool DetailsUriHasBeenSet() const { return m_detailsUriHasBeenSet; }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline void SetDetailsUri(const Aws::String& value) { m_detailsUriHasBeenSet = true; m_detailsUri = value; }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline void SetDetailsUri(Aws::String&& value) { m_detailsUriHasBeenSet = true; m_detailsUri = std::move(value); }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline void SetDetailsUri(const char* value) { m_detailsUriHasBeenSet = true; m_detailsUri.assign(value); }
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline MonitorDeployment& WithDetailsUri(const Aws::String& value) { SetDetailsUri(value); return *this;}
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline MonitorDeployment& WithDetailsUri(Aws::String&& value) { SetDetailsUri(std::move(value)); return *this;}
-
-    /**
-     * URI associated with a signal map's monitor deployment.
-     */
     inline MonitorDeployment& WithDetailsUri(const char* value) { SetDetailsUri(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Error message associated with a failed monitor deployment of a signal map.
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline MonitorDeployment& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline MonitorDeployment& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * Error message associated with a failed monitor deployment of a signal map.
-     */
     inline MonitorDeployment& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SignalMapMonitorDeploymentStatus& GetStatus() const{ return m_status; }
-
-    
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    
     inline void SetStatus(const SignalMapMonitorDeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    
     inline void SetStatus(SignalMapMonitorDeploymentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    
     inline MonitorDeployment& WithStatus(const SignalMapMonitorDeploymentStatus& value) { SetStatus(value); return *this;}
-
-    
     inline MonitorDeployment& WithStatus(SignalMapMonitorDeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detailsUri;

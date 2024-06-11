@@ -36,55 +36,22 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the current association between the original network ACL and the
      * subnet.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the current association between the original network ACL and the
-     * subnet.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -92,72 +59,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline void SetNetworkAclId(const char* value) { m_networkAclIdHasBeenSet = true; m_networkAclId.assign(value); }
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithNetworkAclId(const Aws::String& value) { SetNetworkAclId(value); return *this;}
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the new network ACL to associate with the subnet.</p>
-     */
     inline ReplaceNetworkAclAssociationRequest& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

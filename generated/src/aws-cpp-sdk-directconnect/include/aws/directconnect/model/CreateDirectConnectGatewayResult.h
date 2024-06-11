@@ -33,53 +33,27 @@ namespace Model
     AWS_DIRECTCONNECT_API CreateDirectConnectGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Direct Connect gateway.</p>
      */
     inline const DirectConnectGateway& GetDirectConnectGateway() const{ return m_directConnectGateway; }
-
-    /**
-     * <p>The Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGateway(const DirectConnectGateway& value) { m_directConnectGateway = value; }
-
-    /**
-     * <p>The Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGateway(DirectConnectGateway&& value) { m_directConnectGateway = std::move(value); }
-
-    /**
-     * <p>The Direct Connect gateway.</p>
-     */
     inline CreateDirectConnectGatewayResult& WithDirectConnectGateway(const DirectConnectGateway& value) { SetDirectConnectGateway(value); return *this;}
-
-    /**
-     * <p>The Direct Connect gateway.</p>
-     */
     inline CreateDirectConnectGatewayResult& WithDirectConnectGateway(DirectConnectGateway&& value) { SetDirectConnectGateway(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDirectConnectGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDirectConnectGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDirectConnectGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DirectConnectGateway m_directConnectGateway;

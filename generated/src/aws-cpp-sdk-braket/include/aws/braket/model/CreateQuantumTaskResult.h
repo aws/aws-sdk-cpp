@@ -32,63 +32,29 @@ namespace Model
     AWS_BRAKET_API CreateQuantumTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the task created by the request.</p>
      */
     inline const Aws::String& GetQuantumTaskArn() const{ return m_quantumTaskArn; }
-
-    /**
-     * <p>The ARN of the task created by the request.</p>
-     */
     inline void SetQuantumTaskArn(const Aws::String& value) { m_quantumTaskArn = value; }
-
-    /**
-     * <p>The ARN of the task created by the request.</p>
-     */
     inline void SetQuantumTaskArn(Aws::String&& value) { m_quantumTaskArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the task created by the request.</p>
-     */
     inline void SetQuantumTaskArn(const char* value) { m_quantumTaskArn.assign(value); }
-
-    /**
-     * <p>The ARN of the task created by the request.</p>
-     */
     inline CreateQuantumTaskResult& WithQuantumTaskArn(const Aws::String& value) { SetQuantumTaskArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the task created by the request.</p>
-     */
     inline CreateQuantumTaskResult& WithQuantumTaskArn(Aws::String&& value) { SetQuantumTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the task created by the request.</p>
-     */
     inline CreateQuantumTaskResult& WithQuantumTaskArn(const char* value) { SetQuantumTaskArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateQuantumTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateQuantumTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateQuantumTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_quantumTaskArn;

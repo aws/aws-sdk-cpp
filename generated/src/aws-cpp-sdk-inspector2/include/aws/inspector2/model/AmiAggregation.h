@@ -41,108 +41,43 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IDs of AMIs to aggregate findings for.</p>
      */
     inline const Aws::Vector<StringFilter>& GetAmis() const{ return m_amis; }
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline void SetAmis(const Aws::Vector<StringFilter>& value) { m_amisHasBeenSet = true; m_amis = value; }
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline void SetAmis(Aws::Vector<StringFilter>&& value) { m_amisHasBeenSet = true; m_amis = std::move(value); }
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline AmiAggregation& WithAmis(const Aws::Vector<StringFilter>& value) { SetAmis(value); return *this;}
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline AmiAggregation& WithAmis(Aws::Vector<StringFilter>&& value) { SetAmis(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline AmiAggregation& AddAmis(const StringFilter& value) { m_amisHasBeenSet = true; m_amis.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of AMIs to aggregate findings for.</p>
-     */
     inline AmiAggregation& AddAmis(StringFilter&& value) { m_amisHasBeenSet = true; m_amis.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value to sort results by.</p>
      */
     inline const AmiSortBy& GetSortBy() const{ return m_sortBy; }
-
-    /**
-     * <p>The value to sort results by.</p>
-     */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-
-    /**
-     * <p>The value to sort results by.</p>
-     */
     inline void SetSortBy(const AmiSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-
-    /**
-     * <p>The value to sort results by.</p>
-     */
     inline void SetSortBy(AmiSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-
-    /**
-     * <p>The value to sort results by.</p>
-     */
     inline AmiAggregation& WithSortBy(const AmiSortBy& value) { SetSortBy(value); return *this;}
-
-    /**
-     * <p>The value to sort results by.</p>
-     */
     inline AmiAggregation& WithSortBy(AmiSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The order to sort results by.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
-
-    /**
-     * <p>The order to sort results by.</p>
-     */
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-
-    /**
-     * <p>The order to sort results by.</p>
-     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-
-    /**
-     * <p>The order to sort results by.</p>
-     */
     inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-
-    /**
-     * <p>The order to sort results by.</p>
-     */
     inline AmiAggregation& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-
-    /**
-     * <p>The order to sort results by.</p>
-     */
     inline AmiAggregation& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<StringFilter> m_amis;

@@ -38,77 +38,31 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the threshold.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline Threshold& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline Threshold& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the threshold.</p>
-     */
     inline Threshold& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operator of the threshold.</p>
      */
     inline const Operator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The operator of the threshold.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The operator of the threshold.</p>
-     */
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The operator of the threshold.</p>
-     */
     inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The operator of the threshold.</p>
-     */
     inline Threshold& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The operator of the threshold.</p>
-     */
     inline Threshold& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

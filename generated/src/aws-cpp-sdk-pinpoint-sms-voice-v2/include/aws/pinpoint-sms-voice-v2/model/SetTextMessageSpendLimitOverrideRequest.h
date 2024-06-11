@@ -32,26 +32,15 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The new monthly limit to enforce on text messages.</p>
      */
     inline long long GetMonthlyLimit() const{ return m_monthlyLimit; }
-
-    /**
-     * <p>The new monthly limit to enforce on text messages.</p>
-     */
     inline bool MonthlyLimitHasBeenSet() const { return m_monthlyLimitHasBeenSet; }
-
-    /**
-     * <p>The new monthly limit to enforce on text messages.</p>
-     */
     inline void SetMonthlyLimit(long long value) { m_monthlyLimitHasBeenSet = true; m_monthlyLimit = value; }
-
-    /**
-     * <p>The new monthly limit to enforce on text messages.</p>
-     */
     inline SetTextMessageSpendLimitOverrideRequest& WithMonthlyLimit(long long value) { SetMonthlyLimit(value); return *this;}
-
+    ///@}
   private:
 
     long long m_monthlyLimit;

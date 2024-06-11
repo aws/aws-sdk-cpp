@@ -38,135 +38,48 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerArn() const{ return m_loadBalancerArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(Aws::String&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline void SetLoadBalancerArn(const char* value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline SetSecurityGroupsRequest& WithLoadBalancerArn(const Aws::String& value) { SetLoadBalancerArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline SetSecurityGroupsRequest& WithLoadBalancerArn(Aws::String&& value) { SetLoadBalancerArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
-     */
     inline SetSecurityGroupsRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline SetSecurityGroupsRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline SetSecurityGroupsRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline SetSecurityGroupsRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline SetSecurityGroupsRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the security groups.</p>
-     */
     inline SetSecurityGroupsRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to evaluate inbound security group rules for traffic sent
      * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
      * is <code>on</code>.</p>
      */
     inline const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& GetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic() const{ return m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic; }
-
-    /**
-     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
-     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
-     * is <code>on</code>.</p>
-     */
     inline bool EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet() const { return m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
-     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
-     * is <code>on</code>.</p>
-     */
     inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = value; }
-
-    /**
-     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
-     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
-     * is <code>on</code>.</p>
-     */
     inline void SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum&& value) { m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet = true; m_enforceSecurityGroupInboundRulesOnPrivateLinkTraffic = std::move(value); }
-
-    /**
-     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
-     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
-     * is <code>on</code>.</p>
-     */
     inline SetSecurityGroupsRequest& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(const EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(value); return *this;}
-
-    /**
-     * <p>Indicates whether to evaluate inbound security group rules for traffic sent
-     * to a Network Load Balancer through Amazon Web Services PrivateLink. The default
-     * is <code>on</code>.</p>
-     */
     inline SetSecurityGroupsRequest& WithEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(EnforceSecurityGroupInboundRulesOnPrivateLinkTrafficEnum&& value) { SetEnforceSecurityGroupInboundRulesOnPrivateLinkTraffic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_loadBalancerArn;

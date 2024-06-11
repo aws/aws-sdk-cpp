@@ -34,46 +34,19 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
      */
     inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline bool DocumentClassifierArnHasBeenSet() const { return m_documentClassifierArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline DeleteDocumentClassifierRequest& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline DeleteDocumentClassifierRequest& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. </p>
-     */
     inline DeleteDocumentClassifierRequest& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_documentClassifierArn;

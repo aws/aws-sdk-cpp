@@ -34,63 +34,29 @@ namespace Model
     AWS_ECS_API PutAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The attributes applied to your resource.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>The attributes applied to your resource.</p>
-     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributes = value; }
-
-    /**
-     * <p>The attributes applied to your resource.</p>
-     */
     inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributes = std::move(value); }
-
-    /**
-     * <p>The attributes applied to your resource.</p>
-     */
     inline PutAttributesResult& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>The attributes applied to your resource.</p>
-     */
     inline PutAttributesResult& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>The attributes applied to your resource.</p>
-     */
     inline PutAttributesResult& AddAttributes(const Attribute& value) { m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>The attributes applied to your resource.</p>
-     */
     inline PutAttributesResult& AddAttributes(Attribute&& value) { m_attributes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Attribute> m_attributes;

@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSTREAM_API UpdateEntitlementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The entitlement.</p>
      */
     inline const Entitlement& GetEntitlement() const{ return m_entitlement; }
-
-    /**
-     * <p>The entitlement.</p>
-     */
     inline void SetEntitlement(const Entitlement& value) { m_entitlement = value; }
-
-    /**
-     * <p>The entitlement.</p>
-     */
     inline void SetEntitlement(Entitlement&& value) { m_entitlement = std::move(value); }
-
-    /**
-     * <p>The entitlement.</p>
-     */
     inline UpdateEntitlementResult& WithEntitlement(const Entitlement& value) { SetEntitlement(value); return *this;}
-
-    /**
-     * <p>The entitlement.</p>
-     */
     inline UpdateEntitlementResult& WithEntitlement(Entitlement&& value) { SetEntitlement(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateEntitlementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateEntitlementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateEntitlementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Entitlement m_entitlement;

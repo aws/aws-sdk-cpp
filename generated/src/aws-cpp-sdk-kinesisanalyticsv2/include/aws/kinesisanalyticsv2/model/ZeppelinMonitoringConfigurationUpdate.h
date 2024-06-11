@@ -38,42 +38,18 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
      * Apache Flink Studio notebook.</p>
      */
     inline const LogLevel& GetLogLevelUpdate() const{ return m_logLevelUpdate; }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
-     * Apache Flink Studio notebook.</p>
-     */
     inline bool LogLevelUpdateHasBeenSet() const { return m_logLevelUpdateHasBeenSet; }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
-     * Apache Flink Studio notebook.</p>
-     */
     inline void SetLogLevelUpdate(const LogLevel& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = value; }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
-     * Apache Flink Studio notebook.</p>
-     */
     inline void SetLogLevelUpdate(LogLevel&& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = std::move(value); }
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
-     * Apache Flink Studio notebook.</p>
-     */
     inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(const LogLevel& value) { SetLogLevelUpdate(value); return *this;}
-
-    /**
-     * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
-     * Apache Flink Studio notebook.</p>
-     */
     inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(LogLevel&& value) { SetLogLevelUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogLevel m_logLevelUpdate;

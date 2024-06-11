@@ -34,106 +34,43 @@ namespace Model
     AWS_SSM_API GetOpsSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of aggregated details and filtered OpsData.</p>
      */
     inline const Aws::Vector<OpsEntity>& GetEntities() const{ return m_entities; }
-
-    /**
-     * <p>The list of aggregated details and filtered OpsData.</p>
-     */
     inline void SetEntities(const Aws::Vector<OpsEntity>& value) { m_entities = value; }
-
-    /**
-     * <p>The list of aggregated details and filtered OpsData.</p>
-     */
     inline void SetEntities(Aws::Vector<OpsEntity>&& value) { m_entities = std::move(value); }
-
-    /**
-     * <p>The list of aggregated details and filtered OpsData.</p>
-     */
     inline GetOpsSummaryResult& WithEntities(const Aws::Vector<OpsEntity>& value) { SetEntities(value); return *this;}
-
-    /**
-     * <p>The list of aggregated details and filtered OpsData.</p>
-     */
     inline GetOpsSummaryResult& WithEntities(Aws::Vector<OpsEntity>&& value) { SetEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of aggregated details and filtered OpsData.</p>
-     */
     inline GetOpsSummaryResult& AddEntities(const OpsEntity& value) { m_entities.push_back(value); return *this; }
-
-    /**
-     * <p>The list of aggregated details and filtered OpsData.</p>
-     */
     inline GetOpsSummaryResult& AddEntities(OpsEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of items to return. Use this token to get the next
      * set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline GetOpsSummaryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline GetOpsSummaryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. Use this token to get the next
-     * set of results.</p>
-     */
     inline GetOpsSummaryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetOpsSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetOpsSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetOpsSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<OpsEntity> m_entities;

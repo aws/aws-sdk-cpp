@@ -39,67 +39,29 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
     inline int GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The zero-based index of the document in the input list.</p>
-     */
     inline BatchDetectSyntaxItemResult& WithIndex(int value) { SetIndex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The syntax tokens for the words in the document, one token for each word.</p>
      */
     inline const Aws::Vector<SyntaxToken>& GetSyntaxTokens() const{ return m_syntaxTokens; }
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline bool SyntaxTokensHasBeenSet() const { return m_syntaxTokensHasBeenSet; }
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline void SetSyntaxTokens(const Aws::Vector<SyntaxToken>& value) { m_syntaxTokensHasBeenSet = true; m_syntaxTokens = value; }
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline void SetSyntaxTokens(Aws::Vector<SyntaxToken>&& value) { m_syntaxTokensHasBeenSet = true; m_syntaxTokens = std::move(value); }
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline BatchDetectSyntaxItemResult& WithSyntaxTokens(const Aws::Vector<SyntaxToken>& value) { SetSyntaxTokens(value); return *this;}
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline BatchDetectSyntaxItemResult& WithSyntaxTokens(Aws::Vector<SyntaxToken>&& value) { SetSyntaxTokens(std::move(value)); return *this;}
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline BatchDetectSyntaxItemResult& AddSyntaxTokens(const SyntaxToken& value) { m_syntaxTokensHasBeenSet = true; m_syntaxTokens.push_back(value); return *this; }
-
-    /**
-     * <p>The syntax tokens for the words in the document, one token for each word.</p>
-     */
     inline BatchDetectSyntaxItemResult& AddSyntaxTokens(SyntaxToken&& value) { m_syntaxTokensHasBeenSet = true; m_syntaxTokens.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_index;

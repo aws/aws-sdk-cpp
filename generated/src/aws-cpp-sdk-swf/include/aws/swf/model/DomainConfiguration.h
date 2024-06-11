@@ -38,46 +38,19 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The retention period for workflow executions in this domain.</p>
      */
     inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const{ return m_workflowExecutionRetentionPeriodInDays; }
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline bool WorkflowExecutionRetentionPeriodInDaysHasBeenSet() const { return m_workflowExecutionRetentionPeriodInDaysHasBeenSet; }
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = std::move(value); }
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline void SetWorkflowExecutionRetentionPeriodInDays(const char* value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays.assign(value); }
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { SetWorkflowExecutionRetentionPeriodInDays(std::move(value)); return *this;}
-
-    /**
-     * <p>The retention period for workflow executions in this domain.</p>
-     */
     inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workflowExecutionRetentionPeriodInDays;

@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The incremental refresh for the dataset.</p>
      */
     inline const IncrementalRefresh& GetIncrementalRefresh() const{ return m_incrementalRefresh; }
-
-    /**
-     * <p>The incremental refresh for the dataset.</p>
-     */
     inline bool IncrementalRefreshHasBeenSet() const { return m_incrementalRefreshHasBeenSet; }
-
-    /**
-     * <p>The incremental refresh for the dataset.</p>
-     */
     inline void SetIncrementalRefresh(const IncrementalRefresh& value) { m_incrementalRefreshHasBeenSet = true; m_incrementalRefresh = value; }
-
-    /**
-     * <p>The incremental refresh for the dataset.</p>
-     */
     inline void SetIncrementalRefresh(IncrementalRefresh&& value) { m_incrementalRefreshHasBeenSet = true; m_incrementalRefresh = std::move(value); }
-
-    /**
-     * <p>The incremental refresh for the dataset.</p>
-     */
     inline RefreshConfiguration& WithIncrementalRefresh(const IncrementalRefresh& value) { SetIncrementalRefresh(value); return *this;}
-
-    /**
-     * <p>The incremental refresh for the dataset.</p>
-     */
     inline RefreshConfiguration& WithIncrementalRefresh(IncrementalRefresh&& value) { SetIncrementalRefresh(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IncrementalRefresh m_incrementalRefresh;

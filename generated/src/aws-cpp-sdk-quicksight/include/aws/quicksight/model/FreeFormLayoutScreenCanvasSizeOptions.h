@@ -38,54 +38,20 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The width that the view port will be optimized for when the layout
      * renders.</p>
      */
     inline const Aws::String& GetOptimizedViewPortWidth() const{ return m_optimizedViewPortWidth; }
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline bool OptimizedViewPortWidthHasBeenSet() const { return m_optimizedViewPortWidthHasBeenSet; }
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline void SetOptimizedViewPortWidth(const Aws::String& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = value; }
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline void SetOptimizedViewPortWidth(Aws::String&& value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth = std::move(value); }
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline void SetOptimizedViewPortWidth(const char* value) { m_optimizedViewPortWidthHasBeenSet = true; m_optimizedViewPortWidth.assign(value); }
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(const Aws::String& value) { SetOptimizedViewPortWidth(value); return *this;}
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(Aws::String&& value) { SetOptimizedViewPortWidth(std::move(value)); return *this;}
-
-    /**
-     * <p>The width that the view port will be optimized for when the layout
-     * renders.</p>
-     */
     inline FreeFormLayoutScreenCanvasSizeOptions& WithOptimizedViewPortWidth(const char* value) { SetOptimizedViewPortWidth(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_optimizedViewPortWidth;

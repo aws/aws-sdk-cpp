@@ -38,118 +38,45 @@ namespace Model
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A caller-supplied reason for revocation.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline SigningJobRevocationRecord& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline SigningJobRevocationRecord& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>A caller-supplied reason for revocation.</p>
-     */
     inline SigningJobRevocationRecord& WithReason(const char* value) { SetReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time of revocation.</p>
      */
     inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
-
-    /**
-     * <p>The time of revocation.</p>
-     */
     inline bool RevokedAtHasBeenSet() const { return m_revokedAtHasBeenSet; }
-
-    /**
-     * <p>The time of revocation.</p>
-     */
     inline void SetRevokedAt(const Aws::Utils::DateTime& value) { m_revokedAtHasBeenSet = true; m_revokedAt = value; }
-
-    /**
-     * <p>The time of revocation.</p>
-     */
     inline void SetRevokedAt(Aws::Utils::DateTime&& value) { m_revokedAtHasBeenSet = true; m_revokedAt = std::move(value); }
-
-    /**
-     * <p>The time of revocation.</p>
-     */
     inline SigningJobRevocationRecord& WithRevokedAt(const Aws::Utils::DateTime& value) { SetRevokedAt(value); return *this;}
-
-    /**
-     * <p>The time of revocation.</p>
-     */
     inline SigningJobRevocationRecord& WithRevokedAt(Aws::Utils::DateTime&& value) { SetRevokedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identity of the revoker.</p>
      */
     inline const Aws::String& GetRevokedBy() const{ return m_revokedBy; }
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline bool RevokedByHasBeenSet() const { return m_revokedByHasBeenSet; }
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline void SetRevokedBy(const Aws::String& value) { m_revokedByHasBeenSet = true; m_revokedBy = value; }
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline void SetRevokedBy(Aws::String&& value) { m_revokedByHasBeenSet = true; m_revokedBy = std::move(value); }
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline void SetRevokedBy(const char* value) { m_revokedByHasBeenSet = true; m_revokedBy.assign(value); }
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline SigningJobRevocationRecord& WithRevokedBy(const Aws::String& value) { SetRevokedBy(value); return *this;}
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline SigningJobRevocationRecord& WithRevokedBy(Aws::String&& value) { SetRevokedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The identity of the revoker.</p>
-     */
     inline SigningJobRevocationRecord& WithRevokedBy(const char* value) { SetRevokedBy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_reason;

@@ -39,61 +39,29 @@ namespace Model
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ValidationException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ValidationException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ValidationException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of ValidationException.</p>
      */
     inline const ValidationExceptionType& GetValidationExceptionType() const{ return m_validationExceptionType; }
-
-    /**
-     * <p>The type of ValidationException.</p>
-     */
     inline bool ValidationExceptionTypeHasBeenSet() const { return m_validationExceptionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of ValidationException.</p>
-     */
     inline void SetValidationExceptionType(const ValidationExceptionType& value) { m_validationExceptionTypeHasBeenSet = true; m_validationExceptionType = value; }
-
-    /**
-     * <p>The type of ValidationException.</p>
-     */
     inline void SetValidationExceptionType(ValidationExceptionType&& value) { m_validationExceptionTypeHasBeenSet = true; m_validationExceptionType = std::move(value); }
-
-    /**
-     * <p>The type of ValidationException.</p>
-     */
     inline ValidationException& WithValidationExceptionType(const ValidationExceptionType& value) { SetValidationExceptionType(value); return *this;}
-
-    /**
-     * <p>The type of ValidationException.</p>
-     */
     inline ValidationException& WithValidationExceptionType(ValidationExceptionType&& value) { SetValidationExceptionType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

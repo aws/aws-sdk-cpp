@@ -33,53 +33,27 @@ namespace Model
     AWS_SERVICEDISCOVERY_API GetOperationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that contains information about the operation.</p>
      */
     inline const Operation& GetOperation() const{ return m_operation; }
-
-    /**
-     * <p>A complex type that contains information about the operation.</p>
-     */
     inline void SetOperation(const Operation& value) { m_operation = value; }
-
-    /**
-     * <p>A complex type that contains information about the operation.</p>
-     */
     inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
-
-    /**
-     * <p>A complex type that contains information about the operation.</p>
-     */
     inline GetOperationResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-
-    /**
-     * <p>A complex type that contains information about the operation.</p>
-     */
     inline GetOperationResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetOperationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetOperationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetOperationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Operation m_operation;

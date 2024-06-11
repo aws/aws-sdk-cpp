@@ -38,95 +38,34 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The user pool ID for the user pool that the users are being imported
      * into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline StopUserImportJobRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline StopUserImportJobRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-
-    /**
-     * <p>The user pool ID for the user pool that the users are being imported
-     * into.</p>
-     */
     inline StopUserImportJobRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job ID for the user import job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline StopUserImportJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline StopUserImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job ID for the user import job.</p>
-     */
     inline StopUserImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userPoolId;

@@ -38,62 +38,21 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the configuration recorder to be deleted. You can retrieve the
      * name of your configuration recorder by using the
      * <code>DescribeConfigurationRecorders</code> action.</p>
      */
     inline const Aws::String& GetConfigurationRecorderName() const{ return m_configurationRecorderName; }
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline bool ConfigurationRecorderNameHasBeenSet() const { return m_configurationRecorderNameHasBeenSet; }
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline void SetConfigurationRecorderName(const Aws::String& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = value; }
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline void SetConfigurationRecorderName(Aws::String&& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = std::move(value); }
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline void SetConfigurationRecorderName(const char* value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName.assign(value); }
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline DeleteConfigurationRecorderRequest& WithConfigurationRecorderName(const Aws::String& value) { SetConfigurationRecorderName(value); return *this;}
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline DeleteConfigurationRecorderRequest& WithConfigurationRecorderName(Aws::String&& value) { SetConfigurationRecorderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the configuration recorder to be deleted. You can retrieve the
-     * name of your configuration recorder by using the
-     * <code>DescribeConfigurationRecorders</code> action.</p>
-     */
     inline DeleteConfigurationRecorderRequest& WithConfigurationRecorderName(const char* value) { SetConfigurationRecorderName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configurationRecorderName;

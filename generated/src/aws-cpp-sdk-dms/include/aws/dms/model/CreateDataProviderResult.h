@@ -33,53 +33,27 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API CreateDataProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The data provider that was created.</p>
      */
     inline const DataProvider& GetDataProvider() const{ return m_dataProvider; }
-
-    /**
-     * <p>The data provider that was created.</p>
-     */
     inline void SetDataProvider(const DataProvider& value) { m_dataProvider = value; }
-
-    /**
-     * <p>The data provider that was created.</p>
-     */
     inline void SetDataProvider(DataProvider&& value) { m_dataProvider = std::move(value); }
-
-    /**
-     * <p>The data provider that was created.</p>
-     */
     inline CreateDataProviderResult& WithDataProvider(const DataProvider& value) { SetDataProvider(value); return *this;}
-
-    /**
-     * <p>The data provider that was created.</p>
-     */
     inline CreateDataProviderResult& WithDataProvider(DataProvider&& value) { SetDataProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDataProviderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDataProviderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDataProviderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DataProvider m_dataProvider;

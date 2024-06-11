@@ -32,63 +32,29 @@ namespace Model
     AWS_CODESTAR_API DeleteUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-     */
     inline void SetUserArn(const Aws::String& value) { m_userArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-     */
     inline void SetUserArn(Aws::String&& value) { m_userArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-     */
     inline void SetUserArn(const char* value) { m_userArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-     */
     inline DeleteUserProfileResult& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-     */
     inline DeleteUserProfileResult& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user deleted from AWS CodeStar.</p>
-     */
     inline DeleteUserProfileResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteUserProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteUserProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteUserProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userArn;

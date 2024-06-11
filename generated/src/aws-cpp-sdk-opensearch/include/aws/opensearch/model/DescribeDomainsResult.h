@@ -40,63 +40,29 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API DescribeDomainsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the requested domains.</p>
      */
     inline const Aws::Vector<DomainStatus>& GetDomainStatusList() const{ return m_domainStatusList; }
-
-    /**
-     * <p>The status of the requested domains.</p>
-     */
     inline void SetDomainStatusList(const Aws::Vector<DomainStatus>& value) { m_domainStatusList = value; }
-
-    /**
-     * <p>The status of the requested domains.</p>
-     */
     inline void SetDomainStatusList(Aws::Vector<DomainStatus>&& value) { m_domainStatusList = std::move(value); }
-
-    /**
-     * <p>The status of the requested domains.</p>
-     */
     inline DescribeDomainsResult& WithDomainStatusList(const Aws::Vector<DomainStatus>& value) { SetDomainStatusList(value); return *this;}
-
-    /**
-     * <p>The status of the requested domains.</p>
-     */
     inline DescribeDomainsResult& WithDomainStatusList(Aws::Vector<DomainStatus>&& value) { SetDomainStatusList(std::move(value)); return *this;}
-
-    /**
-     * <p>The status of the requested domains.</p>
-     */
     inline DescribeDomainsResult& AddDomainStatusList(const DomainStatus& value) { m_domainStatusList.push_back(value); return *this; }
-
-    /**
-     * <p>The status of the requested domains.</p>
-     */
     inline DescribeDomainsResult& AddDomainStatusList(DomainStatus&& value) { m_domainStatusList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDomainsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDomainsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDomainsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DomainStatus> m_domainStatusList;

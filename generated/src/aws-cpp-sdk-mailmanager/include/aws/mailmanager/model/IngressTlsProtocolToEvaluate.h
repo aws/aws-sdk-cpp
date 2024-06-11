@@ -38,42 +38,18 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The enum type representing the allowed attribute types for the TLS
      * condition.</p>
      */
     inline const IngressTlsAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The enum type representing the allowed attribute types for the TLS
-     * condition.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The enum type representing the allowed attribute types for the TLS
-     * condition.</p>
-     */
     inline void SetAttribute(const IngressTlsAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The enum type representing the allowed attribute types for the TLS
-     * condition.</p>
-     */
     inline void SetAttribute(IngressTlsAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The enum type representing the allowed attribute types for the TLS
-     * condition.</p>
-     */
     inline IngressTlsProtocolToEvaluate& WithAttribute(const IngressTlsAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The enum type representing the allowed attribute types for the TLS
-     * condition.</p>
-     */
     inline IngressTlsProtocolToEvaluate& WithAttribute(IngressTlsAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IngressTlsAttribute m_attribute;

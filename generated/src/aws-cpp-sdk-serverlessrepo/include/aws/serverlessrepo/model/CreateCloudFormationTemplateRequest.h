@@ -32,47 +32,21 @@ namespace Model
     AWS_SERVERLESSAPPLICATIONREPOSITORY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline CreateCloudFormationTemplateRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline CreateCloudFormationTemplateRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the application.</p>
-     */
     inline CreateCloudFormationTemplateRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The semantic version of the application:</p><p>
  <a
@@ -80,63 +54,14 @@ namespace Model
  </p>
      */
     inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline CreateCloudFormationTemplateRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline CreateCloudFormationTemplateRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The semantic version of the application:</p><p>
- <a
-     * href="https://semver.org/">https://semver.org/</a>
- </p>
-     */
     inline CreateCloudFormationTemplateRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

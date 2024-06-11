@@ -39,96 +39,41 @@ namespace Model
     AWS_CLOUDFRONT_API GetDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The distribution's information.</p>
      */
     inline const Distribution& GetDistribution() const{ return m_distribution; }
-
-    /**
-     * <p>The distribution's information.</p>
-     */
     inline void SetDistribution(const Distribution& value) { m_distribution = value; }
-
-    /**
-     * <p>The distribution's information.</p>
-     */
     inline void SetDistribution(Distribution&& value) { m_distribution = std::move(value); }
-
-    /**
-     * <p>The distribution's information.</p>
-     */
     inline GetDistribution2020_05_31Result& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
-
-    /**
-     * <p>The distribution's information.</p>
-     */
     inline GetDistribution2020_05_31Result& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the distribution's information. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The current version of the distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The current version of the distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The current version of the distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The current version of the distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetDistribution2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The current version of the distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetDistribution2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The current version of the distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetDistribution2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetDistribution2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetDistribution2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetDistribution2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Distribution m_distribution;

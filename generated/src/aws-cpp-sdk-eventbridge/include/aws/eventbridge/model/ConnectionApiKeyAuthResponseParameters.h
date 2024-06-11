@@ -38,54 +38,20 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the header to use for the <code>APIKeyValue</code> used for
      * authorization.</p>
      */
     inline const Aws::String& GetApiKeyName() const{ return m_apiKeyName; }
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline bool ApiKeyNameHasBeenSet() const { return m_apiKeyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline void SetApiKeyName(const Aws::String& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = value; }
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline void SetApiKeyName(Aws::String&& value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName = std::move(value); }
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline void SetApiKeyName(const char* value) { m_apiKeyNameHasBeenSet = true; m_apiKeyName.assign(value); }
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline ConnectionApiKeyAuthResponseParameters& WithApiKeyName(const Aws::String& value) { SetApiKeyName(value); return *this;}
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline ConnectionApiKeyAuthResponseParameters& WithApiKeyName(Aws::String&& value) { SetApiKeyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the header to use for the <code>APIKeyValue</code> used for
-     * authorization.</p>
-     */
     inline ConnectionApiKeyAuthResponseParameters& WithApiKeyName(const char* value) { SetApiKeyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiKeyName;

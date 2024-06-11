@@ -39,46 +39,19 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>License entitlement usages.</p>
      */
     inline const Aws::Vector<EntitlementUsage>& GetEntitlementUsages() const{ return m_entitlementUsages; }
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline bool EntitlementUsagesHasBeenSet() const { return m_entitlementUsagesHasBeenSet; }
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline void SetEntitlementUsages(const Aws::Vector<EntitlementUsage>& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages = value; }
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline void SetEntitlementUsages(Aws::Vector<EntitlementUsage>&& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages = std::move(value); }
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline LicenseUsage& WithEntitlementUsages(const Aws::Vector<EntitlementUsage>& value) { SetEntitlementUsages(value); return *this;}
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline LicenseUsage& WithEntitlementUsages(Aws::Vector<EntitlementUsage>&& value) { SetEntitlementUsages(std::move(value)); return *this;}
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline LicenseUsage& AddEntitlementUsages(const EntitlementUsage& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages.push_back(value); return *this; }
-
-    /**
-     * <p>License entitlement usages.</p>
-     */
     inline LicenseUsage& AddEntitlementUsages(EntitlementUsage&& value) { m_entitlementUsagesHasBeenSet = true; m_entitlementUsages.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<EntitlementUsage> m_entitlementUsages;

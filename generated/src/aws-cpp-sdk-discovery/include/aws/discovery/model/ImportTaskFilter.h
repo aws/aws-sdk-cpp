@@ -42,100 +42,34 @@ namespace Model
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name, status, or import task ID for a specific import task.</p>
      */
     inline const ImportTaskFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name, status, or import task ID for a specific import task.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name, status, or import task ID for a specific import task.</p>
-     */
     inline void SetName(const ImportTaskFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name, status, or import task ID for a specific import task.</p>
-     */
     inline void SetName(ImportTaskFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name, status, or import task ID for a specific import task.</p>
-     */
     inline ImportTaskFilter& WithName(const ImportTaskFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name, status, or import task ID for a specific import task.</p>
-     */
     inline ImportTaskFilter& WithName(ImportTaskFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of strings that you can provide to match against a specific name,
      * status, or import task ID to filter the results for your import task
      * queries.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline ImportTaskFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline ImportTaskFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline ImportTaskFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline ImportTaskFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of strings that you can provide to match against a specific name,
-     * status, or import task ID to filter the results for your import task
-     * queries.</p>
-     */
     inline ImportTaskFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
+    ///@}
   private:
 
     ImportTaskFilterName m_name;

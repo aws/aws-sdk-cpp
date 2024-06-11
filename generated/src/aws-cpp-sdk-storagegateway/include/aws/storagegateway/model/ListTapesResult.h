@@ -41,28 +41,18 @@ namespace Model
     AWS_STORAGEGATEWAY_API ListTapesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::Vector<TapeInfo>& GetTapeInfos() const{ return m_tapeInfos; }
-
-    
     inline void SetTapeInfos(const Aws::Vector<TapeInfo>& value) { m_tapeInfos = value; }
-
-    
     inline void SetTapeInfos(Aws::Vector<TapeInfo>&& value) { m_tapeInfos = std::move(value); }
-
-    
     inline ListTapesResult& WithTapeInfos(const Aws::Vector<TapeInfo>& value) { SetTapeInfos(value); return *this;}
-
-    
     inline ListTapesResult& WithTapeInfos(Aws::Vector<TapeInfo>&& value) { SetTapeInfos(std::move(value)); return *this;}
-
-    
     inline ListTapesResult& AddTapeInfos(const TapeInfo& value) { m_tapeInfos.push_back(value); return *this; }
-
-    
     inline ListTapesResult& AddTapeInfos(TapeInfo&& value) { m_tapeInfos.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string that indicates the position at which to begin returning the next
      * list of tapes. Use the marker in your next request to continue pagination of
@@ -70,77 +60,24 @@ namespace Model
      * response body.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>A string that indicates the position at which to begin returning the next
-     * list of tapes. Use the marker in your next request to continue pagination of
-     * tapes. If there are no more tapes to list, this element does not appear in the
-     * response body.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>A string that indicates the position at which to begin returning the next
-     * list of tapes. Use the marker in your next request to continue pagination of
-     * tapes. If there are no more tapes to list, this element does not appear in the
-     * response body.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>A string that indicates the position at which to begin returning the next
-     * list of tapes. Use the marker in your next request to continue pagination of
-     * tapes. If there are no more tapes to list, this element does not appear in the
-     * response body.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>A string that indicates the position at which to begin returning the next
-     * list of tapes. Use the marker in your next request to continue pagination of
-     * tapes. If there are no more tapes to list, this element does not appear in the
-     * response body.</p>
-     */
     inline ListTapesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>A string that indicates the position at which to begin returning the next
-     * list of tapes. Use the marker in your next request to continue pagination of
-     * tapes. If there are no more tapes to list, this element does not appear in the
-     * response body.</p>
-     */
     inline ListTapesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that indicates the position at which to begin returning the next
-     * list of tapes. Use the marker in your next request to continue pagination of
-     * tapes. If there are no more tapes to list, this element does not appear in the
-     * response body.</p>
-     */
     inline ListTapesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTapesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTapesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTapesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<TapeInfo> m_tapeInfos;

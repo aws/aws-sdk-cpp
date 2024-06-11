@@ -33,69 +33,36 @@ namespace Model
     AWS_QUICKSIGHT_API DescribeDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The information on the data source.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>The information on the data source.</p>
-     */
     inline void SetDataSource(const DataSource& value) { m_dataSource = value; }
-
-    /**
-     * <p>The information on the data source.</p>
-     */
     inline void SetDataSource(DataSource&& value) { m_dataSource = std::move(value); }
-
-    /**
-     * <p>The information on the data source.</p>
-     */
     inline DescribeDataSourceResult& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>The information on the data source.</p>
-     */
     inline DescribeDataSourceResult& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDataSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDataSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDataSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline DescribeDataSourceResult& WithStatus(int value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     DataSource m_dataSource;

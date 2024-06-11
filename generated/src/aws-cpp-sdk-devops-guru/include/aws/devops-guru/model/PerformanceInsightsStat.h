@@ -38,67 +38,29 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The statistic type.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline PerformanceInsightsStat& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline PerformanceInsightsStat& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The statistic type.</p>
-     */
     inline PerformanceInsightsStat& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the statistic.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the statistic.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the statistic.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the statistic.</p>
-     */
     inline PerformanceInsightsStat& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

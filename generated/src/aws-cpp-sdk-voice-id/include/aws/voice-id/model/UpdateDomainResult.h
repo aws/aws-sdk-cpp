@@ -33,53 +33,27 @@ namespace Model
     AWS_VOICEID_API UpdateDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the updated domain</p>
      */
     inline const Domain& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>Details about the updated domain</p>
-     */
     inline void SetDomain(const Domain& value) { m_domain = value; }
-
-    /**
-     * <p>Details about the updated domain</p>
-     */
     inline void SetDomain(Domain&& value) { m_domain = std::move(value); }
-
-    /**
-     * <p>Details about the updated domain</p>
-     */
     inline UpdateDomainResult& WithDomain(const Domain& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>Details about the updated domain</p>
-     */
     inline UpdateDomainResult& WithDomain(Domain&& value) { SetDomain(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Domain m_domain;

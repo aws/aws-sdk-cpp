@@ -51,6 +51,7 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The status of the account gate function.</p> <ul> <li> <p>
      * <code>SUCCEEDED</code>: The account gate function has determined that the
@@ -74,176 +75,27 @@ namespace Model
      * </li> </ul> </li> </ul>
      */
     inline const AccountGateStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the account gate function.</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The account gate function has determined that the
-     * account and Region passes any requirements for a stack set operation to occur.
-     * CloudFormation proceeds with the stack operation in that account and Region.</p>
-     * </li> <li> <p> <code>FAILED</code>: The account gate function has determined
-     * that the account and Region doesn't meet the requirements for a stack set
-     * operation to occur. CloudFormation cancels the stack set operation in that
-     * account and Region, and sets the stack set operation result status for that
-     * account and Region to <code>FAILED</code>.</p> </li> <li> <p>
-     * <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-     * function for this account and Region, for one of the following reasons:</p> <ul>
-     * <li> <p>An account gate function hasn't been specified for the account and
-     * Region. CloudFormation proceeds with the stack set operation in this account and
-     * Region.</p> </li> <li> <p>The
-     * <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-     * administration account lacks permissions to invoke the function. CloudFormation
-     * proceeds with the stack set operation in this account and Region.</p> </li> <li>
-     * <p>Either no action is necessary, or no action is possible, on the stack.
-     * CloudFormation skips the stack set operation in this account and Region.</p>
-     * </li> </ul> </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the account gate function.</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The account gate function has determined that the
-     * account and Region passes any requirements for a stack set operation to occur.
-     * CloudFormation proceeds with the stack operation in that account and Region.</p>
-     * </li> <li> <p> <code>FAILED</code>: The account gate function has determined
-     * that the account and Region doesn't meet the requirements for a stack set
-     * operation to occur. CloudFormation cancels the stack set operation in that
-     * account and Region, and sets the stack set operation result status for that
-     * account and Region to <code>FAILED</code>.</p> </li> <li> <p>
-     * <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-     * function for this account and Region, for one of the following reasons:</p> <ul>
-     * <li> <p>An account gate function hasn't been specified for the account and
-     * Region. CloudFormation proceeds with the stack set operation in this account and
-     * Region.</p> </li> <li> <p>The
-     * <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-     * administration account lacks permissions to invoke the function. CloudFormation
-     * proceeds with the stack set operation in this account and Region.</p> </li> <li>
-     * <p>Either no action is necessary, or no action is possible, on the stack.
-     * CloudFormation skips the stack set operation in this account and Region.</p>
-     * </li> </ul> </li> </ul>
-     */
     inline void SetStatus(const AccountGateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the account gate function.</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The account gate function has determined that the
-     * account and Region passes any requirements for a stack set operation to occur.
-     * CloudFormation proceeds with the stack operation in that account and Region.</p>
-     * </li> <li> <p> <code>FAILED</code>: The account gate function has determined
-     * that the account and Region doesn't meet the requirements for a stack set
-     * operation to occur. CloudFormation cancels the stack set operation in that
-     * account and Region, and sets the stack set operation result status for that
-     * account and Region to <code>FAILED</code>.</p> </li> <li> <p>
-     * <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-     * function for this account and Region, for one of the following reasons:</p> <ul>
-     * <li> <p>An account gate function hasn't been specified for the account and
-     * Region. CloudFormation proceeds with the stack set operation in this account and
-     * Region.</p> </li> <li> <p>The
-     * <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-     * administration account lacks permissions to invoke the function. CloudFormation
-     * proceeds with the stack set operation in this account and Region.</p> </li> <li>
-     * <p>Either no action is necessary, or no action is possible, on the stack.
-     * CloudFormation skips the stack set operation in this account and Region.</p>
-     * </li> </ul> </li> </ul>
-     */
     inline void SetStatus(AccountGateStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the account gate function.</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The account gate function has determined that the
-     * account and Region passes any requirements for a stack set operation to occur.
-     * CloudFormation proceeds with the stack operation in that account and Region.</p>
-     * </li> <li> <p> <code>FAILED</code>: The account gate function has determined
-     * that the account and Region doesn't meet the requirements for a stack set
-     * operation to occur. CloudFormation cancels the stack set operation in that
-     * account and Region, and sets the stack set operation result status for that
-     * account and Region to <code>FAILED</code>.</p> </li> <li> <p>
-     * <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-     * function for this account and Region, for one of the following reasons:</p> <ul>
-     * <li> <p>An account gate function hasn't been specified for the account and
-     * Region. CloudFormation proceeds with the stack set operation in this account and
-     * Region.</p> </li> <li> <p>The
-     * <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-     * administration account lacks permissions to invoke the function. CloudFormation
-     * proceeds with the stack set operation in this account and Region.</p> </li> <li>
-     * <p>Either no action is necessary, or no action is possible, on the stack.
-     * CloudFormation skips the stack set operation in this account and Region.</p>
-     * </li> </ul> </li> </ul>
-     */
     inline AccountGateResult& WithStatus(const AccountGateStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the account gate function.</p> <ul> <li> <p>
-     * <code>SUCCEEDED</code>: The account gate function has determined that the
-     * account and Region passes any requirements for a stack set operation to occur.
-     * CloudFormation proceeds with the stack operation in that account and Region.</p>
-     * </li> <li> <p> <code>FAILED</code>: The account gate function has determined
-     * that the account and Region doesn't meet the requirements for a stack set
-     * operation to occur. CloudFormation cancels the stack set operation in that
-     * account and Region, and sets the stack set operation result status for that
-     * account and Region to <code>FAILED</code>.</p> </li> <li> <p>
-     * <code>SKIPPED</code>: CloudFormation has skipped calling the account gate
-     * function for this account and Region, for one of the following reasons:</p> <ul>
-     * <li> <p>An account gate function hasn't been specified for the account and
-     * Region. CloudFormation proceeds with the stack set operation in this account and
-     * Region.</p> </li> <li> <p>The
-     * <code>AWSCloudFormationStackSetExecutionRole</code> of the stack set
-     * administration account lacks permissions to invoke the function. CloudFormation
-     * proceeds with the stack set operation in this account and Region.</p> </li> <li>
-     * <p>Either no action is necessary, or no action is possible, on the stack.
-     * CloudFormation skips the stack set operation in this account and Region.</p>
-     * </li> </ul> </li> </ul>
-     */
     inline AccountGateResult& WithStatus(AccountGateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the account gate status assigned to this account and Region
      * for the stack set operation.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline AccountGateResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline AccountGateResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the account gate status assigned to this account and Region
-     * for the stack set operation.</p>
-     */
     inline AccountGateResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
-
+    ///@}
   private:
 
     AccountGateStatus m_status;

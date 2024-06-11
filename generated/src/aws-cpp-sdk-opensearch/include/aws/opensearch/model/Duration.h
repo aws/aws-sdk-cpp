@@ -39,57 +39,27 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Integer to specify the value of a maintenance schedule duration.</p>
      */
     inline long long GetValue() const{ return m_value; }
-
-    /**
-     * <p>Integer to specify the value of a maintenance schedule duration.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Integer to specify the value of a maintenance schedule duration.</p>
-     */
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Integer to specify the value of a maintenance schedule duration.</p>
-     */
     inline Duration& WithValue(long long value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unit of measurement for the duration of a maintenance schedule.</p>
      */
     inline const TimeUnit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The unit of measurement for the duration of a maintenance schedule.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The unit of measurement for the duration of a maintenance schedule.</p>
-     */
     inline void SetUnit(const TimeUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The unit of measurement for the duration of a maintenance schedule.</p>
-     */
     inline void SetUnit(TimeUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The unit of measurement for the duration of a maintenance schedule.</p>
-     */
     inline Duration& WithUnit(const TimeUnit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The unit of measurement for the duration of a maintenance schedule.</p>
-     */
     inline Duration& WithUnit(TimeUnit&& value) { SetUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_value;

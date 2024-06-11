@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API StartModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current running status of the model.</p>
      */
     inline const ModelHostingStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current running status of the model.</p>
-     */
     inline void SetStatus(const ModelHostingStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current running status of the model.</p>
-     */
     inline void SetStatus(ModelHostingStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current running status of the model.</p>
-     */
     inline StartModelResult& WithStatus(const ModelHostingStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current running status of the model.</p>
-     */
     inline StartModelResult& WithStatus(ModelHostingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ModelHostingStatus m_status;

@@ -33,53 +33,27 @@ namespace Model
     AWS_PROTON_API DeleteComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The detailed data of the component being deleted.</p>
      */
     inline const Component& GetComponent() const{ return m_component; }
-
-    /**
-     * <p>The detailed data of the component being deleted.</p>
-     */
     inline void SetComponent(const Component& value) { m_component = value; }
-
-    /**
-     * <p>The detailed data of the component being deleted.</p>
-     */
     inline void SetComponent(Component&& value) { m_component = std::move(value); }
-
-    /**
-     * <p>The detailed data of the component being deleted.</p>
-     */
     inline DeleteComponentResult& WithComponent(const Component& value) { SetComponent(value); return *this;}
-
-    /**
-     * <p>The detailed data of the component being deleted.</p>
-     */
     inline DeleteComponentResult& WithComponent(Component&& value) { SetComponent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Component m_component;

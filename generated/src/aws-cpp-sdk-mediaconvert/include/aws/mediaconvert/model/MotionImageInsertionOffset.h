@@ -36,55 +36,27 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Set the distance, in pixels, between the overlay and the left edge of the video
      * frame.
      */
     inline int GetImageX() const{ return m_imageX; }
-
-    /**
-     * Set the distance, in pixels, between the overlay and the left edge of the video
-     * frame.
-     */
     inline bool ImageXHasBeenSet() const { return m_imageXHasBeenSet; }
-
-    /**
-     * Set the distance, in pixels, between the overlay and the left edge of the video
-     * frame.
-     */
     inline void SetImageX(int value) { m_imageXHasBeenSet = true; m_imageX = value; }
-
-    /**
-     * Set the distance, in pixels, between the overlay and the left edge of the video
-     * frame.
-     */
     inline MotionImageInsertionOffset& WithImageX(int value) { SetImageX(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Set the distance, in pixels, between the overlay and the top edge of the video
      * frame.
      */
     inline int GetImageY() const{ return m_imageY; }
-
-    /**
-     * Set the distance, in pixels, between the overlay and the top edge of the video
-     * frame.
-     */
     inline bool ImageYHasBeenSet() const { return m_imageYHasBeenSet; }
-
-    /**
-     * Set the distance, in pixels, between the overlay and the top edge of the video
-     * frame.
-     */
     inline void SetImageY(int value) { m_imageYHasBeenSet = true; m_imageY = value; }
-
-    /**
-     * Set the distance, in pixels, between the overlay and the top edge of the video
-     * frame.
-     */
     inline MotionImageInsertionOffset& WithImageY(int value) { SetImageY(value); return *this;}
-
+    ///@}
   private:
 
     int m_imageX;

@@ -32,70 +32,30 @@ namespace Model
     AWS_DAX_API DeleteSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A user-specified message for this action (i.e., a reason for deleting the
      * subnet group).</p>
      */
     inline const Aws::String& GetDeletionMessage() const{ return m_deletionMessage; }
-
-    /**
-     * <p>A user-specified message for this action (i.e., a reason for deleting the
-     * subnet group).</p>
-     */
     inline void SetDeletionMessage(const Aws::String& value) { m_deletionMessage = value; }
-
-    /**
-     * <p>A user-specified message for this action (i.e., a reason for deleting the
-     * subnet group).</p>
-     */
     inline void SetDeletionMessage(Aws::String&& value) { m_deletionMessage = std::move(value); }
-
-    /**
-     * <p>A user-specified message for this action (i.e., a reason for deleting the
-     * subnet group).</p>
-     */
     inline void SetDeletionMessage(const char* value) { m_deletionMessage.assign(value); }
-
-    /**
-     * <p>A user-specified message for this action (i.e., a reason for deleting the
-     * subnet group).</p>
-     */
     inline DeleteSubnetGroupResult& WithDeletionMessage(const Aws::String& value) { SetDeletionMessage(value); return *this;}
-
-    /**
-     * <p>A user-specified message for this action (i.e., a reason for deleting the
-     * subnet group).</p>
-     */
     inline DeleteSubnetGroupResult& WithDeletionMessage(Aws::String&& value) { SetDeletionMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-specified message for this action (i.e., a reason for deleting the
-     * subnet group).</p>
-     */
     inline DeleteSubnetGroupResult& WithDeletionMessage(const char* value) { SetDeletionMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteSubnetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteSubnetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteSubnetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deletionMessage;

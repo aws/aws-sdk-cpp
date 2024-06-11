@@ -43,99 +43,34 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string that contains an <code>Event</code> message describing changes or
      * errors when you update an accelerator in Global Accelerator from IPv4 to
      * dual-stack, or dual-stack to IPv4.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline AcceleratorEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline AcceleratorEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A string that contains an <code>Event</code> message describing changes or
-     * errors when you update an accelerator in Global Accelerator from IPv4 to
-     * dual-stack, or dual-stack to IPv4.</p>
-     */
     inline AcceleratorEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp for when you update an accelerator in Global Accelerator from
      * IPv4 to dual-stack, or dual-stack to IPv4.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>A timestamp for when you update an accelerator in Global Accelerator from
-     * IPv4 to dual-stack, or dual-stack to IPv4.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>A timestamp for when you update an accelerator in Global Accelerator from
-     * IPv4 to dual-stack, or dual-stack to IPv4.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>A timestamp for when you update an accelerator in Global Accelerator from
-     * IPv4 to dual-stack, or dual-stack to IPv4.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>A timestamp for when you update an accelerator in Global Accelerator from
-     * IPv4 to dual-stack, or dual-stack to IPv4.</p>
-     */
     inline AcceleratorEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>A timestamp for when you update an accelerator in Global Accelerator from
-     * IPv4 to dual-stack, or dual-stack to IPv4.</p>
-     */
     inline AcceleratorEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

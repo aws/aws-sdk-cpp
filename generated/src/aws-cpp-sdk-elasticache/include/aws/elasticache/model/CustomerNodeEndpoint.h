@@ -40,67 +40,29 @@ namespace Model
     AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The address of the node endpoint</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline CustomerNodeEndpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline CustomerNodeEndpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The address of the node endpoint</p>
-     */
     inline CustomerNodeEndpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port of the node endpoint</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port of the node endpoint</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port of the node endpoint</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port of the node endpoint</p>
-     */
     inline CustomerNodeEndpoint& WithPort(int value) { SetPort(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_address;

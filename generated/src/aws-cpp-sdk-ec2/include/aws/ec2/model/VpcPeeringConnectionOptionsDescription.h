@@ -37,72 +37,36 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP
      * addresses when queried from instances in a peer VPC.</p>
      */
     inline bool GetAllowDnsResolutionFromRemoteVpc() const{ return m_allowDnsResolutionFromRemoteVpc; }
-
-    /**
-     * <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP
-     * addresses when queried from instances in a peer VPC.</p>
-     */
     inline bool AllowDnsResolutionFromRemoteVpcHasBeenSet() const { return m_allowDnsResolutionFromRemoteVpcHasBeenSet; }
-
-    /**
-     * <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP
-     * addresses when queried from instances in a peer VPC.</p>
-     */
     inline void SetAllowDnsResolutionFromRemoteVpc(bool value) { m_allowDnsResolutionFromRemoteVpcHasBeenSet = true; m_allowDnsResolutionFromRemoteVpc = value; }
-
-    /**
-     * <p>Indicates whether a local VPC can resolve public DNS hostnames to private IP
-     * addresses when queried from instances in a peer VPC.</p>
-     */
     inline VpcPeeringConnectionOptionsDescription& WithAllowDnsResolutionFromRemoteVpc(bool value) { SetAllowDnsResolutionFromRemoteVpc(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Deprecated.</p>
      */
     inline bool GetAllowEgressFromLocalClassicLinkToRemoteVpc() const{ return m_allowEgressFromLocalClassicLinkToRemoteVpc; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline bool AllowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet() const { return m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline void SetAllowEgressFromLocalClassicLinkToRemoteVpc(bool value) { m_allowEgressFromLocalClassicLinkToRemoteVpcHasBeenSet = true; m_allowEgressFromLocalClassicLinkToRemoteVpc = value; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline VpcPeeringConnectionOptionsDescription& WithAllowEgressFromLocalClassicLinkToRemoteVpc(bool value) { SetAllowEgressFromLocalClassicLinkToRemoteVpc(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Deprecated.</p>
      */
     inline bool GetAllowEgressFromLocalVpcToRemoteClassicLink() const{ return m_allowEgressFromLocalVpcToRemoteClassicLink; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline bool AllowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet() const { return m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline void SetAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { m_allowEgressFromLocalVpcToRemoteClassicLinkHasBeenSet = true; m_allowEgressFromLocalVpcToRemoteClassicLink = value; }
-
-    /**
-     * <p>Deprecated.</p>
-     */
     inline VpcPeeringConnectionOptionsDescription& WithAllowEgressFromLocalVpcToRemoteClassicLink(bool value) { SetAllowEgressFromLocalVpcToRemoteClassicLink(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowDnsResolutionFromRemoteVpc;

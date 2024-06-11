@@ -40,129 +40,53 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The environment a session starts on.</p>
      */
     inline const AssignedEnvironmentEnterSessionActionDefinition& GetEnvEnter() const{ return m_envEnter; }
-
-    /**
-     * <p>The environment a session starts on.</p>
-     */
     inline bool EnvEnterHasBeenSet() const { return m_envEnterHasBeenSet; }
-
-    /**
-     * <p>The environment a session starts on.</p>
-     */
     inline void SetEnvEnter(const AssignedEnvironmentEnterSessionActionDefinition& value) { m_envEnterHasBeenSet = true; m_envEnter = value; }
-
-    /**
-     * <p>The environment a session starts on.</p>
-     */
     inline void SetEnvEnter(AssignedEnvironmentEnterSessionActionDefinition&& value) { m_envEnterHasBeenSet = true; m_envEnter = std::move(value); }
-
-    /**
-     * <p>The environment a session starts on.</p>
-     */
     inline AssignedSessionActionDefinition& WithEnvEnter(const AssignedEnvironmentEnterSessionActionDefinition& value) { SetEnvEnter(value); return *this;}
-
-    /**
-     * <p>The environment a session starts on.</p>
-     */
     inline AssignedSessionActionDefinition& WithEnvEnter(AssignedEnvironmentEnterSessionActionDefinition&& value) { SetEnvEnter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The environment a session exits from.</p>
      */
     inline const AssignedEnvironmentExitSessionActionDefinition& GetEnvExit() const{ return m_envExit; }
-
-    /**
-     * <p>The environment a session exits from.</p>
-     */
     inline bool EnvExitHasBeenSet() const { return m_envExitHasBeenSet; }
-
-    /**
-     * <p>The environment a session exits from.</p>
-     */
     inline void SetEnvExit(const AssignedEnvironmentExitSessionActionDefinition& value) { m_envExitHasBeenSet = true; m_envExit = value; }
-
-    /**
-     * <p>The environment a session exits from.</p>
-     */
     inline void SetEnvExit(AssignedEnvironmentExitSessionActionDefinition&& value) { m_envExitHasBeenSet = true; m_envExit = std::move(value); }
-
-    /**
-     * <p>The environment a session exits from.</p>
-     */
     inline AssignedSessionActionDefinition& WithEnvExit(const AssignedEnvironmentExitSessionActionDefinition& value) { SetEnvExit(value); return *this;}
-
-    /**
-     * <p>The environment a session exits from.</p>
-     */
     inline AssignedSessionActionDefinition& WithEnvExit(AssignedEnvironmentExitSessionActionDefinition&& value) { SetEnvExit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The job attachment to sync with an assigned session action.</p>
      */
     inline const AssignedSyncInputJobAttachmentsSessionActionDefinition& GetSyncInputJobAttachments() const{ return m_syncInputJobAttachments; }
-
-    /**
-     * <p>The job attachment to sync with an assigned session action.</p>
-     */
     inline bool SyncInputJobAttachmentsHasBeenSet() const { return m_syncInputJobAttachmentsHasBeenSet; }
-
-    /**
-     * <p>The job attachment to sync with an assigned session action.</p>
-     */
     inline void SetSyncInputJobAttachments(const AssignedSyncInputJobAttachmentsSessionActionDefinition& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = value; }
-
-    /**
-     * <p>The job attachment to sync with an assigned session action.</p>
-     */
     inline void SetSyncInputJobAttachments(AssignedSyncInputJobAttachmentsSessionActionDefinition&& value) { m_syncInputJobAttachmentsHasBeenSet = true; m_syncInputJobAttachments = std::move(value); }
-
-    /**
-     * <p>The job attachment to sync with an assigned session action.</p>
-     */
     inline AssignedSessionActionDefinition& WithSyncInputJobAttachments(const AssignedSyncInputJobAttachmentsSessionActionDefinition& value) { SetSyncInputJobAttachments(value); return *this;}
-
-    /**
-     * <p>The job attachment to sync with an assigned session action.</p>
-     */
     inline AssignedSessionActionDefinition& WithSyncInputJobAttachments(AssignedSyncInputJobAttachmentsSessionActionDefinition&& value) { SetSyncInputJobAttachments(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The task run.</p>
      */
     inline const AssignedTaskRunSessionActionDefinition& GetTaskRun() const{ return m_taskRun; }
-
-    /**
-     * <p>The task run.</p>
-     */
     inline bool TaskRunHasBeenSet() const { return m_taskRunHasBeenSet; }
-
-    /**
-     * <p>The task run.</p>
-     */
     inline void SetTaskRun(const AssignedTaskRunSessionActionDefinition& value) { m_taskRunHasBeenSet = true; m_taskRun = value; }
-
-    /**
-     * <p>The task run.</p>
-     */
     inline void SetTaskRun(AssignedTaskRunSessionActionDefinition&& value) { m_taskRunHasBeenSet = true; m_taskRun = std::move(value); }
-
-    /**
-     * <p>The task run.</p>
-     */
     inline AssignedSessionActionDefinition& WithTaskRun(const AssignedTaskRunSessionActionDefinition& value) { SetTaskRun(value); return *this;}
-
-    /**
-     * <p>The task run.</p>
-     */
     inline AssignedSessionActionDefinition& WithTaskRun(AssignedTaskRunSessionActionDefinition&& value) { SetTaskRun(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AssignedEnvironmentEnterSessionActionDefinition m_envEnter;

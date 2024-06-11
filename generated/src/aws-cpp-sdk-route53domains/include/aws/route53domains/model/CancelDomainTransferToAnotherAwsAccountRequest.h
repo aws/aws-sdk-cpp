@@ -38,54 +38,20 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the domain for which you want to cancel the transfer to another
      * Amazon Web Services account.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline CancelDomainTransferToAnotherAwsAccountRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline CancelDomainTransferToAnotherAwsAccountRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain for which you want to cancel the transfer to another
-     * Amazon Web Services account.</p>
-     */
     inline CancelDomainTransferToAnotherAwsAccountRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

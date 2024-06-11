@@ -32,63 +32,29 @@ namespace Model
     AWS_CHIMESDKIDENTITY_API CreateAppInstanceUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The user's ARN.</p>
      */
     inline const Aws::String& GetAppInstanceUserArn() const{ return m_appInstanceUserArn; }
-
-    /**
-     * <p>The user's ARN.</p>
-     */
     inline void SetAppInstanceUserArn(const Aws::String& value) { m_appInstanceUserArn = value; }
-
-    /**
-     * <p>The user's ARN.</p>
-     */
     inline void SetAppInstanceUserArn(Aws::String&& value) { m_appInstanceUserArn = std::move(value); }
-
-    /**
-     * <p>The user's ARN.</p>
-     */
     inline void SetAppInstanceUserArn(const char* value) { m_appInstanceUserArn.assign(value); }
-
-    /**
-     * <p>The user's ARN.</p>
-     */
     inline CreateAppInstanceUserResult& WithAppInstanceUserArn(const Aws::String& value) { SetAppInstanceUserArn(value); return *this;}
-
-    /**
-     * <p>The user's ARN.</p>
-     */
     inline CreateAppInstanceUserResult& WithAppInstanceUserArn(Aws::String&& value) { SetAppInstanceUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The user's ARN.</p>
-     */
     inline CreateAppInstanceUserResult& WithAppInstanceUserArn(const char* value) { SetAppInstanceUserArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAppInstanceUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAppInstanceUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAppInstanceUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_appInstanceUserArn;

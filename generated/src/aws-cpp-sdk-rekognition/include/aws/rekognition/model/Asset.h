@@ -39,24 +39,15 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const GroundTruthManifest& GetGroundTruthManifest() const{ return m_groundTruthManifest; }
-
-    
     inline bool GroundTruthManifestHasBeenSet() const { return m_groundTruthManifestHasBeenSet; }
-
-    
     inline void SetGroundTruthManifest(const GroundTruthManifest& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = value; }
-
-    
     inline void SetGroundTruthManifest(GroundTruthManifest&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::move(value); }
-
-    
     inline Asset& WithGroundTruthManifest(const GroundTruthManifest& value) { SetGroundTruthManifest(value); return *this;}
-
-    
     inline Asset& WithGroundTruthManifest(GroundTruthManifest&& value) { SetGroundTruthManifest(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GroundTruthManifest m_groundTruthManifest;

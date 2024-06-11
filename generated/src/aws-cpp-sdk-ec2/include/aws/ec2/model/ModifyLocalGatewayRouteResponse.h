@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API ModifyLocalGatewayRouteResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the local gateway route table.</p>
      */
     inline const LocalGatewayRoute& GetRoute() const{ return m_route; }
-
-    /**
-     * <p>Information about the local gateway route table.</p>
-     */
     inline void SetRoute(const LocalGatewayRoute& value) { m_route = value; }
-
-    /**
-     * <p>Information about the local gateway route table.</p>
-     */
     inline void SetRoute(LocalGatewayRoute&& value) { m_route = std::move(value); }
-
-    /**
-     * <p>Information about the local gateway route table.</p>
-     */
     inline ModifyLocalGatewayRouteResponse& WithRoute(const LocalGatewayRoute& value) { SetRoute(value); return *this;}
-
-    /**
-     * <p>Information about the local gateway route table.</p>
-     */
     inline ModifyLocalGatewayRouteResponse& WithRoute(LocalGatewayRoute&& value) { SetRoute(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ModifyLocalGatewayRouteResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ModifyLocalGatewayRouteResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LocalGatewayRoute m_route;

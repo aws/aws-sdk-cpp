@@ -41,141 +41,55 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time at which the configuration change is made on the pipeline.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The time at which the configuration change is made on the pipeline.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The time at which the configuration change is made on the pipeline.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The time at which the configuration change is made on the pipeline.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The time at which the configuration change is made on the pipeline.</p>
-     */
     inline ChangeProgressStatus& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The time at which the configuration change is made on the pipeline.</p>
-     */
     inline ChangeProgressStatus& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The overall status of the pipeline configuration change.</p>
      */
     inline const ChangeProgressStatuses& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The overall status of the pipeline configuration change.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The overall status of the pipeline configuration change.</p>
-     */
     inline void SetStatus(const ChangeProgressStatuses& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The overall status of the pipeline configuration change.</p>
-     */
     inline void SetStatus(ChangeProgressStatuses&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The overall status of the pipeline configuration change.</p>
-     */
     inline ChangeProgressStatus& WithStatus(const ChangeProgressStatuses& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The overall status of the pipeline configuration change.</p>
-     */
     inline ChangeProgressStatus& WithStatus(ChangeProgressStatuses&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of stages required for the pipeline configuration
      * change.</p>
      */
     inline int GetTotalNumberOfStages() const{ return m_totalNumberOfStages; }
-
-    /**
-     * <p>The total number of stages required for the pipeline configuration
-     * change.</p>
-     */
     inline bool TotalNumberOfStagesHasBeenSet() const { return m_totalNumberOfStagesHasBeenSet; }
-
-    /**
-     * <p>The total number of stages required for the pipeline configuration
-     * change.</p>
-     */
     inline void SetTotalNumberOfStages(int value) { m_totalNumberOfStagesHasBeenSet = true; m_totalNumberOfStages = value; }
-
-    /**
-     * <p>The total number of stages required for the pipeline configuration
-     * change.</p>
-     */
     inline ChangeProgressStatus& WithTotalNumberOfStages(int value) { SetTotalNumberOfStages(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the stages that the pipeline is going through to perform
      * the configuration change.</p>
      */
     inline const Aws::Vector<ChangeProgressStage>& GetChangeProgressStages() const{ return m_changeProgressStages; }
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline bool ChangeProgressStagesHasBeenSet() const { return m_changeProgressStagesHasBeenSet; }
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline void SetChangeProgressStages(const Aws::Vector<ChangeProgressStage>& value) { m_changeProgressStagesHasBeenSet = true; m_changeProgressStages = value; }
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline void SetChangeProgressStages(Aws::Vector<ChangeProgressStage>&& value) { m_changeProgressStagesHasBeenSet = true; m_changeProgressStages = std::move(value); }
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline ChangeProgressStatus& WithChangeProgressStages(const Aws::Vector<ChangeProgressStage>& value) { SetChangeProgressStages(value); return *this;}
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline ChangeProgressStatus& WithChangeProgressStages(Aws::Vector<ChangeProgressStage>&& value) { SetChangeProgressStages(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline ChangeProgressStatus& AddChangeProgressStages(const ChangeProgressStage& value) { m_changeProgressStagesHasBeenSet = true; m_changeProgressStages.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the stages that the pipeline is going through to perform
-     * the configuration change.</p>
-     */
     inline ChangeProgressStatus& AddChangeProgressStages(ChangeProgressStage&& value) { m_changeProgressStagesHasBeenSet = true; m_changeProgressStages.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime;

@@ -27,41 +27,18 @@ namespace Model
     AWS_SAGEMAKERRUNTIME_API PayloadPart() = default;
     AWS_SAGEMAKERRUNTIME_API PayloadPart(Aws::Vector<unsigned char>&& value) { m_bytes = std::move(value); }
 
+    ///@{
     /**
      * <p>A blob that contains part of the response for your streaming inference
      * request.</p>
      */
     inline const Aws::Vector<unsigned char>& GetBytes() const { return m_bytes; }
-
-    /**
-     * <p>A blob that contains part of the response for your streaming inference
-     * request.</p>
-     */
     inline Aws::Vector<unsigned char>&& GetBytesWithOwnership() { return std::move(m_bytes); }
-
-    /**
-     * <p>A blob that contains part of the response for your streaming inference
-     * request.</p>
-     */
     inline void SetBytes(const Aws::Vector<unsigned char>& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-
-    /**
-     * <p>A blob that contains part of the response for your streaming inference
-     * request.</p>
-     */
     inline void SetBytes(Aws::Vector<unsigned char>&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-
-    /**
-     * <p>A blob that contains part of the response for your streaming inference
-     * request.</p>
-     */
     inline PayloadPart& WithBytes(const Aws::Vector<unsigned char>& value) { SetBytes(value); return *this;}
-
-    /**
-     * <p>A blob that contains part of the response for your streaming inference
-     * request.</p>
-     */
     inline PayloadPart& WithBytes(Aws::Vector<unsigned char>&& value) { SetBytes(std::move(value)); return *this;}
+    ///@}
 
   private:
 

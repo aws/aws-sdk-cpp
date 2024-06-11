@@ -34,113 +34,44 @@ namespace Model
     AWS_DIRECTORYSERVICE_API ListIpRoutesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of <a>IpRoute</a>s.</p>
      */
     inline const Aws::Vector<IpRouteInfo>& GetIpRoutesInfo() const{ return m_ipRoutesInfo; }
-
-    /**
-     * <p>A list of <a>IpRoute</a>s.</p>
-     */
     inline void SetIpRoutesInfo(const Aws::Vector<IpRouteInfo>& value) { m_ipRoutesInfo = value; }
-
-    /**
-     * <p>A list of <a>IpRoute</a>s.</p>
-     */
     inline void SetIpRoutesInfo(Aws::Vector<IpRouteInfo>&& value) { m_ipRoutesInfo = std::move(value); }
-
-    /**
-     * <p>A list of <a>IpRoute</a>s.</p>
-     */
     inline ListIpRoutesResult& WithIpRoutesInfo(const Aws::Vector<IpRouteInfo>& value) { SetIpRoutesInfo(value); return *this;}
-
-    /**
-     * <p>A list of <a>IpRoute</a>s.</p>
-     */
     inline ListIpRoutesResult& WithIpRoutesInfo(Aws::Vector<IpRouteInfo>&& value) { SetIpRoutesInfo(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <a>IpRoute</a>s.</p>
-     */
     inline ListIpRoutesResult& AddIpRoutesInfo(const IpRouteInfo& value) { m_ipRoutesInfo.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <a>IpRoute</a>s.</p>
-     */
     inline ListIpRoutesResult& AddIpRoutesInfo(IpRouteInfo&& value) { m_ipRoutesInfo.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If not null, more results are available. Pass this value for the
      * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
      * retrieve the next set of items.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
-     * retrieve the next set of items.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
-     * retrieve the next set of items.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
-     * retrieve the next set of items.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
-     * retrieve the next set of items.</p>
-     */
     inline ListIpRoutesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
-     * retrieve the next set of items.</p>
-     */
     inline ListIpRoutesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If not null, more results are available. Pass this value for the
-     * <i>NextToken</i> parameter in a subsequent call to <a>ListIpRoutes</a> to
-     * retrieve the next set of items.</p>
-     */
     inline ListIpRoutesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListIpRoutesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListIpRoutesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListIpRoutesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<IpRouteInfo> m_ipRoutesInfo;

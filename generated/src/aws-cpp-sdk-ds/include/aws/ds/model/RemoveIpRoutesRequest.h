@@ -35,100 +35,35 @@ namespace Model
     AWS_DIRECTORYSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Identifier (ID) of the directory from which you want to remove the IP
      * addresses.</p>
      */
     inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline RemoveIpRoutesRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline RemoveIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier (ID) of the directory from which you want to remove the IP
-     * addresses.</p>
-     */
     inline RemoveIpRoutesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>IP address blocks that you want to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrIps() const{ return m_cidrIps; }
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline bool CidrIpsHasBeenSet() const { return m_cidrIpsHasBeenSet; }
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline void SetCidrIps(const Aws::Vector<Aws::String>& value) { m_cidrIpsHasBeenSet = true; m_cidrIps = value; }
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline void SetCidrIps(Aws::Vector<Aws::String>&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps = std::move(value); }
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline RemoveIpRoutesRequest& WithCidrIps(const Aws::Vector<Aws::String>& value) { SetCidrIps(value); return *this;}
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline RemoveIpRoutesRequest& WithCidrIps(Aws::Vector<Aws::String>&& value) { SetCidrIps(std::move(value)); return *this;}
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline RemoveIpRoutesRequest& AddCidrIps(const Aws::String& value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(value); return *this; }
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline RemoveIpRoutesRequest& AddCidrIps(Aws::String&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>IP address blocks that you want to remove.</p>
-     */
     inline RemoveIpRoutesRequest& AddCidrIps(const char* value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_directoryId;

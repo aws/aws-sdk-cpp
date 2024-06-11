@@ -38,63 +38,28 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specify the audio channel you want to define.</p>
      */
     inline int GetChannelId() const{ return m_channelId; }
-
-    /**
-     * <p>Specify the audio channel you want to define.</p>
-     */
     inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
-
-    /**
-     * <p>Specify the audio channel you want to define.</p>
-     */
     inline void SetChannelId(int value) { m_channelIdHasBeenSet = true; m_channelId = value; }
-
-    /**
-     * <p>Specify the audio channel you want to define.</p>
-     */
     inline MedicalScribeChannelDefinition& WithChannelId(int value) { SetChannelId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify the participant that you want to flag. The options are
      * <code>CLINICIAN</code> and <code>PATIENT</code> </p>
      */
     inline const MedicalScribeParticipantRole& GetParticipantRole() const{ return m_participantRole; }
-
-    /**
-     * <p>Specify the participant that you want to flag. The options are
-     * <code>CLINICIAN</code> and <code>PATIENT</code> </p>
-     */
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-
-    /**
-     * <p>Specify the participant that you want to flag. The options are
-     * <code>CLINICIAN</code> and <code>PATIENT</code> </p>
-     */
     inline void SetParticipantRole(const MedicalScribeParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-
-    /**
-     * <p>Specify the participant that you want to flag. The options are
-     * <code>CLINICIAN</code> and <code>PATIENT</code> </p>
-     */
     inline void SetParticipantRole(MedicalScribeParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-
-    /**
-     * <p>Specify the participant that you want to flag. The options are
-     * <code>CLINICIAN</code> and <code>PATIENT</code> </p>
-     */
     inline MedicalScribeChannelDefinition& WithParticipantRole(const MedicalScribeParticipantRole& value) { SetParticipantRole(value); return *this;}
-
-    /**
-     * <p>Specify the participant that you want to flag. The options are
-     * <code>CLINICIAN</code> and <code>PATIENT</code> </p>
-     */
     inline MedicalScribeChannelDefinition& WithParticipantRole(MedicalScribeParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_channelId;

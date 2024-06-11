@@ -32,87 +32,33 @@ namespace Model
     AWS_CODECATALYST_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the space.</p>
      */
     inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline GetProjectRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline GetProjectRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline GetProjectRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline GetProjectRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline GetProjectRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline GetProjectRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_spaceName;

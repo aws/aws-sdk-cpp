@@ -33,53 +33,27 @@ namespace Model
     AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateControlPanelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The control panel to update.</p>
      */
     inline const ControlPanel& GetControlPanel() const{ return m_controlPanel; }
-
-    /**
-     * <p>The control panel to update.</p>
-     */
     inline void SetControlPanel(const ControlPanel& value) { m_controlPanel = value; }
-
-    /**
-     * <p>The control panel to update.</p>
-     */
     inline void SetControlPanel(ControlPanel&& value) { m_controlPanel = std::move(value); }
-
-    /**
-     * <p>The control panel to update.</p>
-     */
     inline UpdateControlPanelResult& WithControlPanel(const ControlPanel& value) { SetControlPanel(value); return *this;}
-
-    /**
-     * <p>The control panel to update.</p>
-     */
     inline UpdateControlPanelResult& WithControlPanel(ControlPanel&& value) { SetControlPanel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateControlPanelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateControlPanelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateControlPanelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ControlPanel m_controlPanel;

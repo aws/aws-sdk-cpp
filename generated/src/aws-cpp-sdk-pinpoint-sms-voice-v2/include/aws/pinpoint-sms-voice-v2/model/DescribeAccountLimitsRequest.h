@@ -34,75 +34,30 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The token to be used for the next set of paginated results. You don't need to
      * supply a value for this field in the initial request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline DescribeAccountLimitsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline DescribeAccountLimitsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to be used for the next set of paginated results. You don't need to
-     * supply a value for this field in the initial request.</p>
-     */
     inline DescribeAccountLimitsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return per each request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return per each request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return per each request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return per each request.</p>
-     */
     inline DescribeAccountLimitsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

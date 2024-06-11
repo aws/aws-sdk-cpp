@@ -39,46 +39,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>One or more IPv4 prefixes assigned to the network interface.</p>
      */
     inline const Aws::String& GetIpv4Prefix() const{ return m_ipv4Prefix; }
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline bool Ipv4PrefixHasBeenSet() const { return m_ipv4PrefixHasBeenSet; }
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline void SetIpv4Prefix(const Aws::String& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = value; }
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline void SetIpv4Prefix(Aws::String&& value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix = std::move(value); }
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline void SetIpv4Prefix(const char* value) { m_ipv4PrefixHasBeenSet = true; m_ipv4Prefix.assign(value); }
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline InstanceIpv4Prefix& WithIpv4Prefix(const Aws::String& value) { SetIpv4Prefix(value); return *this;}
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline InstanceIpv4Prefix& WithIpv4Prefix(Aws::String&& value) { SetIpv4Prefix(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more IPv4 prefixes assigned to the network interface.</p>
-     */
     inline InstanceIpv4Prefix& WithIpv4Prefix(const char* value) { SetIpv4Prefix(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipv4Prefix;

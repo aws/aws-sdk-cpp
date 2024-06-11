@@ -40,62 +40,21 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
      * object is required when <code>EksPodProperties$imagePullSecrets</code> is
      * used.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline ImagePullSecret& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline ImagePullSecret& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides a unique identifier for the <code>ImagePullSecret</code>. This
-     * object is required when <code>EksPodProperties$imagePullSecrets</code> is
-     * used.</p>
-     */
     inline ImagePullSecret& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

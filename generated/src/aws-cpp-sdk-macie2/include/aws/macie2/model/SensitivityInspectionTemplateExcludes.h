@@ -43,69 +43,22 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of unique identifiers, one for each managed data identifier to
      * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
      * operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetManagedDataIdentifierIds() const{ return m_managedDataIdentifierIds; }
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline bool ManagedDataIdentifierIdsHasBeenSet() const { return m_managedDataIdentifierIdsHasBeenSet; }
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline void SetManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = value; }
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline void SetManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds = std::move(value); }
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline SensitivityInspectionTemplateExcludes& WithManagedDataIdentifierIds(const Aws::Vector<Aws::String>& value) { SetManagedDataIdentifierIds(value); return *this;}
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline SensitivityInspectionTemplateExcludes& WithManagedDataIdentifierIds(Aws::Vector<Aws::String>&& value) { SetManagedDataIdentifierIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(const Aws::String& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(Aws::String&& value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of unique identifiers, one for each managed data identifier to
-     * exclude. To retrieve a list of valid values, use the ListManagedDataIdentifiers
-     * operation.</p>
-     */
     inline SensitivityInspectionTemplateExcludes& AddManagedDataIdentifierIds(const char* value) { m_managedDataIdentifierIdsHasBeenSet = true; m_managedDataIdentifierIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_managedDataIdentifierIds;

@@ -36,87 +36,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The identifier of the cluster to delete a custom domain association for.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline DeleteCustomDomainAssociationRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline DeleteCustomDomainAssociationRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the cluster to delete a custom domain association for.</p>
-     */
     inline DeleteCustomDomainAssociationRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The custom domain name for the custom domain association.</p>
      */
     inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline bool CustomDomainNameHasBeenSet() const { return m_customDomainNameHasBeenSet; }
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline void SetCustomDomainName(const Aws::String& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = value; }
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline void SetCustomDomainName(Aws::String&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::move(value); }
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline void SetCustomDomainName(const char* value) { m_customDomainNameHasBeenSet = true; m_customDomainName.assign(value); }
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline DeleteCustomDomainAssociationRequest& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline DeleteCustomDomainAssociationRequest& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The custom domain name for the custom domain association.</p>
-     */
     inline DeleteCustomDomainAssociationRequest& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterIdentifier;

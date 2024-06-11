@@ -38,63 +38,29 @@ namespace Model
     AWS_PINPOINTSMSVOICE_API SendVoiceMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A unique identifier for the voice message.
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * A unique identifier for the voice message.
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageId = value; }
-
-    /**
-     * A unique identifier for the voice message.
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageId = std::move(value); }
-
-    /**
-     * A unique identifier for the voice message.
-     */
     inline void SetMessageId(const char* value) { m_messageId.assign(value); }
-
-    /**
-     * A unique identifier for the voice message.
-     */
     inline SendVoiceMessageResult& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * A unique identifier for the voice message.
-     */
     inline SendVoiceMessageResult& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * A unique identifier for the voice message.
-     */
     inline SendVoiceMessageResult& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendVoiceMessageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendVoiceMessageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendVoiceMessageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

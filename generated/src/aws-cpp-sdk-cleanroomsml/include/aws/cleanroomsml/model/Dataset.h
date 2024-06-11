@@ -39,73 +39,30 @@ namespace Model
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A DatasetInputConfig object that defines the data source and schema
      * mapping.</p>
      */
     inline const DatasetInputConfig& GetInputConfig() const{ return m_inputConfig; }
-
-    /**
-     * <p>A DatasetInputConfig object that defines the data source and schema
-     * mapping.</p>
-     */
     inline bool InputConfigHasBeenSet() const { return m_inputConfigHasBeenSet; }
-
-    /**
-     * <p>A DatasetInputConfig object that defines the data source and schema
-     * mapping.</p>
-     */
     inline void SetInputConfig(const DatasetInputConfig& value) { m_inputConfigHasBeenSet = true; m_inputConfig = value; }
-
-    /**
-     * <p>A DatasetInputConfig object that defines the data source and schema
-     * mapping.</p>
-     */
     inline void SetInputConfig(DatasetInputConfig&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::move(value); }
-
-    /**
-     * <p>A DatasetInputConfig object that defines the data source and schema
-     * mapping.</p>
-     */
     inline Dataset& WithInputConfig(const DatasetInputConfig& value) { SetInputConfig(value); return *this;}
-
-    /**
-     * <p>A DatasetInputConfig object that defines the data source and schema
-     * mapping.</p>
-     */
     inline Dataset& WithInputConfig(DatasetInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>What type of information is found in the dataset.</p>
      */
     inline const DatasetType& GetType() const{ return m_type; }
-
-    /**
-     * <p>What type of information is found in the dataset.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>What type of information is found in the dataset.</p>
-     */
     inline void SetType(const DatasetType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>What type of information is found in the dataset.</p>
-     */
     inline void SetType(DatasetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>What type of information is found in the dataset.</p>
-     */
     inline Dataset& WithType(const DatasetType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>What type of information is found in the dataset.</p>
-     */
     inline Dataset& WithType(DatasetType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DatasetInputConfig m_inputConfig;

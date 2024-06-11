@@ -38,46 +38,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of static default values for a given date time parameter.</p>
      */
     inline const Aws::Vector<Aws::Utils::DateTime>& GetStaticValues() const{ return m_staticValues; }
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline bool StaticValuesHasBeenSet() const { return m_staticValuesHasBeenSet; }
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline void SetStaticValues(const Aws::Vector<Aws::Utils::DateTime>& value) { m_staticValuesHasBeenSet = true; m_staticValues = value; }
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline void SetStaticValues(Aws::Vector<Aws::Utils::DateTime>&& value) { m_staticValuesHasBeenSet = true; m_staticValues = std::move(value); }
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline DateTimeDatasetParameterDefaultValues& WithStaticValues(const Aws::Vector<Aws::Utils::DateTime>& value) { SetStaticValues(value); return *this;}
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline DateTimeDatasetParameterDefaultValues& WithStaticValues(Aws::Vector<Aws::Utils::DateTime>&& value) { SetStaticValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline DateTimeDatasetParameterDefaultValues& AddStaticValues(const Aws::Utils::DateTime& value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of static default values for a given date time parameter.</p>
-     */
     inline DateTimeDatasetParameterDefaultValues& AddStaticValues(Aws::Utils::DateTime&& value) { m_staticValuesHasBeenSet = true; m_staticValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::Utils::DateTime> m_staticValues;

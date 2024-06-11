@@ -38,28 +38,18 @@ namespace Model
     AWS_STORAGEGATEWAY_API DescribeWorkingStorageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-
-    
     inline DescribeWorkingStorageResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline DescribeWorkingStorageResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline DescribeWorkingStorageResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of the gateway's local disk IDs that are configured as working
      * storage. Each local disk ID is specified as a string (minimum length of 1 and
@@ -67,123 +57,45 @@ namespace Model
      * then the DiskIds array is empty.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDiskIds() const{ return m_diskIds; }
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline void SetDiskIds(const Aws::Vector<Aws::String>& value) { m_diskIds = value; }
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline void SetDiskIds(Aws::Vector<Aws::String>&& value) { m_diskIds = std::move(value); }
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline DescribeWorkingStorageResult& WithDiskIds(const Aws::Vector<Aws::String>& value) { SetDiskIds(value); return *this;}
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline DescribeWorkingStorageResult& WithDiskIds(Aws::Vector<Aws::String>&& value) { SetDiskIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline DescribeWorkingStorageResult& AddDiskIds(const Aws::String& value) { m_diskIds.push_back(value); return *this; }
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline DescribeWorkingStorageResult& AddDiskIds(Aws::String&& value) { m_diskIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of the gateway's local disk IDs that are configured as working
-     * storage. Each local disk ID is specified as a string (minimum length of 1 and
-     * maximum length of 300). If no local disks are configured as working storage,
-     * then the DiskIds array is empty.</p>
-     */
     inline DescribeWorkingStorageResult& AddDiskIds(const char* value) { m_diskIds.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total working storage in bytes in use by the gateway. If no working
      * storage is configured for the gateway, this field returns 0.</p>
      */
     inline long long GetWorkingStorageUsedInBytes() const{ return m_workingStorageUsedInBytes; }
-
-    /**
-     * <p>The total working storage in bytes in use by the gateway. If no working
-     * storage is configured for the gateway, this field returns 0.</p>
-     */
     inline void SetWorkingStorageUsedInBytes(long long value) { m_workingStorageUsedInBytes = value; }
-
-    /**
-     * <p>The total working storage in bytes in use by the gateway. If no working
-     * storage is configured for the gateway, this field returns 0.</p>
-     */
     inline DescribeWorkingStorageResult& WithWorkingStorageUsedInBytes(long long value) { SetWorkingStorageUsedInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total working storage in bytes allocated for the gateway. If no working
      * storage is configured for the gateway, this field returns 0.</p>
      */
     inline long long GetWorkingStorageAllocatedInBytes() const{ return m_workingStorageAllocatedInBytes; }
-
-    /**
-     * <p>The total working storage in bytes allocated for the gateway. If no working
-     * storage is configured for the gateway, this field returns 0.</p>
-     */
     inline void SetWorkingStorageAllocatedInBytes(long long value) { m_workingStorageAllocatedInBytes = value; }
-
-    /**
-     * <p>The total working storage in bytes allocated for the gateway. If no working
-     * storage is configured for the gateway, this field returns 0.</p>
-     */
     inline DescribeWorkingStorageResult& WithWorkingStorageAllocatedInBytes(long long value) { SetWorkingStorageAllocatedInBytes(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeWorkingStorageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeWorkingStorageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeWorkingStorageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

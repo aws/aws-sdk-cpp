@@ -38,62 +38,21 @@ namespace Model
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
      * StorageConfiguration and S3 bucket must be in the same region as the
      * Composition.</p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline S3StorageConfiguration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline S3StorageConfiguration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>Location (S3 bucket name) where recorded videos will be stored. Note that the
-     * StorageConfiguration and S3 bucket must be in the same region as the
-     * Composition.</p>
-     */
     inline S3StorageConfiguration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bucketName;

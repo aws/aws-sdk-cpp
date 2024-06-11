@@ -39,46 +39,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The IPv6 CIDR block.</p>
      */
     inline const Aws::String& GetIpv6CidrBlock() const{ return m_ipv6CidrBlock; }
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline void SetIpv6CidrBlock(Aws::String&& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = std::move(value); }
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline void SetIpv6CidrBlock(const char* value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock.assign(value); }
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline Ipv6CidrBlock& WithIpv6CidrBlock(const Aws::String& value) { SetIpv6CidrBlock(value); return *this;}
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline Ipv6CidrBlock& WithIpv6CidrBlock(Aws::String&& value) { SetIpv6CidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPv6 CIDR block.</p>
-     */
     inline Ipv6CidrBlock& WithIpv6CidrBlock(const char* value) { SetIpv6CidrBlock(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ipv6CidrBlock;

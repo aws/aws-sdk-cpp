@@ -42,6 +42,7 @@ namespace Model
     AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
@@ -51,139 +52,38 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetEventArn() const{ return m_eventArn; }
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline bool EventArnHasBeenSet() const { return m_eventArnHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline void SetEventArn(const Aws::String& value) { m_eventArnHasBeenSet = true; m_eventArn = value; }
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline void SetEventArn(Aws::String&& value) { m_eventArnHasBeenSet = true; m_eventArn = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline void SetEventArn(const char* value) { m_eventArnHasBeenSet = true; m_eventArn.assign(value); }
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline EntityAggregate& WithEventArn(const Aws::String& value) { SetEventArn(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline EntityAggregate& WithEventArn(Aws::String&& value) { SetEventArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the event. The event ARN has the
-     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
-     * </code> format.</p> <p>For example, an event ARN might look like the
-     * following:</p> <p>
-     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
-     * </p>
-     */
     inline EntityAggregate& WithEventArn(const char* value) { SetEventArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of entities that match the criteria for the specified events.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The number of entities that match the criteria for the specified events.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The number of entities that match the criteria for the specified events.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The number of entities that match the criteria for the specified events.</p>
-     */
     inline EntityAggregate& WithCount(int value) { SetCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of affected entities aggregated by the entity status codes.</p>
      */
     inline const Aws::Map<EntityStatusCode, int>& GetStatuses() const{ return m_statuses; }
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline void SetStatuses(const Aws::Map<EntityStatusCode, int>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline void SetStatuses(Aws::Map<EntityStatusCode, int>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline EntityAggregate& WithStatuses(const Aws::Map<EntityStatusCode, int>& value) { SetStatuses(value); return *this;}
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline EntityAggregate& WithStatuses(Aws::Map<EntityStatusCode, int>&& value) { SetStatuses(std::move(value)); return *this;}
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline EntityAggregate& AddStatuses(const EntityStatusCode& key, int value) { m_statusesHasBeenSet = true; m_statuses.emplace(key, value); return *this; }
-
-    /**
-     * <p>The number of affected entities aggregated by the entity status codes.</p>
-     */
     inline EntityAggregate& AddStatuses(EntityStatusCode&& key, int value) { m_statusesHasBeenSet = true; m_statuses.emplace(std::move(key), value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_eventArn;

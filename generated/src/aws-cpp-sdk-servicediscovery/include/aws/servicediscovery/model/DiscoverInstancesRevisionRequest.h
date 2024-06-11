@@ -34,111 +34,36 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>HttpName</code> name of the namespace. It's found in the
      * <code>HttpProperties</code> member of the <code>Properties</code> member of the
      * namespace.</p>
      */
     inline const Aws::String& GetNamespaceName() const{ return m_namespaceName; }
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline bool NamespaceNameHasBeenSet() const { return m_namespaceNameHasBeenSet; }
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline void SetNamespaceName(const Aws::String& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = value; }
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline void SetNamespaceName(Aws::String&& value) { m_namespaceNameHasBeenSet = true; m_namespaceName = std::move(value); }
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline void SetNamespaceName(const char* value) { m_namespaceNameHasBeenSet = true; m_namespaceName.assign(value); }
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline DiscoverInstancesRevisionRequest& WithNamespaceName(const Aws::String& value) { SetNamespaceName(value); return *this;}
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline DiscoverInstancesRevisionRequest& WithNamespaceName(Aws::String&& value) { SetNamespaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>HttpName</code> name of the namespace. It's found in the
-     * <code>HttpProperties</code> member of the <code>Properties</code> member of the
-     * namespace.</p>
-     */
     inline DiscoverInstancesRevisionRequest& WithNamespaceName(const char* value) { SetNamespaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the service that you specified when you registered the
      * instance.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline DiscoverInstancesRevisionRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline DiscoverInstancesRevisionRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the service that you specified when you registered the
-     * instance.</p>
-     */
     inline DiscoverInstancesRevisionRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_namespaceName;

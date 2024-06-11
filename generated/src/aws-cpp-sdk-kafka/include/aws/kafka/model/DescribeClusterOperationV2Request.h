@@ -32,46 +32,19 @@ namespace Model
     AWS_KAFKA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * ARN of the cluster operation to describe.
      */
     inline const Aws::String& GetClusterOperationArn() const{ return m_clusterOperationArn; }
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline bool ClusterOperationArnHasBeenSet() const { return m_clusterOperationArnHasBeenSet; }
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline void SetClusterOperationArn(const Aws::String& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = value; }
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline void SetClusterOperationArn(Aws::String&& value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn = std::move(value); }
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline void SetClusterOperationArn(const char* value) { m_clusterOperationArnHasBeenSet = true; m_clusterOperationArn.assign(value); }
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline DescribeClusterOperationV2Request& WithClusterOperationArn(const Aws::String& value) { SetClusterOperationArn(value); return *this;}
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline DescribeClusterOperationV2Request& WithClusterOperationArn(Aws::String&& value) { SetClusterOperationArn(std::move(value)); return *this;}
-
-    /**
-     * ARN of the cluster operation to describe.
-     */
     inline DescribeClusterOperationV2Request& WithClusterOperationArn(const char* value) { SetClusterOperationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterOperationArn;

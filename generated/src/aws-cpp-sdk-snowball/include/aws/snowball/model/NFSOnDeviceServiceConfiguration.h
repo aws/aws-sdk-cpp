@@ -39,57 +39,27 @@ namespace Model
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum NFS storage for one Snow Family device.</p>
      */
     inline int GetStorageLimit() const{ return m_storageLimit; }
-
-    /**
-     * <p>The maximum NFS storage for one Snow Family device.</p>
-     */
     inline bool StorageLimitHasBeenSet() const { return m_storageLimitHasBeenSet; }
-
-    /**
-     * <p>The maximum NFS storage for one Snow Family device.</p>
-     */
     inline void SetStorageLimit(int value) { m_storageLimitHasBeenSet = true; m_storageLimit = value; }
-
-    /**
-     * <p>The maximum NFS storage for one Snow Family device.</p>
-     */
     inline NFSOnDeviceServiceConfiguration& WithStorageLimit(int value) { SetStorageLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>
      */
     inline const StorageUnit& GetStorageUnit() const{ return m_storageUnit; }
-
-    /**
-     * <p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>
-     */
     inline bool StorageUnitHasBeenSet() const { return m_storageUnitHasBeenSet; }
-
-    /**
-     * <p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>
-     */
     inline void SetStorageUnit(const StorageUnit& value) { m_storageUnitHasBeenSet = true; m_storageUnit = value; }
-
-    /**
-     * <p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>
-     */
     inline void SetStorageUnit(StorageUnit&& value) { m_storageUnitHasBeenSet = true; m_storageUnit = std::move(value); }
-
-    /**
-     * <p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>
-     */
     inline NFSOnDeviceServiceConfiguration& WithStorageUnit(const StorageUnit& value) { SetStorageUnit(value); return *this;}
-
-    /**
-     * <p>The scale unit of the NFS storage on the device.</p> <p>Valid values: TB.</p>
-     */
     inline NFSOnDeviceServiceConfiguration& WithStorageUnit(StorageUnit&& value) { SetStorageUnit(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_storageLimit;

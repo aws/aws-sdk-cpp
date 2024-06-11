@@ -32,67 +32,29 @@ namespace Model
     AWS_LAMBDA_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
      */
     inline const Aws::String& GetLayerName() const{ return m_layerName; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline bool LayerNameHasBeenSet() const { return m_layerNameHasBeenSet; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline void SetLayerName(const Aws::String& value) { m_layerNameHasBeenSet = true; m_layerName = value; }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline void SetLayerName(Aws::String&& value) { m_layerNameHasBeenSet = true; m_layerName = std::move(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline void SetLayerName(const char* value) { m_layerNameHasBeenSet = true; m_layerName.assign(value); }
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline GetLayerVersionRequest& WithLayerName(const Aws::String& value) { SetLayerName(value); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline GetLayerVersionRequest& WithLayerName(Aws::String&& value) { SetLayerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name or Amazon Resource Name (ARN) of the layer.</p>
-     */
     inline GetLayerVersionRequest& WithLayerName(const char* value) { SetLayerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
-
-    /**
-     * <p>The version number.</p>
-     */
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
-
-    /**
-     * <p>The version number.</p>
-     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
-
-    /**
-     * <p>The version number.</p>
-     */
     inline GetLayerVersionRequest& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_layerName;

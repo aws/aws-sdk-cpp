@@ -32,136 +32,48 @@ namespace Model
     AWS_PINPOINT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetSegmentVersionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetSegmentVersionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the application. This identifier is displayed as
-     * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
-     */
     inline GetSegmentVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the segment.</p>
      */
     inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline GetSegmentVersionRequest& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline GetSegmentVersionRequest& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline GetSegmentVersionRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique version number (Version property) for the campaign version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline GetSegmentVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline GetSegmentVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique version number (Version property) for the campaign version.</p>
-     */
     inline GetSegmentVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

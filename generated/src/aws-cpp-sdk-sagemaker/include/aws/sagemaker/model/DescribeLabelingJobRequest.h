@@ -34,46 +34,19 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the labeling job to return information for.</p>
      */
     inline const Aws::String& GetLabelingJobName() const{ return m_labelingJobName; }
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline bool LabelingJobNameHasBeenSet() const { return m_labelingJobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = value; }
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline void SetLabelingJobName(Aws::String&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::move(value); }
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline void SetLabelingJobName(const char* value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName.assign(value); }
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline DescribeLabelingJobRequest& WithLabelingJobName(const Aws::String& value) { SetLabelingJobName(value); return *this;}
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline DescribeLabelingJobRequest& WithLabelingJobName(Aws::String&& value) { SetLabelingJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the labeling job to return information for.</p>
-     */
     inline DescribeLabelingJobRequest& WithLabelingJobName(const char* value) { SetLabelingJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_labelingJobName;

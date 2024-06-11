@@ -37,36 +37,17 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify the canned ACL to apply to each S3 request. Defaults to none.
      */
     inline const S3CannedAcl& GetCannedAcl() const{ return m_cannedAcl; }
-
-    /**
-     * Specify the canned ACL to apply to each S3 request. Defaults to none.
-     */
     inline bool CannedAclHasBeenSet() const { return m_cannedAclHasBeenSet; }
-
-    /**
-     * Specify the canned ACL to apply to each S3 request. Defaults to none.
-     */
     inline void SetCannedAcl(const S3CannedAcl& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = value; }
-
-    /**
-     * Specify the canned ACL to apply to each S3 request. Defaults to none.
-     */
     inline void SetCannedAcl(S3CannedAcl&& value) { m_cannedAclHasBeenSet = true; m_cannedAcl = std::move(value); }
-
-    /**
-     * Specify the canned ACL to apply to each S3 request. Defaults to none.
-     */
     inline HlsS3Settings& WithCannedAcl(const S3CannedAcl& value) { SetCannedAcl(value); return *this;}
-
-    /**
-     * Specify the canned ACL to apply to each S3 request. Defaults to none.
-     */
     inline HlsS3Settings& WithCannedAcl(S3CannedAcl&& value) { SetCannedAcl(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3CannedAcl m_cannedAcl;

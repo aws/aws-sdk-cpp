@@ -42,47 +42,25 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
      */
     inline double GetX() const{ return m_x; }
-
-    /**
-     * <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-     */
     inline bool XHasBeenSet() const { return m_xHasBeenSet; }
-
-    /**
-     * <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-     */
     inline void SetX(double value) { m_xHasBeenSet = true; m_x = value; }
-
-    /**
-     * <p>The value of the X coordinate for a point on a <code>Polygon</code>.</p>
-     */
     inline Point& WithX(double value) { SetX(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
      */
     inline double GetY() const{ return m_y; }
-
-    /**
-     * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-     */
     inline bool YHasBeenSet() const { return m_yHasBeenSet; }
-
-    /**
-     * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-     */
     inline void SetY(double value) { m_yHasBeenSet = true; m_y = value; }
-
-    /**
-     * <p>The value of the Y coordinate for a point on a <code>Polygon</code>.</p>
-     */
     inline Point& WithY(double value) { SetY(value); return *this;}
-
+    ///@}
   private:
 
     double m_x;

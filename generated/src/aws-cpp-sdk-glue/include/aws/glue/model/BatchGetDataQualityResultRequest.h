@@ -35,51 +35,20 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list of unique result IDs for the data quality results.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResultIds() const{ return m_resultIds; }
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline bool ResultIdsHasBeenSet() const { return m_resultIdsHasBeenSet; }
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline void SetResultIds(const Aws::Vector<Aws::String>& value) { m_resultIdsHasBeenSet = true; m_resultIds = value; }
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline void SetResultIds(Aws::Vector<Aws::String>&& value) { m_resultIdsHasBeenSet = true; m_resultIds = std::move(value); }
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline BatchGetDataQualityResultRequest& WithResultIds(const Aws::Vector<Aws::String>& value) { SetResultIds(value); return *this;}
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline BatchGetDataQualityResultRequest& WithResultIds(Aws::Vector<Aws::String>&& value) { SetResultIds(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline BatchGetDataQualityResultRequest& AddResultIds(const Aws::String& value) { m_resultIdsHasBeenSet = true; m_resultIds.push_back(value); return *this; }
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline BatchGetDataQualityResultRequest& AddResultIds(Aws::String&& value) { m_resultIdsHasBeenSet = true; m_resultIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of unique result IDs for the data quality results.</p>
-     */
     inline BatchGetDataQualityResultRequest& AddResultIds(const char* value) { m_resultIdsHasBeenSet = true; m_resultIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_resultIds;

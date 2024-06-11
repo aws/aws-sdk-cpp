@@ -33,53 +33,27 @@ namespace Model
     AWS_WELLARCHITECTED_API UpdateShareInvitationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The updated workload or custom lens share invitation.</p>
      */
     inline const ShareInvitation& GetShareInvitation() const{ return m_shareInvitation; }
-
-    /**
-     * <p>The updated workload or custom lens share invitation.</p>
-     */
     inline void SetShareInvitation(const ShareInvitation& value) { m_shareInvitation = value; }
-
-    /**
-     * <p>The updated workload or custom lens share invitation.</p>
-     */
     inline void SetShareInvitation(ShareInvitation&& value) { m_shareInvitation = std::move(value); }
-
-    /**
-     * <p>The updated workload or custom lens share invitation.</p>
-     */
     inline UpdateShareInvitationResult& WithShareInvitation(const ShareInvitation& value) { SetShareInvitation(value); return *this;}
-
-    /**
-     * <p>The updated workload or custom lens share invitation.</p>
-     */
     inline UpdateShareInvitationResult& WithShareInvitation(ShareInvitation&& value) { SetShareInvitation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateShareInvitationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateShareInvitationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateShareInvitationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ShareInvitation m_shareInvitation;

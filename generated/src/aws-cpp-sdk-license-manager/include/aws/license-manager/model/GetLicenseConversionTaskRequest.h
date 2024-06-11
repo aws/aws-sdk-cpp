@@ -34,46 +34,19 @@ namespace Model
     AWS_LICENSEMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>ID of the license type conversion task to retrieve information on.</p>
      */
     inline const Aws::String& GetLicenseConversionTaskId() const{ return m_licenseConversionTaskId; }
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline bool LicenseConversionTaskIdHasBeenSet() const { return m_licenseConversionTaskIdHasBeenSet; }
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline void SetLicenseConversionTaskId(const Aws::String& value) { m_licenseConversionTaskIdHasBeenSet = true; m_licenseConversionTaskId = value; }
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline void SetLicenseConversionTaskId(Aws::String&& value) { m_licenseConversionTaskIdHasBeenSet = true; m_licenseConversionTaskId = std::move(value); }
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline void SetLicenseConversionTaskId(const char* value) { m_licenseConversionTaskIdHasBeenSet = true; m_licenseConversionTaskId.assign(value); }
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline GetLicenseConversionTaskRequest& WithLicenseConversionTaskId(const Aws::String& value) { SetLicenseConversionTaskId(value); return *this;}
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline GetLicenseConversionTaskRequest& WithLicenseConversionTaskId(Aws::String&& value) { SetLicenseConversionTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID of the license type conversion task to retrieve information on.</p>
-     */
     inline GetLicenseConversionTaskRequest& WithLicenseConversionTaskId(const char* value) { SetLicenseConversionTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseConversionTaskId;

@@ -33,53 +33,27 @@ namespace Model
     AWS_IOT_API DescribeAuthorizerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The authorizer description.</p>
      */
     inline const AuthorizerDescription& GetAuthorizerDescription() const{ return m_authorizerDescription; }
-
-    /**
-     * <p>The authorizer description.</p>
-     */
     inline void SetAuthorizerDescription(const AuthorizerDescription& value) { m_authorizerDescription = value; }
-
-    /**
-     * <p>The authorizer description.</p>
-     */
     inline void SetAuthorizerDescription(AuthorizerDescription&& value) { m_authorizerDescription = std::move(value); }
-
-    /**
-     * <p>The authorizer description.</p>
-     */
     inline DescribeAuthorizerResult& WithAuthorizerDescription(const AuthorizerDescription& value) { SetAuthorizerDescription(value); return *this;}
-
-    /**
-     * <p>The authorizer description.</p>
-     */
     inline DescribeAuthorizerResult& WithAuthorizerDescription(AuthorizerDescription&& value) { SetAuthorizerDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAuthorizerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAuthorizerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAuthorizerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AuthorizerDescription m_authorizerDescription;

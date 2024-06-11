@@ -34,66 +34,31 @@ namespace Model
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
-
-    
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
-
-    
     inline void SetIdentityProvider(const IdentityProvider& value) { m_identityProviderHasBeenSet = true; m_identityProvider = value; }
-
-    
     inline void SetIdentityProvider(IdentityProvider&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::move(value); }
-
-    
     inline UpdateIdentityProviderSettingsRequest& WithIdentityProvider(const IdentityProvider& value) { SetIdentityProvider(value); return *this;}
-
-    
     inline UpdateIdentityProviderSettingsRequest& WithIdentityProvider(IdentityProvider&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the user-based subscription product.</p>
      */
     inline const Aws::String& GetProduct() const{ return m_product; }
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline UpdateIdentityProviderSettingsRequest& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline UpdateIdentityProviderSettingsRequest& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the user-based subscription product.</p>
-     */
     inline UpdateIdentityProviderSettingsRequest& WithProduct(const char* value) { SetProduct(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Updates the registered identity provider’s product related configuration
      * settings. You can update any combination of settings in a single operation such
@@ -103,57 +68,12 @@ namespace Model
      * endpoints.</p> </li> </ul>
      */
     inline const UpdateSettings& GetUpdateSettings() const{ return m_updateSettings; }
-
-    /**
-     * <p>Updates the registered identity provider’s product related configuration
-     * settings. You can update any combination of settings in a single operation such
-     * as the:</p> <ul> <li> <p>Subnets which you want to add to provision VPC
-     * endpoints.</p> </li> <li> <p>Subnets which you want to remove the VPC endpoints
-     * from.</p> </li> <li> <p>Security group ID which permits traffic to the VPC
-     * endpoints.</p> </li> </ul>
-     */
     inline bool UpdateSettingsHasBeenSet() const { return m_updateSettingsHasBeenSet; }
-
-    /**
-     * <p>Updates the registered identity provider’s product related configuration
-     * settings. You can update any combination of settings in a single operation such
-     * as the:</p> <ul> <li> <p>Subnets which you want to add to provision VPC
-     * endpoints.</p> </li> <li> <p>Subnets which you want to remove the VPC endpoints
-     * from.</p> </li> <li> <p>Security group ID which permits traffic to the VPC
-     * endpoints.</p> </li> </ul>
-     */
     inline void SetUpdateSettings(const UpdateSettings& value) { m_updateSettingsHasBeenSet = true; m_updateSettings = value; }
-
-    /**
-     * <p>Updates the registered identity provider’s product related configuration
-     * settings. You can update any combination of settings in a single operation such
-     * as the:</p> <ul> <li> <p>Subnets which you want to add to provision VPC
-     * endpoints.</p> </li> <li> <p>Subnets which you want to remove the VPC endpoints
-     * from.</p> </li> <li> <p>Security group ID which permits traffic to the VPC
-     * endpoints.</p> </li> </ul>
-     */
     inline void SetUpdateSettings(UpdateSettings&& value) { m_updateSettingsHasBeenSet = true; m_updateSettings = std::move(value); }
-
-    /**
-     * <p>Updates the registered identity provider’s product related configuration
-     * settings. You can update any combination of settings in a single operation such
-     * as the:</p> <ul> <li> <p>Subnets which you want to add to provision VPC
-     * endpoints.</p> </li> <li> <p>Subnets which you want to remove the VPC endpoints
-     * from.</p> </li> <li> <p>Security group ID which permits traffic to the VPC
-     * endpoints.</p> </li> </ul>
-     */
     inline UpdateIdentityProviderSettingsRequest& WithUpdateSettings(const UpdateSettings& value) { SetUpdateSettings(value); return *this;}
-
-    /**
-     * <p>Updates the registered identity provider’s product related configuration
-     * settings. You can update any combination of settings in a single operation such
-     * as the:</p> <ul> <li> <p>Subnets which you want to add to provision VPC
-     * endpoints.</p> </li> <li> <p>Subnets which you want to remove the VPC endpoints
-     * from.</p> </li> <li> <p>Security group ID which permits traffic to the VPC
-     * endpoints.</p> </li> </ul>
-     */
     inline UpdateIdentityProviderSettingsRequest& WithUpdateSettings(UpdateSettings&& value) { SetUpdateSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IdentityProvider m_identityProvider;

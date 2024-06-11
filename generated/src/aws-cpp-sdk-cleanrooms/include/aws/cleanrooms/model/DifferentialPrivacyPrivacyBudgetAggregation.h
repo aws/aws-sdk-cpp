@@ -38,86 +38,39 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The different types of aggregation functions that you can perform.</p>
      */
     inline const DifferentialPrivacyAggregationType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The different types of aggregation functions that you can perform.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The different types of aggregation functions that you can perform.</p>
-     */
     inline void SetType(const DifferentialPrivacyAggregationType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The different types of aggregation functions that you can perform.</p>
-     */
     inline void SetType(DifferentialPrivacyAggregationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The different types of aggregation functions that you can perform.</p>
-     */
     inline DifferentialPrivacyPrivacyBudgetAggregation& WithType(const DifferentialPrivacyAggregationType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The different types of aggregation functions that you can perform.</p>
-     */
     inline DifferentialPrivacyPrivacyBudgetAggregation& WithType(DifferentialPrivacyAggregationType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of aggregation functions that you can perform with the
      * given privacy budget.</p>
      */
     inline int GetMaxCount() const{ return m_maxCount; }
-
-    /**
-     * <p>The maximum number of aggregation functions that you can perform with the
-     * given privacy budget.</p>
-     */
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
-
-    /**
-     * <p>The maximum number of aggregation functions that you can perform with the
-     * given privacy budget.</p>
-     */
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
-
-    /**
-     * <p>The maximum number of aggregation functions that you can perform with the
-     * given privacy budget.</p>
-     */
     inline DifferentialPrivacyPrivacyBudgetAggregation& WithMaxCount(int value) { SetMaxCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The remaining number of aggregation functions that can be run with the
      * available privacy budget.</p>
      */
     inline int GetRemainingCount() const{ return m_remainingCount; }
-
-    /**
-     * <p>The remaining number of aggregation functions that can be run with the
-     * available privacy budget.</p>
-     */
     inline bool RemainingCountHasBeenSet() const { return m_remainingCountHasBeenSet; }
-
-    /**
-     * <p>The remaining number of aggregation functions that can be run with the
-     * available privacy budget.</p>
-     */
     inline void SetRemainingCount(int value) { m_remainingCountHasBeenSet = true; m_remainingCount = value; }
-
-    /**
-     * <p>The remaining number of aggregation functions that can be run with the
-     * available privacy budget.</p>
-     */
     inline DifferentialPrivacyPrivacyBudgetAggregation& WithRemainingCount(int value) { SetRemainingCount(value); return *this;}
-
+    ///@}
   private:
 
     DifferentialPrivacyAggregationType m_type;

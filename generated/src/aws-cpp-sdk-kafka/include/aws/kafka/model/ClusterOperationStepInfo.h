@@ -40,62 +40,21 @@ namespace Model
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 
             <p>The steps current status.</p>
          
      */
     inline const Aws::String& GetStepStatus() const{ return m_stepStatus; }
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline bool StepStatusHasBeenSet() const { return m_stepStatusHasBeenSet; }
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline void SetStepStatus(const Aws::String& value) { m_stepStatusHasBeenSet = true; m_stepStatus = value; }
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline void SetStepStatus(Aws::String&& value) { m_stepStatusHasBeenSet = true; m_stepStatus = std::move(value); }
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline void SetStepStatus(const char* value) { m_stepStatusHasBeenSet = true; m_stepStatus.assign(value); }
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline ClusterOperationStepInfo& WithStepStatus(const Aws::String& value) { SetStepStatus(value); return *this;}
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline ClusterOperationStepInfo& WithStepStatus(Aws::String&& value) { SetStepStatus(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>The steps current status.</p>
-         
-     */
     inline ClusterOperationStepInfo& WithStepStatus(const char* value) { SetStepStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stepStatus;

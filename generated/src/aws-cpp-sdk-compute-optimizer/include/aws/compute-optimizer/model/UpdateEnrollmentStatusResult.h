@@ -33,103 +33,42 @@ namespace Model
     AWS_COMPUTEOPTIMIZER_API UpdateEnrollmentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The enrollment status of the account.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The enrollment status of the account.</p>
-     */
     inline void SetStatus(const Status& value) { m_status = value; }
-
-    /**
-     * <p>The enrollment status of the account.</p>
-     */
     inline void SetStatus(Status&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The enrollment status of the account.</p>
-     */
     inline UpdateEnrollmentStatusResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The enrollment status of the account.</p>
-     */
     inline UpdateEnrollmentStatusResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the enrollment status of the account. For example, an account
      * might show a status of <code>Pending</code> because member accounts of an
      * organization require more time to be enrolled in the service.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
-
-    /**
-     * <p>The reason for the enrollment status of the account. For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
-
-    /**
-     * <p>The reason for the enrollment status of the account. For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
-
-    /**
-     * <p>The reason for the enrollment status of the account. For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
-
-    /**
-     * <p>The reason for the enrollment status of the account. For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline UpdateEnrollmentStatusResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-
-    /**
-     * <p>The reason for the enrollment status of the account. For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline UpdateEnrollmentStatusResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the enrollment status of the account. For example, an account
-     * might show a status of <code>Pending</code> because member accounts of an
-     * organization require more time to be enrolled in the service.</p>
-     */
     inline UpdateEnrollmentStatusResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateEnrollmentStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateEnrollmentStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateEnrollmentStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Status m_status;

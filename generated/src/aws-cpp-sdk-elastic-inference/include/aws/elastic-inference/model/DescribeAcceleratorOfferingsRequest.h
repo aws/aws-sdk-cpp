@@ -34,6 +34,7 @@ namespace Model
     AWS_ELASTICINFERENCE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The location type that you want to describe accelerator type offerings for.
      * It can assume the following values: region: will return the accelerator type
@@ -43,103 +44,27 @@ namespace Model
      * availability zone id. </p>
      */
     inline const LocationType& GetLocationType() const{ return m_locationType; }
-
-    /**
-     * <p> The location type that you want to describe accelerator type offerings for.
-     * It can assume the following values: region: will return the accelerator type
-     * offering at the regional level. availability-zone: will return the accelerator
-     * type offering at the availability zone level. availability-zone-id: will return
-     * the accelerator type offering at the availability zone level returning the
-     * availability zone id. </p>
-     */
     inline bool LocationTypeHasBeenSet() const { return m_locationTypeHasBeenSet; }
-
-    /**
-     * <p> The location type that you want to describe accelerator type offerings for.
-     * It can assume the following values: region: will return the accelerator type
-     * offering at the regional level. availability-zone: will return the accelerator
-     * type offering at the availability zone level. availability-zone-id: will return
-     * the accelerator type offering at the availability zone level returning the
-     * availability zone id. </p>
-     */
     inline void SetLocationType(const LocationType& value) { m_locationTypeHasBeenSet = true; m_locationType = value; }
-
-    /**
-     * <p> The location type that you want to describe accelerator type offerings for.
-     * It can assume the following values: region: will return the accelerator type
-     * offering at the regional level. availability-zone: will return the accelerator
-     * type offering at the availability zone level. availability-zone-id: will return
-     * the accelerator type offering at the availability zone level returning the
-     * availability zone id. </p>
-     */
     inline void SetLocationType(LocationType&& value) { m_locationTypeHasBeenSet = true; m_locationType = std::move(value); }
-
-    /**
-     * <p> The location type that you want to describe accelerator type offerings for.
-     * It can assume the following values: region: will return the accelerator type
-     * offering at the regional level. availability-zone: will return the accelerator
-     * type offering at the availability zone level. availability-zone-id: will return
-     * the accelerator type offering at the availability zone level returning the
-     * availability zone id. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& WithLocationType(const LocationType& value) { SetLocationType(value); return *this;}
-
-    /**
-     * <p> The location type that you want to describe accelerator type offerings for.
-     * It can assume the following values: region: will return the accelerator type
-     * offering at the regional level. availability-zone: will return the accelerator
-     * type offering at the availability zone level. availability-zone-id: will return
-     * the accelerator type offering at the availability zone level returning the
-     * availability zone id. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& WithLocationType(LocationType&& value) { SetLocationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The list of accelerator types to describe. </p>
      */
     inline const Aws::Vector<Aws::String>& GetAcceleratorTypes() const{ return m_acceleratorTypes; }
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline bool AcceleratorTypesHasBeenSet() const { return m_acceleratorTypesHasBeenSet; }
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline void SetAcceleratorTypes(const Aws::Vector<Aws::String>& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = value; }
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline void SetAcceleratorTypes(Aws::Vector<Aws::String>&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = std::move(value); }
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& WithAcceleratorTypes(const Aws::Vector<Aws::String>& value) { SetAcceleratorTypes(value); return *this;}
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& WithAcceleratorTypes(Aws::Vector<Aws::String>&& value) { SetAcceleratorTypes(std::move(value)); return *this;}
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& AddAcceleratorTypes(const Aws::String& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(value); return *this; }
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& AddAcceleratorTypes(Aws::String&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> The list of accelerator types to describe. </p>
-     */
     inline DescribeAcceleratorOfferingsRequest& AddAcceleratorTypes(const char* value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(value); return *this; }
-
+    ///@}
   private:
 
     LocationType m_locationType;

@@ -37,46 +37,19 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Account ID of AWS account.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline Account& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline Account& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Account ID of AWS account.</p>
-     */
     inline Account& WithAccountID(const char* value) { SetAccountID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountID;

@@ -35,73 +35,30 @@ namespace Model
     AWS_DATASYNC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
      * updating.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline bool TaskExecutionArnHasBeenSet() const { return m_taskExecutionArnHasBeenSet; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = value; }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn = std::move(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArnHasBeenSet = true; m_taskExecutionArn.assign(value); }
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline UpdateTaskExecutionRequest& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline UpdateTaskExecutionRequest& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the Amazon Resource Name (ARN) of the task execution that you're
-     * updating.</p>
-     */
     inline UpdateTaskExecutionRequest& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Options& GetOptions() const{ return m_options; }
-
-    
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    
     inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    
     inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    
     inline UpdateTaskExecutionRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
-
-    
     inline UpdateTaskExecutionRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskExecutionArn;

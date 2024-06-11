@@ -38,67 +38,29 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the segment.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline SegmentReference& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline SegmentReference& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the segment.</p>
-     */
     inline SegmentReference& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version number of the segment.</p>
      */
     inline int GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version number of the segment.</p>
-     */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-
-    /**
-     * <p>The version number of the segment.</p>
-     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
-
-    /**
-     * <p>The version number of the segment.</p>
-     */
     inline SegmentReference& WithVersion(int value) { SetVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

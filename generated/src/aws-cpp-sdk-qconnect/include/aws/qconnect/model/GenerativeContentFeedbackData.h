@@ -38,36 +38,17 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The relevance of the feedback.</p>
      */
     inline const Relevance& GetRelevance() const{ return m_relevance; }
-
-    /**
-     * <p>The relevance of the feedback.</p>
-     */
     inline bool RelevanceHasBeenSet() const { return m_relevanceHasBeenSet; }
-
-    /**
-     * <p>The relevance of the feedback.</p>
-     */
     inline void SetRelevance(const Relevance& value) { m_relevanceHasBeenSet = true; m_relevance = value; }
-
-    /**
-     * <p>The relevance of the feedback.</p>
-     */
     inline void SetRelevance(Relevance&& value) { m_relevanceHasBeenSet = true; m_relevance = std::move(value); }
-
-    /**
-     * <p>The relevance of the feedback.</p>
-     */
     inline GenerativeContentFeedbackData& WithRelevance(const Relevance& value) { SetRelevance(value); return *this;}
-
-    /**
-     * <p>The relevance of the feedback.</p>
-     */
     inline GenerativeContentFeedbackData& WithRelevance(Relevance&& value) { SetRelevance(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Relevance m_relevance;

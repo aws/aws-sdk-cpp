@@ -40,104 +40,42 @@ namespace Model
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The first port, inclusive, in the range of ports for the endpoint group that
      * is associated with a custom routing accelerator.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>The first port, inclusive, in the range of ports for the endpoint group that
-     * is associated with a custom routing accelerator.</p>
-     */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-
-    /**
-     * <p>The first port, inclusive, in the range of ports for the endpoint group that
-     * is associated with a custom routing accelerator.</p>
-     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>The first port, inclusive, in the range of ports for the endpoint group that
-     * is associated with a custom routing accelerator.</p>
-     */
     inline CustomRoutingDestinationConfiguration& WithFromPort(int value) { SetFromPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last port, inclusive, in the range of ports for the endpoint group that
      * is associated with a custom routing accelerator.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>The last port, inclusive, in the range of ports for the endpoint group that
-     * is associated with a custom routing accelerator.</p>
-     */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-
-    /**
-     * <p>The last port, inclusive, in the range of ports for the endpoint group that
-     * is associated with a custom routing accelerator.</p>
-     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>The last port, inclusive, in the range of ports for the endpoint group that
-     * is associated with a custom routing accelerator.</p>
-     */
     inline CustomRoutingDestinationConfiguration& WithToPort(int value) { SetToPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The protocol for the endpoint group that is associated with a custom routing
      * accelerator. The protocol can be either TCP or UDP.</p>
      */
     inline const Aws::Vector<CustomRoutingProtocol>& GetProtocols() const{ return m_protocols; }
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline void SetProtocols(const Aws::Vector<CustomRoutingProtocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline void SetProtocols(Aws::Vector<CustomRoutingProtocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline CustomRoutingDestinationConfiguration& WithProtocols(const Aws::Vector<CustomRoutingProtocol>& value) { SetProtocols(value); return *this;}
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline CustomRoutingDestinationConfiguration& WithProtocols(Aws::Vector<CustomRoutingProtocol>&& value) { SetProtocols(std::move(value)); return *this;}
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline CustomRoutingDestinationConfiguration& AddProtocols(const CustomRoutingProtocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-
-    /**
-     * <p>The protocol for the endpoint group that is associated with a custom routing
-     * accelerator. The protocol can be either TCP or UDP.</p>
-     */
     inline CustomRoutingDestinationConfiguration& AddProtocols(CustomRoutingProtocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_fromPort;

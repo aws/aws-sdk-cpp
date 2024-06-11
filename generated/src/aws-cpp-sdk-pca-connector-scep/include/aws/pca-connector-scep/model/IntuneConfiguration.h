@@ -47,87 +47,33 @@ namespace Model
     AWS_PCACONNECTORSCEP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
      */
     inline const Aws::String& GetAzureApplicationId() const{ return m_azureApplicationId; }
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline bool AzureApplicationIdHasBeenSet() const { return m_azureApplicationIdHasBeenSet; }
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline void SetAzureApplicationId(const Aws::String& value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId = value; }
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline void SetAzureApplicationId(Aws::String&& value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId = std::move(value); }
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline void SetAzureApplicationId(const char* value) { m_azureApplicationIdHasBeenSet = true; m_azureApplicationId.assign(value); }
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline IntuneConfiguration& WithAzureApplicationId(const Aws::String& value) { SetAzureApplicationId(value); return *this;}
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline IntuneConfiguration& WithAzureApplicationId(Aws::String&& value) { SetAzureApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The directory (tenant) ID from your Microsoft Entra ID app registration.</p>
-     */
     inline IntuneConfiguration& WithAzureApplicationId(const char* value) { SetAzureApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The primary domain from your Microsoft Entra ID app registration.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline IntuneConfiguration& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline IntuneConfiguration& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-
-    /**
-     * <p>The primary domain from your Microsoft Entra ID app registration.</p>
-     */
     inline IntuneConfiguration& WithDomain(const char* value) { SetDomain(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_azureApplicationId;

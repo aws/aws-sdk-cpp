@@ -38,87 +38,33 @@ namespace Model
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Category of selector.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline Selector& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline Selector& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Category of selector.</p>
-     */
     inline Selector& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contract duration. This field supports the ISO 8601 format. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline Selector& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline Selector& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Contract duration. This field supports the ISO 8601 format. </p>
-     */
     inline Selector& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

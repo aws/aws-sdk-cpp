@@ -33,53 +33,27 @@ namespace Model
     AWS_SHIELD_API DescribeAttackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The attack that you requested. </p>
      */
     inline const AttackDetail& GetAttack() const{ return m_attack; }
-
-    /**
-     * <p>The attack that you requested. </p>
-     */
     inline void SetAttack(const AttackDetail& value) { m_attack = value; }
-
-    /**
-     * <p>The attack that you requested. </p>
-     */
     inline void SetAttack(AttackDetail&& value) { m_attack = std::move(value); }
-
-    /**
-     * <p>The attack that you requested. </p>
-     */
     inline DescribeAttackResult& WithAttack(const AttackDetail& value) { SetAttack(value); return *this;}
-
-    /**
-     * <p>The attack that you requested. </p>
-     */
     inline DescribeAttackResult& WithAttack(AttackDetail&& value) { SetAttack(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAttackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAttackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAttackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AttackDetail m_attack;

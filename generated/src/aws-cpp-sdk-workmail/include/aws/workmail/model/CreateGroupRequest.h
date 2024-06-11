@@ -34,112 +34,44 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The organization under which the group is to be created.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline CreateGroupRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline CreateGroupRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The organization under which the group is to be created.</p>
-     */
     inline CreateGroupRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the group.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline CreateGroupRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline CreateGroupRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the group.</p>
-     */
     inline CreateGroupRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If this parameter is enabled, the group will be hidden from the address
      * book.</p>
      */
     inline bool GetHiddenFromGlobalAddressList() const{ return m_hiddenFromGlobalAddressList; }
-
-    /**
-     * <p>If this parameter is enabled, the group will be hidden from the address
-     * book.</p>
-     */
     inline bool HiddenFromGlobalAddressListHasBeenSet() const { return m_hiddenFromGlobalAddressListHasBeenSet; }
-
-    /**
-     * <p>If this parameter is enabled, the group will be hidden from the address
-     * book.</p>
-     */
     inline void SetHiddenFromGlobalAddressList(bool value) { m_hiddenFromGlobalAddressListHasBeenSet = true; m_hiddenFromGlobalAddressList = value; }
-
-    /**
-     * <p>If this parameter is enabled, the group will be hidden from the address
-     * book.</p>
-     */
     inline CreateGroupRequest& WithHiddenFromGlobalAddressList(bool value) { SetHiddenFromGlobalAddressList(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_organizationId;

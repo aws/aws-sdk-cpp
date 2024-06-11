@@ -38,36 +38,17 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The desired time window for aggregating utterances. </p>
      */
     inline const RelativeAggregationDuration& GetRelativeAggregationDuration() const{ return m_relativeAggregationDuration; }
-
-    /**
-     * <p>The desired time window for aggregating utterances. </p>
-     */
     inline bool RelativeAggregationDurationHasBeenSet() const { return m_relativeAggregationDurationHasBeenSet; }
-
-    /**
-     * <p>The desired time window for aggregating utterances. </p>
-     */
     inline void SetRelativeAggregationDuration(const RelativeAggregationDuration& value) { m_relativeAggregationDurationHasBeenSet = true; m_relativeAggregationDuration = value; }
-
-    /**
-     * <p>The desired time window for aggregating utterances. </p>
-     */
     inline void SetRelativeAggregationDuration(RelativeAggregationDuration&& value) { m_relativeAggregationDurationHasBeenSet = true; m_relativeAggregationDuration = std::move(value); }
-
-    /**
-     * <p>The desired time window for aggregating utterances. </p>
-     */
     inline UtteranceAggregationDuration& WithRelativeAggregationDuration(const RelativeAggregationDuration& value) { SetRelativeAggregationDuration(value); return *this;}
-
-    /**
-     * <p>The desired time window for aggregating utterances. </p>
-     */
     inline UtteranceAggregationDuration& WithRelativeAggregationDuration(RelativeAggregationDuration&& value) { SetRelativeAggregationDuration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RelativeAggregationDuration m_relativeAggregationDuration;

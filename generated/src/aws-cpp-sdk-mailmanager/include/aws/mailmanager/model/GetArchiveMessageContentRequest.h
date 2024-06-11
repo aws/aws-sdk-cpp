@@ -38,46 +38,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the archived email message.</p>
      */
     inline const Aws::String& GetArchivedMessageId() const{ return m_archivedMessageId; }
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline bool ArchivedMessageIdHasBeenSet() const { return m_archivedMessageIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline void SetArchivedMessageId(const Aws::String& value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId = value; }
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline void SetArchivedMessageId(Aws::String&& value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline void SetArchivedMessageId(const char* value) { m_archivedMessageIdHasBeenSet = true; m_archivedMessageId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline GetArchiveMessageContentRequest& WithArchivedMessageId(const Aws::String& value) { SetArchivedMessageId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline GetArchiveMessageContentRequest& WithArchivedMessageId(Aws::String&& value) { SetArchivedMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the archived email message.</p>
-     */
     inline GetArchiveMessageContentRequest& WithArchivedMessageId(const char* value) { SetArchivedMessageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_archivedMessageId;

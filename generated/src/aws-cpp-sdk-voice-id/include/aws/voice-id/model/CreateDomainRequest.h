@@ -38,6 +38,7 @@ namespace Model
     AWS_VOICEID_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. If not provided, the Amazon Web Services SDK
@@ -46,153 +47,44 @@ namespace Model
      * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline CreateDomainRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline CreateDomainRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique, case-sensitive identifier that you provide to ensure the
-     * idempotency of the request. If not provided, the Amazon Web Services SDK
-     * populates this field. For more information about idempotency, see <a
-     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
-     * retries safe with idempotent APIs</a>.</p>
-     */
     inline CreateDomainRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A brief description of this domain.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline CreateDomainRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline CreateDomainRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A brief description of this domain.</p>
-     */
     inline CreateDomainRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the domain.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline CreateDomainRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline CreateDomainRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain.</p>
-     */
     inline CreateDomainRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
      * for the server-side encryption of your data. Refer to <a
@@ -201,93 +93,26 @@ namespace Model
      * key is used. </p>
      */
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
-
-    /**
-     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Refer to <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
-     * key is used. </p>
-     */
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Refer to <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
-     * key is used. </p>
-     */
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
-
-    /**
-     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Refer to <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
-     * key is used. </p>
-     */
     inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Refer to <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
-     * key is used. </p>
-     */
     inline CreateDomainRequest& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration, containing the KMS key identifier, to be used by Voice ID
-     * for the server-side encryption of your data. Refer to <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/encryption-at-rest.html#encryption-at-rest-voiceid">
-     * Amazon Connect Voice ID encryption at rest</a> for more details on how the KMS
-     * key is used. </p>
-     */
     inline CreateDomainRequest& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of tags you want added to the domain.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline CreateDomainRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline CreateDomainRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline CreateDomainRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags you want added to the domain.</p>
-     */
     inline CreateDomainRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

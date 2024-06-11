@@ -34,106 +34,43 @@ namespace Model
     AWS_OMICS_API ListAnnotationStoreVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Lists all versions of an annotation store. </p>
      */
     inline const Aws::Vector<AnnotationStoreVersionItem>& GetAnnotationStoreVersions() const{ return m_annotationStoreVersions; }
-
-    /**
-     * <p> Lists all versions of an annotation store. </p>
-     */
     inline void SetAnnotationStoreVersions(const Aws::Vector<AnnotationStoreVersionItem>& value) { m_annotationStoreVersions = value; }
-
-    /**
-     * <p> Lists all versions of an annotation store. </p>
-     */
     inline void SetAnnotationStoreVersions(Aws::Vector<AnnotationStoreVersionItem>&& value) { m_annotationStoreVersions = std::move(value); }
-
-    /**
-     * <p> Lists all versions of an annotation store. </p>
-     */
     inline ListAnnotationStoreVersionsResult& WithAnnotationStoreVersions(const Aws::Vector<AnnotationStoreVersionItem>& value) { SetAnnotationStoreVersions(value); return *this;}
-
-    /**
-     * <p> Lists all versions of an annotation store. </p>
-     */
     inline ListAnnotationStoreVersionsResult& WithAnnotationStoreVersions(Aws::Vector<AnnotationStoreVersionItem>&& value) { SetAnnotationStoreVersions(std::move(value)); return *this;}
-
-    /**
-     * <p> Lists all versions of an annotation store. </p>
-     */
     inline ListAnnotationStoreVersionsResult& AddAnnotationStoreVersions(const AnnotationStoreVersionItem& value) { m_annotationStoreVersions.push_back(value); return *this; }
-
-    /**
-     * <p> Lists all versions of an annotation store. </p>
-     */
     inline ListAnnotationStoreVersionsResult& AddAnnotationStoreVersions(AnnotationStoreVersionItem&& value) { m_annotationStoreVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> Specifies the pagination token from a previous request to retrieve the next
      * page of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> Specifies the pagination token from a previous request to retrieve the next
-     * page of results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> Specifies the pagination token from a previous request to retrieve the next
-     * page of results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> Specifies the pagination token from a previous request to retrieve the next
-     * page of results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> Specifies the pagination token from a previous request to retrieve the next
-     * page of results. </p>
-     */
     inline ListAnnotationStoreVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> Specifies the pagination token from a previous request to retrieve the next
-     * page of results. </p>
-     */
     inline ListAnnotationStoreVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> Specifies the pagination token from a previous request to retrieve the next
-     * page of results. </p>
-     */
     inline ListAnnotationStoreVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAnnotationStoreVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAnnotationStoreVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAnnotationStoreVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AnnotationStoreVersionItem> m_annotationStoreVersions;

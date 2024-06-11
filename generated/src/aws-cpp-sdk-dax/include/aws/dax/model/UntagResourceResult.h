@@ -34,63 +34,29 @@ namespace Model
     AWS_DAX_API UntagResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The tag keys that have been removed from the cluster.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The tag keys that have been removed from the cluster.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-
-    /**
-     * <p>The tag keys that have been removed from the cluster.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>The tag keys that have been removed from the cluster.</p>
-     */
     inline UntagResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The tag keys that have been removed from the cluster.</p>
-     */
     inline UntagResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag keys that have been removed from the cluster.</p>
-     */
     inline UntagResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The tag keys that have been removed from the cluster.</p>
-     */
     inline UntagResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UntagResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UntagResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UntagResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tags;

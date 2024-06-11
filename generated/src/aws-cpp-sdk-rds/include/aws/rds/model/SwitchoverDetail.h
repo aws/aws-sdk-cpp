@@ -46,88 +46,35 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
      */
     inline const Aws::String& GetSourceMember() const{ return m_sourceMember; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline bool SourceMemberHasBeenSet() const { return m_sourceMemberHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline void SetSourceMember(const Aws::String& value) { m_sourceMemberHasBeenSet = true; m_sourceMember = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline void SetSourceMember(Aws::String&& value) { m_sourceMemberHasBeenSet = true; m_sourceMember = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline void SetSourceMember(const char* value) { m_sourceMemberHasBeenSet = true; m_sourceMember.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline SwitchoverDetail& WithSourceMember(const Aws::String& value) { SetSourceMember(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline SwitchoverDetail& WithSourceMember(Aws::String&& value) { SetSourceMember(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the blue environment.</p>
-     */
     inline SwitchoverDetail& WithSourceMember(const char* value) { SetSourceMember(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
      */
     inline const Aws::String& GetTargetMember() const{ return m_targetMember; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline bool TargetMemberHasBeenSet() const { return m_targetMemberHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline void SetTargetMember(const Aws::String& value) { m_targetMemberHasBeenSet = true; m_targetMember = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline void SetTargetMember(Aws::String&& value) { m_targetMemberHasBeenSet = true; m_targetMember = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline void SetTargetMember(const char* value) { m_targetMemberHasBeenSet = true; m_targetMember.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline SwitchoverDetail& WithTargetMember(const Aws::String& value) { SetTargetMember(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline SwitchoverDetail& WithTargetMember(Aws::String&& value) { SetTargetMember(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of a resource in the green environment.</p>
-     */
     inline SwitchoverDetail& WithTargetMember(const char* value) { SetTargetMember(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The switchover status of a resource in a blue/green deployment.</p>
      * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
@@ -142,112 +89,14 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline SwitchoverDetail& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline SwitchoverDetail& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>The switchover status of a resource in a blue/green deployment.</p>
-     * <p>Values:</p> <ul> <li> <p> <code>PROVISIONING</code> - The resource is being
-     * prepared to switch over.</p> </li> <li> <p> <code>AVAILABLE</code> - The
-     * resource is ready to switch over.</p> </li> <li> <p>
-     * <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.</p>
-     * </li> <li> <p> <code>SWITCHOVER_COMPLETED</code> - The resource has been
-     * switched over.</p> </li> <li> <p> <code>SWITCHOVER_FAILED</code> - The resource
-     * attempted to switch over but failed.</p> </li> <li> <p>
-     * <code>MISSING_SOURCE</code> - The source resource has been deleted.</p> </li>
-     * <li> <p> <code>MISSING_TARGET</code> - The target resource has been deleted.</p>
-     * </li> </ul>
-     */
     inline SwitchoverDetail& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceMember;

@@ -34,79 +34,38 @@ namespace Model
     AWS_IOT_API ValidateSecurityProfileBehaviorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>True if the behaviors were valid.</p>
      */
     inline bool GetValid() const{ return m_valid; }
-
-    /**
-     * <p>True if the behaviors were valid.</p>
-     */
     inline void SetValid(bool value) { m_valid = value; }
-
-    /**
-     * <p>True if the behaviors were valid.</p>
-     */
     inline ValidateSecurityProfileBehaviorsResult& WithValid(bool value) { SetValid(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of any errors found in the behaviors.</p>
      */
     inline const Aws::Vector<ValidationError>& GetValidationErrors() const{ return m_validationErrors; }
-
-    /**
-     * <p>The list of any errors found in the behaviors.</p>
-     */
     inline void SetValidationErrors(const Aws::Vector<ValidationError>& value) { m_validationErrors = value; }
-
-    /**
-     * <p>The list of any errors found in the behaviors.</p>
-     */
     inline void SetValidationErrors(Aws::Vector<ValidationError>&& value) { m_validationErrors = std::move(value); }
-
-    /**
-     * <p>The list of any errors found in the behaviors.</p>
-     */
     inline ValidateSecurityProfileBehaviorsResult& WithValidationErrors(const Aws::Vector<ValidationError>& value) { SetValidationErrors(value); return *this;}
-
-    /**
-     * <p>The list of any errors found in the behaviors.</p>
-     */
     inline ValidateSecurityProfileBehaviorsResult& WithValidationErrors(Aws::Vector<ValidationError>&& value) { SetValidationErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of any errors found in the behaviors.</p>
-     */
     inline ValidateSecurityProfileBehaviorsResult& AddValidationErrors(const ValidationError& value) { m_validationErrors.push_back(value); return *this; }
-
-    /**
-     * <p>The list of any errors found in the behaviors.</p>
-     */
     inline ValidateSecurityProfileBehaviorsResult& AddValidationErrors(ValidationError&& value) { m_validationErrors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ValidateSecurityProfileBehaviorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ValidateSecurityProfileBehaviorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ValidateSecurityProfileBehaviorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_valid;

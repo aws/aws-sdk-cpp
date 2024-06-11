@@ -41,88 +41,35 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> A PartiQL statement that uses parameters. </p>
      */
     inline const Aws::String& GetStatement() const{ return m_statement; }
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline void SetStatement(const Aws::String& value) { m_statementHasBeenSet = true; m_statement = value; }
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline void SetStatement(Aws::String&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline void SetStatement(const char* value) { m_statementHasBeenSet = true; m_statement.assign(value); }
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline ParameterizedStatement& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline ParameterizedStatement& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
-
-    /**
-     * <p> A PartiQL statement that uses parameters. </p>
-     */
     inline ParameterizedStatement& WithStatement(const char* value) { SetStatement(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The parameter values. </p>
      */
     inline const Aws::Vector<AttributeValue>& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline void SetParameters(const Aws::Vector<AttributeValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline void SetParameters(Aws::Vector<AttributeValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline ParameterizedStatement& WithParameters(const Aws::Vector<AttributeValue>& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline ParameterizedStatement& WithParameters(Aws::Vector<AttributeValue>&& value) { SetParameters(std::move(value)); return *this;}
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline ParameterizedStatement& AddParameters(const AttributeValue& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-
-    /**
-     * <p> The parameter values. </p>
-     */
     inline ParameterizedStatement& AddParameters(AttributeValue&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An optional parameter that returns the item attributes for a PartiQL
      * <code>ParameterizedStatement</code> operation that failed a condition check.</p>
@@ -131,52 +78,12 @@ namespace Model
      * No read capacity units are consumed.</p>
      */
     inline const ReturnValuesOnConditionCheckFailure& GetReturnValuesOnConditionCheckFailure() const{ return m_returnValuesOnConditionCheckFailure; }
-
-    /**
-     * <p>An optional parameter that returns the item attributes for a PartiQL
-     * <code>ParameterizedStatement</code> operation that failed a condition check.</p>
-     * <p>There is no additional cost associated with requesting a return value aside
-     * from the small network and processing overhead of receiving a larger response.
-     * No read capacity units are consumed.</p>
-     */
     inline bool ReturnValuesOnConditionCheckFailureHasBeenSet() const { return m_returnValuesOnConditionCheckFailureHasBeenSet; }
-
-    /**
-     * <p>An optional parameter that returns the item attributes for a PartiQL
-     * <code>ParameterizedStatement</code> operation that failed a condition check.</p>
-     * <p>There is no additional cost associated with requesting a return value aside
-     * from the small network and processing overhead of receiving a larger response.
-     * No read capacity units are consumed.</p>
-     */
     inline void SetReturnValuesOnConditionCheckFailure(const ReturnValuesOnConditionCheckFailure& value) { m_returnValuesOnConditionCheckFailureHasBeenSet = true; m_returnValuesOnConditionCheckFailure = value; }
-
-    /**
-     * <p>An optional parameter that returns the item attributes for a PartiQL
-     * <code>ParameterizedStatement</code> operation that failed a condition check.</p>
-     * <p>There is no additional cost associated with requesting a return value aside
-     * from the small network and processing overhead of receiving a larger response.
-     * No read capacity units are consumed.</p>
-     */
     inline void SetReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure&& value) { m_returnValuesOnConditionCheckFailureHasBeenSet = true; m_returnValuesOnConditionCheckFailure = std::move(value); }
-
-    /**
-     * <p>An optional parameter that returns the item attributes for a PartiQL
-     * <code>ParameterizedStatement</code> operation that failed a condition check.</p>
-     * <p>There is no additional cost associated with requesting a return value aside
-     * from the small network and processing overhead of receiving a larger response.
-     * No read capacity units are consumed.</p>
-     */
     inline ParameterizedStatement& WithReturnValuesOnConditionCheckFailure(const ReturnValuesOnConditionCheckFailure& value) { SetReturnValuesOnConditionCheckFailure(value); return *this;}
-
-    /**
-     * <p>An optional parameter that returns the item attributes for a PartiQL
-     * <code>ParameterizedStatement</code> operation that failed a condition check.</p>
-     * <p>There is no additional cost associated with requesting a return value aside
-     * from the small network and processing overhead of receiving a larger response.
-     * No read capacity units are consumed.</p>
-     */
     inline ParameterizedStatement& WithReturnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure&& value) { SetReturnValuesOnConditionCheckFailure(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_statement;

@@ -38,46 +38,19 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A user message in a text message input event.</p>
      */
     inline const Aws::String& GetUserMessage() const{ return m_userMessage; }
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline bool UserMessageHasBeenSet() const { return m_userMessageHasBeenSet; }
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline void SetUserMessage(const Aws::String& value) { m_userMessageHasBeenSet = true; m_userMessage = value; }
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline void SetUserMessage(Aws::String&& value) { m_userMessageHasBeenSet = true; m_userMessage = std::move(value); }
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline void SetUserMessage(const char* value) { m_userMessageHasBeenSet = true; m_userMessage.assign(value); }
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline TextInputEvent& WithUserMessage(const Aws::String& value) { SetUserMessage(value); return *this;}
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline TextInputEvent& WithUserMessage(Aws::String&& value) { SetUserMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A user message in a text message input event.</p>
-     */
     inline TextInputEvent& WithUserMessage(const char* value) { SetUserMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userMessage;

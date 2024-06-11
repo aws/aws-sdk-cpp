@@ -38,42 +38,18 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Denotes whether the gateway EUI connection status event topic is enabled or
      * disabled.</p>
      */
     inline const EventNotificationTopicStatus& GetGatewayEuiEventTopic() const{ return m_gatewayEuiEventTopic; }
-
-    /**
-     * <p>Denotes whether the gateway EUI connection status event topic is enabled or
-     * disabled.</p>
-     */
     inline bool GatewayEuiEventTopicHasBeenSet() const { return m_gatewayEuiEventTopicHasBeenSet; }
-
-    /**
-     * <p>Denotes whether the gateway EUI connection status event topic is enabled or
-     * disabled.</p>
-     */
     inline void SetGatewayEuiEventTopic(const EventNotificationTopicStatus& value) { m_gatewayEuiEventTopicHasBeenSet = true; m_gatewayEuiEventTopic = value; }
-
-    /**
-     * <p>Denotes whether the gateway EUI connection status event topic is enabled or
-     * disabled.</p>
-     */
     inline void SetGatewayEuiEventTopic(EventNotificationTopicStatus&& value) { m_gatewayEuiEventTopicHasBeenSet = true; m_gatewayEuiEventTopic = std::move(value); }
-
-    /**
-     * <p>Denotes whether the gateway EUI connection status event topic is enabled or
-     * disabled.</p>
-     */
     inline LoRaWANConnectionStatusEventNotificationConfigurations& WithGatewayEuiEventTopic(const EventNotificationTopicStatus& value) { SetGatewayEuiEventTopic(value); return *this;}
-
-    /**
-     * <p>Denotes whether the gateway EUI connection status event topic is enabled or
-     * disabled.</p>
-     */
     inline LoRaWANConnectionStatusEventNotificationConfigurations& WithGatewayEuiEventTopic(EventNotificationTopicStatus&& value) { SetGatewayEuiEventTopic(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EventNotificationTopicStatus m_gatewayEuiEventTopic;

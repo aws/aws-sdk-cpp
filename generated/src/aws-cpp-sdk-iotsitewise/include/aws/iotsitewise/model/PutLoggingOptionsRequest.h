@@ -32,36 +32,17 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The logging options to set.</p>
      */
     inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
-
-    /**
-     * <p>The logging options to set.</p>
-     */
     inline bool LoggingOptionsHasBeenSet() const { return m_loggingOptionsHasBeenSet; }
-
-    /**
-     * <p>The logging options to set.</p>
-     */
     inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = value; }
-
-    /**
-     * <p>The logging options to set.</p>
-     */
     inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = std::move(value); }
-
-    /**
-     * <p>The logging options to set.</p>
-     */
     inline PutLoggingOptionsRequest& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
-
-    /**
-     * <p>The logging options to set.</p>
-     */
     inline PutLoggingOptionsRequest& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoggingOptions m_loggingOptions;

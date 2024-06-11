@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDHSMV2_API DeleteBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information on the <code>Backup</code> object deleted.</p>
      */
     inline const Backup& GetBackup() const{ return m_backup; }
-
-    /**
-     * <p>Information on the <code>Backup</code> object deleted.</p>
-     */
     inline void SetBackup(const Backup& value) { m_backup = value; }
-
-    /**
-     * <p>Information on the <code>Backup</code> object deleted.</p>
-     */
     inline void SetBackup(Backup&& value) { m_backup = std::move(value); }
-
-    /**
-     * <p>Information on the <code>Backup</code> object deleted.</p>
-     */
     inline DeleteBackupResult& WithBackup(const Backup& value) { SetBackup(value); return *this;}
-
-    /**
-     * <p>Information on the <code>Backup</code> object deleted.</p>
-     */
     inline DeleteBackupResult& WithBackup(Backup&& value) { SetBackup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteBackupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteBackupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteBackupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Backup m_backup;

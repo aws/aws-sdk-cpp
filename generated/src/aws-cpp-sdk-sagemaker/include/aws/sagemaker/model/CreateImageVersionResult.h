@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreateImageVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the image version.</p>
      */
     inline const Aws::String& GetImageVersionArn() const{ return m_imageVersionArn; }
-
-    /**
-     * <p>The ARN of the image version.</p>
-     */
     inline void SetImageVersionArn(const Aws::String& value) { m_imageVersionArn = value; }
-
-    /**
-     * <p>The ARN of the image version.</p>
-     */
     inline void SetImageVersionArn(Aws::String&& value) { m_imageVersionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the image version.</p>
-     */
     inline void SetImageVersionArn(const char* value) { m_imageVersionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the image version.</p>
-     */
     inline CreateImageVersionResult& WithImageVersionArn(const Aws::String& value) { SetImageVersionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the image version.</p>
-     */
     inline CreateImageVersionResult& WithImageVersionArn(Aws::String&& value) { SetImageVersionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the image version.</p>
-     */
     inline CreateImageVersionResult& WithImageVersionArn(const char* value) { SetImageVersionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateImageVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateImageVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateImageVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageVersionArn;

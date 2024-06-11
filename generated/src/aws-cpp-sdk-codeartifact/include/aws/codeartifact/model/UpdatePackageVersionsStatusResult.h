@@ -35,161 +35,52 @@ namespace Model
     AWS_CODEARTIFACT_API UpdatePackageVersionsStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A list of <code>PackageVersionError</code> objects, one for each package
      * version with a status that failed to update. </p>
      */
     inline const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& GetSuccessfulVersions() const{ return m_successfulVersions; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline void SetSuccessfulVersions(const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& value) { m_successfulVersions = value; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline void SetSuccessfulVersions(Aws::Map<Aws::String, SuccessfulPackageVersionInfo>&& value) { m_successfulVersions = std::move(value); }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& WithSuccessfulVersions(const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& value) { SetSuccessfulVersions(value); return *this;}
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& WithSuccessfulVersions(Aws::Map<Aws::String, SuccessfulPackageVersionInfo>&& value) { SetSuccessfulVersions(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddSuccessfulVersions(const Aws::String& key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(key, value); return *this; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddSuccessfulVersions(Aws::String&& key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddSuccessfulVersions(const Aws::String& key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddSuccessfulVersions(Aws::String&& key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddSuccessfulVersions(const char* key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A list of <code>PackageVersionError</code> objects, one for each package
-     * version with a status that failed to update. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddSuccessfulVersions(const char* key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
      * package version with a status that successfully updated. </p>
      */
     inline const Aws::Map<Aws::String, PackageVersionError>& GetFailedVersions() const{ return m_failedVersions; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline void SetFailedVersions(const Aws::Map<Aws::String, PackageVersionError>& value) { m_failedVersions = value; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline void SetFailedVersions(Aws::Map<Aws::String, PackageVersionError>&& value) { m_failedVersions = std::move(value); }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& WithFailedVersions(const Aws::Map<Aws::String, PackageVersionError>& value) { SetFailedVersions(value); return *this;}
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& WithFailedVersions(Aws::Map<Aws::String, PackageVersionError>&& value) { SetFailedVersions(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddFailedVersions(const Aws::String& key, const PackageVersionError& value) { m_failedVersions.emplace(key, value); return *this; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddFailedVersions(Aws::String&& key, const PackageVersionError& value) { m_failedVersions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddFailedVersions(const Aws::String& key, PackageVersionError&& value) { m_failedVersions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddFailedVersions(Aws::String&& key, PackageVersionError&& value) { m_failedVersions.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddFailedVersions(const char* key, PackageVersionError&& value) { m_failedVersions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p> A list of <code>SuccessfulPackageVersionInfo</code> objects, one for each
-     * package version with a status that successfully updated. </p>
-     */
     inline UpdatePackageVersionsStatusResult& AddFailedVersions(const char* key, const PackageVersionError& value) { m_failedVersions.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdatePackageVersionsStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdatePackageVersionsStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdatePackageVersionsStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, SuccessfulPackageVersionInfo> m_successfulVersions;

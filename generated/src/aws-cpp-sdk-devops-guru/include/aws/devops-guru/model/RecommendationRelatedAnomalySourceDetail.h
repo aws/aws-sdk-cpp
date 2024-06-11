@@ -41,54 +41,20 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
      * information about the analyzed metrics that displayed anomalous behavior. </p>
      */
     inline const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& GetCloudWatchMetrics() const{ return m_cloudWatchMetrics; }
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline bool CloudWatchMetricsHasBeenSet() const { return m_cloudWatchMetricsHasBeenSet; }
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline void SetCloudWatchMetrics(const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = value; }
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline void SetCloudWatchMetrics(Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics = std::move(value); }
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline RecommendationRelatedAnomalySourceDetail& WithCloudWatchMetrics(const Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>& value) { SetCloudWatchMetrics(value); return *this;}
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline RecommendationRelatedAnomalySourceDetail& WithCloudWatchMetrics(Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail>&& value) { SetCloudWatchMetrics(std::move(value)); return *this;}
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline RecommendationRelatedAnomalySourceDetail& AddCloudWatchMetrics(const RecommendationRelatedCloudWatchMetricsSourceDetail& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.push_back(value); return *this; }
-
-    /**
-     * <p> An array of <code>CloudWatchMetricsDetail</code> objects that contains
-     * information about the analyzed metrics that displayed anomalous behavior. </p>
-     */
     inline RecommendationRelatedAnomalySourceDetail& AddCloudWatchMetrics(RecommendationRelatedCloudWatchMetricsSourceDetail&& value) { m_cloudWatchMetricsHasBeenSet = true; m_cloudWatchMetrics.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<RecommendationRelatedCloudWatchMetricsSourceDetail> m_cloudWatchMetrics;

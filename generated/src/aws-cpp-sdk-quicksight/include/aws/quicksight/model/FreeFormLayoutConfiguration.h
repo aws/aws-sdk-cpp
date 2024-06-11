@@ -39,65 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The elements that are included in a free-form layout.</p>
      */
     inline const Aws::Vector<FreeFormLayoutElement>& GetElements() const{ return m_elements; }
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline bool ElementsHasBeenSet() const { return m_elementsHasBeenSet; }
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline void SetElements(const Aws::Vector<FreeFormLayoutElement>& value) { m_elementsHasBeenSet = true; m_elements = value; }
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline void SetElements(Aws::Vector<FreeFormLayoutElement>&& value) { m_elementsHasBeenSet = true; m_elements = std::move(value); }
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline FreeFormLayoutConfiguration& WithElements(const Aws::Vector<FreeFormLayoutElement>& value) { SetElements(value); return *this;}
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline FreeFormLayoutConfiguration& WithElements(Aws::Vector<FreeFormLayoutElement>&& value) { SetElements(std::move(value)); return *this;}
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline FreeFormLayoutConfiguration& AddElements(const FreeFormLayoutElement& value) { m_elementsHasBeenSet = true; m_elements.push_back(value); return *this; }
-
-    /**
-     * <p>The elements that are included in a free-form layout.</p>
-     */
     inline FreeFormLayoutConfiguration& AddElements(FreeFormLayoutElement&& value) { m_elementsHasBeenSet = true; m_elements.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const FreeFormLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
-
-    
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-
-    
     inline void SetCanvasSizeOptions(const FreeFormLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-
-    
     inline void SetCanvasSizeOptions(FreeFormLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-
-    
     inline FreeFormLayoutConfiguration& WithCanvasSizeOptions(const FreeFormLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-
-    
     inline FreeFormLayoutConfiguration& WithCanvasSizeOptions(FreeFormLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FreeFormLayoutElement> m_elements;

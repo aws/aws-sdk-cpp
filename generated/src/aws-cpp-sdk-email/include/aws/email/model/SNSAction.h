@@ -56,6 +56,7 @@ namespace Model
     AWS_SES_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
      * find the ARN of a topic by using the <a
@@ -66,85 +67,16 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline SNSAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline SNSAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. You can
-     * find the ARN of a topic by using the <a
-     * href="https://docs.aws.amazon.com/sns/latest/api/API_ListTopics.html">ListTopics</a>
-     * operation in Amazon SNS.</p> <p>For more information about Amazon SNS topics,
-     * see the <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
-     * Developer Guide</a>.</p>
-     */
     inline SNSAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
      * is easier to use, but may not preserve all special characters when a message was
@@ -152,47 +84,12 @@ namespace Model
      * characters. The default value is UTF-8.</p>
      */
     inline const SNSActionEncoding& GetEncoding() const{ return m_encoding; }
-
-    /**
-     * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
-     * is easier to use, but may not preserve all special characters when a message was
-     * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is UTF-8.</p>
-     */
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-
-    /**
-     * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
-     * is easier to use, but may not preserve all special characters when a message was
-     * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is UTF-8.</p>
-     */
     inline void SetEncoding(const SNSActionEncoding& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-
-    /**
-     * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
-     * is easier to use, but may not preserve all special characters when a message was
-     * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is UTF-8.</p>
-     */
     inline void SetEncoding(SNSActionEncoding&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-
-    /**
-     * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
-     * is easier to use, but may not preserve all special characters when a message was
-     * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is UTF-8.</p>
-     */
     inline SNSAction& WithEncoding(const SNSActionEncoding& value) { SetEncoding(value); return *this;}
-
-    /**
-     * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
-     * is easier to use, but may not preserve all special characters when a message was
-     * encoded with a different encoding format. Base64 preserves all special
-     * characters. The default value is UTF-8.</p>
-     */
     inline SNSAction& WithEncoding(SNSActionEncoding&& value) { SetEncoding(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_topicArn;

@@ -42,95 +42,34 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
      * must have to be included in the metrics results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline AnalyticsAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline AnalyticsAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-
-    /**
-     * <p>The prefix to use when evaluating an AND predicate: The prefix that an object
-     * must have to be included in the metrics results.</p>
-     */
     inline AnalyticsAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline AnalyticsAndOperator& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline AnalyticsAndOperator& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline AnalyticsAndOperator& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The list of tags to use when evaluating an AND predicate.</p>
-     */
     inline AnalyticsAndOperator& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_prefix;

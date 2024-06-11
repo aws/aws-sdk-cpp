@@ -40,34 +40,17 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A Boolean that determines whether CloudFront overrides the
      * <code>X-Content-Type-Options</code> HTTP response header received from the
      * origin with the one specified in this response headers policy.</p>
      */
     inline bool GetOverride() const{ return m_override; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>X-Content-Type-Options</code> HTTP response header received from the
-     * origin with the one specified in this response headers policy.</p>
-     */
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>X-Content-Type-Options</code> HTTP response header received from the
-     * origin with the one specified in this response headers policy.</p>
-     */
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>X-Content-Type-Options</code> HTTP response header received from the
-     * origin with the one specified in this response headers policy.</p>
-     */
     inline ResponseHeadersPolicyContentTypeOptions& WithOverride(bool value) { SetOverride(value); return *this;}
-
+    ///@}
   private:
 
     bool m_override;

@@ -32,115 +32,51 @@ namespace Model
     AWS_QUICKSIGHT_API UpdateFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline UpdateFolderResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the folder.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the folder.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the folder.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the folder.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the folder.</p>
-     */
     inline UpdateFolderResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the folder.</p>
-     */
     inline UpdateFolderResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the folder.</p>
-     */
     inline UpdateFolderResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the folder.</p>
      */
     inline const Aws::String& GetFolderId() const{ return m_folderId; }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline void SetFolderId(const Aws::String& value) { m_folderId = value; }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline void SetFolderId(Aws::String&& value) { m_folderId = std::move(value); }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline void SetFolderId(const char* value) { m_folderId.assign(value); }
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline UpdateFolderResult& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline UpdateFolderResult& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the folder.</p>
-     */
     inline UpdateFolderResult& WithFolderId(const char* value) { SetFolderId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     int m_status;

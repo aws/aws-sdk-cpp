@@ -40,122 +40,45 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A structure containing the authentication configuration in the
      * CreateConnection request.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
-
-    /**
-     * <p>A structure containing the authentication configuration in the
-     * CreateConnection request.</p>
-     */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-
-    /**
-     * <p>A structure containing the authentication configuration in the
-     * CreateConnection request.</p>
-     */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-
-    /**
-     * <p>A structure containing the authentication configuration in the
-     * CreateConnection request.</p>
-     */
     inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-
-    /**
-     * <p>A structure containing the authentication configuration in the
-     * CreateConnection request.</p>
-     */
     inline AuthenticationConfigurationInput& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-
-    /**
-     * <p>A structure containing the authentication configuration in the
-     * CreateConnection request.</p>
-     */
     inline AuthenticationConfigurationInput& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The secret manager ARN to store credentials in the CreateConnection
      * request.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline AuthenticationConfigurationInput& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline AuthenticationConfigurationInput& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The secret manager ARN to store credentials in the CreateConnection
-     * request.</p>
-     */
     inline AuthenticationConfigurationInput& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
      */
     inline const OAuth2PropertiesInput& GetOAuth2Properties() const{ return m_oAuth2Properties; }
-
-    /**
-     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
-     */
     inline bool OAuth2PropertiesHasBeenSet() const { return m_oAuth2PropertiesHasBeenSet; }
-
-    /**
-     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
-     */
     inline void SetOAuth2Properties(const OAuth2PropertiesInput& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = value; }
-
-    /**
-     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
-     */
     inline void SetOAuth2Properties(OAuth2PropertiesInput&& value) { m_oAuth2PropertiesHasBeenSet = true; m_oAuth2Properties = std::move(value); }
-
-    /**
-     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
-     */
     inline AuthenticationConfigurationInput& WithOAuth2Properties(const OAuth2PropertiesInput& value) { SetOAuth2Properties(value); return *this;}
-
-    /**
-     * <p>The properties for OAuth2 authentication in the CreateConnection request.</p>
-     */
     inline AuthenticationConfigurationInput& WithOAuth2Properties(OAuth2PropertiesInput&& value) { SetOAuth2Properties(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AuthenticationType m_authenticationType;

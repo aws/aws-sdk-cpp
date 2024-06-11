@@ -42,147 +42,56 @@ namespace Model
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates the name of the feature that is enabled for the detector.</p>
      */
     inline const OrgFeature& GetName() const{ return m_name; }
-
-    /**
-     * <p>Indicates the name of the feature that is enabled for the detector.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Indicates the name of the feature that is enabled for the detector.</p>
-     */
     inline void SetName(const OrgFeature& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Indicates the name of the feature that is enabled for the detector.</p>
-     */
     inline void SetName(OrgFeature&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Indicates the name of the feature that is enabled for the detector.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithName(const OrgFeature& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Indicates the name of the feature that is enabled for the detector.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithName(OrgFeature&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the status of the feature that is enabled for the detector.</p>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Indicates the status of the feature that is enabled for the detector.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Indicates the status of the feature that is enabled for the detector.</p>
-     */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Indicates the status of the feature that is enabled for the detector.</p>
-     */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Indicates the status of the feature that is enabled for the detector.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Indicates the status of the feature that is enabled for the detector.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp at which the feature object was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>The timestamp at which the feature object was updated.</p>
-     */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp at which the feature object was updated.</p>
-     */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>The timestamp at which the feature object was updated.</p>
-     */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>The timestamp at which the feature object was updated.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp at which the feature object was updated.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates the additional configuration of the feature that is configured for
      * the member account.</p>
      */
     inline const Aws::Vector<MemberAdditionalConfigurationResult>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline void SetAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfigurationResult>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline void SetAdditionalConfiguration(Aws::Vector<MemberAdditionalConfigurationResult>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfigurationResult>& value) { SetAdditionalConfiguration(value); return *this;}
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline MemberFeaturesConfigurationResult& WithAdditionalConfiguration(Aws::Vector<MemberAdditionalConfigurationResult>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline MemberFeaturesConfigurationResult& AddAdditionalConfiguration(const MemberAdditionalConfigurationResult& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
-
-    /**
-     * <p>Indicates the additional configuration of the feature that is configured for
-     * the member account.</p>
-     */
     inline MemberFeaturesConfigurationResult& AddAdditionalConfiguration(MemberAdditionalConfigurationResult&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     OrgFeature m_name;

@@ -44,103 +44,35 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline ProjectAppConfigResourceConfig& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline ProjectAppConfigResourceConfig& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
-     */
     inline ProjectAppConfigResourceConfig& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the AppConfig environment to use for client-side evaluation. This
      * must be an environment that is within the application that you specify for
      * <code>applicationId</code>.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline ProjectAppConfigResourceConfig& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline ProjectAppConfigResourceConfig& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the AppConfig environment to use for client-side evaluation. This
-     * must be an environment that is within the application that you specify for
-     * <code>applicationId</code>.</p>
-     */
     inline ProjectAppConfigResourceConfig& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationId;

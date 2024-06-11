@@ -33,134 +33,47 @@ namespace Model
     AWS_CONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the Amazon Connect instance. You can <a
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the Amazon Connect instance. You can <a
-     * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
-     * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the contact in this instance of Amazon Connect. </p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Connect channel you want to configure.</p>
      */
     inline const UpdateParticipantRoleConfigChannelInfo& GetChannelConfiguration() const{ return m_channelConfiguration; }
-
-    /**
-     * <p>The Amazon Connect channel you want to configure.</p>
-     */
     inline bool ChannelConfigurationHasBeenSet() const { return m_channelConfigurationHasBeenSet; }
-
-    /**
-     * <p>The Amazon Connect channel you want to configure.</p>
-     */
     inline void SetChannelConfiguration(const UpdateParticipantRoleConfigChannelInfo& value) { m_channelConfigurationHasBeenSet = true; m_channelConfiguration = value; }
-
-    /**
-     * <p>The Amazon Connect channel you want to configure.</p>
-     */
     inline void SetChannelConfiguration(UpdateParticipantRoleConfigChannelInfo&& value) { m_channelConfigurationHasBeenSet = true; m_channelConfiguration = std::move(value); }
-
-    /**
-     * <p>The Amazon Connect channel you want to configure.</p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithChannelConfiguration(const UpdateParticipantRoleConfigChannelInfo& value) { SetChannelConfiguration(value); return *this;}
-
-    /**
-     * <p>The Amazon Connect channel you want to configure.</p>
-     */
     inline UpdateParticipantRoleConfigRequest& WithChannelConfiguration(UpdateParticipantRoleConfigChannelInfo&& value) { SetChannelConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

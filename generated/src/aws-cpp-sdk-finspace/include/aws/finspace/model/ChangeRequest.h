@@ -38,6 +38,7 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Defines the type of change request. A <code>changeType</code> can have the
      * following values:</p> <ul> <li> <p>PUT – Adds or updates files in a
@@ -45,137 +46,41 @@ namespace Model
      * </ul>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
-
-    /**
-     * <p>Defines the type of change request. A <code>changeType</code> can have the
-     * following values:</p> <ul> <li> <p>PUT – Adds or updates files in a
-     * database.</p> </li> <li> <p>DELETE – Deletes files in a database.</p> </li>
-     * </ul>
-     */
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-
-    /**
-     * <p>Defines the type of change request. A <code>changeType</code> can have the
-     * following values:</p> <ul> <li> <p>PUT – Adds or updates files in a
-     * database.</p> </li> <li> <p>DELETE – Deletes files in a database.</p> </li>
-     * </ul>
-     */
     inline void SetChangeType(const ChangeType& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-
-    /**
-     * <p>Defines the type of change request. A <code>changeType</code> can have the
-     * following values:</p> <ul> <li> <p>PUT – Adds or updates files in a
-     * database.</p> </li> <li> <p>DELETE – Deletes files in a database.</p> </li>
-     * </ul>
-     */
     inline void SetChangeType(ChangeType&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-
-    /**
-     * <p>Defines the type of change request. A <code>changeType</code> can have the
-     * following values:</p> <ul> <li> <p>PUT – Adds or updates files in a
-     * database.</p> </li> <li> <p>DELETE – Deletes files in a database.</p> </li>
-     * </ul>
-     */
     inline ChangeRequest& WithChangeType(const ChangeType& value) { SetChangeType(value); return *this;}
-
-    /**
-     * <p>Defines the type of change request. A <code>changeType</code> can have the
-     * following values:</p> <ul> <li> <p>PUT – Adds or updates files in a
-     * database.</p> </li> <li> <p>DELETE – Deletes files in a database.</p> </li>
-     * </ul>
-     */
     inline ChangeRequest& WithChangeType(ChangeType&& value) { SetChangeType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the S3 path of the source file that is required to add or update
      * files in a database.</p>
      */
     inline const Aws::String& GetS3Path() const{ return m_s3Path; }
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline bool S3PathHasBeenSet() const { return m_s3PathHasBeenSet; }
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline void SetS3Path(const Aws::String& value) { m_s3PathHasBeenSet = true; m_s3Path = value; }
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline void SetS3Path(Aws::String&& value) { m_s3PathHasBeenSet = true; m_s3Path = std::move(value); }
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline void SetS3Path(const char* value) { m_s3PathHasBeenSet = true; m_s3Path.assign(value); }
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline ChangeRequest& WithS3Path(const Aws::String& value) { SetS3Path(value); return *this;}
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline ChangeRequest& WithS3Path(Aws::String&& value) { SetS3Path(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines the S3 path of the source file that is required to add or update
-     * files in a database.</p>
-     */
     inline ChangeRequest& WithS3Path(const char* value) { SetS3Path(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines the path within the database directory. </p>
      */
     inline const Aws::String& GetDbPath() const{ return m_dbPath; }
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline bool DbPathHasBeenSet() const { return m_dbPathHasBeenSet; }
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline void SetDbPath(const Aws::String& value) { m_dbPathHasBeenSet = true; m_dbPath = value; }
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline void SetDbPath(Aws::String&& value) { m_dbPathHasBeenSet = true; m_dbPath = std::move(value); }
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline void SetDbPath(const char* value) { m_dbPathHasBeenSet = true; m_dbPath.assign(value); }
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline ChangeRequest& WithDbPath(const Aws::String& value) { SetDbPath(value); return *this;}
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline ChangeRequest& WithDbPath(Aws::String&& value) { SetDbPath(std::move(value)); return *this;}
-
-    /**
-     * <p>Defines the path within the database directory. </p>
-     */
     inline ChangeRequest& WithDbPath(const char* value) { SetDbPath(value); return *this;}
-
+    ///@}
   private:
 
     ChangeType m_changeType;

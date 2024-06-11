@@ -33,69 +33,22 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> A list of security controls (identified with <code>SecurityControlId</code>,
      * <code>SecurityControlArn</code>, or a mix of both parameters). The security
      * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityControlIds() const{ return m_securityControlIds; }
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline bool SecurityControlIdsHasBeenSet() const { return m_securityControlIdsHasBeenSet; }
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline void SetSecurityControlIds(const Aws::Vector<Aws::String>& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds = value; }
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline void SetSecurityControlIds(Aws::Vector<Aws::String>&& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds = std::move(value); }
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline BatchGetSecurityControlsRequest& WithSecurityControlIds(const Aws::Vector<Aws::String>& value) { SetSecurityControlIds(value); return *this;}
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline BatchGetSecurityControlsRequest& WithSecurityControlIds(Aws::Vector<Aws::String>&& value) { SetSecurityControlIds(std::move(value)); return *this;}
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline BatchGetSecurityControlsRequest& AddSecurityControlIds(const Aws::String& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.push_back(value); return *this; }
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline BatchGetSecurityControlsRequest& AddSecurityControlIds(Aws::String&& value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p> A list of security controls (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters). The security
-     * control ID or Amazon Resource Name (ARN) is the same across standards. </p>
-     */
     inline BatchGetSecurityControlsRequest& AddSecurityControlIds(const char* value) { m_securityControlIdsHasBeenSet = true; m_securityControlIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_securityControlIds;

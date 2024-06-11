@@ -39,95 +39,34 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
      * step execution.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline LambdaStepMetadata& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline LambdaStepMetadata& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Lambda function that was run by this
-     * step execution.</p>
-     */
     inline LambdaStepMetadata& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the output parameters of the Lambda step.</p>
      */
     inline const Aws::Vector<OutputParameter>& GetOutputParameters() const{ return m_outputParameters; }
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline bool OutputParametersHasBeenSet() const { return m_outputParametersHasBeenSet; }
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline void SetOutputParameters(const Aws::Vector<OutputParameter>& value) { m_outputParametersHasBeenSet = true; m_outputParameters = value; }
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline void SetOutputParameters(Aws::Vector<OutputParameter>&& value) { m_outputParametersHasBeenSet = true; m_outputParameters = std::move(value); }
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline LambdaStepMetadata& WithOutputParameters(const Aws::Vector<OutputParameter>& value) { SetOutputParameters(value); return *this;}
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline LambdaStepMetadata& WithOutputParameters(Aws::Vector<OutputParameter>&& value) { SetOutputParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline LambdaStepMetadata& AddOutputParameters(const OutputParameter& value) { m_outputParametersHasBeenSet = true; m_outputParameters.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the output parameters of the Lambda step.</p>
-     */
     inline LambdaStepMetadata& AddOutputParameters(OutputParameter&& value) { m_outputParametersHasBeenSet = true; m_outputParameters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_arn;

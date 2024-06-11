@@ -33,53 +33,27 @@ namespace Model
     AWS_CODEBUILD_API CreateReportGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Information about the report group that was created. </p>
      */
     inline const ReportGroup& GetReportGroup() const{ return m_reportGroup; }
-
-    /**
-     * <p> Information about the report group that was created. </p>
-     */
     inline void SetReportGroup(const ReportGroup& value) { m_reportGroup = value; }
-
-    /**
-     * <p> Information about the report group that was created. </p>
-     */
     inline void SetReportGroup(ReportGroup&& value) { m_reportGroup = std::move(value); }
-
-    /**
-     * <p> Information about the report group that was created. </p>
-     */
     inline CreateReportGroupResult& WithReportGroup(const ReportGroup& value) { SetReportGroup(value); return *this;}
-
-    /**
-     * <p> Information about the report group that was created. </p>
-     */
     inline CreateReportGroupResult& WithReportGroup(ReportGroup&& value) { SetReportGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateReportGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateReportGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateReportGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ReportGroup m_reportGroup;

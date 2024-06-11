@@ -40,129 +40,53 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The first IP address in the range.</p>
      */
     inline const Aws::String& GetFirstAddress() const{ return m_firstAddress; }
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline bool FirstAddressHasBeenSet() const { return m_firstAddressHasBeenSet; }
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline void SetFirstAddress(const Aws::String& value) { m_firstAddressHasBeenSet = true; m_firstAddress = value; }
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline void SetFirstAddress(Aws::String&& value) { m_firstAddressHasBeenSet = true; m_firstAddress = std::move(value); }
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline void SetFirstAddress(const char* value) { m_firstAddressHasBeenSet = true; m_firstAddress.assign(value); }
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithFirstAddress(const Aws::String& value) { SetFirstAddress(value); return *this;}
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithFirstAddress(Aws::String&& value) { SetFirstAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The first IP address in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithFirstAddress(const char* value) { SetFirstAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last IP address in the range.</p>
      */
     inline const Aws::String& GetLastAddress() const{ return m_lastAddress; }
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline bool LastAddressHasBeenSet() const { return m_lastAddressHasBeenSet; }
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline void SetLastAddress(const Aws::String& value) { m_lastAddressHasBeenSet = true; m_lastAddress = value; }
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline void SetLastAddress(Aws::String&& value) { m_lastAddressHasBeenSet = true; m_lastAddress = std::move(value); }
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline void SetLastAddress(const char* value) { m_lastAddressHasBeenSet = true; m_lastAddress.assign(value); }
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithLastAddress(const Aws::String& value) { SetLastAddress(value); return *this;}
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithLastAddress(Aws::String&& value) { SetLastAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The last IP address in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithLastAddress(const char* value) { SetLastAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of addresses in the range.</p>
      */
     inline int GetAddressCount() const{ return m_addressCount; }
-
-    /**
-     * <p>The number of addresses in the range.</p>
-     */
     inline bool AddressCountHasBeenSet() const { return m_addressCountHasBeenSet; }
-
-    /**
-     * <p>The number of addresses in the range.</p>
-     */
     inline void SetAddressCount(int value) { m_addressCountHasBeenSet = true; m_addressCount = value; }
-
-    /**
-     * <p>The number of addresses in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithAddressCount(int value) { SetAddressCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of available addresses in the range.</p>
      */
     inline int GetAvailableAddressCount() const{ return m_availableAddressCount; }
-
-    /**
-     * <p>The number of available addresses in the range.</p>
-     */
     inline bool AvailableAddressCountHasBeenSet() const { return m_availableAddressCountHasBeenSet; }
-
-    /**
-     * <p>The number of available addresses in the range.</p>
-     */
     inline void SetAvailableAddressCount(int value) { m_availableAddressCountHasBeenSet = true; m_availableAddressCount = value; }
-
-    /**
-     * <p>The number of available addresses in the range.</p>
-     */
     inline PublicIpv4PoolRange& WithAvailableAddressCount(int value) { SetAvailableAddressCount(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_firstAddress;

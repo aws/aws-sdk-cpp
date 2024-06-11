@@ -32,87 +32,33 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The farm ID for the storage profile.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline GetStorageProfileRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline GetStorageProfileRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID for the storage profile.</p>
-     */
     inline GetStorageProfileRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The storage profile ID.</p>
      */
     inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline GetStorageProfileRequest& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline GetStorageProfileRequest& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline GetStorageProfileRequest& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

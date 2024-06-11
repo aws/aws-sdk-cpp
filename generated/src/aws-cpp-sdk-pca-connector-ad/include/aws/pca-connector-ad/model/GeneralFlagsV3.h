@@ -37,55 +37,27 @@ namespace Model
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow
      * autoenrollment.</p>
      */
     inline bool GetAutoEnrollment() const{ return m_autoEnrollment; }
-
-    /**
-     * <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow
-     * autoenrollment.</p>
-     */
     inline bool AutoEnrollmentHasBeenSet() const { return m_autoEnrollmentHasBeenSet; }
-
-    /**
-     * <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow
-     * autoenrollment.</p>
-     */
     inline void SetAutoEnrollment(bool value) { m_autoEnrollmentHasBeenSet = true; m_autoEnrollment = value; }
-
-    /**
-     * <p>Allows certificate issuance using autoenrollment. Set to TRUE to allow
-     * autoenrollment.</p>
-     */
     inline GeneralFlagsV3& WithAutoEnrollment(bool value) { SetAutoEnrollment(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Defines if the template is for machines or users. Set to TRUE if the template
      * is for machines. Set to FALSE if the template is for users</p>
      */
     inline bool GetMachineType() const{ return m_machineType; }
-
-    /**
-     * <p>Defines if the template is for machines or users. Set to TRUE if the template
-     * is for machines. Set to FALSE if the template is for users</p>
-     */
     inline bool MachineTypeHasBeenSet() const { return m_machineTypeHasBeenSet; }
-
-    /**
-     * <p>Defines if the template is for machines or users. Set to TRUE if the template
-     * is for machines. Set to FALSE if the template is for users</p>
-     */
     inline void SetMachineType(bool value) { m_machineTypeHasBeenSet = true; m_machineType = value; }
-
-    /**
-     * <p>Defines if the template is for machines or users. Set to TRUE if the template
-     * is for machines. Set to FALSE if the template is for users</p>
-     */
     inline GeneralFlagsV3& WithMachineType(bool value) { SetMachineType(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoEnrollment;

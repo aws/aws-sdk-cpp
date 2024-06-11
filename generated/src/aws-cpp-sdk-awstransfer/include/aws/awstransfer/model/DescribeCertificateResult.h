@@ -33,53 +33,27 @@ namespace Model
     AWS_TRANSFER_API DescribeCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details for the specified certificate, returned as an object.</p>
      */
     inline const DescribedCertificate& GetCertificate() const{ return m_certificate; }
-
-    /**
-     * <p>The details for the specified certificate, returned as an object.</p>
-     */
     inline void SetCertificate(const DescribedCertificate& value) { m_certificate = value; }
-
-    /**
-     * <p>The details for the specified certificate, returned as an object.</p>
-     */
     inline void SetCertificate(DescribedCertificate&& value) { m_certificate = std::move(value); }
-
-    /**
-     * <p>The details for the specified certificate, returned as an object.</p>
-     */
     inline DescribeCertificateResult& WithCertificate(const DescribedCertificate& value) { SetCertificate(value); return *this;}
-
-    /**
-     * <p>The details for the specified certificate, returned as an object.</p>
-     */
     inline DescribeCertificateResult& WithCertificate(DescribedCertificate&& value) { SetCertificate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DescribedCertificate m_certificate;

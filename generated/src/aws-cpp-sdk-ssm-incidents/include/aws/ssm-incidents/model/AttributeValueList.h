@@ -39,87 +39,33 @@ namespace Model
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The list of integer values that the filter matches.</p>
      */
     inline const Aws::Vector<int>& GetIntegerValues() const{ return m_integerValues; }
-
-    /**
-     * <p>The list of integer values that the filter matches.</p>
-     */
     inline bool IntegerValuesHasBeenSet() const { return m_integerValuesHasBeenSet; }
-
-    /**
-     * <p>The list of integer values that the filter matches.</p>
-     */
     inline void SetIntegerValues(const Aws::Vector<int>& value) { m_integerValuesHasBeenSet = true; m_integerValues = value; }
-
-    /**
-     * <p>The list of integer values that the filter matches.</p>
-     */
     inline void SetIntegerValues(Aws::Vector<int>&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::move(value); }
-
-    /**
-     * <p>The list of integer values that the filter matches.</p>
-     */
     inline AttributeValueList& WithIntegerValues(const Aws::Vector<int>& value) { SetIntegerValues(value); return *this;}
-
-    /**
-     * <p>The list of integer values that the filter matches.</p>
-     */
     inline AttributeValueList& WithIntegerValues(Aws::Vector<int>&& value) { SetIntegerValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of integer values that the filter matches.</p>
-     */
     inline AttributeValueList& AddIntegerValues(int value) { m_integerValuesHasBeenSet = true; m_integerValues.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of string values that the filter matches.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStringValues() const{ return m_stringValues; }
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline bool StringValuesHasBeenSet() const { return m_stringValuesHasBeenSet; }
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline void SetStringValues(const Aws::Vector<Aws::String>& value) { m_stringValuesHasBeenSet = true; m_stringValues = value; }
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline void SetStringValues(Aws::Vector<Aws::String>&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::move(value); }
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline AttributeValueList& WithStringValues(const Aws::Vector<Aws::String>& value) { SetStringValues(value); return *this;}
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline AttributeValueList& WithStringValues(Aws::Vector<Aws::String>&& value) { SetStringValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline AttributeValueList& AddStringValues(const Aws::String& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline AttributeValueList& AddStringValues(Aws::String&& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of string values that the filter matches.</p>
-     */
     inline AttributeValueList& AddStringValues(const char* value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<int> m_integerValues;

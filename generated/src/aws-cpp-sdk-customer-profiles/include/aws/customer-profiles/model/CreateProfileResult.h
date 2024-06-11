@@ -32,63 +32,29 @@ namespace Model
     AWS_CUSTOMERPROFILES_API CreateProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of a customer profile.</p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
-
-    /**
-     * <p>The unique identifier of a customer profile.</p>
-     */
     inline void SetProfileId(const Aws::String& value) { m_profileId = value; }
-
-    /**
-     * <p>The unique identifier of a customer profile.</p>
-     */
     inline void SetProfileId(Aws::String&& value) { m_profileId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of a customer profile.</p>
-     */
     inline void SetProfileId(const char* value) { m_profileId.assign(value); }
-
-    /**
-     * <p>The unique identifier of a customer profile.</p>
-     */
     inline CreateProfileResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of a customer profile.</p>
-     */
     inline CreateProfileResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of a customer profile.</p>
-     */
     inline CreateProfileResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_profileId;

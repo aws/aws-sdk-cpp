@@ -34,99 +34,42 @@ namespace Model
     AWS_GLOBALACCELERATOR_API AddEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of endpoint objects.</p>
      */
     inline const Aws::Vector<EndpointDescription>& GetEndpointDescriptions() const{ return m_endpointDescriptions; }
-
-    /**
-     * <p>The list of endpoint objects.</p>
-     */
     inline void SetEndpointDescriptions(const Aws::Vector<EndpointDescription>& value) { m_endpointDescriptions = value; }
-
-    /**
-     * <p>The list of endpoint objects.</p>
-     */
     inline void SetEndpointDescriptions(Aws::Vector<EndpointDescription>&& value) { m_endpointDescriptions = std::move(value); }
-
-    /**
-     * <p>The list of endpoint objects.</p>
-     */
     inline AddEndpointsResult& WithEndpointDescriptions(const Aws::Vector<EndpointDescription>& value) { SetEndpointDescriptions(value); return *this;}
-
-    /**
-     * <p>The list of endpoint objects.</p>
-     */
     inline AddEndpointsResult& WithEndpointDescriptions(Aws::Vector<EndpointDescription>&& value) { SetEndpointDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of endpoint objects.</p>
-     */
     inline AddEndpointsResult& AddEndpointDescriptions(const EndpointDescription& value) { m_endpointDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>The list of endpoint objects.</p>
-     */
     inline AddEndpointsResult& AddEndpointDescriptions(EndpointDescription&& value) { m_endpointDescriptions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
      */
     inline const Aws::String& GetEndpointGroupArn() const{ return m_endpointGroupArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline void SetEndpointGroupArn(const Aws::String& value) { m_endpointGroupArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline void SetEndpointGroupArn(Aws::String&& value) { m_endpointGroupArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline void SetEndpointGroupArn(const char* value) { m_endpointGroupArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline AddEndpointsResult& WithEndpointGroupArn(const Aws::String& value) { SetEndpointGroupArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline AddEndpointsResult& WithEndpointGroupArn(Aws::String&& value) { SetEndpointGroupArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the endpoint group.</p>
-     */
     inline AddEndpointsResult& WithEndpointGroupArn(const char* value) { SetEndpointGroupArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<EndpointDescription> m_endpointDescriptions;

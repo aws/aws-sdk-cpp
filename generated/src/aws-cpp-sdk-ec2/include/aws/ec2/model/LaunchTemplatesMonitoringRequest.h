@@ -37,30 +37,16 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic
      * monitoring is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic
-     * monitoring is enabled.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic
-     * monitoring is enabled.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specify <code>true</code> to enable detailed monitoring. Otherwise, basic
-     * monitoring is enabled.</p>
-     */
     inline LaunchTemplatesMonitoringRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

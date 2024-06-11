@@ -36,96 +36,36 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The CIDR range for the route. This must match the CIDR for the route
      * exactly.</p>
      */
     inline const Aws::String& GetDestinationCidrBlock() const{ return m_destinationCidrBlock; }
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline bool DestinationCidrBlockHasBeenSet() const { return m_destinationCidrBlockHasBeenSet; }
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline void SetDestinationCidrBlock(const Aws::String& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = value; }
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline void SetDestinationCidrBlock(Aws::String&& value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock = std::move(value); }
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline void SetDestinationCidrBlock(const char* value) { m_destinationCidrBlockHasBeenSet = true; m_destinationCidrBlock.assign(value); }
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDestinationCidrBlock(const Aws::String& value) { SetDestinationCidrBlock(value); return *this;}
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDestinationCidrBlock(Aws::String&& value) { SetDestinationCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR range for the route. This must match the CIDR for the route
-     * exactly.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDestinationCidrBlock(const char* value) { SetDestinationCidrBlock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the local gateway route table.</p>
      */
     inline const Aws::String& GetLocalGatewayRouteTableId() const{ return m_localGatewayRouteTableId; }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline bool LocalGatewayRouteTableIdHasBeenSet() const { return m_localGatewayRouteTableIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline void SetLocalGatewayRouteTableId(const Aws::String& value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId = value; }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline void SetLocalGatewayRouteTableId(Aws::String&& value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId = std::move(value); }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline void SetLocalGatewayRouteTableId(const char* value) { m_localGatewayRouteTableIdHasBeenSet = true; m_localGatewayRouteTableId.assign(value); }
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithLocalGatewayRouteTableId(const Aws::String& value) { SetLocalGatewayRouteTableId(value); return *this;}
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithLocalGatewayRouteTableId(Aws::String&& value) { SetLocalGatewayRouteTableId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the local gateway route table.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithLocalGatewayRouteTableId(const char* value) { SetLocalGatewayRouteTableId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -133,88 +73,26 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
      * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
      * in the same request. </p>
      */
     inline const Aws::String& GetDestinationPrefixListId() const{ return m_destinationPrefixListId; }
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline bool DestinationPrefixListIdHasBeenSet() const { return m_destinationPrefixListIdHasBeenSet; }
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline void SetDestinationPrefixListId(const Aws::String& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = value; }
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline void SetDestinationPrefixListId(Aws::String&& value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId = std::move(value); }
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline void SetDestinationPrefixListId(const char* value) { m_destinationPrefixListIdHasBeenSet = true; m_destinationPrefixListId.assign(value); }
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDestinationPrefixListId(const Aws::String& value) { SetDestinationPrefixListId(value); return *this;}
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDestinationPrefixListId(Aws::String&& value) { SetDestinationPrefixListId(std::move(value)); return *this;}
-
-    /**
-     * <p> Use a prefix list in place of <code>DestinationCidrBlock</code>. You cannot
-     * use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
-     * in the same request. </p>
-     */
     inline DeleteLocalGatewayRouteRequest& WithDestinationPrefixListId(const char* value) { SetDestinationPrefixListId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_destinationCidrBlock;

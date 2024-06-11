@@ -49,98 +49,41 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parameters required for creating a replica for the table.</p>
      */
     inline const CreateReplicationGroupMemberAction& GetCreate() const{ return m_create; }
-
-    /**
-     * <p>The parameters required for creating a replica for the table.</p>
-     */
     inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
-
-    /**
-     * <p>The parameters required for creating a replica for the table.</p>
-     */
     inline void SetCreate(const CreateReplicationGroupMemberAction& value) { m_createHasBeenSet = true; m_create = value; }
-
-    /**
-     * <p>The parameters required for creating a replica for the table.</p>
-     */
     inline void SetCreate(CreateReplicationGroupMemberAction&& value) { m_createHasBeenSet = true; m_create = std::move(value); }
-
-    /**
-     * <p>The parameters required for creating a replica for the table.</p>
-     */
     inline ReplicationGroupUpdate& WithCreate(const CreateReplicationGroupMemberAction& value) { SetCreate(value); return *this;}
-
-    /**
-     * <p>The parameters required for creating a replica for the table.</p>
-     */
     inline ReplicationGroupUpdate& WithCreate(CreateReplicationGroupMemberAction&& value) { SetCreate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters required for updating a replica for the table.</p>
      */
     inline const UpdateReplicationGroupMemberAction& GetUpdate() const{ return m_update; }
-
-    /**
-     * <p>The parameters required for updating a replica for the table.</p>
-     */
     inline bool UpdateHasBeenSet() const { return m_updateHasBeenSet; }
-
-    /**
-     * <p>The parameters required for updating a replica for the table.</p>
-     */
     inline void SetUpdate(const UpdateReplicationGroupMemberAction& value) { m_updateHasBeenSet = true; m_update = value; }
-
-    /**
-     * <p>The parameters required for updating a replica for the table.</p>
-     */
     inline void SetUpdate(UpdateReplicationGroupMemberAction&& value) { m_updateHasBeenSet = true; m_update = std::move(value); }
-
-    /**
-     * <p>The parameters required for updating a replica for the table.</p>
-     */
     inline ReplicationGroupUpdate& WithUpdate(const UpdateReplicationGroupMemberAction& value) { SetUpdate(value); return *this;}
-
-    /**
-     * <p>The parameters required for updating a replica for the table.</p>
-     */
     inline ReplicationGroupUpdate& WithUpdate(UpdateReplicationGroupMemberAction&& value) { SetUpdate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The parameters required for deleting a replica for the table.</p>
      */
     inline const DeleteReplicationGroupMemberAction& GetDelete() const{ return m_delete; }
-
-    /**
-     * <p>The parameters required for deleting a replica for the table.</p>
-     */
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
-
-    /**
-     * <p>The parameters required for deleting a replica for the table.</p>
-     */
     inline void SetDelete(const DeleteReplicationGroupMemberAction& value) { m_deleteHasBeenSet = true; m_delete = value; }
-
-    /**
-     * <p>The parameters required for deleting a replica for the table.</p>
-     */
     inline void SetDelete(DeleteReplicationGroupMemberAction&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
-
-    /**
-     * <p>The parameters required for deleting a replica for the table.</p>
-     */
     inline ReplicationGroupUpdate& WithDelete(const DeleteReplicationGroupMemberAction& value) { SetDelete(value); return *this;}
-
-    /**
-     * <p>The parameters required for deleting a replica for the table.</p>
-     */
     inline ReplicationGroupUpdate& WithDelete(DeleteReplicationGroupMemberAction&& value) { SetDelete(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CreateReplicationGroupMemberAction m_create;

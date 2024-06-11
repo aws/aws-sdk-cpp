@@ -41,48 +41,19 @@ namespace Model
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Auto scaling scales up capacity automatically when traffic exceeds this
      * target utilization rate, and then back down when it falls below the target. A
      * <code>double</code> between 20 and 90.</p>
      */
     inline const TargetTrackingScalingPolicyConfiguration& GetTargetTrackingScalingPolicyConfiguration() const{ return m_targetTrackingScalingPolicyConfiguration; }
-
-    /**
-     * <p>Auto scaling scales up capacity automatically when traffic exceeds this
-     * target utilization rate, and then back down when it falls below the target. A
-     * <code>double</code> between 20 and 90.</p>
-     */
     inline bool TargetTrackingScalingPolicyConfigurationHasBeenSet() const { return m_targetTrackingScalingPolicyConfigurationHasBeenSet; }
-
-    /**
-     * <p>Auto scaling scales up capacity automatically when traffic exceeds this
-     * target utilization rate, and then back down when it falls below the target. A
-     * <code>double</code> between 20 and 90.</p>
-     */
     inline void SetTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = value; }
-
-    /**
-     * <p>Auto scaling scales up capacity automatically when traffic exceeds this
-     * target utilization rate, and then back down when it falls below the target. A
-     * <code>double</code> between 20 and 90.</p>
-     */
     inline void SetTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { m_targetTrackingScalingPolicyConfigurationHasBeenSet = true; m_targetTrackingScalingPolicyConfiguration = std::move(value); }
-
-    /**
-     * <p>Auto scaling scales up capacity automatically when traffic exceeds this
-     * target utilization rate, and then back down when it falls below the target. A
-     * <code>double</code> between 20 and 90.</p>
-     */
     inline AutoScalingPolicy& WithTargetTrackingScalingPolicyConfiguration(const TargetTrackingScalingPolicyConfiguration& value) { SetTargetTrackingScalingPolicyConfiguration(value); return *this;}
-
-    /**
-     * <p>Auto scaling scales up capacity automatically when traffic exceeds this
-     * target utilization rate, and then back down when it falls below the target. A
-     * <code>double</code> between 20 and 90.</p>
-     */
     inline AutoScalingPolicy& WithTargetTrackingScalingPolicyConfiguration(TargetTrackingScalingPolicyConfiguration&& value) { SetTargetTrackingScalingPolicyConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TargetTrackingScalingPolicyConfiguration m_targetTrackingScalingPolicyConfiguration;

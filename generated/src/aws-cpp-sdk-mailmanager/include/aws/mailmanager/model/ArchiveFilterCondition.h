@@ -39,67 +39,29 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A boolean expression to evaluate against email attributes.</p>
      */
     inline const ArchiveBooleanExpression& GetBooleanExpression() const{ return m_booleanExpression; }
-
-    /**
-     * <p>A boolean expression to evaluate against email attributes.</p>
-     */
     inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
-
-    /**
-     * <p>A boolean expression to evaluate against email attributes.</p>
-     */
     inline void SetBooleanExpression(const ArchiveBooleanExpression& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = value; }
-
-    /**
-     * <p>A boolean expression to evaluate against email attributes.</p>
-     */
     inline void SetBooleanExpression(ArchiveBooleanExpression&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::move(value); }
-
-    /**
-     * <p>A boolean expression to evaluate against email attributes.</p>
-     */
     inline ArchiveFilterCondition& WithBooleanExpression(const ArchiveBooleanExpression& value) { SetBooleanExpression(value); return *this;}
-
-    /**
-     * <p>A boolean expression to evaluate against email attributes.</p>
-     */
     inline ArchiveFilterCondition& WithBooleanExpression(ArchiveBooleanExpression&& value) { SetBooleanExpression(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string expression to evaluate against email attributes.</p>
      */
     inline const ArchiveStringExpression& GetStringExpression() const{ return m_stringExpression; }
-
-    /**
-     * <p>A string expression to evaluate against email attributes.</p>
-     */
     inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
-
-    /**
-     * <p>A string expression to evaluate against email attributes.</p>
-     */
     inline void SetStringExpression(const ArchiveStringExpression& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = value; }
-
-    /**
-     * <p>A string expression to evaluate against email attributes.</p>
-     */
     inline void SetStringExpression(ArchiveStringExpression&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::move(value); }
-
-    /**
-     * <p>A string expression to evaluate against email attributes.</p>
-     */
     inline ArchiveFilterCondition& WithStringExpression(const ArchiveStringExpression& value) { SetStringExpression(value); return *this;}
-
-    /**
-     * <p>A string expression to evaluate against email attributes.</p>
-     */
     inline ArchiveFilterCondition& WithStringExpression(ArchiveStringExpression&& value) { SetStringExpression(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArchiveBooleanExpression m_booleanExpression;

@@ -36,55 +36,27 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum value for Land Cloud Cover property filter. This will filter
      * items having Land Cloud Cover greater than or equal to this value.</p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
-
-    /**
-     * <p>The minimum value for Land Cloud Cover property filter. This will filter
-     * items having Land Cloud Cover greater than or equal to this value.</p>
-     */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
-
-    /**
-     * <p>The minimum value for Land Cloud Cover property filter. This will filter
-     * items having Land Cloud Cover greater than or equal to this value.</p>
-     */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
-
-    /**
-     * <p>The minimum value for Land Cloud Cover property filter. This will filter
-     * items having Land Cloud Cover greater than or equal to this value.</p>
-     */
     inline LandsatCloudCoverLandInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum value for Land Cloud Cover property filter. This will filter
      * items having Land Cloud Cover less than or equal to this value.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
-
-    /**
-     * <p>The maximum value for Land Cloud Cover property filter. This will filter
-     * items having Land Cloud Cover less than or equal to this value.</p>
-     */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
-
-    /**
-     * <p>The maximum value for Land Cloud Cover property filter. This will filter
-     * items having Land Cloud Cover less than or equal to this value.</p>
-     */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
-
-    /**
-     * <p>The maximum value for Land Cloud Cover property filter. This will filter
-     * items having Land Cloud Cover less than or equal to this value.</p>
-     */
     inline LandsatCloudCoverLandInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
-
+    ///@}
   private:
 
     double m_lowerBound;

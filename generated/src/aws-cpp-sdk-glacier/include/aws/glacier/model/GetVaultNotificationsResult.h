@@ -39,53 +39,27 @@ namespace Model
     AWS_GLACIER_API GetVaultNotificationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the notification configuration set on the vault.</p>
      */
     inline const VaultNotificationConfig& GetVaultNotificationConfig() const{ return m_vaultNotificationConfig; }
-
-    /**
-     * <p>Returns the notification configuration set on the vault.</p>
-     */
     inline void SetVaultNotificationConfig(const VaultNotificationConfig& value) { m_vaultNotificationConfig = value; }
-
-    /**
-     * <p>Returns the notification configuration set on the vault.</p>
-     */
     inline void SetVaultNotificationConfig(VaultNotificationConfig&& value) { m_vaultNotificationConfig = std::move(value); }
-
-    /**
-     * <p>Returns the notification configuration set on the vault.</p>
-     */
     inline GetVaultNotificationsResult& WithVaultNotificationConfig(const VaultNotificationConfig& value) { SetVaultNotificationConfig(value); return *this;}
-
-    /**
-     * <p>Returns the notification configuration set on the vault.</p>
-     */
     inline GetVaultNotificationsResult& WithVaultNotificationConfig(VaultNotificationConfig&& value) { SetVaultNotificationConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetVaultNotificationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetVaultNotificationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetVaultNotificationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     VaultNotificationConfig m_vaultNotificationConfig;

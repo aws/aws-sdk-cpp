@@ -39,51 +39,20 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of <code>Function</code> objects.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFunctions() const{ return m_functions; }
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline void SetFunctions(const Aws::Vector<Aws::String>& value) { m_functionsHasBeenSet = true; m_functions = value; }
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline void SetFunctions(Aws::Vector<Aws::String>&& value) { m_functionsHasBeenSet = true; m_functions = std::move(value); }
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline PipelineConfig& WithFunctions(const Aws::Vector<Aws::String>& value) { SetFunctions(value); return *this;}
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline PipelineConfig& WithFunctions(Aws::Vector<Aws::String>&& value) { SetFunctions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline PipelineConfig& AddFunctions(const Aws::String& value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline PipelineConfig& AddFunctions(Aws::String&& value) { m_functionsHasBeenSet = true; m_functions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of <code>Function</code> objects.</p>
-     */
     inline PipelineConfig& AddFunctions(const char* value) { m_functionsHasBeenSet = true; m_functions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_functions;

@@ -34,99 +34,42 @@ namespace Model
     AWS_MEDIAPACKAGE_API ListHarvestJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A list of HarvestJob records.
      */
     inline const Aws::Vector<HarvestJob>& GetHarvestJobs() const{ return m_harvestJobs; }
-
-    /**
-     * A list of HarvestJob records.
-     */
     inline void SetHarvestJobs(const Aws::Vector<HarvestJob>& value) { m_harvestJobs = value; }
-
-    /**
-     * A list of HarvestJob records.
-     */
     inline void SetHarvestJobs(Aws::Vector<HarvestJob>&& value) { m_harvestJobs = std::move(value); }
-
-    /**
-     * A list of HarvestJob records.
-     */
     inline ListHarvestJobsResult& WithHarvestJobs(const Aws::Vector<HarvestJob>& value) { SetHarvestJobs(value); return *this;}
-
-    /**
-     * A list of HarvestJob records.
-     */
     inline ListHarvestJobsResult& WithHarvestJobs(Aws::Vector<HarvestJob>&& value) { SetHarvestJobs(std::move(value)); return *this;}
-
-    /**
-     * A list of HarvestJob records.
-     */
     inline ListHarvestJobsResult& AddHarvestJobs(const HarvestJob& value) { m_harvestJobs.push_back(value); return *this; }
-
-    /**
-     * A list of HarvestJob records.
-     */
     inline ListHarvestJobsResult& AddHarvestJobs(HarvestJob&& value) { m_harvestJobs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * A token that can be used to resume pagination from the end of the collection.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListHarvestJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListHarvestJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * A token that can be used to resume pagination from the end of the collection.
-     */
     inline ListHarvestJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListHarvestJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListHarvestJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListHarvestJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<HarvestJob> m_harvestJobs;

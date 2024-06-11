@@ -38,46 +38,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of the user volume.</p>
      */
     inline const Aws::String& GetCapacity() const{ return m_capacity; }
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline void SetCapacity(const Aws::String& value) { m_capacityHasBeenSet = true; m_capacity = value; }
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline void SetCapacity(Aws::String&& value) { m_capacityHasBeenSet = true; m_capacity = std::move(value); }
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline void SetCapacity(const char* value) { m_capacityHasBeenSet = true; m_capacity.assign(value); }
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline UserStorage& WithCapacity(const Aws::String& value) { SetCapacity(value); return *this;}
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline UserStorage& WithCapacity(Aws::String&& value) { SetCapacity(std::move(value)); return *this;}
-
-    /**
-     * <p>The size of the user volume.</p>
-     */
     inline UserStorage& WithCapacity(const char* value) { SetCapacity(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_capacity;

@@ -39,77 +39,31 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the null placeholder.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline NullValueField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline NullValueField& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the null placeholder.</p>
-     */
     inline NullValueField& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The datatype of the value.</p>
      */
     inline const Datatype& GetDatatype() const{ return m_datatype; }
-
-    /**
-     * <p>The datatype of the value.</p>
-     */
     inline bool DatatypeHasBeenSet() const { return m_datatypeHasBeenSet; }
-
-    /**
-     * <p>The datatype of the value.</p>
-     */
     inline void SetDatatype(const Datatype& value) { m_datatypeHasBeenSet = true; m_datatype = value; }
-
-    /**
-     * <p>The datatype of the value.</p>
-     */
     inline void SetDatatype(Datatype&& value) { m_datatypeHasBeenSet = true; m_datatype = std::move(value); }
-
-    /**
-     * <p>The datatype of the value.</p>
-     */
     inline NullValueField& WithDatatype(const Datatype& value) { SetDatatype(value); return *this;}
-
-    /**
-     * <p>The datatype of the value.</p>
-     */
     inline NullValueField& WithDatatype(Datatype&& value) { SetDatatype(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_value;

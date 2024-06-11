@@ -39,6 +39,7 @@ namespace Model
     AWS_SWF_API DescribeActivityTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>General information about the activity type.</p> <p>The status of activity
      * type (returned in the ActivityTypeInfo structure) can be one of the
@@ -50,103 +51,33 @@ namespace Model
      * </li> </ul>
      */
     inline const ActivityTypeInfo& GetTypeInfo() const{ return m_typeInfo; }
-
-    /**
-     * <p>General information about the activity type.</p> <p>The status of activity
-     * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
-     * and available. Workers supporting this type should be running. </p> </li> <li>
-     * <p> <code>DEPRECATED</code> – The type was deprecated using
-     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
-     * supporting this type running. You cannot create new tasks of this type. </p>
-     * </li> </ul>
-     */
     inline void SetTypeInfo(const ActivityTypeInfo& value) { m_typeInfo = value; }
-
-    /**
-     * <p>General information about the activity type.</p> <p>The status of activity
-     * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
-     * and available. Workers supporting this type should be running. </p> </li> <li>
-     * <p> <code>DEPRECATED</code> – The type was deprecated using
-     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
-     * supporting this type running. You cannot create new tasks of this type. </p>
-     * </li> </ul>
-     */
     inline void SetTypeInfo(ActivityTypeInfo&& value) { m_typeInfo = std::move(value); }
-
-    /**
-     * <p>General information about the activity type.</p> <p>The status of activity
-     * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
-     * and available. Workers supporting this type should be running. </p> </li> <li>
-     * <p> <code>DEPRECATED</code> – The type was deprecated using
-     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
-     * supporting this type running. You cannot create new tasks of this type. </p>
-     * </li> </ul>
-     */
     inline DescribeActivityTypeResult& WithTypeInfo(const ActivityTypeInfo& value) { SetTypeInfo(value); return *this;}
-
-    /**
-     * <p>General information about the activity type.</p> <p>The status of activity
-     * type (returned in the ActivityTypeInfo structure) can be one of the
-     * following.</p> <ul> <li> <p> <code>REGISTERED</code> – The type is registered
-     * and available. Workers supporting this type should be running. </p> </li> <li>
-     * <p> <code>DEPRECATED</code> – The type was deprecated using
-     * <a>DeprecateActivityType</a>, but is still in use. You should keep workers
-     * supporting this type running. You cannot create new tasks of this type. </p>
-     * </li> </ul>
-     */
     inline DescribeActivityTypeResult& WithTypeInfo(ActivityTypeInfo&& value) { SetTypeInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration settings registered with the activity type.</p>
      */
     inline const ActivityTypeConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The configuration settings registered with the activity type.</p>
-     */
     inline void SetConfiguration(const ActivityTypeConfiguration& value) { m_configuration = value; }
-
-    /**
-     * <p>The configuration settings registered with the activity type.</p>
-     */
     inline void SetConfiguration(ActivityTypeConfiguration&& value) { m_configuration = std::move(value); }
-
-    /**
-     * <p>The configuration settings registered with the activity type.</p>
-     */
     inline DescribeActivityTypeResult& WithConfiguration(const ActivityTypeConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration settings registered with the activity type.</p>
-     */
     inline DescribeActivityTypeResult& WithConfiguration(ActivityTypeConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeActivityTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeActivityTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeActivityTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ActivityTypeInfo m_typeInfo;

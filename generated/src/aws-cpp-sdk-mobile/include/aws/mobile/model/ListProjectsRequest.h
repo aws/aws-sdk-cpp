@@ -42,83 +42,31 @@ namespace Model
     AWS_MOBILE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> Maximum number of records to list in a single response. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> Maximum number of records to list in a single response. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> Maximum number of records to list in a single response. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> Maximum number of records to list in a single response. </p>
-     */
     inline ListProjectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Pagination token. Set to null to start listing projects from start. If
      * non-null pagination token is returned in a result, then pass its value in here
      * in another request to list more projects. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline ListProjectsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline ListProjectsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> Pagination token. Set to null to start listing projects from start. If
-     * non-null pagination token is returned in a result, then pass its value in here
-     * in another request to list more projects. </p>
-     */
     inline ListProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

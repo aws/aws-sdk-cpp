@@ -40,227 +40,84 @@ namespace Model
     AWS_BCMDATAEXPORTS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data query for this specific data export.</p>
      */
     inline const DataQuery& GetDataQuery() const{ return m_dataQuery; }
-
-    /**
-     * <p>The data query for this specific data export.</p>
-     */
     inline bool DataQueryHasBeenSet() const { return m_dataQueryHasBeenSet; }
-
-    /**
-     * <p>The data query for this specific data export.</p>
-     */
     inline void SetDataQuery(const DataQuery& value) { m_dataQueryHasBeenSet = true; m_dataQuery = value; }
-
-    /**
-     * <p>The data query for this specific data export.</p>
-     */
     inline void SetDataQuery(DataQuery&& value) { m_dataQueryHasBeenSet = true; m_dataQuery = std::move(value); }
-
-    /**
-     * <p>The data query for this specific data export.</p>
-     */
     inline Export& WithDataQuery(const DataQuery& value) { SetDataQuery(value); return *this;}
-
-    /**
-     * <p>The data query for this specific data export.</p>
-     */
     inline Export& WithDataQuery(DataQuery&& value) { SetDataQuery(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description for this specific data export.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline Export& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline Export& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description for this specific data export.</p>
-     */
     inline Export& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The destination configuration for this specific data export.</p>
      */
     inline const DestinationConfigurations& GetDestinationConfigurations() const{ return m_destinationConfigurations; }
-
-    /**
-     * <p>The destination configuration for this specific data export.</p>
-     */
     inline bool DestinationConfigurationsHasBeenSet() const { return m_destinationConfigurationsHasBeenSet; }
-
-    /**
-     * <p>The destination configuration for this specific data export.</p>
-     */
     inline void SetDestinationConfigurations(const DestinationConfigurations& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = value; }
-
-    /**
-     * <p>The destination configuration for this specific data export.</p>
-     */
     inline void SetDestinationConfigurations(DestinationConfigurations&& value) { m_destinationConfigurationsHasBeenSet = true; m_destinationConfigurations = std::move(value); }
-
-    /**
-     * <p>The destination configuration for this specific data export.</p>
-     */
     inline Export& WithDestinationConfigurations(const DestinationConfigurations& value) { SetDestinationConfigurations(value); return *this;}
-
-    /**
-     * <p>The destination configuration for this specific data export.</p>
-     */
     inline Export& WithDestinationConfigurations(DestinationConfigurations&& value) { SetDestinationConfigurations(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for this export.</p>
      */
     inline const Aws::String& GetExportArn() const{ return m_exportArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline bool ExportArnHasBeenSet() const { return m_exportArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline void SetExportArn(const Aws::String& value) { m_exportArnHasBeenSet = true; m_exportArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline void SetExportArn(Aws::String&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline void SetExportArn(const char* value) { m_exportArnHasBeenSet = true; m_exportArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline Export& WithExportArn(const Aws::String& value) { SetExportArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline Export& WithExportArn(Aws::String&& value) { SetExportArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for this export.</p>
-     */
     inline Export& WithExportArn(const char* value) { SetExportArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of this specific data export.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline Export& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline Export& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of this specific data export.</p>
-     */
     inline Export& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cadence for Amazon Web Services to update the export in your S3
      * bucket.</p>
      */
     inline const RefreshCadence& GetRefreshCadence() const{ return m_refreshCadence; }
-
-    /**
-     * <p>The cadence for Amazon Web Services to update the export in your S3
-     * bucket.</p>
-     */
     inline bool RefreshCadenceHasBeenSet() const { return m_refreshCadenceHasBeenSet; }
-
-    /**
-     * <p>The cadence for Amazon Web Services to update the export in your S3
-     * bucket.</p>
-     */
     inline void SetRefreshCadence(const RefreshCadence& value) { m_refreshCadenceHasBeenSet = true; m_refreshCadence = value; }
-
-    /**
-     * <p>The cadence for Amazon Web Services to update the export in your S3
-     * bucket.</p>
-     */
     inline void SetRefreshCadence(RefreshCadence&& value) { m_refreshCadenceHasBeenSet = true; m_refreshCadence = std::move(value); }
-
-    /**
-     * <p>The cadence for Amazon Web Services to update the export in your S3
-     * bucket.</p>
-     */
     inline Export& WithRefreshCadence(const RefreshCadence& value) { SetRefreshCadence(value); return *this;}
-
-    /**
-     * <p>The cadence for Amazon Web Services to update the export in your S3
-     * bucket.</p>
-     */
     inline Export& WithRefreshCadence(RefreshCadence&& value) { SetRefreshCadence(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataQuery m_dataQuery;

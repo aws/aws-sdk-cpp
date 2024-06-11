@@ -32,46 +32,19 @@ namespace Model
     AWS_CLEANROOMS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID for the configured table to delete.</p>
      */
     inline const Aws::String& GetConfiguredTableIdentifier() const{ return m_configuredTableIdentifier; }
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline bool ConfiguredTableIdentifierHasBeenSet() const { return m_configuredTableIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline void SetConfiguredTableIdentifier(const Aws::String& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = value; }
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline void SetConfiguredTableIdentifier(Aws::String&& value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline void SetConfiguredTableIdentifier(const char* value) { m_configuredTableIdentifierHasBeenSet = true; m_configuredTableIdentifier.assign(value); }
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(const Aws::String& value) { SetConfiguredTableIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(Aws::String&& value) { SetConfiguredTableIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for the configured table to delete.</p>
-     */
     inline DeleteConfiguredTableRequest& WithConfiguredTableIdentifier(const char* value) { SetConfiguredTableIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_configuredTableIdentifier;

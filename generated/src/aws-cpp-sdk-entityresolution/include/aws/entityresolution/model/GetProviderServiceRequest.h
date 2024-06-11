@@ -32,95 +32,34 @@ namespace Model
     AWS_ENTITYRESOLUTION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the provider. This name is typically the company name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline GetProviderServiceRequest& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline GetProviderServiceRequest& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the provider. This name is typically the company name.</p>
-     */
     inline GetProviderServiceRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN (Amazon Resource Name) of the product that the provider service
      * provides.</p>
      */
     inline const Aws::String& GetProviderServiceName() const{ return m_providerServiceName; }
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline bool ProviderServiceNameHasBeenSet() const { return m_providerServiceNameHasBeenSet; }
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline void SetProviderServiceName(const Aws::String& value) { m_providerServiceNameHasBeenSet = true; m_providerServiceName = value; }
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline void SetProviderServiceName(Aws::String&& value) { m_providerServiceNameHasBeenSet = true; m_providerServiceName = std::move(value); }
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline void SetProviderServiceName(const char* value) { m_providerServiceNameHasBeenSet = true; m_providerServiceName.assign(value); }
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline GetProviderServiceRequest& WithProviderServiceName(const Aws::String& value) { SetProviderServiceName(value); return *this;}
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline GetProviderServiceRequest& WithProviderServiceName(Aws::String&& value) { SetProviderServiceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN (Amazon Resource Name) of the product that the provider service
-     * provides.</p>
-     */
     inline GetProviderServiceRequest& WithProviderServiceName(const char* value) { SetProviderServiceName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_providerName;

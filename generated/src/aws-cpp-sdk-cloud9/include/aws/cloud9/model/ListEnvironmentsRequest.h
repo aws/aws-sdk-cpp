@@ -34,6 +34,7 @@ namespace Model
     AWS_CLOUD9_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>During a previous call, if there are more than 25 items in the list, only the
      * first 25 items are returned, along with a unique string called a <i>next
@@ -43,98 +44,24 @@ namespace Model
      * until no more next tokens are returned.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline ListEnvironmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline ListEnvironmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>During a previous call, if there are more than 25 items in the list, only the
-     * first 25 items are returned, along with a unique string called a <i>next
-     * token</i>. To get the next batch of items in the list, call this operation
-     * again, adding the next token to the call. To get all of the items in the list,
-     * keep calling this operation with each subsequent next token that is returned,
-     * until no more next tokens are returned.</p>
-     */
     inline ListEnvironmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of environments to get identifiers for.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of environments to get identifiers for.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of environments to get identifiers for.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of environments to get identifiers for.</p>
-     */
     inline ListEnvironmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

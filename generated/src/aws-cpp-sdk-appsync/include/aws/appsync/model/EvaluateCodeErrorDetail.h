@@ -40,87 +40,33 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The error payload.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline EvaluateCodeErrorDetail& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline EvaluateCodeErrorDetail& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error payload.</p>
-     */
     inline EvaluateCodeErrorDetail& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the list of <code>CodeError</code> objects.</p>
      */
     inline const Aws::Vector<CodeError>& GetCodeErrors() const{ return m_codeErrors; }
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline bool CodeErrorsHasBeenSet() const { return m_codeErrorsHasBeenSet; }
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline void SetCodeErrors(const Aws::Vector<CodeError>& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = value; }
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline void SetCodeErrors(Aws::Vector<CodeError>&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors = std::move(value); }
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline EvaluateCodeErrorDetail& WithCodeErrors(const Aws::Vector<CodeError>& value) { SetCodeErrors(value); return *this;}
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline EvaluateCodeErrorDetail& WithCodeErrors(Aws::Vector<CodeError>&& value) { SetCodeErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline EvaluateCodeErrorDetail& AddCodeErrors(const CodeError& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(value); return *this; }
-
-    /**
-     * <p>Contains the list of <code>CodeError</code> objects.</p>
-     */
     inline EvaluateCodeErrorDetail& AddCodeErrors(CodeError&& value) { m_codeErrorsHasBeenSet = true; m_codeErrors.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_message;

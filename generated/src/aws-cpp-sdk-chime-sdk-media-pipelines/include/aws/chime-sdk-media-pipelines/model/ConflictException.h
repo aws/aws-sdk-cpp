@@ -39,90 +39,41 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const ErrorCode& GetCode() const{ return m_code; }
-
-    
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    
     inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    
     inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    
     inline ConflictException& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
-
-    
     inline ConflictException& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ConflictException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ConflictException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ConflictException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The request ID associated with the call responsible for the exception.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline ConflictException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline ConflictException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The request ID associated with the call responsible for the exception.</p>
-     */
     inline ConflictException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ErrorCode m_code;

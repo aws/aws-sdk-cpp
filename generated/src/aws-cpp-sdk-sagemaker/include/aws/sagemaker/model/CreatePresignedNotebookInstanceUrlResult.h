@@ -32,63 +32,29 @@ namespace Model
     AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A JSON object that contains the URL string. </p>
      */
     inline const Aws::String& GetAuthorizedUrl() const{ return m_authorizedUrl; }
-
-    /**
-     * <p>A JSON object that contains the URL string. </p>
-     */
     inline void SetAuthorizedUrl(const Aws::String& value) { m_authorizedUrl = value; }
-
-    /**
-     * <p>A JSON object that contains the URL string. </p>
-     */
     inline void SetAuthorizedUrl(Aws::String&& value) { m_authorizedUrl = std::move(value); }
-
-    /**
-     * <p>A JSON object that contains the URL string. </p>
-     */
     inline void SetAuthorizedUrl(const char* value) { m_authorizedUrl.assign(value); }
-
-    /**
-     * <p>A JSON object that contains the URL string. </p>
-     */
     inline CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(const Aws::String& value) { SetAuthorizedUrl(value); return *this;}
-
-    /**
-     * <p>A JSON object that contains the URL string. </p>
-     */
     inline CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(Aws::String&& value) { SetAuthorizedUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON object that contains the URL string. </p>
-     */
     inline CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(const char* value) { SetAuthorizedUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePresignedNotebookInstanceUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePresignedNotebookInstanceUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePresignedNotebookInstanceUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_authorizedUrl;

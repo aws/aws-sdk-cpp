@@ -34,46 +34,19 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline DescribeLagsRequest& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline DescribeLagsRequest& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the LAG.</p>
-     */
     inline DescribeLagsRequest& WithLagId(const char* value) { SetLagId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_lagId;

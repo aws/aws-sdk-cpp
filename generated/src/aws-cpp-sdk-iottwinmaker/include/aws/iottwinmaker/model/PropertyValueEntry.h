@@ -42,83 +42,32 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object that contains information about the entity that has the
      * property.</p>
      */
     inline const EntityPropertyReference& GetEntityPropertyReference() const{ return m_entityPropertyReference; }
-
-    /**
-     * <p>An object that contains information about the entity that has the
-     * property.</p>
-     */
     inline bool EntityPropertyReferenceHasBeenSet() const { return m_entityPropertyReferenceHasBeenSet; }
-
-    /**
-     * <p>An object that contains information about the entity that has the
-     * property.</p>
-     */
     inline void SetEntityPropertyReference(const EntityPropertyReference& value) { m_entityPropertyReferenceHasBeenSet = true; m_entityPropertyReference = value; }
-
-    /**
-     * <p>An object that contains information about the entity that has the
-     * property.</p>
-     */
     inline void SetEntityPropertyReference(EntityPropertyReference&& value) { m_entityPropertyReferenceHasBeenSet = true; m_entityPropertyReference = std::move(value); }
-
-    /**
-     * <p>An object that contains information about the entity that has the
-     * property.</p>
-     */
     inline PropertyValueEntry& WithEntityPropertyReference(const EntityPropertyReference& value) { SetEntityPropertyReference(value); return *this;}
-
-    /**
-     * <p>An object that contains information about the entity that has the
-     * property.</p>
-     */
     inline PropertyValueEntry& WithEntityPropertyReference(EntityPropertyReference&& value) { SetEntityPropertyReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of objects that specify time series property values.</p>
      */
     inline const Aws::Vector<PropertyValue>& GetPropertyValues() const{ return m_propertyValues; }
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline bool PropertyValuesHasBeenSet() const { return m_propertyValuesHasBeenSet; }
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline void SetPropertyValues(const Aws::Vector<PropertyValue>& value) { m_propertyValuesHasBeenSet = true; m_propertyValues = value; }
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline void SetPropertyValues(Aws::Vector<PropertyValue>&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues = std::move(value); }
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline PropertyValueEntry& WithPropertyValues(const Aws::Vector<PropertyValue>& value) { SetPropertyValues(value); return *this;}
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline PropertyValueEntry& WithPropertyValues(Aws::Vector<PropertyValue>&& value) { SetPropertyValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline PropertyValueEntry& AddPropertyValues(const PropertyValue& value) { m_propertyValuesHasBeenSet = true; m_propertyValues.push_back(value); return *this; }
-
-    /**
-     * <p>A list of objects that specify time series property values.</p>
-     */
     inline PropertyValueEntry& AddPropertyValues(PropertyValue&& value) { m_propertyValuesHasBeenSet = true; m_propertyValues.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     EntityPropertyReference m_entityPropertyReference;

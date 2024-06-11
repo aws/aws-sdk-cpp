@@ -38,126 +38,46 @@ namespace Model
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the SAP HANA database.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline ApplicationCredential& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline ApplicationCredential& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the SAP HANA database.</p>
-     */
     inline ApplicationCredential& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the application credentials. </p>
      */
     inline const CredentialType& GetCredentialType() const{ return m_credentialType; }
-
-    /**
-     * <p>The type of the application credentials. </p>
-     */
     inline bool CredentialTypeHasBeenSet() const { return m_credentialTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the application credentials. </p>
-     */
     inline void SetCredentialType(const CredentialType& value) { m_credentialTypeHasBeenSet = true; m_credentialType = value; }
-
-    /**
-     * <p>The type of the application credentials. </p>
-     */
     inline void SetCredentialType(CredentialType&& value) { m_credentialTypeHasBeenSet = true; m_credentialType = std::move(value); }
-
-    /**
-     * <p>The type of the application credentials. </p>
-     */
     inline ApplicationCredential& WithCredentialType(const CredentialType& value) { SetCredentialType(value); return *this;}
-
-    /**
-     * <p>The type of the application credentials. </p>
-     */
     inline ApplicationCredential& WithCredentialType(CredentialType&& value) { SetCredentialType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
      * SAP application. </p>
      */
     inline const Aws::String& GetSecretId() const{ return m_secretId; }
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline ApplicationCredential& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline ApplicationCredential& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-
-    /**
-     * <p>The secret ID created in AWS Secrets Manager to store the credentials of the
-     * SAP application. </p>
-     */
     inline ApplicationCredential& WithSecretId(const char* value) { SetSecretId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_databaseName;

@@ -39,43 +39,25 @@ namespace Model
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const AnalyzeIDDetections& GetType() const{ return m_type; }
-
-    
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    
     inline void SetType(const AnalyzeIDDetections& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    
     inline void SetType(AnalyzeIDDetections&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    
     inline IdentityDocumentField& WithType(const AnalyzeIDDetections& value) { SetType(value); return *this;}
-
-    
     inline IdentityDocumentField& WithType(AnalyzeIDDetections&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const AnalyzeIDDetections& GetValueDetection() const{ return m_valueDetection; }
-
-    
     inline bool ValueDetectionHasBeenSet() const { return m_valueDetectionHasBeenSet; }
-
-    
     inline void SetValueDetection(const AnalyzeIDDetections& value) { m_valueDetectionHasBeenSet = true; m_valueDetection = value; }
-
-    
     inline void SetValueDetection(AnalyzeIDDetections&& value) { m_valueDetectionHasBeenSet = true; m_valueDetection = std::move(value); }
-
-    
     inline IdentityDocumentField& WithValueDetection(const AnalyzeIDDetections& value) { SetValueDetection(value); return *this;}
-
-    
     inline IdentityDocumentField& WithValueDetection(AnalyzeIDDetections&& value) { SetValueDetection(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AnalyzeIDDetections m_type;

@@ -36,185 +36,63 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The unique identifier of the integration to modify.</p>
      */
     inline const Aws::String& GetIntegrationIdentifier() const{ return m_integrationIdentifier; }
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline bool IntegrationIdentifierHasBeenSet() const { return m_integrationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline void SetIntegrationIdentifier(const Aws::String& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline void SetIntegrationIdentifier(Aws::String&& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline void SetIntegrationIdentifier(const char* value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline ModifyIntegrationRequest& WithIntegrationIdentifier(const Aws::String& value) { SetIntegrationIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline ModifyIntegrationRequest& WithIntegrationIdentifier(Aws::String&& value) { SetIntegrationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the integration to modify.</p>
-     */
     inline ModifyIntegrationRequest& WithIntegrationIdentifier(const char* value) { SetIntegrationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new name for the integration.</p>
      */
     inline const Aws::String& GetIntegrationName() const{ return m_integrationName; }
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline bool IntegrationNameHasBeenSet() const { return m_integrationNameHasBeenSet; }
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline void SetIntegrationName(const Aws::String& value) { m_integrationNameHasBeenSet = true; m_integrationName = value; }
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline void SetIntegrationName(Aws::String&& value) { m_integrationNameHasBeenSet = true; m_integrationName = std::move(value); }
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline void SetIntegrationName(const char* value) { m_integrationNameHasBeenSet = true; m_integrationName.assign(value); }
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline ModifyIntegrationRequest& WithIntegrationName(const Aws::String& value) { SetIntegrationName(value); return *this;}
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline ModifyIntegrationRequest& WithIntegrationName(Aws::String&& value) { SetIntegrationName(std::move(value)); return *this;}
-
-    /**
-     * <p>A new name for the integration.</p>
-     */
     inline ModifyIntegrationRequest& WithIntegrationName(const char* value) { SetIntegrationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new data filter for the integration. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
      * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
      */
     inline const Aws::String& GetDataFilter() const{ return m_dataFilter; }
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline bool DataFilterHasBeenSet() const { return m_dataFilterHasBeenSet; }
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline void SetDataFilter(const Aws::String& value) { m_dataFilterHasBeenSet = true; m_dataFilter = value; }
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline void SetDataFilter(Aws::String&& value) { m_dataFilterHasBeenSet = true; m_dataFilter = std::move(value); }
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline void SetDataFilter(const char* value) { m_dataFilterHasBeenSet = true; m_dataFilter.assign(value); }
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline ModifyIntegrationRequest& WithDataFilter(const Aws::String& value) { SetDataFilter(value); return *this;}
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline ModifyIntegrationRequest& WithDataFilter(Aws::String&& value) { SetDataFilter(std::move(value)); return *this;}
-
-    /**
-     * <p>A new data filter for the integration. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Zero_ETL_Filtering.html">Data
-     * filtering for Aurora zero-ETL integrations with Amazon Redshift</a>.</p>
-     */
     inline ModifyIntegrationRequest& WithDataFilter(const char* value) { SetDataFilter(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A new description for the integration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline ModifyIntegrationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline ModifyIntegrationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A new description for the integration.</p>
-     */
     inline ModifyIntegrationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_integrationIdentifier;

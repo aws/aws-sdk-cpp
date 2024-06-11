@@ -32,46 +32,19 @@ namespace Model
     AWS_SESV2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the contact list.</p>
      */
     inline const Aws::String& GetContactListName() const{ return m_contactListName; }
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline void SetContactListName(const Aws::String& value) { m_contactListNameHasBeenSet = true; m_contactListName = value; }
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline void SetContactListName(Aws::String&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::move(value); }
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline void SetContactListName(const char* value) { m_contactListNameHasBeenSet = true; m_contactListName.assign(value); }
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline GetContactListRequest& WithContactListName(const Aws::String& value) { SetContactListName(value); return *this;}
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline GetContactListRequest& WithContactListName(Aws::String&& value) { SetContactListName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the contact list.</p>
-     */
     inline GetContactListRequest& WithContactListName(const char* value) { SetContactListName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactListName;

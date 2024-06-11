@@ -34,70 +34,30 @@ namespace Model
     AWS_CUSTOMERPROFILES_API DetectProfileObjectTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
      * maximum of one mapping is supported.</p>
      */
     inline const Aws::Vector<DetectedProfileObjectType>& GetDetectedProfileObjectTypes() const{ return m_detectedProfileObjectTypes; }
-
-    /**
-     * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
-     * maximum of one mapping is supported.</p>
-     */
     inline void SetDetectedProfileObjectTypes(const Aws::Vector<DetectedProfileObjectType>& value) { m_detectedProfileObjectTypes = value; }
-
-    /**
-     * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
-     * maximum of one mapping is supported.</p>
-     */
     inline void SetDetectedProfileObjectTypes(Aws::Vector<DetectedProfileObjectType>&& value) { m_detectedProfileObjectTypes = std::move(value); }
-
-    /**
-     * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
-     * maximum of one mapping is supported.</p>
-     */
     inline DetectProfileObjectTypeResult& WithDetectedProfileObjectTypes(const Aws::Vector<DetectedProfileObjectType>& value) { SetDetectedProfileObjectTypes(value); return *this;}
-
-    /**
-     * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
-     * maximum of one mapping is supported.</p>
-     */
     inline DetectProfileObjectTypeResult& WithDetectedProfileObjectTypes(Aws::Vector<DetectedProfileObjectType>&& value) { SetDetectedProfileObjectTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
-     * maximum of one mapping is supported.</p>
-     */
     inline DetectProfileObjectTypeResult& AddDetectedProfileObjectTypes(const DetectedProfileObjectType& value) { m_detectedProfileObjectTypes.push_back(value); return *this; }
-
-    /**
-     * <p>Detected <code>ProfileObjectType</code> mappings from given objects. A
-     * maximum of one mapping is supported.</p>
-     */
     inline DetectProfileObjectTypeResult& AddDetectedProfileObjectTypes(DetectedProfileObjectType&& value) { m_detectedProfileObjectTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DetectProfileObjectTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DetectProfileObjectTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DetectProfileObjectTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DetectedProfileObjectType> m_detectedProfileObjectTypes;

@@ -37,95 +37,34 @@ namespace Model
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the repository in the S3 bucket.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline S3Repository& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline S3Repository& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository in the S3 bucket.</p>
-     */
     inline S3Repository& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the S3 bucket used for associating a new S3 repository. It must
      * begin with <code>codeguru-reviewer-</code>. </p>
      */
     inline const Aws::String& GetBucketName() const{ return m_bucketName; }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline S3Repository& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline S3Repository& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the S3 bucket used for associating a new S3 repository. It must
-     * begin with <code>codeguru-reviewer-</code>. </p>
-     */
     inline S3Repository& WithBucketName(const char* value) { SetBucketName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -40,118 +40,45 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The parent thing group name.</p>
      */
     inline const Aws::String& GetParentGroupName() const{ return m_parentGroupName; }
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline bool ParentGroupNameHasBeenSet() const { return m_parentGroupNameHasBeenSet; }
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline void SetParentGroupName(const Aws::String& value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName = value; }
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline void SetParentGroupName(Aws::String&& value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName = std::move(value); }
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline void SetParentGroupName(const char* value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName.assign(value); }
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline ThingGroupMetadata& WithParentGroupName(const Aws::String& value) { SetParentGroupName(value); return *this;}
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline ThingGroupMetadata& WithParentGroupName(Aws::String&& value) { SetParentGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The parent thing group name.</p>
-     */
     inline ThingGroupMetadata& WithParentGroupName(const char* value) { SetParentGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The root parent thing group.</p>
      */
     inline const Aws::Vector<GroupNameAndArn>& GetRootToParentThingGroups() const{ return m_rootToParentThingGroups; }
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline bool RootToParentThingGroupsHasBeenSet() const { return m_rootToParentThingGroupsHasBeenSet; }
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline void SetRootToParentThingGroups(const Aws::Vector<GroupNameAndArn>& value) { m_rootToParentThingGroupsHasBeenSet = true; m_rootToParentThingGroups = value; }
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline void SetRootToParentThingGroups(Aws::Vector<GroupNameAndArn>&& value) { m_rootToParentThingGroupsHasBeenSet = true; m_rootToParentThingGroups = std::move(value); }
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline ThingGroupMetadata& WithRootToParentThingGroups(const Aws::Vector<GroupNameAndArn>& value) { SetRootToParentThingGroups(value); return *this;}
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline ThingGroupMetadata& WithRootToParentThingGroups(Aws::Vector<GroupNameAndArn>&& value) { SetRootToParentThingGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline ThingGroupMetadata& AddRootToParentThingGroups(const GroupNameAndArn& value) { m_rootToParentThingGroupsHasBeenSet = true; m_rootToParentThingGroups.push_back(value); return *this; }
-
-    /**
-     * <p>The root parent thing group.</p>
-     */
     inline ThingGroupMetadata& AddRootToParentThingGroups(GroupNameAndArn&& value) { m_rootToParentThingGroupsHasBeenSet = true; m_rootToParentThingGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The UNIX timestamp of when the thing group was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-
-    /**
-     * <p>The UNIX timestamp of when the thing group was created.</p>
-     */
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-
-    /**
-     * <p>The UNIX timestamp of when the thing group was created.</p>
-     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-
-    /**
-     * <p>The UNIX timestamp of when the thing group was created.</p>
-     */
     inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-
-    /**
-     * <p>The UNIX timestamp of when the thing group was created.</p>
-     */
     inline ThingGroupMetadata& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-
-    /**
-     * <p>The UNIX timestamp of when the thing group was created.</p>
-     */
     inline ThingGroupMetadata& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parentGroupName;

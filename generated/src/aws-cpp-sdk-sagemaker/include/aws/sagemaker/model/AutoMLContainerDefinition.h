@@ -41,6 +41,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
      * more information, see <a
@@ -48,121 +49,32 @@ namespace Model
      * ContainerDefinition</a>.</p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Elastic Container Registry (Amazon ECR) path of the container. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the model artifacts. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
      * ContainerDefinition</a>.</p>
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The location of the model artifacts. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The environment variables to set in the container. For more information, see
      * <a
@@ -170,103 +82,19 @@ namespace Model
      * ContainerDefinition</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The environment variables to set in the container. For more information, see
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContainerDefinition.html">
-     * ContainerDefinition</a>.</p>
-     */
     inline AutoMLContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_image;

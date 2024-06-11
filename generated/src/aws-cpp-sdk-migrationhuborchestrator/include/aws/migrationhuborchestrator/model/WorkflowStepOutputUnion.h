@@ -39,113 +39,44 @@ namespace Model
     AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The integer value. </p>
      */
     inline int GetIntegerValue() const{ return m_integerValue; }
-
-    /**
-     * <p>The integer value. </p>
-     */
     inline bool IntegerValueHasBeenSet() const { return m_integerValueHasBeenSet; }
-
-    /**
-     * <p>The integer value. </p>
-     */
     inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
-
-    /**
-     * <p>The integer value. </p>
-     */
     inline WorkflowStepOutputUnion& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The string value.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>The string value.</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>The string value.</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>The string value.</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>The string value.</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>The string value.</p>
-     */
     inline WorkflowStepOutputUnion& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>The string value.</p>
-     */
     inline WorkflowStepOutputUnion& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The string value.</p>
-     */
     inline WorkflowStepOutputUnion& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of string value.</p>
      */
     inline const Aws::Vector<Aws::String>& GetListOfStringValue() const{ return m_listOfStringValue; }
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline bool ListOfStringValueHasBeenSet() const { return m_listOfStringValueHasBeenSet; }
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline void SetListOfStringValue(const Aws::Vector<Aws::String>& value) { m_listOfStringValueHasBeenSet = true; m_listOfStringValue = value; }
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline void SetListOfStringValue(Aws::Vector<Aws::String>&& value) { m_listOfStringValueHasBeenSet = true; m_listOfStringValue = std::move(value); }
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline WorkflowStepOutputUnion& WithListOfStringValue(const Aws::Vector<Aws::String>& value) { SetListOfStringValue(value); return *this;}
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline WorkflowStepOutputUnion& WithListOfStringValue(Aws::Vector<Aws::String>&& value) { SetListOfStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline WorkflowStepOutputUnion& AddListOfStringValue(const Aws::String& value) { m_listOfStringValueHasBeenSet = true; m_listOfStringValue.push_back(value); return *this; }
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline WorkflowStepOutputUnion& AddListOfStringValue(Aws::String&& value) { m_listOfStringValueHasBeenSet = true; m_listOfStringValue.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of string value.</p>
-     */
     inline WorkflowStepOutputUnion& AddListOfStringValue(const char* value) { m_listOfStringValueHasBeenSet = true; m_listOfStringValue.push_back(value); return *this; }
-
+    ///@}
   private:
 
     int m_integerValue;

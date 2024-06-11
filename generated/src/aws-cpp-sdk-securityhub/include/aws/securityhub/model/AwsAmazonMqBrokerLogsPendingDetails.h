@@ -36,51 +36,26 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Activates audit logging. Every user management action made using JMX or the
      * ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
      */
     inline bool GetAudit() const{ return m_audit; }
-
-    /**
-     * <p> Activates audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-     */
     inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
-
-    /**
-     * <p> Activates audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-     */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
-
-    /**
-     * <p> Activates audit logging. Every user management action made using JMX or the
-     * ActiveMQ Web Console is logged. Doesn't apply to RabbitMQ brokers. </p>
-     */
     inline AwsAmazonMqBrokerLogsPendingDetails& WithAudit(bool value) { SetAudit(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Activates general logging. </p>
      */
     inline bool GetGeneral() const{ return m_general; }
-
-    /**
-     * <p> Activates general logging. </p>
-     */
     inline bool GeneralHasBeenSet() const { return m_generalHasBeenSet; }
-
-    /**
-     * <p> Activates general logging. </p>
-     */
     inline void SetGeneral(bool value) { m_generalHasBeenSet = true; m_general = value; }
-
-    /**
-     * <p> Activates general logging. </p>
-     */
     inline AwsAmazonMqBrokerLogsPendingDetails& WithGeneral(bool value) { SetGeneral(value); return *this;}
-
+    ///@}
   private:
 
     bool m_audit;

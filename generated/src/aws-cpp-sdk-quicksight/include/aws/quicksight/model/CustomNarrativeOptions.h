@@ -37,46 +37,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string input of custom narrative.</p>
      */
     inline const Aws::String& GetNarrative() const{ return m_narrative; }
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline bool NarrativeHasBeenSet() const { return m_narrativeHasBeenSet; }
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline void SetNarrative(const Aws::String& value) { m_narrativeHasBeenSet = true; m_narrative = value; }
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline void SetNarrative(Aws::String&& value) { m_narrativeHasBeenSet = true; m_narrative = std::move(value); }
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline void SetNarrative(const char* value) { m_narrativeHasBeenSet = true; m_narrative.assign(value); }
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline CustomNarrativeOptions& WithNarrative(const Aws::String& value) { SetNarrative(value); return *this;}
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline CustomNarrativeOptions& WithNarrative(Aws::String&& value) { SetNarrative(std::move(value)); return *this;}
-
-    /**
-     * <p>The string input of custom narrative.</p>
-     */
     inline CustomNarrativeOptions& WithNarrative(const char* value) { SetNarrative(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_narrative;

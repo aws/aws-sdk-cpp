@@ -32,42 +32,18 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Configuration information about the integration of DevOps Guru as the
      * Consumer via EventBridge with another AWS Service.</p>
      */
     inline const EventSourcesConfig& GetEventSources() const{ return m_eventSources; }
-
-    /**
-     * <p>Configuration information about the integration of DevOps Guru as the
-     * Consumer via EventBridge with another AWS Service.</p>
-     */
     inline bool EventSourcesHasBeenSet() const { return m_eventSourcesHasBeenSet; }
-
-    /**
-     * <p>Configuration information about the integration of DevOps Guru as the
-     * Consumer via EventBridge with another AWS Service.</p>
-     */
     inline void SetEventSources(const EventSourcesConfig& value) { m_eventSourcesHasBeenSet = true; m_eventSources = value; }
-
-    /**
-     * <p>Configuration information about the integration of DevOps Guru as the
-     * Consumer via EventBridge with another AWS Service.</p>
-     */
     inline void SetEventSources(EventSourcesConfig&& value) { m_eventSourcesHasBeenSet = true; m_eventSources = std::move(value); }
-
-    /**
-     * <p>Configuration information about the integration of DevOps Guru as the
-     * Consumer via EventBridge with another AWS Service.</p>
-     */
     inline UpdateEventSourcesConfigRequest& WithEventSources(const EventSourcesConfig& value) { SetEventSources(value); return *this;}
-
-    /**
-     * <p>Configuration information about the integration of DevOps Guru as the
-     * Consumer via EventBridge with another AWS Service.</p>
-     */
     inline UpdateEventSourcesConfigRequest& WithEventSources(EventSourcesConfig&& value) { SetEventSources(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EventSourcesConfig m_eventSources;

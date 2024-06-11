@@ -33,89 +33,40 @@ namespace Model
     AWS_WELLARCHITECTED_API GetReviewTemplateLensReviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The review template ARN.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline GetReviewTemplateLensReviewResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline GetReviewTemplateLensReviewResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The review template ARN.</p>
-     */
     inline GetReviewTemplateLensReviewResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A lens review of a question.</p>
      */
     inline const ReviewTemplateLensReview& GetLensReview() const{ return m_lensReview; }
-
-    /**
-     * <p>A lens review of a question.</p>
-     */
     inline void SetLensReview(const ReviewTemplateLensReview& value) { m_lensReview = value; }
-
-    /**
-     * <p>A lens review of a question.</p>
-     */
     inline void SetLensReview(ReviewTemplateLensReview&& value) { m_lensReview = std::move(value); }
-
-    /**
-     * <p>A lens review of a question.</p>
-     */
     inline GetReviewTemplateLensReviewResult& WithLensReview(const ReviewTemplateLensReview& value) { SetLensReview(value); return *this;}
-
-    /**
-     * <p>A lens review of a question.</p>
-     */
     inline GetReviewTemplateLensReviewResult& WithLensReview(ReviewTemplateLensReview&& value) { SetLensReview(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetReviewTemplateLensReviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetReviewTemplateLensReviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetReviewTemplateLensReviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

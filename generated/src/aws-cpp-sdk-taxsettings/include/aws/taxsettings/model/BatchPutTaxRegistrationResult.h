@@ -35,106 +35,43 @@ namespace Model
     AWS_TAXSETTINGS_API BatchPutTaxRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>List of errors for the accounts the TRN information could not be added or
      * updated to. </p>
      */
     inline const Aws::Vector<BatchPutTaxRegistrationError>& GetErrors() const{ return m_errors; }
-
-    /**
-     * <p>List of errors for the accounts the TRN information could not be added or
-     * updated to. </p>
-     */
     inline void SetErrors(const Aws::Vector<BatchPutTaxRegistrationError>& value) { m_errors = value; }
-
-    /**
-     * <p>List of errors for the accounts the TRN information could not be added or
-     * updated to. </p>
-     */
     inline void SetErrors(Aws::Vector<BatchPutTaxRegistrationError>&& value) { m_errors = std::move(value); }
-
-    /**
-     * <p>List of errors for the accounts the TRN information could not be added or
-     * updated to. </p>
-     */
     inline BatchPutTaxRegistrationResult& WithErrors(const Aws::Vector<BatchPutTaxRegistrationError>& value) { SetErrors(value); return *this;}
-
-    /**
-     * <p>List of errors for the accounts the TRN information could not be added or
-     * updated to. </p>
-     */
     inline BatchPutTaxRegistrationResult& WithErrors(Aws::Vector<BatchPutTaxRegistrationError>&& value) { SetErrors(std::move(value)); return *this;}
-
-    /**
-     * <p>List of errors for the accounts the TRN information could not be added or
-     * updated to. </p>
-     */
     inline BatchPutTaxRegistrationResult& AddErrors(const BatchPutTaxRegistrationError& value) { m_errors.push_back(value); return *this; }
-
-    /**
-     * <p>List of errors for the accounts the TRN information could not be added or
-     * updated to. </p>
-     */
     inline BatchPutTaxRegistrationResult& AddErrors(BatchPutTaxRegistrationError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of your TRN stored in the system after processing. Based on the
      * validation occurring on the TRN, the status can be <code>Verified</code>,
      * <code>Pending</code> or <code>Rejected</code>. </p>
      */
     inline const TaxRegistrationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of your TRN stored in the system after processing. Based on the
-     * validation occurring on the TRN, the status can be <code>Verified</code>,
-     * <code>Pending</code> or <code>Rejected</code>. </p>
-     */
     inline void SetStatus(const TaxRegistrationStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of your TRN stored in the system after processing. Based on the
-     * validation occurring on the TRN, the status can be <code>Verified</code>,
-     * <code>Pending</code> or <code>Rejected</code>. </p>
-     */
     inline void SetStatus(TaxRegistrationStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of your TRN stored in the system after processing. Based on the
-     * validation occurring on the TRN, the status can be <code>Verified</code>,
-     * <code>Pending</code> or <code>Rejected</code>. </p>
-     */
     inline BatchPutTaxRegistrationResult& WithStatus(const TaxRegistrationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of your TRN stored in the system after processing. Based on the
-     * validation occurring on the TRN, the status can be <code>Verified</code>,
-     * <code>Pending</code> or <code>Rejected</code>. </p>
-     */
     inline BatchPutTaxRegistrationResult& WithStatus(TaxRegistrationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchPutTaxRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchPutTaxRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchPutTaxRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchPutTaxRegistrationError> m_errors;

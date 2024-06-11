@@ -40,37 +40,19 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This object contains the session metadata for a Live Tail session.</p>
      */
     inline const LiveTailSessionMetadata& GetSessionMetadata() const{ return m_sessionMetadata; }
-
-    /**
-     * <p>This object contains the session metadata for a Live Tail session.</p>
-     */
     inline bool SessionMetadataHasBeenSet() const { return m_sessionMetadataHasBeenSet; }
-
-    /**
-     * <p>This object contains the session metadata for a Live Tail session.</p>
-     */
     inline void SetSessionMetadata(const LiveTailSessionMetadata& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = value; }
-
-    /**
-     * <p>This object contains the session metadata for a Live Tail session.</p>
-     */
     inline void SetSessionMetadata(LiveTailSessionMetadata&& value) { m_sessionMetadataHasBeenSet = true; m_sessionMetadata = std::move(value); }
-
-    /**
-     * <p>This object contains the session metadata for a Live Tail session.</p>
-     */
     inline LiveTailSessionUpdate& WithSessionMetadata(const LiveTailSessionMetadata& value) { SetSessionMetadata(value); return *this;}
-
-    /**
-     * <p>This object contains the session metadata for a Live Tail session.</p>
-     */
     inline LiveTailSessionUpdate& WithSessionMetadata(LiveTailSessionMetadata&& value) { SetSessionMetadata(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array, where each member of the array includes the information for one log
      * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
@@ -79,70 +61,14 @@ namespace Model
      * events to be included in each <code>sessionUpdate</code> structure.</p>
      */
     inline const Aws::Vector<LiveTailSessionLogEvent>& GetSessionResults() const{ return m_sessionResults; }
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline bool SessionResultsHasBeenSet() const { return m_sessionResultsHasBeenSet; }
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline void SetSessionResults(const Aws::Vector<LiveTailSessionLogEvent>& value) { m_sessionResultsHasBeenSet = true; m_sessionResults = value; }
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline void SetSessionResults(Aws::Vector<LiveTailSessionLogEvent>&& value) { m_sessionResultsHasBeenSet = true; m_sessionResults = std::move(value); }
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline LiveTailSessionUpdate& WithSessionResults(const Aws::Vector<LiveTailSessionLogEvent>& value) { SetSessionResults(value); return *this;}
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline LiveTailSessionUpdate& WithSessionResults(Aws::Vector<LiveTailSessionLogEvent>&& value) { SetSessionResults(std::move(value)); return *this;}
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline LiveTailSessionUpdate& AddSessionResults(const LiveTailSessionLogEvent& value) { m_sessionResultsHasBeenSet = true; m_sessionResults.push_back(value); return *this; }
-
-    /**
-     * <p>An array, where each member of the array includes the information for one log
-     * event in the Live Tail session.</p> <p>A <code>sessionResults</code> array can
-     * include as many as 500 log events. If the number of log events matching the
-     * request exceeds 500 per second, the log events are sampled down to 500 log
-     * events to be included in each <code>sessionUpdate</code> structure.</p>
-     */
     inline LiveTailSessionUpdate& AddSessionResults(LiveTailSessionLogEvent&& value) { m_sessionResultsHasBeenSet = true; m_sessionResults.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     LiveTailSessionMetadata m_sessionMetadata;

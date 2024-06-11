@@ -47,31 +47,18 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines whether to use the deployment circuit breaker logic for the
      * service.</p>
      */
     inline bool GetEnable() const{ return m_enable; }
-
-    /**
-     * <p>Determines whether to use the deployment circuit breaker logic for the
-     * service.</p>
-     */
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
-
-    /**
-     * <p>Determines whether to use the deployment circuit breaker logic for the
-     * service.</p>
-     */
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
-
-    /**
-     * <p>Determines whether to use the deployment circuit breaker logic for the
-     * service.</p>
-     */
     inline DeploymentCircuitBreaker& WithEnable(bool value) { SetEnable(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines whether to configure Amazon ECS to roll back the service if a
      * service deployment fails. If rollback is on, when a service deployment fails,
@@ -79,31 +66,10 @@ namespace Model
      * successfully.</p>
      */
     inline bool GetRollback() const{ return m_rollback; }
-
-    /**
-     * <p>Determines whether to configure Amazon ECS to roll back the service if a
-     * service deployment fails. If rollback is on, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
-     */
     inline bool RollbackHasBeenSet() const { return m_rollbackHasBeenSet; }
-
-    /**
-     * <p>Determines whether to configure Amazon ECS to roll back the service if a
-     * service deployment fails. If rollback is on, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
-     */
     inline void SetRollback(bool value) { m_rollbackHasBeenSet = true; m_rollback = value; }
-
-    /**
-     * <p>Determines whether to configure Amazon ECS to roll back the service if a
-     * service deployment fails. If rollback is on, when a service deployment fails,
-     * the service is rolled back to the last deployment that completed
-     * successfully.</p>
-     */
     inline DeploymentCircuitBreaker& WithRollback(bool value) { SetRollback(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enable;

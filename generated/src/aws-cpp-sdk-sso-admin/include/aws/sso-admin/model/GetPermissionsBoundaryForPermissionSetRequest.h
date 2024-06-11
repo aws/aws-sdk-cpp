@@ -34,95 +34,34 @@ namespace Model
     AWS_SSOADMIN_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. </p>
      */
     inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline GetPermissionsBoundaryForPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline GetPermissionsBoundaryForPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM Identity Center instance under which the operation will be
-     * executed. </p>
-     */
     inline GetPermissionsBoundaryForPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the <code>PermissionSet</code>.</p>
      */
     inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline GetPermissionsBoundaryForPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline GetPermissionsBoundaryForPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the <code>PermissionSet</code>.</p>
-     */
     inline GetPermissionsBoundaryForPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceArn;

@@ -60,27 +60,17 @@ namespace Model
     AWS_RESOURCEGROUPSTAGGINGAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The HTTP status code of the common error.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The HTTP status code of the common error.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The HTTP status code of the common error.</p>
-     */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The HTTP status code of the common error.</p>
-     */
     inline FailureInfo& WithStatusCode(int value) { SetStatusCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code of the common error. Valid values include
      * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
@@ -88,88 +78,26 @@ namespace Model
      * the resource that you want to tag.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The code of the common error. Valid values include
-     * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
-     * and any valid error code returned by the Amazon Web Services service that hosts
-     * the resource that you want to tag.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The code of the common error. Valid values include
-     * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
-     * and any valid error code returned by the Amazon Web Services service that hosts
-     * the resource that you want to tag.</p>
-     */
     inline void SetErrorCode(const ErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The code of the common error. Valid values include
-     * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
-     * and any valid error code returned by the Amazon Web Services service that hosts
-     * the resource that you want to tag.</p>
-     */
     inline void SetErrorCode(ErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The code of the common error. Valid values include
-     * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
-     * and any valid error code returned by the Amazon Web Services service that hosts
-     * the resource that you want to tag.</p>
-     */
     inline FailureInfo& WithErrorCode(const ErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The code of the common error. Valid values include
-     * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
-     * and any valid error code returned by the Amazon Web Services service that hosts
-     * the resource that you want to tag.</p>
-     */
     inline FailureInfo& WithErrorCode(ErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The message of the common error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline FailureInfo& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline FailureInfo& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The message of the common error.</p>
-     */
     inline FailureInfo& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     int m_statusCode;

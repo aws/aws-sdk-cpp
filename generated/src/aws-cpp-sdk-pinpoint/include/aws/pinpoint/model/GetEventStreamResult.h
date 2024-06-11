@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetEventStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const EventStream& GetEventStream() const{ return m_eventStream; }
-
-    
     inline void SetEventStream(const EventStream& value) { m_eventStream = value; }
-
-    
     inline void SetEventStream(EventStream&& value) { m_eventStream = std::move(value); }
-
-    
     inline GetEventStreamResult& WithEventStream(const EventStream& value) { SetEventStream(value); return *this;}
-
-    
     inline GetEventStreamResult& WithEventStream(EventStream&& value) { SetEventStream(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEventStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEventStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEventStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     EventStream m_eventStream;

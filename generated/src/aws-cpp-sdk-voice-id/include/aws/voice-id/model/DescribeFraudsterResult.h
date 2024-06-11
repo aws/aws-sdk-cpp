@@ -33,53 +33,27 @@ namespace Model
     AWS_VOICEID_API DescribeFraudsterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specified fraudster.</p>
      */
     inline const Fraudster& GetFraudster() const{ return m_fraudster; }
-
-    /**
-     * <p>Information about the specified fraudster.</p>
-     */
     inline void SetFraudster(const Fraudster& value) { m_fraudster = value; }
-
-    /**
-     * <p>Information about the specified fraudster.</p>
-     */
     inline void SetFraudster(Fraudster&& value) { m_fraudster = std::move(value); }
-
-    /**
-     * <p>Information about the specified fraudster.</p>
-     */
     inline DescribeFraudsterResult& WithFraudster(const Fraudster& value) { SetFraudster(value); return *this;}
-
-    /**
-     * <p>Information about the specified fraudster.</p>
-     */
     inline DescribeFraudsterResult& WithFraudster(Fraudster&& value) { SetFraudster(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeFraudsterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeFraudsterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeFraudsterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Fraudster m_fraudster;

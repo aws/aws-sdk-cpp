@@ -36,30 +36,16 @@ namespace Model
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum length of time, in seconds, that an Amazon Braket job can
      * run.</p>
      */
     inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that an Amazon Braket job can
-     * run.</p>
-     */
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that an Amazon Braket job can
-     * run.</p>
-     */
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
-
-    /**
-     * <p>The maximum length of time, in seconds, that an Amazon Braket job can
-     * run.</p>
-     */
     inline JobStoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxRuntimeInSeconds;

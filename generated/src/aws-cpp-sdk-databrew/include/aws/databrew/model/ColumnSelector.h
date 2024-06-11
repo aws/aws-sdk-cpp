@@ -39,87 +39,33 @@ namespace Model
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A regular expression for selecting a column from a dataset.</p>
      */
     inline const Aws::String& GetRegex() const{ return m_regex; }
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline ColumnSelector& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline ColumnSelector& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-
-    /**
-     * <p>A regular expression for selecting a column from a dataset.</p>
-     */
     inline ColumnSelector& WithRegex(const char* value) { SetRegex(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of a column from a dataset.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline ColumnSelector& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline ColumnSelector& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a column from a dataset.</p>
-     */
     inline ColumnSelector& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_regex;

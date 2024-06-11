@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API GetAttendeeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Chime SDK attendee information.</p>
      */
     inline const Attendee& GetAttendee() const{ return m_attendee; }
-
-    /**
-     * <p>The Amazon Chime SDK attendee information.</p>
-     */
     inline void SetAttendee(const Attendee& value) { m_attendee = value; }
-
-    /**
-     * <p>The Amazon Chime SDK attendee information.</p>
-     */
     inline void SetAttendee(Attendee&& value) { m_attendee = std::move(value); }
-
-    /**
-     * <p>The Amazon Chime SDK attendee information.</p>
-     */
     inline GetAttendeeResult& WithAttendee(const Attendee& value) { SetAttendee(value); return *this;}
-
-    /**
-     * <p>The Amazon Chime SDK attendee information.</p>
-     */
     inline GetAttendeeResult& WithAttendee(Attendee&& value) { SetAttendee(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAttendeeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAttendeeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAttendeeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Attendee m_attendee;

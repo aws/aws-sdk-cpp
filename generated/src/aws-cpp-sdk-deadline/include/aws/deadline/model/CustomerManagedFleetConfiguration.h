@@ -40,108 +40,43 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
      */
     inline const AutoScalingMode& GetMode() const{ return m_mode; }
-
-    /**
-     * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
-     */
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-
-    /**
-     * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
-     */
     inline void SetMode(const AutoScalingMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-
-    /**
-     * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
-     */
     inline void SetMode(AutoScalingMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-
-    /**
-     * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithMode(const AutoScalingMode& value) { SetMode(value); return *this;}
-
-    /**
-     * <p>The Auto Scaling mode for the customer managed fleet configuration.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithMode(AutoScalingMode&& value) { SetMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The storage profile ID.</p>
      */
     inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-
-    /**
-     * <p>The storage profile ID.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The worker capabilities for a customer managed fleet configuration.</p>
      */
     inline const CustomerManagedWorkerCapabilities& GetWorkerCapabilities() const{ return m_workerCapabilities; }
-
-    /**
-     * <p>The worker capabilities for a customer managed fleet configuration.</p>
-     */
     inline bool WorkerCapabilitiesHasBeenSet() const { return m_workerCapabilitiesHasBeenSet; }
-
-    /**
-     * <p>The worker capabilities for a customer managed fleet configuration.</p>
-     */
     inline void SetWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = value; }
-
-    /**
-     * <p>The worker capabilities for a customer managed fleet configuration.</p>
-     */
     inline void SetWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { m_workerCapabilitiesHasBeenSet = true; m_workerCapabilities = std::move(value); }
-
-    /**
-     * <p>The worker capabilities for a customer managed fleet configuration.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(const CustomerManagedWorkerCapabilities& value) { SetWorkerCapabilities(value); return *this;}
-
-    /**
-     * <p>The worker capabilities for a customer managed fleet configuration.</p>
-     */
     inline CustomerManagedFleetConfiguration& WithWorkerCapabilities(CustomerManagedWorkerCapabilities&& value) { SetWorkerCapabilities(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AutoScalingMode m_mode;

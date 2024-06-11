@@ -33,53 +33,27 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API PutResourcePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The new policy.</p>
      */
     inline const ResourcePolicy& GetResourcePolicy() const{ return m_resourcePolicy; }
-
-    /**
-     * <p>The new policy.</p>
-     */
     inline void SetResourcePolicy(const ResourcePolicy& value) { m_resourcePolicy = value; }
-
-    /**
-     * <p>The new policy.</p>
-     */
     inline void SetResourcePolicy(ResourcePolicy&& value) { m_resourcePolicy = std::move(value); }
-
-    /**
-     * <p>The new policy.</p>
-     */
     inline PutResourcePolicyResult& WithResourcePolicy(const ResourcePolicy& value) { SetResourcePolicy(value); return *this;}
-
-    /**
-     * <p>The new policy.</p>
-     */
     inline PutResourcePolicyResult& WithResourcePolicy(ResourcePolicy&& value) { SetResourcePolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PutResourcePolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PutResourcePolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PutResourcePolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourcePolicy m_resourcePolicy;

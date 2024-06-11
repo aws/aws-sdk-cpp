@@ -39,77 +39,31 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the slot type entry.</p>
      */
     inline const SampleValue& GetSampleValue() const{ return m_sampleValue; }
-
-    /**
-     * <p>The value of the slot type entry.</p>
-     */
     inline bool SampleValueHasBeenSet() const { return m_sampleValueHasBeenSet; }
-
-    /**
-     * <p>The value of the slot type entry.</p>
-     */
     inline void SetSampleValue(const SampleValue& value) { m_sampleValueHasBeenSet = true; m_sampleValue = value; }
-
-    /**
-     * <p>The value of the slot type entry.</p>
-     */
     inline void SetSampleValue(SampleValue&& value) { m_sampleValueHasBeenSet = true; m_sampleValue = std::move(value); }
-
-    /**
-     * <p>The value of the slot type entry.</p>
-     */
     inline SlotTypeValue& WithSampleValue(const SampleValue& value) { SetSampleValue(value); return *this;}
-
-    /**
-     * <p>The value of the slot type entry.</p>
-     */
     inline SlotTypeValue& WithSampleValue(SampleValue&& value) { SetSampleValue(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Additional values related to the slot type entry.</p>
      */
     inline const Aws::Vector<SampleValue>& GetSynonyms() const{ return m_synonyms; }
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline bool SynonymsHasBeenSet() const { return m_synonymsHasBeenSet; }
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline void SetSynonyms(const Aws::Vector<SampleValue>& value) { m_synonymsHasBeenSet = true; m_synonyms = value; }
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline void SetSynonyms(Aws::Vector<SampleValue>&& value) { m_synonymsHasBeenSet = true; m_synonyms = std::move(value); }
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline SlotTypeValue& WithSynonyms(const Aws::Vector<SampleValue>& value) { SetSynonyms(value); return *this;}
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline SlotTypeValue& WithSynonyms(Aws::Vector<SampleValue>&& value) { SetSynonyms(std::move(value)); return *this;}
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline SlotTypeValue& AddSynonyms(const SampleValue& value) { m_synonymsHasBeenSet = true; m_synonyms.push_back(value); return *this; }
-
-    /**
-     * <p>Additional values related to the slot type entry.</p>
-     */
     inline SlotTypeValue& AddSynonyms(SampleValue&& value) { m_synonymsHasBeenSet = true; m_synonyms.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     SampleValue m_sampleValue;

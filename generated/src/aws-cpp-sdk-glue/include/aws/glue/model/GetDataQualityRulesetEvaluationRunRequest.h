@@ -34,46 +34,19 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique run identifier associated with this run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline GetDataQualityRulesetEvaluationRunRequest& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline GetDataQualityRulesetEvaluationRunRequest& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline GetDataQualityRulesetEvaluationRunRequest& WithRunId(const char* value) { SetRunId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_runId;

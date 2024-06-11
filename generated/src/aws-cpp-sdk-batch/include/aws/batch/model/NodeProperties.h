@@ -40,100 +40,41 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of nodes that are associated with a multi-node parallel job.</p>
      */
     inline int GetNumNodes() const{ return m_numNodes; }
-
-    /**
-     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
-     */
     inline bool NumNodesHasBeenSet() const { return m_numNodesHasBeenSet; }
-
-    /**
-     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
-     */
     inline void SetNumNodes(int value) { m_numNodesHasBeenSet = true; m_numNodes = value; }
-
-    /**
-     * <p>The number of nodes that are associated with a multi-node parallel job.</p>
-     */
     inline NodeProperties& WithNumNodes(int value) { SetNumNodes(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the node index for the main node of a multi-node parallel job. This
      * node index value must be fewer than the number of nodes.</p>
      */
     inline int GetMainNode() const{ return m_mainNode; }
-
-    /**
-     * <p>Specifies the node index for the main node of a multi-node parallel job. This
-     * node index value must be fewer than the number of nodes.</p>
-     */
     inline bool MainNodeHasBeenSet() const { return m_mainNodeHasBeenSet; }
-
-    /**
-     * <p>Specifies the node index for the main node of a multi-node parallel job. This
-     * node index value must be fewer than the number of nodes.</p>
-     */
     inline void SetMainNode(int value) { m_mainNodeHasBeenSet = true; m_mainNode = value; }
-
-    /**
-     * <p>Specifies the node index for the main node of a multi-node parallel job. This
-     * node index value must be fewer than the number of nodes.</p>
-     */
     inline NodeProperties& WithMainNode(int value) { SetMainNode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of node ranges and their properties that are associated with a
      * multi-node parallel job.</p>
      */
     inline const Aws::Vector<NodeRangeProperty>& GetNodeRangeProperties() const{ return m_nodeRangeProperties; }
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline bool NodeRangePropertiesHasBeenSet() const { return m_nodeRangePropertiesHasBeenSet; }
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline void SetNodeRangeProperties(const Aws::Vector<NodeRangeProperty>& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties = value; }
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline void SetNodeRangeProperties(Aws::Vector<NodeRangeProperty>&& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties = std::move(value); }
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline NodeProperties& WithNodeRangeProperties(const Aws::Vector<NodeRangeProperty>& value) { SetNodeRangeProperties(value); return *this;}
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline NodeProperties& WithNodeRangeProperties(Aws::Vector<NodeRangeProperty>&& value) { SetNodeRangeProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline NodeProperties& AddNodeRangeProperties(const NodeRangeProperty& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties.push_back(value); return *this; }
-
-    /**
-     * <p>A list of node ranges and their properties that are associated with a
-     * multi-node parallel job.</p>
-     */
     inline NodeProperties& AddNodeRangeProperties(NodeRangeProperty&& value) { m_nodeRangePropertiesHasBeenSet = true; m_nodeRangeProperties.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_numNodes;

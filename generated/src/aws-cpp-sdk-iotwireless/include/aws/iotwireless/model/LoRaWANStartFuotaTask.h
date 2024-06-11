@@ -38,24 +38,15 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    
     inline LoRaWANStartFuotaTask& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    
     inline LoRaWANStartFuotaTask& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_startTime;

@@ -38,42 +38,18 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An object for the configuration recorder to record configuration changes for
      * specified resource types.</p>
      */
     inline const ConfigurationRecorder& GetConfigurationRecorder() const{ return m_configurationRecorder; }
-
-    /**
-     * <p>An object for the configuration recorder to record configuration changes for
-     * specified resource types.</p>
-     */
     inline bool ConfigurationRecorderHasBeenSet() const { return m_configurationRecorderHasBeenSet; }
-
-    /**
-     * <p>An object for the configuration recorder to record configuration changes for
-     * specified resource types.</p>
-     */
     inline void SetConfigurationRecorder(const ConfigurationRecorder& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = value; }
-
-    /**
-     * <p>An object for the configuration recorder to record configuration changes for
-     * specified resource types.</p>
-     */
     inline void SetConfigurationRecorder(ConfigurationRecorder&& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = std::move(value); }
-
-    /**
-     * <p>An object for the configuration recorder to record configuration changes for
-     * specified resource types.</p>
-     */
     inline PutConfigurationRecorderRequest& WithConfigurationRecorder(const ConfigurationRecorder& value) { SetConfigurationRecorder(value); return *this;}
-
-    /**
-     * <p>An object for the configuration recorder to record configuration changes for
-     * specified resource types.</p>
-     */
     inline PutConfigurationRecorderRequest& WithConfigurationRecorder(ConfigurationRecorder&& value) { SetConfigurationRecorder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ConfigurationRecorder m_configurationRecorder;

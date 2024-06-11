@@ -34,57 +34,27 @@ namespace Model
     AWS_EC2_API DescribePlacementGroupsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the placement groups.</p>
      */
     inline const Aws::Vector<PlacementGroup>& GetPlacementGroups() const{ return m_placementGroups; }
-
-    /**
-     * <p>Information about the placement groups.</p>
-     */
     inline void SetPlacementGroups(const Aws::Vector<PlacementGroup>& value) { m_placementGroups = value; }
-
-    /**
-     * <p>Information about the placement groups.</p>
-     */
     inline void SetPlacementGroups(Aws::Vector<PlacementGroup>&& value) { m_placementGroups = std::move(value); }
-
-    /**
-     * <p>Information about the placement groups.</p>
-     */
     inline DescribePlacementGroupsResponse& WithPlacementGroups(const Aws::Vector<PlacementGroup>& value) { SetPlacementGroups(value); return *this;}
-
-    /**
-     * <p>Information about the placement groups.</p>
-     */
     inline DescribePlacementGroupsResponse& WithPlacementGroups(Aws::Vector<PlacementGroup>&& value) { SetPlacementGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about the placement groups.</p>
-     */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(const PlacementGroup& value) { m_placementGroups.push_back(value); return *this; }
-
-    /**
-     * <p>Information about the placement groups.</p>
-     */
     inline DescribePlacementGroupsResponse& AddPlacementGroups(PlacementGroup&& value) { m_placementGroups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribePlacementGroupsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribePlacementGroupsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PlacementGroup> m_placementGroups;

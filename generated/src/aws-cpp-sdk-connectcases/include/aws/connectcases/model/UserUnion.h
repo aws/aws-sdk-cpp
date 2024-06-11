@@ -38,46 +38,19 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Represents the Amazon Connect ARN of the user.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline UserUnion& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline UserUnion& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Represents the Amazon Connect ARN of the user.</p>
-     */
     inline UserUnion& WithUserArn(const char* value) { SetUserArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userArn;

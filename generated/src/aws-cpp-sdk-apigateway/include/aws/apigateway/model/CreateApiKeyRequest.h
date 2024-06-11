@@ -38,368 +38,120 @@ namespace Model
     AWS_APIGATEWAY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the ApiKey.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline CreateApiKeyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline CreateApiKeyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the ApiKey.</p>
-     */
     inline CreateApiKeyRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the ApiKey.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline CreateApiKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline CreateApiKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the ApiKey.</p>
-     */
     inline CreateApiKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the ApiKey can be used by callers.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Specifies whether the ApiKey can be used by callers.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the ApiKey can be used by callers.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Specifies whether the ApiKey can be used by callers.</p>
-     */
     inline CreateApiKeyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
      * identifier is distinct from the created API key value. This parameter is
      * deprecated and should not be used.</p>
      */
     inline bool GetGenerateDistinctId() const{ return m_generateDistinctId; }
-
-    /**
-     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value. This parameter is
-     * deprecated and should not be used.</p>
-     */
     inline bool GenerateDistinctIdHasBeenSet() const { return m_generateDistinctIdHasBeenSet; }
-
-    /**
-     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value. This parameter is
-     * deprecated and should not be used.</p>
-     */
     inline void SetGenerateDistinctId(bool value) { m_generateDistinctIdHasBeenSet = true; m_generateDistinctId = value; }
-
-    /**
-     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
-     * identifier is distinct from the created API key value. This parameter is
-     * deprecated and should not be used.</p>
-     */
     inline CreateApiKeyRequest& WithGenerateDistinctId(bool value) { SetGenerateDistinctId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a value of the API key.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline CreateApiKeyRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline CreateApiKeyRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies a value of the API key.</p>
-     */
     inline CreateApiKeyRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
      * key.</p>
      */
     inline const Aws::Vector<StageKey>& GetStageKeys() const{ return m_stageKeys; }
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline bool StageKeysHasBeenSet() const { return m_stageKeysHasBeenSet; }
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline void SetStageKeys(const Aws::Vector<StageKey>& value) { m_stageKeysHasBeenSet = true; m_stageKeys = value; }
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline void SetStageKeys(Aws::Vector<StageKey>&& value) { m_stageKeysHasBeenSet = true; m_stageKeys = std::move(value); }
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline CreateApiKeyRequest& WithStageKeys(const Aws::Vector<StageKey>& value) { SetStageKeys(value); return *this;}
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline CreateApiKeyRequest& WithStageKeys(Aws::Vector<StageKey>&& value) { SetStageKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline CreateApiKeyRequest& AddStageKeys(const StageKey& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(value); return *this; }
-
-    /**
-     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
-     * key.</p>
-     */
     inline CreateApiKeyRequest& AddStageKeys(StageKey&& value) { m_stageKeysHasBeenSet = true; m_stageKeys.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
      * the Amazon Web Services SaaS Marketplace.</p>
      */
     inline const Aws::String& GetCustomerId() const{ return m_customerId; }
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline void SetCustomerId(const Aws::String& value) { m_customerIdHasBeenSet = true; m_customerId = value; }
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline void SetCustomerId(Aws::String&& value) { m_customerIdHasBeenSet = true; m_customerId = std::move(value); }
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline void SetCustomerId(const char* value) { m_customerIdHasBeenSet = true; m_customerId.assign(value); }
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline CreateApiKeyRequest& WithCustomerId(const Aws::String& value) { SetCustomerId(value); return *this;}
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline CreateApiKeyRequest& WithCustomerId(Aws::String&& value) { SetCustomerId(std::move(value)); return *this;}
-
-    /**
-     * <p>An Amazon Web Services Marketplace customer identifier, when integrating with
-     * the Amazon Web Services SaaS Marketplace.</p>
-     */
     inline CreateApiKeyRequest& WithCustomerId(const char* value) { SetCustomerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
      * tag key can be up to 128 characters and must not start with <code>aws:</code>.
      * The tag value can be up to 256 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
-     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
-     * The tag value can be up to 256 characters.</p>
-     */
     inline CreateApiKeyRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_name;

@@ -38,6 +38,7 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specifies behavior of last resort when input video is lost, and no more backup
      * inputs are available. When dropTs is selected the entire transport stream will
@@ -48,114 +49,34 @@ namespace Model
      * substituted for the absent input video.
      */
     inline const InputLossActionForUdpOut& GetInputLossAction() const{ return m_inputLossAction; }
-
-    /**
-     * Specifies behavior of last resort when input video is lost, and no more backup
-     * inputs are available. When dropTs is selected the entire transport stream will
-     * stop being emitted.  When dropProgram is selected the program can be dropped
-     * from the transport stream (and replaced with null packets to meet the TS bitrate
-     * requirement).  Or, when emitProgram is chosen the transport stream will continue
-     * to be produced normally with repeat frames, black frames, or slate frames
-     * substituted for the absent input video.
-     */
     inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
-
-    /**
-     * Specifies behavior of last resort when input video is lost, and no more backup
-     * inputs are available. When dropTs is selected the entire transport stream will
-     * stop being emitted.  When dropProgram is selected the program can be dropped
-     * from the transport stream (and replaced with null packets to meet the TS bitrate
-     * requirement).  Or, when emitProgram is chosen the transport stream will continue
-     * to be produced normally with repeat frames, black frames, or slate frames
-     * substituted for the absent input video.
-     */
     inline void SetInputLossAction(const InputLossActionForUdpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
-
-    /**
-     * Specifies behavior of last resort when input video is lost, and no more backup
-     * inputs are available. When dropTs is selected the entire transport stream will
-     * stop being emitted.  When dropProgram is selected the program can be dropped
-     * from the transport stream (and replaced with null packets to meet the TS bitrate
-     * requirement).  Or, when emitProgram is chosen the transport stream will continue
-     * to be produced normally with repeat frames, black frames, or slate frames
-     * substituted for the absent input video.
-     */
     inline void SetInputLossAction(InputLossActionForUdpOut&& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = std::move(value); }
-
-    /**
-     * Specifies behavior of last resort when input video is lost, and no more backup
-     * inputs are available. When dropTs is selected the entire transport stream will
-     * stop being emitted.  When dropProgram is selected the program can be dropped
-     * from the transport stream (and replaced with null packets to meet the TS bitrate
-     * requirement).  Or, when emitProgram is chosen the transport stream will continue
-     * to be produced normally with repeat frames, black frames, or slate frames
-     * substituted for the absent input video.
-     */
     inline UdpGroupSettings& WithInputLossAction(const InputLossActionForUdpOut& value) { SetInputLossAction(value); return *this;}
-
-    /**
-     * Specifies behavior of last resort when input video is lost, and no more backup
-     * inputs are available. When dropTs is selected the entire transport stream will
-     * stop being emitted.  When dropProgram is selected the program can be dropped
-     * from the transport stream (and replaced with null packets to meet the TS bitrate
-     * requirement).  Or, when emitProgram is chosen the transport stream will continue
-     * to be produced normally with repeat frames, black frames, or slate frames
-     * substituted for the absent input video.
-     */
     inline UdpGroupSettings& WithInputLossAction(InputLossActionForUdpOut&& value) { SetInputLossAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Indicates ID3 frame that has the timecode.
      */
     inline const UdpTimedMetadataId3Frame& GetTimedMetadataId3Frame() const{ return m_timedMetadataId3Frame; }
-
-    /**
-     * Indicates ID3 frame that has the timecode.
-     */
     inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
-
-    /**
-     * Indicates ID3 frame that has the timecode.
-     */
     inline void SetTimedMetadataId3Frame(const UdpTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
-
-    /**
-     * Indicates ID3 frame that has the timecode.
-     */
     inline void SetTimedMetadataId3Frame(UdpTimedMetadataId3Frame&& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = std::move(value); }
-
-    /**
-     * Indicates ID3 frame that has the timecode.
-     */
     inline UdpGroupSettings& WithTimedMetadataId3Frame(const UdpTimedMetadataId3Frame& value) { SetTimedMetadataId3Frame(value); return *this;}
-
-    /**
-     * Indicates ID3 frame that has the timecode.
-     */
     inline UdpGroupSettings& WithTimedMetadataId3Frame(UdpTimedMetadataId3Frame&& value) { SetTimedMetadataId3Frame(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Timed Metadata interval in seconds.
      */
     inline int GetTimedMetadataId3Period() const{ return m_timedMetadataId3Period; }
-
-    /**
-     * Timed Metadata interval in seconds.
-     */
     inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
-
-    /**
-     * Timed Metadata interval in seconds.
-     */
     inline void SetTimedMetadataId3Period(int value) { m_timedMetadataId3PeriodHasBeenSet = true; m_timedMetadataId3Period = value; }
-
-    /**
-     * Timed Metadata interval in seconds.
-     */
     inline UdpGroupSettings& WithTimedMetadataId3Period(int value) { SetTimedMetadataId3Period(value); return *this;}
-
+    ///@}
   private:
 
     InputLossActionForUdpOut m_inputLossAction;

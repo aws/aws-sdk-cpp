@@ -37,63 +37,29 @@ namespace Model
     AWS_DATASYNC_API StartTaskExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the running task execution.</p>
      */
     inline const Aws::String& GetTaskExecutionArn() const{ return m_taskExecutionArn; }
-
-    /**
-     * <p>The ARN of the running task execution.</p>
-     */
     inline void SetTaskExecutionArn(const Aws::String& value) { m_taskExecutionArn = value; }
-
-    /**
-     * <p>The ARN of the running task execution.</p>
-     */
     inline void SetTaskExecutionArn(Aws::String&& value) { m_taskExecutionArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the running task execution.</p>
-     */
     inline void SetTaskExecutionArn(const char* value) { m_taskExecutionArn.assign(value); }
-
-    /**
-     * <p>The ARN of the running task execution.</p>
-     */
     inline StartTaskExecutionResult& WithTaskExecutionArn(const Aws::String& value) { SetTaskExecutionArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the running task execution.</p>
-     */
     inline StartTaskExecutionResult& WithTaskExecutionArn(Aws::String&& value) { SetTaskExecutionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the running task execution.</p>
-     */
     inline StartTaskExecutionResult& WithTaskExecutionArn(const char* value) { SetTaskExecutionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartTaskExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartTaskExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartTaskExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskExecutionArn;

@@ -38,73 +38,30 @@ namespace Model
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The image file contents, represented as a base64-encoded string. The file
      * size must be less than 1 MB.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
-
-    /**
-     * <p>The image file contents, represented as a base64-encoded string. The file
-     * size must be less than 1 MB.</p>
-     */
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-
-    /**
-     * <p>The image file contents, represented as a base64-encoded string. The file
-     * size must be less than 1 MB.</p>
-     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-
-    /**
-     * <p>The image file contents, represented as a base64-encoded string. The file
-     * size must be less than 1 MB.</p>
-     */
     inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-
-    /**
-     * <p>The image file contents, represented as a base64-encoded string. The file
-     * size must be less than 1 MB.</p>
-     */
     inline ImageFile& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-
-    /**
-     * <p>The image file contents, represented as a base64-encoded string. The file
-     * size must be less than 1 MB.</p>
-     */
     inline ImageFile& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file type of the image.</p>
      */
     inline const ImageFileType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The file type of the image.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The file type of the image.</p>
-     */
     inline void SetType(const ImageFileType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The file type of the image.</p>
-     */
     inline void SetType(ImageFileType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The file type of the image.</p>
-     */
     inline ImageFile& WithType(const ImageFileType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The file type of the image.</p>
-     */
     inline ImageFile& WithType(ImageFileType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::ByteBuffer m_data;

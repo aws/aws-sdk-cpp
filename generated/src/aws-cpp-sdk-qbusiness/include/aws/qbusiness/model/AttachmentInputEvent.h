@@ -38,24 +38,15 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const AttachmentInput& GetAttachment() const{ return m_attachment; }
-
-    
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-
-    
     inline void SetAttachment(const AttachmentInput& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-
-    
     inline void SetAttachment(AttachmentInput&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-
-    
     inline AttachmentInputEvent& WithAttachment(const AttachmentInput& value) { SetAttachment(value); return *this;}
-
-    
     inline AttachmentInputEvent& WithAttachment(AttachmentInput&& value) { SetAttachment(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AttachmentInput m_attachment;

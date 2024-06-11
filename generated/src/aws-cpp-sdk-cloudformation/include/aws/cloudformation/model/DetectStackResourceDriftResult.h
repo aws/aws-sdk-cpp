@@ -33,57 +33,27 @@ namespace Model
     AWS_CLOUDFORMATION_API DetectStackResourceDriftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about whether the resource's actual configuration has drifted
      * from its expected template configuration, including actual and expected property
      * values and any differences detected.</p>
      */
     inline const StackResourceDrift& GetStackResourceDrift() const{ return m_stackResourceDrift; }
-
-    /**
-     * <p>Information about whether the resource's actual configuration has drifted
-     * from its expected template configuration, including actual and expected property
-     * values and any differences detected.</p>
-     */
     inline void SetStackResourceDrift(const StackResourceDrift& value) { m_stackResourceDrift = value; }
-
-    /**
-     * <p>Information about whether the resource's actual configuration has drifted
-     * from its expected template configuration, including actual and expected property
-     * values and any differences detected.</p>
-     */
     inline void SetStackResourceDrift(StackResourceDrift&& value) { m_stackResourceDrift = std::move(value); }
-
-    /**
-     * <p>Information about whether the resource's actual configuration has drifted
-     * from its expected template configuration, including actual and expected property
-     * values and any differences detected.</p>
-     */
     inline DetectStackResourceDriftResult& WithStackResourceDrift(const StackResourceDrift& value) { SetStackResourceDrift(value); return *this;}
-
-    /**
-     * <p>Information about whether the resource's actual configuration has drifted
-     * from its expected template configuration, including actual and expected property
-     * values and any differences detected.</p>
-     */
     inline DetectStackResourceDriftResult& WithStackResourceDrift(StackResourceDrift&& value) { SetStackResourceDrift(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DetectStackResourceDriftResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DetectStackResourceDriftResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StackResourceDrift m_stackResourceDrift;

@@ -34,95 +34,34 @@ namespace Model
     AWS_CONNECTPARTICIPANT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An encrypted token originating from the interactive message of a ShowView
      * block operation. Represents the desired view.</p>
      */
     inline const Aws::String& GetViewToken() const{ return m_viewToken; }
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline bool ViewTokenHasBeenSet() const { return m_viewTokenHasBeenSet; }
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline void SetViewToken(const Aws::String& value) { m_viewTokenHasBeenSet = true; m_viewToken = value; }
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline void SetViewToken(Aws::String&& value) { m_viewTokenHasBeenSet = true; m_viewToken = std::move(value); }
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline void SetViewToken(const char* value) { m_viewTokenHasBeenSet = true; m_viewToken.assign(value); }
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline DescribeViewRequest& WithViewToken(const Aws::String& value) { SetViewToken(value); return *this;}
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline DescribeViewRequest& WithViewToken(Aws::String&& value) { SetViewToken(std::move(value)); return *this;}
-
-    /**
-     * <p>An encrypted token originating from the interactive message of a ShowView
-     * block operation. Represents the desired view.</p>
-     */
     inline DescribeViewRequest& WithViewToken(const char* value) { SetViewToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The connection token.</p>
      */
     inline const Aws::String& GetConnectionToken() const{ return m_connectionToken; }
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline bool ConnectionTokenHasBeenSet() const { return m_connectionTokenHasBeenSet; }
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline void SetConnectionToken(const Aws::String& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = value; }
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline void SetConnectionToken(Aws::String&& value) { m_connectionTokenHasBeenSet = true; m_connectionToken = std::move(value); }
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline void SetConnectionToken(const char* value) { m_connectionTokenHasBeenSet = true; m_connectionToken.assign(value); }
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline DescribeViewRequest& WithConnectionToken(const Aws::String& value) { SetConnectionToken(value); return *this;}
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline DescribeViewRequest& WithConnectionToken(Aws::String&& value) { SetConnectionToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The connection token.</p>
-     */
     inline DescribeViewRequest& WithConnectionToken(const char* value) { SetConnectionToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_viewToken;

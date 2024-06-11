@@ -38,45 +38,25 @@ namespace Model
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Time (in seconds) between each encryption key rotation.
      */
     inline int GetKeyRotationIntervalSeconds() const{ return m_keyRotationIntervalSeconds; }
-
-    /**
-     * Time (in seconds) between each encryption key rotation.
-     */
     inline bool KeyRotationIntervalSecondsHasBeenSet() const { return m_keyRotationIntervalSecondsHasBeenSet; }
-
-    /**
-     * Time (in seconds) between each encryption key rotation.
-     */
     inline void SetKeyRotationIntervalSeconds(int value) { m_keyRotationIntervalSecondsHasBeenSet = true; m_keyRotationIntervalSeconds = value; }
-
-    /**
-     * Time (in seconds) between each encryption key rotation.
-     */
     inline DashEncryption& WithKeyRotationIntervalSeconds(int value) { SetKeyRotationIntervalSeconds(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
-
-    
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-
-    
     inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-
-    
     inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-
-    
     inline DashEncryption& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-
-    
     inline DashEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     int m_keyRotationIntervalSeconds;

@@ -39,96 +39,41 @@ namespace Model
     AWS_CLOUDFRONT_API GetStreamingDistribution2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The streaming distribution's information.</p>
      */
     inline const StreamingDistribution& GetStreamingDistribution() const{ return m_streamingDistribution; }
-
-    /**
-     * <p>The streaming distribution's information.</p>
-     */
     inline void SetStreamingDistribution(const StreamingDistribution& value) { m_streamingDistribution = value; }
-
-    /**
-     * <p>The streaming distribution's information.</p>
-     */
     inline void SetStreamingDistribution(StreamingDistribution&& value) { m_streamingDistribution = std::move(value); }
-
-    /**
-     * <p>The streaming distribution's information.</p>
-     */
     inline GetStreamingDistribution2020_05_31Result& WithStreamingDistribution(const StreamingDistribution& value) { SetStreamingDistribution(value); return *this;}
-
-    /**
-     * <p>The streaming distribution's information.</p>
-     */
     inline GetStreamingDistribution2020_05_31Result& WithStreamingDistribution(StreamingDistribution&& value) { SetStreamingDistribution(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the streaming distribution's information. For example:
      * <code>E2QWRUHAPOMQZL</code>.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
-
-    /**
-     * <p>The current version of the streaming distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const Aws::String& value) { m_eTag = value; }
-
-    /**
-     * <p>The current version of the streaming distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-
-    /**
-     * <p>The current version of the streaming distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline void SetETag(const char* value) { m_eTag.assign(value); }
-
-    /**
-     * <p>The current version of the streaming distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetStreamingDistribution2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-
-    /**
-     * <p>The current version of the streaming distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetStreamingDistribution2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-
-    /**
-     * <p>The current version of the streaming distribution's information. For example:
-     * <code>E2QWRUHAPOMQZL</code>.</p>
-     */
     inline GetStreamingDistribution2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStreamingDistribution2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStreamingDistribution2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStreamingDistribution2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StreamingDistribution m_streamingDistribution;

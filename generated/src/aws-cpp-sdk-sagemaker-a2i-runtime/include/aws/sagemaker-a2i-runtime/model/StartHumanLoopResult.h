@@ -32,63 +32,29 @@ namespace Model
     AWS_AUGMENTEDAIRUNTIME_API StartHumanLoopResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the human loop.</p>
      */
     inline const Aws::String& GetHumanLoopArn() const{ return m_humanLoopArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the human loop.</p>
-     */
     inline void SetHumanLoopArn(const Aws::String& value) { m_humanLoopArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the human loop.</p>
-     */
     inline void SetHumanLoopArn(Aws::String&& value) { m_humanLoopArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the human loop.</p>
-     */
     inline void SetHumanLoopArn(const char* value) { m_humanLoopArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the human loop.</p>
-     */
     inline StartHumanLoopResult& WithHumanLoopArn(const Aws::String& value) { SetHumanLoopArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the human loop.</p>
-     */
     inline StartHumanLoopResult& WithHumanLoopArn(Aws::String&& value) { SetHumanLoopArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the human loop.</p>
-     */
     inline StartHumanLoopResult& WithHumanLoopArn(const char* value) { SetHumanLoopArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartHumanLoopResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartHumanLoopResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartHumanLoopResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_humanLoopArn;

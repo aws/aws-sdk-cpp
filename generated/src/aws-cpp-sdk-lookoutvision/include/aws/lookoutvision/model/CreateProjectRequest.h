@@ -35,47 +35,21 @@ namespace Model
     AWS_LOOKOUTFORVISION_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name for the project.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline CreateProjectRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline CreateProjectRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the project.</p>
-     */
     inline CreateProjectRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ClientToken is an idempotency token that ensures a call to
      * <code>CreateProject</code> completes only once. You choose the value to pass.
@@ -91,119 +65,14 @@ namespace Model
      * An idempotency token is active for 8 hours.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline CreateProjectRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline CreateProjectRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>ClientToken is an idempotency token that ensures a call to
-     * <code>CreateProject</code> completes only once. You choose the value to pass.
-     * For example, An issue might prevent you from getting a response from
-     * <code>CreateProject</code>. In this case, safely retry your call to
-     * <code>CreateProject</code> by using the same <code>ClientToken</code> parameter
-     * value. </p> <p>If you don't supply a value for <code>ClientToken</code>, the AWS
-     * SDK you are using inserts a value for you. This prevents retries after a network
-     * error from making multiple project creation requests. You'll need to provide
-     * your own value for other use cases. </p> <p>An error occurs if the other input
-     * parameters are not the same as in the first request. Using a different value for
-     * <code>ClientToken</code> is considered a new call to <code>CreateProject</code>.
-     * An idempotency token is active for 8 hours.</p>
-     */
     inline CreateProjectRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_projectName;

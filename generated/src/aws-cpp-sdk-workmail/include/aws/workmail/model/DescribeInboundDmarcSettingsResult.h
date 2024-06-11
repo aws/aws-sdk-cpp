@@ -32,43 +32,25 @@ namespace Model
     AWS_WORKMAIL_API DescribeInboundDmarcSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Lists the enforcement setting of the applied policy.</p>
      */
     inline bool GetEnforced() const{ return m_enforced; }
-
-    /**
-     * <p>Lists the enforcement setting of the applied policy.</p>
-     */
     inline void SetEnforced(bool value) { m_enforced = value; }
-
-    /**
-     * <p>Lists the enforcement setting of the applied policy.</p>
-     */
     inline DescribeInboundDmarcSettingsResult& WithEnforced(bool value) { SetEnforced(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeInboundDmarcSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeInboundDmarcSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeInboundDmarcSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enforced;

@@ -37,36 +37,17 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The data source's source configuration.</p>
      */
     inline const DetectedS3SourceConfig& GetS3SourceConfig() const{ return m_s3SourceConfig; }
-
-    /**
-     * <p>The data source's source configuration.</p>
-     */
     inline bool S3SourceConfigHasBeenSet() const { return m_s3SourceConfigHasBeenSet; }
-
-    /**
-     * <p>The data source's source configuration.</p>
-     */
     inline void SetS3SourceConfig(const DetectedS3SourceConfig& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = value; }
-
-    /**
-     * <p>The data source's source configuration.</p>
-     */
     inline void SetS3SourceConfig(DetectedS3SourceConfig&& value) { m_s3SourceConfigHasBeenSet = true; m_s3SourceConfig = std::move(value); }
-
-    /**
-     * <p>The data source's source configuration.</p>
-     */
     inline DetectedMetricSource& WithS3SourceConfig(const DetectedS3SourceConfig& value) { SetS3SourceConfig(value); return *this;}
-
-    /**
-     * <p>The data source's source configuration.</p>
-     */
     inline DetectedMetricSource& WithS3SourceConfig(DetectedS3SourceConfig&& value) { SetS3SourceConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DetectedS3SourceConfig m_s3SourceConfig;

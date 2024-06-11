@@ -34,113 +34,44 @@ namespace Model
     AWS_CLOUDWATCHRUM_API ListAppMonitorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of structures that contain information about the returned app
      * monitors.</p>
      */
     inline const Aws::Vector<AppMonitorSummary>& GetAppMonitorSummaries() const{ return m_appMonitorSummaries; }
-
-    /**
-     * <p>An array of structures that contain information about the returned app
-     * monitors.</p>
-     */
     inline void SetAppMonitorSummaries(const Aws::Vector<AppMonitorSummary>& value) { m_appMonitorSummaries = value; }
-
-    /**
-     * <p>An array of structures that contain information about the returned app
-     * monitors.</p>
-     */
     inline void SetAppMonitorSummaries(Aws::Vector<AppMonitorSummary>&& value) { m_appMonitorSummaries = std::move(value); }
-
-    /**
-     * <p>An array of structures that contain information about the returned app
-     * monitors.</p>
-     */
     inline ListAppMonitorsResult& WithAppMonitorSummaries(const Aws::Vector<AppMonitorSummary>& value) { SetAppMonitorSummaries(value); return *this;}
-
-    /**
-     * <p>An array of structures that contain information about the returned app
-     * monitors.</p>
-     */
     inline ListAppMonitorsResult& WithAppMonitorSummaries(Aws::Vector<AppMonitorSummary>&& value) { SetAppMonitorSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of structures that contain information about the returned app
-     * monitors.</p>
-     */
     inline ListAppMonitorsResult& AddAppMonitorSummaries(const AppMonitorSummary& value) { m_appMonitorSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>An array of structures that contain information about the returned app
-     * monitors.</p>
-     */
     inline ListAppMonitorsResult& AddAppMonitorSummaries(AppMonitorSummary&& value) { m_appMonitorSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token that you can use in a subsequent operation to retrieve the next set
      * of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token that you can use in a subsequent operation to retrieve the next set
-     * of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token that you can use in a subsequent operation to retrieve the next set
-     * of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent operation to retrieve the next set
-     * of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token that you can use in a subsequent operation to retrieve the next set
-     * of results.</p>
-     */
     inline ListAppMonitorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent operation to retrieve the next set
-     * of results.</p>
-     */
     inline ListAppMonitorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token that you can use in a subsequent operation to retrieve the next set
-     * of results.</p>
-     */
     inline ListAppMonitorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListAppMonitorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListAppMonitorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListAppMonitorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<AppMonitorSummary> m_appMonitorSummaries;

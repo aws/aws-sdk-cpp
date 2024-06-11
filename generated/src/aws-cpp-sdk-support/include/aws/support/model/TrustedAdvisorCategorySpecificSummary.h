@@ -38,42 +38,18 @@ namespace Model
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The summary information about cost savings for a Trusted Advisor check that
      * is in the Cost Optimizing category.</p>
      */
     inline const TrustedAdvisorCostOptimizingSummary& GetCostOptimizing() const{ return m_costOptimizing; }
-
-    /**
-     * <p>The summary information about cost savings for a Trusted Advisor check that
-     * is in the Cost Optimizing category.</p>
-     */
     inline bool CostOptimizingHasBeenSet() const { return m_costOptimizingHasBeenSet; }
-
-    /**
-     * <p>The summary information about cost savings for a Trusted Advisor check that
-     * is in the Cost Optimizing category.</p>
-     */
     inline void SetCostOptimizing(const TrustedAdvisorCostOptimizingSummary& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = value; }
-
-    /**
-     * <p>The summary information about cost savings for a Trusted Advisor check that
-     * is in the Cost Optimizing category.</p>
-     */
     inline void SetCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { m_costOptimizingHasBeenSet = true; m_costOptimizing = std::move(value); }
-
-    /**
-     * <p>The summary information about cost savings for a Trusted Advisor check that
-     * is in the Cost Optimizing category.</p>
-     */
     inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(const TrustedAdvisorCostOptimizingSummary& value) { SetCostOptimizing(value); return *this;}
-
-    /**
-     * <p>The summary information about cost savings for a Trusted Advisor check that
-     * is in the Cost Optimizing category.</p>
-     */
     inline TrustedAdvisorCategorySpecificSummary& WithCostOptimizing(TrustedAdvisorCostOptimizingSummary&& value) { SetCostOptimizing(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TrustedAdvisorCostOptimizingSummary m_costOptimizing;

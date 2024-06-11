@@ -33,89 +33,40 @@ namespace Model
     AWS_FMS_API GetResourceSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the specified resource set.</p>
      */
     inline const ResourceSet& GetResourceSet() const{ return m_resourceSet; }
-
-    /**
-     * <p>Information about the specified resource set.</p>
-     */
     inline void SetResourceSet(const ResourceSet& value) { m_resourceSet = value; }
-
-    /**
-     * <p>Information about the specified resource set.</p>
-     */
     inline void SetResourceSet(ResourceSet&& value) { m_resourceSet = std::move(value); }
-
-    /**
-     * <p>Information about the specified resource set.</p>
-     */
     inline GetResourceSetResult& WithResourceSet(const ResourceSet& value) { SetResourceSet(value); return *this;}
-
-    /**
-     * <p>Information about the specified resource set.</p>
-     */
     inline GetResourceSetResult& WithResourceSet(ResourceSet&& value) { SetResourceSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the resource set.</p>
      */
     inline const Aws::String& GetResourceSetArn() const{ return m_resourceSetArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource set.</p>
-     */
     inline void SetResourceSetArn(const Aws::String& value) { m_resourceSetArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource set.</p>
-     */
     inline void SetResourceSetArn(Aws::String&& value) { m_resourceSetArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource set.</p>
-     */
     inline void SetResourceSetArn(const char* value) { m_resourceSetArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource set.</p>
-     */
     inline GetResourceSetResult& WithResourceSetArn(const Aws::String& value) { SetResourceSetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource set.</p>
-     */
     inline GetResourceSetResult& WithResourceSetArn(Aws::String&& value) { SetResourceSetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the resource set.</p>
-     */
     inline GetResourceSetResult& WithResourceSetArn(const char* value) { SetResourceSetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResourceSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResourceSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResourceSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ResourceSet m_resourceSet;

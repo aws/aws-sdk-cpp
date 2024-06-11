@@ -51,88 +51,33 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of the IP addresses, either <code>IPV4</code> or
      * <code>IPV6</code>. </p>
      */
     inline const IPAddressVersion& GetIPAddressVersion() const{ return m_iPAddressVersion; }
-
-    /**
-     * <p>The version of the IP addresses, either <code>IPV4</code> or
-     * <code>IPV6</code>. </p>
-     */
     inline bool IPAddressVersionHasBeenSet() const { return m_iPAddressVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the IP addresses, either <code>IPV4</code> or
-     * <code>IPV6</code>. </p>
-     */
     inline void SetIPAddressVersion(const IPAddressVersion& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = value; }
-
-    /**
-     * <p>The version of the IP addresses, either <code>IPV4</code> or
-     * <code>IPV6</code>. </p>
-     */
     inline void SetIPAddressVersion(IPAddressVersion&& value) { m_iPAddressVersionHasBeenSet = true; m_iPAddressVersion = std::move(value); }
-
-    /**
-     * <p>The version of the IP addresses, either <code>IPV4</code> or
-     * <code>IPV6</code>. </p>
-     */
     inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(const IPAddressVersion& value) { SetIPAddressVersion(value); return *this;}
-
-    /**
-     * <p>The version of the IP addresses, either <code>IPV4</code> or
-     * <code>IPV6</code>. </p>
-     */
     inline RateBasedStatementManagedKeysIPSet& WithIPAddressVersion(IPAddressVersion&& value) { SetIPAddressVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP addresses that are currently blocked.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddresses() const{ return m_addresses; }
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline bool AddressesHasBeenSet() const { return m_addressesHasBeenSet; }
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline void SetAddresses(const Aws::Vector<Aws::String>& value) { m_addressesHasBeenSet = true; m_addresses = value; }
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline void SetAddresses(Aws::Vector<Aws::String>&& value) { m_addressesHasBeenSet = true; m_addresses = std::move(value); }
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline RateBasedStatementManagedKeysIPSet& WithAddresses(const Aws::Vector<Aws::String>& value) { SetAddresses(value); return *this;}
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline RateBasedStatementManagedKeysIPSet& WithAddresses(Aws::Vector<Aws::String>&& value) { SetAddresses(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline RateBasedStatementManagedKeysIPSet& AddAddresses(const Aws::String& value) { m_addressesHasBeenSet = true; m_addresses.push_back(value); return *this; }
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline RateBasedStatementManagedKeysIPSet& AddAddresses(Aws::String&& value) { m_addressesHasBeenSet = true; m_addresses.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IP addresses that are currently blocked.</p>
-     */
     inline RateBasedStatementManagedKeysIPSet& AddAddresses(const char* value) { m_addressesHasBeenSet = true; m_addresses.push_back(value); return *this; }
-
+    ///@}
   private:
 
     IPAddressVersion m_iPAddressVersion;

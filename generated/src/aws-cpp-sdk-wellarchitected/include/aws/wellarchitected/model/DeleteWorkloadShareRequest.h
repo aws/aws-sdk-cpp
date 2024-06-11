@@ -42,80 +42,41 @@ namespace Model
     AWS_WELLARCHITECTED_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    
     inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
-
-    
     inline void SetShareId(const Aws::String& value) { m_shareIdHasBeenSet = true; m_shareId = value; }
-
-    
     inline void SetShareId(Aws::String&& value) { m_shareIdHasBeenSet = true; m_shareId = std::move(value); }
-
-    
     inline void SetShareId(const char* value) { m_shareIdHasBeenSet = true; m_shareId.assign(value); }
-
-    
     inline DeleteWorkloadShareRequest& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    
     inline DeleteWorkloadShareRequest& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    
     inline DeleteWorkloadShareRequest& WithShareId(const char* value) { SetShareId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-
-    
     inline DeleteWorkloadShareRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline DeleteWorkloadShareRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline DeleteWorkloadShareRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    
     inline DeleteWorkloadShareRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    
     inline DeleteWorkloadShareRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    
     inline DeleteWorkloadShareRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareId;

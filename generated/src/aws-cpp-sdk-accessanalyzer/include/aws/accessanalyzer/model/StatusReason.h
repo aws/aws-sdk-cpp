@@ -41,36 +41,17 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reason code for the current status of the analyzer.</p>
      */
     inline const ReasonCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The reason code for the current status of the analyzer.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The reason code for the current status of the analyzer.</p>
-     */
     inline void SetCode(const ReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The reason code for the current status of the analyzer.</p>
-     */
     inline void SetCode(ReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The reason code for the current status of the analyzer.</p>
-     */
     inline StatusReason& WithCode(const ReasonCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The reason code for the current status of the analyzer.</p>
-     */
     inline StatusReason& WithCode(ReasonCode&& value) { SetCode(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ReasonCode m_code;

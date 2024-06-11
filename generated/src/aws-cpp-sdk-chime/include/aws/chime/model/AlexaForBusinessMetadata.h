@@ -38,67 +38,29 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Starts or stops Alexa for Business.</p>
      */
     inline bool GetIsAlexaForBusinessEnabled() const{ return m_isAlexaForBusinessEnabled; }
-
-    /**
-     * <p>Starts or stops Alexa for Business.</p>
-     */
     inline bool IsAlexaForBusinessEnabledHasBeenSet() const { return m_isAlexaForBusinessEnabledHasBeenSet; }
-
-    /**
-     * <p>Starts or stops Alexa for Business.</p>
-     */
     inline void SetIsAlexaForBusinessEnabled(bool value) { m_isAlexaForBusinessEnabledHasBeenSet = true; m_isAlexaForBusinessEnabled = value; }
-
-    /**
-     * <p>Starts or stops Alexa for Business.</p>
-     */
     inline AlexaForBusinessMetadata& WithIsAlexaForBusinessEnabled(bool value) { SetIsAlexaForBusinessEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ARN of the room resource.</p>
      */
     inline const Aws::String& GetAlexaForBusinessRoomArn() const{ return m_alexaForBusinessRoomArn; }
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline bool AlexaForBusinessRoomArnHasBeenSet() const { return m_alexaForBusinessRoomArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline void SetAlexaForBusinessRoomArn(const Aws::String& value) { m_alexaForBusinessRoomArnHasBeenSet = true; m_alexaForBusinessRoomArn = value; }
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline void SetAlexaForBusinessRoomArn(Aws::String&& value) { m_alexaForBusinessRoomArnHasBeenSet = true; m_alexaForBusinessRoomArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline void SetAlexaForBusinessRoomArn(const char* value) { m_alexaForBusinessRoomArnHasBeenSet = true; m_alexaForBusinessRoomArn.assign(value); }
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline AlexaForBusinessMetadata& WithAlexaForBusinessRoomArn(const Aws::String& value) { SetAlexaForBusinessRoomArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline AlexaForBusinessMetadata& WithAlexaForBusinessRoomArn(Aws::String&& value) { SetAlexaForBusinessRoomArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the room resource.</p>
-     */
     inline AlexaForBusinessMetadata& WithAlexaForBusinessRoomArn(const char* value) { SetAlexaForBusinessRoomArn(value); return *this;}
-
+    ///@}
   private:
 
     bool m_isAlexaForBusinessEnabled;

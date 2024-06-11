@@ -32,95 +32,34 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
      * should be applied to.</p>
      */
     inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline bool ContainerRecipeArnHasBeenSet() const { return m_containerRecipeArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline PutContainerRecipePolicyRequest& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline PutContainerRecipePolicyRequest& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the container recipe that this policy
-     * should be applied to.</p>
-     */
     inline PutContainerRecipePolicyRequest& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The policy to apply to the container recipe.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline PutContainerRecipePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline PutContainerRecipePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy to apply to the container recipe.</p>
-     */
     inline PutContainerRecipePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_containerRecipeArn;

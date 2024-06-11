@@ -39,77 +39,31 @@ namespace Model
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The current state of the workflow.</p>
      */
     inline const WorkflowStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current state of the workflow.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The current state of the workflow.</p>
-     */
     inline void SetStatus(const WorkflowStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The current state of the workflow.</p>
-     */
     inline void SetStatus(WorkflowStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The current state of the workflow.</p>
-     */
     inline WorkflowState& WithStatus(const WorkflowStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current state of the workflow.</p>
-     */
     inline WorkflowState& WithStatus(WorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes how or why the workflow changed state.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline WorkflowState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline WorkflowState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes how or why the workflow changed state.</p>
-     */
     inline WorkflowState& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     WorkflowStatus m_status;

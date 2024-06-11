@@ -34,63 +34,29 @@ namespace Model
     AWS_WORKSPACES_API DescribeTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
-
-    /**
-     * <p>The tags.</p>
-     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
-
-    /**
-     * <p>The tags.</p>
-     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
-
-    /**
-     * <p>The tags.</p>
-     */
     inline DescribeTagsResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-
-    /**
-     * <p>The tags.</p>
-     */
     inline DescribeTagsResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags.</p>
-     */
     inline DescribeTagsResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
-
-    /**
-     * <p>The tags.</p>
-     */
     inline DescribeTagsResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeTagsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeTagsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeTagsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Tag> m_tagList;

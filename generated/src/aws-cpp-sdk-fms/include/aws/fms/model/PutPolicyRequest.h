@@ -36,77 +36,31 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The details of the Firewall Manager policy to be created.</p>
      */
     inline const Policy& GetPolicy() const{ return m_policy; }
-
-    /**
-     * <p>The details of the Firewall Manager policy to be created.</p>
-     */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-
-    /**
-     * <p>The details of the Firewall Manager policy to be created.</p>
-     */
     inline void SetPolicy(const Policy& value) { m_policyHasBeenSet = true; m_policy = value; }
-
-    /**
-     * <p>The details of the Firewall Manager policy to be created.</p>
-     */
     inline void SetPolicy(Policy&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-
-    /**
-     * <p>The details of the Firewall Manager policy to be created.</p>
-     */
     inline PutPolicyRequest& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
-
-    /**
-     * <p>The details of the Firewall Manager policy to be created.</p>
-     */
     inline PutPolicyRequest& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags to add to the Amazon Web Services resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline PutPolicyRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline PutPolicyRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline PutPolicyRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-
-    /**
-     * <p>The tags to add to the Amazon Web Services resource.</p>
-     */
     inline PutPolicyRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Policy m_policy;

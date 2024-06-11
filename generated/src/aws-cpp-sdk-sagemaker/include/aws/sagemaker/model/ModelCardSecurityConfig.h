@@ -38,62 +38,21 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Key Management Service <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
      * ID</a> to use for encrypting a model card.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline ModelCardSecurityConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline ModelCardSecurityConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>A Key Management Service <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
-     * ID</a> to use for encrypting a model card.</p>
-     */
     inline ModelCardSecurityConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

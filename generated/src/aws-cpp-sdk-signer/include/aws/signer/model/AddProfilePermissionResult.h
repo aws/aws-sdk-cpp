@@ -32,63 +32,29 @@ namespace Model
     AWS_SIGNER_API AddProfilePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A unique identifier for the current profile revision.</p>
      */
     inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
-
-    /**
-     * <p>A unique identifier for the current profile revision.</p>
-     */
     inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
-
-    /**
-     * <p>A unique identifier for the current profile revision.</p>
-     */
     inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
-
-    /**
-     * <p>A unique identifier for the current profile revision.</p>
-     */
     inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
-
-    /**
-     * <p>A unique identifier for the current profile revision.</p>
-     */
     inline AddProfilePermissionResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-
-    /**
-     * <p>A unique identifier for the current profile revision.</p>
-     */
     inline AddProfilePermissionResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique identifier for the current profile revision.</p>
-     */
     inline AddProfilePermissionResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AddProfilePermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AddProfilePermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AddProfilePermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_revisionId;

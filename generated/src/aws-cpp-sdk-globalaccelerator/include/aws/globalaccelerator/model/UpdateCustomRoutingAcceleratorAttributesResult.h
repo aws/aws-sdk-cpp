@@ -33,53 +33,27 @@ namespace Model
     AWS_GLOBALACCELERATOR_API UpdateCustomRoutingAcceleratorAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Updated custom routing accelerator.</p>
      */
     inline const CustomRoutingAcceleratorAttributes& GetAcceleratorAttributes() const{ return m_acceleratorAttributes; }
-
-    /**
-     * <p>Updated custom routing accelerator.</p>
-     */
     inline void SetAcceleratorAttributes(const CustomRoutingAcceleratorAttributes& value) { m_acceleratorAttributes = value; }
-
-    /**
-     * <p>Updated custom routing accelerator.</p>
-     */
     inline void SetAcceleratorAttributes(CustomRoutingAcceleratorAttributes&& value) { m_acceleratorAttributes = std::move(value); }
-
-    /**
-     * <p>Updated custom routing accelerator.</p>
-     */
     inline UpdateCustomRoutingAcceleratorAttributesResult& WithAcceleratorAttributes(const CustomRoutingAcceleratorAttributes& value) { SetAcceleratorAttributes(value); return *this;}
-
-    /**
-     * <p>Updated custom routing accelerator.</p>
-     */
     inline UpdateCustomRoutingAcceleratorAttributesResult& WithAcceleratorAttributes(CustomRoutingAcceleratorAttributes&& value) { SetAcceleratorAttributes(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCustomRoutingAcceleratorAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCustomRoutingAcceleratorAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCustomRoutingAcceleratorAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CustomRoutingAcceleratorAttributes m_acceleratorAttributes;

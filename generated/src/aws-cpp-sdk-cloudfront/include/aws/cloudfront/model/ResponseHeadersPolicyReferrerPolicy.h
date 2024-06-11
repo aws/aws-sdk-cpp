@@ -41,35 +41,19 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A Boolean that determines whether CloudFront overrides the
      * <code>Referrer-Policy</code> HTTP response header received from the origin with
      * the one specified in this response headers policy.</p>
      */
     inline bool GetOverride() const{ return m_override; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>Referrer-Policy</code> HTTP response header received from the origin with
-     * the one specified in this response headers policy.</p>
-     */
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>Referrer-Policy</code> HTTP response header received from the origin with
-     * the one specified in this response headers policy.</p>
-     */
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
-
-    /**
-     * <p>A Boolean that determines whether CloudFront overrides the
-     * <code>Referrer-Policy</code> HTTP response header received from the origin with
-     * the one specified in this response headers policy.</p>
-     */
     inline ResponseHeadersPolicyReferrerPolicy& WithOverride(bool value) { SetOverride(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid
      * values are:</p> <ul> <li> <p> <code>no-referrer</code> </p> </li> <li> <p>
@@ -83,77 +67,12 @@ namespace Model
      * in the MDN Web Docs.</p>
      */
     inline const ReferrerPolicyList& GetReferrerPolicy() const{ return m_referrerPolicy; }
-
-    /**
-     * <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid
-     * values are:</p> <ul> <li> <p> <code>no-referrer</code> </p> </li> <li> <p>
-     * <code>no-referrer-when-downgrade</code> </p> </li> <li> <p> <code>origin</code>
-     * </p> </li> <li> <p> <code>origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>same-origin</code> </p> </li> <li> <p> <code>strict-origin</code> </p>
-     * </li> <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>unsafe-url</code> </p> </li> </ul> <p>For more information about these
-     * values, see <a
-     * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
-     * in the MDN Web Docs.</p>
-     */
     inline bool ReferrerPolicyHasBeenSet() const { return m_referrerPolicyHasBeenSet; }
-
-    /**
-     * <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid
-     * values are:</p> <ul> <li> <p> <code>no-referrer</code> </p> </li> <li> <p>
-     * <code>no-referrer-when-downgrade</code> </p> </li> <li> <p> <code>origin</code>
-     * </p> </li> <li> <p> <code>origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>same-origin</code> </p> </li> <li> <p> <code>strict-origin</code> </p>
-     * </li> <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>unsafe-url</code> </p> </li> </ul> <p>For more information about these
-     * values, see <a
-     * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
-     * in the MDN Web Docs.</p>
-     */
     inline void SetReferrerPolicy(const ReferrerPolicyList& value) { m_referrerPolicyHasBeenSet = true; m_referrerPolicy = value; }
-
-    /**
-     * <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid
-     * values are:</p> <ul> <li> <p> <code>no-referrer</code> </p> </li> <li> <p>
-     * <code>no-referrer-when-downgrade</code> </p> </li> <li> <p> <code>origin</code>
-     * </p> </li> <li> <p> <code>origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>same-origin</code> </p> </li> <li> <p> <code>strict-origin</code> </p>
-     * </li> <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>unsafe-url</code> </p> </li> </ul> <p>For more information about these
-     * values, see <a
-     * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
-     * in the MDN Web Docs.</p>
-     */
     inline void SetReferrerPolicy(ReferrerPolicyList&& value) { m_referrerPolicyHasBeenSet = true; m_referrerPolicy = std::move(value); }
-
-    /**
-     * <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid
-     * values are:</p> <ul> <li> <p> <code>no-referrer</code> </p> </li> <li> <p>
-     * <code>no-referrer-when-downgrade</code> </p> </li> <li> <p> <code>origin</code>
-     * </p> </li> <li> <p> <code>origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>same-origin</code> </p> </li> <li> <p> <code>strict-origin</code> </p>
-     * </li> <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>unsafe-url</code> </p> </li> </ul> <p>For more information about these
-     * values, see <a
-     * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
-     * in the MDN Web Docs.</p>
-     */
     inline ResponseHeadersPolicyReferrerPolicy& WithReferrerPolicy(const ReferrerPolicyList& value) { SetReferrerPolicy(value); return *this;}
-
-    /**
-     * <p>The value of the <code>Referrer-Policy</code> HTTP response header. Valid
-     * values are:</p> <ul> <li> <p> <code>no-referrer</code> </p> </li> <li> <p>
-     * <code>no-referrer-when-downgrade</code> </p> </li> <li> <p> <code>origin</code>
-     * </p> </li> <li> <p> <code>origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>same-origin</code> </p> </li> <li> <p> <code>strict-origin</code> </p>
-     * </li> <li> <p> <code>strict-origin-when-cross-origin</code> </p> </li> <li> <p>
-     * <code>unsafe-url</code> </p> </li> </ul> <p>For more information about these
-     * values, see <a
-     * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy">Referrer-Policy</a>
-     * in the MDN Web Docs.</p>
-     */
     inline ResponseHeadersPolicyReferrerPolicy& WithReferrerPolicy(ReferrerPolicyList&& value) { SetReferrerPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_override;

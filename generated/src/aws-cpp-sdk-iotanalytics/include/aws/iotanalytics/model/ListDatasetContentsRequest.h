@@ -39,109 +39,45 @@ namespace Model
     AWS_IOTANALYTICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the dataset whose contents information you want to list.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline ListDatasetContentsRequest& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline ListDatasetContentsRequest& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dataset whose contents information you want to list.</p>
-     */
     inline ListDatasetContentsRequest& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline ListDatasetContentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline ListDatasetContentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of results.</p>
-     */
     inline ListDatasetContentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return in this request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return in this request.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return in this request.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return in this request.</p>
-     */
     inline ListDatasetContentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A filter to limit results to those dataset contents whose creation is
      * scheduled on or after the given time. See the field
@@ -149,90 +85,26 @@ namespace Model
      * (timestamp)</p>
      */
     inline const Aws::Utils::DateTime& GetScheduledOnOrAfter() const{ return m_scheduledOnOrAfter; }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled on or after the given time. See the field
-     * <code>triggers.schedule</code> in the <code>CreateDataset</code> request.
-     * (timestamp)</p>
-     */
     inline bool ScheduledOnOrAfterHasBeenSet() const { return m_scheduledOnOrAfterHasBeenSet; }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled on or after the given time. See the field
-     * <code>triggers.schedule</code> in the <code>CreateDataset</code> request.
-     * (timestamp)</p>
-     */
     inline void SetScheduledOnOrAfter(const Aws::Utils::DateTime& value) { m_scheduledOnOrAfterHasBeenSet = true; m_scheduledOnOrAfter = value; }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled on or after the given time. See the field
-     * <code>triggers.schedule</code> in the <code>CreateDataset</code> request.
-     * (timestamp)</p>
-     */
     inline void SetScheduledOnOrAfter(Aws::Utils::DateTime&& value) { m_scheduledOnOrAfterHasBeenSet = true; m_scheduledOnOrAfter = std::move(value); }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled on or after the given time. See the field
-     * <code>triggers.schedule</code> in the <code>CreateDataset</code> request.
-     * (timestamp)</p>
-     */
     inline ListDatasetContentsRequest& WithScheduledOnOrAfter(const Aws::Utils::DateTime& value) { SetScheduledOnOrAfter(value); return *this;}
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled on or after the given time. See the field
-     * <code>triggers.schedule</code> in the <code>CreateDataset</code> request.
-     * (timestamp)</p>
-     */
     inline ListDatasetContentsRequest& WithScheduledOnOrAfter(Aws::Utils::DateTime&& value) { SetScheduledOnOrAfter(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A filter to limit results to those dataset contents whose creation is
      * scheduled before the given time. See the field <code>triggers.schedule</code> in
      * the <code>CreateDataset</code> request. (timestamp)</p>
      */
     inline const Aws::Utils::DateTime& GetScheduledBefore() const{ return m_scheduledBefore; }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled before the given time. See the field <code>triggers.schedule</code> in
-     * the <code>CreateDataset</code> request. (timestamp)</p>
-     */
     inline bool ScheduledBeforeHasBeenSet() const { return m_scheduledBeforeHasBeenSet; }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled before the given time. See the field <code>triggers.schedule</code> in
-     * the <code>CreateDataset</code> request. (timestamp)</p>
-     */
     inline void SetScheduledBefore(const Aws::Utils::DateTime& value) { m_scheduledBeforeHasBeenSet = true; m_scheduledBefore = value; }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled before the given time. See the field <code>triggers.schedule</code> in
-     * the <code>CreateDataset</code> request. (timestamp)</p>
-     */
     inline void SetScheduledBefore(Aws::Utils::DateTime&& value) { m_scheduledBeforeHasBeenSet = true; m_scheduledBefore = std::move(value); }
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled before the given time. See the field <code>triggers.schedule</code> in
-     * the <code>CreateDataset</code> request. (timestamp)</p>
-     */
     inline ListDatasetContentsRequest& WithScheduledBefore(const Aws::Utils::DateTime& value) { SetScheduledBefore(value); return *this;}
-
-    /**
-     * <p>A filter to limit results to those dataset contents whose creation is
-     * scheduled before the given time. See the field <code>triggers.schedule</code> in
-     * the <code>CreateDataset</code> request. (timestamp)</p>
-     */
     inline ListDatasetContentsRequest& WithScheduledBefore(Aws::Utils::DateTime&& value) { SetScheduledBefore(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetName;

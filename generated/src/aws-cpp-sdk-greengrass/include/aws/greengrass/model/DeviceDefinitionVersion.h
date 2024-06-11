@@ -38,46 +38,19 @@ namespace Model
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * A list of devices in the definition version.
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline void SetDevices(Aws::Vector<Device>&& value) { m_devicesHasBeenSet = true; m_devices = std::move(value); }
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline DeviceDefinitionVersion& WithDevices(const Aws::Vector<Device>& value) { SetDevices(value); return *this;}
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline DeviceDefinitionVersion& WithDevices(Aws::Vector<Device>&& value) { SetDevices(std::move(value)); return *this;}
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline DeviceDefinitionVersion& AddDevices(const Device& value) { m_devicesHasBeenSet = true; m_devices.push_back(value); return *this; }
-
-    /**
-     * A list of devices in the definition version.
-     */
     inline DeviceDefinitionVersion& AddDevices(Device&& value) { m_devicesHasBeenSet = true; m_devices.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Device> m_devices;

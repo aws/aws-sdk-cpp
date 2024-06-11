@@ -41,114 +41,46 @@ namespace Model
     AWS_MAILMANAGER_API GetArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the archive.</p>
      */
     inline const Aws::String& GetArchiveArn() const{ return m_archiveArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
     inline void SetArchiveArn(const Aws::String& value) { m_archiveArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
     inline void SetArchiveArn(Aws::String&& value) { m_archiveArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
     inline void SetArchiveArn(const char* value) { m_archiveArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveArn(const Aws::String& value) { SetArchiveArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveArn(Aws::String&& value) { SetArchiveArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveArn(const char* value) { SetArchiveArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the archive.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-
-    /**
-     * <p>The unique identifier of the archive.</p>
-     */
     inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-
-    /**
-     * <p>The unique identifier of the archive.</p>
-     */
     inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the archive.</p>
-     */
     inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique name assigned to the archive.</p>
      */
     inline const Aws::String& GetArchiveName() const{ return m_archiveName; }
-
-    /**
-     * <p>The unique name assigned to the archive.</p>
-     */
     inline void SetArchiveName(const Aws::String& value) { m_archiveName = value; }
-
-    /**
-     * <p>The unique name assigned to the archive.</p>
-     */
     inline void SetArchiveName(Aws::String&& value) { m_archiveName = std::move(value); }
-
-    /**
-     * <p>The unique name assigned to the archive.</p>
-     */
     inline void SetArchiveName(const char* value) { m_archiveName.assign(value); }
-
-    /**
-     * <p>The unique name assigned to the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveName(const Aws::String& value) { SetArchiveName(value); return *this;}
-
-    /**
-     * <p>The unique name assigned to the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveName(Aws::String&& value) { SetArchiveName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name assigned to the archive.</p>
-     */
     inline GetArchiveResult& WithArchiveName(const char* value) { SetArchiveName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current state of the archive:</p> <ul> <li> <p> <code>ACTIVE</code> – The
      * archive is ready and available for use. </p> </li> <li> <p>
@@ -157,186 +89,69 @@ namespace Model
      * this state. </p> </li> </ul>
      */
     inline const ArchiveState& GetArchiveState() const{ return m_archiveState; }
-
-    /**
-     * <p>The current state of the archive:</p> <ul> <li> <p> <code>ACTIVE</code> – The
-     * archive is ready and available for use. </p> </li> <li> <p>
-     * <code>PENDING_DELETION</code> – The archive has been marked for deletion and
-     * will be permanently deleted in 30 days. No further modifications can be made in
-     * this state. </p> </li> </ul>
-     */
     inline void SetArchiveState(const ArchiveState& value) { m_archiveState = value; }
-
-    /**
-     * <p>The current state of the archive:</p> <ul> <li> <p> <code>ACTIVE</code> – The
-     * archive is ready and available for use. </p> </li> <li> <p>
-     * <code>PENDING_DELETION</code> – The archive has been marked for deletion and
-     * will be permanently deleted in 30 days. No further modifications can be made in
-     * this state. </p> </li> </ul>
-     */
     inline void SetArchiveState(ArchiveState&& value) { m_archiveState = std::move(value); }
-
-    /**
-     * <p>The current state of the archive:</p> <ul> <li> <p> <code>ACTIVE</code> – The
-     * archive is ready and available for use. </p> </li> <li> <p>
-     * <code>PENDING_DELETION</code> – The archive has been marked for deletion and
-     * will be permanently deleted in 30 days. No further modifications can be made in
-     * this state. </p> </li> </ul>
-     */
     inline GetArchiveResult& WithArchiveState(const ArchiveState& value) { SetArchiveState(value); return *this;}
-
-    /**
-     * <p>The current state of the archive:</p> <ul> <li> <p> <code>ACTIVE</code> – The
-     * archive is ready and available for use. </p> </li> <li> <p>
-     * <code>PENDING_DELETION</code> – The archive has been marked for deletion and
-     * will be permanently deleted in 30 days. No further modifications can be made in
-     * this state. </p> </li> </ul>
-     */
     inline GetArchiveResult& WithArchiveState(ArchiveState&& value) { SetArchiveState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp of when the archive was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-
-    /**
-     * <p>The timestamp of when the archive was created.</p>
-     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-
-    /**
-     * <p>The timestamp of when the archive was created.</p>
-     */
     inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of when the archive was created.</p>
-     */
     inline GetArchiveResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of when the archive was created.</p>
-     */
     inline GetArchiveResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
      * archive.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
     inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
     inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
     inline void SetKmsKeyArn(const char* value) { m_kmsKeyArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
     inline GetArchiveResult& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
     inline GetArchiveResult& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the KMS key used to encrypt the
-     * archive.</p>
-     */
     inline GetArchiveResult& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp of when the archive was modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
-
-    /**
-     * <p>The timestamp of when the archive was modified.</p>
-     */
     inline void SetLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_lastUpdatedTimestamp = value; }
-
-    /**
-     * <p>The timestamp of when the archive was modified.</p>
-     */
     inline void SetLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_lastUpdatedTimestamp = std::move(value); }
-
-    /**
-     * <p>The timestamp of when the archive was modified.</p>
-     */
     inline GetArchiveResult& WithLastUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetLastUpdatedTimestamp(value); return *this;}
-
-    /**
-     * <p>The timestamp of when the archive was modified.</p>
-     */
     inline GetArchiveResult& WithLastUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetLastUpdatedTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The retention period for emails in this archive.</p>
      */
     inline const ArchiveRetention& GetRetention() const{ return m_retention; }
-
-    /**
-     * <p>The retention period for emails in this archive.</p>
-     */
     inline void SetRetention(const ArchiveRetention& value) { m_retention = value; }
-
-    /**
-     * <p>The retention period for emails in this archive.</p>
-     */
     inline void SetRetention(ArchiveRetention&& value) { m_retention = std::move(value); }
-
-    /**
-     * <p>The retention period for emails in this archive.</p>
-     */
     inline GetArchiveResult& WithRetention(const ArchiveRetention& value) { SetRetention(value); return *this;}
-
-    /**
-     * <p>The retention period for emails in this archive.</p>
-     */
     inline GetArchiveResult& WithRetention(ArchiveRetention&& value) { SetRetention(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetArchiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetArchiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetArchiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_archiveArn;

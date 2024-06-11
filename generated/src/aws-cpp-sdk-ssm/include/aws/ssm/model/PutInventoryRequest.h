@@ -36,87 +36,33 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An managed node ID where you want to add or update inventory items.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline PutInventoryRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline PutInventoryRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>An managed node ID where you want to add or update inventory items.</p>
-     */
     inline PutInventoryRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The inventory items that you want to add or update on managed nodes.</p>
      */
     inline const Aws::Vector<InventoryItem>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline void SetItems(const Aws::Vector<InventoryItem>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline void SetItems(Aws::Vector<InventoryItem>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline PutInventoryRequest& WithItems(const Aws::Vector<InventoryItem>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline PutInventoryRequest& WithItems(Aws::Vector<InventoryItem>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline PutInventoryRequest& AddItems(const InventoryItem& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The inventory items that you want to add or update on managed nodes.</p>
-     */
     inline PutInventoryRequest& AddItems(InventoryItem&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

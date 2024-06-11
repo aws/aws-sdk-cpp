@@ -36,30 +36,16 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A Boolean option that controls whether Trusted Identity Propagation should be
      * used.</p>
      */
     inline bool GetEnableIdentityPropagation() const{ return m_enableIdentityPropagation; }
-
-    /**
-     * <p>A Boolean option that controls whether Trusted Identity Propagation should be
-     * used.</p>
-     */
     inline bool EnableIdentityPropagationHasBeenSet() const { return m_enableIdentityPropagationHasBeenSet; }
-
-    /**
-     * <p>A Boolean option that controls whether Trusted Identity Propagation should be
-     * used.</p>
-     */
     inline void SetEnableIdentityPropagation(bool value) { m_enableIdentityPropagationHasBeenSet = true; m_enableIdentityPropagation = value; }
-
-    /**
-     * <p>A Boolean option that controls whether Trusted Identity Propagation should be
-     * used.</p>
-     */
     inline IdentityCenterConfiguration& WithEnableIdentityPropagation(bool value) { SetEnableIdentityPropagation(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enableIdentityPropagation;

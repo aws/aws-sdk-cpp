@@ -41,128 +41,47 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ID of the record.</p>
      */
     inline const Aws::String& GetRecordId() const{ return m_recordId; }
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline bool RecordIdHasBeenSet() const { return m_recordIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline void SetRecordId(const Aws::String& value) { m_recordIdHasBeenSet = true; m_recordId = value; }
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline void SetRecordId(Aws::String&& value) { m_recordIdHasBeenSet = true; m_recordId = std::move(value); }
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline void SetRecordId(const char* value) { m_recordIdHasBeenSet = true; m_recordId.assign(value); }
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline PutRecordBatchResponseEntry& WithRecordId(const Aws::String& value) { SetRecordId(value); return *this;}
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline PutRecordBatchResponseEntry& WithRecordId(Aws::String&& value) { SetRecordId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the record.</p>
-     */
     inline PutRecordBatchResponseEntry& WithRecordId(const char* value) { SetRecordId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error code for an individual record result.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline PutRecordBatchResponseEntry& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline PutRecordBatchResponseEntry& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code for an individual record result.</p>
-     */
     inline PutRecordBatchResponseEntry& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message for an individual record result.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline PutRecordBatchResponseEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline PutRecordBatchResponseEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message for an individual record result.</p>
-     */
     inline PutRecordBatchResponseEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_recordId;

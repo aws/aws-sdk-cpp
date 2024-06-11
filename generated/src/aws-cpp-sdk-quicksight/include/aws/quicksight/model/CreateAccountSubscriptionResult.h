@@ -33,74 +33,37 @@ namespace Model
     AWS_QUICKSIGHT_API CreateAccountSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>SignupResponse</code> object that returns information about a newly
      * created Amazon QuickSight account.</p>
      */
     inline const SignupResponse& GetSignupResponse() const{ return m_signupResponse; }
-
-    /**
-     * <p>A <code>SignupResponse</code> object that returns information about a newly
-     * created Amazon QuickSight account.</p>
-     */
     inline void SetSignupResponse(const SignupResponse& value) { m_signupResponse = value; }
-
-    /**
-     * <p>A <code>SignupResponse</code> object that returns information about a newly
-     * created Amazon QuickSight account.</p>
-     */
     inline void SetSignupResponse(SignupResponse&& value) { m_signupResponse = std::move(value); }
-
-    /**
-     * <p>A <code>SignupResponse</code> object that returns information about a newly
-     * created Amazon QuickSight account.</p>
-     */
     inline CreateAccountSubscriptionResult& WithSignupResponse(const SignupResponse& value) { SetSignupResponse(value); return *this;}
-
-    /**
-     * <p>A <code>SignupResponse</code> object that returns information about a newly
-     * created Amazon QuickSight account.</p>
-     */
     inline CreateAccountSubscriptionResult& WithSignupResponse(SignupResponse&& value) { SetSignupResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
     inline int GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline void SetStatus(int value) { m_status = value; }
-
-    /**
-     * <p>The HTTP status of the request.</p>
-     */
     inline CreateAccountSubscriptionResult& WithStatus(int value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateAccountSubscriptionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateAccountSubscriptionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateAccountSubscriptionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SignupResponse m_signupResponse;

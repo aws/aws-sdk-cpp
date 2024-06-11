@@ -38,36 +38,17 @@ namespace Model
     AWS_CHIMESDKVOICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The phone number product type.</p>
      */
     inline const PhoneNumberProductType& GetProductType() const{ return m_productType; }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline void SetProductType(const PhoneNumberProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline void SetProductType(PhoneNumberProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline ListSupportedPhoneNumberCountriesRequest& WithProductType(const PhoneNumberProductType& value) { SetProductType(value); return *this;}
-
-    /**
-     * <p>The phone number product type.</p>
-     */
     inline ListSupportedPhoneNumberCountriesRequest& WithProductType(PhoneNumberProductType&& value) { SetProductType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PhoneNumberProductType m_productType;

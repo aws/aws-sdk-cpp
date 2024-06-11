@@ -41,47 +41,21 @@ namespace Model
     AWS_BEDROCK_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Return models belonging to the model provider that you specify.</p>
      */
     inline const Aws::String& GetByProvider() const{ return m_byProvider; }
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline bool ByProviderHasBeenSet() const { return m_byProviderHasBeenSet; }
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline void SetByProvider(const Aws::String& value) { m_byProviderHasBeenSet = true; m_byProvider = value; }
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline void SetByProvider(Aws::String&& value) { m_byProviderHasBeenSet = true; m_byProvider = std::move(value); }
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline void SetByProvider(const char* value) { m_byProviderHasBeenSet = true; m_byProvider.assign(value); }
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline ListFoundationModelsRequest& WithByProvider(const Aws::String& value) { SetByProvider(value); return *this;}
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline ListFoundationModelsRequest& WithByProvider(Aws::String&& value) { SetByProvider(std::move(value)); return *this;}
-
-    /**
-     * <p>Return models belonging to the model provider that you specify.</p>
-     */
     inline ListFoundationModelsRequest& WithByProvider(const char* value) { SetByProvider(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Return models that support the customization type that you specify. For more
      * information, see <a
@@ -89,79 +63,26 @@ namespace Model
      * models</a> in the Amazon Bedrock User Guide.</p>
      */
     inline const ModelCustomization& GetByCustomizationType() const{ return m_byCustomizationType; }
-
-    /**
-     * <p>Return models that support the customization type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline bool ByCustomizationTypeHasBeenSet() const { return m_byCustomizationTypeHasBeenSet; }
-
-    /**
-     * <p>Return models that support the customization type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline void SetByCustomizationType(const ModelCustomization& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = value; }
-
-    /**
-     * <p>Return models that support the customization type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline void SetByCustomizationType(ModelCustomization&& value) { m_byCustomizationTypeHasBeenSet = true; m_byCustomizationType = std::move(value); }
-
-    /**
-     * <p>Return models that support the customization type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline ListFoundationModelsRequest& WithByCustomizationType(const ModelCustomization& value) { SetByCustomizationType(value); return *this;}
-
-    /**
-     * <p>Return models that support the customization type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models.html">Custom
-     * models</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline ListFoundationModelsRequest& WithByCustomizationType(ModelCustomization&& value) { SetByCustomizationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Return models that support the output modality that you specify.</p>
      */
     inline const ModelModality& GetByOutputModality() const{ return m_byOutputModality; }
-
-    /**
-     * <p>Return models that support the output modality that you specify.</p>
-     */
     inline bool ByOutputModalityHasBeenSet() const { return m_byOutputModalityHasBeenSet; }
-
-    /**
-     * <p>Return models that support the output modality that you specify.</p>
-     */
     inline void SetByOutputModality(const ModelModality& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = value; }
-
-    /**
-     * <p>Return models that support the output modality that you specify.</p>
-     */
     inline void SetByOutputModality(ModelModality&& value) { m_byOutputModalityHasBeenSet = true; m_byOutputModality = std::move(value); }
-
-    /**
-     * <p>Return models that support the output modality that you specify.</p>
-     */
     inline ListFoundationModelsRequest& WithByOutputModality(const ModelModality& value) { SetByOutputModality(value); return *this;}
-
-    /**
-     * <p>Return models that support the output modality that you specify.</p>
-     */
     inline ListFoundationModelsRequest& WithByOutputModality(ModelModality&& value) { SetByOutputModality(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Return models that support the inference type that you specify. For more
      * information, see <a
@@ -169,47 +90,12 @@ namespace Model
      * Throughput</a> in the Amazon Bedrock User Guide.</p>
      */
     inline const InferenceType& GetByInferenceType() const{ return m_byInferenceType; }
-
-    /**
-     * <p>Return models that support the inference type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-     * Throughput</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline bool ByInferenceTypeHasBeenSet() const { return m_byInferenceTypeHasBeenSet; }
-
-    /**
-     * <p>Return models that support the inference type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-     * Throughput</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline void SetByInferenceType(const InferenceType& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = value; }
-
-    /**
-     * <p>Return models that support the inference type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-     * Throughput</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline void SetByInferenceType(InferenceType&& value) { m_byInferenceTypeHasBeenSet = true; m_byInferenceType = std::move(value); }
-
-    /**
-     * <p>Return models that support the inference type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-     * Throughput</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline ListFoundationModelsRequest& WithByInferenceType(const InferenceType& value) { SetByInferenceType(value); return *this;}
-
-    /**
-     * <p>Return models that support the inference type that you specify. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prov-throughput.html">Provisioned
-     * Throughput</a> in the Amazon Bedrock User Guide.</p>
-     */
     inline ListFoundationModelsRequest& WithByInferenceType(InferenceType&& value) { SetByInferenceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_byProvider;

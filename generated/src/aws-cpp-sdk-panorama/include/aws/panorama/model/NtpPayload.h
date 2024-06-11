@@ -40,51 +40,20 @@ namespace Model
     AWS_PANORAMA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>NTP servers to use, in order of preference.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNtpServers() const{ return m_ntpServers; }
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline bool NtpServersHasBeenSet() const { return m_ntpServersHasBeenSet; }
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline void SetNtpServers(const Aws::Vector<Aws::String>& value) { m_ntpServersHasBeenSet = true; m_ntpServers = value; }
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline void SetNtpServers(Aws::Vector<Aws::String>&& value) { m_ntpServersHasBeenSet = true; m_ntpServers = std::move(value); }
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline NtpPayload& WithNtpServers(const Aws::Vector<Aws::String>& value) { SetNtpServers(value); return *this;}
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline NtpPayload& WithNtpServers(Aws::Vector<Aws::String>&& value) { SetNtpServers(std::move(value)); return *this;}
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline NtpPayload& AddNtpServers(const Aws::String& value) { m_ntpServersHasBeenSet = true; m_ntpServers.push_back(value); return *this; }
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline NtpPayload& AddNtpServers(Aws::String&& value) { m_ntpServersHasBeenSet = true; m_ntpServers.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>NTP servers to use, in order of preference.</p>
-     */
     inline NtpPayload& AddNtpServers(const char* value) { m_ntpServersHasBeenSet = true; m_ntpServers.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_ntpServers;

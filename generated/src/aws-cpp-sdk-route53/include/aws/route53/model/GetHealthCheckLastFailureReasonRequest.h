@@ -36,6 +36,7 @@ namespace Model
     AWS_ROUTE53_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID for the health check for which you want the last failure reason. When
      * you created the health check, <code>CreateHealthCheck</code> returned the ID in
@@ -46,84 +47,14 @@ namespace Model
      * 
      */
     inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the health check for which you want the last failure reason. When
-     * you created the health check, <code>CreateHealthCheck</code> returned the ID in
-     * the response, in the <code>HealthCheckId</code> element.</p>  <p>If you
-     * want to get the last failure reason for a calculated health check, you must use
-     * the Amazon Route 53 console or the CloudWatch console. You can't use
-     * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
-     * 
-     */
     inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_healthCheckId;

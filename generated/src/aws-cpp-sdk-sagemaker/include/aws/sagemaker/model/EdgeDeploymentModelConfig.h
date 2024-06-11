@@ -38,87 +38,33 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name the device application uses to reference this model.</p>
      */
     inline const Aws::String& GetModelHandle() const{ return m_modelHandle; }
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline bool ModelHandleHasBeenSet() const { return m_modelHandleHasBeenSet; }
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline void SetModelHandle(const Aws::String& value) { m_modelHandleHasBeenSet = true; m_modelHandle = value; }
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline void SetModelHandle(Aws::String&& value) { m_modelHandleHasBeenSet = true; m_modelHandle = std::move(value); }
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline void SetModelHandle(const char* value) { m_modelHandleHasBeenSet = true; m_modelHandle.assign(value); }
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline EdgeDeploymentModelConfig& WithModelHandle(const Aws::String& value) { SetModelHandle(value); return *this;}
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline EdgeDeploymentModelConfig& WithModelHandle(Aws::String&& value) { SetModelHandle(std::move(value)); return *this;}
-
-    /**
-     * <p>The name the device application uses to reference this model.</p>
-     */
     inline EdgeDeploymentModelConfig& WithModelHandle(const char* value) { SetModelHandle(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The edge packaging job associated with this deployment.</p>
      */
     inline const Aws::String& GetEdgePackagingJobName() const{ return m_edgePackagingJobName; }
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline bool EdgePackagingJobNameHasBeenSet() const { return m_edgePackagingJobNameHasBeenSet; }
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline void SetEdgePackagingJobName(const Aws::String& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = value; }
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline void SetEdgePackagingJobName(Aws::String&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::move(value); }
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline void SetEdgePackagingJobName(const char* value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName.assign(value); }
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline EdgeDeploymentModelConfig& WithEdgePackagingJobName(const Aws::String& value) { SetEdgePackagingJobName(value); return *this;}
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline EdgeDeploymentModelConfig& WithEdgePackagingJobName(Aws::String&& value) { SetEdgePackagingJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The edge packaging job associated with this deployment.</p>
-     */
     inline EdgeDeploymentModelConfig& WithEdgePackagingJobName(const char* value) { SetEdgePackagingJobName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_modelHandle;

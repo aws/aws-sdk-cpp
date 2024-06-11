@@ -38,46 +38,19 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
      */
     inline const Aws::String& GetUnvalidatedJSON() const{ return m_unvalidatedJSON; }
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline bool UnvalidatedJSONHasBeenSet() const { return m_unvalidatedJSONHasBeenSet; }
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline void SetUnvalidatedJSON(const Aws::String& value) { m_unvalidatedJSONHasBeenSet = true; m_unvalidatedJSON = value; }
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline void SetUnvalidatedJSON(Aws::String&& value) { m_unvalidatedJSONHasBeenSet = true; m_unvalidatedJSON = std::move(value); }
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline void SetUnvalidatedJSON(const char* value) { m_unvalidatedJSONHasBeenSet = true; m_unvalidatedJSON.assign(value); }
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline DecodeConfig& WithUnvalidatedJSON(const Aws::String& value) { SetUnvalidatedJSON(value); return *this;}
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline DecodeConfig& WithUnvalidatedJSON(Aws::String&& value) { SetUnvalidatedJSON(std::move(value)); return *this;}
-
-    /**
-     * <p>Unvalidated JSON of a decode <code>Config</code>.</p>
-     */
     inline DecodeConfig& WithUnvalidatedJSON(const char* value) { SetUnvalidatedJSON(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_unvalidatedJSON;

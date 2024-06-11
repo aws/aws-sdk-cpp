@@ -43,27 +43,17 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The number of HTTP methods in the list.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
-
-    /**
-     * <p>The number of HTTP methods in the list.</p>
-     */
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
-
-    /**
-     * <p>The number of HTTP methods in the list.</p>
-     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
-
-    /**
-     * <p>The number of HTTP methods in the list.</p>
-     */
     inline ResponseHeadersPolicyAccessControlAllowMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
      * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
@@ -74,84 +64,14 @@ namespace Model
      * methods.</p>
      */
     inline const Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues>& GetItems() const{ return m_items; }
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline void SetItems(const Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues>& value) { m_itemsHasBeenSet = true; m_items = value; }
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline void SetItems(Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline ResponseHeadersPolicyAccessControlAllowMethods& WithItems(const Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues>& value) { SetItems(value); return *this;}
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline ResponseHeadersPolicyAccessControlAllowMethods& WithItems(Aws::Vector<ResponseHeadersPolicyAccessControlAllowMethodsValues>&& value) { SetItems(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline ResponseHeadersPolicyAccessControlAllowMethods& AddItems(const ResponseHeadersPolicyAccessControlAllowMethodsValues& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-
-    /**
-     * <p>The list of HTTP methods. Valid values are:</p> <ul> <li> <p>
-     * <code>GET</code> </p> </li> <li> <p> <code>DELETE</code> </p> </li> <li> <p>
-     * <code>HEAD</code> </p> </li> <li> <p> <code>OPTIONS</code> </p> </li> <li> <p>
-     * <code>PATCH</code> </p> </li> <li> <p> <code>POST</code> </p> </li> <li> <p>
-     * <code>PUT</code> </p> </li> <li> <p> <code>ALL</code> </p> </li> </ul> <p>
-     * <code>ALL</code> is a special value that includes all of the listed HTTP
-     * methods.</p>
-     */
     inline ResponseHeadersPolicyAccessControlAllowMethods& AddItems(ResponseHeadersPolicyAccessControlAllowMethodsValues&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     int m_quantity;

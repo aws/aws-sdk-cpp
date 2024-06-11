@@ -37,36 +37,17 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details for the Amazon EC2 resource.</p>
      */
     inline const EC2ResourceDetails& GetEC2ResourceDetails() const{ return m_eC2ResourceDetails; }
-
-    /**
-     * <p>Details for the Amazon EC2 resource.</p>
-     */
     inline bool EC2ResourceDetailsHasBeenSet() const { return m_eC2ResourceDetailsHasBeenSet; }
-
-    /**
-     * <p>Details for the Amazon EC2 resource.</p>
-     */
     inline void SetEC2ResourceDetails(const EC2ResourceDetails& value) { m_eC2ResourceDetailsHasBeenSet = true; m_eC2ResourceDetails = value; }
-
-    /**
-     * <p>Details for the Amazon EC2 resource.</p>
-     */
     inline void SetEC2ResourceDetails(EC2ResourceDetails&& value) { m_eC2ResourceDetailsHasBeenSet = true; m_eC2ResourceDetails = std::move(value); }
-
-    /**
-     * <p>Details for the Amazon EC2 resource.</p>
-     */
     inline ResourceDetails& WithEC2ResourceDetails(const EC2ResourceDetails& value) { SetEC2ResourceDetails(value); return *this;}
-
-    /**
-     * <p>Details for the Amazon EC2 resource.</p>
-     */
     inline ResourceDetails& WithEC2ResourceDetails(EC2ResourceDetails&& value) { SetEC2ResourceDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     EC2ResourceDetails m_eC2ResourceDetails;

@@ -34,46 +34,19 @@ namespace Model
     AWS_COMPREHEND_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the dataset.</p>
      */
     inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline DescribeDatasetRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline DescribeDatasetRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the dataset.</p>
-     */
     inline DescribeDatasetRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetArn;

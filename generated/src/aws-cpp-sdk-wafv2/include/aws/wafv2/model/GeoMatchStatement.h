@@ -62,6 +62,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of two-character country codes that you want to match against, for
      * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
@@ -74,99 +75,16 @@ namespace Model
      * to your site.</p>
      */
     inline const Aws::Vector<CountryCode>& GetCountryCodes() const{ return m_countryCodes; }
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline bool CountryCodesHasBeenSet() const { return m_countryCodesHasBeenSet; }
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline void SetCountryCodes(const Aws::Vector<CountryCode>& value) { m_countryCodesHasBeenSet = true; m_countryCodes = value; }
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline void SetCountryCodes(Aws::Vector<CountryCode>&& value) { m_countryCodesHasBeenSet = true; m_countryCodes = std::move(value); }
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline GeoMatchStatement& WithCountryCodes(const Aws::Vector<CountryCode>& value) { SetCountryCodes(value); return *this;}
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline GeoMatchStatement& WithCountryCodes(Aws::Vector<CountryCode>&& value) { SetCountryCodes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline GeoMatchStatement& AddCountryCodes(const CountryCode& value) { m_countryCodesHasBeenSet = true; m_countryCodes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of two-character country codes that you want to match against, for
-     * example, <code>[ "US", "CN" ]</code>, from the alpha-2 country ISO codes of the
-     * ISO 3166 international standard. </p> <p>When you use a geo match statement just
-     * for the region and country labels that it adds to requests, you still have to
-     * supply a country code for the rule to evaluate. In this case, you configure the
-     * rule to only count matching requests, but it will still generate logging and
-     * count metrics for any matches. You can reduce the logging and metrics that the
-     * rule produces by specifying a country that's unlikely to be a source of traffic
-     * to your site.</p>
-     */
     inline GeoMatchStatement& AddCountryCodes(CountryCode&& value) { m_countryCodesHasBeenSet = true; m_countryCodes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration for inspecting IP addresses in an HTTP header that you
      * specify, instead of using the IP address that's reported by the web request
@@ -175,52 +93,12 @@ namespace Model
      * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
     inline const ForwardedIPConfig& GetForwardedIPConfig() const{ return m_forwardedIPConfig; }
-
-    /**
-     * <p>The configuration for inspecting IP addresses in an HTTP header that you
-     * specify, instead of using the IP address that's reported by the web request
-     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
-     * any header name. </p>  <p>If the specified header isn't present in the
-     * request, WAF doesn't apply the rule to the web request at all.</p> 
-     */
     inline bool ForwardedIPConfigHasBeenSet() const { return m_forwardedIPConfigHasBeenSet; }
-
-    /**
-     * <p>The configuration for inspecting IP addresses in an HTTP header that you
-     * specify, instead of using the IP address that's reported by the web request
-     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
-     * any header name. </p>  <p>If the specified header isn't present in the
-     * request, WAF doesn't apply the rule to the web request at all.</p> 
-     */
     inline void SetForwardedIPConfig(const ForwardedIPConfig& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = value; }
-
-    /**
-     * <p>The configuration for inspecting IP addresses in an HTTP header that you
-     * specify, instead of using the IP address that's reported by the web request
-     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
-     * any header name. </p>  <p>If the specified header isn't present in the
-     * request, WAF doesn't apply the rule to the web request at all.</p> 
-     */
     inline void SetForwardedIPConfig(ForwardedIPConfig&& value) { m_forwardedIPConfigHasBeenSet = true; m_forwardedIPConfig = std::move(value); }
-
-    /**
-     * <p>The configuration for inspecting IP addresses in an HTTP header that you
-     * specify, instead of using the IP address that's reported by the web request
-     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
-     * any header name. </p>  <p>If the specified header isn't present in the
-     * request, WAF doesn't apply the rule to the web request at all.</p> 
-     */
     inline GeoMatchStatement& WithForwardedIPConfig(const ForwardedIPConfig& value) { SetForwardedIPConfig(value); return *this;}
-
-    /**
-     * <p>The configuration for inspecting IP addresses in an HTTP header that you
-     * specify, instead of using the IP address that's reported by the web request
-     * origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can specify
-     * any header name. </p>  <p>If the specified header isn't present in the
-     * request, WAF doesn't apply the rule to the web request at all.</p> 
-     */
     inline GeoMatchStatement& WithForwardedIPConfig(ForwardedIPConfig&& value) { SetForwardedIPConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CountryCode> m_countryCodes;

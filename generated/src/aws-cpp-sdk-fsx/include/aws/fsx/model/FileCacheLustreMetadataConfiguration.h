@@ -37,30 +37,16 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in
      * gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
      */
     inline int GetStorageCapacity() const{ return m_storageCapacity; }
-
-    /**
-     * <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in
-     * gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
-     */
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
-
-    /**
-     * <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in
-     * gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
-     */
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
-
-    /**
-     * <p>The storage capacity of the Lustre MDT (Metadata Target) storage volume in
-     * gibibytes (GiB). The only supported value is <code>2400</code> GiB.</p>
-     */
     inline FileCacheLustreMetadataConfiguration& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
-
+    ///@}
   private:
 
     int m_storageCapacity;

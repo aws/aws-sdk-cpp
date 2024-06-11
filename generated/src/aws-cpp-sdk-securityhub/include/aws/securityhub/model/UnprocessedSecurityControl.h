@@ -39,134 +39,47 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The control (identified with <code>SecurityControlId</code>,
      * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
      * response couldn't be returned. </p>
      */
     inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline UnprocessedSecurityControl& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline UnprocessedSecurityControl& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-
-    /**
-     * <p> The control (identified with <code>SecurityControlId</code>,
-     * <code>SecurityControlArn</code>, or a mix of both parameters) for which a
-     * response couldn't be returned. </p>
-     */
     inline UnprocessedSecurityControl& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The error code for the unprocessed security control. </p>
      */
     inline const UnprocessedErrorCode& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p> The error code for the unprocessed security control. </p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p> The error code for the unprocessed security control. </p>
-     */
     inline void SetErrorCode(const UnprocessedErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p> The error code for the unprocessed security control. </p>
-     */
     inline void SetErrorCode(UnprocessedErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p> The error code for the unprocessed security control. </p>
-     */
     inline UnprocessedSecurityControl& WithErrorCode(const UnprocessedErrorCode& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p> The error code for the unprocessed security control. </p>
-     */
     inline UnprocessedSecurityControl& WithErrorCode(UnprocessedErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The reason why the security control was unprocessed. </p>
      */
     inline const Aws::String& GetErrorReason() const{ return m_errorReason; }
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline bool ErrorReasonHasBeenSet() const { return m_errorReasonHasBeenSet; }
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline void SetErrorReason(const Aws::String& value) { m_errorReasonHasBeenSet = true; m_errorReason = value; }
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline void SetErrorReason(Aws::String&& value) { m_errorReasonHasBeenSet = true; m_errorReason = std::move(value); }
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline void SetErrorReason(const char* value) { m_errorReasonHasBeenSet = true; m_errorReason.assign(value); }
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline UnprocessedSecurityControl& WithErrorReason(const Aws::String& value) { SetErrorReason(value); return *this;}
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline UnprocessedSecurityControl& WithErrorReason(Aws::String&& value) { SetErrorReason(std::move(value)); return *this;}
-
-    /**
-     * <p> The reason why the security control was unprocessed. </p>
-     */
     inline UnprocessedSecurityControl& WithErrorReason(const char* value) { SetErrorReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_securityControlId;

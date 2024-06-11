@@ -34,54 +34,20 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
      * delete.</p>
      */
     inline const Aws::String& GetWhatIfAnalysisArn() const{ return m_whatIfAnalysisArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline bool WhatIfAnalysisArnHasBeenSet() const { return m_whatIfAnalysisArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline void SetWhatIfAnalysisArn(const Aws::String& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline void SetWhatIfAnalysisArn(Aws::String&& value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline void SetWhatIfAnalysisArn(const char* value) { m_whatIfAnalysisArnHasBeenSet = true; m_whatIfAnalysisArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline DeleteWhatIfAnalysisRequest& WithWhatIfAnalysisArn(const Aws::String& value) { SetWhatIfAnalysisArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline DeleteWhatIfAnalysisRequest& WithWhatIfAnalysisArn(Aws::String&& value) { SetWhatIfAnalysisArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the what-if analysis that you want to
-     * delete.</p>
-     */
     inline DeleteWhatIfAnalysisRequest& WithWhatIfAnalysisArn(const char* value) { SetWhatIfAnalysisArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_whatIfAnalysisArn;

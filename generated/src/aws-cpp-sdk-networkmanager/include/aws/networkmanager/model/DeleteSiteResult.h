@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API DeleteSiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the site.</p>
      */
     inline const Site& GetSite() const{ return m_site; }
-
-    /**
-     * <p>Information about the site.</p>
-     */
     inline void SetSite(const Site& value) { m_site = value; }
-
-    /**
-     * <p>Information about the site.</p>
-     */
     inline void SetSite(Site&& value) { m_site = std::move(value); }
-
-    /**
-     * <p>Information about the site.</p>
-     */
     inline DeleteSiteResult& WithSite(const Site& value) { SetSite(value); return *this;}
-
-    /**
-     * <p>Information about the site.</p>
-     */
     inline DeleteSiteResult& WithSite(Site&& value) { SetSite(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteSiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteSiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteSiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Site m_site;

@@ -34,46 +34,19 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the conformance pack you want to delete.</p>
      */
     inline const Aws::String& GetConformancePackName() const{ return m_conformancePackName; }
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline bool ConformancePackNameHasBeenSet() const { return m_conformancePackNameHasBeenSet; }
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline void SetConformancePackName(const Aws::String& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = value; }
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline void SetConformancePackName(Aws::String&& value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName = std::move(value); }
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline void SetConformancePackName(const char* value) { m_conformancePackNameHasBeenSet = true; m_conformancePackName.assign(value); }
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline DeleteConformancePackRequest& WithConformancePackName(const Aws::String& value) { SetConformancePackName(value); return *this;}
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline DeleteConformancePackRequest& WithConformancePackName(Aws::String&& value) { SetConformancePackName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the conformance pack you want to delete.</p>
-     */
     inline DeleteConformancePackRequest& WithConformancePackName(const char* value) { SetConformancePackName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_conformancePackName;

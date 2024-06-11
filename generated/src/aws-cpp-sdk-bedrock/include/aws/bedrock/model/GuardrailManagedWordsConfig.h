@@ -38,36 +38,17 @@ namespace Model
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The managed word type to configure for the guardrail.</p>
      */
     inline const GuardrailManagedWordsType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The managed word type to configure for the guardrail.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The managed word type to configure for the guardrail.</p>
-     */
     inline void SetType(const GuardrailManagedWordsType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The managed word type to configure for the guardrail.</p>
-     */
     inline void SetType(GuardrailManagedWordsType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The managed word type to configure for the guardrail.</p>
-     */
     inline GuardrailManagedWordsConfig& WithType(const GuardrailManagedWordsType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The managed word type to configure for the guardrail.</p>
-     */
     inline GuardrailManagedWordsConfig& WithType(GuardrailManagedWordsType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GuardrailManagedWordsType m_type;

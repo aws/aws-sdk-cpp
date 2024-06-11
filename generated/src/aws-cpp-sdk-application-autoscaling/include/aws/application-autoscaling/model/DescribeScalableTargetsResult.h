@@ -34,106 +34,43 @@ namespace Model
     AWS_APPLICATIONAUTOSCALING_API DescribeScalableTargetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The scalable targets that match the request parameters.</p>
      */
     inline const Aws::Vector<ScalableTarget>& GetScalableTargets() const{ return m_scalableTargets; }
-
-    /**
-     * <p>The scalable targets that match the request parameters.</p>
-     */
     inline void SetScalableTargets(const Aws::Vector<ScalableTarget>& value) { m_scalableTargets = value; }
-
-    /**
-     * <p>The scalable targets that match the request parameters.</p>
-     */
     inline void SetScalableTargets(Aws::Vector<ScalableTarget>&& value) { m_scalableTargets = std::move(value); }
-
-    /**
-     * <p>The scalable targets that match the request parameters.</p>
-     */
     inline DescribeScalableTargetsResult& WithScalableTargets(const Aws::Vector<ScalableTarget>& value) { SetScalableTargets(value); return *this;}
-
-    /**
-     * <p>The scalable targets that match the request parameters.</p>
-     */
     inline DescribeScalableTargetsResult& WithScalableTargets(Aws::Vector<ScalableTarget>&& value) { SetScalableTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The scalable targets that match the request parameters.</p>
-     */
     inline DescribeScalableTargetsResult& AddScalableTargets(const ScalableTarget& value) { m_scalableTargets.push_back(value); return *this; }
-
-    /**
-     * <p>The scalable targets that match the request parameters.</p>
-     */
     inline DescribeScalableTargetsResult& AddScalableTargets(ScalableTarget&& value) { m_scalableTargets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token required to get the next set of results. This value is
      * <code>null</code> if there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token required to get the next set of results. This value is
-     * <code>null</code> if there are no more results to return.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The token required to get the next set of results. This value is
-     * <code>null</code> if there are no more results to return.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token required to get the next set of results. This value is
-     * <code>null</code> if there are no more results to return.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The token required to get the next set of results. This value is
-     * <code>null</code> if there are no more results to return.</p>
-     */
     inline DescribeScalableTargetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token required to get the next set of results. This value is
-     * <code>null</code> if there are no more results to return.</p>
-     */
     inline DescribeScalableTargetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token required to get the next set of results. This value is
-     * <code>null</code> if there are no more results to return.</p>
-     */
     inline DescribeScalableTargetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeScalableTargetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeScalableTargetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeScalableTargetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ScalableTarget> m_scalableTargets;

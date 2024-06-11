@@ -34,62 +34,21 @@ namespace Model
     AWS_GAMELIFT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier for the container group definition to retrieve
      * properties for. You can use either the <code>Name</code> or <code>ARN</code>
      * value.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline DescribeContainerGroupDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline DescribeContainerGroupDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the container group definition to retrieve
-     * properties for. You can use either the <code>Name</code> or <code>ARN</code>
-     * value.</p>
-     */
     inline DescribeContainerGroupDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

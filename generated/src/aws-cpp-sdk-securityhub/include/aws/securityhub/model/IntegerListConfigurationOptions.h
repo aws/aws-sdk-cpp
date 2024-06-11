@@ -38,123 +38,52 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Security Hub default value for a control parameter that is a list of
      * integers. </p>
      */
     inline const Aws::Vector<int>& GetDefaultValue() const{ return m_defaultValue; }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a list of
-     * integers. </p>
-     */
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a list of
-     * integers. </p>
-     */
     inline void SetDefaultValue(const Aws::Vector<int>& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a list of
-     * integers. </p>
-     */
     inline void SetDefaultValue(Aws::Vector<int>&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a list of
-     * integers. </p>
-     */
     inline IntegerListConfigurationOptions& WithDefaultValue(const Aws::Vector<int>& value) { SetDefaultValue(value); return *this;}
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a list of
-     * integers. </p>
-     */
     inline IntegerListConfigurationOptions& WithDefaultValue(Aws::Vector<int>&& value) { SetDefaultValue(std::move(value)); return *this;}
-
-    /**
-     * <p> The Security Hub default value for a control parameter that is a list of
-     * integers. </p>
-     */
     inline IntegerListConfigurationOptions& AddDefaultValue(int value) { m_defaultValueHasBeenSet = true; m_defaultValue.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The minimum valid value for a control parameter that is a list of integers.
      * </p>
      */
     inline int GetMin() const{ return m_min; }
-
-    /**
-     * <p> The minimum valid value for a control parameter that is a list of integers.
-     * </p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p> The minimum valid value for a control parameter that is a list of integers.
-     * </p>
-     */
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p> The minimum valid value for a control parameter that is a list of integers.
-     * </p>
-     */
     inline IntegerListConfigurationOptions& WithMin(int value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The maximum valid value for a control parameter that is a list of integers.
      * </p>
      */
     inline int GetMax() const{ return m_max; }
-
-    /**
-     * <p> The maximum valid value for a control parameter that is a list of integers.
-     * </p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p> The maximum valid value for a control parameter that is a list of integers.
-     * </p>
-     */
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p> The maximum valid value for a control parameter that is a list of integers.
-     * </p>
-     */
     inline IntegerListConfigurationOptions& WithMax(int value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The maximum number of list items that an interger list control parameter can
      * accept. </p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
-
-    /**
-     * <p> The maximum number of list items that an interger list control parameter can
-     * accept. </p>
-     */
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-
-    /**
-     * <p> The maximum number of list items that an interger list control parameter can
-     * accept. </p>
-     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-
-    /**
-     * <p> The maximum number of list items that an interger list control parameter can
-     * accept. </p>
-     */
     inline IntegerListConfigurationOptions& WithMaxItems(int value) { SetMaxItems(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<int> m_defaultValue;

@@ -39,80 +39,33 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
     inline const Aws::Utils::DateTime& GetLastIncreaseDateTime() const{ return m_lastIncreaseDateTime; }
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
     inline bool LastIncreaseDateTimeHasBeenSet() const { return m_lastIncreaseDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
     inline void SetLastIncreaseDateTime(const Aws::Utils::DateTime& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
     inline void SetLastIncreaseDateTime(Aws::Utils::DateTime&& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
     inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(const Aws::Utils::DateTime& value) { SetLastIncreaseDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last provisioned throughput increase for this
-     * table.</p>
-     */
     inline ProvisionedThroughputDescription& WithLastIncreaseDateTime(Aws::Utils::DateTime&& value) { SetLastIncreaseDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
      * table.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
     inline bool LastDecreaseDateTimeHasBeenSet() const { return m_lastDecreaseDateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
     inline void SetLastDecreaseDateTime(const Aws::Utils::DateTime& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = value; }
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
     inline void SetLastDecreaseDateTime(Aws::Utils::DateTime&& value) { m_lastDecreaseDateTimeHasBeenSet = true; m_lastDecreaseDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
     inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(const Aws::Utils::DateTime& value) { SetLastDecreaseDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time of the last provisioned throughput decrease for this
-     * table.</p>
-     */
     inline ProvisionedThroughputDescription& WithLastDecreaseDateTime(Aws::Utils::DateTime&& value) { SetLastDecreaseDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of provisioned throughput decreases for this table during this UTC
      * calendar day. For current maximums on provisioned throughput decreases, see <a
@@ -120,32 +73,12 @@ namespace Model
      * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
     inline long long GetNumberOfDecreasesToday() const{ return m_numberOfDecreasesToday; }
-
-    /**
-     * <p>The number of provisioned throughput decreases for this table during this UTC
-     * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline bool NumberOfDecreasesTodayHasBeenSet() const { return m_numberOfDecreasesTodayHasBeenSet; }
-
-    /**
-     * <p>The number of provisioned throughput decreases for this table during this UTC
-     * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline void SetNumberOfDecreasesToday(long long value) { m_numberOfDecreasesTodayHasBeenSet = true; m_numberOfDecreasesToday = value; }
-
-    /**
-     * <p>The number of provisioned throughput decreases for this table during this UTC
-     * calendar day. For current maximums on provisioned throughput decreases, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
-     * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
-     */
     inline ProvisionedThroughputDescription& WithNumberOfDecreasesToday(long long value) { SetNumberOfDecreasesToday(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
      * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
@@ -154,59 +87,21 @@ namespace Model
      * <code>ReadCapacityUnits</code> per second.</p>
      */
     inline long long GetReadCapacityUnits() const{ return m_readCapacityUnits; }
-
-    /**
-     * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
-     * require less effort than strongly consistent reads, so a setting of 50
-     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
-     * <code>ReadCapacityUnits</code> per second.</p>
-     */
     inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
-     * require less effort than strongly consistent reads, so a setting of 50
-     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
-     * <code>ReadCapacityUnits</code> per second.</p>
-     */
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
-
-    /**
-     * <p>The maximum number of strongly consistent reads consumed per second before
-     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
-     * require less effort than strongly consistent reads, so a setting of 50
-     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
-     * <code>ReadCapacityUnits</code> per second.</p>
-     */
     inline ProvisionedThroughputDescription& WithReadCapacityUnits(long long value) { SetReadCapacityUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>.</p>
      */
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
-
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>.</p>
-     */
     inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>.</p>
-     */
     inline void SetWriteCapacityUnits(long long value) { m_writeCapacityUnitsHasBeenSet = true; m_writeCapacityUnits = value; }
-
-    /**
-     * <p>The maximum number of writes consumed per second before DynamoDB returns a
-     * <code>ThrottlingException</code>.</p>
-     */
     inline ProvisionedThroughputDescription& WithWriteCapacityUnits(long long value) { SetWriteCapacityUnits(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_lastIncreaseDateTime;

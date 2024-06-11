@@ -46,6 +46,7 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in percentage, when Amazon Transcribe starts searching for the
      * specified criteria in your media file. If you include
@@ -53,118 +54,46 @@ namespace Model
      * <code>EndPercentage</code>.</p>
      */
     inline int GetStartPercentage() const{ return m_startPercentage; }
-
-    /**
-     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
-     * specified criteria in your media file. If you include
-     * <code>StartPercentage</code> in your request, you must also include
-     * <code>EndPercentage</code>.</p>
-     */
     inline bool StartPercentageHasBeenSet() const { return m_startPercentageHasBeenSet; }
-
-    /**
-     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
-     * specified criteria in your media file. If you include
-     * <code>StartPercentage</code> in your request, you must also include
-     * <code>EndPercentage</code>.</p>
-     */
     inline void SetStartPercentage(int value) { m_startPercentageHasBeenSet = true; m_startPercentage = value; }
-
-    /**
-     * <p>The time, in percentage, when Amazon Transcribe starts searching for the
-     * specified criteria in your media file. If you include
-     * <code>StartPercentage</code> in your request, you must also include
-     * <code>EndPercentage</code>.</p>
-     */
     inline RelativeTimeRange& WithStartPercentage(int value) { SetStartPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in percentage, when Amazon Transcribe stops searching for the
      * specified criteria in your media file. If you include <code>EndPercentage</code>
      * in your request, you must also include <code>StartPercentage</code>.</p>
      */
     inline int GetEndPercentage() const{ return m_endPercentage; }
-
-    /**
-     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
-     * specified criteria in your media file. If you include <code>EndPercentage</code>
-     * in your request, you must also include <code>StartPercentage</code>.</p>
-     */
     inline bool EndPercentageHasBeenSet() const { return m_endPercentageHasBeenSet; }
-
-    /**
-     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
-     * specified criteria in your media file. If you include <code>EndPercentage</code>
-     * in your request, you must also include <code>StartPercentage</code>.</p>
-     */
     inline void SetEndPercentage(int value) { m_endPercentageHasBeenSet = true; m_endPercentage = value; }
-
-    /**
-     * <p>The time, in percentage, when Amazon Transcribe stops searching for the
-     * specified criteria in your media file. If you include <code>EndPercentage</code>
-     * in your request, you must also include <code>StartPercentage</code>.</p>
-     */
     inline RelativeTimeRange& WithEndPercentage(int value) { SetEndPercentage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in percentage, from the start of your media file until the
      * specified value. Amazon Transcribe searches for your specified criteria in this
      * time segment.</p>
      */
     inline int GetFirst() const{ return m_first; }
-
-    /**
-     * <p>The time, in percentage, from the start of your media file until the
-     * specified value. Amazon Transcribe searches for your specified criteria in this
-     * time segment.</p>
-     */
     inline bool FirstHasBeenSet() const { return m_firstHasBeenSet; }
-
-    /**
-     * <p>The time, in percentage, from the start of your media file until the
-     * specified value. Amazon Transcribe searches for your specified criteria in this
-     * time segment.</p>
-     */
     inline void SetFirst(int value) { m_firstHasBeenSet = true; m_first = value; }
-
-    /**
-     * <p>The time, in percentage, from the start of your media file until the
-     * specified value. Amazon Transcribe searches for your specified criteria in this
-     * time segment.</p>
-     */
     inline RelativeTimeRange& WithFirst(int value) { SetFirst(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in percentage, from the specified value until the end of your media
      * file. Amazon Transcribe searches for your specified criteria in this time
      * segment.</p>
      */
     inline int GetLast() const{ return m_last; }
-
-    /**
-     * <p>The time, in percentage, from the specified value until the end of your media
-     * file. Amazon Transcribe searches for your specified criteria in this time
-     * segment.</p>
-     */
     inline bool LastHasBeenSet() const { return m_lastHasBeenSet; }
-
-    /**
-     * <p>The time, in percentage, from the specified value until the end of your media
-     * file. Amazon Transcribe searches for your specified criteria in this time
-     * segment.</p>
-     */
     inline void SetLast(int value) { m_lastHasBeenSet = true; m_last = value; }
-
-    /**
-     * <p>The time, in percentage, from the specified value until the end of your media
-     * file. Amazon Transcribe searches for your specified criteria in this time
-     * segment.</p>
-     */
     inline RelativeTimeRange& WithLast(int value) { SetLast(value); return *this;}
-
+    ///@}
   private:
 
     int m_startPercentage;

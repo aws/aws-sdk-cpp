@@ -44,6 +44,7 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
      * Analytics can batch up late data notifications that have been generated since
@@ -54,40 +55,10 @@ namespace Model
      * Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
      */
     inline int GetTimeoutInMinutes() const{ return m_timeoutInMinutes; }
-
-    /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
-     * Analytics can batch up late data notifications that have been generated since
-     * the last execution. IoT Analytics sends one batch of notifications to Amazon
-     * CloudWatch Events at one time.</p> <p>For more information about how to write a
-     * timestamp expression, see <a
-     * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
-     * Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
-     */
     inline bool TimeoutInMinutesHasBeenSet() const { return m_timeoutInMinutesHasBeenSet; }
-
-    /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
-     * Analytics can batch up late data notifications that have been generated since
-     * the last execution. IoT Analytics sends one batch of notifications to Amazon
-     * CloudWatch Events at one time.</p> <p>For more information about how to write a
-     * timestamp expression, see <a
-     * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
-     * Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
-     */
     inline void SetTimeoutInMinutes(int value) { m_timeoutInMinutesHasBeenSet = true; m_timeoutInMinutes = value; }
-
-    /**
-     * <p>A time interval. You can use <code>timeoutInMinutes</code> so that IoT
-     * Analytics can batch up late data notifications that have been generated since
-     * the last execution. IoT Analytics sends one batch of notifications to Amazon
-     * CloudWatch Events at one time.</p> <p>For more information about how to write a
-     * timestamp expression, see <a
-     * href="https://prestodb.io/docs/0.172/functions/datetime.html">Date and Time
-     * Functions and Operators</a>, in the <i>Presto 0.172 Documentation</i>.</p>
-     */
     inline DeltaTimeSessionWindowConfiguration& WithTimeoutInMinutes(int value) { SetTimeoutInMinutes(value); return *this;}
-
+    ///@}
   private:
 
     int m_timeoutInMinutes;

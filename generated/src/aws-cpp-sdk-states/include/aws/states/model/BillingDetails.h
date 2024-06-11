@@ -36,47 +36,25 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Billed memory consumption of your workflow, in MB.</p>
      */
     inline long long GetBilledMemoryUsedInMB() const{ return m_billedMemoryUsedInMB; }
-
-    /**
-     * <p>Billed memory consumption of your workflow, in MB.</p>
-     */
     inline bool BilledMemoryUsedInMBHasBeenSet() const { return m_billedMemoryUsedInMBHasBeenSet; }
-
-    /**
-     * <p>Billed memory consumption of your workflow, in MB.</p>
-     */
     inline void SetBilledMemoryUsedInMB(long long value) { m_billedMemoryUsedInMBHasBeenSet = true; m_billedMemoryUsedInMB = value; }
-
-    /**
-     * <p>Billed memory consumption of your workflow, in MB.</p>
-     */
     inline BillingDetails& WithBilledMemoryUsedInMB(long long value) { SetBilledMemoryUsedInMB(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Billed duration of your workflow, in milliseconds.</p>
      */
     inline long long GetBilledDurationInMilliseconds() const{ return m_billedDurationInMilliseconds; }
-
-    /**
-     * <p>Billed duration of your workflow, in milliseconds.</p>
-     */
     inline bool BilledDurationInMillisecondsHasBeenSet() const { return m_billedDurationInMillisecondsHasBeenSet; }
-
-    /**
-     * <p>Billed duration of your workflow, in milliseconds.</p>
-     */
     inline void SetBilledDurationInMilliseconds(long long value) { m_billedDurationInMillisecondsHasBeenSet = true; m_billedDurationInMilliseconds = value; }
-
-    /**
-     * <p>Billed duration of your workflow, in milliseconds.</p>
-     */
     inline BillingDetails& WithBilledDurationInMilliseconds(long long value) { SetBilledDurationInMilliseconds(value); return *this;}
-
+    ///@}
   private:
 
     long long m_billedMemoryUsedInMB;

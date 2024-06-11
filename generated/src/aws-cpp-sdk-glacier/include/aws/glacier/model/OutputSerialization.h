@@ -37,36 +37,17 @@ namespace Model
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the serialization of CSV-encoded query results.</p>
      */
     inline const CSVOutput& GetCsv() const{ return m_csv; }
-
-    /**
-     * <p>Describes the serialization of CSV-encoded query results.</p>
-     */
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-
-    /**
-     * <p>Describes the serialization of CSV-encoded query results.</p>
-     */
     inline void SetCsv(const CSVOutput& value) { m_csvHasBeenSet = true; m_csv = value; }
-
-    /**
-     * <p>Describes the serialization of CSV-encoded query results.</p>
-     */
     inline void SetCsv(CSVOutput&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-
-    /**
-     * <p>Describes the serialization of CSV-encoded query results.</p>
-     */
     inline OutputSerialization& WithCsv(const CSVOutput& value) { SetCsv(value); return *this;}
-
-    /**
-     * <p>Describes the serialization of CSV-encoded query results.</p>
-     */
     inline OutputSerialization& WithCsv(CSVOutput&& value) { SetCsv(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CSVOutput m_csv;

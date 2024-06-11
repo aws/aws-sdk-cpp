@@ -38,240 +38,81 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account identifier that is associated with the
      * registry that the image belongs to.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline AwsEcrContainerImageDetails& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline AwsEcrContainerImageDetails& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account identifier that is associated with the
-     * registry that the image belongs to.</p>
-     */
     inline AwsEcrContainerImageDetails& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository that the image belongs to.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline AwsEcrContainerImageDetails& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline AwsEcrContainerImageDetails& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository that the image belongs to.</p>
-     */
     inline AwsEcrContainerImageDetails& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
      * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
      * <code>x86_64</code> </p> </li> </ul>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline void SetArchitecture(Aws::String&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline void SetArchitecture(const char* value) { m_architectureHasBeenSet = true; m_architecture.assign(value); }
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline AwsEcrContainerImageDetails& WithArchitecture(const Aws::String& value) { SetArchitecture(value); return *this;}
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline AwsEcrContainerImageDetails& WithArchitecture(Aws::String&& value) { SetArchitecture(std::move(value)); return *this;}
-
-    /**
-     * <p>The architecture of the image. Valid values are as follows:</p> <ul> <li> <p>
-     * <code>arm64</code> </p> </li> <li> <p> <code>i386</code> </p> </li> <li> <p>
-     * <code>x86_64</code> </p> </li> </ul>
-     */
     inline AwsEcrContainerImageDetails& WithArchitecture(const char* value) { SetArchitecture(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The sha256 digest of the image manifest.</p>
      */
     inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline AwsEcrContainerImageDetails& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline AwsEcrContainerImageDetails& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
-
-    /**
-     * <p>The sha256 digest of the image manifest.</p>
-     */
     inline AwsEcrContainerImageDetails& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of tags that are associated with the image.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageTags() const{ return m_imageTags; }
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline bool ImageTagsHasBeenSet() const { return m_imageTagsHasBeenSet; }
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline void SetImageTags(const Aws::Vector<Aws::String>& value) { m_imageTagsHasBeenSet = true; m_imageTags = value; }
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline void SetImageTags(Aws::Vector<Aws::String>&& value) { m_imageTagsHasBeenSet = true; m_imageTags = std::move(value); }
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline AwsEcrContainerImageDetails& WithImageTags(const Aws::Vector<Aws::String>& value) { SetImageTags(value); return *this;}
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline AwsEcrContainerImageDetails& WithImageTags(Aws::Vector<Aws::String>&& value) { SetImageTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline AwsEcrContainerImageDetails& AddImageTags(const Aws::String& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline AwsEcrContainerImageDetails& AddImageTags(Aws::String&& value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of tags that are associated with the image.</p>
-     */
     inline AwsEcrContainerImageDetails& AddImageTags(const char* value) { m_imageTagsHasBeenSet = true; m_imageTags.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the image was pushed to the repository.</p> <p>This
      * field accepts only the specified formats. Timestamps can end with <code>Z</code>
@@ -290,140 +131,14 @@ namespace Model
      * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetImagePublishedAt() const{ return m_imagePublishedAt; }
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline bool ImagePublishedAtHasBeenSet() const { return m_imagePublishedAtHasBeenSet; }
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetImagePublishedAt(const Aws::String& value) { m_imagePublishedAtHasBeenSet = true; m_imagePublishedAt = value; }
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetImagePublishedAt(Aws::String&& value) { m_imagePublishedAtHasBeenSet = true; m_imagePublishedAt = std::move(value); }
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetImagePublishedAt(const char* value) { m_imagePublishedAtHasBeenSet = true; m_imagePublishedAt.assign(value); }
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline AwsEcrContainerImageDetails& WithImagePublishedAt(const Aws::String& value) { SetImagePublishedAt(value); return *this;}
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline AwsEcrContainerImageDetails& WithImagePublishedAt(Aws::String&& value) { SetImagePublishedAt(std::move(value)); return *this;}
-
-    /**
-     * <p>The date and time when the image was pushed to the repository.</p> <p>This
-     * field accepts only the specified formats. Timestamps can end with <code>Z</code>
-     * or <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline AwsEcrContainerImageDetails& WithImagePublishedAt(const char* value) { SetImagePublishedAt(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

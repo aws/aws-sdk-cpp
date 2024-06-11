@@ -35,137 +35,55 @@ namespace Model
     AWS_WORKMAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The idempotency token associated with the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline DeleteOrganizationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline DeleteOrganizationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The idempotency token associated with the request.</p>
-     */
     inline DeleteOrganizationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The organization ID.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline DeleteOrganizationRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline DeleteOrganizationRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The organization ID.</p>
-     */
     inline DeleteOrganizationRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If true, deletes the AWS Directory Service directory associated with the
      * organization.</p>
      */
     inline bool GetDeleteDirectory() const{ return m_deleteDirectory; }
-
-    /**
-     * <p>If true, deletes the AWS Directory Service directory associated with the
-     * organization.</p>
-     */
     inline bool DeleteDirectoryHasBeenSet() const { return m_deleteDirectoryHasBeenSet; }
-
-    /**
-     * <p>If true, deletes the AWS Directory Service directory associated with the
-     * organization.</p>
-     */
     inline void SetDeleteDirectory(bool value) { m_deleteDirectoryHasBeenSet = true; m_deleteDirectory = value; }
-
-    /**
-     * <p>If true, deletes the AWS Directory Service directory associated with the
-     * organization.</p>
-     */
     inline DeleteOrganizationRequest& WithDeleteDirectory(bool value) { SetDeleteDirectory(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Deletes a WorkMail organization even if the organization has enabled
      * users.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
-
-    /**
-     * <p>Deletes a WorkMail organization even if the organization has enabled
-     * users.</p>
-     */
     inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
-
-    /**
-     * <p>Deletes a WorkMail organization even if the organization has enabled
-     * users.</p>
-     */
     inline void SetForceDelete(bool value) { m_forceDeleteHasBeenSet = true; m_forceDelete = value; }
-
-    /**
-     * <p>Deletes a WorkMail organization even if the organization has enabled
-     * users.</p>
-     */
     inline DeleteOrganizationRequest& WithForceDelete(bool value) { SetForceDelete(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientToken;

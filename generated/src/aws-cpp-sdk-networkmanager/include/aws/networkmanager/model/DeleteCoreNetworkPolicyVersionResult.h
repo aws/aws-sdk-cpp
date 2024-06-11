@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API DeleteCoreNetworkPolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns information about the deleted policy version. </p>
      */
     inline const CoreNetworkPolicy& GetCoreNetworkPolicy() const{ return m_coreNetworkPolicy; }
-
-    /**
-     * <p>Returns information about the deleted policy version. </p>
-     */
     inline void SetCoreNetworkPolicy(const CoreNetworkPolicy& value) { m_coreNetworkPolicy = value; }
-
-    /**
-     * <p>Returns information about the deleted policy version. </p>
-     */
     inline void SetCoreNetworkPolicy(CoreNetworkPolicy&& value) { m_coreNetworkPolicy = std::move(value); }
-
-    /**
-     * <p>Returns information about the deleted policy version. </p>
-     */
     inline DeleteCoreNetworkPolicyVersionResult& WithCoreNetworkPolicy(const CoreNetworkPolicy& value) { SetCoreNetworkPolicy(value); return *this;}
-
-    /**
-     * <p>Returns information about the deleted policy version. </p>
-     */
     inline DeleteCoreNetworkPolicyVersionResult& WithCoreNetworkPolicy(CoreNetworkPolicy&& value) { SetCoreNetworkPolicy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteCoreNetworkPolicyVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteCoreNetworkPolicyVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteCoreNetworkPolicyVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CoreNetworkPolicy m_coreNetworkPolicy;

@@ -38,67 +38,29 @@ namespace Model
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about a CSV format.</p>
      */
     inline const DetectedCsvFormatDescriptor& GetCsvFormatDescriptor() const{ return m_csvFormatDescriptor; }
-
-    /**
-     * <p>Details about a CSV format.</p>
-     */
     inline bool CsvFormatDescriptorHasBeenSet() const { return m_csvFormatDescriptorHasBeenSet; }
-
-    /**
-     * <p>Details about a CSV format.</p>
-     */
     inline void SetCsvFormatDescriptor(const DetectedCsvFormatDescriptor& value) { m_csvFormatDescriptorHasBeenSet = true; m_csvFormatDescriptor = value; }
-
-    /**
-     * <p>Details about a CSV format.</p>
-     */
     inline void SetCsvFormatDescriptor(DetectedCsvFormatDescriptor&& value) { m_csvFormatDescriptorHasBeenSet = true; m_csvFormatDescriptor = std::move(value); }
-
-    /**
-     * <p>Details about a CSV format.</p>
-     */
     inline DetectedFileFormatDescriptor& WithCsvFormatDescriptor(const DetectedCsvFormatDescriptor& value) { SetCsvFormatDescriptor(value); return *this;}
-
-    /**
-     * <p>Details about a CSV format.</p>
-     */
     inline DetectedFileFormatDescriptor& WithCsvFormatDescriptor(DetectedCsvFormatDescriptor&& value) { SetCsvFormatDescriptor(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about a JSON format.</p>
      */
     inline const DetectedJsonFormatDescriptor& GetJsonFormatDescriptor() const{ return m_jsonFormatDescriptor; }
-
-    /**
-     * <p>Details about a JSON format.</p>
-     */
     inline bool JsonFormatDescriptorHasBeenSet() const { return m_jsonFormatDescriptorHasBeenSet; }
-
-    /**
-     * <p>Details about a JSON format.</p>
-     */
     inline void SetJsonFormatDescriptor(const DetectedJsonFormatDescriptor& value) { m_jsonFormatDescriptorHasBeenSet = true; m_jsonFormatDescriptor = value; }
-
-    /**
-     * <p>Details about a JSON format.</p>
-     */
     inline void SetJsonFormatDescriptor(DetectedJsonFormatDescriptor&& value) { m_jsonFormatDescriptorHasBeenSet = true; m_jsonFormatDescriptor = std::move(value); }
-
-    /**
-     * <p>Details about a JSON format.</p>
-     */
     inline DetectedFileFormatDescriptor& WithJsonFormatDescriptor(const DetectedJsonFormatDescriptor& value) { SetJsonFormatDescriptor(value); return *this;}
-
-    /**
-     * <p>Details about a JSON format.</p>
-     */
     inline DetectedFileFormatDescriptor& WithJsonFormatDescriptor(DetectedJsonFormatDescriptor&& value) { SetJsonFormatDescriptor(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DetectedCsvFormatDescriptor m_csvFormatDescriptor;

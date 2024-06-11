@@ -33,104 +33,43 @@ namespace Model
     AWS_IOT_API ListTargetsForPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The policy targets.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargets() const{ return m_targets; }
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targets = value; }
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline void SetTargets(Aws::Vector<Aws::String>&& value) { m_targets = std::move(value); }
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline ListTargetsForPolicyResult& WithTargets(const Aws::Vector<Aws::String>& value) { SetTargets(value); return *this;}
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline ListTargetsForPolicyResult& WithTargets(Aws::Vector<Aws::String>&& value) { SetTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline ListTargetsForPolicyResult& AddTargets(const Aws::String& value) { m_targets.push_back(value); return *this; }
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline ListTargetsForPolicyResult& AddTargets(Aws::String&& value) { m_targets.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The policy targets.</p>
-     */
     inline ListTargetsForPolicyResult& AddTargets(const char* value) { m_targets.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A marker used to get the next set of results.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline ListTargetsForPolicyResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline ListTargetsForPolicyResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>A marker used to get the next set of results.</p>
-     */
     inline ListTargetsForPolicyResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListTargetsForPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListTargetsForPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListTargetsForPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_targets;

@@ -34,42 +34,20 @@ namespace Model
     AWS_WORKSPACESTHINCLIENT_API ListDevicesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes devices.</p>
      */
     inline const Aws::Vector<DeviceSummary>& GetDevices() const{ return m_devices; }
-
-    /**
-     * <p>Describes devices.</p>
-     */
     inline void SetDevices(const Aws::Vector<DeviceSummary>& value) { m_devices = value; }
-
-    /**
-     * <p>Describes devices.</p>
-     */
     inline void SetDevices(Aws::Vector<DeviceSummary>&& value) { m_devices = std::move(value); }
-
-    /**
-     * <p>Describes devices.</p>
-     */
     inline ListDevicesResult& WithDevices(const Aws::Vector<DeviceSummary>& value) { SetDevices(value); return *this;}
-
-    /**
-     * <p>Describes devices.</p>
-     */
     inline ListDevicesResult& WithDevices(Aws::Vector<DeviceSummary>&& value) { SetDevices(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes devices.</p>
-     */
     inline ListDevicesResult& AddDevices(const DeviceSummary& value) { m_devices.push_back(value); return *this; }
-
-    /**
-     * <p>Describes devices.</p>
-     */
     inline ListDevicesResult& AddDevices(DeviceSummary&& value) { m_devices.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If <code>nextToken</code> is returned, there are more results available. The
      * value of <code>nextToken</code> is a unique pagination token for each page. Make
@@ -79,89 +57,24 @@ namespace Model
      * error</i>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken
-     * error</i>.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken
-     * error</i>.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken
-     * error</i>.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken
-     * error</i>.</p>
-     */
     inline ListDevicesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken
-     * error</i>.</p>
-     */
     inline ListDevicesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If <code>nextToken</code> is returned, there are more results available. The
-     * value of <code>nextToken</code> is a unique pagination token for each page. Make
-     * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. Using
-     * an expired pagination token will return an <i>HTTP 400 InvalidToken
-     * error</i>.</p>
-     */
     inline ListDevicesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDevicesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDevicesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDevicesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeviceSummary> m_devices;

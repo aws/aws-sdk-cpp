@@ -38,77 +38,31 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Error in data replication.</p>
      */
     inline const FailbackReplicationError& GetError() const{ return m_error; }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline void SetError(const FailbackReplicationError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline void SetError(FailbackReplicationError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline RecoveryInstanceDataReplicationError& WithError(const FailbackReplicationError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline RecoveryInstanceDataReplicationError& WithError(FailbackReplicationError&& value) { SetError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error in data replication.</p>
      */
     inline const Aws::String& GetRawError() const{ return m_rawError; }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline bool RawErrorHasBeenSet() const { return m_rawErrorHasBeenSet; }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline void SetRawError(const Aws::String& value) { m_rawErrorHasBeenSet = true; m_rawError = value; }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline void SetRawError(Aws::String&& value) { m_rawErrorHasBeenSet = true; m_rawError = std::move(value); }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline void SetRawError(const char* value) { m_rawErrorHasBeenSet = true; m_rawError.assign(value); }
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline RecoveryInstanceDataReplicationError& WithRawError(const Aws::String& value) { SetRawError(value); return *this;}
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline RecoveryInstanceDataReplicationError& WithRawError(Aws::String&& value) { SetRawError(std::move(value)); return *this;}
-
-    /**
-     * <p>Error in data replication.</p>
-     */
     inline RecoveryInstanceDataReplicationError& WithRawError(const char* value) { SetRawError(value); return *this;}
-
+    ///@}
   private:
 
     FailbackReplicationError m_error;

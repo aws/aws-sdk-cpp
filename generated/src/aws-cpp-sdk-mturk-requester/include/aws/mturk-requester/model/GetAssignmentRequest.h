@@ -34,46 +34,19 @@ namespace Model
     AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
      */
     inline const Aws::String& GetAssignmentId() const{ return m_assignmentId; }
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline void SetAssignmentId(const char* value) { m_assignmentIdHasBeenSet = true; m_assignmentId.assign(value); }
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline GetAssignmentRequest& WithAssignmentId(const Aws::String& value) { SetAssignmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline GetAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Assignment to be retrieved.</p>
-     */
     inline GetAssignmentRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_assignmentId;

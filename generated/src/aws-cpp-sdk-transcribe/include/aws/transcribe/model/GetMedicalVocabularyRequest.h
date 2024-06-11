@@ -34,54 +34,20 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the custom medical vocabulary you want information about. Custom
      * medical vocabulary names are case sensitive.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline GetMedicalVocabularyRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline GetMedicalVocabularyRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the custom medical vocabulary you want information about. Custom
-     * medical vocabulary names are case sensitive.</p>
-     */
     inline GetMedicalVocabularyRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vocabularyName;

@@ -33,53 +33,27 @@ namespace Model
     AWS_NIMBLESTUDIO_API GetEulaResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The EULA.</p>
      */
     inline const Eula& GetEula() const{ return m_eula; }
-
-    /**
-     * <p>The EULA.</p>
-     */
     inline void SetEula(const Eula& value) { m_eula = value; }
-
-    /**
-     * <p>The EULA.</p>
-     */
     inline void SetEula(Eula&& value) { m_eula = std::move(value); }
-
-    /**
-     * <p>The EULA.</p>
-     */
     inline GetEulaResult& WithEula(const Eula& value) { SetEula(value); return *this;}
-
-    /**
-     * <p>The EULA.</p>
-     */
     inline GetEulaResult& WithEula(Eula&& value) { SetEula(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEulaResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEulaResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEulaResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Eula m_eula;

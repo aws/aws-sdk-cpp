@@ -42,178 +42,68 @@ namespace Model
     AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the file system that you want to delete.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline DeleteFileSystemRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline DeleteFileSystemRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the file system that you want to delete.</p>
-     */
     inline DeleteFileSystemRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This token is automatically filled on your behalf when
      * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline DeleteFileSystemRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline DeleteFileSystemRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
-     * idempotent deletion. This token is automatically filled on your behalf when
-     * using the Command Line Interface (CLI) or an Amazon Web Services SDK.</p>
-     */
     inline DeleteFileSystemRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DeleteFileSystemWindowsConfiguration& GetWindowsConfiguration() const{ return m_windowsConfiguration; }
-
-    
     inline bool WindowsConfigurationHasBeenSet() const { return m_windowsConfigurationHasBeenSet; }
-
-    
     inline void SetWindowsConfiguration(const DeleteFileSystemWindowsConfiguration& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = value; }
-
-    
     inline void SetWindowsConfiguration(DeleteFileSystemWindowsConfiguration&& value) { m_windowsConfigurationHasBeenSet = true; m_windowsConfiguration = std::move(value); }
-
-    
     inline DeleteFileSystemRequest& WithWindowsConfiguration(const DeleteFileSystemWindowsConfiguration& value) { SetWindowsConfiguration(value); return *this;}
-
-    
     inline DeleteFileSystemRequest& WithWindowsConfiguration(DeleteFileSystemWindowsConfiguration&& value) { SetWindowsConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const DeleteFileSystemLustreConfiguration& GetLustreConfiguration() const{ return m_lustreConfiguration; }
-
-    
     inline bool LustreConfigurationHasBeenSet() const { return m_lustreConfigurationHasBeenSet; }
-
-    
     inline void SetLustreConfiguration(const DeleteFileSystemLustreConfiguration& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = value; }
-
-    
     inline void SetLustreConfiguration(DeleteFileSystemLustreConfiguration&& value) { m_lustreConfigurationHasBeenSet = true; m_lustreConfiguration = std::move(value); }
-
-    
     inline DeleteFileSystemRequest& WithLustreConfiguration(const DeleteFileSystemLustreConfiguration& value) { SetLustreConfiguration(value); return *this;}
-
-    
     inline DeleteFileSystemRequest& WithLustreConfiguration(DeleteFileSystemLustreConfiguration&& value) { SetLustreConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration object for the OpenZFS file system used in the
      * <code>DeleteFileSystem</code> operation.</p>
      */
     inline const DeleteFileSystemOpenZFSConfiguration& GetOpenZFSConfiguration() const{ return m_openZFSConfiguration; }
-
-    /**
-     * <p>The configuration object for the OpenZFS file system used in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline bool OpenZFSConfigurationHasBeenSet() const { return m_openZFSConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration object for the OpenZFS file system used in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline void SetOpenZFSConfiguration(const DeleteFileSystemOpenZFSConfiguration& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = value; }
-
-    /**
-     * <p>The configuration object for the OpenZFS file system used in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline void SetOpenZFSConfiguration(DeleteFileSystemOpenZFSConfiguration&& value) { m_openZFSConfigurationHasBeenSet = true; m_openZFSConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration object for the OpenZFS file system used in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline DeleteFileSystemRequest& WithOpenZFSConfiguration(const DeleteFileSystemOpenZFSConfiguration& value) { SetOpenZFSConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration object for the OpenZFS file system used in the
-     * <code>DeleteFileSystem</code> operation.</p>
-     */
     inline DeleteFileSystemRequest& WithOpenZFSConfiguration(DeleteFileSystemOpenZFSConfiguration&& value) { SetOpenZFSConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fileSystemId;

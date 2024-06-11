@@ -34,168 +34,67 @@ namespace Model
     AWS_BEDROCKAGENT_API PrepareAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
      * was created.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
-
-    /**
-     * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
-     * was created.</p>
-     */
     inline void SetAgentId(const Aws::String& value) { m_agentId = value; }
-
-    /**
-     * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
-     * was created.</p>
-     */
     inline void SetAgentId(Aws::String&& value) { m_agentId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
-     * was created.</p>
-     */
     inline void SetAgentId(const char* value) { m_agentId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
-     * was created.</p>
-     */
     inline PrepareAgentResult& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
-     * was created.</p>
-     */
     inline PrepareAgentResult& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the agent for which the <code>DRAFT</code> version
-     * was created.</p>
-     */
     inline PrepareAgentResult& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the <code>DRAFT</code> version and whether it is ready for
      * use.</p>
      */
     inline const AgentStatus& GetAgentStatus() const{ return m_agentStatus; }
-
-    /**
-     * <p>The status of the <code>DRAFT</code> version and whether it is ready for
-     * use.</p>
-     */
     inline void SetAgentStatus(const AgentStatus& value) { m_agentStatus = value; }
-
-    /**
-     * <p>The status of the <code>DRAFT</code> version and whether it is ready for
-     * use.</p>
-     */
     inline void SetAgentStatus(AgentStatus&& value) { m_agentStatus = std::move(value); }
-
-    /**
-     * <p>The status of the <code>DRAFT</code> version and whether it is ready for
-     * use.</p>
-     */
     inline PrepareAgentResult& WithAgentStatus(const AgentStatus& value) { SetAgentStatus(value); return *this;}
-
-    /**
-     * <p>The status of the <code>DRAFT</code> version and whether it is ready for
-     * use.</p>
-     */
     inline PrepareAgentResult& WithAgentStatus(AgentStatus&& value) { SetAgentStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The version of the agent.</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
-
-    /**
-     * <p>The version of the agent.</p>
-     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersion = value; }
-
-    /**
-     * <p>The version of the agent.</p>
-     */
     inline void SetAgentVersion(Aws::String&& value) { m_agentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the agent.</p>
-     */
     inline void SetAgentVersion(const char* value) { m_agentVersion.assign(value); }
-
-    /**
-     * <p>The version of the agent.</p>
-     */
     inline PrepareAgentResult& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the agent.</p>
-     */
     inline PrepareAgentResult& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The version of the agent.</p>
-     */
     inline PrepareAgentResult& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which the <code>DRAFT</code> version of the agent was last
      * prepared.</p>
      */
     inline const Aws::Utils::DateTime& GetPreparedAt() const{ return m_preparedAt; }
-
-    /**
-     * <p>The time at which the <code>DRAFT</code> version of the agent was last
-     * prepared.</p>
-     */
     inline void SetPreparedAt(const Aws::Utils::DateTime& value) { m_preparedAt = value; }
-
-    /**
-     * <p>The time at which the <code>DRAFT</code> version of the agent was last
-     * prepared.</p>
-     */
     inline void SetPreparedAt(Aws::Utils::DateTime&& value) { m_preparedAt = std::move(value); }
-
-    /**
-     * <p>The time at which the <code>DRAFT</code> version of the agent was last
-     * prepared.</p>
-     */
     inline PrepareAgentResult& WithPreparedAt(const Aws::Utils::DateTime& value) { SetPreparedAt(value); return *this;}
-
-    /**
-     * <p>The time at which the <code>DRAFT</code> version of the agent was last
-     * prepared.</p>
-     */
     inline PrepareAgentResult& WithPreparedAt(Aws::Utils::DateTime&& value) { SetPreparedAt(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline PrepareAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline PrepareAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline PrepareAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_agentId;

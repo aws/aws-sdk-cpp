@@ -41,100 +41,41 @@ namespace Model
     AWS_CLOUDFORMATION_API ListStackResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A list of <code>StackResourceSummary</code> structures.</p>
      */
     inline const Aws::Vector<StackResourceSummary>& GetStackResourceSummaries() const{ return m_stackResourceSummaries; }
-
-    /**
-     * <p>A list of <code>StackResourceSummary</code> structures.</p>
-     */
     inline void SetStackResourceSummaries(const Aws::Vector<StackResourceSummary>& value) { m_stackResourceSummaries = value; }
-
-    /**
-     * <p>A list of <code>StackResourceSummary</code> structures.</p>
-     */
     inline void SetStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { m_stackResourceSummaries = std::move(value); }
-
-    /**
-     * <p>A list of <code>StackResourceSummary</code> structures.</p>
-     */
     inline ListStackResourcesResult& WithStackResourceSummaries(const Aws::Vector<StackResourceSummary>& value) { SetStackResourceSummaries(value); return *this;}
-
-    /**
-     * <p>A list of <code>StackResourceSummary</code> structures.</p>
-     */
     inline ListStackResourcesResult& WithStackResourceSummaries(Aws::Vector<StackResourceSummary>&& value) { SetStackResourceSummaries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>StackResourceSummary</code> structures.</p>
-     */
     inline ListStackResourcesResult& AddStackResourceSummaries(const StackResourceSummary& value) { m_stackResourceSummaries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>StackResourceSummary</code> structures.</p>
-     */
     inline ListStackResourcesResult& AddStackResourceSummaries(StackResourceSummary&& value) { m_stackResourceSummaries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
      * resources. If no additional page exists, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-     * resources. If no additional page exists, this value is null.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-     * resources. If no additional page exists, this value is null.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-     * resources. If no additional page exists, this value is null.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-     * resources. If no additional page exists, this value is null.</p>
-     */
     inline ListStackResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-     * resources. If no additional page exists, this value is null.</p>
-     */
     inline ListStackResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the output exceeds 1 MB, a string that identifies the next page of stack
-     * resources. If no additional page exists, this value is null.</p>
-     */
     inline ListStackResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline ListStackResourcesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline ListStackResourcesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<StackResourceSummary> m_stackResourceSummaries;

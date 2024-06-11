@@ -52,6 +52,7 @@ namespace Model
     AWS_SNS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Amazon SNS supports the following logical data types: String, String.Array,
      * Number, and Binary. For more information, see <a
@@ -59,157 +60,43 @@ namespace Model
      * Attribute Data Types</a>.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline MessageAttributeValue& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline MessageAttributeValue& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-
-    /**
-     * <p>Amazon SNS supports the following logical data types: String, String.Array,
-     * Number, and Binary. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMessageAttributes.html#SNSMessageAttributes.DataTypes">Message
-     * Attribute Data Types</a>.</p>
-     */
     inline MessageAttributeValue& WithDataType(const char* value) { SetDataType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
      * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
      * Printable Characters</a>.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline MessageAttributeValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline MessageAttributeValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Strings are Unicode with UTF8 binary encoding. For a list of code values, see
-     * <a href="https://en.wikipedia.org/wiki/ASCII#ASCII_printable_characters">ASCII
-     * Printable Characters</a>.</p>
-     */
     inline MessageAttributeValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Binary type attributes can store any binary data, for example, compressed
      * data, encrypted data, or images.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetBinaryValue() const{ return m_binaryValue; }
-
-    /**
-     * <p>Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.</p>
-     */
     inline bool BinaryValueHasBeenSet() const { return m_binaryValueHasBeenSet; }
-
-    /**
-     * <p>Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.</p>
-     */
     inline void SetBinaryValue(const Aws::Utils::ByteBuffer& value) { m_binaryValueHasBeenSet = true; m_binaryValue = value; }
-
-    /**
-     * <p>Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.</p>
-     */
     inline void SetBinaryValue(Aws::Utils::ByteBuffer&& value) { m_binaryValueHasBeenSet = true; m_binaryValue = std::move(value); }
-
-    /**
-     * <p>Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.</p>
-     */
     inline MessageAttributeValue& WithBinaryValue(const Aws::Utils::ByteBuffer& value) { SetBinaryValue(value); return *this;}
-
-    /**
-     * <p>Binary type attributes can store any binary data, for example, compressed
-     * data, encrypted data, or images.</p>
-     */
     inline MessageAttributeValue& WithBinaryValue(Aws::Utils::ByteBuffer&& value) { SetBinaryValue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dataType;

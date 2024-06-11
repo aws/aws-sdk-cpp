@@ -33,58 +33,28 @@ namespace Model
     AWS_MIGRATIONHUBCONFIG_API CreateHomeRegionControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>This object is the <code>HomeRegionControl</code> object that's returned by a
      * successful call to <code>CreateHomeRegionControl</code>.</p>
      */
     inline const HomeRegionControl& GetHomeRegionControl() const{ return m_homeRegionControl; }
-
-    /**
-     * <p>This object is the <code>HomeRegionControl</code> object that's returned by a
-     * successful call to <code>CreateHomeRegionControl</code>.</p>
-     */
     inline void SetHomeRegionControl(const HomeRegionControl& value) { m_homeRegionControl = value; }
-
-    /**
-     * <p>This object is the <code>HomeRegionControl</code> object that's returned by a
-     * successful call to <code>CreateHomeRegionControl</code>.</p>
-     */
     inline void SetHomeRegionControl(HomeRegionControl&& value) { m_homeRegionControl = std::move(value); }
-
-    /**
-     * <p>This object is the <code>HomeRegionControl</code> object that's returned by a
-     * successful call to <code>CreateHomeRegionControl</code>.</p>
-     */
     inline CreateHomeRegionControlResult& WithHomeRegionControl(const HomeRegionControl& value) { SetHomeRegionControl(value); return *this;}
-
-    /**
-     * <p>This object is the <code>HomeRegionControl</code> object that's returned by a
-     * successful call to <code>CreateHomeRegionControl</code>.</p>
-     */
     inline CreateHomeRegionControlResult& WithHomeRegionControl(HomeRegionControl&& value) { SetHomeRegionControl(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateHomeRegionControlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateHomeRegionControlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateHomeRegionControlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     HomeRegionControl m_homeRegionControl;

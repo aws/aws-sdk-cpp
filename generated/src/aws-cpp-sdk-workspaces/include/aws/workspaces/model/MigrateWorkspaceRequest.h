@@ -34,87 +34,33 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the WorkSpace to migrate from.</p>
      */
     inline const Aws::String& GetSourceWorkspaceId() const{ return m_sourceWorkspaceId; }
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline bool SourceWorkspaceIdHasBeenSet() const { return m_sourceWorkspaceIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline void SetSourceWorkspaceId(const Aws::String& value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId = value; }
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline void SetSourceWorkspaceId(Aws::String&& value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId = std::move(value); }
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline void SetSourceWorkspaceId(const char* value) { m_sourceWorkspaceIdHasBeenSet = true; m_sourceWorkspaceId.assign(value); }
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline MigrateWorkspaceRequest& WithSourceWorkspaceId(const Aws::String& value) { SetSourceWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline MigrateWorkspaceRequest& WithSourceWorkspaceId(Aws::String&& value) { SetSourceWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the WorkSpace to migrate from.</p>
-     */
     inline MigrateWorkspaceRequest& WithSourceWorkspaceId(const char* value) { SetSourceWorkspaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline MigrateWorkspaceRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline MigrateWorkspaceRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the target bundle type to migrate the WorkSpace to.</p>
-     */
     inline MigrateWorkspaceRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sourceWorkspaceId;

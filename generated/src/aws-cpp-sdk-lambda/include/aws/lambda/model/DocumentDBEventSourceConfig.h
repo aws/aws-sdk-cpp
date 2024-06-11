@@ -39,96 +39,36 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The name of the database to consume within the DocumentDB cluster. </p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline DocumentDBEventSourceConfig& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline DocumentDBEventSourceConfig& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the database to consume within the DocumentDB cluster. </p>
-     */
     inline DocumentDBEventSourceConfig& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The name of the collection to consume within the database. If you do not
      * specify a collection, Lambda consumes all collections. </p>
      */
     inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline bool CollectionNameHasBeenSet() const { return m_collectionNameHasBeenSet; }
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline void SetCollectionName(const Aws::String& value) { m_collectionNameHasBeenSet = true; m_collectionName = value; }
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline void SetCollectionName(Aws::String&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::move(value); }
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline void SetCollectionName(const char* value) { m_collectionNameHasBeenSet = true; m_collectionName.assign(value); }
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline DocumentDBEventSourceConfig& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline DocumentDBEventSourceConfig& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
-
-    /**
-     * <p> The name of the collection to consume within the database. If you do not
-     * specify a collection, Lambda consumes all collections. </p>
-     */
     inline DocumentDBEventSourceConfig& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Determines what DocumentDB sends to your event stream during document update
      * operations. If set to UpdateLookup, DocumentDB sends a delta describing the
@@ -136,47 +76,12 @@ namespace Model
      * only a partial document that contains the changes. </p>
      */
     inline const FullDocument& GetFullDocument() const{ return m_fullDocument; }
-
-    /**
-     * <p> Determines what DocumentDB sends to your event stream during document update
-     * operations. If set to UpdateLookup, DocumentDB sends a delta describing the
-     * changes, along with a copy of the entire document. Otherwise, DocumentDB sends
-     * only a partial document that contains the changes. </p>
-     */
     inline bool FullDocumentHasBeenSet() const { return m_fullDocumentHasBeenSet; }
-
-    /**
-     * <p> Determines what DocumentDB sends to your event stream during document update
-     * operations. If set to UpdateLookup, DocumentDB sends a delta describing the
-     * changes, along with a copy of the entire document. Otherwise, DocumentDB sends
-     * only a partial document that contains the changes. </p>
-     */
     inline void SetFullDocument(const FullDocument& value) { m_fullDocumentHasBeenSet = true; m_fullDocument = value; }
-
-    /**
-     * <p> Determines what DocumentDB sends to your event stream during document update
-     * operations. If set to UpdateLookup, DocumentDB sends a delta describing the
-     * changes, along with a copy of the entire document. Otherwise, DocumentDB sends
-     * only a partial document that contains the changes. </p>
-     */
     inline void SetFullDocument(FullDocument&& value) { m_fullDocumentHasBeenSet = true; m_fullDocument = std::move(value); }
-
-    /**
-     * <p> Determines what DocumentDB sends to your event stream during document update
-     * operations. If set to UpdateLookup, DocumentDB sends a delta describing the
-     * changes, along with a copy of the entire document. Otherwise, DocumentDB sends
-     * only a partial document that contains the changes. </p>
-     */
     inline DocumentDBEventSourceConfig& WithFullDocument(const FullDocument& value) { SetFullDocument(value); return *this;}
-
-    /**
-     * <p> Determines what DocumentDB sends to your event stream during document update
-     * operations. If set to UpdateLookup, DocumentDB sends a delta describing the
-     * changes, along with a copy of the entire document. Otherwise, DocumentDB sends
-     * only a partial document that contains the changes. </p>
-     */
     inline DocumentDBEventSourceConfig& WithFullDocument(FullDocument&& value) { SetFullDocument(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_databaseName;

@@ -32,70 +32,30 @@ namespace Model
     AWS_PERSONALIZE_API UpdateMetricAttributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the metric attribution that you
      * updated.</p>
      */
     inline const Aws::String& GetMetricAttributionArn() const{ return m_metricAttributionArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the metric attribution that you
-     * updated.</p>
-     */
     inline void SetMetricAttributionArn(const Aws::String& value) { m_metricAttributionArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the metric attribution that you
-     * updated.</p>
-     */
     inline void SetMetricAttributionArn(Aws::String&& value) { m_metricAttributionArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the metric attribution that you
-     * updated.</p>
-     */
     inline void SetMetricAttributionArn(const char* value) { m_metricAttributionArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the metric attribution that you
-     * updated.</p>
-     */
     inline UpdateMetricAttributionResult& WithMetricAttributionArn(const Aws::String& value) { SetMetricAttributionArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the metric attribution that you
-     * updated.</p>
-     */
     inline UpdateMetricAttributionResult& WithMetricAttributionArn(Aws::String&& value) { SetMetricAttributionArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) for the metric attribution that you
-     * updated.</p>
-     */
     inline UpdateMetricAttributionResult& WithMetricAttributionArn(const char* value) { SetMetricAttributionArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateMetricAttributionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateMetricAttributionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateMetricAttributionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_metricAttributionArn;

@@ -39,6 +39,7 @@ namespace Model
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the field that the operator will be applied to. The field name is
      * the "key" portion of the field definition in the pipeline definition syntax that
@@ -46,82 +47,24 @@ namespace Model
      * condition fails.</p>
      */
     inline const Aws::String& GetFieldName() const{ return m_fieldName; }
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline Selector& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline Selector& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the field that the operator will be applied to. The field name is
-     * the "key" portion of the field definition in the pipeline definition syntax that
-     * is used by the AWS Data Pipeline API. If the field is not set on the object, the
-     * condition fails.</p>
-     */
     inline Selector& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Operator& GetOperator() const{ return m_operator; }
-
-    
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    
     inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    
     inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    
     inline Selector& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-
-    
     inline Selector& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldName;

@@ -64,137 +64,55 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The API key ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline ApiKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline ApiKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The API key ID.</p>
-     */
     inline ApiKey& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the purpose of the API key.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline ApiKey& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline ApiKey& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the purpose of the API key.</p>
-     */
     inline ApiKey& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time after which the API key expires. The date is represented as seconds
      * since the epoch, rounded down to the nearest hour.</p>
      */
     inline long long GetExpires() const{ return m_expires; }
-
-    /**
-     * <p>The time after which the API key expires. The date is represented as seconds
-     * since the epoch, rounded down to the nearest hour.</p>
-     */
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
-
-    /**
-     * <p>The time after which the API key expires. The date is represented as seconds
-     * since the epoch, rounded down to the nearest hour.</p>
-     */
     inline void SetExpires(long long value) { m_expiresHasBeenSet = true; m_expires = value; }
-
-    /**
-     * <p>The time after which the API key expires. The date is represented as seconds
-     * since the epoch, rounded down to the nearest hour.</p>
-     */
     inline ApiKey& WithExpires(long long value) { SetExpires(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time after which the API key is deleted. The date is represented as
      * seconds since the epoch, rounded down to the nearest hour.</p>
      */
     inline long long GetDeletes() const{ return m_deletes; }
-
-    /**
-     * <p>The time after which the API key is deleted. The date is represented as
-     * seconds since the epoch, rounded down to the nearest hour.</p>
-     */
     inline bool DeletesHasBeenSet() const { return m_deletesHasBeenSet; }
-
-    /**
-     * <p>The time after which the API key is deleted. The date is represented as
-     * seconds since the epoch, rounded down to the nearest hour.</p>
-     */
     inline void SetDeletes(long long value) { m_deletesHasBeenSet = true; m_deletes = value; }
-
-    /**
-     * <p>The time after which the API key is deleted. The date is represented as
-     * seconds since the epoch, rounded down to the nearest hour.</p>
-     */
     inline ApiKey& WithDeletes(long long value) { SetDeletes(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_id;

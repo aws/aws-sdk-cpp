@@ -41,175 +41,61 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The description of the disk image being imported.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline SnapshotDiskContainer& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline SnapshotDiskContainer& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the disk image being imported.</p>
-     */
     inline SnapshotDiskContainer& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The format of the disk image being imported.</p> <p>Valid values:
      * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline SnapshotDiskContainer& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline SnapshotDiskContainer& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-
-    /**
-     * <p>The format of the disk image being imported.</p> <p>Valid values:
-     * <code>VHD</code> | <code>VMDK</code> | <code>RAW</code> </p>
-     */
     inline SnapshotDiskContainer& WithFormat(const char* value) { SetFormat(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
      * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline SnapshotDiskContainer& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline SnapshotDiskContainer& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL to the Amazon S3-based disk image being imported. It can either be a
-     * https URL (https://..) or an Amazon S3 URL (s3://..).</p>
-     */
     inline SnapshotDiskContainer& WithUrl(const char* value) { SetUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon S3 bucket for the disk image.</p>
      */
     inline const UserBucket& GetUserBucket() const{ return m_userBucket; }
-
-    /**
-     * <p>The Amazon S3 bucket for the disk image.</p>
-     */
     inline bool UserBucketHasBeenSet() const { return m_userBucketHasBeenSet; }
-
-    /**
-     * <p>The Amazon S3 bucket for the disk image.</p>
-     */
     inline void SetUserBucket(const UserBucket& value) { m_userBucketHasBeenSet = true; m_userBucket = value; }
-
-    /**
-     * <p>The Amazon S3 bucket for the disk image.</p>
-     */
     inline void SetUserBucket(UserBucket&& value) { m_userBucketHasBeenSet = true; m_userBucket = std::move(value); }
-
-    /**
-     * <p>The Amazon S3 bucket for the disk image.</p>
-     */
     inline SnapshotDiskContainer& WithUserBucket(const UserBucket& value) { SetUserBucket(value); return *this;}
-
-    /**
-     * <p>The Amazon S3 bucket for the disk image.</p>
-     */
     inline SnapshotDiskContainer& WithUserBucket(UserBucket&& value) { SetUserBucket(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_description;

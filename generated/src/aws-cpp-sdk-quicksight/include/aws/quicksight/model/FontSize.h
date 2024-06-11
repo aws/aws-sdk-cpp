@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lexical name for the text size, proportional to its surrounding
      * context.</p>
      */
     inline const RelativeFontSize& GetRelative() const{ return m_relative; }
-
-    /**
-     * <p>The lexical name for the text size, proportional to its surrounding
-     * context.</p>
-     */
     inline bool RelativeHasBeenSet() const { return m_relativeHasBeenSet; }
-
-    /**
-     * <p>The lexical name for the text size, proportional to its surrounding
-     * context.</p>
-     */
     inline void SetRelative(const RelativeFontSize& value) { m_relativeHasBeenSet = true; m_relative = value; }
-
-    /**
-     * <p>The lexical name for the text size, proportional to its surrounding
-     * context.</p>
-     */
     inline void SetRelative(RelativeFontSize&& value) { m_relativeHasBeenSet = true; m_relative = std::move(value); }
-
-    /**
-     * <p>The lexical name for the text size, proportional to its surrounding
-     * context.</p>
-     */
     inline FontSize& WithRelative(const RelativeFontSize& value) { SetRelative(value); return *this;}
-
-    /**
-     * <p>The lexical name for the text size, proportional to its surrounding
-     * context.</p>
-     */
     inline FontSize& WithRelative(RelativeFontSize&& value) { SetRelative(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RelativeFontSize m_relative;

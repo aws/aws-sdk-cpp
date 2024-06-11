@@ -37,87 +37,33 @@ namespace Model
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location of the first file in Amazon S3.</p>
      */
     inline const Aws::String& GetSource1() const{ return m_source1; }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline bool Source1HasBeenSet() const { return m_source1HasBeenSet; }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline void SetSource1(const Aws::String& value) { m_source1HasBeenSet = true; m_source1 = value; }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline void SetSource1(Aws::String&& value) { m_source1HasBeenSet = true; m_source1 = std::move(value); }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline void SetSource1(const char* value) { m_source1HasBeenSet = true; m_source1.assign(value); }
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline SourceFiles& WithSource1(const Aws::String& value) { SetSource1(value); return *this;}
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline SourceFiles& WithSource1(Aws::String&& value) { SetSource1(std::move(value)); return *this;}
-
-    /**
-     * <p>The location of the first file in Amazon S3.</p>
-     */
     inline SourceFiles& WithSource1(const char* value) { SetSource1(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the second file in Amazon S3.</p>
      */
     inline const Aws::String& GetSource2() const{ return m_source2; }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline bool Source2HasBeenSet() const { return m_source2HasBeenSet; }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline void SetSource2(const Aws::String& value) { m_source2HasBeenSet = true; m_source2 = value; }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline void SetSource2(Aws::String&& value) { m_source2HasBeenSet = true; m_source2 = std::move(value); }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline void SetSource2(const char* value) { m_source2HasBeenSet = true; m_source2.assign(value); }
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline SourceFiles& WithSource2(const Aws::String& value) { SetSource2(value); return *this;}
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline SourceFiles& WithSource2(Aws::String&& value) { SetSource2(std::move(value)); return *this;}
-
-    /**
-     * <p>The location of the second file in Amazon S3.</p>
-     */
     inline SourceFiles& WithSource2(const char* value) { SetSource2(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_source1;

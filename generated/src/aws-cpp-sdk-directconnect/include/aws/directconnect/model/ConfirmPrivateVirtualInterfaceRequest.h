@@ -34,128 +34,47 @@ namespace Model
     AWS_DIRECTCONNECT_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the virtual interface.</p>
      */
     inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the virtual interface.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
     inline const Aws::String& GetVirtualGatewayId() const{ return m_virtualGatewayId; }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline bool VirtualGatewayIdHasBeenSet() const { return m_virtualGatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline void SetVirtualGatewayId(const Aws::String& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = value; }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline void SetVirtualGatewayId(Aws::String&& value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline void SetVirtualGatewayId(const char* value) { m_virtualGatewayIdHasBeenSet = true; m_virtualGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(const Aws::String& value) { SetVirtualGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(Aws::String&& value) { SetVirtualGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the virtual private gateway.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithVirtualGatewayId(const char* value) { SetVirtualGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
     inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Direct Connect gateway.</p>
-     */
     inline ConfirmPrivateVirtualInterfaceRequest& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_virtualInterfaceId;

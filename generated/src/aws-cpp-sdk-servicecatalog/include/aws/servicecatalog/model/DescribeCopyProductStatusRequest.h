@@ -34,103 +34,35 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline DescribeCopyProductStatusRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline DescribeCopyProductStatusRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-
-    /**
-     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
-     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
-     */
     inline DescribeCopyProductStatusRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the copy product operation. This token is returned by
      * <a>CopyProduct</a>.</p>
      */
     inline const Aws::String& GetCopyProductToken() const{ return m_copyProductToken; }
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline bool CopyProductTokenHasBeenSet() const { return m_copyProductTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline void SetCopyProductToken(const Aws::String& value) { m_copyProductTokenHasBeenSet = true; m_copyProductToken = value; }
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline void SetCopyProductToken(Aws::String&& value) { m_copyProductTokenHasBeenSet = true; m_copyProductToken = std::move(value); }
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline void SetCopyProductToken(const char* value) { m_copyProductTokenHasBeenSet = true; m_copyProductToken.assign(value); }
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline DescribeCopyProductStatusRequest& WithCopyProductToken(const Aws::String& value) { SetCopyProductToken(value); return *this;}
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline DescribeCopyProductStatusRequest& WithCopyProductToken(Aws::String&& value) { SetCopyProductToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the copy product operation. This token is returned by
-     * <a>CopyProduct</a>.</p>
-     */
     inline DescribeCopyProductStatusRequest& WithCopyProductToken(const char* value) { SetCopyProductToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_acceptLanguage;

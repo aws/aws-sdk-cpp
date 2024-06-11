@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for default new sheet settings.</p>
      */
     inline const DefaultNewSheetConfiguration& GetDefaultNewSheetConfiguration() const{ return m_defaultNewSheetConfiguration; }
-
-    /**
-     * <p>The configuration for default new sheet settings.</p>
-     */
     inline bool DefaultNewSheetConfigurationHasBeenSet() const { return m_defaultNewSheetConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration for default new sheet settings.</p>
-     */
     inline void SetDefaultNewSheetConfiguration(const DefaultNewSheetConfiguration& value) { m_defaultNewSheetConfigurationHasBeenSet = true; m_defaultNewSheetConfiguration = value; }
-
-    /**
-     * <p>The configuration for default new sheet settings.</p>
-     */
     inline void SetDefaultNewSheetConfiguration(DefaultNewSheetConfiguration&& value) { m_defaultNewSheetConfigurationHasBeenSet = true; m_defaultNewSheetConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration for default new sheet settings.</p>
-     */
     inline AnalysisDefaults& WithDefaultNewSheetConfiguration(const DefaultNewSheetConfiguration& value) { SetDefaultNewSheetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration for default new sheet settings.</p>
-     */
     inline AnalysisDefaults& WithDefaultNewSheetConfiguration(DefaultNewSheetConfiguration&& value) { SetDefaultNewSheetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DefaultNewSheetConfiguration m_defaultNewSheetConfiguration;

@@ -33,139 +33,55 @@ namespace Model
     AWS_MGN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Applications list Account ID.</p>
      */
     inline const Aws::String& GetAccountID() const{ return m_accountID; }
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline ListApplicationsRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline ListApplicationsRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-
-    /**
-     * <p>Applications list Account ID.</p>
-     */
     inline ListApplicationsRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Applications list filters.</p>
      */
     inline const ListApplicationsRequestFilters& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>Applications list filters.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>Applications list filters.</p>
-     */
     inline void SetFilters(const ListApplicationsRequestFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>Applications list filters.</p>
-     */
     inline void SetFilters(ListApplicationsRequestFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>Applications list filters.</p>
-     */
     inline ListApplicationsRequest& WithFilters(const ListApplicationsRequestFilters& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>Applications list filters.</p>
-     */
     inline ListApplicationsRequest& WithFilters(ListApplicationsRequestFilters&& value) { SetFilters(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Maximum results to return when listing applications.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Maximum results to return when listing applications.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Maximum results to return when listing applications.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Maximum results to return when listing applications.</p>
-     */
     inline ListApplicationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Request next token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline ListApplicationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline ListApplicationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Request next token.</p>
-     */
     inline ListApplicationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_accountID;

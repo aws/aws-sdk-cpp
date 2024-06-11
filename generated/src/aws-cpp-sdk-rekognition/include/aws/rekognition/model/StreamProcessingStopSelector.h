@@ -36,34 +36,17 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Specifies the maximum amount of time in seconds that you want the stream to
      * be processed. The largest amount of time is 2 minutes. The default is 10
      * seconds. </p>
      */
     inline long long GetMaxDurationInSeconds() const{ return m_maxDurationInSeconds; }
-
-    /**
-     * <p> Specifies the maximum amount of time in seconds that you want the stream to
-     * be processed. The largest amount of time is 2 minutes. The default is 10
-     * seconds. </p>
-     */
     inline bool MaxDurationInSecondsHasBeenSet() const { return m_maxDurationInSecondsHasBeenSet; }
-
-    /**
-     * <p> Specifies the maximum amount of time in seconds that you want the stream to
-     * be processed. The largest amount of time is 2 minutes. The default is 10
-     * seconds. </p>
-     */
     inline void SetMaxDurationInSeconds(long long value) { m_maxDurationInSecondsHasBeenSet = true; m_maxDurationInSeconds = value; }
-
-    /**
-     * <p> Specifies the maximum amount of time in seconds that you want the stream to
-     * be processed. The largest amount of time is 2 minutes. The default is 10
-     * seconds. </p>
-     */
     inline StreamProcessingStopSelector& WithMaxDurationInSeconds(long long value) { SetMaxDurationInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     long long m_maxDurationInSeconds;

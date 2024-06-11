@@ -42,118 +42,45 @@ namespace Model
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline void SetTaskArn(const Aws::String& value) { m_taskArnHasBeenSet = true; m_taskArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline void SetTaskArn(Aws::String&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline void SetTaskArn(const char* value) { m_taskArnHasBeenSet = true; m_taskArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline TaskListEntry& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline TaskListEntry& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the task.</p>
-     */
     inline TaskListEntry& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the task.</p>
      */
     inline const TaskStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline TaskListEntry& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the task.</p>
-     */
     inline TaskListEntry& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline TaskListEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline TaskListEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the task.</p>
-     */
     inline TaskListEntry& WithName(const char* value) { SetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_taskArn;

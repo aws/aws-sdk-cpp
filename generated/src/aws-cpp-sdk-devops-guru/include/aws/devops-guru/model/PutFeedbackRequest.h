@@ -32,42 +32,18 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The feedback from customers is about the recommendations in this insight.
      * </p>
      */
     inline const InsightFeedback& GetInsightFeedback() const{ return m_insightFeedback; }
-
-    /**
-     * <p> The feedback from customers is about the recommendations in this insight.
-     * </p>
-     */
     inline bool InsightFeedbackHasBeenSet() const { return m_insightFeedbackHasBeenSet; }
-
-    /**
-     * <p> The feedback from customers is about the recommendations in this insight.
-     * </p>
-     */
     inline void SetInsightFeedback(const InsightFeedback& value) { m_insightFeedbackHasBeenSet = true; m_insightFeedback = value; }
-
-    /**
-     * <p> The feedback from customers is about the recommendations in this insight.
-     * </p>
-     */
     inline void SetInsightFeedback(InsightFeedback&& value) { m_insightFeedbackHasBeenSet = true; m_insightFeedback = std::move(value); }
-
-    /**
-     * <p> The feedback from customers is about the recommendations in this insight.
-     * </p>
-     */
     inline PutFeedbackRequest& WithInsightFeedback(const InsightFeedback& value) { SetInsightFeedback(value); return *this;}
-
-    /**
-     * <p> The feedback from customers is about the recommendations in this insight.
-     * </p>
-     */
     inline PutFeedbackRequest& WithInsightFeedback(InsightFeedback&& value) { SetInsightFeedback(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     InsightFeedback m_insightFeedback;

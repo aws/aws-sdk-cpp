@@ -38,71 +38,31 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline BackupRestoring& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline BackupRestoring& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline BackupRestoring& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of a file system being restored from the backup.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline BackupRestoring& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline BackupRestoring& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of a file system being restored from the backup.</p>
-     */
     inline BackupRestoring& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

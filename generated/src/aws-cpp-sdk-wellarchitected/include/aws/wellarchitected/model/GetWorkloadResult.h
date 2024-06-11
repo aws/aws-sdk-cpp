@@ -38,43 +38,25 @@ namespace Model
     AWS_WELLARCHITECTED_API GetWorkloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Workload& GetWorkload() const{ return m_workload; }
-
-    
     inline void SetWorkload(const Workload& value) { m_workload = value; }
-
-    
     inline void SetWorkload(Workload&& value) { m_workload = std::move(value); }
-
-    
     inline GetWorkloadResult& WithWorkload(const Workload& value) { SetWorkload(value); return *this;}
-
-    
     inline GetWorkloadResult& WithWorkload(Workload&& value) { SetWorkload(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWorkloadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWorkloadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWorkloadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Workload m_workload;

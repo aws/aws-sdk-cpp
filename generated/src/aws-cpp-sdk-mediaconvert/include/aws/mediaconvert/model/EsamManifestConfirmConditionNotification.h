@@ -38,6 +38,7 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
      * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
@@ -45,63 +46,14 @@ namespace Model
      * you supply.
      */
     inline const Aws::String& GetMccXml() const{ return m_mccXml; }
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline bool MccXmlHasBeenSet() const { return m_mccXmlHasBeenSet; }
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline void SetMccXml(const Aws::String& value) { m_mccXmlHasBeenSet = true; m_mccXml = value; }
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline void SetMccXml(Aws::String&& value) { m_mccXmlHasBeenSet = true; m_mccXml = std::move(value); }
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline void SetMccXml(const char* value) { m_mccXmlHasBeenSet = true; m_mccXml.assign(value); }
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline EsamManifestConfirmConditionNotification& WithMccXml(const Aws::String& value) { SetMccXml(value); return *this;}
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline EsamManifestConfirmConditionNotification& WithMccXml(Aws::String&& value) { SetMccXml(std::move(value)); return *this;}
-
-    /**
-     * Provide your ESAM ManifestConfirmConditionNotification XML document inside your
-     * JSON job settings. Form the XML document as per OC-SP-ESAM-API-I03-131025. The
-     * transcoder will use the Manifest Conditioning instructions in the message that
-     * you supply.
-     */
     inline EsamManifestConfirmConditionNotification& WithMccXml(const char* value) { SetMccXml(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mccXml;

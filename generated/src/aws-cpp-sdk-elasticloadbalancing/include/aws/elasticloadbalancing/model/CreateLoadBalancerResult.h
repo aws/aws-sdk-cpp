@@ -38,57 +38,27 @@ namespace Model
     AWS_ELASTICLOADBALANCING_API CreateLoadBalancerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The DNS name of the load balancer.</p>
      */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
-
-    /**
-     * <p>The DNS name of the load balancer.</p>
-     */
     inline void SetDNSName(const Aws::String& value) { m_dNSName = value; }
-
-    /**
-     * <p>The DNS name of the load balancer.</p>
-     */
     inline void SetDNSName(Aws::String&& value) { m_dNSName = std::move(value); }
-
-    /**
-     * <p>The DNS name of the load balancer.</p>
-     */
     inline void SetDNSName(const char* value) { m_dNSName.assign(value); }
-
-    /**
-     * <p>The DNS name of the load balancer.</p>
-     */
     inline CreateLoadBalancerResult& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
-
-    /**
-     * <p>The DNS name of the load balancer.</p>
-     */
     inline CreateLoadBalancerResult& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
-
-    /**
-     * <p>The DNS name of the load balancer.</p>
-     */
     inline CreateLoadBalancerResult& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline CreateLoadBalancerResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline CreateLoadBalancerResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dNSName;

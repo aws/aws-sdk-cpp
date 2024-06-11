@@ -39,85 +39,32 @@ namespace Model
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of action that occurred for the affected resource. This value is
      * typically AWS_API_CALL, which indicates that an entity invoked an API operation
      * for the resource.</p>
      */
     inline const FindingActionType& GetActionType() const{ return m_actionType; }
-
-    /**
-     * <p>The type of action that occurred for the affected resource. This value is
-     * typically AWS_API_CALL, which indicates that an entity invoked an API operation
-     * for the resource.</p>
-     */
     inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of action that occurred for the affected resource. This value is
-     * typically AWS_API_CALL, which indicates that an entity invoked an API operation
-     * for the resource.</p>
-     */
     inline void SetActionType(const FindingActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
-
-    /**
-     * <p>The type of action that occurred for the affected resource. This value is
-     * typically AWS_API_CALL, which indicates that an entity invoked an API operation
-     * for the resource.</p>
-     */
     inline void SetActionType(FindingActionType&& value) { m_actionTypeHasBeenSet = true; m_actionType = std::move(value); }
-
-    /**
-     * <p>The type of action that occurred for the affected resource. This value is
-     * typically AWS_API_CALL, which indicates that an entity invoked an API operation
-     * for the resource.</p>
-     */
     inline FindingAction& WithActionType(const FindingActionType& value) { SetActionType(value); return *this;}
-
-    /**
-     * <p>The type of action that occurred for the affected resource. This value is
-     * typically AWS_API_CALL, which indicates that an entity invoked an API operation
-     * for the resource.</p>
-     */
     inline FindingAction& WithActionType(FindingActionType&& value) { SetActionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The invocation details of the API operation that an entity invoked for the
      * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
      */
     inline const ApiCallDetails& GetApiCallDetails() const{ return m_apiCallDetails; }
-
-    /**
-     * <p>The invocation details of the API operation that an entity invoked for the
-     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-     */
     inline bool ApiCallDetailsHasBeenSet() const { return m_apiCallDetailsHasBeenSet; }
-
-    /**
-     * <p>The invocation details of the API operation that an entity invoked for the
-     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-     */
     inline void SetApiCallDetails(const ApiCallDetails& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = value; }
-
-    /**
-     * <p>The invocation details of the API operation that an entity invoked for the
-     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-     */
     inline void SetApiCallDetails(ApiCallDetails&& value) { m_apiCallDetailsHasBeenSet = true; m_apiCallDetails = std::move(value); }
-
-    /**
-     * <p>The invocation details of the API operation that an entity invoked for the
-     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-     */
     inline FindingAction& WithApiCallDetails(const ApiCallDetails& value) { SetApiCallDetails(value); return *this;}
-
-    /**
-     * <p>The invocation details of the API operation that an entity invoked for the
-     * affected resource, if the value for the actionType property is AWS_API_CALL.</p>
-     */
     inline FindingAction& WithApiCallDetails(ApiCallDetails&& value) { SetApiCallDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FindingActionType m_actionType;

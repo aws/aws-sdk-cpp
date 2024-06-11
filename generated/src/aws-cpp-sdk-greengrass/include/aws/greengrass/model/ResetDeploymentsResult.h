@@ -32,99 +32,42 @@ namespace Model
     AWS_GREENGRASS_API ResetDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The ARN of the deployment.
      */
     inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
-
-    /**
-     * The ARN of the deployment.
-     */
     inline void SetDeploymentArn(const Aws::String& value) { m_deploymentArn = value; }
-
-    /**
-     * The ARN of the deployment.
-     */
     inline void SetDeploymentArn(Aws::String&& value) { m_deploymentArn = std::move(value); }
-
-    /**
-     * The ARN of the deployment.
-     */
     inline void SetDeploymentArn(const char* value) { m_deploymentArn.assign(value); }
-
-    /**
-     * The ARN of the deployment.
-     */
     inline ResetDeploymentsResult& WithDeploymentArn(const Aws::String& value) { SetDeploymentArn(value); return *this;}
-
-    /**
-     * The ARN of the deployment.
-     */
     inline ResetDeploymentsResult& WithDeploymentArn(Aws::String&& value) { SetDeploymentArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the deployment.
-     */
     inline ResetDeploymentsResult& WithDeploymentArn(const char* value) { SetDeploymentArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the deployment.
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
-
-    /**
-     * The ID of the deployment.
-     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentId = value; }
-
-    /**
-     * The ID of the deployment.
-     */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentId = std::move(value); }
-
-    /**
-     * The ID of the deployment.
-     */
     inline void SetDeploymentId(const char* value) { m_deploymentId.assign(value); }
-
-    /**
-     * The ID of the deployment.
-     */
     inline ResetDeploymentsResult& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-
-    /**
-     * The ID of the deployment.
-     */
     inline ResetDeploymentsResult& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the deployment.
-     */
     inline ResetDeploymentsResult& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ResetDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ResetDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ResetDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deploymentArn;

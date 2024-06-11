@@ -36,26 +36,15 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies if the transaction output is spent or unspent.</p>
      */
     inline bool GetVoutSpent() const{ return m_voutSpent; }
-
-    /**
-     * <p>Specifies if the transaction output is spent or unspent.</p>
-     */
     inline bool VoutSpentHasBeenSet() const { return m_voutSpentHasBeenSet; }
-
-    /**
-     * <p>Specifies if the transaction output is spent or unspent.</p>
-     */
     inline void SetVoutSpent(bool value) { m_voutSpentHasBeenSet = true; m_voutSpent = value; }
-
-    /**
-     * <p>Specifies if the transaction output is spent or unspent.</p>
-     */
     inline VoutFilter& WithVoutSpent(bool value) { SetVoutSpent(value); return *this;}
-
+    ///@}
   private:
 
     bool m_voutSpent;

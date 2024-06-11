@@ -34,106 +34,43 @@ namespace Model
     AWS_GLUE_API GetPartitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of requested partitions.</p>
      */
     inline const Aws::Vector<Partition>& GetPartitions() const{ return m_partitions; }
-
-    /**
-     * <p>A list of requested partitions.</p>
-     */
     inline void SetPartitions(const Aws::Vector<Partition>& value) { m_partitions = value; }
-
-    /**
-     * <p>A list of requested partitions.</p>
-     */
     inline void SetPartitions(Aws::Vector<Partition>&& value) { m_partitions = std::move(value); }
-
-    /**
-     * <p>A list of requested partitions.</p>
-     */
     inline GetPartitionsResult& WithPartitions(const Aws::Vector<Partition>& value) { SetPartitions(value); return *this;}
-
-    /**
-     * <p>A list of requested partitions.</p>
-     */
     inline GetPartitionsResult& WithPartitions(Aws::Vector<Partition>&& value) { SetPartitions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of requested partitions.</p>
-     */
     inline GetPartitionsResult& AddPartitions(const Partition& value) { m_partitions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of requested partitions.</p>
-     */
     inline GetPartitionsResult& AddPartitions(Partition&& value) { m_partitions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A continuation token, if the returned list of partitions does not include the
      * last one.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A continuation token, if the returned list of partitions does not include the
-     * last one.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A continuation token, if the returned list of partitions does not include the
-     * last one.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A continuation token, if the returned list of partitions does not include the
-     * last one.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A continuation token, if the returned list of partitions does not include the
-     * last one.</p>
-     */
     inline GetPartitionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A continuation token, if the returned list of partitions does not include the
-     * last one.</p>
-     */
     inline GetPartitionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A continuation token, if the returned list of partitions does not include the
-     * last one.</p>
-     */
     inline GetPartitionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetPartitionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetPartitionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetPartitionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Partition> m_partitions;

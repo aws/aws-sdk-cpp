@@ -32,115 +32,51 @@ namespace Model
     AWS_IOT_API CreateProvisioningTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN that identifies the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
-
-    /**
-     * <p>The ARN that identifies the provisioning template.</p>
-     */
     inline void SetTemplateArn(const Aws::String& value) { m_templateArn = value; }
-
-    /**
-     * <p>The ARN that identifies the provisioning template.</p>
-     */
     inline void SetTemplateArn(Aws::String&& value) { m_templateArn = std::move(value); }
-
-    /**
-     * <p>The ARN that identifies the provisioning template.</p>
-     */
     inline void SetTemplateArn(const char* value) { m_templateArn.assign(value); }
-
-    /**
-     * <p>The ARN that identifies the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-
-    /**
-     * <p>The ARN that identifies the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN that identifies the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the provisioning template.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The name of the provisioning template.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateName = value; }
-
-    /**
-     * <p>The name of the provisioning template.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateName = std::move(value); }
-
-    /**
-     * <p>The name of the provisioning template.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateName.assign(value); }
-
-    /**
-     * <p>The name of the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The name of the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The default version of the provisioning template.</p>
      */
     inline int GetDefaultVersionId() const{ return m_defaultVersionId; }
-
-    /**
-     * <p>The default version of the provisioning template.</p>
-     */
     inline void SetDefaultVersionId(int value) { m_defaultVersionId = value; }
-
-    /**
-     * <p>The default version of the provisioning template.</p>
-     */
     inline CreateProvisioningTemplateResult& WithDefaultVersionId(int value) { SetDefaultVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateProvisioningTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateProvisioningTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateProvisioningTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateArn;

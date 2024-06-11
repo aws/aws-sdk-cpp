@@ -33,58 +33,28 @@ namespace Model
     AWS_COMPREHEND_API DescribeDocumentClassificationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that describes the properties associated with the document
      * classification job.</p>
      */
     inline const DocumentClassificationJobProperties& GetDocumentClassificationJobProperties() const{ return m_documentClassificationJobProperties; }
-
-    /**
-     * <p>An object that describes the properties associated with the document
-     * classification job.</p>
-     */
     inline void SetDocumentClassificationJobProperties(const DocumentClassificationJobProperties& value) { m_documentClassificationJobProperties = value; }
-
-    /**
-     * <p>An object that describes the properties associated with the document
-     * classification job.</p>
-     */
     inline void SetDocumentClassificationJobProperties(DocumentClassificationJobProperties&& value) { m_documentClassificationJobProperties = std::move(value); }
-
-    /**
-     * <p>An object that describes the properties associated with the document
-     * classification job.</p>
-     */
     inline DescribeDocumentClassificationJobResult& WithDocumentClassificationJobProperties(const DocumentClassificationJobProperties& value) { SetDocumentClassificationJobProperties(value); return *this;}
-
-    /**
-     * <p>An object that describes the properties associated with the document
-     * classification job.</p>
-     */
     inline DescribeDocumentClassificationJobResult& WithDocumentClassificationJobProperties(DocumentClassificationJobProperties&& value) { SetDocumentClassificationJobProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDocumentClassificationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDocumentClassificationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDocumentClassificationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DocumentClassificationJobProperties m_documentClassificationJobProperties;

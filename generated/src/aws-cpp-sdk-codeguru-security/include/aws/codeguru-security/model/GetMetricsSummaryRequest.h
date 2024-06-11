@@ -38,42 +38,18 @@ namespace Model
     AWS_CODEGURUSECURITY_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The date you want to retrieve summary metrics from, rounded to the nearest
      * day. The date must be within the past two years.</p>
      */
     inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
-
-    /**
-     * <p>The date you want to retrieve summary metrics from, rounded to the nearest
-     * day. The date must be within the past two years.</p>
-     */
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-
-    /**
-     * <p>The date you want to retrieve summary metrics from, rounded to the nearest
-     * day. The date must be within the past two years.</p>
-     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-
-    /**
-     * <p>The date you want to retrieve summary metrics from, rounded to the nearest
-     * day. The date must be within the past two years.</p>
-     */
     inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-
-    /**
-     * <p>The date you want to retrieve summary metrics from, rounded to the nearest
-     * day. The date must be within the past two years.</p>
-     */
     inline GetMetricsSummaryRequest& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-
-    /**
-     * <p>The date you want to retrieve summary metrics from, rounded to the nearest
-     * day. The date must be within the past two years.</p>
-     */
     inline GetMetricsSummaryRequest& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_date;

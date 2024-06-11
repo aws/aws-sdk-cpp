@@ -32,46 +32,19 @@ namespace Model
     AWS_WORKSPACESWEB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the user settings.</p>
      */
     inline const Aws::String& GetUserSettingsArn() const{ return m_userSettingsArn; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline bool UserSettingsArnHasBeenSet() const { return m_userSettingsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(const Aws::String& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = value; }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(Aws::String&& value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline void SetUserSettingsArn(const char* value) { m_userSettingsArnHasBeenSet = true; m_userSettingsArn.assign(value); }
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline GetUserSettingsRequest& WithUserSettingsArn(const Aws::String& value) { SetUserSettingsArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline GetUserSettingsRequest& WithUserSettingsArn(Aws::String&& value) { SetUserSettingsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the user settings.</p>
-     */
     inline GetUserSettingsRequest& WithUserSettingsArn(const char* value) { SetUserSettingsArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userSettingsArn;

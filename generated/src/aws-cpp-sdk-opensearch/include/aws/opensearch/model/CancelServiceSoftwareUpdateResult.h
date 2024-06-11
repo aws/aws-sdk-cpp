@@ -39,58 +39,28 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API CancelServiceSoftwareUpdateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Container for the state of your domain relative to the latest service
      * software.</p>
      */
     inline const ServiceSoftwareOptions& GetServiceSoftwareOptions() const{ return m_serviceSoftwareOptions; }
-
-    /**
-     * <p>Container for the state of your domain relative to the latest service
-     * software.</p>
-     */
     inline void SetServiceSoftwareOptions(const ServiceSoftwareOptions& value) { m_serviceSoftwareOptions = value; }
-
-    /**
-     * <p>Container for the state of your domain relative to the latest service
-     * software.</p>
-     */
     inline void SetServiceSoftwareOptions(ServiceSoftwareOptions&& value) { m_serviceSoftwareOptions = std::move(value); }
-
-    /**
-     * <p>Container for the state of your domain relative to the latest service
-     * software.</p>
-     */
     inline CancelServiceSoftwareUpdateResult& WithServiceSoftwareOptions(const ServiceSoftwareOptions& value) { SetServiceSoftwareOptions(value); return *this;}
-
-    /**
-     * <p>Container for the state of your domain relative to the latest service
-     * software.</p>
-     */
     inline CancelServiceSoftwareUpdateResult& WithServiceSoftwareOptions(ServiceSoftwareOptions&& value) { SetServiceSoftwareOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelServiceSoftwareUpdateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelServiceSoftwareUpdateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelServiceSoftwareUpdateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceSoftwareOptions m_serviceSoftwareOptions;

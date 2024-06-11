@@ -39,54 +39,20 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
      * information.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline ModelPackageSecurityConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline ModelPackageSecurityConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>The KMS Key ID (<code>KMSKeyId</code>) used for encryption of model package
-     * information.</p>
-     */
     inline ModelPackageSecurityConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_kmsKeyId;

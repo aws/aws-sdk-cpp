@@ -39,75 +39,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the KMS key that is associated with the
      * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
      */
     inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline void SetKeyArn(const Aws::String& value) { m_keyArnHasBeenSet = true; m_keyArn = value; }
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline void SetKeyArn(Aws::String&& value) { m_keyArnHasBeenSet = true; m_keyArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline void SetKeyArn(const char* value) { m_keyArnHasBeenSet = true; m_keyArn.assign(value); }
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline SuccessfulKeyRegistrationEntry& WithKeyArn(const Aws::String& value) { SetKeyArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline SuccessfulKeyRegistrationEntry& WithKeyArn(Aws::String&& value) { SetKeyArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the KMS key that is associated with the
-     * <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline SuccessfulKeyRegistrationEntry& WithKeyArn(const char* value) { SetKeyArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status of a <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The HTTP status of a <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The HTTP status of a <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The HTTP status of a <code>SuccessfulKeyRegistrationEntry</code> entry.</p>
-     */
     inline SuccessfulKeyRegistrationEntry& WithStatusCode(int value) { SetStatusCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_keyArn;

@@ -32,48 +32,19 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> An <code>IntegratedServiceConfig</code> object used to specify the
      * integrated service you want to update, and whether you want to update it to
      * enabled or disabled. </p>
      */
     inline const UpdateServiceIntegrationConfig& GetServiceIntegration() const{ return m_serviceIntegration; }
-
-    /**
-     * <p> An <code>IntegratedServiceConfig</code> object used to specify the
-     * integrated service you want to update, and whether you want to update it to
-     * enabled or disabled. </p>
-     */
     inline bool ServiceIntegrationHasBeenSet() const { return m_serviceIntegrationHasBeenSet; }
-
-    /**
-     * <p> An <code>IntegratedServiceConfig</code> object used to specify the
-     * integrated service you want to update, and whether you want to update it to
-     * enabled or disabled. </p>
-     */
     inline void SetServiceIntegration(const UpdateServiceIntegrationConfig& value) { m_serviceIntegrationHasBeenSet = true; m_serviceIntegration = value; }
-
-    /**
-     * <p> An <code>IntegratedServiceConfig</code> object used to specify the
-     * integrated service you want to update, and whether you want to update it to
-     * enabled or disabled. </p>
-     */
     inline void SetServiceIntegration(UpdateServiceIntegrationConfig&& value) { m_serviceIntegrationHasBeenSet = true; m_serviceIntegration = std::move(value); }
-
-    /**
-     * <p> An <code>IntegratedServiceConfig</code> object used to specify the
-     * integrated service you want to update, and whether you want to update it to
-     * enabled or disabled. </p>
-     */
     inline UpdateServiceIntegrationRequest& WithServiceIntegration(const UpdateServiceIntegrationConfig& value) { SetServiceIntegration(value); return *this;}
-
-    /**
-     * <p> An <code>IntegratedServiceConfig</code> object used to specify the
-     * integrated service you want to update, and whether you want to update it to
-     * enabled or disabled. </p>
-     */
     inline UpdateServiceIntegrationRequest& WithServiceIntegration(UpdateServiceIntegrationConfig&& value) { SetServiceIntegration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     UpdateServiceIntegrationConfig m_serviceIntegration;

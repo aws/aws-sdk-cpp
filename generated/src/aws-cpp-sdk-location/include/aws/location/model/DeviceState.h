@@ -43,257 +43,96 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The device identifier.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline DeviceState& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline DeviceState& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The device identifier.</p>
-     */
     inline DeviceState& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp at which the device's position was determined. Uses <a
      * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
     inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
     inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
     inline DeviceState& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-
-    /**
-     * <p>The timestamp at which the device's position was determined. Uses <a
-     * href="https://www.iso.org/iso-8601-date-and-time-format.html"> ISO 8601 </a>
-     * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p>
-     */
     inline DeviceState& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The last known device position.</p>
      */
     inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
-
-    /**
-     * <p>The last known device position.</p>
-     */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-
-    /**
-     * <p>The last known device position.</p>
-     */
     inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-
-    /**
-     * <p>The last known device position.</p>
-     */
     inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-
-    /**
-     * <p>The last known device position.</p>
-     */
     inline DeviceState& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>The last known device position.</p>
-     */
     inline DeviceState& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The last known device position.</p>
-     */
     inline DeviceState& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
-
-    
     inline bool AccuracyHasBeenSet() const { return m_accuracyHasBeenSet; }
-
-    
     inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracyHasBeenSet = true; m_accuracy = value; }
-
-    
     inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::move(value); }
-
-    
     inline DeviceState& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
-
-    
     inline DeviceState& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The device's Ipv4 address.</p>
      */
     inline const Aws::String& GetIpv4Address() const{ return m_ipv4Address; }
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline bool Ipv4AddressHasBeenSet() const { return m_ipv4AddressHasBeenSet; }
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline void SetIpv4Address(const Aws::String& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = value; }
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline void SetIpv4Address(Aws::String&& value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address = std::move(value); }
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline void SetIpv4Address(const char* value) { m_ipv4AddressHasBeenSet = true; m_ipv4Address.assign(value); }
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline DeviceState& WithIpv4Address(const Aws::String& value) { SetIpv4Address(value); return *this;}
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline DeviceState& WithIpv4Address(Aws::String&& value) { SetIpv4Address(std::move(value)); return *this;}
-
-    /**
-     * <p>The device's Ipv4 address.</p>
-     */
     inline DeviceState& WithIpv4Address(const char* value) { SetIpv4Address(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Wi-Fi access points the device is using.</p>
      */
     inline const Aws::Vector<WiFiAccessPoint>& GetWiFiAccessPoints() const{ return m_wiFiAccessPoints; }
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline bool WiFiAccessPointsHasBeenSet() const { return m_wiFiAccessPointsHasBeenSet; }
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline void SetWiFiAccessPoints(const Aws::Vector<WiFiAccessPoint>& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = value; }
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline void SetWiFiAccessPoints(Aws::Vector<WiFiAccessPoint>&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints = std::move(value); }
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline DeviceState& WithWiFiAccessPoints(const Aws::Vector<WiFiAccessPoint>& value) { SetWiFiAccessPoints(value); return *this;}
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline DeviceState& WithWiFiAccessPoints(Aws::Vector<WiFiAccessPoint>&& value) { SetWiFiAccessPoints(std::move(value)); return *this;}
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline DeviceState& AddWiFiAccessPoints(const WiFiAccessPoint& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.push_back(value); return *this; }
-
-    /**
-     * <p>The Wi-Fi access points the device is using.</p>
-     */
     inline DeviceState& AddWiFiAccessPoints(WiFiAccessPoint&& value) { m_wiFiAccessPointsHasBeenSet = true; m_wiFiAccessPoints.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The cellular network infrastructure that the device is connected to.</p>
      */
     inline const CellSignals& GetCellSignals() const{ return m_cellSignals; }
-
-    /**
-     * <p>The cellular network infrastructure that the device is connected to.</p>
-     */
     inline bool CellSignalsHasBeenSet() const { return m_cellSignalsHasBeenSet; }
-
-    /**
-     * <p>The cellular network infrastructure that the device is connected to.</p>
-     */
     inline void SetCellSignals(const CellSignals& value) { m_cellSignalsHasBeenSet = true; m_cellSignals = value; }
-
-    /**
-     * <p>The cellular network infrastructure that the device is connected to.</p>
-     */
     inline void SetCellSignals(CellSignals&& value) { m_cellSignalsHasBeenSet = true; m_cellSignals = std::move(value); }
-
-    /**
-     * <p>The cellular network infrastructure that the device is connected to.</p>
-     */
     inline DeviceState& WithCellSignals(const CellSignals& value) { SetCellSignals(value); return *this;}
-
-    /**
-     * <p>The cellular network infrastructure that the device is connected to.</p>
-     */
     inline DeviceState& WithCellSignals(CellSignals&& value) { SetCellSignals(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

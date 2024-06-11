@@ -41,77 +41,31 @@ namespace Model
     AWS_SES_API GetIdentityMailFromDomainAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A map of identities to custom MAIL FROM attributes.</p>
      */
     inline const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& GetMailFromDomainAttributes() const{ return m_mailFromDomainAttributes; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline void SetMailFromDomainAttributes(const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& value) { m_mailFromDomainAttributes = value; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline void SetMailFromDomainAttributes(Aws::Map<Aws::String, IdentityMailFromDomainAttributes>&& value) { m_mailFromDomainAttributes = std::move(value); }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& WithMailFromDomainAttributes(const Aws::Map<Aws::String, IdentityMailFromDomainAttributes>& value) { SetMailFromDomainAttributes(value); return *this;}
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& WithMailFromDomainAttributes(Aws::Map<Aws::String, IdentityMailFromDomainAttributes>&& value) { SetMailFromDomainAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const Aws::String& key, const IdentityMailFromDomainAttributes& value) { m_mailFromDomainAttributes.emplace(key, value); return *this; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(Aws::String&& key, const IdentityMailFromDomainAttributes& value) { m_mailFromDomainAttributes.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const Aws::String& key, IdentityMailFromDomainAttributes&& value) { m_mailFromDomainAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(Aws::String&& key, IdentityMailFromDomainAttributes&& value) { m_mailFromDomainAttributes.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const char* key, IdentityMailFromDomainAttributes&& value) { m_mailFromDomainAttributes.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A map of identities to custom MAIL FROM attributes.</p>
-     */
     inline GetIdentityMailFromDomainAttributesResult& AddMailFromDomainAttributes(const char* key, const IdentityMailFromDomainAttributes& value) { m_mailFromDomainAttributes.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline GetIdentityMailFromDomainAttributesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline GetIdentityMailFromDomainAttributesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Map<Aws::String, IdentityMailFromDomainAttributes> m_mailFromDomainAttributes;

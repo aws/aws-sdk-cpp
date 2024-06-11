@@ -40,58 +40,28 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Progress information for the configuration change that is requested in the
      * <code>DescribeDomainChangeProgress</code> request. </p>
      */
     inline const ChangeProgressStatusDetails& GetChangeProgressStatus() const{ return m_changeProgressStatus; }
-
-    /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
-     */
     inline void SetChangeProgressStatus(const ChangeProgressStatusDetails& value) { m_changeProgressStatus = value; }
-
-    /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
-     */
     inline void SetChangeProgressStatus(ChangeProgressStatusDetails&& value) { m_changeProgressStatus = std::move(value); }
-
-    /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
-     */
     inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(const ChangeProgressStatusDetails& value) { SetChangeProgressStatus(value); return *this;}
-
-    /**
-     * <p>Progress information for the configuration change that is requested in the
-     * <code>DescribeDomainChangeProgress</code> request. </p>
-     */
     inline DescribeDomainChangeProgressResult& WithChangeProgressStatus(ChangeProgressStatusDetails&& value) { SetChangeProgressStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDomainChangeProgressResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDomainChangeProgressResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDomainChangeProgressResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChangeProgressStatusDetails m_changeProgressStatus;

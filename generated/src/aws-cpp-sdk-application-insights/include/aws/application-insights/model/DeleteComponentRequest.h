@@ -34,87 +34,33 @@ namespace Model
     AWS_APPLICATIONINSIGHTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the resource group.</p>
      */
     inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline bool ResourceGroupNameHasBeenSet() const { return m_resourceGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = value; }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline void SetResourceGroupName(const char* value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName.assign(value); }
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline DeleteComponentRequest& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline DeleteComponentRequest& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the resource group.</p>
-     */
     inline DeleteComponentRequest& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the component.</p>
      */
     inline const Aws::String& GetComponentName() const{ return m_componentName; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline DeleteComponentRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline DeleteComponentRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the component.</p>
-     */
     inline DeleteComponentRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceGroupName;

@@ -38,98 +38,41 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filter based on a data source (an Glue table) associated with the run.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>Filter based on a data source (an Glue table) associated with the run.</p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>Filter based on a data source (an Glue table) associated with the run.</p>
-     */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>Filter based on a data source (an Glue table) associated with the run.</p>
-     */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>Filter based on a data source (an Glue table) associated with the run.</p>
-     */
     inline DataQualityRulesetEvaluationRunFilter& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>Filter based on a data source (an Glue table) associated with the run.</p>
-     */
     inline DataQualityRulesetEvaluationRunFilter& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter results by runs that started before this time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedBefore() const{ return m_startedBefore; }
-
-    /**
-     * <p>Filter results by runs that started before this time.</p>
-     */
     inline bool StartedBeforeHasBeenSet() const { return m_startedBeforeHasBeenSet; }
-
-    /**
-     * <p>Filter results by runs that started before this time.</p>
-     */
     inline void SetStartedBefore(const Aws::Utils::DateTime& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = value; }
-
-    /**
-     * <p>Filter results by runs that started before this time.</p>
-     */
     inline void SetStartedBefore(Aws::Utils::DateTime&& value) { m_startedBeforeHasBeenSet = true; m_startedBefore = std::move(value); }
-
-    /**
-     * <p>Filter results by runs that started before this time.</p>
-     */
     inline DataQualityRulesetEvaluationRunFilter& WithStartedBefore(const Aws::Utils::DateTime& value) { SetStartedBefore(value); return *this;}
-
-    /**
-     * <p>Filter results by runs that started before this time.</p>
-     */
     inline DataQualityRulesetEvaluationRunFilter& WithStartedBefore(Aws::Utils::DateTime&& value) { SetStartedBefore(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filter results by runs that started after this time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAfter() const{ return m_startedAfter; }
-
-    /**
-     * <p>Filter results by runs that started after this time.</p>
-     */
     inline bool StartedAfterHasBeenSet() const { return m_startedAfterHasBeenSet; }
-
-    /**
-     * <p>Filter results by runs that started after this time.</p>
-     */
     inline void SetStartedAfter(const Aws::Utils::DateTime& value) { m_startedAfterHasBeenSet = true; m_startedAfter = value; }
-
-    /**
-     * <p>Filter results by runs that started after this time.</p>
-     */
     inline void SetStartedAfter(Aws::Utils::DateTime&& value) { m_startedAfterHasBeenSet = true; m_startedAfter = std::move(value); }
-
-    /**
-     * <p>Filter results by runs that started after this time.</p>
-     */
     inline DataQualityRulesetEvaluationRunFilter& WithStartedAfter(const Aws::Utils::DateTime& value) { SetStartedAfter(value); return *this;}
-
-    /**
-     * <p>Filter results by runs that started after this time.</p>
-     */
     inline DataQualityRulesetEvaluationRunFilter& WithStartedAfter(Aws::Utils::DateTime&& value) { SetStartedAfter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataSource m_dataSource;

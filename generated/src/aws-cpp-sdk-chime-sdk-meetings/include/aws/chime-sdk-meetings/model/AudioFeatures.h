@@ -39,36 +39,17 @@ namespace Model
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Makes echo reduction available to clients who connect to the meeting.</p>
      */
     inline const MeetingFeatureStatus& GetEchoReduction() const{ return m_echoReduction; }
-
-    /**
-     * <p>Makes echo reduction available to clients who connect to the meeting.</p>
-     */
     inline bool EchoReductionHasBeenSet() const { return m_echoReductionHasBeenSet; }
-
-    /**
-     * <p>Makes echo reduction available to clients who connect to the meeting.</p>
-     */
     inline void SetEchoReduction(const MeetingFeatureStatus& value) { m_echoReductionHasBeenSet = true; m_echoReduction = value; }
-
-    /**
-     * <p>Makes echo reduction available to clients who connect to the meeting.</p>
-     */
     inline void SetEchoReduction(MeetingFeatureStatus&& value) { m_echoReductionHasBeenSet = true; m_echoReduction = std::move(value); }
-
-    /**
-     * <p>Makes echo reduction available to clients who connect to the meeting.</p>
-     */
     inline AudioFeatures& WithEchoReduction(const MeetingFeatureStatus& value) { SetEchoReduction(value); return *this;}
-
-    /**
-     * <p>Makes echo reduction available to clients who connect to the meeting.</p>
-     */
     inline AudioFeatures& WithEchoReduction(MeetingFeatureStatus&& value) { SetEchoReduction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MeetingFeatureStatus m_echoReduction;

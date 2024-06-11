@@ -39,165 +39,59 @@ namespace Model
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline ThrottlingException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline ThrottlingException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline ThrottlingException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code for the quota in <a
      * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
      * Quotas</a>.</p>
      */
     inline const Aws::String& GetQuotaCode() const{ return m_quotaCode; }
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline bool QuotaCodeHasBeenSet() const { return m_quotaCodeHasBeenSet; }
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline void SetQuotaCode(const Aws::String& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = value; }
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline void SetQuotaCode(Aws::String&& value) { m_quotaCodeHasBeenSet = true; m_quotaCode = std::move(value); }
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline void SetQuotaCode(const char* value) { m_quotaCodeHasBeenSet = true; m_quotaCode.assign(value); }
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline ThrottlingException& WithQuotaCode(const Aws::String& value) { SetQuotaCode(value); return *this;}
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline ThrottlingException& WithQuotaCode(Aws::String&& value) { SetQuotaCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The code for the quota in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline ThrottlingException& WithQuotaCode(const char* value) { SetQuotaCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The code for the service in <a
      * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
      * Quotas</a>.</p>
      */
     inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline ThrottlingException& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline ThrottlingException& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The code for the service in <a
-     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html">Service
-     * Quotas</a>.</p>
-     */
     inline ThrottlingException& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of time to wait before you retry the request.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
-
-    /**
-     * <p>The amount of time to wait before you retry the request.</p>
-     */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-
-    /**
-     * <p>The amount of time to wait before you retry the request.</p>
-     */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
-
-    /**
-     * <p>The amount of time to wait before you retry the request.</p>
-     */
     inline ThrottlingException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

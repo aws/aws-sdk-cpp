@@ -38,95 +38,34 @@ namespace Model
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The type of the associated resource for the kinesis video stream.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline MappedResourceConfigurationListItem& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline MappedResourceConfigurationListItem& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the associated resource for the kinesis video stream.</p>
-     */
     inline MappedResourceConfigurationListItem& WithType(const char* value) { SetType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
      * associated with the stream.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline MappedResourceConfigurationListItem& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline MappedResourceConfigurationListItem& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Kinesis Video Stream resource,
-     * associated with the stream.</p>
-     */
     inline MappedResourceConfigurationListItem& WithARN(const char* value) { SetARN(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

@@ -38,42 +38,18 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The action that you want to apply to the device certificate. The only
      * supported value is <code>DEACTIVATE</code>.</p>
      */
     inline const DeviceCertificateUpdateAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>The action that you want to apply to the device certificate. The only
-     * supported value is <code>DEACTIVATE</code>.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>The action that you want to apply to the device certificate. The only
-     * supported value is <code>DEACTIVATE</code>.</p>
-     */
     inline void SetAction(const DeviceCertificateUpdateAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>The action that you want to apply to the device certificate. The only
-     * supported value is <code>DEACTIVATE</code>.</p>
-     */
     inline void SetAction(DeviceCertificateUpdateAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>The action that you want to apply to the device certificate. The only
-     * supported value is <code>DEACTIVATE</code>.</p>
-     */
     inline UpdateDeviceCertificateParams& WithAction(const DeviceCertificateUpdateAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>The action that you want to apply to the device certificate. The only
-     * supported value is <code>DEACTIVATE</code>.</p>
-     */
     inline UpdateDeviceCertificateParams& WithAction(DeviceCertificateUpdateAction&& value) { SetAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DeviceCertificateUpdateAction m_action;

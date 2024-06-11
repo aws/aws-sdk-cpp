@@ -33,54 +33,20 @@ namespace Model
     AWS_SECURITYLAKE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specify the natively-supported Amazon Web Services service to add as a source
      * in Security Lake.</p>
      */
     inline const Aws::Vector<AwsLogSourceConfiguration>& GetSources() const{ return m_sources; }
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline void SetSources(const Aws::Vector<AwsLogSourceConfiguration>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline void SetSources(Aws::Vector<AwsLogSourceConfiguration>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline CreateAwsLogSourceRequest& WithSources(const Aws::Vector<AwsLogSourceConfiguration>& value) { SetSources(value); return *this;}
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline CreateAwsLogSourceRequest& WithSources(Aws::Vector<AwsLogSourceConfiguration>&& value) { SetSources(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline CreateAwsLogSourceRequest& AddSources(const AwsLogSourceConfiguration& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-
-    /**
-     * <p>Specify the natively-supported Amazon Web Services service to add as a source
-     * in Security Lake.</p>
-     */
     inline CreateAwsLogSourceRequest& AddSources(AwsLogSourceConfiguration&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<AwsLogSourceConfiguration> m_sources;

@@ -37,26 +37,15 @@ namespace Model
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum number of read request units for the specified replica table.</p>
      */
     inline long long GetMaxReadRequestUnits() const{ return m_maxReadRequestUnits; }
-
-    /**
-     * <p>Maximum number of read request units for the specified replica table.</p>
-     */
     inline bool MaxReadRequestUnitsHasBeenSet() const { return m_maxReadRequestUnitsHasBeenSet; }
-
-    /**
-     * <p>Maximum number of read request units for the specified replica table.</p>
-     */
     inline void SetMaxReadRequestUnits(long long value) { m_maxReadRequestUnitsHasBeenSet = true; m_maxReadRequestUnits = value; }
-
-    /**
-     * <p>Maximum number of read request units for the specified replica table.</p>
-     */
     inline OnDemandThroughputOverride& WithMaxReadRequestUnits(long long value) { SetMaxReadRequestUnits(value); return *this;}
-
+    ///@}
   private:
 
     long long m_maxReadRequestUnits;

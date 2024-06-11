@@ -39,43 +39,25 @@ namespace Model
     AWS_MEDIALIVE_API CreateInputSecurityGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const InputSecurityGroup& GetSecurityGroup() const{ return m_securityGroup; }
-
-    
     inline void SetSecurityGroup(const InputSecurityGroup& value) { m_securityGroup = value; }
-
-    
     inline void SetSecurityGroup(InputSecurityGroup&& value) { m_securityGroup = std::move(value); }
-
-    
     inline CreateInputSecurityGroupResult& WithSecurityGroup(const InputSecurityGroup& value) { SetSecurityGroup(value); return *this;}
-
-    
     inline CreateInputSecurityGroupResult& WithSecurityGroup(InputSecurityGroup&& value) { SetSecurityGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateInputSecurityGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateInputSecurityGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateInputSecurityGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     InputSecurityGroup m_securityGroup;

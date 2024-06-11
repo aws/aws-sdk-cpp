@@ -35,26 +35,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Transport stream bit rate.
      */
     inline int GetTransportStreamBitrate() const{ return m_transportStreamBitrate; }
-
-    /**
-     * Transport stream bit rate.
-     */
     inline bool TransportStreamBitrateHasBeenSet() const { return m_transportStreamBitrateHasBeenSet; }
-
-    /**
-     * Transport stream bit rate.
-     */
     inline void SetTransportStreamBitrate(int value) { m_transportStreamBitrateHasBeenSet = true; m_transportStreamBitrate = value; }
-
-    /**
-     * Transport stream bit rate.
-     */
     inline MultiplexSettingsSummary& WithTransportStreamBitrate(int value) { SetTransportStreamBitrate(value); return *this;}
-
+    ///@}
   private:
 
     int m_transportStreamBitrate;

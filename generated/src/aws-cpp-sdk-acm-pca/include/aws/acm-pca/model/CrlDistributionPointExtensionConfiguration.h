@@ -40,6 +40,7 @@ namespace Model
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Configures whether the CRL Distribution Point extension should be populated
      * with the default URL to the CRL. If set to <code>true</code>, then the CDP
@@ -51,43 +52,10 @@ namespace Model
      * 
      */
     inline bool GetOmitExtension() const{ return m_omitExtension; }
-
-    /**
-     * <p>Configures whether the CRL Distribution Point extension should be populated
-     * with the default URL to the CRL. If set to <code>true</code>, then the CDP
-     * extension will not be present in any certificates issued by that CA unless
-     * otherwise specified through CSR or API passthrough.</p>  <p>Only set this
-     * if you have another way to distribute the CRL Distribution Points ffor
-     * certificates issued by your CA, such as the Matter Distributed Compliance
-     * Ledger</p> <p>This configuration cannot be enabled with a custom CNAME set.</p>
-     * 
-     */
     inline bool OmitExtensionHasBeenSet() const { return m_omitExtensionHasBeenSet; }
-
-    /**
-     * <p>Configures whether the CRL Distribution Point extension should be populated
-     * with the default URL to the CRL. If set to <code>true</code>, then the CDP
-     * extension will not be present in any certificates issued by that CA unless
-     * otherwise specified through CSR or API passthrough.</p>  <p>Only set this
-     * if you have another way to distribute the CRL Distribution Points ffor
-     * certificates issued by your CA, such as the Matter Distributed Compliance
-     * Ledger</p> <p>This configuration cannot be enabled with a custom CNAME set.</p>
-     * 
-     */
     inline void SetOmitExtension(bool value) { m_omitExtensionHasBeenSet = true; m_omitExtension = value; }
-
-    /**
-     * <p>Configures whether the CRL Distribution Point extension should be populated
-     * with the default URL to the CRL. If set to <code>true</code>, then the CDP
-     * extension will not be present in any certificates issued by that CA unless
-     * otherwise specified through CSR or API passthrough.</p>  <p>Only set this
-     * if you have another way to distribute the CRL Distribution Points ffor
-     * certificates issued by your CA, such as the Matter Distributed Compliance
-     * Ledger</p> <p>This configuration cannot be enabled with a custom CNAME set.</p>
-     * 
-     */
     inline CrlDistributionPointExtensionConfiguration& WithOmitExtension(bool value) { SetOmitExtension(value); return *this;}
-
+    ///@}
   private:
 
     bool m_omitExtension;

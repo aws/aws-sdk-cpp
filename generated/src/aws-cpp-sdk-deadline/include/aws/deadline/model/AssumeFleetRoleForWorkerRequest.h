@@ -32,128 +32,47 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The farm ID for the fleet's farm.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID for the fleet's farm.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The fleet ID that contains the worker.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The fleet ID that contains the worker.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the worker assuming the fleet role.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the worker assuming the fleet role.</p>
-     */
     inline AssumeFleetRoleForWorkerRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

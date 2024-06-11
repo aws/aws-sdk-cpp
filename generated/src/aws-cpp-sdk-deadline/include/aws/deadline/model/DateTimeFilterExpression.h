@@ -39,108 +39,43 @@ namespace Model
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The date and time.</p>
      */
     inline const Aws::Utils::DateTime& GetDateTime() const{ return m_dateTime; }
-
-    /**
-     * <p>The date and time.</p>
-     */
     inline bool DateTimeHasBeenSet() const { return m_dateTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time.</p>
-     */
     inline void SetDateTime(const Aws::Utils::DateTime& value) { m_dateTimeHasBeenSet = true; m_dateTime = value; }
-
-    /**
-     * <p>The date and time.</p>
-     */
     inline void SetDateTime(Aws::Utils::DateTime&& value) { m_dateTimeHasBeenSet = true; m_dateTime = std::move(value); }
-
-    /**
-     * <p>The date and time.</p>
-     */
     inline DateTimeFilterExpression& WithDateTime(const Aws::Utils::DateTime& value) { SetDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time.</p>
-     */
     inline DateTimeFilterExpression& WithDateTime(Aws::Utils::DateTime&& value) { SetDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the date-time field to filter on.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline DateTimeFilterExpression& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline DateTimeFilterExpression& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the date-time field to filter on.</p>
-     */
     inline DateTimeFilterExpression& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of comparison to use to filter the results.</p>
      */
     inline const ComparisonOperator& GetOperator() const{ return m_operator; }
-
-    /**
-     * <p>The type of comparison to use to filter the results.</p>
-     */
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-
-    /**
-     * <p>The type of comparison to use to filter the results.</p>
-     */
     inline void SetOperator(const ComparisonOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-
-    /**
-     * <p>The type of comparison to use to filter the results.</p>
-     */
     inline void SetOperator(ComparisonOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-
-    /**
-     * <p>The type of comparison to use to filter the results.</p>
-     */
     inline DateTimeFilterExpression& WithOperator(const ComparisonOperator& value) { SetOperator(value); return *this;}
-
-    /**
-     * <p>The type of comparison to use to filter the results.</p>
-     */
     inline DateTimeFilterExpression& WithOperator(ComparisonOperator&& value) { SetOperator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_dateTime;

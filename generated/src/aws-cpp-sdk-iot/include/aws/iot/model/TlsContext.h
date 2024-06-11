@@ -38,54 +38,20 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The value of the <code>serverName</code> key in a TLS authorization
      * request.</p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline TlsContext& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline TlsContext& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the <code>serverName</code> key in a TLS authorization
-     * request.</p>
-     */
     inline TlsContext& WithServerName(const char* value) { SetServerName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serverName;

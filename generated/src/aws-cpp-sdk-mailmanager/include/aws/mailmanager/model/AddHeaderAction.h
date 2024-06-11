@@ -38,103 +38,35 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the header to add to an email. The header must be prefixed with
      * "X-". Headers are added regardless of whether the header name pre-existed in the
      * email.</p>
      */
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline AddHeaderAction& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline AddHeaderAction& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the header to add to an email. The header must be prefixed with
-     * "X-". Headers are added regardless of whether the header name pre-existed in the
-     * email.</p>
-     */
     inline AddHeaderAction& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of the header to add to the email.</p>
      */
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline bool HeaderValueHasBeenSet() const { return m_headerValueHasBeenSet; }
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline void SetHeaderValue(const Aws::String& value) { m_headerValueHasBeenSet = true; m_headerValue = value; }
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline void SetHeaderValue(Aws::String&& value) { m_headerValueHasBeenSet = true; m_headerValue = std::move(value); }
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline void SetHeaderValue(const char* value) { m_headerValueHasBeenSet = true; m_headerValue.assign(value); }
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline AddHeaderAction& WithHeaderValue(const Aws::String& value) { SetHeaderValue(value); return *this;}
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline AddHeaderAction& WithHeaderValue(Aws::String&& value) { SetHeaderValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the header to add to the email.</p>
-     */
     inline AddHeaderAction& WithHeaderValue(const char* value) { SetHeaderValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_headerName;

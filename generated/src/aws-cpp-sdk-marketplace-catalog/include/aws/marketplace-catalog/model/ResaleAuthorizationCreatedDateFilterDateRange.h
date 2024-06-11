@@ -38,103 +38,35 @@ namespace Model
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
      * date.</p>
      */
     inline const Aws::String& GetAfterValue() const{ return m_afterValue; }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline bool AfterValueHasBeenSet() const { return m_afterValueHasBeenSet; }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline void SetAfterValue(const Aws::String& value) { m_afterValueHasBeenSet = true; m_afterValue = value; }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline void SetAfterValue(Aws::String&& value) { m_afterValueHasBeenSet = true; m_afterValue = std::move(value); }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline void SetAfterValue(const char* value) { m_afterValueHasBeenSet = true; m_afterValue.assign(value); }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline ResaleAuthorizationCreatedDateFilterDateRange& WithAfterValue(const Aws::String& value) { SetAfterValue(value); return *this;}
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline ResaleAuthorizationCreatedDateFilterDateRange& WithAfterValue(Aws::String&& value) { SetAfterValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization after a
-     * date.</p>
-     */
     inline ResaleAuthorizationCreatedDateFilterDateRange& WithAfterValue(const char* value) { SetAfterValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
      * a date.</p>
      */
     inline const Aws::String& GetBeforeValue() const{ return m_beforeValue; }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline bool BeforeValueHasBeenSet() const { return m_beforeValueHasBeenSet; }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline void SetBeforeValue(const Aws::String& value) { m_beforeValueHasBeenSet = true; m_beforeValue = value; }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline void SetBeforeValue(Aws::String&& value) { m_beforeValueHasBeenSet = true; m_beforeValue = std::move(value); }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline void SetBeforeValue(const char* value) { m_beforeValueHasBeenSet = true; m_beforeValue.assign(value); }
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline ResaleAuthorizationCreatedDateFilterDateRange& WithBeforeValue(const Aws::String& value) { SetBeforeValue(value); return *this;}
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline ResaleAuthorizationCreatedDateFilterDateRange& WithBeforeValue(Aws::String&& value) { SetBeforeValue(std::move(value)); return *this;}
-
-    /**
-     * <p>Allows filtering on <code>CreatedDate</code> of a ResaleAuthorization before
-     * a date.</p>
-     */
     inline ResaleAuthorizationCreatedDateFilterDateRange& WithBeforeValue(const char* value) { SetBeforeValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_afterValue;

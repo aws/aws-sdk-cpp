@@ -36,87 +36,33 @@ namespace Model
     AWS_SUPPLYCHAIN_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The AWS Supply Chain instance identifier.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline GetBillOfMaterialsImportJobRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline GetBillOfMaterialsImportJobRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Supply Chain instance identifier.</p>
-     */
     inline GetBillOfMaterialsImportJobRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The BillOfMaterialsImportJob identifier.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline GetBillOfMaterialsImportJobRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline GetBillOfMaterialsImportJobRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The BillOfMaterialsImportJob identifier.</p>
-     */
     inline GetBillOfMaterialsImportJobRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_instanceId;

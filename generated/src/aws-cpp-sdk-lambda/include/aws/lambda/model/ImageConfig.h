@@ -41,147 +41,50 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the entry point to their application, which is typically the
      * location of the runtime executable.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntryPoint() const{ return m_entryPoint; }
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline void SetEntryPoint(const Aws::Vector<Aws::String>& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline void SetEntryPoint(Aws::Vector<Aws::String>&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline ImageConfig& WithEntryPoint(const Aws::Vector<Aws::String>& value) { SetEntryPoint(value); return *this;}
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline ImageConfig& WithEntryPoint(Aws::Vector<Aws::String>&& value) { SetEntryPoint(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline ImageConfig& AddEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline ImageConfig& AddEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies the entry point to their application, which is typically the
-     * location of the runtime executable.</p>
-     */
     inline ImageConfig& AddEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline ImageConfig& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline ImageConfig& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline ImageConfig& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline ImageConfig& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Specifies parameters that you want to pass in with ENTRYPOINT.</p>
-     */
     inline ImageConfig& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the working directory.</p>
      */
     inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline ImageConfig& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline ImageConfig& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the working directory.</p>
-     */
     inline ImageConfig& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_entryPoint;

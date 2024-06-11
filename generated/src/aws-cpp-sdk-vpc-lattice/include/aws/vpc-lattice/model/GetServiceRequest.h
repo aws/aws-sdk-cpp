@@ -32,46 +32,19 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
      */
     inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline GetServiceRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline GetServiceRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID or Amazon Resource Name (ARN) of the service.</p>
-     */
     inline GetServiceRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceIdentifier;

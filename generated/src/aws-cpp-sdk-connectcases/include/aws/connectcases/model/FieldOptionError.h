@@ -37,128 +37,47 @@ namespace Model
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Error code from creating or updating field option.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline FieldOptionError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline FieldOptionError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>Error code from creating or updating field option.</p>
-     */
     inline FieldOptionError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error message from creating or updating field option.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline FieldOptionError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline FieldOptionError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Error message from creating or updating field option.</p>
-     */
     inline FieldOptionError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field option value that caused the error.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline FieldOptionError& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline FieldOptionError& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The field option value that caused the error.</p>
-     */
     inline FieldOptionError& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorCode;

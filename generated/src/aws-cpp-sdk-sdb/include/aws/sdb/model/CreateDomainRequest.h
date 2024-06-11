@@ -36,62 +36,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * The name of the domain to create. The name can range between 3 and 255
      * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
      * and '.'.
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * The name of the domain to create. The name can range between 3 and 255
-     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
-     * and '.'.
-     */
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

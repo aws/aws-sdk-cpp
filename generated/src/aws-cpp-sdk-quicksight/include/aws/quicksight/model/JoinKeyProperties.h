@@ -36,34 +36,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A value that indicates that a row in a table is uniquely identified by the
      * columns in a join key. This is used by Amazon QuickSight to optimize query
      * performance.</p>
      */
     inline bool GetUniqueKey() const{ return m_uniqueKey; }
-
-    /**
-     * <p>A value that indicates that a row in a table is uniquely identified by the
-     * columns in a join key. This is used by Amazon QuickSight to optimize query
-     * performance.</p>
-     */
     inline bool UniqueKeyHasBeenSet() const { return m_uniqueKeyHasBeenSet; }
-
-    /**
-     * <p>A value that indicates that a row in a table is uniquely identified by the
-     * columns in a join key. This is used by Amazon QuickSight to optimize query
-     * performance.</p>
-     */
     inline void SetUniqueKey(bool value) { m_uniqueKeyHasBeenSet = true; m_uniqueKey = value; }
-
-    /**
-     * <p>A value that indicates that a row in a table is uniquely identified by the
-     * columns in a join key. This is used by Amazon QuickSight to optimize query
-     * performance.</p>
-     */
     inline JoinKeyProperties& WithUniqueKey(bool value) { SetUniqueKey(value); return *this;}
-
+    ///@}
   private:
 
     bool m_uniqueKey;

@@ -39,98 +39,41 @@ namespace Model
     AWS_IOT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The marker for the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline ListDomainConfigurationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline ListDomainConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker for the next set of results.</p>
-     */
     inline ListDomainConfigurationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The result page size.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
-
-    /**
-     * <p>The result page size.</p>
-     */
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
-
-    /**
-     * <p>The result page size.</p>
-     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
-
-    /**
-     * <p>The result page size.</p>
-     */
     inline ListDomainConfigurationsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of service delivered by the endpoint.</p>
      */
     inline const ServiceType& GetServiceType() const{ return m_serviceType; }
-
-    /**
-     * <p>The type of service delivered by the endpoint.</p>
-     */
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-
-    /**
-     * <p>The type of service delivered by the endpoint.</p>
-     */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-
-    /**
-     * <p>The type of service delivered by the endpoint.</p>
-     */
     inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-
-    /**
-     * <p>The type of service delivered by the endpoint.</p>
-     */
     inline ListDomainConfigurationsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-
-    /**
-     * <p>The type of service delivered by the endpoint.</p>
-     */
     inline ListDomainConfigurationsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_marker;

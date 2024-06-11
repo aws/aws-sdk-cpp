@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the thing group.</p>
      */
     inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline DescribeThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline DescribeThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing group.</p>
-     */
     inline DescribeThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingGroupName;

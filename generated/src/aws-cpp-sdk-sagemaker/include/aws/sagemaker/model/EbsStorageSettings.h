@@ -36,26 +36,15 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The size of an EBS storage volume for a space.</p>
      */
     inline int GetEbsVolumeSizeInGb() const{ return m_ebsVolumeSizeInGb; }
-
-    /**
-     * <p>The size of an EBS storage volume for a space.</p>
-     */
     inline bool EbsVolumeSizeInGbHasBeenSet() const { return m_ebsVolumeSizeInGbHasBeenSet; }
-
-    /**
-     * <p>The size of an EBS storage volume for a space.</p>
-     */
     inline void SetEbsVolumeSizeInGb(int value) { m_ebsVolumeSizeInGbHasBeenSet = true; m_ebsVolumeSizeInGb = value; }
-
-    /**
-     * <p>The size of an EBS storage volume for a space.</p>
-     */
     inline EbsStorageSettings& WithEbsVolumeSizeInGb(int value) { SetEbsVolumeSizeInGb(value); return *this;}
-
+    ///@}
   private:
 
     int m_ebsVolumeSizeInGb;

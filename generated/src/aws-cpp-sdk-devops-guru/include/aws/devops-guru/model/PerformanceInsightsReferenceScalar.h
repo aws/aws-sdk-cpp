@@ -37,26 +37,15 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The reference value.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The reference value.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The reference value.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The reference value.</p>
-     */
     inline PerformanceInsightsReferenceScalar& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_value;

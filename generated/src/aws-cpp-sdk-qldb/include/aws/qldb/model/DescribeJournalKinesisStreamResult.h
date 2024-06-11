@@ -33,58 +33,28 @@ namespace Model
     AWS_QLDB_API DescribeJournalKinesisStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the QLDB journal stream returned by a
      * <code>DescribeJournalS3Export</code> request.</p>
      */
     inline const JournalKinesisStreamDescription& GetStream() const{ return m_stream; }
-
-    /**
-     * <p>Information about the QLDB journal stream returned by a
-     * <code>DescribeJournalS3Export</code> request.</p>
-     */
     inline void SetStream(const JournalKinesisStreamDescription& value) { m_stream = value; }
-
-    /**
-     * <p>Information about the QLDB journal stream returned by a
-     * <code>DescribeJournalS3Export</code> request.</p>
-     */
     inline void SetStream(JournalKinesisStreamDescription&& value) { m_stream = std::move(value); }
-
-    /**
-     * <p>Information about the QLDB journal stream returned by a
-     * <code>DescribeJournalS3Export</code> request.</p>
-     */
     inline DescribeJournalKinesisStreamResult& WithStream(const JournalKinesisStreamDescription& value) { SetStream(value); return *this;}
-
-    /**
-     * <p>Information about the QLDB journal stream returned by a
-     * <code>DescribeJournalS3Export</code> request.</p>
-     */
     inline DescribeJournalKinesisStreamResult& WithStream(JournalKinesisStreamDescription&& value) { SetStream(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeJournalKinesisStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeJournalKinesisStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeJournalKinesisStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JournalKinesisStreamDescription m_stream;

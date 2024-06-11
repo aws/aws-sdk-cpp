@@ -32,77 +32,31 @@ namespace Model
     AWS_CODECOMMIT_API DeletePullRequestApprovalRuleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
      * deleted in an earlier API call, the response is 200 OK without content.</p>
      * 
      */
     inline const Aws::String& GetApprovalRuleId() const{ return m_approvalRuleId; }
-
-    /**
-     * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
-     * deleted in an earlier API call, the response is 200 OK without content.</p>
-     * 
-     */
     inline void SetApprovalRuleId(const Aws::String& value) { m_approvalRuleId = value; }
-
-    /**
-     * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
-     * deleted in an earlier API call, the response is 200 OK without content.</p>
-     * 
-     */
     inline void SetApprovalRuleId(Aws::String&& value) { m_approvalRuleId = std::move(value); }
-
-    /**
-     * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
-     * deleted in an earlier API call, the response is 200 OK without content.</p>
-     * 
-     */
     inline void SetApprovalRuleId(const char* value) { m_approvalRuleId.assign(value); }
-
-    /**
-     * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
-     * deleted in an earlier API call, the response is 200 OK without content.</p>
-     * 
-     */
     inline DeletePullRequestApprovalRuleResult& WithApprovalRuleId(const Aws::String& value) { SetApprovalRuleId(value); return *this;}
-
-    /**
-     * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
-     * deleted in an earlier API call, the response is 200 OK without content.</p>
-     * 
-     */
     inline DeletePullRequestApprovalRuleResult& WithApprovalRuleId(Aws::String&& value) { SetApprovalRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the deleted approval rule. </p>  <p>If the approval rule was
-     * deleted in an earlier API call, the response is 200 OK without content.</p>
-     * 
-     */
     inline DeletePullRequestApprovalRuleResult& WithApprovalRuleId(const char* value) { SetApprovalRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeletePullRequestApprovalRuleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeletePullRequestApprovalRuleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeletePullRequestApprovalRuleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_approvalRuleId;

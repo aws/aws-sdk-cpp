@@ -39,55 +39,27 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes the restore behavior of a restarting application.</p>
      */
     inline const ApplicationRestoreConfiguration& GetApplicationRestoreConfigurationDescription() const{ return m_applicationRestoreConfigurationDescription; }
-
-    /**
-     * <p>Describes the restore behavior of a restarting application.</p>
-     */
     inline bool ApplicationRestoreConfigurationDescriptionHasBeenSet() const { return m_applicationRestoreConfigurationDescriptionHasBeenSet; }
-
-    /**
-     * <p>Describes the restore behavior of a restarting application.</p>
-     */
     inline void SetApplicationRestoreConfigurationDescription(const ApplicationRestoreConfiguration& value) { m_applicationRestoreConfigurationDescriptionHasBeenSet = true; m_applicationRestoreConfigurationDescription = value; }
-
-    /**
-     * <p>Describes the restore behavior of a restarting application.</p>
-     */
     inline void SetApplicationRestoreConfigurationDescription(ApplicationRestoreConfiguration&& value) { m_applicationRestoreConfigurationDescriptionHasBeenSet = true; m_applicationRestoreConfigurationDescription = std::move(value); }
-
-    /**
-     * <p>Describes the restore behavior of a restarting application.</p>
-     */
     inline RunConfigurationDescription& WithApplicationRestoreConfigurationDescription(const ApplicationRestoreConfiguration& value) { SetApplicationRestoreConfigurationDescription(value); return *this;}
-
-    /**
-     * <p>Describes the restore behavior of a restarting application.</p>
-     */
     inline RunConfigurationDescription& WithApplicationRestoreConfigurationDescription(ApplicationRestoreConfiguration&& value) { SetApplicationRestoreConfigurationDescription(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const FlinkRunConfiguration& GetFlinkRunConfigurationDescription() const{ return m_flinkRunConfigurationDescription; }
-
-    
     inline bool FlinkRunConfigurationDescriptionHasBeenSet() const { return m_flinkRunConfigurationDescriptionHasBeenSet; }
-
-    
     inline void SetFlinkRunConfigurationDescription(const FlinkRunConfiguration& value) { m_flinkRunConfigurationDescriptionHasBeenSet = true; m_flinkRunConfigurationDescription = value; }
-
-    
     inline void SetFlinkRunConfigurationDescription(FlinkRunConfiguration&& value) { m_flinkRunConfigurationDescriptionHasBeenSet = true; m_flinkRunConfigurationDescription = std::move(value); }
-
-    
     inline RunConfigurationDescription& WithFlinkRunConfigurationDescription(const FlinkRunConfiguration& value) { SetFlinkRunConfigurationDescription(value); return *this;}
-
-    
     inline RunConfigurationDescription& WithFlinkRunConfigurationDescription(FlinkRunConfiguration&& value) { SetFlinkRunConfigurationDescription(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ApplicationRestoreConfiguration m_applicationRestoreConfigurationDescription;

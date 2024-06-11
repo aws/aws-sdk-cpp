@@ -41,123 +41,52 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Color properties that apply to chart data colors.</p>
      */
     inline const DataColorPalette& GetDataColorPalette() const{ return m_dataColorPalette; }
-
-    /**
-     * <p>Color properties that apply to chart data colors.</p>
-     */
     inline bool DataColorPaletteHasBeenSet() const { return m_dataColorPaletteHasBeenSet; }
-
-    /**
-     * <p>Color properties that apply to chart data colors.</p>
-     */
     inline void SetDataColorPalette(const DataColorPalette& value) { m_dataColorPaletteHasBeenSet = true; m_dataColorPalette = value; }
-
-    /**
-     * <p>Color properties that apply to chart data colors.</p>
-     */
     inline void SetDataColorPalette(DataColorPalette&& value) { m_dataColorPaletteHasBeenSet = true; m_dataColorPalette = std::move(value); }
-
-    /**
-     * <p>Color properties that apply to chart data colors.</p>
-     */
     inline ThemeConfiguration& WithDataColorPalette(const DataColorPalette& value) { SetDataColorPalette(value); return *this;}
-
-    /**
-     * <p>Color properties that apply to chart data colors.</p>
-     */
     inline ThemeConfiguration& WithDataColorPalette(DataColorPalette&& value) { SetDataColorPalette(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Color properties that apply to the UI and to charts, excluding the colors
      * that apply to data. </p>
      */
     inline const UIColorPalette& GetUIColorPalette() const{ return m_uIColorPalette; }
-
-    /**
-     * <p>Color properties that apply to the UI and to charts, excluding the colors
-     * that apply to data. </p>
-     */
     inline bool UIColorPaletteHasBeenSet() const { return m_uIColorPaletteHasBeenSet; }
-
-    /**
-     * <p>Color properties that apply to the UI and to charts, excluding the colors
-     * that apply to data. </p>
-     */
     inline void SetUIColorPalette(const UIColorPalette& value) { m_uIColorPaletteHasBeenSet = true; m_uIColorPalette = value; }
-
-    /**
-     * <p>Color properties that apply to the UI and to charts, excluding the colors
-     * that apply to data. </p>
-     */
     inline void SetUIColorPalette(UIColorPalette&& value) { m_uIColorPaletteHasBeenSet = true; m_uIColorPalette = std::move(value); }
-
-    /**
-     * <p>Color properties that apply to the UI and to charts, excluding the colors
-     * that apply to data. </p>
-     */
     inline ThemeConfiguration& WithUIColorPalette(const UIColorPalette& value) { SetUIColorPalette(value); return *this;}
-
-    /**
-     * <p>Color properties that apply to the UI and to charts, excluding the colors
-     * that apply to data. </p>
-     */
     inline ThemeConfiguration& WithUIColorPalette(UIColorPalette&& value) { SetUIColorPalette(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Display options related to sheets.</p>
      */
     inline const SheetStyle& GetSheet() const{ return m_sheet; }
-
-    /**
-     * <p>Display options related to sheets.</p>
-     */
     inline bool SheetHasBeenSet() const { return m_sheetHasBeenSet; }
-
-    /**
-     * <p>Display options related to sheets.</p>
-     */
     inline void SetSheet(const SheetStyle& value) { m_sheetHasBeenSet = true; m_sheet = value; }
-
-    /**
-     * <p>Display options related to sheets.</p>
-     */
     inline void SetSheet(SheetStyle&& value) { m_sheetHasBeenSet = true; m_sheet = std::move(value); }
-
-    /**
-     * <p>Display options related to sheets.</p>
-     */
     inline ThemeConfiguration& WithSheet(const SheetStyle& value) { SetSheet(value); return *this;}
-
-    /**
-     * <p>Display options related to sheets.</p>
-     */
     inline ThemeConfiguration& WithSheet(SheetStyle&& value) { SetSheet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Typography& GetTypography() const{ return m_typography; }
-
-    
     inline bool TypographyHasBeenSet() const { return m_typographyHasBeenSet; }
-
-    
     inline void SetTypography(const Typography& value) { m_typographyHasBeenSet = true; m_typography = value; }
-
-    
     inline void SetTypography(Typography&& value) { m_typographyHasBeenSet = true; m_typography = std::move(value); }
-
-    
     inline ThemeConfiguration& WithTypography(const Typography& value) { SetTypography(value); return *this;}
-
-    
     inline ThemeConfiguration& WithTypography(Typography&& value) { SetTypography(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataColorPalette m_dataColorPalette;

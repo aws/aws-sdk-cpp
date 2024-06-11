@@ -38,54 +38,20 @@ namespace Model
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the dataset whose latest contents are used as input to the
      * notebook or application.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline DatasetContentVersionValue& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline DatasetContentVersionValue& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the dataset whose latest contents are used as input to the
-     * notebook or application.</p>
-     */
     inline DatasetContentVersionValue& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datasetName;

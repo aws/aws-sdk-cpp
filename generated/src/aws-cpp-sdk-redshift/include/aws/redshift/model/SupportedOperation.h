@@ -40,46 +40,19 @@ namespace Model
     AWS_REDSHIFT_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>A list of the supported operations.</p>
      */
     inline const Aws::String& GetOperationName() const{ return m_operationName; }
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline bool OperationNameHasBeenSet() const { return m_operationNameHasBeenSet; }
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline void SetOperationName(const Aws::String& value) { m_operationNameHasBeenSet = true; m_operationName = value; }
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline void SetOperationName(Aws::String&& value) { m_operationNameHasBeenSet = true; m_operationName = std::move(value); }
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline void SetOperationName(const char* value) { m_operationNameHasBeenSet = true; m_operationName.assign(value); }
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline SupportedOperation& WithOperationName(const Aws::String& value) { SetOperationName(value); return *this;}
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline SupportedOperation& WithOperationName(Aws::String&& value) { SetOperationName(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the supported operations.</p>
-     */
     inline SupportedOperation& WithOperationName(const char* value) { SetOperationName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationName;

@@ -38,138 +38,61 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify the average bitrate in bits per second.
      */
     inline int GetBitrate() const{ return m_bitrate; }
-
-    /**
-     * Specify the average bitrate in bits per second.
-     */
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
-
-    /**
-     * Specify the average bitrate in bits per second.
-     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
-
-    /**
-     * Specify the average bitrate in bits per second.
-     */
     inline Mp3Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify the number of channels in this output audio track. Choosing Mono gives
      * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
      * 1 and 2.
      */
     inline int GetChannels() const{ return m_channels; }
-
-    /**
-     * Specify the number of channels in this output audio track. Choosing Mono gives
-     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
-     * 1 and 2.
-     */
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-
-    /**
-     * Specify the number of channels in this output audio track. Choosing Mono gives
-     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
-     * 1 and 2.
-     */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
-
-    /**
-     * Specify the number of channels in this output audio track. Choosing Mono gives
-     * you 1 output channel; choosing Stereo gives you 2. In the API, valid values are
-     * 1 and 2.
-     */
     inline Mp3Settings& WithChannels(int value) { SetChannels(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Specify whether the service encodes this MP3 audio output with a constant
      * bitrate (CBR) or a variable bitrate (VBR).
      */
     inline const Mp3RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
-
-    /**
-     * Specify whether the service encodes this MP3 audio output with a constant
-     * bitrate (CBR) or a variable bitrate (VBR).
-     */
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
-
-    /**
-     * Specify whether the service encodes this MP3 audio output with a constant
-     * bitrate (CBR) or a variable bitrate (VBR).
-     */
     inline void SetRateControlMode(const Mp3RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
-
-    /**
-     * Specify whether the service encodes this MP3 audio output with a constant
-     * bitrate (CBR) or a variable bitrate (VBR).
-     */
     inline void SetRateControlMode(Mp3RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
-
-    /**
-     * Specify whether the service encodes this MP3 audio output with a constant
-     * bitrate (CBR) or a variable bitrate (VBR).
-     */
     inline Mp3Settings& WithRateControlMode(const Mp3RateControlMode& value) { SetRateControlMode(value); return *this;}
-
-    /**
-     * Specify whether the service encodes this MP3 audio output with a constant
-     * bitrate (CBR) or a variable bitrate (VBR).
-     */
     inline Mp3Settings& WithRateControlMode(Mp3RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
-
-    /**
-     * Sample rate in Hz.
-     */
     inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
-
-    /**
-     * Sample rate in Hz.
-     */
     inline void SetSampleRate(int value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
-
-    /**
-     * Sample rate in Hz.
-     */
     inline Mp3Settings& WithSampleRate(int value) { SetSampleRate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Required when you set Bitrate control mode to VBR. Specify the audio quality of
      * this MP3 output from 0 (highest quality) to 9 (lowest quality).
      */
     inline int GetVbrQuality() const{ return m_vbrQuality; }
-
-    /**
-     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
-     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
-     */
     inline bool VbrQualityHasBeenSet() const { return m_vbrQualityHasBeenSet; }
-
-    /**
-     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
-     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
-     */
     inline void SetVbrQuality(int value) { m_vbrQualityHasBeenSet = true; m_vbrQuality = value; }
-
-    /**
-     * Required when you set Bitrate control mode to VBR. Specify the audio quality of
-     * this MP3 output from 0 (highest quality) to 9 (lowest quality).
-     */
     inline Mp3Settings& WithVbrQuality(int value) { SetVbrQuality(value); return *this;}
-
+    ///@}
   private:
 
     int m_bitrate;

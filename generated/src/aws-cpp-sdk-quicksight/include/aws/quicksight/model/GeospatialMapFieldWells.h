@@ -39,36 +39,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The aggregated field well for a geospatial map.</p>
      */
     inline const GeospatialMapAggregatedFieldWells& GetGeospatialMapAggregatedFieldWells() const{ return m_geospatialMapAggregatedFieldWells; }
-
-    /**
-     * <p>The aggregated field well for a geospatial map.</p>
-     */
     inline bool GeospatialMapAggregatedFieldWellsHasBeenSet() const { return m_geospatialMapAggregatedFieldWellsHasBeenSet; }
-
-    /**
-     * <p>The aggregated field well for a geospatial map.</p>
-     */
     inline void SetGeospatialMapAggregatedFieldWells(const GeospatialMapAggregatedFieldWells& value) { m_geospatialMapAggregatedFieldWellsHasBeenSet = true; m_geospatialMapAggregatedFieldWells = value; }
-
-    /**
-     * <p>The aggregated field well for a geospatial map.</p>
-     */
     inline void SetGeospatialMapAggregatedFieldWells(GeospatialMapAggregatedFieldWells&& value) { m_geospatialMapAggregatedFieldWellsHasBeenSet = true; m_geospatialMapAggregatedFieldWells = std::move(value); }
-
-    /**
-     * <p>The aggregated field well for a geospatial map.</p>
-     */
     inline GeospatialMapFieldWells& WithGeospatialMapAggregatedFieldWells(const GeospatialMapAggregatedFieldWells& value) { SetGeospatialMapAggregatedFieldWells(value); return *this;}
-
-    /**
-     * <p>The aggregated field well for a geospatial map.</p>
-     */
     inline GeospatialMapFieldWells& WithGeospatialMapAggregatedFieldWells(GeospatialMapAggregatedFieldWells&& value) { SetGeospatialMapAggregatedFieldWells(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GeospatialMapAggregatedFieldWells m_geospatialMapAggregatedFieldWells;

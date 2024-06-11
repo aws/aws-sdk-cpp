@@ -38,97 +38,35 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of log types that are being enabled.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogTypesToEnable() const{ return m_logTypesToEnable; }
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline bool LogTypesToEnableHasBeenSet() const { return m_logTypesToEnableHasBeenSet; }
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline void SetLogTypesToEnable(const Aws::Vector<Aws::String>& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable = value; }
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline void SetLogTypesToEnable(Aws::Vector<Aws::String>&& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable = std::move(value); }
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& WithLogTypesToEnable(const Aws::Vector<Aws::String>& value) { SetLogTypesToEnable(value); return *this;}
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& WithLogTypesToEnable(Aws::Vector<Aws::String>&& value) { SetLogTypesToEnable(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& AddLogTypesToEnable(const Aws::String& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.push_back(value); return *this; }
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& AddLogTypesToEnable(Aws::String&& value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of log types that are being enabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& AddLogTypesToEnable(const char* value) { m_logTypesToEnableHasBeenSet = true; m_logTypesToEnable.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of log types that are being disabled.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogTypesToDisable() const{ return m_logTypesToDisable; }
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline bool LogTypesToDisableHasBeenSet() const { return m_logTypesToDisableHasBeenSet; }
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline void SetLogTypesToDisable(const Aws::Vector<Aws::String>& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable = value; }
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline void SetLogTypesToDisable(Aws::Vector<Aws::String>&& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable = std::move(value); }
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& WithLogTypesToDisable(const Aws::Vector<Aws::String>& value) { SetLogTypesToDisable(value); return *this;}
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& WithLogTypesToDisable(Aws::Vector<Aws::String>&& value) { SetLogTypesToDisable(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& AddLogTypesToDisable(const Aws::String& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.push_back(value); return *this; }
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& AddLogTypesToDisable(Aws::String&& value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of log types that are being disabled.</p>
-     */
     inline AwsRdsPendingCloudWatchLogsExports& AddLogTypesToDisable(const char* value) { m_logTypesToDisableHasBeenSet = true; m_logTypesToDisable.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_logTypesToEnable;

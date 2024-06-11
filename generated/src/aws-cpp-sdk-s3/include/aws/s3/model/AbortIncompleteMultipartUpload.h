@@ -40,30 +40,16 @@ namespace Model
     AWS_S3_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>Specifies the number of days after which Amazon S3 aborts an incomplete
      * multipart upload.</p>
      */
     inline int GetDaysAfterInitiation() const{ return m_daysAfterInitiation; }
-
-    /**
-     * <p>Specifies the number of days after which Amazon S3 aborts an incomplete
-     * multipart upload.</p>
-     */
     inline bool DaysAfterInitiationHasBeenSet() const { return m_daysAfterInitiationHasBeenSet; }
-
-    /**
-     * <p>Specifies the number of days after which Amazon S3 aborts an incomplete
-     * multipart upload.</p>
-     */
     inline void SetDaysAfterInitiation(int value) { m_daysAfterInitiationHasBeenSet = true; m_daysAfterInitiation = value; }
-
-    /**
-     * <p>Specifies the number of days after which Amazon S3 aborts an incomplete
-     * multipart upload.</p>
-     */
     inline AbortIncompleteMultipartUpload& WithDaysAfterInitiation(int value) { SetDaysAfterInitiation(value); return *this;}
-
+    ///@}
   private:
 
     int m_daysAfterInitiation;

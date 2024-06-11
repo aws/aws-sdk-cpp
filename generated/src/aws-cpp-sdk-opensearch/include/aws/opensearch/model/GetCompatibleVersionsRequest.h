@@ -42,54 +42,20 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of an existing domain. Provide this parameter to limit the results
      * to a single domain.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline GetCompatibleVersionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline GetCompatibleVersionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of an existing domain. Provide this parameter to limit the results
-     * to a single domain.</p>
-     */
     inline GetCompatibleVersionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

@@ -33,53 +33,27 @@ namespace Model
     AWS_LAMBDA_API UpdateCodeSigningConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The code signing configuration</p>
      */
     inline const CodeSigningConfig& GetCodeSigningConfig() const{ return m_codeSigningConfig; }
-
-    /**
-     * <p>The code signing configuration</p>
-     */
     inline void SetCodeSigningConfig(const CodeSigningConfig& value) { m_codeSigningConfig = value; }
-
-    /**
-     * <p>The code signing configuration</p>
-     */
     inline void SetCodeSigningConfig(CodeSigningConfig&& value) { m_codeSigningConfig = std::move(value); }
-
-    /**
-     * <p>The code signing configuration</p>
-     */
     inline UpdateCodeSigningConfigResult& WithCodeSigningConfig(const CodeSigningConfig& value) { SetCodeSigningConfig(value); return *this;}
-
-    /**
-     * <p>The code signing configuration</p>
-     */
     inline UpdateCodeSigningConfigResult& WithCodeSigningConfig(CodeSigningConfig&& value) { SetCodeSigningConfig(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateCodeSigningConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateCodeSigningConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateCodeSigningConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CodeSigningConfig m_codeSigningConfig;

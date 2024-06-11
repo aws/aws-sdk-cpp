@@ -34,62 +34,21 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
      * resource-based policy from. The following is the format of a resource ARN:
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline DeleteResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline DeleteResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the CloudTrail channel you're deleting the
-     * resource-based policy from. The following is the format of a resource ARN:
-     * <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/MyChannel</code>. </p>
-     */
     inline DeleteResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

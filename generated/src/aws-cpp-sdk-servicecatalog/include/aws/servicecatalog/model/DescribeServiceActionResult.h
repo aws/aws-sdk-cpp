@@ -33,53 +33,27 @@ namespace Model
     AWS_SERVICECATALOG_API DescribeServiceActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Detailed information about the self-service action.</p>
      */
     inline const ServiceActionDetail& GetServiceActionDetail() const{ return m_serviceActionDetail; }
-
-    /**
-     * <p>Detailed information about the self-service action.</p>
-     */
     inline void SetServiceActionDetail(const ServiceActionDetail& value) { m_serviceActionDetail = value; }
-
-    /**
-     * <p>Detailed information about the self-service action.</p>
-     */
     inline void SetServiceActionDetail(ServiceActionDetail&& value) { m_serviceActionDetail = std::move(value); }
-
-    /**
-     * <p>Detailed information about the self-service action.</p>
-     */
     inline DescribeServiceActionResult& WithServiceActionDetail(const ServiceActionDetail& value) { SetServiceActionDetail(value); return *this;}
-
-    /**
-     * <p>Detailed information about the self-service action.</p>
-     */
     inline DescribeServiceActionResult& WithServiceActionDetail(ServiceActionDetail&& value) { SetServiceActionDetail(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeServiceActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeServiceActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeServiceActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ServiceActionDetail m_serviceActionDetail;

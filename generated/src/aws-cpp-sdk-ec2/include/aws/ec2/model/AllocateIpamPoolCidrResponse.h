@@ -33,47 +33,25 @@ namespace Model
     AWS_EC2_API AllocateIpamPoolCidrResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Information about the allocation created.</p>
      */
     inline const IpamPoolAllocation& GetIpamPoolAllocation() const{ return m_ipamPoolAllocation; }
-
-    /**
-     * <p>Information about the allocation created.</p>
-     */
     inline void SetIpamPoolAllocation(const IpamPoolAllocation& value) { m_ipamPoolAllocation = value; }
-
-    /**
-     * <p>Information about the allocation created.</p>
-     */
     inline void SetIpamPoolAllocation(IpamPoolAllocation&& value) { m_ipamPoolAllocation = std::move(value); }
-
-    /**
-     * <p>Information about the allocation created.</p>
-     */
     inline AllocateIpamPoolCidrResponse& WithIpamPoolAllocation(const IpamPoolAllocation& value) { SetIpamPoolAllocation(value); return *this;}
-
-    /**
-     * <p>Information about the allocation created.</p>
-     */
     inline AllocateIpamPoolCidrResponse& WithIpamPoolAllocation(IpamPoolAllocation&& value) { SetIpamPoolAllocation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline AllocateIpamPoolCidrResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline AllocateIpamPoolCidrResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IpamPoolAllocation m_ipamPoolAllocation;

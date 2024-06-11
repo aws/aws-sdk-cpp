@@ -41,46 +41,19 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The body of the API response.</p>
      */
     inline const Aws::String& GetBody() const{ return m_body; }
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline ContentBody& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline ContentBody& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-
-    /**
-     * <p>The body of the API response.</p>
-     */
     inline ContentBody& WithBody(const char* value) { SetBody(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_body;

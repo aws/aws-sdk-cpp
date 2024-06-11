@@ -32,87 +32,33 @@ namespace Model
     AWS_GUARDDUTY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique ID of the detector that the IPSet is associated with.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline GetIPSetRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline GetIPSetRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the detector that the IPSet is associated with.</p>
-     */
     inline GetIPSetRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID of the IPSet to retrieve.</p>
      */
     inline const Aws::String& GetIpSetId() const{ return m_ipSetId; }
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline bool IpSetIdHasBeenSet() const { return m_ipSetIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline void SetIpSetId(const Aws::String& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = value; }
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline void SetIpSetId(Aws::String&& value) { m_ipSetIdHasBeenSet = true; m_ipSetId = std::move(value); }
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline void SetIpSetId(const char* value) { m_ipSetIdHasBeenSet = true; m_ipSetId.assign(value); }
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline GetIPSetRequest& WithIpSetId(const Aws::String& value) { SetIpSetId(value); return *this;}
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline GetIPSetRequest& WithIpSetId(Aws::String&& value) { SetIpSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID of the IPSet to retrieve.</p>
-     */
     inline GetIPSetRequest& WithIpSetId(const char* value) { SetIpSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorId;

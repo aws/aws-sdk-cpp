@@ -38,42 +38,18 @@ namespace Model
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network
      * that uses Hyperledger Fabric.</p>
      */
     inline const MemberFabricConfiguration& GetFabric() const{ return m_fabric; }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network
-     * that uses Hyperledger Fabric.</p>
-     */
     inline bool FabricHasBeenSet() const { return m_fabricHasBeenSet; }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network
-     * that uses Hyperledger Fabric.</p>
-     */
     inline void SetFabric(const MemberFabricConfiguration& value) { m_fabricHasBeenSet = true; m_fabric = value; }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network
-     * that uses Hyperledger Fabric.</p>
-     */
     inline void SetFabric(MemberFabricConfiguration&& value) { m_fabricHasBeenSet = true; m_fabric = std::move(value); }
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network
-     * that uses Hyperledger Fabric.</p>
-     */
     inline MemberFrameworkConfiguration& WithFabric(const MemberFabricConfiguration& value) { SetFabric(value); return *this;}
-
-    /**
-     * <p>Attributes of Hyperledger Fabric for a member on a Managed Blockchain network
-     * that uses Hyperledger Fabric.</p>
-     */
     inline MemberFrameworkConfiguration& WithFabric(MemberFabricConfiguration&& value) { SetFabric(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MemberFabricConfiguration m_fabric;

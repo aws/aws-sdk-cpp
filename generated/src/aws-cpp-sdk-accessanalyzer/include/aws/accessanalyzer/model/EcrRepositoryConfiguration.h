@@ -49,6 +49,7 @@ namespace Model
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
      * more information, see <a
@@ -56,63 +57,14 @@ namespace Model
      * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
      */
     inline const Aws::String& GetRepositoryPolicy() const{ return m_repositoryPolicy; }
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline bool RepositoryPolicyHasBeenSet() const { return m_repositoryPolicyHasBeenSet; }
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline void SetRepositoryPolicy(const Aws::String& value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy = value; }
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline void SetRepositoryPolicy(Aws::String&& value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy = std::move(value); }
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline void SetRepositoryPolicy(const char* value) { m_repositoryPolicyHasBeenSet = true; m_repositoryPolicy.assign(value); }
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline EcrRepositoryConfiguration& WithRepositoryPolicy(const Aws::String& value) { SetRepositoryPolicy(value); return *this;}
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline EcrRepositoryConfiguration& WithRepositoryPolicy(Aws::String&& value) { SetRepositoryPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The JSON repository policy text to apply to the Amazon ECR repository. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policy-examples.html">Private
-     * repository policy examples</a> in the <i>Amazon ECR User Guide</i>.</p>
-     */
     inline EcrRepositoryConfiguration& WithRepositoryPolicy(const char* value) { SetRepositoryPolicy(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_repositoryPolicy;

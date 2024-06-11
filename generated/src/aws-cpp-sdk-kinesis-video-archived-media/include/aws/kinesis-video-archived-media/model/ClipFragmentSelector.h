@@ -45,67 +45,29 @@ namespace Model
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The origin of the timestamps to use (Server or Producer).</p>
      */
     inline const ClipFragmentSelectorType& GetFragmentSelectorType() const{ return m_fragmentSelectorType; }
-
-    /**
-     * <p>The origin of the timestamps to use (Server or Producer).</p>
-     */
     inline bool FragmentSelectorTypeHasBeenSet() const { return m_fragmentSelectorTypeHasBeenSet; }
-
-    /**
-     * <p>The origin of the timestamps to use (Server or Producer).</p>
-     */
     inline void SetFragmentSelectorType(const ClipFragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
-
-    /**
-     * <p>The origin of the timestamps to use (Server or Producer).</p>
-     */
     inline void SetFragmentSelectorType(ClipFragmentSelectorType&& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = std::move(value); }
-
-    /**
-     * <p>The origin of the timestamps to use (Server or Producer).</p>
-     */
     inline ClipFragmentSelector& WithFragmentSelectorType(const ClipFragmentSelectorType& value) { SetFragmentSelectorType(value); return *this;}
-
-    /**
-     * <p>The origin of the timestamps to use (Server or Producer).</p>
-     */
     inline ClipFragmentSelector& WithFragmentSelectorType(ClipFragmentSelectorType&& value) { SetFragmentSelectorType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The range of timestamps to return.</p>
      */
     inline const ClipTimestampRange& GetTimestampRange() const{ return m_timestampRange; }
-
-    /**
-     * <p>The range of timestamps to return.</p>
-     */
     inline bool TimestampRangeHasBeenSet() const { return m_timestampRangeHasBeenSet; }
-
-    /**
-     * <p>The range of timestamps to return.</p>
-     */
     inline void SetTimestampRange(const ClipTimestampRange& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = value; }
-
-    /**
-     * <p>The range of timestamps to return.</p>
-     */
     inline void SetTimestampRange(ClipTimestampRange&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::move(value); }
-
-    /**
-     * <p>The range of timestamps to return.</p>
-     */
     inline ClipFragmentSelector& WithTimestampRange(const ClipTimestampRange& value) { SetTimestampRange(value); return *this;}
-
-    /**
-     * <p>The range of timestamps to return.</p>
-     */
     inline ClipFragmentSelector& WithTimestampRange(ClipTimestampRange&& value) { SetTimestampRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ClipFragmentSelectorType m_fragmentSelectorType;

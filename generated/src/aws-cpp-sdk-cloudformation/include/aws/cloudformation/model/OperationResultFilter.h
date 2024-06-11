@@ -41,77 +41,31 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The type of filter to apply.</p>
      */
     inline const OperationResultFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The type of filter to apply.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The type of filter to apply.</p>
-     */
     inline void SetName(const OperationResultFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The type of filter to apply.</p>
-     */
     inline void SetName(OperationResultFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The type of filter to apply.</p>
-     */
     inline OperationResultFilter& WithName(const OperationResultFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The type of filter to apply.</p>
-     */
     inline OperationResultFilter& WithName(OperationResultFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value to filter by.</p>
      */
     inline const Aws::String& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline void SetValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline void SetValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline void SetValues(const char* value) { m_valuesHasBeenSet = true; m_values.assign(value); }
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline OperationResultFilter& WithValues(const Aws::String& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline OperationResultFilter& WithValues(Aws::String&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The value to filter by.</p>
-     */
     inline OperationResultFilter& WithValues(const char* value) { SetValues(value); return *this;}
-
+    ///@}
   private:
 
     OperationResultFilterName m_name;

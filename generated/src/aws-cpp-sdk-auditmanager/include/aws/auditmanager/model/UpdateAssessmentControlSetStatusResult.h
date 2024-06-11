@@ -33,58 +33,28 @@ namespace Model
     AWS_AUDITMANAGER_API UpdateAssessmentControlSetStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The name of the updated control set that the
      * <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
      */
     inline const AssessmentControlSet& GetControlSet() const{ return m_controlSet; }
-
-    /**
-     * <p> The name of the updated control set that the
-     * <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
-     */
     inline void SetControlSet(const AssessmentControlSet& value) { m_controlSet = value; }
-
-    /**
-     * <p> The name of the updated control set that the
-     * <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
-     */
     inline void SetControlSet(AssessmentControlSet&& value) { m_controlSet = std::move(value); }
-
-    /**
-     * <p> The name of the updated control set that the
-     * <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
-     */
     inline UpdateAssessmentControlSetStatusResult& WithControlSet(const AssessmentControlSet& value) { SetControlSet(value); return *this;}
-
-    /**
-     * <p> The name of the updated control set that the
-     * <code>UpdateAssessmentControlSetStatus</code> API returned. </p>
-     */
     inline UpdateAssessmentControlSetStatusResult& WithControlSet(AssessmentControlSet&& value) { SetControlSet(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAssessmentControlSetStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAssessmentControlSetStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAssessmentControlSetStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AssessmentControlSet m_controlSet;

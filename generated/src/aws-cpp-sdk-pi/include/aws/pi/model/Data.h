@@ -41,48 +41,19 @@ namespace Model
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>This field determines the Performance Insights metric to render for the
      * insight. The <code>name</code> field refers to a Performance Insights metric.
      * </p>
      */
     inline const PerformanceInsightsMetric& GetPerformanceInsightsMetric() const{ return m_performanceInsightsMetric; }
-
-    /**
-     * <p>This field determines the Performance Insights metric to render for the
-     * insight. The <code>name</code> field refers to a Performance Insights metric.
-     * </p>
-     */
     inline bool PerformanceInsightsMetricHasBeenSet() const { return m_performanceInsightsMetricHasBeenSet; }
-
-    /**
-     * <p>This field determines the Performance Insights metric to render for the
-     * insight. The <code>name</code> field refers to a Performance Insights metric.
-     * </p>
-     */
     inline void SetPerformanceInsightsMetric(const PerformanceInsightsMetric& value) { m_performanceInsightsMetricHasBeenSet = true; m_performanceInsightsMetric = value; }
-
-    /**
-     * <p>This field determines the Performance Insights metric to render for the
-     * insight. The <code>name</code> field refers to a Performance Insights metric.
-     * </p>
-     */
     inline void SetPerformanceInsightsMetric(PerformanceInsightsMetric&& value) { m_performanceInsightsMetricHasBeenSet = true; m_performanceInsightsMetric = std::move(value); }
-
-    /**
-     * <p>This field determines the Performance Insights metric to render for the
-     * insight. The <code>name</code> field refers to a Performance Insights metric.
-     * </p>
-     */
     inline Data& WithPerformanceInsightsMetric(const PerformanceInsightsMetric& value) { SetPerformanceInsightsMetric(value); return *this;}
-
-    /**
-     * <p>This field determines the Performance Insights metric to render for the
-     * insight. The <code>name</code> field refers to a Performance Insights metric.
-     * </p>
-     */
     inline Data& WithPerformanceInsightsMetric(PerformanceInsightsMetric&& value) { SetPerformanceInsightsMetric(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PerformanceInsightsMetric m_performanceInsightsMetric;

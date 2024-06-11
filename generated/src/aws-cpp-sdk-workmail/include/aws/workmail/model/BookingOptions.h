@@ -36,72 +36,36 @@ namespace Model
     AWS_WORKMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The resource's ability to automatically reply to requests. If disabled,
      * delegates must be associated to the resource.</p>
      */
     inline bool GetAutoAcceptRequests() const{ return m_autoAcceptRequests; }
-
-    /**
-     * <p>The resource's ability to automatically reply to requests. If disabled,
-     * delegates must be associated to the resource.</p>
-     */
     inline bool AutoAcceptRequestsHasBeenSet() const { return m_autoAcceptRequestsHasBeenSet; }
-
-    /**
-     * <p>The resource's ability to automatically reply to requests. If disabled,
-     * delegates must be associated to the resource.</p>
-     */
     inline void SetAutoAcceptRequests(bool value) { m_autoAcceptRequestsHasBeenSet = true; m_autoAcceptRequests = value; }
-
-    /**
-     * <p>The resource's ability to automatically reply to requests. If disabled,
-     * delegates must be associated to the resource.</p>
-     */
     inline BookingOptions& WithAutoAcceptRequests(bool value) { SetAutoAcceptRequests(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource's ability to automatically decline any recurring requests.</p>
      */
     inline bool GetAutoDeclineRecurringRequests() const{ return m_autoDeclineRecurringRequests; }
-
-    /**
-     * <p>The resource's ability to automatically decline any recurring requests.</p>
-     */
     inline bool AutoDeclineRecurringRequestsHasBeenSet() const { return m_autoDeclineRecurringRequestsHasBeenSet; }
-
-    /**
-     * <p>The resource's ability to automatically decline any recurring requests.</p>
-     */
     inline void SetAutoDeclineRecurringRequests(bool value) { m_autoDeclineRecurringRequestsHasBeenSet = true; m_autoDeclineRecurringRequests = value; }
-
-    /**
-     * <p>The resource's ability to automatically decline any recurring requests.</p>
-     */
     inline BookingOptions& WithAutoDeclineRecurringRequests(bool value) { SetAutoDeclineRecurringRequests(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The resource's ability to automatically decline any conflicting requests.</p>
      */
     inline bool GetAutoDeclineConflictingRequests() const{ return m_autoDeclineConflictingRequests; }
-
-    /**
-     * <p>The resource's ability to automatically decline any conflicting requests.</p>
-     */
     inline bool AutoDeclineConflictingRequestsHasBeenSet() const { return m_autoDeclineConflictingRequestsHasBeenSet; }
-
-    /**
-     * <p>The resource's ability to automatically decline any conflicting requests.</p>
-     */
     inline void SetAutoDeclineConflictingRequests(bool value) { m_autoDeclineConflictingRequestsHasBeenSet = true; m_autoDeclineConflictingRequests = value; }
-
-    /**
-     * <p>The resource's ability to automatically decline any conflicting requests.</p>
-     */
     inline BookingOptions& WithAutoDeclineConflictingRequests(bool value) { SetAutoDeclineConflictingRequests(value); return *this;}
-
+    ///@}
   private:
 
     bool m_autoAcceptRequests;

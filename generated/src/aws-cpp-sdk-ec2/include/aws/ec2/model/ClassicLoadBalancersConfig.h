@@ -42,46 +42,19 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>One or more Classic Load Balancers.</p>
      */
     inline const Aws::Vector<ClassicLoadBalancer>& GetClassicLoadBalancers() const{ return m_classicLoadBalancers; }
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline bool ClassicLoadBalancersHasBeenSet() const { return m_classicLoadBalancersHasBeenSet; }
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline void SetClassicLoadBalancers(const Aws::Vector<ClassicLoadBalancer>& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers = value; }
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline void SetClassicLoadBalancers(Aws::Vector<ClassicLoadBalancer>&& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers = std::move(value); }
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline ClassicLoadBalancersConfig& WithClassicLoadBalancers(const Aws::Vector<ClassicLoadBalancer>& value) { SetClassicLoadBalancers(value); return *this;}
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline ClassicLoadBalancersConfig& WithClassicLoadBalancers(Aws::Vector<ClassicLoadBalancer>&& value) { SetClassicLoadBalancers(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline ClassicLoadBalancersConfig& AddClassicLoadBalancers(const ClassicLoadBalancer& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers.push_back(value); return *this; }
-
-    /**
-     * <p>One or more Classic Load Balancers.</p>
-     */
     inline ClassicLoadBalancersConfig& AddClassicLoadBalancers(ClassicLoadBalancer&& value) { m_classicLoadBalancersHasBeenSet = true; m_classicLoadBalancers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<ClassicLoadBalancer> m_classicLoadBalancers;

@@ -40,51 +40,20 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The names of the load balancers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeTagsRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeTagsRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeTagsRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeTagsRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the load balancers.</p>
-     */
     inline DescribeTagsRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_loadBalancerNames;

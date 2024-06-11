@@ -38,54 +38,20 @@ namespace Model
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An array of attributes specifying the name and type of each field in a
      * dataset.</p>
      */
     inline const Aws::Vector<SchemaAttribute>& GetAttributes() const{ return m_attributes; }
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline void SetAttributes(const Aws::Vector<SchemaAttribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline void SetAttributes(Aws::Vector<SchemaAttribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline Schema& WithAttributes(const Aws::Vector<SchemaAttribute>& value) { SetAttributes(value); return *this;}
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline Schema& WithAttributes(Aws::Vector<SchemaAttribute>&& value) { SetAttributes(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline Schema& AddAttributes(const SchemaAttribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-
-    /**
-     * <p>An array of attributes specifying the name and type of each field in a
-     * dataset.</p>
-     */
     inline Schema& AddAttributes(SchemaAttribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<SchemaAttribute> m_attributes;

@@ -39,106 +39,43 @@ namespace Model
     AWS_IOT_API ListPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The descriptions of the policies.</p>
      */
     inline const Aws::Vector<Policy>& GetPolicies() const{ return m_policies; }
-
-    /**
-     * <p>The descriptions of the policies.</p>
-     */
     inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policies = value; }
-
-    /**
-     * <p>The descriptions of the policies.</p>
-     */
     inline void SetPolicies(Aws::Vector<Policy>&& value) { m_policies = std::move(value); }
-
-    /**
-     * <p>The descriptions of the policies.</p>
-     */
     inline ListPoliciesResult& WithPolicies(const Aws::Vector<Policy>& value) { SetPolicies(value); return *this;}
-
-    /**
-     * <p>The descriptions of the policies.</p>
-     */
     inline ListPoliciesResult& WithPolicies(Aws::Vector<Policy>&& value) { SetPolicies(std::move(value)); return *this;}
-
-    /**
-     * <p>The descriptions of the policies.</p>
-     */
     inline ListPoliciesResult& AddPolicies(const Policy& value) { m_policies.push_back(value); return *this; }
-
-    /**
-     * <p>The descriptions of the policies.</p>
-     */
     inline ListPoliciesResult& AddPolicies(Policy&& value) { m_policies.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker for the next set of results, or null if there are no additional
      * results.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>The marker for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-
-    /**
-     * <p>The marker for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-
-    /**
-     * <p>The marker for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-
-    /**
-     * <p>The marker for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListPoliciesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>The marker for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListPoliciesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker for the next set of results, or null if there are no additional
-     * results.</p>
-     */
     inline ListPoliciesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Policy> m_policies;

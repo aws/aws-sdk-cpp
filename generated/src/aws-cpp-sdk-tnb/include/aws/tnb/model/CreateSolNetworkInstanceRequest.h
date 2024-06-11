@@ -33,220 +33,68 @@ namespace Model
     AWS_TNB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Network instance description.</p>
      */
     inline const Aws::String& GetNsDescription() const{ return m_nsDescription; }
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline bool NsDescriptionHasBeenSet() const { return m_nsDescriptionHasBeenSet; }
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline void SetNsDescription(const Aws::String& value) { m_nsDescriptionHasBeenSet = true; m_nsDescription = value; }
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline void SetNsDescription(Aws::String&& value) { m_nsDescriptionHasBeenSet = true; m_nsDescription = std::move(value); }
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline void SetNsDescription(const char* value) { m_nsDescriptionHasBeenSet = true; m_nsDescription.assign(value); }
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsDescription(const Aws::String& value) { SetNsDescription(value); return *this;}
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsDescription(Aws::String&& value) { SetNsDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>Network instance description.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsDescription(const char* value) { SetNsDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Network instance name.</p>
      */
     inline const Aws::String& GetNsName() const{ return m_nsName; }
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline bool NsNameHasBeenSet() const { return m_nsNameHasBeenSet; }
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline void SetNsName(const Aws::String& value) { m_nsNameHasBeenSet = true; m_nsName = value; }
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline void SetNsName(Aws::String&& value) { m_nsNameHasBeenSet = true; m_nsName = std::move(value); }
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline void SetNsName(const char* value) { m_nsNameHasBeenSet = true; m_nsName.assign(value); }
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsName(const Aws::String& value) { SetNsName(value); return *this;}
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsName(Aws::String&& value) { SetNsName(std::move(value)); return *this;}
-
-    /**
-     * <p>Network instance name.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsName(const char* value) { SetNsName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ID for network service descriptor.</p>
      */
     inline const Aws::String& GetNsdInfoId() const{ return m_nsdInfoId; }
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline bool NsdInfoIdHasBeenSet() const { return m_nsdInfoIdHasBeenSet; }
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline void SetNsdInfoId(const Aws::String& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = value; }
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline void SetNsdInfoId(Aws::String&& value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId = std::move(value); }
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline void SetNsdInfoId(const char* value) { m_nsdInfoIdHasBeenSet = true; m_nsdInfoId.assign(value); }
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsdInfoId(const Aws::String& value) { SetNsdInfoId(value); return *this;}
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsdInfoId(Aws::String&& value) { SetNsdInfoId(std::move(value)); return *this;}
-
-    /**
-     * <p>ID for network service descriptor.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithNsdInfoId(const char* value) { SetNsdInfoId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
      * consists of a key and an optional value. You can use tags to search and filter
      * your resources or track your Amazon Web Services costs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>A tag is a label that you assign to an Amazon Web Services resource. Each tag
-     * consists of a key and an optional value. You can use tags to search and filter
-     * your resources or track your Amazon Web Services costs.</p>
-     */
     inline CreateSolNetworkInstanceRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_nsDescription;

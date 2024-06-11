@@ -40,87 +40,33 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the application the environment is associated with.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline DeleteEnvironmentConfigurationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline DeleteEnvironmentConfigurationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application the environment is associated with.</p>
-     */
     inline DeleteEnvironmentConfigurationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the environment to delete the draft configuration from.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline DeleteEnvironmentConfigurationRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline DeleteEnvironmentConfigurationRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the environment to delete the draft configuration from.</p>
-     */
     inline DeleteEnvironmentConfigurationRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

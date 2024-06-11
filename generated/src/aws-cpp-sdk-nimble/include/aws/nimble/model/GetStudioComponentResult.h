@@ -33,53 +33,27 @@ namespace Model
     AWS_NIMBLESTUDIO_API GetStudioComponentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the studio component.</p>
      */
     inline const StudioComponent& GetStudioComponent() const{ return m_studioComponent; }
-
-    /**
-     * <p>Information about the studio component.</p>
-     */
     inline void SetStudioComponent(const StudioComponent& value) { m_studioComponent = value; }
-
-    /**
-     * <p>Information about the studio component.</p>
-     */
     inline void SetStudioComponent(StudioComponent&& value) { m_studioComponent = std::move(value); }
-
-    /**
-     * <p>Information about the studio component.</p>
-     */
     inline GetStudioComponentResult& WithStudioComponent(const StudioComponent& value) { SetStudioComponent(value); return *this;}
-
-    /**
-     * <p>Information about the studio component.</p>
-     */
     inline GetStudioComponentResult& WithStudioComponent(StudioComponent&& value) { SetStudioComponent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStudioComponentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStudioComponentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStudioComponentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     StudioComponent m_studioComponent;

@@ -38,116 +38,44 @@ namespace Model
     AWS_MANAGEDGRAFANA_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The maximum number of service accounts to include in the results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of service accounts to include in the results.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of service accounts to include in the results.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of service accounts to include in the results.</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of service accounts to return. (You receive this
      * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of service accounts to return. (You receive this
-     * token from a previous <code>ListWorkspaceServiceAccounts</code> operation.)</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The workspace for which to list service accounts.</p>
      */
     inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The workspace for which to list service accounts.</p>
-     */
     inline ListWorkspaceServiceAccountsRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

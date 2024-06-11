@@ -34,106 +34,43 @@ namespace Model
     AWS_DAX_API DescribeClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Provides an identifier to allow retrieval of paginated results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides an identifier to allow retrieval of paginated results.</p>
-     */
     inline DescribeClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The descriptions of your DAX clusters, in response to a
      * <i>DescribeClusters</i> request.</p>
      */
     inline const Aws::Vector<Cluster>& GetClusters() const{ return m_clusters; }
-
-    /**
-     * <p>The descriptions of your DAX clusters, in response to a
-     * <i>DescribeClusters</i> request.</p>
-     */
     inline void SetClusters(const Aws::Vector<Cluster>& value) { m_clusters = value; }
-
-    /**
-     * <p>The descriptions of your DAX clusters, in response to a
-     * <i>DescribeClusters</i> request.</p>
-     */
     inline void SetClusters(Aws::Vector<Cluster>&& value) { m_clusters = std::move(value); }
-
-    /**
-     * <p>The descriptions of your DAX clusters, in response to a
-     * <i>DescribeClusters</i> request.</p>
-     */
     inline DescribeClustersResult& WithClusters(const Aws::Vector<Cluster>& value) { SetClusters(value); return *this;}
-
-    /**
-     * <p>The descriptions of your DAX clusters, in response to a
-     * <i>DescribeClusters</i> request.</p>
-     */
     inline DescribeClustersResult& WithClusters(Aws::Vector<Cluster>&& value) { SetClusters(std::move(value)); return *this;}
-
-    /**
-     * <p>The descriptions of your DAX clusters, in response to a
-     * <i>DescribeClusters</i> request.</p>
-     */
     inline DescribeClustersResult& AddClusters(const Cluster& value) { m_clusters.push_back(value); return *this; }
-
-    /**
-     * <p>The descriptions of your DAX clusters, in response to a
-     * <i>DescribeClusters</i> request.</p>
-     */
     inline DescribeClustersResult& AddClusters(Cluster&& value) { m_clusters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeClustersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeClustersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeClustersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

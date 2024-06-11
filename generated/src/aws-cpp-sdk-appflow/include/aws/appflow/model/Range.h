@@ -35,47 +35,25 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Maximum value supported by the field.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
-
-    /**
-     * <p>Maximum value supported by the field.</p>
-     */
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-
-    /**
-     * <p>Maximum value supported by the field.</p>
-     */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
-
-    /**
-     * <p>Maximum value supported by the field.</p>
-     */
     inline Range& WithMaximum(double value) { SetMaximum(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Minimum value supported by the field.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
-
-    /**
-     * <p>Minimum value supported by the field.</p>
-     */
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-
-    /**
-     * <p>Minimum value supported by the field.</p>
-     */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
-
-    /**
-     * <p>Minimum value supported by the field.</p>
-     */
     inline Range& WithMinimum(double value) { SetMinimum(value); return *this;}
-
+    ///@}
   private:
 
     double m_maximum;

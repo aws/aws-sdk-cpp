@@ -32,87 +32,33 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The license endpoint ID to add to the metered product.</p>
      */
     inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline bool LicenseEndpointIdHasBeenSet() const { return m_licenseEndpointIdHasBeenSet; }
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline void SetLicenseEndpointId(const Aws::String& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = value; }
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline void SetLicenseEndpointId(Aws::String&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::move(value); }
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline void SetLicenseEndpointId(const char* value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId.assign(value); }
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline PutMeteredProductRequest& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline PutMeteredProductRequest& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
-
-    /**
-     * <p>The license endpoint ID to add to the metered product.</p>
-     */
     inline PutMeteredProductRequest& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The product ID to add to the metered product.</p>
      */
     inline const Aws::String& GetProductId() const{ return m_productId; }
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline PutMeteredProductRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline PutMeteredProductRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-
-    /**
-     * <p>The product ID to add to the metered product.</p>
-     */
     inline PutMeteredProductRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_licenseEndpointId;

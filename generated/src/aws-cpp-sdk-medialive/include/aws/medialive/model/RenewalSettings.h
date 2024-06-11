@@ -37,57 +37,27 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Automatic renewal status for the reservation
      */
     inline const ReservationAutomaticRenewal& GetAutomaticRenewal() const{ return m_automaticRenewal; }
-
-    /**
-     * Automatic renewal status for the reservation
-     */
     inline bool AutomaticRenewalHasBeenSet() const { return m_automaticRenewalHasBeenSet; }
-
-    /**
-     * Automatic renewal status for the reservation
-     */
     inline void SetAutomaticRenewal(const ReservationAutomaticRenewal& value) { m_automaticRenewalHasBeenSet = true; m_automaticRenewal = value; }
-
-    /**
-     * Automatic renewal status for the reservation
-     */
     inline void SetAutomaticRenewal(ReservationAutomaticRenewal&& value) { m_automaticRenewalHasBeenSet = true; m_automaticRenewal = std::move(value); }
-
-    /**
-     * Automatic renewal status for the reservation
-     */
     inline RenewalSettings& WithAutomaticRenewal(const ReservationAutomaticRenewal& value) { SetAutomaticRenewal(value); return *this;}
-
-    /**
-     * Automatic renewal status for the reservation
-     */
     inline RenewalSettings& WithAutomaticRenewal(ReservationAutomaticRenewal&& value) { SetAutomaticRenewal(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Count for the reservation renewal
      */
     inline int GetRenewalCount() const{ return m_renewalCount; }
-
-    /**
-     * Count for the reservation renewal
-     */
     inline bool RenewalCountHasBeenSet() const { return m_renewalCountHasBeenSet; }
-
-    /**
-     * Count for the reservation renewal
-     */
     inline void SetRenewalCount(int value) { m_renewalCountHasBeenSet = true; m_renewalCount = value; }
-
-    /**
-     * Count for the reservation renewal
-     */
     inline RenewalSettings& WithRenewalCount(int value) { SetRenewalCount(value); return *this;}
-
+    ///@}
   private:
 
     ReservationAutomaticRenewal m_automaticRenewal;

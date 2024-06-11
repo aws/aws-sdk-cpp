@@ -33,58 +33,28 @@ namespace Model
     AWS_MEDIACONVERT_API UpdateJobTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * A job template is a pre-made set of encoding instructions that you can use to
      * quickly create a job.
      */
     inline const JobTemplate& GetJobTemplate() const{ return m_jobTemplate; }
-
-    /**
-     * A job template is a pre-made set of encoding instructions that you can use to
-     * quickly create a job.
-     */
     inline void SetJobTemplate(const JobTemplate& value) { m_jobTemplate = value; }
-
-    /**
-     * A job template is a pre-made set of encoding instructions that you can use to
-     * quickly create a job.
-     */
     inline void SetJobTemplate(JobTemplate&& value) { m_jobTemplate = std::move(value); }
-
-    /**
-     * A job template is a pre-made set of encoding instructions that you can use to
-     * quickly create a job.
-     */
     inline UpdateJobTemplateResult& WithJobTemplate(const JobTemplate& value) { SetJobTemplate(value); return *this;}
-
-    /**
-     * A job template is a pre-made set of encoding instructions that you can use to
-     * quickly create a job.
-     */
     inline UpdateJobTemplateResult& WithJobTemplate(JobTemplate&& value) { SetJobTemplate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateJobTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateJobTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateJobTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobTemplate m_jobTemplate;

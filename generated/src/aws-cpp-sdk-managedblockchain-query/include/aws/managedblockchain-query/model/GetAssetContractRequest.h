@@ -32,42 +32,18 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Contains the blockchain address and network information about the
      * contract.</p>
      */
     inline const ContractIdentifier& GetContractIdentifier() const{ return m_contractIdentifier; }
-
-    /**
-     * <p>Contains the blockchain address and network information about the
-     * contract.</p>
-     */
     inline bool ContractIdentifierHasBeenSet() const { return m_contractIdentifierHasBeenSet; }
-
-    /**
-     * <p>Contains the blockchain address and network information about the
-     * contract.</p>
-     */
     inline void SetContractIdentifier(const ContractIdentifier& value) { m_contractIdentifierHasBeenSet = true; m_contractIdentifier = value; }
-
-    /**
-     * <p>Contains the blockchain address and network information about the
-     * contract.</p>
-     */
     inline void SetContractIdentifier(ContractIdentifier&& value) { m_contractIdentifierHasBeenSet = true; m_contractIdentifier = std::move(value); }
-
-    /**
-     * <p>Contains the blockchain address and network information about the
-     * contract.</p>
-     */
     inline GetAssetContractRequest& WithContractIdentifier(const ContractIdentifier& value) { SetContractIdentifier(value); return *this;}
-
-    /**
-     * <p>Contains the blockchain address and network information about the
-     * contract.</p>
-     */
     inline GetAssetContractRequest& WithContractIdentifier(ContractIdentifier&& value) { SetContractIdentifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContractIdentifier m_contractIdentifier;

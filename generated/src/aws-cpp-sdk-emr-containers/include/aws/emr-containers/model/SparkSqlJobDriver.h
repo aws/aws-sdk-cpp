@@ -37,87 +37,33 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The SQL file to be executed.</p>
      */
     inline const Aws::String& GetEntryPoint() const{ return m_entryPoint; }
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline void SetEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline void SetEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline void SetEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.assign(value); }
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline SparkSqlJobDriver& WithEntryPoint(const Aws::String& value) { SetEntryPoint(value); return *this;}
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline SparkSqlJobDriver& WithEntryPoint(Aws::String&& value) { SetEntryPoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The SQL file to be executed.</p>
-     */
     inline SparkSqlJobDriver& WithEntryPoint(const char* value) { SetEntryPoint(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Spark parameters to be included in the Spark SQL command.</p>
      */
     inline const Aws::String& GetSparkSqlParameters() const{ return m_sparkSqlParameters; }
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline bool SparkSqlParametersHasBeenSet() const { return m_sparkSqlParametersHasBeenSet; }
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline void SetSparkSqlParameters(const Aws::String& value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters = value; }
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline void SetSparkSqlParameters(Aws::String&& value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters = std::move(value); }
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline void SetSparkSqlParameters(const char* value) { m_sparkSqlParametersHasBeenSet = true; m_sparkSqlParameters.assign(value); }
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline SparkSqlJobDriver& WithSparkSqlParameters(const Aws::String& value) { SetSparkSqlParameters(value); return *this;}
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline SparkSqlJobDriver& WithSparkSqlParameters(Aws::String&& value) { SetSparkSqlParameters(std::move(value)); return *this;}
-
-    /**
-     * <p>The Spark parameters to be included in the Spark SQL command.</p>
-     */
     inline SparkSqlJobDriver& WithSparkSqlParameters(const char* value) { SetSparkSqlParameters(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_entryPoint;

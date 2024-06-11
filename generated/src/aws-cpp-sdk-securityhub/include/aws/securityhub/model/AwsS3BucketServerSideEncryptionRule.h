@@ -37,48 +37,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the default server-side encryption to apply to new objects in the
      * bucket. If a <code>PUT</code> object request doesn't specify any server-side
      * encryption, this default encryption is applied.</p>
      */
     inline const AwsS3BucketServerSideEncryptionByDefault& GetApplyServerSideEncryptionByDefault() const{ return m_applyServerSideEncryptionByDefault; }
-
-    /**
-     * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
-     * encryption, this default encryption is applied.</p>
-     */
     inline bool ApplyServerSideEncryptionByDefaultHasBeenSet() const { return m_applyServerSideEncryptionByDefaultHasBeenSet; }
-
-    /**
-     * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
-     * encryption, this default encryption is applied.</p>
-     */
     inline void SetApplyServerSideEncryptionByDefault(const AwsS3BucketServerSideEncryptionByDefault& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = value; }
-
-    /**
-     * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
-     * encryption, this default encryption is applied.</p>
-     */
     inline void SetApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault&& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = std::move(value); }
-
-    /**
-     * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
-     * encryption, this default encryption is applied.</p>
-     */
     inline AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(const AwsS3BucketServerSideEncryptionByDefault& value) { SetApplyServerSideEncryptionByDefault(value); return *this;}
-
-    /**
-     * <p>Specifies the default server-side encryption to apply to new objects in the
-     * bucket. If a <code>PUT</code> object request doesn't specify any server-side
-     * encryption, this default encryption is applied.</p>
-     */
     inline AwsS3BucketServerSideEncryptionRule& WithApplyServerSideEncryptionByDefault(AwsS3BucketServerSideEncryptionByDefault&& value) { SetApplyServerSideEncryptionByDefault(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsS3BucketServerSideEncryptionByDefault m_applyServerSideEncryptionByDefault;

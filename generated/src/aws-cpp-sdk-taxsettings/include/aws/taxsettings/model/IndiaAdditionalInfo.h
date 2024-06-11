@@ -37,46 +37,19 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> India pan information associated with the account. </p>
      */
     inline const Aws::String& GetPan() const{ return m_pan; }
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline bool PanHasBeenSet() const { return m_panHasBeenSet; }
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline void SetPan(const Aws::String& value) { m_panHasBeenSet = true; m_pan = value; }
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline void SetPan(Aws::String&& value) { m_panHasBeenSet = true; m_pan = std::move(value); }
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline void SetPan(const char* value) { m_panHasBeenSet = true; m_pan.assign(value); }
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline IndiaAdditionalInfo& WithPan(const Aws::String& value) { SetPan(value); return *this;}
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline IndiaAdditionalInfo& WithPan(Aws::String&& value) { SetPan(std::move(value)); return *this;}
-
-    /**
-     * <p> India pan information associated with the account. </p>
-     */
     inline IndiaAdditionalInfo& WithPan(const char* value) { SetPan(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_pan;

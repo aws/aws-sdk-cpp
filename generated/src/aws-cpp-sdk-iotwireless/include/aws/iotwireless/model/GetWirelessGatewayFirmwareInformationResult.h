@@ -33,53 +33,27 @@ namespace Model
     AWS_IOTWIRELESS_API GetWirelessGatewayFirmwareInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the wireless gateway's firmware.</p>
      */
     inline const LoRaWANGatewayCurrentVersion& GetLoRaWAN() const{ return m_loRaWAN; }
-
-    /**
-     * <p>Information about the wireless gateway's firmware.</p>
-     */
     inline void SetLoRaWAN(const LoRaWANGatewayCurrentVersion& value) { m_loRaWAN = value; }
-
-    /**
-     * <p>Information about the wireless gateway's firmware.</p>
-     */
     inline void SetLoRaWAN(LoRaWANGatewayCurrentVersion&& value) { m_loRaWAN = std::move(value); }
-
-    /**
-     * <p>Information about the wireless gateway's firmware.</p>
-     */
     inline GetWirelessGatewayFirmwareInformationResult& WithLoRaWAN(const LoRaWANGatewayCurrentVersion& value) { SetLoRaWAN(value); return *this;}
-
-    /**
-     * <p>Information about the wireless gateway's firmware.</p>
-     */
     inline GetWirelessGatewayFirmwareInformationResult& WithLoRaWAN(LoRaWANGatewayCurrentVersion&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWirelessGatewayFirmwareInformationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWirelessGatewayFirmwareInformationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWirelessGatewayFirmwareInformationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LoRaWANGatewayCurrentVersion m_loRaWAN;

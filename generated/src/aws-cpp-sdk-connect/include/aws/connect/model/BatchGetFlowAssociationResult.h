@@ -34,63 +34,29 @@ namespace Model
     AWS_CONNECT_API BatchGetFlowAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about flow associations.</p>
      */
     inline const Aws::Vector<FlowAssociationSummary>& GetFlowAssociationSummaryList() const{ return m_flowAssociationSummaryList; }
-
-    /**
-     * <p>Information about flow associations.</p>
-     */
     inline void SetFlowAssociationSummaryList(const Aws::Vector<FlowAssociationSummary>& value) { m_flowAssociationSummaryList = value; }
-
-    /**
-     * <p>Information about flow associations.</p>
-     */
     inline void SetFlowAssociationSummaryList(Aws::Vector<FlowAssociationSummary>&& value) { m_flowAssociationSummaryList = std::move(value); }
-
-    /**
-     * <p>Information about flow associations.</p>
-     */
     inline BatchGetFlowAssociationResult& WithFlowAssociationSummaryList(const Aws::Vector<FlowAssociationSummary>& value) { SetFlowAssociationSummaryList(value); return *this;}
-
-    /**
-     * <p>Information about flow associations.</p>
-     */
     inline BatchGetFlowAssociationResult& WithFlowAssociationSummaryList(Aws::Vector<FlowAssociationSummary>&& value) { SetFlowAssociationSummaryList(std::move(value)); return *this;}
-
-    /**
-     * <p>Information about flow associations.</p>
-     */
     inline BatchGetFlowAssociationResult& AddFlowAssociationSummaryList(const FlowAssociationSummary& value) { m_flowAssociationSummaryList.push_back(value); return *this; }
-
-    /**
-     * <p>Information about flow associations.</p>
-     */
     inline BatchGetFlowAssociationResult& AddFlowAssociationSummaryList(FlowAssociationSummary&& value) { m_flowAssociationSummaryList.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchGetFlowAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchGetFlowAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchGetFlowAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FlowAssociationSummary> m_flowAssociationSummaryList;

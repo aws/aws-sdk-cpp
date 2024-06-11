@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetCampaignVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const CampaignsResponse& GetCampaignsResponse() const{ return m_campaignsResponse; }
-
-    
     inline void SetCampaignsResponse(const CampaignsResponse& value) { m_campaignsResponse = value; }
-
-    
     inline void SetCampaignsResponse(CampaignsResponse&& value) { m_campaignsResponse = std::move(value); }
-
-    
     inline GetCampaignVersionsResult& WithCampaignsResponse(const CampaignsResponse& value) { SetCampaignsResponse(value); return *this;}
-
-    
     inline GetCampaignVersionsResult& WithCampaignsResponse(CampaignsResponse&& value) { SetCampaignsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCampaignVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCampaignVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCampaignVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     CampaignsResponse m_campaignsResponse;

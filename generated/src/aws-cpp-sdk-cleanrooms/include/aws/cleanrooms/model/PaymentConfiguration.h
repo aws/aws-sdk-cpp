@@ -38,42 +38,18 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The collaboration member's payment responsibilities set by the collaboration
      * creator for query compute costs.</p>
      */
     inline const QueryComputePaymentConfig& GetQueryCompute() const{ return m_queryCompute; }
-
-    /**
-     * <p>The collaboration member's payment responsibilities set by the collaboration
-     * creator for query compute costs.</p>
-     */
     inline bool QueryComputeHasBeenSet() const { return m_queryComputeHasBeenSet; }
-
-    /**
-     * <p>The collaboration member's payment responsibilities set by the collaboration
-     * creator for query compute costs.</p>
-     */
     inline void SetQueryCompute(const QueryComputePaymentConfig& value) { m_queryComputeHasBeenSet = true; m_queryCompute = value; }
-
-    /**
-     * <p>The collaboration member's payment responsibilities set by the collaboration
-     * creator for query compute costs.</p>
-     */
     inline void SetQueryCompute(QueryComputePaymentConfig&& value) { m_queryComputeHasBeenSet = true; m_queryCompute = std::move(value); }
-
-    /**
-     * <p>The collaboration member's payment responsibilities set by the collaboration
-     * creator for query compute costs.</p>
-     */
     inline PaymentConfiguration& WithQueryCompute(const QueryComputePaymentConfig& value) { SetQueryCompute(value); return *this;}
-
-    /**
-     * <p>The collaboration member's payment responsibilities set by the collaboration
-     * creator for query compute costs.</p>
-     */
     inline PaymentConfiguration& WithQueryCompute(QueryComputePaymentConfig&& value) { SetQueryCompute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     QueryComputePaymentConfig m_queryCompute;

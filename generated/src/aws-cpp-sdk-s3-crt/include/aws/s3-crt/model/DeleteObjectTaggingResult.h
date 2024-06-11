@@ -32,63 +32,29 @@ namespace Model
     AWS_S3CRT_API DeleteObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The versionId of the object the tag-set was removed from.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
-
-    /**
-     * <p>The versionId of the object the tag-set was removed from.</p>
-     */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
-
-    /**
-     * <p>The versionId of the object the tag-set was removed from.</p>
-     */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
-
-    /**
-     * <p>The versionId of the object the tag-set was removed from.</p>
-     */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
-
-    /**
-     * <p>The versionId of the object the tag-set was removed from.</p>
-     */
     inline DeleteObjectTaggingResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-
-    /**
-     * <p>The versionId of the object the tag-set was removed from.</p>
-     */
     inline DeleteObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The versionId of the object the tag-set was removed from.</p>
-     */
     inline DeleteObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteObjectTaggingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteObjectTaggingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteObjectTaggingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_versionId;

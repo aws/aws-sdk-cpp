@@ -40,149 +40,57 @@ namespace Model
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the message.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline FlowExecutionMessage& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline FlowExecutionMessage& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the message.</p>
-     */
     inline FlowExecutionMessage& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of flow event .</p>
      */
     inline const FlowExecutionEventType& GetEventType() const{ return m_eventType; }
-
-    /**
-     * <p>The type of flow event .</p>
-     */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-
-    /**
-     * <p>The type of flow event .</p>
-     */
     inline void SetEventType(const FlowExecutionEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-
-    /**
-     * <p>The type of flow event .</p>
-     */
     inline void SetEventType(FlowExecutionEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-
-    /**
-     * <p>The type of flow event .</p>
-     */
     inline FlowExecutionMessage& WithEventType(const FlowExecutionEventType& value) { SetEventType(value); return *this;}
-
-    /**
-     * <p>The type of flow event .</p>
-     */
     inline FlowExecutionMessage& WithEventType(FlowExecutionEventType&& value) { SetEventType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when the message was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The date and time when the message was last updated.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The date and time when the message was last updated.</p>
-     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The date and time when the message was last updated.</p>
-     */
     inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-
-    /**
-     * <p>The date and time when the message was last updated.</p>
-     */
     inline FlowExecutionMessage& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-
-    /**
-     * <p>The date and time when the message was last updated.</p>
-     */
     inline FlowExecutionMessage& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A string containing information about the flow event.</p>
      */
     inline const Aws::String& GetPayload() const{ return m_payload; }
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline FlowExecutionMessage& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline FlowExecutionMessage& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-
-    /**
-     * <p>A string containing information about the flow event.</p>
-     */
     inline FlowExecutionMessage& WithPayload(const char* value) { SetPayload(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

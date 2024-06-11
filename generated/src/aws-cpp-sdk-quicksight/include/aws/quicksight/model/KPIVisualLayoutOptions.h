@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The standard layout of the KPI visual.</p>
      */
     inline const KPIVisualStandardLayout& GetStandardLayout() const{ return m_standardLayout; }
-
-    /**
-     * <p>The standard layout of the KPI visual.</p>
-     */
     inline bool StandardLayoutHasBeenSet() const { return m_standardLayoutHasBeenSet; }
-
-    /**
-     * <p>The standard layout of the KPI visual.</p>
-     */
     inline void SetStandardLayout(const KPIVisualStandardLayout& value) { m_standardLayoutHasBeenSet = true; m_standardLayout = value; }
-
-    /**
-     * <p>The standard layout of the KPI visual.</p>
-     */
     inline void SetStandardLayout(KPIVisualStandardLayout&& value) { m_standardLayoutHasBeenSet = true; m_standardLayout = std::move(value); }
-
-    /**
-     * <p>The standard layout of the KPI visual.</p>
-     */
     inline KPIVisualLayoutOptions& WithStandardLayout(const KPIVisualStandardLayout& value) { SetStandardLayout(value); return *this;}
-
-    /**
-     * <p>The standard layout of the KPI visual.</p>
-     */
     inline KPIVisualLayoutOptions& WithStandardLayout(KPIVisualStandardLayout&& value) { SetStandardLayout(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KPIVisualStandardLayout m_standardLayout;

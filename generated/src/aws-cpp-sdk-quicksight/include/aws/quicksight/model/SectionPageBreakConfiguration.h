@@ -38,36 +38,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration of a page break after a section.</p>
      */
     inline const SectionAfterPageBreak& GetAfter() const{ return m_after; }
-
-    /**
-     * <p>The configuration of a page break after a section.</p>
-     */
     inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
-
-    /**
-     * <p>The configuration of a page break after a section.</p>
-     */
     inline void SetAfter(const SectionAfterPageBreak& value) { m_afterHasBeenSet = true; m_after = value; }
-
-    /**
-     * <p>The configuration of a page break after a section.</p>
-     */
     inline void SetAfter(SectionAfterPageBreak&& value) { m_afterHasBeenSet = true; m_after = std::move(value); }
-
-    /**
-     * <p>The configuration of a page break after a section.</p>
-     */
     inline SectionPageBreakConfiguration& WithAfter(const SectionAfterPageBreak& value) { SetAfter(value); return *this;}
-
-    /**
-     * <p>The configuration of a page break after a section.</p>
-     */
     inline SectionPageBreakConfiguration& WithAfter(SectionAfterPageBreak&& value) { SetAfter(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SectionAfterPageBreak m_after;

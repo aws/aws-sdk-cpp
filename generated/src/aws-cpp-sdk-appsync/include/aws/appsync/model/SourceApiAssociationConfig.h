@@ -38,6 +38,7 @@ namespace Model
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The property that indicates which merging option is enabled in the source API
      * association.</p> <p>Valid merge types are <code>MANUAL_MERGE</code> (default)
@@ -49,67 +50,12 @@ namespace Model
      * operations.</p>
      */
     inline const MergeType& GetMergeType() const{ return m_mergeType; }
-
-    /**
-     * <p>The property that indicates which merging option is enabled in the source API
-     * association.</p> <p>Valid merge types are <code>MANUAL_MERGE</code> (default)
-     * and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require
-     * the user to trigger any changes from the source APIs to the merged API manually.
-     * Auto merges subscribe the merged API to the changes performed on the source APIs
-     * so that any change in the source APIs are also made to the merged API. Auto
-     * merges use <code>MergedApiExecutionRoleArn</code> to perform merge
-     * operations.</p>
-     */
     inline bool MergeTypeHasBeenSet() const { return m_mergeTypeHasBeenSet; }
-
-    /**
-     * <p>The property that indicates which merging option is enabled in the source API
-     * association.</p> <p>Valid merge types are <code>MANUAL_MERGE</code> (default)
-     * and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require
-     * the user to trigger any changes from the source APIs to the merged API manually.
-     * Auto merges subscribe the merged API to the changes performed on the source APIs
-     * so that any change in the source APIs are also made to the merged API. Auto
-     * merges use <code>MergedApiExecutionRoleArn</code> to perform merge
-     * operations.</p>
-     */
     inline void SetMergeType(const MergeType& value) { m_mergeTypeHasBeenSet = true; m_mergeType = value; }
-
-    /**
-     * <p>The property that indicates which merging option is enabled in the source API
-     * association.</p> <p>Valid merge types are <code>MANUAL_MERGE</code> (default)
-     * and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require
-     * the user to trigger any changes from the source APIs to the merged API manually.
-     * Auto merges subscribe the merged API to the changes performed on the source APIs
-     * so that any change in the source APIs are also made to the merged API. Auto
-     * merges use <code>MergedApiExecutionRoleArn</code> to perform merge
-     * operations.</p>
-     */
     inline void SetMergeType(MergeType&& value) { m_mergeTypeHasBeenSet = true; m_mergeType = std::move(value); }
-
-    /**
-     * <p>The property that indicates which merging option is enabled in the source API
-     * association.</p> <p>Valid merge types are <code>MANUAL_MERGE</code> (default)
-     * and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require
-     * the user to trigger any changes from the source APIs to the merged API manually.
-     * Auto merges subscribe the merged API to the changes performed on the source APIs
-     * so that any change in the source APIs are also made to the merged API. Auto
-     * merges use <code>MergedApiExecutionRoleArn</code> to perform merge
-     * operations.</p>
-     */
     inline SourceApiAssociationConfig& WithMergeType(const MergeType& value) { SetMergeType(value); return *this;}
-
-    /**
-     * <p>The property that indicates which merging option is enabled in the source API
-     * association.</p> <p>Valid merge types are <code>MANUAL_MERGE</code> (default)
-     * and <code>AUTO_MERGE</code>. Manual merges are the default behavior and require
-     * the user to trigger any changes from the source APIs to the merged API manually.
-     * Auto merges subscribe the merged API to the changes performed on the source APIs
-     * so that any change in the source APIs are also made to the merged API. Auto
-     * merges use <code>MergedApiExecutionRoleArn</code> to perform merge
-     * operations.</p>
-     */
     inline SourceApiAssociationConfig& WithMergeType(MergeType&& value) { SetMergeType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MergeType m_mergeType;

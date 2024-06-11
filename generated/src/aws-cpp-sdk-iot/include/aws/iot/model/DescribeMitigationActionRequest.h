@@ -32,46 +32,19 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The friendly name that uniquely identifies the mitigation action.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline DescribeMitigationActionRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline DescribeMitigationActionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The friendly name that uniquely identifies the mitigation action.</p>
-     */
     inline DescribeMitigationActionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionName;

@@ -33,53 +33,27 @@ namespace Model
     AWS_DAX_API CreateSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
      */
     inline const SubnetGroup& GetSubnetGroup() const{ return m_subnetGroup; }
-
-    /**
-     * <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
-     */
     inline void SetSubnetGroup(const SubnetGroup& value) { m_subnetGroup = value; }
-
-    /**
-     * <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
-     */
     inline void SetSubnetGroup(SubnetGroup&& value) { m_subnetGroup = std::move(value); }
-
-    /**
-     * <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
-     */
     inline CreateSubnetGroupResult& WithSubnetGroup(const SubnetGroup& value) { SetSubnetGroup(value); return *this;}
-
-    /**
-     * <p>Represents the output of a <i>CreateSubnetGroup</i> operation.</p>
-     */
     inline CreateSubnetGroupResult& WithSubnetGroup(SubnetGroup&& value) { SetSubnetGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateSubnetGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateSubnetGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateSubnetGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SubnetGroup m_subnetGroup;

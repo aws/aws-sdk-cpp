@@ -35,71 +35,30 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the thing type to deprecate.</p>
      */
     inline const Aws::String& GetThingTypeName() const{ return m_thingTypeName; }
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline void SetThingTypeName(Aws::String&& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = std::move(value); }
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline void SetThingTypeName(const char* value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName.assign(value); }
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline DeprecateThingTypeRequest& WithThingTypeName(const Aws::String& value) { SetThingTypeName(value); return *this;}
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline DeprecateThingTypeRequest& WithThingTypeName(Aws::String&& value) { SetThingTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the thing type to deprecate.</p>
-     */
     inline DeprecateThingTypeRequest& WithThingTypeName(const char* value) { SetThingTypeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing
      * type will not be deprecated anymore and you can associate it with things.</p>
      */
     inline bool GetUndoDeprecate() const{ return m_undoDeprecate; }
-
-    /**
-     * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing
-     * type will not be deprecated anymore and you can associate it with things.</p>
-     */
     inline bool UndoDeprecateHasBeenSet() const { return m_undoDeprecateHasBeenSet; }
-
-    /**
-     * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing
-     * type will not be deprecated anymore and you can associate it with things.</p>
-     */
     inline void SetUndoDeprecate(bool value) { m_undoDeprecateHasBeenSet = true; m_undoDeprecate = value; }
-
-    /**
-     * <p>Whether to undeprecate a deprecated thing type. If <b>true</b>, the thing
-     * type will not be deprecated anymore and you can associate it with things.</p>
-     */
     inline DeprecateThingTypeRequest& WithUndoDeprecate(bool value) { SetUndoDeprecate(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_thingTypeName;

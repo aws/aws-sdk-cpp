@@ -32,46 +32,19 @@ namespace Model
     AWS_DRS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Replication Configuration Template to be deleted.</p>
      */
     inline const Aws::String& GetReplicationConfigurationTemplateID() const{ return m_replicationConfigurationTemplateID; }
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline bool ReplicationConfigurationTemplateIDHasBeenSet() const { return m_replicationConfigurationTemplateIDHasBeenSet; }
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline void SetReplicationConfigurationTemplateID(const Aws::String& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = value; }
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline void SetReplicationConfigurationTemplateID(Aws::String&& value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID = std::move(value); }
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline void SetReplicationConfigurationTemplateID(const char* value) { m_replicationConfigurationTemplateIDHasBeenSet = true; m_replicationConfigurationTemplateID.assign(value); }
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline DeleteReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(const Aws::String& value) { SetReplicationConfigurationTemplateID(value); return *this;}
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline DeleteReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(Aws::String&& value) { SetReplicationConfigurationTemplateID(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Replication Configuration Template to be deleted.</p>
-     */
     inline DeleteReplicationConfigurationTemplateRequest& WithReplicationConfigurationTemplateID(const char* value) { SetReplicationConfigurationTemplateID(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_replicationConfigurationTemplateID;

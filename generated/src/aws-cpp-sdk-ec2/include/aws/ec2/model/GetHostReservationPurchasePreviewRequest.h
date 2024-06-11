@@ -37,92 +37,34 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdSet() const{ return m_hostIdSet; }
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline bool HostIdSetHasBeenSet() const { return m_hostIdSetHasBeenSet; }
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline void SetHostIdSet(const Aws::Vector<Aws::String>& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline void SetHostIdSet(Aws::Vector<Aws::String>&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = std::move(value); }
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& WithHostIdSet(const Aws::Vector<Aws::String>& value) { SetHostIdSet(value); return *this;}
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& WithHostIdSet(Aws::Vector<Aws::String>&& value) { SetHostIdSet(std::move(value)); return *this;}
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(const Aws::String& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(Aws::String&& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& AddHostIdSet(const char* value) { m_hostIdSetHasBeenSet = true; m_hostIdSet.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The offering ID of the reservation.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline void SetOfferingId(Aws::String&& value) { m_offeringIdHasBeenSet = true; m_offeringId = std::move(value); }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline void SetOfferingId(const char* value) { m_offeringIdHasBeenSet = true; m_offeringId.assign(value); }
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const Aws::String& value) { SetOfferingId(value); return *this;}
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& WithOfferingId(Aws::String&& value) { SetOfferingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The offering ID of the reservation.</p>
-     */
     inline GetHostReservationPurchasePreviewRequest& WithOfferingId(const char* value) { SetOfferingId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_hostIdSet;

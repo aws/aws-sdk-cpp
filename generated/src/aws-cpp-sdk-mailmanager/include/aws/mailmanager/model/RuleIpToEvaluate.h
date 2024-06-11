@@ -37,36 +37,17 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The attribute of the email to evaluate.</p>
      */
     inline const RuleIpEmailAttribute& GetAttribute() const{ return m_attribute; }
-
-    /**
-     * <p>The attribute of the email to evaluate.</p>
-     */
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-
-    /**
-     * <p>The attribute of the email to evaluate.</p>
-     */
     inline void SetAttribute(const RuleIpEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-
-    /**
-     * <p>The attribute of the email to evaluate.</p>
-     */
     inline void SetAttribute(RuleIpEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-
-    /**
-     * <p>The attribute of the email to evaluate.</p>
-     */
     inline RuleIpToEvaluate& WithAttribute(const RuleIpEmailAttribute& value) { SetAttribute(value); return *this;}
-
-    /**
-     * <p>The attribute of the email to evaluate.</p>
-     */
     inline RuleIpToEvaluate& WithAttribute(RuleIpEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RuleIpEmailAttribute m_attribute;

@@ -40,6 +40,7 @@ namespace Model
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Buffer incoming data to the specified size, in MiBs, before delivering it to
      * the destination. The default value is 5. This parameter is optional but if you
@@ -50,41 +51,12 @@ namespace Model
      * 1 MiB/sec, the value should be 10 MiB or higher.</p>
      */
     inline int GetSizeInMBs() const{ return m_sizeInMBs; }
-
-    /**
-     * <p>Buffer incoming data to the specified size, in MiBs, before delivering it to
-     * the destination. The default value is 5. This parameter is optional but if you
-     * specify a value for it, you must also specify a value for
-     * <code>IntervalInSeconds</code>, and vice versa.</p> <p>We recommend setting this
-     * parameter to a value greater than the amount of data you typically ingest into
-     * the delivery stream in 10 seconds. For example, if you typically ingest data at
-     * 1 MiB/sec, the value should be 10 MiB or higher.</p>
-     */
     inline bool SizeInMBsHasBeenSet() const { return m_sizeInMBsHasBeenSet; }
-
-    /**
-     * <p>Buffer incoming data to the specified size, in MiBs, before delivering it to
-     * the destination. The default value is 5. This parameter is optional but if you
-     * specify a value for it, you must also specify a value for
-     * <code>IntervalInSeconds</code>, and vice versa.</p> <p>We recommend setting this
-     * parameter to a value greater than the amount of data you typically ingest into
-     * the delivery stream in 10 seconds. For example, if you typically ingest data at
-     * 1 MiB/sec, the value should be 10 MiB or higher.</p>
-     */
     inline void SetSizeInMBs(int value) { m_sizeInMBsHasBeenSet = true; m_sizeInMBs = value; }
-
-    /**
-     * <p>Buffer incoming data to the specified size, in MiBs, before delivering it to
-     * the destination. The default value is 5. This parameter is optional but if you
-     * specify a value for it, you must also specify a value for
-     * <code>IntervalInSeconds</code>, and vice versa.</p> <p>We recommend setting this
-     * parameter to a value greater than the amount of data you typically ingest into
-     * the delivery stream in 10 seconds. For example, if you typically ingest data at
-     * 1 MiB/sec, the value should be 10 MiB or higher.</p>
-     */
     inline BufferingHints& WithSizeInMBs(int value) { SetSizeInMBs(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Buffer incoming data for the specified period of time, in seconds, before
      * delivering it to the destination. The default value is 300. This parameter is
@@ -92,31 +64,10 @@ namespace Model
      * <code>SizeInMBs</code>, and vice versa.</p>
      */
     inline int GetIntervalInSeconds() const{ return m_intervalInSeconds; }
-
-    /**
-     * <p>Buffer incoming data for the specified period of time, in seconds, before
-     * delivering it to the destination. The default value is 300. This parameter is
-     * optional but if you specify a value for it, you must also specify a value for
-     * <code>SizeInMBs</code>, and vice versa.</p>
-     */
     inline bool IntervalInSecondsHasBeenSet() const { return m_intervalInSecondsHasBeenSet; }
-
-    /**
-     * <p>Buffer incoming data for the specified period of time, in seconds, before
-     * delivering it to the destination. The default value is 300. This parameter is
-     * optional but if you specify a value for it, you must also specify a value for
-     * <code>SizeInMBs</code>, and vice versa.</p>
-     */
     inline void SetIntervalInSeconds(int value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
-
-    /**
-     * <p>Buffer incoming data for the specified period of time, in seconds, before
-     * delivering it to the destination. The default value is 300. This parameter is
-     * optional but if you specify a value for it, you must also specify a value for
-     * <code>SizeInMBs</code>, and vice versa.</p>
-     */
     inline BufferingHints& WithIntervalInSeconds(int value) { SetIntervalInSeconds(value); return *this;}
-
+    ///@}
   private:
 
     int m_sizeInMBs;

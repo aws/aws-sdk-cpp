@@ -40,113 +40,44 @@ namespace Model
     AWS_CODEPIPELINE_API ListActionTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Provides details of the action types.</p>
      */
     inline const Aws::Vector<ActionType>& GetActionTypes() const{ return m_actionTypes; }
-
-    /**
-     * <p>Provides details of the action types.</p>
-     */
     inline void SetActionTypes(const Aws::Vector<ActionType>& value) { m_actionTypes = value; }
-
-    /**
-     * <p>Provides details of the action types.</p>
-     */
     inline void SetActionTypes(Aws::Vector<ActionType>&& value) { m_actionTypes = std::move(value); }
-
-    /**
-     * <p>Provides details of the action types.</p>
-     */
     inline ListActionTypesResult& WithActionTypes(const Aws::Vector<ActionType>& value) { SetActionTypes(value); return *this;}
-
-    /**
-     * <p>Provides details of the action types.</p>
-     */
     inline ListActionTypesResult& WithActionTypes(Aws::Vector<ActionType>&& value) { SetActionTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>Provides details of the action types.</p>
-     */
     inline ListActionTypesResult& AddActionTypes(const ActionType& value) { m_actionTypes.push_back(value); return *this; }
-
-    /**
-     * <p>Provides details of the action types.</p>
-     */
     inline ListActionTypesResult& AddActionTypes(ActionType&& value) { m_actionTypes.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the amount of returned information is significantly large, an identifier
      * is also returned. It can be used in a subsequent list action types call to
      * return the next set of action types in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the amount of returned information is significantly large, an identifier
-     * is also returned. It can be used in a subsequent list action types call to
-     * return the next set of action types in the list.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the amount of returned information is significantly large, an identifier
-     * is also returned. It can be used in a subsequent list action types call to
-     * return the next set of action types in the list.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the amount of returned information is significantly large, an identifier
-     * is also returned. It can be used in a subsequent list action types call to
-     * return the next set of action types in the list.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the amount of returned information is significantly large, an identifier
-     * is also returned. It can be used in a subsequent list action types call to
-     * return the next set of action types in the list.</p>
-     */
     inline ListActionTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the amount of returned information is significantly large, an identifier
-     * is also returned. It can be used in a subsequent list action types call to
-     * return the next set of action types in the list.</p>
-     */
     inline ListActionTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the amount of returned information is significantly large, an identifier
-     * is also returned. It can be used in a subsequent list action types call to
-     * return the next set of action types in the list.</p>
-     */
     inline ListActionTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListActionTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListActionTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListActionTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ActionType> m_actionTypes;

@@ -36,26 +36,15 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of attempts on the job's driver.</p>
      */
     inline int GetMaxAttempts() const{ return m_maxAttempts; }
-
-    /**
-     * <p>The maximum number of attempts on the job's driver.</p>
-     */
     inline bool MaxAttemptsHasBeenSet() const { return m_maxAttemptsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of attempts on the job's driver.</p>
-     */
     inline void SetMaxAttempts(int value) { m_maxAttemptsHasBeenSet = true; m_maxAttempts = value; }
-
-    /**
-     * <p>The maximum number of attempts on the job's driver.</p>
-     */
     inline RetryPolicyConfiguration& WithMaxAttempts(int value) { SetMaxAttempts(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxAttempts;

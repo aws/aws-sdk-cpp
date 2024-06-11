@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the DB shard group to reboot.</p>
      */
     inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline void SetDBShardGroupIdentifier(const Aws::String& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = value; }
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline void SetDBShardGroupIdentifier(Aws::String&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::move(value); }
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline void SetDBShardGroupIdentifier(const char* value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier.assign(value); }
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline RebootDBShardGroupRequest& WithDBShardGroupIdentifier(const Aws::String& value) { SetDBShardGroupIdentifier(value); return *this;}
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline RebootDBShardGroupRequest& WithDBShardGroupIdentifier(Aws::String&& value) { SetDBShardGroupIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the DB shard group to reboot.</p>
-     */
     inline RebootDBShardGroupRequest& WithDBShardGroupIdentifier(const char* value) { SetDBShardGroupIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_dBShardGroupIdentifier;

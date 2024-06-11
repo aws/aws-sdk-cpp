@@ -35,26 +35,15 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies whether the OTP is valid or not.</p>
      */
     inline bool GetValid() const{ return m_valid; }
-
-    /**
-     * <p>Specifies whether the OTP is valid or not.</p>
-     */
     inline bool ValidHasBeenSet() const { return m_validHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the OTP is valid or not.</p>
-     */
     inline void SetValid(bool value) { m_validHasBeenSet = true; m_valid = value; }
-
-    /**
-     * <p>Specifies whether the OTP is valid or not.</p>
-     */
     inline VerificationResponse& WithValid(bool value) { SetValid(value); return *this;}
-
+    ///@}
   private:
 
     bool m_valid;

@@ -47,170 +47,67 @@ namespace Model
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specify the duration of the interruptions in milliseconds. For example, you
      * can flag speech that contains more than 10,000 milliseconds of
      * interruptions.</p>
      */
     inline long long GetThreshold() const{ return m_threshold; }
-
-    /**
-     * <p>Specify the duration of the interruptions in milliseconds. For example, you
-     * can flag speech that contains more than 10,000 milliseconds of
-     * interruptions.</p>
-     */
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
-
-    /**
-     * <p>Specify the duration of the interruptions in milliseconds. For example, you
-     * can flag speech that contains more than 10,000 milliseconds of
-     * interruptions.</p>
-     */
     inline void SetThreshold(long long value) { m_thresholdHasBeenSet = true; m_threshold = value; }
-
-    /**
-     * <p>Specify the duration of the interruptions in milliseconds. For example, you
-     * can flag speech that contains more than 10,000 milliseconds of
-     * interruptions.</p>
-     */
     inline InterruptionFilter& WithThreshold(long long value) { SetThreshold(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify the interrupter that you want to flag. Omitting this parameter is
      * equivalent to specifying both participants.</p>
      */
     inline const ParticipantRole& GetParticipantRole() const{ return m_participantRole; }
-
-    /**
-     * <p>Specify the interrupter that you want to flag. Omitting this parameter is
-     * equivalent to specifying both participants.</p>
-     */
     inline bool ParticipantRoleHasBeenSet() const { return m_participantRoleHasBeenSet; }
-
-    /**
-     * <p>Specify the interrupter that you want to flag. Omitting this parameter is
-     * equivalent to specifying both participants.</p>
-     */
     inline void SetParticipantRole(const ParticipantRole& value) { m_participantRoleHasBeenSet = true; m_participantRole = value; }
-
-    /**
-     * <p>Specify the interrupter that you want to flag. Omitting this parameter is
-     * equivalent to specifying both participants.</p>
-     */
     inline void SetParticipantRole(ParticipantRole&& value) { m_participantRoleHasBeenSet = true; m_participantRole = std::move(value); }
-
-    /**
-     * <p>Specify the interrupter that you want to flag. Omitting this parameter is
-     * equivalent to specifying both participants.</p>
-     */
     inline InterruptionFilter& WithParticipantRole(const ParticipantRole& value) { SetParticipantRole(value); return *this;}
-
-    /**
-     * <p>Specify the interrupter that you want to flag. Omitting this parameter is
-     * equivalent to specifying both participants.</p>
-     */
     inline InterruptionFilter& WithParticipantRole(ParticipantRole&& value) { SetParticipantRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
      * during which you want to search for an interruption. See for more detail.</p>
      */
     inline const AbsoluteTimeRange& GetAbsoluteTimeRange() const{ return m_absoluteTimeRange; }
-
-    /**
-     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline bool AbsoluteTimeRangeHasBeenSet() const { return m_absoluteTimeRangeHasBeenSet; }
-
-    /**
-     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline void SetAbsoluteTimeRange(const AbsoluteTimeRange& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = value; }
-
-    /**
-     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline void SetAbsoluteTimeRange(AbsoluteTimeRange&& value) { m_absoluteTimeRangeHasBeenSet = true; m_absoluteTimeRange = std::move(value); }
-
-    /**
-     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline InterruptionFilter& WithAbsoluteTimeRange(const AbsoluteTimeRange& value) { SetAbsoluteTimeRange(value); return *this;}
-
-    /**
-     * <p>Makes it possible to specify a time range (in milliseconds) in your audio,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline InterruptionFilter& WithAbsoluteTimeRange(AbsoluteTimeRange&& value) { SetAbsoluteTimeRange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Makes it possible to specify a time range (in percentage) in your media file,
      * during which you want to search for an interruption. See for more detail.</p>
      */
     inline const RelativeTimeRange& GetRelativeTimeRange() const{ return m_relativeTimeRange; }
-
-    /**
-     * <p>Makes it possible to specify a time range (in percentage) in your media file,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline bool RelativeTimeRangeHasBeenSet() const { return m_relativeTimeRangeHasBeenSet; }
-
-    /**
-     * <p>Makes it possible to specify a time range (in percentage) in your media file,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline void SetRelativeTimeRange(const RelativeTimeRange& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = value; }
-
-    /**
-     * <p>Makes it possible to specify a time range (in percentage) in your media file,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline void SetRelativeTimeRange(RelativeTimeRange&& value) { m_relativeTimeRangeHasBeenSet = true; m_relativeTimeRange = std::move(value); }
-
-    /**
-     * <p>Makes it possible to specify a time range (in percentage) in your media file,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline InterruptionFilter& WithRelativeTimeRange(const RelativeTimeRange& value) { SetRelativeTimeRange(value); return *this;}
-
-    /**
-     * <p>Makes it possible to specify a time range (in percentage) in your media file,
-     * during which you want to search for an interruption. See for more detail.</p>
-     */
     inline InterruptionFilter& WithRelativeTimeRange(RelativeTimeRange&& value) { SetRelativeTimeRange(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
      * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
      */
     inline bool GetNegate() const{ return m_negate; }
-
-    /**
-     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
-     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
-     */
     inline bool NegateHasBeenSet() const { return m_negateHasBeenSet; }
-
-    /**
-     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
-     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
-     */
     inline void SetNegate(bool value) { m_negateHasBeenSet = true; m_negate = value; }
-
-    /**
-     * <p>Set to <code>TRUE</code> to flag speech that does not contain interruptions.
-     * Set to <code>FALSE</code> to flag speech that contains interruptions.</p>
-     */
     inline InterruptionFilter& WithNegate(bool value) { SetNegate(value); return *this;}
-
+    ///@}
   private:
 
     long long m_threshold;

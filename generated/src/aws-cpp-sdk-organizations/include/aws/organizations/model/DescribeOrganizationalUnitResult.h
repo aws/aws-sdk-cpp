@@ -33,53 +33,27 @@ namespace Model
     AWS_ORGANIZATIONS_API DescribeOrganizationalUnitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the specified OU.</p>
      */
     inline const OrganizationalUnit& GetOrganizationalUnit() const{ return m_organizationalUnit; }
-
-    /**
-     * <p>A structure that contains details about the specified OU.</p>
-     */
     inline void SetOrganizationalUnit(const OrganizationalUnit& value) { m_organizationalUnit = value; }
-
-    /**
-     * <p>A structure that contains details about the specified OU.</p>
-     */
     inline void SetOrganizationalUnit(OrganizationalUnit&& value) { m_organizationalUnit = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the specified OU.</p>
-     */
     inline DescribeOrganizationalUnitResult& WithOrganizationalUnit(const OrganizationalUnit& value) { SetOrganizationalUnit(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the specified OU.</p>
-     */
     inline DescribeOrganizationalUnitResult& WithOrganizationalUnit(OrganizationalUnit&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeOrganizationalUnitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeOrganizationalUnitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeOrganizationalUnitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     OrganizationalUnit m_organizationalUnit;

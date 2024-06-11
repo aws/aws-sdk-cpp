@@ -39,6 +39,7 @@ namespace Model
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The type of deployment that you want on a cluster. </p> <ul> <li> <p>ROLLING
      * – This options updates the cluster by stopping the exiting q process and
@@ -51,72 +52,12 @@ namespace Model
      * parameters.</p> </li> </ul>
      */
     inline const KxDeploymentStrategy& GetDeploymentStrategy() const{ return m_deploymentStrategy; }
-
-    /**
-     * <p> The type of deployment that you want on a cluster. </p> <ul> <li> <p>ROLLING
-     * – This options updates the cluster by stopping the exiting q process and
-     * starting a new q process with updated configuration.</p> </li> <li>
-     * <p>NO_RESTART – This option updates the cluster without stopping the running q
-     * process. It is only available for <code>HDB</code> type cluster. This option is
-     * quicker as it reduces the turn around time to update configuration on a cluster.
-     * </p> <p>With this deployment mode, you cannot update the
-     * <code>initializationScript</code> and <code>commandLineArguments</code>
-     * parameters.</p> </li> </ul>
-     */
     inline bool DeploymentStrategyHasBeenSet() const { return m_deploymentStrategyHasBeenSet; }
-
-    /**
-     * <p> The type of deployment that you want on a cluster. </p> <ul> <li> <p>ROLLING
-     * – This options updates the cluster by stopping the exiting q process and
-     * starting a new q process with updated configuration.</p> </li> <li>
-     * <p>NO_RESTART – This option updates the cluster without stopping the running q
-     * process. It is only available for <code>HDB</code> type cluster. This option is
-     * quicker as it reduces the turn around time to update configuration on a cluster.
-     * </p> <p>With this deployment mode, you cannot update the
-     * <code>initializationScript</code> and <code>commandLineArguments</code>
-     * parameters.</p> </li> </ul>
-     */
     inline void SetDeploymentStrategy(const KxDeploymentStrategy& value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = value; }
-
-    /**
-     * <p> The type of deployment that you want on a cluster. </p> <ul> <li> <p>ROLLING
-     * – This options updates the cluster by stopping the exiting q process and
-     * starting a new q process with updated configuration.</p> </li> <li>
-     * <p>NO_RESTART – This option updates the cluster without stopping the running q
-     * process. It is only available for <code>HDB</code> type cluster. This option is
-     * quicker as it reduces the turn around time to update configuration on a cluster.
-     * </p> <p>With this deployment mode, you cannot update the
-     * <code>initializationScript</code> and <code>commandLineArguments</code>
-     * parameters.</p> </li> </ul>
-     */
     inline void SetDeploymentStrategy(KxDeploymentStrategy&& value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = std::move(value); }
-
-    /**
-     * <p> The type of deployment that you want on a cluster. </p> <ul> <li> <p>ROLLING
-     * – This options updates the cluster by stopping the exiting q process and
-     * starting a new q process with updated configuration.</p> </li> <li>
-     * <p>NO_RESTART – This option updates the cluster without stopping the running q
-     * process. It is only available for <code>HDB</code> type cluster. This option is
-     * quicker as it reduces the turn around time to update configuration on a cluster.
-     * </p> <p>With this deployment mode, you cannot update the
-     * <code>initializationScript</code> and <code>commandLineArguments</code>
-     * parameters.</p> </li> </ul>
-     */
     inline KxDeploymentConfiguration& WithDeploymentStrategy(const KxDeploymentStrategy& value) { SetDeploymentStrategy(value); return *this;}
-
-    /**
-     * <p> The type of deployment that you want on a cluster. </p> <ul> <li> <p>ROLLING
-     * – This options updates the cluster by stopping the exiting q process and
-     * starting a new q process with updated configuration.</p> </li> <li>
-     * <p>NO_RESTART – This option updates the cluster without stopping the running q
-     * process. It is only available for <code>HDB</code> type cluster. This option is
-     * quicker as it reduces the turn around time to update configuration on a cluster.
-     * </p> <p>With this deployment mode, you cannot update the
-     * <code>initializationScript</code> and <code>commandLineArguments</code>
-     * parameters.</p> </li> </ul>
-     */
     inline KxDeploymentConfiguration& WithDeploymentStrategy(KxDeploymentStrategy&& value) { SetDeploymentStrategy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KxDeploymentStrategy m_deploymentStrategy;

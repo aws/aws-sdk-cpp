@@ -34,6 +34,7 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies the <code>Id</code> value that uniquely identifies the
      * <code>CreateAccount</code> request. You can get the value from the
@@ -44,84 +45,14 @@ namespace Model
      * digits.</p>
      */
     inline const Aws::String& GetCreateAccountRequestId() const{ return m_createAccountRequestId; }
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline bool CreateAccountRequestIdHasBeenSet() const { return m_createAccountRequestIdHasBeenSet; }
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline void SetCreateAccountRequestId(const Aws::String& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = value; }
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline void SetCreateAccountRequestId(Aws::String&& value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId = std::move(value); }
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline void SetCreateAccountRequestId(const char* value) { m_createAccountRequestIdHasBeenSet = true; m_createAccountRequestId.assign(value); }
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(const Aws::String& value) { SetCreateAccountRequestId(value); return *this;}
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(Aws::String&& value) { SetCreateAccountRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the <code>Id</code> value that uniquely identifies the
-     * <code>CreateAccount</code> request. You can get the value from the
-     * <code>CreateAccountStatus.Id</code> response in an earlier <a>CreateAccount</a>
-     * request, or from the <a>ListCreateAccountStatus</a> operation.</p> <p>The <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a create account
-     * request ID string requires "car-" followed by from 8 to 32 lowercase letters or
-     * digits.</p>
-     */
     inline DescribeCreateAccountStatusRequest& WithCreateAccountRequestId(const char* value) { SetCreateAccountRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_createAccountRequestId;

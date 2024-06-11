@@ -33,43 +33,25 @@ namespace Model
     AWS_PINPOINT_API GetJourneyExecutionActivityMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const JourneyExecutionActivityMetricsResponse& GetJourneyExecutionActivityMetricsResponse() const{ return m_journeyExecutionActivityMetricsResponse; }
-
-    
     inline void SetJourneyExecutionActivityMetricsResponse(const JourneyExecutionActivityMetricsResponse& value) { m_journeyExecutionActivityMetricsResponse = value; }
-
-    
     inline void SetJourneyExecutionActivityMetricsResponse(JourneyExecutionActivityMetricsResponse&& value) { m_journeyExecutionActivityMetricsResponse = std::move(value); }
-
-    
     inline GetJourneyExecutionActivityMetricsResult& WithJourneyExecutionActivityMetricsResponse(const JourneyExecutionActivityMetricsResponse& value) { SetJourneyExecutionActivityMetricsResponse(value); return *this;}
-
-    
     inline GetJourneyExecutionActivityMetricsResult& WithJourneyExecutionActivityMetricsResponse(JourneyExecutionActivityMetricsResponse&& value) { SetJourneyExecutionActivityMetricsResponse(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetJourneyExecutionActivityMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetJourneyExecutionActivityMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetJourneyExecutionActivityMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JourneyExecutionActivityMetricsResponse m_journeyExecutionActivityMetricsResponse;

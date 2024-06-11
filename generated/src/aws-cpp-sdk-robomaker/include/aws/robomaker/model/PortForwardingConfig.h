@@ -38,46 +38,19 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The port mappings for the configuration.</p>
      */
     inline const Aws::Vector<PortMapping>& GetPortMappings() const{ return m_portMappings; }
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline bool PortMappingsHasBeenSet() const { return m_portMappingsHasBeenSet; }
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline void SetPortMappings(const Aws::Vector<PortMapping>& value) { m_portMappingsHasBeenSet = true; m_portMappings = value; }
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline void SetPortMappings(Aws::Vector<PortMapping>&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::move(value); }
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline PortForwardingConfig& WithPortMappings(const Aws::Vector<PortMapping>& value) { SetPortMappings(value); return *this;}
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline PortForwardingConfig& WithPortMappings(Aws::Vector<PortMapping>&& value) { SetPortMappings(std::move(value)); return *this;}
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline PortForwardingConfig& AddPortMappings(const PortMapping& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(value); return *this; }
-
-    /**
-     * <p>The port mappings for the configuration.</p>
-     */
     inline PortForwardingConfig& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<PortMapping> m_portMappings;

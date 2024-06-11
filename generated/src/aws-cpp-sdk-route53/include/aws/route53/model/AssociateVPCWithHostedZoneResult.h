@@ -39,53 +39,27 @@ namespace Model
     AWS_ROUTE53_API AssociateVPCWithHostedZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>A complex type that describes the changes made to your hosted zone.</p>
      */
     inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
-
-    /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
-     */
     inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
-
-    /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
-     */
     inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
-
-    /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
-     */
     inline AssociateVPCWithHostedZoneResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
-
-    /**
-     * <p>A complex type that describes the changes made to your hosted zone.</p>
-     */
     inline AssociateVPCWithHostedZoneResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline AssociateVPCWithHostedZoneResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline AssociateVPCWithHostedZoneResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline AssociateVPCWithHostedZoneResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChangeInfo m_changeInfo;

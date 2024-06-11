@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTFORVISION_API DetectAnomaliesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The results of the <code>DetectAnomalies</code> operation.</p>
      */
     inline const DetectAnomalyResult& GetDetectAnomalyResult() const{ return m_detectAnomalyResult; }
-
-    /**
-     * <p>The results of the <code>DetectAnomalies</code> operation.</p>
-     */
     inline void SetDetectAnomalyResult(const DetectAnomalyResult& value) { m_detectAnomalyResult = value; }
-
-    /**
-     * <p>The results of the <code>DetectAnomalies</code> operation.</p>
-     */
     inline void SetDetectAnomalyResult(DetectAnomalyResult&& value) { m_detectAnomalyResult = std::move(value); }
-
-    /**
-     * <p>The results of the <code>DetectAnomalies</code> operation.</p>
-     */
     inline DetectAnomaliesResult& WithDetectAnomalyResult(const DetectAnomalyResult& value) { SetDetectAnomalyResult(value); return *this;}
-
-    /**
-     * <p>The results of the <code>DetectAnomalies</code> operation.</p>
-     */
     inline DetectAnomaliesResult& WithDetectAnomalyResult(DetectAnomalyResult&& value) { SetDetectAnomalyResult(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DetectAnomaliesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DetectAnomaliesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DetectAnomaliesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DetectAnomalyResult m_detectAnomalyResult;

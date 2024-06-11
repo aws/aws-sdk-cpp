@@ -40,77 +40,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field sort options for rows in the table.</p>
      */
     inline const Aws::Vector<FieldSortOptions>& GetRowSort() const{ return m_rowSort; }
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline bool RowSortHasBeenSet() const { return m_rowSortHasBeenSet; }
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline void SetRowSort(const Aws::Vector<FieldSortOptions>& value) { m_rowSortHasBeenSet = true; m_rowSort = value; }
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline void SetRowSort(Aws::Vector<FieldSortOptions>&& value) { m_rowSortHasBeenSet = true; m_rowSort = std::move(value); }
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline TableSortConfiguration& WithRowSort(const Aws::Vector<FieldSortOptions>& value) { SetRowSort(value); return *this;}
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline TableSortConfiguration& WithRowSort(Aws::Vector<FieldSortOptions>&& value) { SetRowSort(std::move(value)); return *this;}
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline TableSortConfiguration& AddRowSort(const FieldSortOptions& value) { m_rowSortHasBeenSet = true; m_rowSort.push_back(value); return *this; }
-
-    /**
-     * <p>The field sort options for rows in the table.</p>
-     */
     inline TableSortConfiguration& AddRowSort(FieldSortOptions&& value) { m_rowSortHasBeenSet = true; m_rowSort.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination configuration (page size, page number) for the table.</p>
      */
     inline const PaginationConfiguration& GetPaginationConfiguration() const{ return m_paginationConfiguration; }
-
-    /**
-     * <p>The pagination configuration (page size, page number) for the table.</p>
-     */
     inline bool PaginationConfigurationHasBeenSet() const { return m_paginationConfigurationHasBeenSet; }
-
-    /**
-     * <p>The pagination configuration (page size, page number) for the table.</p>
-     */
     inline void SetPaginationConfiguration(const PaginationConfiguration& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = value; }
-
-    /**
-     * <p>The pagination configuration (page size, page number) for the table.</p>
-     */
     inline void SetPaginationConfiguration(PaginationConfiguration&& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = std::move(value); }
-
-    /**
-     * <p>The pagination configuration (page size, page number) for the table.</p>
-     */
     inline TableSortConfiguration& WithPaginationConfiguration(const PaginationConfiguration& value) { SetPaginationConfiguration(value); return *this;}
-
-    /**
-     * <p>The pagination configuration (page size, page number) for the table.</p>
-     */
     inline TableSortConfiguration& WithPaginationConfiguration(PaginationConfiguration&& value) { SetPaginationConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FieldSortOptions> m_rowSort;

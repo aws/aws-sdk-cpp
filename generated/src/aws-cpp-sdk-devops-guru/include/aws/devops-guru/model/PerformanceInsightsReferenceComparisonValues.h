@@ -41,91 +41,33 @@ namespace Model
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual
      * metric values. This reference value is used to determine if an actual metric
      * value should be considered anomalous.</p>
      */
     inline const PerformanceInsightsReferenceScalar& GetReferenceScalar() const{ return m_referenceScalar; }
-
-    /**
-     * <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual
-     * metric values. This reference value is used to determine if an actual metric
-     * value should be considered anomalous.</p>
-     */
     inline bool ReferenceScalarHasBeenSet() const { return m_referenceScalarHasBeenSet; }
-
-    /**
-     * <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual
-     * metric values. This reference value is used to determine if an actual metric
-     * value should be considered anomalous.</p>
-     */
     inline void SetReferenceScalar(const PerformanceInsightsReferenceScalar& value) { m_referenceScalarHasBeenSet = true; m_referenceScalar = value; }
-
-    /**
-     * <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual
-     * metric values. This reference value is used to determine if an actual metric
-     * value should be considered anomalous.</p>
-     */
     inline void SetReferenceScalar(PerformanceInsightsReferenceScalar&& value) { m_referenceScalarHasBeenSet = true; m_referenceScalar = std::move(value); }
-
-    /**
-     * <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual
-     * metric values. This reference value is used to determine if an actual metric
-     * value should be considered anomalous.</p>
-     */
     inline PerformanceInsightsReferenceComparisonValues& WithReferenceScalar(const PerformanceInsightsReferenceScalar& value) { SetReferenceScalar(value); return *this;}
-
-    /**
-     * <p>A scalar value DevOps Guru for a metric that DevOps Guru compares to actual
-     * metric values. This reference value is used to determine if an actual metric
-     * value should be considered anomalous.</p>
-     */
     inline PerformanceInsightsReferenceComparisonValues& WithReferenceScalar(PerformanceInsightsReferenceScalar&& value) { SetReferenceScalar(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A metric that DevOps Guru compares to actual metric values. This reference
      * metric is used to determine if an actual metric should be considered
      * anomalous.</p>
      */
     inline const PerformanceInsightsReferenceMetric& GetReferenceMetric() const{ return m_referenceMetric; }
-
-    /**
-     * <p>A metric that DevOps Guru compares to actual metric values. This reference
-     * metric is used to determine if an actual metric should be considered
-     * anomalous.</p>
-     */
     inline bool ReferenceMetricHasBeenSet() const { return m_referenceMetricHasBeenSet; }
-
-    /**
-     * <p>A metric that DevOps Guru compares to actual metric values. This reference
-     * metric is used to determine if an actual metric should be considered
-     * anomalous.</p>
-     */
     inline void SetReferenceMetric(const PerformanceInsightsReferenceMetric& value) { m_referenceMetricHasBeenSet = true; m_referenceMetric = value; }
-
-    /**
-     * <p>A metric that DevOps Guru compares to actual metric values. This reference
-     * metric is used to determine if an actual metric should be considered
-     * anomalous.</p>
-     */
     inline void SetReferenceMetric(PerformanceInsightsReferenceMetric&& value) { m_referenceMetricHasBeenSet = true; m_referenceMetric = std::move(value); }
-
-    /**
-     * <p>A metric that DevOps Guru compares to actual metric values. This reference
-     * metric is used to determine if an actual metric should be considered
-     * anomalous.</p>
-     */
     inline PerformanceInsightsReferenceComparisonValues& WithReferenceMetric(const PerformanceInsightsReferenceMetric& value) { SetReferenceMetric(value); return *this;}
-
-    /**
-     * <p>A metric that DevOps Guru compares to actual metric values. This reference
-     * metric is used to determine if an actual metric should be considered
-     * anomalous.</p>
-     */
     inline PerformanceInsightsReferenceComparisonValues& WithReferenceMetric(PerformanceInsightsReferenceMetric&& value) { SetReferenceMetric(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PerformanceInsightsReferenceScalar m_referenceScalar;

@@ -37,63 +37,29 @@ namespace Model
     AWS_COGNITOSYNC_API RegisterDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
-
-    /**
-     * <p>The unique ID generated for this device by Cognito.</p>
-     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceId = value; }
-
-    /**
-     * <p>The unique ID generated for this device by Cognito.</p>
-     */
     inline void SetDeviceId(Aws::String&& value) { m_deviceId = std::move(value); }
-
-    /**
-     * <p>The unique ID generated for this device by Cognito.</p>
-     */
     inline void SetDeviceId(const char* value) { m_deviceId.assign(value); }
-
-    /**
-     * <p>The unique ID generated for this device by Cognito.</p>
-     */
     inline RegisterDeviceResult& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-
-    /**
-     * <p>The unique ID generated for this device by Cognito.</p>
-     */
     inline RegisterDeviceResult& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID generated for this device by Cognito.</p>
-     */
     inline RegisterDeviceResult& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RegisterDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RegisterDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RegisterDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_deviceId;

@@ -32,115 +32,51 @@ namespace Model
     AWS_GLUEDATABREW_API SendProjectSessionActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A message indicating the result of performing the action.</p>
      */
     inline const Aws::String& GetResult() const{ return m_result; }
-
-    /**
-     * <p>A message indicating the result of performing the action.</p>
-     */
     inline void SetResult(const Aws::String& value) { m_result = value; }
-
-    /**
-     * <p>A message indicating the result of performing the action.</p>
-     */
     inline void SetResult(Aws::String&& value) { m_result = std::move(value); }
-
-    /**
-     * <p>A message indicating the result of performing the action.</p>
-     */
     inline void SetResult(const char* value) { m_result.assign(value); }
-
-    /**
-     * <p>A message indicating the result of performing the action.</p>
-     */
     inline SendProjectSessionActionResult& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-
-    /**
-     * <p>A message indicating the result of performing the action.</p>
-     */
     inline SendProjectSessionActionResult& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-
-    /**
-     * <p>A message indicating the result of performing the action.</p>
-     */
     inline SendProjectSessionActionResult& WithResult(const char* value) { SetResult(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the project that was affected by the action.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the project that was affected by the action.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the project that was affected by the action.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the project that was affected by the action.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the project that was affected by the action.</p>
-     */
     inline SendProjectSessionActionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the project that was affected by the action.</p>
-     */
     inline SendProjectSessionActionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project that was affected by the action.</p>
-     */
     inline SendProjectSessionActionResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A unique identifier for the action that was performed.</p>
      */
     inline int GetActionId() const{ return m_actionId; }
-
-    /**
-     * <p>A unique identifier for the action that was performed.</p>
-     */
     inline void SetActionId(int value) { m_actionId = value; }
-
-    /**
-     * <p>A unique identifier for the action that was performed.</p>
-     */
     inline SendProjectSessionActionResult& WithActionId(int value) { SetActionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline SendProjectSessionActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline SendProjectSessionActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline SendProjectSessionActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_result;

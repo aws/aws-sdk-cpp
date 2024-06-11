@@ -36,46 +36,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
      */
     inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline bool SAMLProviderArnHasBeenSet() const { return m_sAMLProviderArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline DeleteSAMLProviderRequest& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline DeleteSAMLProviderRequest& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the SAML provider to delete.</p>
-     */
     inline DeleteSAMLProviderRequest& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sAMLProviderArn;

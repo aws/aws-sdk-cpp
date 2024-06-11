@@ -38,42 +38,18 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
      * given CloudFront distribution.</p>
      */
     inline const RealtimeMetricsSubscriptionStatus& GetRealtimeMetricsSubscriptionStatus() const{ return m_realtimeMetricsSubscriptionStatus; }
-
-    /**
-     * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
-     * given CloudFront distribution.</p>
-     */
     inline bool RealtimeMetricsSubscriptionStatusHasBeenSet() const { return m_realtimeMetricsSubscriptionStatusHasBeenSet; }
-
-    /**
-     * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
-     * given CloudFront distribution.</p>
-     */
     inline void SetRealtimeMetricsSubscriptionStatus(const RealtimeMetricsSubscriptionStatus& value) { m_realtimeMetricsSubscriptionStatusHasBeenSet = true; m_realtimeMetricsSubscriptionStatus = value; }
-
-    /**
-     * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
-     * given CloudFront distribution.</p>
-     */
     inline void SetRealtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus&& value) { m_realtimeMetricsSubscriptionStatusHasBeenSet = true; m_realtimeMetricsSubscriptionStatus = std::move(value); }
-
-    /**
-     * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
-     * given CloudFront distribution.</p>
-     */
     inline RealtimeMetricsSubscriptionConfig& WithRealtimeMetricsSubscriptionStatus(const RealtimeMetricsSubscriptionStatus& value) { SetRealtimeMetricsSubscriptionStatus(value); return *this;}
-
-    /**
-     * <p>A flag that indicates whether additional CloudWatch metrics are enabled for a
-     * given CloudFront distribution.</p>
-     */
     inline RealtimeMetricsSubscriptionConfig& WithRealtimeMetricsSubscriptionStatus(RealtimeMetricsSubscriptionStatus&& value) { SetRealtimeMetricsSubscriptionStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RealtimeMetricsSubscriptionStatus m_realtimeMetricsSubscriptionStatus;

@@ -38,67 +38,29 @@ namespace Model
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The role of the user.</p>
      */
     inline const RoleType& GetRole() const{ return m_role; }
-
-    /**
-     * <p>The role of the user.</p>
-     */
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-
-    /**
-     * <p>The role of the user.</p>
-     */
     inline void SetRole(const RoleType& value) { m_roleHasBeenSet = true; m_role = value; }
-
-    /**
-     * <p>The role of the user.</p>
-     */
     inline void SetRole(RoleType&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-
-    /**
-     * <p>The role of the user.</p>
-     */
     inline PermissionInfo& WithRole(const RoleType& value) { SetRole(value); return *this;}
-
-    /**
-     * <p>The role of the user.</p>
-     */
     inline PermissionInfo& WithRole(RoleType&& value) { SetRole(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of permissions.</p>
      */
     inline const RolePermissionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The type of permissions.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The type of permissions.</p>
-     */
     inline void SetType(const RolePermissionType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The type of permissions.</p>
-     */
     inline void SetType(RolePermissionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The type of permissions.</p>
-     */
     inline PermissionInfo& WithType(const RolePermissionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The type of permissions.</p>
-     */
     inline PermissionInfo& WithType(RolePermissionType&& value) { SetType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RoleType m_role;

@@ -34,46 +34,19 @@ namespace Model
     AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The managed node ID.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline GetConnectionStatusRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline GetConnectionStatusRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-
-    /**
-     * <p>The managed node ID.</p>
-     */
     inline GetConnectionStatusRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_target;

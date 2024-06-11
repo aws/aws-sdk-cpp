@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The free-form layout configuration of a section.</p>
      */
     inline const FreeFormSectionLayoutConfiguration& GetFreeFormLayout() const{ return m_freeFormLayout; }
-
-    /**
-     * <p>The free-form layout configuration of a section.</p>
-     */
     inline bool FreeFormLayoutHasBeenSet() const { return m_freeFormLayoutHasBeenSet; }
-
-    /**
-     * <p>The free-form layout configuration of a section.</p>
-     */
     inline void SetFreeFormLayout(const FreeFormSectionLayoutConfiguration& value) { m_freeFormLayoutHasBeenSet = true; m_freeFormLayout = value; }
-
-    /**
-     * <p>The free-form layout configuration of a section.</p>
-     */
     inline void SetFreeFormLayout(FreeFormSectionLayoutConfiguration&& value) { m_freeFormLayoutHasBeenSet = true; m_freeFormLayout = std::move(value); }
-
-    /**
-     * <p>The free-form layout configuration of a section.</p>
-     */
     inline SectionLayoutConfiguration& WithFreeFormLayout(const FreeFormSectionLayoutConfiguration& value) { SetFreeFormLayout(value); return *this;}
-
-    /**
-     * <p>The free-form layout configuration of a section.</p>
-     */
     inline SectionLayoutConfiguration& WithFreeFormLayout(FreeFormSectionLayoutConfiguration&& value) { SetFreeFormLayout(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FreeFormSectionLayoutConfiguration m_freeFormLayout;

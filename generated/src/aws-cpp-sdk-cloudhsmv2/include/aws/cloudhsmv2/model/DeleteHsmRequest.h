@@ -34,193 +34,64 @@ namespace Model
     AWS_CLOUDHSMV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier (ID) of the cluster that contains the HSM that you are
      * deleting.</p>
      */
     inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline DeleteHsmRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline DeleteHsmRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the cluster that contains the HSM that you are
-     * deleting.</p>
-     */
     inline DeleteHsmRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier (ID) of the HSM that you are deleting.</p>
      */
     inline const Aws::String& GetHsmId() const{ return m_hsmId; }
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline bool HsmIdHasBeenSet() const { return m_hsmIdHasBeenSet; }
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline void SetHsmId(const Aws::String& value) { m_hsmIdHasBeenSet = true; m_hsmId = value; }
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline void SetHsmId(Aws::String&& value) { m_hsmIdHasBeenSet = true; m_hsmId = std::move(value); }
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline void SetHsmId(const char* value) { m_hsmIdHasBeenSet = true; m_hsmId.assign(value); }
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline DeleteHsmRequest& WithHsmId(const Aws::String& value) { SetHsmId(value); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline DeleteHsmRequest& WithHsmId(Aws::String&& value) { SetHsmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the HSM that you are deleting.</p>
-     */
     inline DeleteHsmRequest& WithHsmId(const char* value) { SetHsmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
      * you are deleting.</p>
      */
     inline const Aws::String& GetEniId() const{ return m_eniId; }
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline void SetEniId(const Aws::String& value) { m_eniIdHasBeenSet = true; m_eniId = value; }
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline void SetEniId(Aws::String&& value) { m_eniIdHasBeenSet = true; m_eniId = std::move(value); }
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline void SetEniId(const char* value) { m_eniIdHasBeenSet = true; m_eniId.assign(value); }
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline DeleteHsmRequest& WithEniId(const Aws::String& value) { SetEniId(value); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline DeleteHsmRequest& WithEniId(Aws::String&& value) { SetEniId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
-     * you are deleting.</p>
-     */
     inline DeleteHsmRequest& WithEniId(const char* value) { SetEniId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
      * deleting.</p>
      */
     inline const Aws::String& GetEniIp() const{ return m_eniIp; }
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline bool EniIpHasBeenSet() const { return m_eniIpHasBeenSet; }
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline void SetEniIp(const Aws::String& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = std::move(value); }
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline void SetEniIp(const char* value) { m_eniIpHasBeenSet = true; m_eniIp.assign(value); }
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline DeleteHsmRequest& WithEniIp(const Aws::String& value) { SetEniIp(value); return *this;}
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline DeleteHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
-     * deleting.</p>
-     */
     inline DeleteHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clusterId;

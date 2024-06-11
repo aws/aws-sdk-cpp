@@ -39,55 +39,22 @@ namespace Model
     AWS_ROUTE53_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>A description of the status of the health check endpoint as reported by one
      * of the Amazon Route 53 health checkers.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline StatusReport& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline StatusReport& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the status of the health check endpoint as reported by one
-     * of the Amazon Route 53 health checkers.</p>
-     */
     inline StatusReport& WithStatus(const char* value) { SetStatus(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the health checker performed the health check in <a
      * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
@@ -96,52 +63,12 @@ namespace Model
      * UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetCheckedTime() const{ return m_checkedTime; }
-
-    /**
-     * <p>The date and time that the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
-     * UTC.</p>
-     */
     inline bool CheckedTimeHasBeenSet() const { return m_checkedTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time that the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
-     * UTC.</p>
-     */
     inline void SetCheckedTime(const Aws::Utils::DateTime& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = value; }
-
-    /**
-     * <p>The date and time that the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
-     * UTC.</p>
-     */
     inline void SetCheckedTime(Aws::Utils::DateTime&& value) { m_checkedTimeHasBeenSet = true; m_checkedTime = std::move(value); }
-
-    /**
-     * <p>The date and time that the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
-     * UTC.</p>
-     */
     inline StatusReport& WithCheckedTime(const Aws::Utils::DateTime& value) { SetCheckedTime(value); return *this;}
-
-    /**
-     * <p>The date and time that the health checker performed the health check in <a
-     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
-     * Coordinated Universal Time (UTC). For example, the value
-     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
-     * UTC.</p>
-     */
     inline StatusReport& WithCheckedTime(Aws::Utils::DateTime&& value) { SetCheckedTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_status;

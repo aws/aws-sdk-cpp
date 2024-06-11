@@ -39,87 +39,33 @@ namespace Model
     AWS_NEPTUNE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline OptionGroupMembership& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline OptionGroupMembership& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline OptionGroupMembership& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Not supported by Neptune.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline OptionGroupMembership& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline OptionGroupMembership& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>Not supported by Neptune.</p>
-     */
     inline OptionGroupMembership& WithStatus(const char* value) { SetStatus(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_optionGroupName;

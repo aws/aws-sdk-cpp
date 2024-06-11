@@ -38,63 +38,28 @@ namespace Model
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The maximum number of protection groups that you can have at one time. </p>
      */
     inline long long GetMaxProtectionGroups() const{ return m_maxProtectionGroups; }
-
-    /**
-     * <p>The maximum number of protection groups that you can have at one time. </p>
-     */
     inline bool MaxProtectionGroupsHasBeenSet() const { return m_maxProtectionGroupsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of protection groups that you can have at one time. </p>
-     */
     inline void SetMaxProtectionGroups(long long value) { m_maxProtectionGroupsHasBeenSet = true; m_maxProtectionGroups = value; }
-
-    /**
-     * <p>The maximum number of protection groups that you can have at one time. </p>
-     */
     inline ProtectionGroupLimits& WithMaxProtectionGroups(long long value) { SetMaxProtectionGroups(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Limits settings by pattern type in the protection groups for your
      * subscription. </p>
      */
     inline const ProtectionGroupPatternTypeLimits& GetPatternTypeLimits() const{ return m_patternTypeLimits; }
-
-    /**
-     * <p>Limits settings by pattern type in the protection groups for your
-     * subscription. </p>
-     */
     inline bool PatternTypeLimitsHasBeenSet() const { return m_patternTypeLimitsHasBeenSet; }
-
-    /**
-     * <p>Limits settings by pattern type in the protection groups for your
-     * subscription. </p>
-     */
     inline void SetPatternTypeLimits(const ProtectionGroupPatternTypeLimits& value) { m_patternTypeLimitsHasBeenSet = true; m_patternTypeLimits = value; }
-
-    /**
-     * <p>Limits settings by pattern type in the protection groups for your
-     * subscription. </p>
-     */
     inline void SetPatternTypeLimits(ProtectionGroupPatternTypeLimits&& value) { m_patternTypeLimitsHasBeenSet = true; m_patternTypeLimits = std::move(value); }
-
-    /**
-     * <p>Limits settings by pattern type in the protection groups for your
-     * subscription. </p>
-     */
     inline ProtectionGroupLimits& WithPatternTypeLimits(const ProtectionGroupPatternTypeLimits& value) { SetPatternTypeLimits(value); return *this;}
-
-    /**
-     * <p>Limits settings by pattern type in the protection groups for your
-     * subscription. </p>
-     */
     inline ProtectionGroupLimits& WithPatternTypeLimits(ProtectionGroupPatternTypeLimits&& value) { SetPatternTypeLimits(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_maxProtectionGroups;

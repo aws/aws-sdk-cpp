@@ -40,62 +40,35 @@ namespace Model
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const TokenIdentifier& GetTokenIdentifier() const{ return m_tokenIdentifier; }
-
-    
     inline bool TokenIdentifierHasBeenSet() const { return m_tokenIdentifierHasBeenSet; }
-
-    
     inline void SetTokenIdentifier(const TokenIdentifier& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = value; }
-
-    
     inline void SetTokenIdentifier(TokenIdentifier&& value) { m_tokenIdentifierHasBeenSet = true; m_tokenIdentifier = std::move(value); }
-
-    
     inline BatchGetTokenBalanceInputItem& WithTokenIdentifier(const TokenIdentifier& value) { SetTokenIdentifier(value); return *this;}
-
-    
     inline BatchGetTokenBalanceInputItem& WithTokenIdentifier(TokenIdentifier&& value) { SetTokenIdentifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const OwnerIdentifier& GetOwnerIdentifier() const{ return m_ownerIdentifier; }
-
-    
     inline bool OwnerIdentifierHasBeenSet() const { return m_ownerIdentifierHasBeenSet; }
-
-    
     inline void SetOwnerIdentifier(const OwnerIdentifier& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = value; }
-
-    
     inline void SetOwnerIdentifier(OwnerIdentifier&& value) { m_ownerIdentifierHasBeenSet = true; m_ownerIdentifier = std::move(value); }
-
-    
     inline BatchGetTokenBalanceInputItem& WithOwnerIdentifier(const OwnerIdentifier& value) { SetOwnerIdentifier(value); return *this;}
-
-    
     inline BatchGetTokenBalanceInputItem& WithOwnerIdentifier(OwnerIdentifier&& value) { SetOwnerIdentifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const BlockchainInstant& GetAtBlockchainInstant() const{ return m_atBlockchainInstant; }
-
-    
     inline bool AtBlockchainInstantHasBeenSet() const { return m_atBlockchainInstantHasBeenSet; }
-
-    
     inline void SetAtBlockchainInstant(const BlockchainInstant& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = value; }
-
-    
     inline void SetAtBlockchainInstant(BlockchainInstant&& value) { m_atBlockchainInstantHasBeenSet = true; m_atBlockchainInstant = std::move(value); }
-
-    
     inline BatchGetTokenBalanceInputItem& WithAtBlockchainInstant(const BlockchainInstant& value) { SetAtBlockchainInstant(value); return *this;}
-
-    
     inline BatchGetTokenBalanceInputItem& WithAtBlockchainInstant(BlockchainInstant&& value) { SetAtBlockchainInstant(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TokenIdentifier m_tokenIdentifier;

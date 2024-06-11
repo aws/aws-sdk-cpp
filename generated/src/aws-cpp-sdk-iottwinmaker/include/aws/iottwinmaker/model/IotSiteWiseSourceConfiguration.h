@@ -39,46 +39,19 @@ namespace Model
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The AWS IoT SiteWise soucre configuration filters.</p>
      */
     inline const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline void SetFilters(const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline void SetFilters(Aws::Vector<IotSiteWiseSourceConfigurationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline IotSiteWiseSourceConfiguration& WithFilters(const Aws::Vector<IotSiteWiseSourceConfigurationFilter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline IotSiteWiseSourceConfiguration& WithFilters(Aws::Vector<IotSiteWiseSourceConfigurationFilter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline IotSiteWiseSourceConfiguration& AddFilters(const IotSiteWiseSourceConfigurationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>The AWS IoT SiteWise soucre configuration filters.</p>
-     */
     inline IotSiteWiseSourceConfiguration& AddFilters(IotSiteWiseSourceConfigurationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<IotSiteWiseSourceConfigurationFilter> m_filters;

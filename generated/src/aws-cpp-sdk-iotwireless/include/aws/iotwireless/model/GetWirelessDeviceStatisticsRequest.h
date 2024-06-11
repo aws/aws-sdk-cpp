@@ -32,46 +32,19 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the wireless device for which to get the data.</p>
      */
     inline const Aws::String& GetWirelessDeviceId() const{ return m_wirelessDeviceId; }
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline bool WirelessDeviceIdHasBeenSet() const { return m_wirelessDeviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline void SetWirelessDeviceId(const Aws::String& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = value; }
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline void SetWirelessDeviceId(Aws::String&& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline void SetWirelessDeviceId(const char* value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId.assign(value); }
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(const Aws::String& value) { SetWirelessDeviceId(value); return *this;}
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(Aws::String&& value) { SetWirelessDeviceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the wireless device for which to get the data.</p>
-     */
     inline GetWirelessDeviceStatisticsRequest& WithWirelessDeviceId(const char* value) { SetWirelessDeviceId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_wirelessDeviceId;

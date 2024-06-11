@@ -32,99 +32,42 @@ namespace Model
     AWS_SAGEMAKER_API CreateDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the created domain.</p>
      */
     inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created domain.</p>
-     */
     inline void SetDomainArn(const Aws::String& value) { m_domainArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created domain.</p>
-     */
     inline void SetDomainArn(Aws::String&& value) { m_domainArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created domain.</p>
-     */
     inline void SetDomainArn(const char* value) { m_domainArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created domain.</p>
-     */
     inline CreateDomainResult& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created domain.</p>
-     */
     inline CreateDomainResult& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created domain.</p>
-     */
     inline CreateDomainResult& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL to the created domain.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
-
-    /**
-     * <p>The URL to the created domain.</p>
-     */
     inline void SetUrl(const Aws::String& value) { m_url = value; }
-
-    /**
-     * <p>The URL to the created domain.</p>
-     */
     inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-
-    /**
-     * <p>The URL to the created domain.</p>
-     */
     inline void SetUrl(const char* value) { m_url.assign(value); }
-
-    /**
-     * <p>The URL to the created domain.</p>
-     */
     inline CreateDomainResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-
-    /**
-     * <p>The URL to the created domain.</p>
-     */
     inline CreateDomainResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL to the created domain.</p>
-     */
     inline CreateDomainResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainArn;

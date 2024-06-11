@@ -36,127 +36,53 @@ namespace Model
     AWS_WORKMAIL_API GetImpersonationRoleEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The impersonation role type.</p>
      */
     inline const ImpersonationRoleType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The impersonation role type.</p>
-     */
     inline void SetType(const ImpersonationRoleType& value) { m_type = value; }
-
-    /**
-     * <p>The impersonation role type.</p>
-     */
     inline void SetType(ImpersonationRoleType&& value) { m_type = std::move(value); }
-
-    /**
-     * <p>The impersonation role type.</p>
-     */
     inline GetImpersonationRoleEffectResult& WithType(const ImpersonationRoleType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The impersonation role type.</p>
-     */
     inline GetImpersonationRoleEffectResult& WithType(ImpersonationRoleType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> <code/>Effect of the impersonation role on the target user based on its
      * rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
      */
     inline const AccessEffect& GetEffect() const{ return m_effect; }
-
-    /**
-     * <p> <code/>Effect of the impersonation role on the target user based on its
-     * rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-     */
     inline void SetEffect(const AccessEffect& value) { m_effect = value; }
-
-    /**
-     * <p> <code/>Effect of the impersonation role on the target user based on its
-     * rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-     */
     inline void SetEffect(AccessEffect&& value) { m_effect = std::move(value); }
-
-    /**
-     * <p> <code/>Effect of the impersonation role on the target user based on its
-     * rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-     */
     inline GetImpersonationRoleEffectResult& WithEffect(const AccessEffect& value) { SetEffect(value); return *this;}
-
-    /**
-     * <p> <code/>Effect of the impersonation role on the target user based on its
-     * rules. Available effects are <code>ALLOW</code> or <code>DENY</code>.</p>
-     */
     inline GetImpersonationRoleEffectResult& WithEffect(AccessEffect&& value) { SetEffect(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of the rules that match the input and produce the configured
      * effect.</p>
      */
     inline const Aws::Vector<ImpersonationMatchedRule>& GetMatchedRules() const{ return m_matchedRules; }
-
-    /**
-     * <p>A list of the rules that match the input and produce the configured
-     * effect.</p>
-     */
     inline void SetMatchedRules(const Aws::Vector<ImpersonationMatchedRule>& value) { m_matchedRules = value; }
-
-    /**
-     * <p>A list of the rules that match the input and produce the configured
-     * effect.</p>
-     */
     inline void SetMatchedRules(Aws::Vector<ImpersonationMatchedRule>&& value) { m_matchedRules = std::move(value); }
-
-    /**
-     * <p>A list of the rules that match the input and produce the configured
-     * effect.</p>
-     */
     inline GetImpersonationRoleEffectResult& WithMatchedRules(const Aws::Vector<ImpersonationMatchedRule>& value) { SetMatchedRules(value); return *this;}
-
-    /**
-     * <p>A list of the rules that match the input and produce the configured
-     * effect.</p>
-     */
     inline GetImpersonationRoleEffectResult& WithMatchedRules(Aws::Vector<ImpersonationMatchedRule>&& value) { SetMatchedRules(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the rules that match the input and produce the configured
-     * effect.</p>
-     */
     inline GetImpersonationRoleEffectResult& AddMatchedRules(const ImpersonationMatchedRule& value) { m_matchedRules.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the rules that match the input and produce the configured
-     * effect.</p>
-     */
     inline GetImpersonationRoleEffectResult& AddMatchedRules(ImpersonationMatchedRule&& value) { m_matchedRules.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetImpersonationRoleEffectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetImpersonationRoleEffectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetImpersonationRoleEffectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ImpersonationRoleType m_type;

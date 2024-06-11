@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The layout configuration of a body section.</p>
      */
     inline const SectionLayoutConfiguration& GetLayout() const{ return m_layout; }
-
-    /**
-     * <p>The layout configuration of a body section.</p>
-     */
     inline bool LayoutHasBeenSet() const { return m_layoutHasBeenSet; }
-
-    /**
-     * <p>The layout configuration of a body section.</p>
-     */
     inline void SetLayout(const SectionLayoutConfiguration& value) { m_layoutHasBeenSet = true; m_layout = value; }
-
-    /**
-     * <p>The layout configuration of a body section.</p>
-     */
     inline void SetLayout(SectionLayoutConfiguration&& value) { m_layoutHasBeenSet = true; m_layout = std::move(value); }
-
-    /**
-     * <p>The layout configuration of a body section.</p>
-     */
     inline BodySectionContent& WithLayout(const SectionLayoutConfiguration& value) { SetLayout(value); return *this;}
-
-    /**
-     * <p>The layout configuration of a body section.</p>
-     */
     inline BodySectionContent& WithLayout(SectionLayoutConfiguration&& value) { SetLayout(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SectionLayoutConfiguration m_layout;

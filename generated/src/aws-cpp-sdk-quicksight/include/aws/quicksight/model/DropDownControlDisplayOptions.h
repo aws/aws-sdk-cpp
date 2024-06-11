@@ -39,104 +39,42 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration of the <code>Select all</code> options in a dropdown
      * control.</p>
      */
     inline const ListControlSelectAllOptions& GetSelectAllOptions() const{ return m_selectAllOptions; }
-
-    /**
-     * <p>The configuration of the <code>Select all</code> options in a dropdown
-     * control.</p>
-     */
     inline bool SelectAllOptionsHasBeenSet() const { return m_selectAllOptionsHasBeenSet; }
-
-    /**
-     * <p>The configuration of the <code>Select all</code> options in a dropdown
-     * control.</p>
-     */
     inline void SetSelectAllOptions(const ListControlSelectAllOptions& value) { m_selectAllOptionsHasBeenSet = true; m_selectAllOptions = value; }
-
-    /**
-     * <p>The configuration of the <code>Select all</code> options in a dropdown
-     * control.</p>
-     */
     inline void SetSelectAllOptions(ListControlSelectAllOptions&& value) { m_selectAllOptionsHasBeenSet = true; m_selectAllOptions = std::move(value); }
-
-    /**
-     * <p>The configuration of the <code>Select all</code> options in a dropdown
-     * control.</p>
-     */
     inline DropDownControlDisplayOptions& WithSelectAllOptions(const ListControlSelectAllOptions& value) { SetSelectAllOptions(value); return *this;}
-
-    /**
-     * <p>The configuration of the <code>Select all</code> options in a dropdown
-     * control.</p>
-     */
     inline DropDownControlDisplayOptions& WithSelectAllOptions(ListControlSelectAllOptions&& value) { SetSelectAllOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The options to configure the title visibility, name, and font size.</p>
      */
     inline const LabelOptions& GetTitleOptions() const{ return m_titleOptions; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline bool TitleOptionsHasBeenSet() const { return m_titleOptionsHasBeenSet; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline void SetTitleOptions(const LabelOptions& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = value; }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline void SetTitleOptions(LabelOptions&& value) { m_titleOptionsHasBeenSet = true; m_titleOptions = std::move(value); }
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline DropDownControlDisplayOptions& WithTitleOptions(const LabelOptions& value) { SetTitleOptions(value); return *this;}
-
-    /**
-     * <p>The options to configure the title visibility, name, and font size.</p>
-     */
     inline DropDownControlDisplayOptions& WithTitleOptions(LabelOptions&& value) { SetTitleOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The configuration of info icon label options.</p>
      */
     inline const SheetControlInfoIconLabelOptions& GetInfoIconLabelOptions() const{ return m_infoIconLabelOptions; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline bool InfoIconLabelOptionsHasBeenSet() const { return m_infoIconLabelOptionsHasBeenSet; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline void SetInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = value; }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline void SetInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { m_infoIconLabelOptionsHasBeenSet = true; m_infoIconLabelOptions = std::move(value); }
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline DropDownControlDisplayOptions& WithInfoIconLabelOptions(const SheetControlInfoIconLabelOptions& value) { SetInfoIconLabelOptions(value); return *this;}
-
-    /**
-     * <p>The configuration of info icon label options.</p>
-     */
     inline DropDownControlDisplayOptions& WithInfoIconLabelOptions(SheetControlInfoIconLabelOptions&& value) { SetInfoIconLabelOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ListControlSelectAllOptions m_selectAllOptions;

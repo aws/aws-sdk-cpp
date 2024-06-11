@@ -38,6 +38,7 @@ namespace Model
     AWS_PCACONNECTORAD_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Use this parameter when paginating results to specify the maximum number of
      * items to return in the response on each page. If additional items exist beyond
@@ -46,91 +47,26 @@ namespace Model
      * retrieve additional items.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Use this parameter when paginating results to specify the maximum number of
-     * items to return in the response on each page. If additional items exist beyond
-     * the number you specify, the <code>NextToken</code> element is sent in the
-     * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Use this parameter when paginating results to specify the maximum number of
-     * items to return in the response on each page. If additional items exist beyond
-     * the number you specify, the <code>NextToken</code> element is sent in the
-     * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Use this parameter when paginating results to specify the maximum number of
-     * items to return in the response on each page. If additional items exist beyond
-     * the number you specify, the <code>NextToken</code> element is sent in the
-     * response. Use this <code>NextToken</code> value in a subsequent request to
-     * retrieve additional items.</p>
-     */
     inline ListConnectorsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Use this parameter when paginating results in a subsequent request after you
      * receive a response with truncated results. Set it to the value of the
      * <code>NextToken</code> parameter from the response you just received.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Use this parameter when paginating results in a subsequent request after you
-     * receive a response with truncated results. Set it to the value of the
-     * <code>NextToken</code> parameter from the response you just received.</p>
-     */
     inline ListConnectorsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     int m_maxResults;

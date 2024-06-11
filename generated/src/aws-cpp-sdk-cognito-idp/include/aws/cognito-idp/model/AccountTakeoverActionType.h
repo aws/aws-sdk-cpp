@@ -37,27 +37,17 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Flag specifying whether to send a notification.</p>
      */
     inline bool GetNotify() const{ return m_notify; }
-
-    /**
-     * <p>Flag specifying whether to send a notification.</p>
-     */
     inline bool NotifyHasBeenSet() const { return m_notifyHasBeenSet; }
-
-    /**
-     * <p>Flag specifying whether to send a notification.</p>
-     */
     inline void SetNotify(bool value) { m_notifyHasBeenSet = true; m_notify = value; }
-
-    /**
-     * <p>Flag specifying whether to send a notification.</p>
-     */
     inline AccountTakeoverActionType& WithNotify(bool value) { SetNotify(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The action to take in response to the account takeover action. Valid values
      * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
@@ -68,62 +58,12 @@ namespace Model
      * user to sign in.</p> </li> </ul>
      */
     inline const AccountTakeoverEventActionType& GetEventAction() const{ return m_eventAction; }
-
-    /**
-     * <p>The action to take in response to the account takeover action. Valid values
-     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
-     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
-     * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
-     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
-     * user to sign in.</p> </li> </ul>
-     */
     inline bool EventActionHasBeenSet() const { return m_eventActionHasBeenSet; }
-
-    /**
-     * <p>The action to take in response to the account takeover action. Valid values
-     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
-     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
-     * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
-     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
-     * user to sign in.</p> </li> </ul>
-     */
     inline void SetEventAction(const AccountTakeoverEventActionType& value) { m_eventActionHasBeenSet = true; m_eventAction = value; }
-
-    /**
-     * <p>The action to take in response to the account takeover action. Valid values
-     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
-     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
-     * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
-     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
-     * user to sign in.</p> </li> </ul>
-     */
     inline void SetEventAction(AccountTakeoverEventActionType&& value) { m_eventActionHasBeenSet = true; m_eventAction = std::move(value); }
-
-    /**
-     * <p>The action to take in response to the account takeover action. Valid values
-     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
-     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
-     * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
-     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
-     * user to sign in.</p> </li> </ul>
-     */
     inline AccountTakeoverActionType& WithEventAction(const AccountTakeoverEventActionType& value) { SetEventAction(value); return *this;}
-
-    /**
-     * <p>The action to take in response to the account takeover action. Valid values
-     * are as follows:</p> <ul> <li> <p> <code>BLOCK</code> Choosing this action will
-     * block the request.</p> </li> <li> <p> <code>MFA_IF_CONFIGURED</code> Present an
-     * MFA challenge if user has configured it, else allow the request.</p> </li> <li>
-     * <p> <code>MFA_REQUIRED</code> Present an MFA challenge if user has configured
-     * it, else block the request.</p> </li> <li> <p> <code>NO_ACTION</code> Allow the
-     * user to sign in.</p> </li> </ul>
-     */
     inline AccountTakeoverActionType& WithEventAction(AccountTakeoverEventActionType&& value) { SetEventAction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     bool m_notify;

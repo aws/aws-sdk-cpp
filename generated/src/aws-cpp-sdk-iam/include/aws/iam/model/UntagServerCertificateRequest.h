@@ -37,6 +37,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The name of the IAM server certificate from which you want to remove
      * tags.</p> <p>This parameter allows (through its <a
@@ -45,125 +46,30 @@ namespace Model
      * can also include any of the following characters: _+=,.@-</p>
      */
     inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline bool ServerCertificateNameHasBeenSet() const { return m_serverCertificateNameHasBeenSet; }
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline UntagServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline UntagServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the IAM server certificate from which you want to remove
-     * tags.</p> <p>This parameter allows (through its <a
-     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
-     * consisting of upper and lowercase alphanumeric characters with no spaces. You
-     * can also include any of the following characters: _+=,.@-</p>
-     */
     inline UntagServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of key names as a simple array of strings. The tags with matching keys
      * are removed from the specified IAM server certificate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline void SetTagKeys(const Aws::Vector<Aws::String>& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline void SetTagKeys(Aws::Vector<Aws::String>&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline UntagServerCertificateRequest& WithTagKeys(const Aws::Vector<Aws::String>& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline UntagServerCertificateRequest& WithTagKeys(Aws::Vector<Aws::String>&& value) { SetTagKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline UntagServerCertificateRequest& AddTagKeys(const Aws::String& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline UntagServerCertificateRequest& AddTagKeys(Aws::String&& value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of key names as a simple array of strings. The tags with matching keys
-     * are removed from the specified IAM server certificate.</p>
-     */
     inline UntagServerCertificateRequest& AddTagKeys(const char* value) { m_tagKeysHasBeenSet = true; m_tagKeys.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_serverCertificateName;

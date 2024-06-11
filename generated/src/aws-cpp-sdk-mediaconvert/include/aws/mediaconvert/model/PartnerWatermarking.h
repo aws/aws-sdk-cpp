@@ -39,48 +39,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * For forensic video watermarking, MediaConvert supports Nagra NexGuard File
      * Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and
      * OTT Streaming workflows.
      */
     inline const NexGuardFileMarkerSettings& GetNexguardFileMarkerSettings() const{ return m_nexguardFileMarkerSettings; }
-
-    /**
-     * For forensic video watermarking, MediaConvert supports Nagra NexGuard File
-     * Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and
-     * OTT Streaming workflows.
-     */
     inline bool NexguardFileMarkerSettingsHasBeenSet() const { return m_nexguardFileMarkerSettingsHasBeenSet; }
-
-    /**
-     * For forensic video watermarking, MediaConvert supports Nagra NexGuard File
-     * Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and
-     * OTT Streaming workflows.
-     */
     inline void SetNexguardFileMarkerSettings(const NexGuardFileMarkerSettings& value) { m_nexguardFileMarkerSettingsHasBeenSet = true; m_nexguardFileMarkerSettings = value; }
-
-    /**
-     * For forensic video watermarking, MediaConvert supports Nagra NexGuard File
-     * Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and
-     * OTT Streaming workflows.
-     */
     inline void SetNexguardFileMarkerSettings(NexGuardFileMarkerSettings&& value) { m_nexguardFileMarkerSettingsHasBeenSet = true; m_nexguardFileMarkerSettings = std::move(value); }
-
-    /**
-     * For forensic video watermarking, MediaConvert supports Nagra NexGuard File
-     * Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and
-     * OTT Streaming workflows.
-     */
     inline PartnerWatermarking& WithNexguardFileMarkerSettings(const NexGuardFileMarkerSettings& value) { SetNexguardFileMarkerSettings(value); return *this;}
-
-    /**
-     * For forensic video watermarking, MediaConvert supports Nagra NexGuard File
-     * Marker watermarking. MediaConvert supports both PreRelease Content (NGPR/G2) and
-     * OTT Streaming workflows.
-     */
     inline PartnerWatermarking& WithNexguardFileMarkerSettings(NexGuardFileMarkerSettings&& value) { SetNexguardFileMarkerSettings(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NexGuardFileMarkerSettings m_nexguardFileMarkerSettings;

@@ -39,79 +39,31 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Statistical information about about the intents associated with the bot
      * recommendation results.</p>
      */
     inline const IntentStatistics& GetIntents() const{ return m_intents; }
-
-    /**
-     * <p>Statistical information about about the intents associated with the bot
-     * recommendation results.</p>
-     */
     inline bool IntentsHasBeenSet() const { return m_intentsHasBeenSet; }
-
-    /**
-     * <p>Statistical information about about the intents associated with the bot
-     * recommendation results.</p>
-     */
     inline void SetIntents(const IntentStatistics& value) { m_intentsHasBeenSet = true; m_intents = value; }
-
-    /**
-     * <p>Statistical information about about the intents associated with the bot
-     * recommendation results.</p>
-     */
     inline void SetIntents(IntentStatistics&& value) { m_intentsHasBeenSet = true; m_intents = std::move(value); }
-
-    /**
-     * <p>Statistical information about about the intents associated with the bot
-     * recommendation results.</p>
-     */
     inline BotRecommendationResultStatistics& WithIntents(const IntentStatistics& value) { SetIntents(value); return *this;}
-
-    /**
-     * <p>Statistical information about about the intents associated with the bot
-     * recommendation results.</p>
-     */
     inline BotRecommendationResultStatistics& WithIntents(IntentStatistics&& value) { SetIntents(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Statistical information about the slot types associated with the bot
      * recommendation results.</p>
      */
     inline const SlotTypeStatistics& GetSlotTypes() const{ return m_slotTypes; }
-
-    /**
-     * <p>Statistical information about the slot types associated with the bot
-     * recommendation results.</p>
-     */
     inline bool SlotTypesHasBeenSet() const { return m_slotTypesHasBeenSet; }
-
-    /**
-     * <p>Statistical information about the slot types associated with the bot
-     * recommendation results.</p>
-     */
     inline void SetSlotTypes(const SlotTypeStatistics& value) { m_slotTypesHasBeenSet = true; m_slotTypes = value; }
-
-    /**
-     * <p>Statistical information about the slot types associated with the bot
-     * recommendation results.</p>
-     */
     inline void SetSlotTypes(SlotTypeStatistics&& value) { m_slotTypesHasBeenSet = true; m_slotTypes = std::move(value); }
-
-    /**
-     * <p>Statistical information about the slot types associated with the bot
-     * recommendation results.</p>
-     */
     inline BotRecommendationResultStatistics& WithSlotTypes(const SlotTypeStatistics& value) { SetSlotTypes(value); return *this;}
-
-    /**
-     * <p>Statistical information about the slot types associated with the bot
-     * recommendation results.</p>
-     */
     inline BotRecommendationResultStatistics& WithSlotTypes(SlotTypeStatistics&& value) { SetSlotTypes(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     IntentStatistics m_intents;

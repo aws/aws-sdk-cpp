@@ -42,37 +42,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Aggregation for numerical values.</p>
      */
     inline const NumericalAggregationFunction& GetNumericalAggregationFunction() const{ return m_numericalAggregationFunction; }
-
-    /**
-     * <p>Aggregation for numerical values.</p>
-     */
     inline bool NumericalAggregationFunctionHasBeenSet() const { return m_numericalAggregationFunctionHasBeenSet; }
-
-    /**
-     * <p>Aggregation for numerical values.</p>
-     */
     inline void SetNumericalAggregationFunction(const NumericalAggregationFunction& value) { m_numericalAggregationFunctionHasBeenSet = true; m_numericalAggregationFunction = value; }
-
-    /**
-     * <p>Aggregation for numerical values.</p>
-     */
     inline void SetNumericalAggregationFunction(NumericalAggregationFunction&& value) { m_numericalAggregationFunctionHasBeenSet = true; m_numericalAggregationFunction = std::move(value); }
-
-    /**
-     * <p>Aggregation for numerical values.</p>
-     */
     inline AggregationFunction& WithNumericalAggregationFunction(const NumericalAggregationFunction& value) { SetNumericalAggregationFunction(value); return *this;}
-
-    /**
-     * <p>Aggregation for numerical values.</p>
-     */
     inline AggregationFunction& WithNumericalAggregationFunction(NumericalAggregationFunction&& value) { SetNumericalAggregationFunction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Aggregation for categorical values.</p> <ul> <li> <p> <code>COUNT</code>:
      * Aggregate by the total number of values, including duplicates.</p> </li> <li>
@@ -80,48 +62,14 @@ namespace Model
      * values.</p> </li> </ul>
      */
     inline const CategoricalAggregationFunction& GetCategoricalAggregationFunction() const{ return m_categoricalAggregationFunction; }
-
-    /**
-     * <p>Aggregation for categorical values.</p> <ul> <li> <p> <code>COUNT</code>:
-     * Aggregate by the total number of values, including duplicates.</p> </li> <li>
-     * <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> </ul>
-     */
     inline bool CategoricalAggregationFunctionHasBeenSet() const { return m_categoricalAggregationFunctionHasBeenSet; }
-
-    /**
-     * <p>Aggregation for categorical values.</p> <ul> <li> <p> <code>COUNT</code>:
-     * Aggregate by the total number of values, including duplicates.</p> </li> <li>
-     * <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> </ul>
-     */
     inline void SetCategoricalAggregationFunction(const CategoricalAggregationFunction& value) { m_categoricalAggregationFunctionHasBeenSet = true; m_categoricalAggregationFunction = value; }
-
-    /**
-     * <p>Aggregation for categorical values.</p> <ul> <li> <p> <code>COUNT</code>:
-     * Aggregate by the total number of values, including duplicates.</p> </li> <li>
-     * <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> </ul>
-     */
     inline void SetCategoricalAggregationFunction(CategoricalAggregationFunction&& value) { m_categoricalAggregationFunctionHasBeenSet = true; m_categoricalAggregationFunction = std::move(value); }
-
-    /**
-     * <p>Aggregation for categorical values.</p> <ul> <li> <p> <code>COUNT</code>:
-     * Aggregate by the total number of values, including duplicates.</p> </li> <li>
-     * <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> </ul>
-     */
     inline AggregationFunction& WithCategoricalAggregationFunction(const CategoricalAggregationFunction& value) { SetCategoricalAggregationFunction(value); return *this;}
-
-    /**
-     * <p>Aggregation for categorical values.</p> <ul> <li> <p> <code>COUNT</code>:
-     * Aggregate by the total number of values, including duplicates.</p> </li> <li>
-     * <p> <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> </ul>
-     */
     inline AggregationFunction& WithCategoricalAggregationFunction(CategoricalAggregationFunction&& value) { SetCategoricalAggregationFunction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Aggregation for date values.</p> <ul> <li> <p> <code>COUNT</code>: Aggregate
      * by the total number of values, including duplicates.</p> </li> <li> <p>
@@ -130,83 +78,24 @@ namespace Model
      * </li> <li> <p> <code>MAX</code>: Select the largest date value.</p> </li> </ul>
      */
     inline const DateAggregationFunction& GetDateAggregationFunction() const{ return m_dateAggregationFunction; }
-
-    /**
-     * <p>Aggregation for date values.</p> <ul> <li> <p> <code>COUNT</code>: Aggregate
-     * by the total number of values, including duplicates.</p> </li> <li> <p>
-     * <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> <li> <p> <code>MIN</code>: Select the smallest date value.</p>
-     * </li> <li> <p> <code>MAX</code>: Select the largest date value.</p> </li> </ul>
-     */
     inline bool DateAggregationFunctionHasBeenSet() const { return m_dateAggregationFunctionHasBeenSet; }
-
-    /**
-     * <p>Aggregation for date values.</p> <ul> <li> <p> <code>COUNT</code>: Aggregate
-     * by the total number of values, including duplicates.</p> </li> <li> <p>
-     * <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> <li> <p> <code>MIN</code>: Select the smallest date value.</p>
-     * </li> <li> <p> <code>MAX</code>: Select the largest date value.</p> </li> </ul>
-     */
     inline void SetDateAggregationFunction(const DateAggregationFunction& value) { m_dateAggregationFunctionHasBeenSet = true; m_dateAggregationFunction = value; }
-
-    /**
-     * <p>Aggregation for date values.</p> <ul> <li> <p> <code>COUNT</code>: Aggregate
-     * by the total number of values, including duplicates.</p> </li> <li> <p>
-     * <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> <li> <p> <code>MIN</code>: Select the smallest date value.</p>
-     * </li> <li> <p> <code>MAX</code>: Select the largest date value.</p> </li> </ul>
-     */
     inline void SetDateAggregationFunction(DateAggregationFunction&& value) { m_dateAggregationFunctionHasBeenSet = true; m_dateAggregationFunction = std::move(value); }
-
-    /**
-     * <p>Aggregation for date values.</p> <ul> <li> <p> <code>COUNT</code>: Aggregate
-     * by the total number of values, including duplicates.</p> </li> <li> <p>
-     * <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> <li> <p> <code>MIN</code>: Select the smallest date value.</p>
-     * </li> <li> <p> <code>MAX</code>: Select the largest date value.</p> </li> </ul>
-     */
     inline AggregationFunction& WithDateAggregationFunction(const DateAggregationFunction& value) { SetDateAggregationFunction(value); return *this;}
-
-    /**
-     * <p>Aggregation for date values.</p> <ul> <li> <p> <code>COUNT</code>: Aggregate
-     * by the total number of values, including duplicates.</p> </li> <li> <p>
-     * <code>DISTINCT_COUNT</code>: Aggregate by the total number of distinct
-     * values.</p> </li> <li> <p> <code>MIN</code>: Select the smallest date value.</p>
-     * </li> <li> <p> <code>MAX</code>: Select the largest date value.</p> </li> </ul>
-     */
     inline AggregationFunction& WithDateAggregationFunction(DateAggregationFunction&& value) { SetDateAggregationFunction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Aggregation for attributes.</p>
      */
     inline const AttributeAggregationFunction& GetAttributeAggregationFunction() const{ return m_attributeAggregationFunction; }
-
-    /**
-     * <p>Aggregation for attributes.</p>
-     */
     inline bool AttributeAggregationFunctionHasBeenSet() const { return m_attributeAggregationFunctionHasBeenSet; }
-
-    /**
-     * <p>Aggregation for attributes.</p>
-     */
     inline void SetAttributeAggregationFunction(const AttributeAggregationFunction& value) { m_attributeAggregationFunctionHasBeenSet = true; m_attributeAggregationFunction = value; }
-
-    /**
-     * <p>Aggregation for attributes.</p>
-     */
     inline void SetAttributeAggregationFunction(AttributeAggregationFunction&& value) { m_attributeAggregationFunctionHasBeenSet = true; m_attributeAggregationFunction = std::move(value); }
-
-    /**
-     * <p>Aggregation for attributes.</p>
-     */
     inline AggregationFunction& WithAttributeAggregationFunction(const AttributeAggregationFunction& value) { SetAttributeAggregationFunction(value); return *this;}
-
-    /**
-     * <p>Aggregation for attributes.</p>
-     */
     inline AggregationFunction& WithAttributeAggregationFunction(AttributeAggregationFunction&& value) { SetAttributeAggregationFunction(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NumericalAggregationFunction m_numericalAggregationFunction;

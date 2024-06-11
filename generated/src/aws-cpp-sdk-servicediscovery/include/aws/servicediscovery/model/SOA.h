@@ -36,26 +36,15 @@ namespace Model
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time to live (TTL) for purposes of negative caching.</p>
      */
     inline long long GetTTL() const{ return m_tTL; }
-
-    /**
-     * <p>The time to live (TTL) for purposes of negative caching.</p>
-     */
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
-
-    /**
-     * <p>The time to live (TTL) for purposes of negative caching.</p>
-     */
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
-
-    /**
-     * <p>The time to live (TTL) for purposes of negative caching.</p>
-     */
     inline SOA& WithTTL(long long value) { SetTTL(value); return *this;}
-
+    ///@}
   private:
 
     long long m_tTL;

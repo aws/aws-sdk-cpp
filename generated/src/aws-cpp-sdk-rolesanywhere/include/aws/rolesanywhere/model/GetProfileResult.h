@@ -33,53 +33,27 @@ namespace Model
     AWS_ROLESANYWHERE_API GetProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The state of the profile after a read or write operation.</p>
      */
     inline const ProfileDetail& GetProfile() const{ return m_profile; }
-
-    /**
-     * <p>The state of the profile after a read or write operation.</p>
-     */
     inline void SetProfile(const ProfileDetail& value) { m_profile = value; }
-
-    /**
-     * <p>The state of the profile after a read or write operation.</p>
-     */
     inline void SetProfile(ProfileDetail&& value) { m_profile = std::move(value); }
-
-    /**
-     * <p>The state of the profile after a read or write operation.</p>
-     */
     inline GetProfileResult& WithProfile(const ProfileDetail& value) { SetProfile(value); return *this;}
-
-    /**
-     * <p>The state of the profile after a read or write operation.</p>
-     */
     inline GetProfileResult& WithProfile(ProfileDetail&& value) { SetProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProfileDetail m_profile;

@@ -40,127 +40,46 @@ namespace Model
     AWS_MARKETPLACEENTITLEMENTSERVICE_API GetEntitlementsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The set of entitlements found through the GetEntitlements operation. If the
      * result contains an empty set of entitlements, NextToken might still be present
      * and should be used.</p>
      */
     inline const Aws::Vector<Entitlement>& GetEntitlements() const{ return m_entitlements; }
-
-    /**
-     * <p>The set of entitlements found through the GetEntitlements operation. If the
-     * result contains an empty set of entitlements, NextToken might still be present
-     * and should be used.</p>
-     */
     inline void SetEntitlements(const Aws::Vector<Entitlement>& value) { m_entitlements = value; }
-
-    /**
-     * <p>The set of entitlements found through the GetEntitlements operation. If the
-     * result contains an empty set of entitlements, NextToken might still be present
-     * and should be used.</p>
-     */
     inline void SetEntitlements(Aws::Vector<Entitlement>&& value) { m_entitlements = std::move(value); }
-
-    /**
-     * <p>The set of entitlements found through the GetEntitlements operation. If the
-     * result contains an empty set of entitlements, NextToken might still be present
-     * and should be used.</p>
-     */
     inline GetEntitlementsResult& WithEntitlements(const Aws::Vector<Entitlement>& value) { SetEntitlements(value); return *this;}
-
-    /**
-     * <p>The set of entitlements found through the GetEntitlements operation. If the
-     * result contains an empty set of entitlements, NextToken might still be present
-     * and should be used.</p>
-     */
     inline GetEntitlementsResult& WithEntitlements(Aws::Vector<Entitlement>&& value) { SetEntitlements(std::move(value)); return *this;}
-
-    /**
-     * <p>The set of entitlements found through the GetEntitlements operation. If the
-     * result contains an empty set of entitlements, NextToken might still be present
-     * and should be used.</p>
-     */
     inline GetEntitlementsResult& AddEntitlements(const Entitlement& value) { m_entitlements.push_back(value); return *this; }
-
-    /**
-     * <p>The set of entitlements found through the GetEntitlements operation. If the
-     * result contains an empty set of entitlements, NextToken might still be present
-     * and should be used.</p>
-     */
     inline GetEntitlementsResult& AddEntitlements(Entitlement&& value) { m_entitlements.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
      * If the result contains an empty set of entitlements, NextToken might still be
      * present and should be used.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
-     * If the result contains an empty set of entitlements, NextToken might still be
-     * present and should be used.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
-     * If the result contains an empty set of entitlements, NextToken might still be
-     * present and should be used.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
-     * If the result contains an empty set of entitlements, NextToken might still be
-     * present and should be used.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
-     * If the result contains an empty set of entitlements, NextToken might still be
-     * present and should be used.</p>
-     */
     inline GetEntitlementsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
-     * If the result contains an empty set of entitlements, NextToken might still be
-     * present and should be used.</p>
-     */
     inline GetEntitlementsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>For paginated results, use NextToken in subsequent calls to GetEntitlements.
-     * If the result contains an empty set of entitlements, NextToken might still be
-     * present and should be used.</p>
-     */
     inline GetEntitlementsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetEntitlementsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetEntitlementsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetEntitlementsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Entitlement> m_entitlements;

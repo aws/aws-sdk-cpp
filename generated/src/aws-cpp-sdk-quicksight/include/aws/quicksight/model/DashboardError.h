@@ -40,118 +40,45 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Type.</p>
      */
     inline const DashboardErrorType& GetType() const{ return m_type; }
-
-    /**
-     * <p>Type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Type.</p>
-     */
     inline void SetType(const DashboardErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Type.</p>
-     */
     inline void SetType(DashboardErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Type.</p>
-     */
     inline DashboardError& WithType(const DashboardErrorType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Type.</p>
-     */
     inline DashboardError& WithType(DashboardErrorType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>Message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>Message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>Message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>Message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>Message.</p>
-     */
     inline DashboardError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>Message.</p>
-     */
     inline DashboardError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Message.</p>
-     */
     inline DashboardError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Lists the violated entities that caused the dashboard error.</p>
      */
     inline const Aws::Vector<Entity>& GetViolatedEntities() const{ return m_violatedEntities; }
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline bool ViolatedEntitiesHasBeenSet() const { return m_violatedEntitiesHasBeenSet; }
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline void SetViolatedEntities(const Aws::Vector<Entity>& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = value; }
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline void SetViolatedEntities(Aws::Vector<Entity>&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities = std::move(value); }
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline DashboardError& WithViolatedEntities(const Aws::Vector<Entity>& value) { SetViolatedEntities(value); return *this;}
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline DashboardError& WithViolatedEntities(Aws::Vector<Entity>&& value) { SetViolatedEntities(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline DashboardError& AddViolatedEntities(const Entity& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(value); return *this; }
-
-    /**
-     * <p>Lists the violated entities that caused the dashboard error.</p>
-     */
     inline DashboardError& AddViolatedEntities(Entity&& value) { m_violatedEntitiesHasBeenSet = true; m_violatedEntities.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     DashboardErrorType m_type;

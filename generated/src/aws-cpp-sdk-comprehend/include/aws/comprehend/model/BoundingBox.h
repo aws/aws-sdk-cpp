@@ -41,105 +41,49 @@ namespace Model
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The height of the bounding box as a ratio of the overall document page
      * height.</p>
      */
     inline double GetHeight() const{ return m_height; }
-
-    /**
-     * <p>The height of the bounding box as a ratio of the overall document page
-     * height.</p>
-     */
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
-
-    /**
-     * <p>The height of the bounding box as a ratio of the overall document page
-     * height.</p>
-     */
     inline void SetHeight(double value) { m_heightHasBeenSet = true; m_height = value; }
-
-    /**
-     * <p>The height of the bounding box as a ratio of the overall document page
-     * height.</p>
-     */
     inline BoundingBox& WithHeight(double value) { SetHeight(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The left coordinate of the bounding box as a ratio of overall document page
      * width.</p>
      */
     inline double GetLeft() const{ return m_left; }
-
-    /**
-     * <p>The left coordinate of the bounding box as a ratio of overall document page
-     * width.</p>
-     */
     inline bool LeftHasBeenSet() const { return m_leftHasBeenSet; }
-
-    /**
-     * <p>The left coordinate of the bounding box as a ratio of overall document page
-     * width.</p>
-     */
     inline void SetLeft(double value) { m_leftHasBeenSet = true; m_left = value; }
-
-    /**
-     * <p>The left coordinate of the bounding box as a ratio of overall document page
-     * width.</p>
-     */
     inline BoundingBox& WithLeft(double value) { SetLeft(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The top coordinate of the bounding box as a ratio of overall document page
      * height.</p>
      */
     inline double GetTop() const{ return m_top; }
-
-    /**
-     * <p>The top coordinate of the bounding box as a ratio of overall document page
-     * height.</p>
-     */
     inline bool TopHasBeenSet() const { return m_topHasBeenSet; }
-
-    /**
-     * <p>The top coordinate of the bounding box as a ratio of overall document page
-     * height.</p>
-     */
     inline void SetTop(double value) { m_topHasBeenSet = true; m_top = value; }
-
-    /**
-     * <p>The top coordinate of the bounding box as a ratio of overall document page
-     * height.</p>
-     */
     inline BoundingBox& WithTop(double value) { SetTop(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The width of the bounding box as a ratio of the overall document page
      * width.</p>
      */
     inline double GetWidth() const{ return m_width; }
-
-    /**
-     * <p>The width of the bounding box as a ratio of the overall document page
-     * width.</p>
-     */
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
-
-    /**
-     * <p>The width of the bounding box as a ratio of the overall document page
-     * width.</p>
-     */
     inline void SetWidth(double value) { m_widthHasBeenSet = true; m_width = value; }
-
-    /**
-     * <p>The width of the bounding box as a ratio of the overall document page
-     * width.</p>
-     */
     inline BoundingBox& WithWidth(double value) { SetWidth(value); return *this;}
-
+    ///@}
   private:
 
     double m_height;

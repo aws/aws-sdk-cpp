@@ -38,51 +38,20 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifiers of the endpoints to get information about.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcEndpointIds() const{ return m_vpcEndpointIds; }
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline bool VpcEndpointIdsHasBeenSet() const { return m_vpcEndpointIdsHasBeenSet; }
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline void SetVpcEndpointIds(const Aws::Vector<Aws::String>& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = value; }
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline void SetVpcEndpointIds(Aws::Vector<Aws::String>&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds = std::move(value); }
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(const Aws::Vector<Aws::String>& value) { SetVpcEndpointIds(value); return *this;}
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline DescribeVpcEndpointsRequest& WithVpcEndpointIds(Aws::Vector<Aws::String>&& value) { SetVpcEndpointIds(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const Aws::String& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(Aws::String&& value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The unique identifiers of the endpoints to get information about.</p>
-     */
     inline DescribeVpcEndpointsRequest& AddVpcEndpointIds(const char* value) { m_vpcEndpointIdsHasBeenSet = true; m_vpcEndpointIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_vpcEndpointIds;

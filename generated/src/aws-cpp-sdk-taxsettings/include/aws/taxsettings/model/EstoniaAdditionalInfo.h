@@ -38,54 +38,20 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
      * eight-numeric string, such as <code>12345678</code>.</p>
      */
     inline const Aws::String& GetRegistryCommercialCode() const{ return m_registryCommercialCode; }
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline bool RegistryCommercialCodeHasBeenSet() const { return m_registryCommercialCodeHasBeenSet; }
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline void SetRegistryCommercialCode(const Aws::String& value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode = value; }
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline void SetRegistryCommercialCode(Aws::String&& value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode = std::move(value); }
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline void SetRegistryCommercialCode(const char* value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode.assign(value); }
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline EstoniaAdditionalInfo& WithRegistryCommercialCode(const Aws::String& value) { SetRegistryCommercialCode(value); return *this;}
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline EstoniaAdditionalInfo& WithRegistryCommercialCode(Aws::String&& value) { SetRegistryCommercialCode(std::move(value)); return *this;}
-
-    /**
-     * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
-     * eight-numeric string, such as <code>12345678</code>.</p>
-     */
     inline EstoniaAdditionalInfo& WithRegistryCommercialCode(const char* value) { SetRegistryCommercialCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryCommercialCode;

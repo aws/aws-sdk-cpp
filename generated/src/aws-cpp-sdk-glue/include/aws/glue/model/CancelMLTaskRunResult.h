@@ -33,125 +33,53 @@ namespace Model
     AWS_GLUE_API CancelMLTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The unique identifier of the machine learning transform.</p>
      */
     inline const Aws::String& GetTransformId() const{ return m_transformId; }
-
-    /**
-     * <p>The unique identifier of the machine learning transform.</p>
-     */
     inline void SetTransformId(const Aws::String& value) { m_transformId = value; }
-
-    /**
-     * <p>The unique identifier of the machine learning transform.</p>
-     */
     inline void SetTransformId(Aws::String&& value) { m_transformId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the machine learning transform.</p>
-     */
     inline void SetTransformId(const char* value) { m_transformId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the machine learning transform.</p>
-     */
     inline CancelMLTaskRunResult& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the machine learning transform.</p>
-     */
     inline CancelMLTaskRunResult& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the machine learning transform.</p>
-     */
     inline CancelMLTaskRunResult& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier for the task run.</p>
      */
     inline const Aws::String& GetTaskRunId() const{ return m_taskRunId; }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline void SetTaskRunId(const Aws::String& value) { m_taskRunId = value; }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline void SetTaskRunId(Aws::String&& value) { m_taskRunId = std::move(value); }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline void SetTaskRunId(const char* value) { m_taskRunId.assign(value); }
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline CancelMLTaskRunResult& WithTaskRunId(const Aws::String& value) { SetTaskRunId(value); return *this;}
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline CancelMLTaskRunResult& WithTaskRunId(Aws::String&& value) { SetTaskRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier for the task run.</p>
-     */
     inline CancelMLTaskRunResult& WithTaskRunId(const char* value) { SetTaskRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status for this run.</p>
      */
     inline const TaskStatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline void SetStatus(const TaskStatusType& value) { m_status = value; }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline void SetStatus(TaskStatusType&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline CancelMLTaskRunResult& WithStatus(const TaskStatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline CancelMLTaskRunResult& WithStatus(TaskStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CancelMLTaskRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CancelMLTaskRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CancelMLTaskRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transformId;

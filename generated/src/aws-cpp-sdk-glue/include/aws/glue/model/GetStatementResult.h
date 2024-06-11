@@ -33,53 +33,27 @@ namespace Model
     AWS_GLUE_API GetStatementResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Returns the statement.</p>
      */
     inline const Statement& GetStatement() const{ return m_statement; }
-
-    /**
-     * <p>Returns the statement.</p>
-     */
     inline void SetStatement(const Statement& value) { m_statement = value; }
-
-    /**
-     * <p>Returns the statement.</p>
-     */
     inline void SetStatement(Statement&& value) { m_statement = std::move(value); }
-
-    /**
-     * <p>Returns the statement.</p>
-     */
     inline GetStatementResult& WithStatement(const Statement& value) { SetStatement(value); return *this;}
-
-    /**
-     * <p>Returns the statement.</p>
-     */
     inline GetStatementResult& WithStatement(Statement&& value) { SetStatement(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetStatementResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetStatementResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetStatementResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Statement m_statement;

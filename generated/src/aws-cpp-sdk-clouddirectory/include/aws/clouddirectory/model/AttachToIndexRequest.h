@@ -35,116 +35,44 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the directory where the object and index
      * exist.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline AttachToIndexRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline AttachToIndexRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the directory where the object and index
-     * exist.</p>
-     */
     inline AttachToIndexRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to the index that you are attaching the object to.</p>
      */
     inline const ObjectReference& GetIndexReference() const{ return m_indexReference; }
-
-    /**
-     * <p>A reference to the index that you are attaching the object to.</p>
-     */
     inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the index that you are attaching the object to.</p>
-     */
     inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
-
-    /**
-     * <p>A reference to the index that you are attaching the object to.</p>
-     */
     inline void SetIndexReference(ObjectReference&& value) { m_indexReferenceHasBeenSet = true; m_indexReference = std::move(value); }
-
-    /**
-     * <p>A reference to the index that you are attaching the object to.</p>
-     */
     inline AttachToIndexRequest& WithIndexReference(const ObjectReference& value) { SetIndexReference(value); return *this;}
-
-    /**
-     * <p>A reference to the index that you are attaching the object to.</p>
-     */
     inline AttachToIndexRequest& WithIndexReference(ObjectReference&& value) { SetIndexReference(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A reference to the object that you are attaching to the index.</p>
      */
     inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
-
-    /**
-     * <p>A reference to the object that you are attaching to the index.</p>
-     */
     inline bool TargetReferenceHasBeenSet() const { return m_targetReferenceHasBeenSet; }
-
-    /**
-     * <p>A reference to the object that you are attaching to the index.</p>
-     */
     inline void SetTargetReference(const ObjectReference& value) { m_targetReferenceHasBeenSet = true; m_targetReference = value; }
-
-    /**
-     * <p>A reference to the object that you are attaching to the index.</p>
-     */
     inline void SetTargetReference(ObjectReference&& value) { m_targetReferenceHasBeenSet = true; m_targetReference = std::move(value); }
-
-    /**
-     * <p>A reference to the object that you are attaching to the index.</p>
-     */
     inline AttachToIndexRequest& WithTargetReference(const ObjectReference& value) { SetTargetReference(value); return *this;}
-
-    /**
-     * <p>A reference to the object that you are attaching to the index.</p>
-     */
     inline AttachToIndexRequest& WithTargetReference(ObjectReference&& value) { SetTargetReference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_directoryArn;

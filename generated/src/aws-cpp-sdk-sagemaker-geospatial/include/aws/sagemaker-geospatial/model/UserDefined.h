@@ -38,57 +38,27 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The units for output resolution of the result.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
-
-    /**
-     * <p>The units for output resolution of the result.</p>
-     */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-
-    /**
-     * <p>The units for output resolution of the result.</p>
-     */
     inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
-
-    /**
-     * <p>The units for output resolution of the result.</p>
-     */
     inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-
-    /**
-     * <p>The units for output resolution of the result.</p>
-     */
     inline UserDefined& WithUnit(const Unit& value) { SetUnit(value); return *this;}
-
-    /**
-     * <p>The units for output resolution of the result.</p>
-     */
     inline UserDefined& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value for output resolution of the result.</p>
      */
     inline double GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value for output resolution of the result.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value for output resolution of the result.</p>
-     */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value for output resolution of the result.</p>
-     */
     inline UserDefined& WithValue(double value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Unit m_unit;

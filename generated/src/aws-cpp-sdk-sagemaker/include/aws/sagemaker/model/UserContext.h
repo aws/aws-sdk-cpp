@@ -40,171 +40,61 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
      */
     inline const Aws::String& GetUserProfileArn() const{ return m_userProfileArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline bool UserProfileArnHasBeenSet() const { return m_userProfileArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline void SetUserProfileArn(const Aws::String& value) { m_userProfileArnHasBeenSet = true; m_userProfileArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline void SetUserProfileArn(Aws::String&& value) { m_userProfileArnHasBeenSet = true; m_userProfileArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline void SetUserProfileArn(const char* value) { m_userProfileArnHasBeenSet = true; m_userProfileArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline UserContext& WithUserProfileArn(const Aws::String& value) { SetUserProfileArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline UserContext& WithUserProfileArn(Aws::String&& value) { SetUserProfileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the user's profile.</p>
-     */
     inline UserContext& WithUserProfileArn(const char* value) { SetUserProfileArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the user's profile.</p>
      */
     inline const Aws::String& GetUserProfileName() const{ return m_userProfileName; }
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline bool UserProfileNameHasBeenSet() const { return m_userProfileNameHasBeenSet; }
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline void SetUserProfileName(const Aws::String& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = value; }
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline void SetUserProfileName(Aws::String&& value) { m_userProfileNameHasBeenSet = true; m_userProfileName = std::move(value); }
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline void SetUserProfileName(const char* value) { m_userProfileNameHasBeenSet = true; m_userProfileName.assign(value); }
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline UserContext& WithUserProfileName(const Aws::String& value) { SetUserProfileName(value); return *this;}
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline UserContext& WithUserProfileName(Aws::String&& value) { SetUserProfileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the user's profile.</p>
-     */
     inline UserContext& WithUserProfileName(const char* value) { SetUserProfileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The domain associated with the user.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline UserContext& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline UserContext& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-
-    /**
-     * <p>The domain associated with the user.</p>
-     */
     inline UserContext& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IAM Identity details associated with the user. These details are
      * associated with model package groups, model packages, and project entities
      * only.</p>
      */
     inline const IamIdentity& GetIamIdentity() const{ return m_iamIdentity; }
-
-    /**
-     * <p>The IAM Identity details associated with the user. These details are
-     * associated with model package groups, model packages, and project entities
-     * only.</p>
-     */
     inline bool IamIdentityHasBeenSet() const { return m_iamIdentityHasBeenSet; }
-
-    /**
-     * <p>The IAM Identity details associated with the user. These details are
-     * associated with model package groups, model packages, and project entities
-     * only.</p>
-     */
     inline void SetIamIdentity(const IamIdentity& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = value; }
-
-    /**
-     * <p>The IAM Identity details associated with the user. These details are
-     * associated with model package groups, model packages, and project entities
-     * only.</p>
-     */
     inline void SetIamIdentity(IamIdentity&& value) { m_iamIdentityHasBeenSet = true; m_iamIdentity = std::move(value); }
-
-    /**
-     * <p>The IAM Identity details associated with the user. These details are
-     * associated with model package groups, model packages, and project entities
-     * only.</p>
-     */
     inline UserContext& WithIamIdentity(const IamIdentity& value) { SetIamIdentity(value); return *this;}
-
-    /**
-     * <p>The IAM Identity details associated with the user. These details are
-     * associated with model package groups, model packages, and project entities
-     * only.</p>
-     */
     inline UserContext& WithIamIdentity(IamIdentity&& value) { SetIamIdentity(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_userProfileArn;

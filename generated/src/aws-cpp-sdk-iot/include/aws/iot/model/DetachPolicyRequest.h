@@ -32,87 +32,33 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The policy to detach.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline DetachPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline DetachPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-
-    /**
-     * <p>The policy to detach.</p>
-     */
     inline DetachPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The target from which the policy will be detached.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline DetachPolicyRequest& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline DetachPolicyRequest& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-
-    /**
-     * <p>The target from which the policy will be detached.</p>
-     */
     inline DetachPolicyRequest& WithTarget(const char* value) { SetTarget(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_policyName;

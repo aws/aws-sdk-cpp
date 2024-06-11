@@ -32,63 +32,29 @@ namespace Model
     AWS_BRAKET_API CreateJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ARN of the Amazon Braket job created.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The ARN of the Amazon Braket job created.</p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-
-    /**
-     * <p>The ARN of the Amazon Braket job created.</p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the Amazon Braket job created.</p>
-     */
     inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-
-    /**
-     * <p>The ARN of the Amazon Braket job created.</p>
-     */
     inline CreateJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Braket job created.</p>
-     */
     inline CreateJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the Amazon Braket job created.</p>
-     */
     inline CreateJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobArn;

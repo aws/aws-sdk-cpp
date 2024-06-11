@@ -38,71 +38,30 @@ namespace Model
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN for a job in a named job queue.</p>
      */
     inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline FrontOfQueueJobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline FrontOfQueueJobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for a job in a named job queue.</p>
-     */
     inline FrontOfQueueJobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Unix timestamp (in milliseconds) for when the job transitioned to its
      * current position in the job queue.</p>
      */
     inline long long GetEarliestTimeAtPosition() const{ return m_earliestTimeAtPosition; }
-
-    /**
-     * <p>The Unix timestamp (in milliseconds) for when the job transitioned to its
-     * current position in the job queue.</p>
-     */
     inline bool EarliestTimeAtPositionHasBeenSet() const { return m_earliestTimeAtPositionHasBeenSet; }
-
-    /**
-     * <p>The Unix timestamp (in milliseconds) for when the job transitioned to its
-     * current position in the job queue.</p>
-     */
     inline void SetEarliestTimeAtPosition(long long value) { m_earliestTimeAtPositionHasBeenSet = true; m_earliestTimeAtPosition = value; }
-
-    /**
-     * <p>The Unix timestamp (in milliseconds) for when the job transitioned to its
-     * current position in the job queue.</p>
-     */
     inline FrontOfQueueJobSummary& WithEarliestTimeAtPosition(long long value) { SetEarliestTimeAtPosition(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobArn;

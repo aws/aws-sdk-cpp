@@ -41,334 +41,123 @@ namespace Model
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>controlIdentifier</code> of a control.</p>
      */
     inline const Aws::String& GetControlIdentifier() const{ return m_controlIdentifier; }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline bool ControlIdentifierHasBeenSet() const { return m_controlIdentifierHasBeenSet; }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline void SetControlIdentifier(const Aws::String& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = value; }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline void SetControlIdentifier(Aws::String&& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline void SetControlIdentifier(const char* value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline ControlOperationSummary& WithControlIdentifier(const Aws::String& value) { SetControlIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline ControlOperationSummary& WithControlIdentifier(Aws::String&& value) { SetControlIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>controlIdentifier</code> of a control.</p>
-     */
     inline ControlOperationSummary& WithControlIdentifier(const char* value) { SetControlIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>controlIdentifier</code> of an enabled control.</p>
      */
     inline const Aws::String& GetEnabledControlIdentifier() const{ return m_enabledControlIdentifier; }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline bool EnabledControlIdentifierHasBeenSet() const { return m_enabledControlIdentifierHasBeenSet; }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline void SetEnabledControlIdentifier(const Aws::String& value) { m_enabledControlIdentifierHasBeenSet = true; m_enabledControlIdentifier = value; }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline void SetEnabledControlIdentifier(Aws::String&& value) { m_enabledControlIdentifierHasBeenSet = true; m_enabledControlIdentifier = std::move(value); }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline void SetEnabledControlIdentifier(const char* value) { m_enabledControlIdentifierHasBeenSet = true; m_enabledControlIdentifier.assign(value); }
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline ControlOperationSummary& WithEnabledControlIdentifier(const Aws::String& value) { SetEnabledControlIdentifier(value); return *this;}
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline ControlOperationSummary& WithEnabledControlIdentifier(Aws::String&& value) { SetEnabledControlIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>controlIdentifier</code> of an enabled control.</p>
-     */
     inline ControlOperationSummary& WithEnabledControlIdentifier(const char* value) { SetEnabledControlIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which the control operation was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-
-    /**
-     * <p>The time at which the control operation was completed.</p>
-     */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-
-    /**
-     * <p>The time at which the control operation was completed.</p>
-     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-
-    /**
-     * <p>The time at which the control operation was completed.</p>
-     */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-
-    /**
-     * <p>The time at which the control operation was completed.</p>
-     */
     inline ControlOperationSummary& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-
-    /**
-     * <p>The time at which the control operation was completed.</p>
-     */
     inline ControlOperationSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of a control operation.</p>
      */
     inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline bool OperationIdentifierHasBeenSet() const { return m_operationIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline void SetOperationIdentifier(const char* value) { m_operationIdentifierHasBeenSet = true; m_operationIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline ControlOperationSummary& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline ControlOperationSummary& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of a control operation.</p>
-     */
     inline ControlOperationSummary& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of operation.</p>
      */
     inline const ControlOperationType& GetOperationType() const{ return m_operationType; }
-
-    /**
-     * <p>The type of operation.</p>
-     */
     inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
-
-    /**
-     * <p>The type of operation.</p>
-     */
     inline void SetOperationType(const ControlOperationType& value) { m_operationTypeHasBeenSet = true; m_operationType = value; }
-
-    /**
-     * <p>The type of operation.</p>
-     */
     inline void SetOperationType(ControlOperationType&& value) { m_operationTypeHasBeenSet = true; m_operationType = std::move(value); }
-
-    /**
-     * <p>The type of operation.</p>
-     */
     inline ControlOperationSummary& WithOperationType(const ControlOperationType& value) { SetOperationType(value); return *this;}
-
-    /**
-     * <p>The type of operation.</p>
-     */
     inline ControlOperationSummary& WithOperationType(ControlOperationType&& value) { SetOperationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time at which a control operation began.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-
-    /**
-     * <p>The time at which a control operation began.</p>
-     */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-
-    /**
-     * <p>The time at which a control operation began.</p>
-     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-
-    /**
-     * <p>The time at which a control operation began.</p>
-     */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-
-    /**
-     * <p>The time at which a control operation began.</p>
-     */
     inline ControlOperationSummary& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-
-    /**
-     * <p>The time at which a control operation began.</p>
-     */
     inline ControlOperationSummary& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the specified control operation.</p>
      */
     inline const ControlOperationStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the specified control operation.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the specified control operation.</p>
-     */
     inline void SetStatus(const ControlOperationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the specified control operation.</p>
-     */
     inline void SetStatus(ControlOperationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the specified control operation.</p>
-     */
     inline ControlOperationSummary& WithStatus(const ControlOperationStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the specified control operation.</p>
-     */
     inline ControlOperationSummary& WithStatus(ControlOperationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A speficic message displayed as part of the control status.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline ControlOperationSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline ControlOperationSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A speficic message displayed as part of the control status.</p>
-     */
     inline ControlOperationSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the target of a control operation.</p>
      */
     inline const Aws::String& GetTargetIdentifier() const{ return m_targetIdentifier; }
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline void SetTargetIdentifier(const Aws::String& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = value; }
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline void SetTargetIdentifier(Aws::String&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline void SetTargetIdentifier(const char* value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier.assign(value); }
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline ControlOperationSummary& WithTargetIdentifier(const Aws::String& value) { SetTargetIdentifier(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline ControlOperationSummary& WithTargetIdentifier(Aws::String&& value) { SetTargetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the target of a control operation.</p>
-     */
     inline ControlOperationSummary& WithTargetIdentifier(const char* value) { SetTargetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_controlIdentifier;

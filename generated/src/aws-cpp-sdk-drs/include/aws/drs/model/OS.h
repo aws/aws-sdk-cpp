@@ -37,46 +37,19 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The long name of the Operating System.</p>
      */
     inline const Aws::String& GetFullString() const{ return m_fullString; }
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline bool FullStringHasBeenSet() const { return m_fullStringHasBeenSet; }
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline void SetFullString(const Aws::String& value) { m_fullStringHasBeenSet = true; m_fullString = value; }
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline void SetFullString(Aws::String&& value) { m_fullStringHasBeenSet = true; m_fullString = std::move(value); }
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline void SetFullString(const char* value) { m_fullStringHasBeenSet = true; m_fullString.assign(value); }
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline OS& WithFullString(const Aws::String& value) { SetFullString(value); return *this;}
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline OS& WithFullString(Aws::String&& value) { SetFullString(std::move(value)); return *this;}
-
-    /**
-     * <p>The long name of the Operating System.</p>
-     */
     inline OS& WithFullString(const char* value) { SetFullString(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fullString;

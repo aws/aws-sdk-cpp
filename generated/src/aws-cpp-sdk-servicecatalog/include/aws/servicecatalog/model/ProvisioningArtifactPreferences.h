@@ -44,6 +44,7 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>One or more Amazon Web Services accounts where stack instances are deployed
      * from the stack set. These accounts can be scoped in
@@ -52,80 +53,17 @@ namespace Model
      * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const{ return m_stackSetAccounts; }
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline bool StackSetAccountsHasBeenSet() const { return m_stackSetAccountsHasBeenSet; }
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline void SetStackSetAccounts(const Aws::Vector<Aws::String>& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = value; }
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline void SetStackSetAccounts(Aws::Vector<Aws::String>&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::move(value); }
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& WithStackSetAccounts(const Aws::Vector<Aws::String>& value) { SetStackSetAccounts(value); return *this;}
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& WithStackSetAccounts(Aws::Vector<Aws::String>&& value) { SetStackSetAccounts(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& AddStackSetAccounts(const Aws::String& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& AddStackSetAccounts(Aws::String&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more Amazon Web Services accounts where stack instances are deployed
-     * from the stack set. These accounts can be scoped in
-     * <code>ProvisioningPreferences$StackSetAccounts</code> and
-     * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& AddStackSetAccounts(const char* value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>One or more Amazon Web Services Regions where stack instances are deployed
      * from the stack set. These Regions can be scoped in
@@ -134,79 +72,15 @@ namespace Model
      * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetStackSetRegions() const{ return m_stackSetRegions; }
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline bool StackSetRegionsHasBeenSet() const { return m_stackSetRegionsHasBeenSet; }
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline void SetStackSetRegions(const Aws::Vector<Aws::String>& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = value; }
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline void SetStackSetRegions(Aws::Vector<Aws::String>&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = std::move(value); }
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& WithStackSetRegions(const Aws::Vector<Aws::String>& value) { SetStackSetRegions(value); return *this;}
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& WithStackSetRegions(Aws::Vector<Aws::String>&& value) { SetStackSetRegions(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& AddStackSetRegions(const Aws::String& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& AddStackSetRegions(Aws::String&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>One or more Amazon Web Services Regions where stack instances are deployed
-     * from the stack set. These Regions can be scoped in
-     * <code>ProvisioningPreferences$StackSetRegions</code> and
-     * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
-     * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
-     */
     inline ProvisioningArtifactPreferences& AddStackSetRegions(const char* value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_stackSetAccounts;

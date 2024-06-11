@@ -39,46 +39,19 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A list of BandMath indices to compute.</p>
      */
     inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline void SetOperations(const Aws::Vector<Operation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline void SetOperations(Aws::Vector<Operation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline CustomIndicesInput& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline CustomIndicesInput& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline CustomIndicesInput& AddOperations(const Operation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
-
-    /**
-     * <p>A list of BandMath indices to compute.</p>
-     */
     inline CustomIndicesInput& AddOperations(Operation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Operation> m_operations;

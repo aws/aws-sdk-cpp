@@ -33,37 +33,23 @@ namespace Model
     AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     
     inline const GlobalReplicationGroup& GetGlobalReplicationGroup() const{ return m_globalReplicationGroup; }
-
-    
     inline void SetGlobalReplicationGroup(const GlobalReplicationGroup& value) { m_globalReplicationGroup = value; }
-
-    
     inline void SetGlobalReplicationGroup(GlobalReplicationGroup&& value) { m_globalReplicationGroup = std::move(value); }
-
-    
     inline RebalanceSlotsInGlobalReplicationGroupResult& WithGlobalReplicationGroup(const GlobalReplicationGroup& value) { SetGlobalReplicationGroup(value); return *this;}
-
-    
     inline RebalanceSlotsInGlobalReplicationGroupResult& WithGlobalReplicationGroup(GlobalReplicationGroup&& value) { SetGlobalReplicationGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline RebalanceSlotsInGlobalReplicationGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline RebalanceSlotsInGlobalReplicationGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlobalReplicationGroup m_globalReplicationGroup;

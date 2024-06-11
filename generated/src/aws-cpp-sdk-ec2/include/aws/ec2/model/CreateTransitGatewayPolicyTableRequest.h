@@ -38,96 +38,36 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the transit gateway used for the policy table.</p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the transit gateway used for the policy table.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tags specification for the transit gateway policy table created during
      * the request.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-
-    /**
-     * <p>The tags specification for the transit gateway policy table created during
-     * the request.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -135,31 +75,10 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline CreateTransitGatewayPolicyTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_transitGatewayId;

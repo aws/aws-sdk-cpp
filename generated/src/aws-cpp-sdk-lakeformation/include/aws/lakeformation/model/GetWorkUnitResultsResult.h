@@ -42,40 +42,26 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream
      * of Apache Arrow v1.0 messages.</p>
      */
     inline Aws::IOStream& GetResultStream() const { return m_resultStream.GetUnderlyingStream(); }
-
-    /**
-     * <p>Rows returned from the <code>GetWorkUnitResults</code> operation as a stream
-     * of Apache Arrow v1.0 messages.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_resultStream = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetWorkUnitResultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetWorkUnitResultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetWorkUnitResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_resultStream;

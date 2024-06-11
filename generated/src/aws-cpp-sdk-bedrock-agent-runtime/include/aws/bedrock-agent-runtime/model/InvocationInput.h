@@ -41,151 +41,57 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains information about the action group to be invoked.</p>
      */
     inline const ActionGroupInvocationInput& GetActionGroupInvocationInput() const{ return m_actionGroupInvocationInput; }
-
-    /**
-     * <p>Contains information about the action group to be invoked.</p>
-     */
     inline bool ActionGroupInvocationInputHasBeenSet() const { return m_actionGroupInvocationInputHasBeenSet; }
-
-    /**
-     * <p>Contains information about the action group to be invoked.</p>
-     */
     inline void SetActionGroupInvocationInput(const ActionGroupInvocationInput& value) { m_actionGroupInvocationInputHasBeenSet = true; m_actionGroupInvocationInput = value; }
-
-    /**
-     * <p>Contains information about the action group to be invoked.</p>
-     */
     inline void SetActionGroupInvocationInput(ActionGroupInvocationInput&& value) { m_actionGroupInvocationInputHasBeenSet = true; m_actionGroupInvocationInput = std::move(value); }
-
-    /**
-     * <p>Contains information about the action group to be invoked.</p>
-     */
     inline InvocationInput& WithActionGroupInvocationInput(const ActionGroupInvocationInput& value) { SetActionGroupInvocationInput(value); return *this;}
-
-    /**
-     * <p>Contains information about the action group to be invoked.</p>
-     */
     inline InvocationInput& WithActionGroupInvocationInput(ActionGroupInvocationInput&& value) { SetActionGroupInvocationInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether the agent is invoking an action group or a knowledge
      * base.</p>
      */
     inline const InvocationType& GetInvocationType() const{ return m_invocationType; }
-
-    /**
-     * <p>Specifies whether the agent is invoking an action group or a knowledge
-     * base.</p>
-     */
     inline bool InvocationTypeHasBeenSet() const { return m_invocationTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the agent is invoking an action group or a knowledge
-     * base.</p>
-     */
     inline void SetInvocationType(const InvocationType& value) { m_invocationTypeHasBeenSet = true; m_invocationType = value; }
-
-    /**
-     * <p>Specifies whether the agent is invoking an action group or a knowledge
-     * base.</p>
-     */
     inline void SetInvocationType(InvocationType&& value) { m_invocationTypeHasBeenSet = true; m_invocationType = std::move(value); }
-
-    /**
-     * <p>Specifies whether the agent is invoking an action group or a knowledge
-     * base.</p>
-     */
     inline InvocationInput& WithInvocationType(const InvocationType& value) { SetInvocationType(value); return *this;}
-
-    /**
-     * <p>Specifies whether the agent is invoking an action group or a knowledge
-     * base.</p>
-     */
     inline InvocationInput& WithInvocationType(InvocationType&& value) { SetInvocationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains details about the knowledge base to look up and the query to be
      * made.</p>
      */
     inline const KnowledgeBaseLookupInput& GetKnowledgeBaseLookupInput() const{ return m_knowledgeBaseLookupInput; }
-
-    /**
-     * <p>Contains details about the knowledge base to look up and the query to be
-     * made.</p>
-     */
     inline bool KnowledgeBaseLookupInputHasBeenSet() const { return m_knowledgeBaseLookupInputHasBeenSet; }
-
-    /**
-     * <p>Contains details about the knowledge base to look up and the query to be
-     * made.</p>
-     */
     inline void SetKnowledgeBaseLookupInput(const KnowledgeBaseLookupInput& value) { m_knowledgeBaseLookupInputHasBeenSet = true; m_knowledgeBaseLookupInput = value; }
-
-    /**
-     * <p>Contains details about the knowledge base to look up and the query to be
-     * made.</p>
-     */
     inline void SetKnowledgeBaseLookupInput(KnowledgeBaseLookupInput&& value) { m_knowledgeBaseLookupInputHasBeenSet = true; m_knowledgeBaseLookupInput = std::move(value); }
-
-    /**
-     * <p>Contains details about the knowledge base to look up and the query to be
-     * made.</p>
-     */
     inline InvocationInput& WithKnowledgeBaseLookupInput(const KnowledgeBaseLookupInput& value) { SetKnowledgeBaseLookupInput(value); return *this;}
-
-    /**
-     * <p>Contains details about the knowledge base to look up and the query to be
-     * made.</p>
-     */
     inline InvocationInput& WithKnowledgeBaseLookupInput(KnowledgeBaseLookupInput&& value) { SetKnowledgeBaseLookupInput(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique identifier of the trace.</p>
      */
     inline const Aws::String& GetTraceId() const{ return m_traceId; }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline InvocationInput& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline InvocationInput& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the trace.</p>
-     */
     inline InvocationInput& WithTraceId(const char* value) { SetTraceId(value); return *this;}
-
+    ///@}
   private:
 
     ActionGroupInvocationInput m_actionGroupInvocationInput;

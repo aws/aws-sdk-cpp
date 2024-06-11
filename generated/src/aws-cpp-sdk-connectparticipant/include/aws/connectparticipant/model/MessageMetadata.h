@@ -39,87 +39,33 @@ namespace Model
     AWS_CONNECTPARTICIPANT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of the message that contains the metadata information. </p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline MessageMetadata& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline MessageMetadata& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the message that contains the metadata information. </p>
-     */
     inline MessageMetadata& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of receipt information for a message for different recipients.</p>
      */
     inline const Aws::Vector<Receipt>& GetReceipts() const{ return m_receipts; }
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline bool ReceiptsHasBeenSet() const { return m_receiptsHasBeenSet; }
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline void SetReceipts(const Aws::Vector<Receipt>& value) { m_receiptsHasBeenSet = true; m_receipts = value; }
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline void SetReceipts(Aws::Vector<Receipt>&& value) { m_receiptsHasBeenSet = true; m_receipts = std::move(value); }
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline MessageMetadata& WithReceipts(const Aws::Vector<Receipt>& value) { SetReceipts(value); return *this;}
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline MessageMetadata& WithReceipts(Aws::Vector<Receipt>&& value) { SetReceipts(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline MessageMetadata& AddReceipts(const Receipt& value) { m_receiptsHasBeenSet = true; m_receipts.push_back(value); return *this; }
-
-    /**
-     * <p>The list of receipt information for a message for different recipients.</p>
-     */
     inline MessageMetadata& AddReceipts(Receipt&& value) { m_receiptsHasBeenSet = true; m_receipts.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_messageId;

@@ -37,47 +37,21 @@ namespace Model
     AWS_STORAGEGATEWAY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
      */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline DetachVolumeRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline DetachVolumeRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the volume to detach from the gateway.</p>
-     */
     inline DetachVolumeRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
      * target volume and detach the volume. The default is <code>false</code>. If this
@@ -86,34 +60,10 @@ namespace Model
      * <code>false</code> </p>
      */
     inline bool GetForceDetach() const{ return m_forceDetach; }
-
-    /**
-     * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
-     * target volume and detach the volume. The default is <code>false</code>. If this
-     * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
-     * <code>false</code> </p>
-     */
     inline bool ForceDetachHasBeenSet() const { return m_forceDetachHasBeenSet; }
-
-    /**
-     * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
-     * target volume and detach the volume. The default is <code>false</code>. If this
-     * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
-     * <code>false</code> </p>
-     */
     inline void SetForceDetach(bool value) { m_forceDetachHasBeenSet = true; m_forceDetach = value; }
-
-    /**
-     * <p>Set to <code>true</code> to forcibly remove the iSCSI connection of the
-     * target volume and detach the volume. The default is <code>false</code>. If this
-     * value is set to <code>false</code>, you must manually disconnect the iSCSI
-     * connection from the target volume.</p> <p>Valid Values: <code>true</code> |
-     * <code>false</code> </p>
-     */
     inline DetachVolumeRequest& WithForceDetach(bool value) { SetForceDetach(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_volumeARN;

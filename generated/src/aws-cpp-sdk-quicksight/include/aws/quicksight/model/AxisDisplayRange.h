@@ -40,67 +40,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum and maximum setup of an axis display range.</p>
      */
     inline const AxisDisplayMinMaxRange& GetMinMax() const{ return m_minMax; }
-
-    /**
-     * <p>The minimum and maximum setup of an axis display range.</p>
-     */
     inline bool MinMaxHasBeenSet() const { return m_minMaxHasBeenSet; }
-
-    /**
-     * <p>The minimum and maximum setup of an axis display range.</p>
-     */
     inline void SetMinMax(const AxisDisplayMinMaxRange& value) { m_minMaxHasBeenSet = true; m_minMax = value; }
-
-    /**
-     * <p>The minimum and maximum setup of an axis display range.</p>
-     */
     inline void SetMinMax(AxisDisplayMinMaxRange&& value) { m_minMaxHasBeenSet = true; m_minMax = std::move(value); }
-
-    /**
-     * <p>The minimum and maximum setup of an axis display range.</p>
-     */
     inline AxisDisplayRange& WithMinMax(const AxisDisplayMinMaxRange& value) { SetMinMax(value); return *this;}
-
-    /**
-     * <p>The minimum and maximum setup of an axis display range.</p>
-     */
     inline AxisDisplayRange& WithMinMax(AxisDisplayMinMaxRange&& value) { SetMinMax(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data-driven setup of an axis display range.</p>
      */
     inline const AxisDisplayDataDrivenRange& GetDataDriven() const{ return m_dataDriven; }
-
-    /**
-     * <p>The data-driven setup of an axis display range.</p>
-     */
     inline bool DataDrivenHasBeenSet() const { return m_dataDrivenHasBeenSet; }
-
-    /**
-     * <p>The data-driven setup of an axis display range.</p>
-     */
     inline void SetDataDriven(const AxisDisplayDataDrivenRange& value) { m_dataDrivenHasBeenSet = true; m_dataDriven = value; }
-
-    /**
-     * <p>The data-driven setup of an axis display range.</p>
-     */
     inline void SetDataDriven(AxisDisplayDataDrivenRange&& value) { m_dataDrivenHasBeenSet = true; m_dataDriven = std::move(value); }
-
-    /**
-     * <p>The data-driven setup of an axis display range.</p>
-     */
     inline AxisDisplayRange& WithDataDriven(const AxisDisplayDataDrivenRange& value) { SetDataDriven(value); return *this;}
-
-    /**
-     * <p>The data-driven setup of an axis display range.</p>
-     */
     inline AxisDisplayRange& WithDataDriven(AxisDisplayDataDrivenRange&& value) { SetDataDriven(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AxisDisplayMinMaxRange m_minMax;

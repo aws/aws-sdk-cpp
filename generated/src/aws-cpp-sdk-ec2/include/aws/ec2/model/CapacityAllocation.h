@@ -40,71 +40,30 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The usage type. <code>used</code> indicates that the instance capacity is in
      * use by instances that are running in the Capacity Reservation.</p>
      */
     inline const AllocationType& GetAllocationType() const{ return m_allocationType; }
-
-    /**
-     * <p>The usage type. <code>used</code> indicates that the instance capacity is in
-     * use by instances that are running in the Capacity Reservation.</p>
-     */
     inline bool AllocationTypeHasBeenSet() const { return m_allocationTypeHasBeenSet; }
-
-    /**
-     * <p>The usage type. <code>used</code> indicates that the instance capacity is in
-     * use by instances that are running in the Capacity Reservation.</p>
-     */
     inline void SetAllocationType(const AllocationType& value) { m_allocationTypeHasBeenSet = true; m_allocationType = value; }
-
-    /**
-     * <p>The usage type. <code>used</code> indicates that the instance capacity is in
-     * use by instances that are running in the Capacity Reservation.</p>
-     */
     inline void SetAllocationType(AllocationType&& value) { m_allocationTypeHasBeenSet = true; m_allocationType = std::move(value); }
-
-    /**
-     * <p>The usage type. <code>used</code> indicates that the instance capacity is in
-     * use by instances that are running in the Capacity Reservation.</p>
-     */
     inline CapacityAllocation& WithAllocationType(const AllocationType& value) { SetAllocationType(value); return *this;}
-
-    /**
-     * <p>The usage type. <code>used</code> indicates that the instance capacity is in
-     * use by instances that are running in the Capacity Reservation.</p>
-     */
     inline CapacityAllocation& WithAllocationType(AllocationType&& value) { SetAllocationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The amount of instance capacity associated with the usage. For example a
      * value of <code>4</code> indicates that instance capacity for 4 instances is
      * currently in use.</p>
      */
     inline int GetCount() const{ return m_count; }
-
-    /**
-     * <p>The amount of instance capacity associated with the usage. For example a
-     * value of <code>4</code> indicates that instance capacity for 4 instances is
-     * currently in use.</p>
-     */
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
-
-    /**
-     * <p>The amount of instance capacity associated with the usage. For example a
-     * value of <code>4</code> indicates that instance capacity for 4 instances is
-     * currently in use.</p>
-     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
-
-    /**
-     * <p>The amount of instance capacity associated with the usage. For example a
-     * value of <code>4</code> indicates that instance capacity for 4 instances is
-     * currently in use.</p>
-     */
     inline CapacityAllocation& WithCount(int value) { SetCount(value); return *this;}
-
+    ///@}
   private:
 
     AllocationType m_allocationType;

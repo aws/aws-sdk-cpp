@@ -32,63 +32,29 @@ namespace Model
     AWS_PANORAMA_API CreatePackageImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The job's ID.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline void SetJobId(const char* value) { m_jobId.assign(value); }
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline CreatePackageImportJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline CreatePackageImportJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's ID.</p>
-     */
     inline CreatePackageImportJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePackageImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePackageImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePackageImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobId;

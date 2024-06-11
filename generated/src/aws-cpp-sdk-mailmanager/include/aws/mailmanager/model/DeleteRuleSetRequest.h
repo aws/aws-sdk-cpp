@@ -34,46 +34,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of an existing rule set resource to delete.</p>
      */
     inline const Aws::String& GetRuleSetId() const{ return m_ruleSetId; }
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline bool RuleSetIdHasBeenSet() const { return m_ruleSetIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline void SetRuleSetId(const Aws::String& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = value; }
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline void SetRuleSetId(Aws::String&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::move(value); }
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline void SetRuleSetId(const char* value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId.assign(value); }
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline DeleteRuleSetRequest& WithRuleSetId(const Aws::String& value) { SetRuleSetId(value); return *this;}
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline DeleteRuleSetRequest& WithRuleSetId(Aws::String&& value) { SetRuleSetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of an existing rule set resource to delete.</p>
-     */
     inline DeleteRuleSetRequest& WithRuleSetId(const char* value) { SetRuleSetId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleSetId;

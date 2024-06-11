@@ -38,79 +38,31 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether data replication is enabled, and if enabled, the type of
      * data replication.</p>
      */
     inline const DataReplication& GetDataReplication() const{ return m_dataReplication; }
-
-    /**
-     * <p>Indicates whether data replication is enabled, and if enabled, the type of
-     * data replication.</p>
-     */
     inline bool DataReplicationHasBeenSet() const { return m_dataReplicationHasBeenSet; }
-
-    /**
-     * <p>Indicates whether data replication is enabled, and if enabled, the type of
-     * data replication.</p>
-     */
     inline void SetDataReplication(const DataReplication& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = value; }
-
-    /**
-     * <p>Indicates whether data replication is enabled, and if enabled, the type of
-     * data replication.</p>
-     */
     inline void SetDataReplication(DataReplication&& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = std::move(value); }
-
-    /**
-     * <p>Indicates whether data replication is enabled, and if enabled, the type of
-     * data replication.</p>
-     */
     inline DataReplicationSettings& WithDataReplication(const DataReplication& value) { SetDataReplication(value); return *this;}
-
-    /**
-     * <p>Indicates whether data replication is enabled, and if enabled, the type of
-     * data replication.</p>
-     */
     inline DataReplicationSettings& WithDataReplication(DataReplication&& value) { SetDataReplication(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time at which the last successful snapshot was taken of the
      * primary WorkSpace used for replicating data.</p>
      */
     inline const Aws::Utils::DateTime& GetRecoverySnapshotTime() const{ return m_recoverySnapshotTime; }
-
-    /**
-     * <p>The date and time at which the last successful snapshot was taken of the
-     * primary WorkSpace used for replicating data.</p>
-     */
     inline bool RecoverySnapshotTimeHasBeenSet() const { return m_recoverySnapshotTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time at which the last successful snapshot was taken of the
-     * primary WorkSpace used for replicating data.</p>
-     */
     inline void SetRecoverySnapshotTime(const Aws::Utils::DateTime& value) { m_recoverySnapshotTimeHasBeenSet = true; m_recoverySnapshotTime = value; }
-
-    /**
-     * <p>The date and time at which the last successful snapshot was taken of the
-     * primary WorkSpace used for replicating data.</p>
-     */
     inline void SetRecoverySnapshotTime(Aws::Utils::DateTime&& value) { m_recoverySnapshotTimeHasBeenSet = true; m_recoverySnapshotTime = std::move(value); }
-
-    /**
-     * <p>The date and time at which the last successful snapshot was taken of the
-     * primary WorkSpace used for replicating data.</p>
-     */
     inline DataReplicationSettings& WithRecoverySnapshotTime(const Aws::Utils::DateTime& value) { SetRecoverySnapshotTime(value); return *this;}
-
-    /**
-     * <p>The date and time at which the last successful snapshot was taken of the
-     * primary WorkSpace used for replicating data.</p>
-     */
     inline DataReplicationSettings& WithRecoverySnapshotTime(Aws::Utils::DateTime&& value) { SetRecoverySnapshotTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DataReplication m_dataReplication;

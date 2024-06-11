@@ -42,47 +42,25 @@ namespace Model
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The number of unique floorplans.</p>
      */
     inline int GetFloorplanCount() const{ return m_floorplanCount; }
-
-    /**
-     * <p>The number of unique floorplans.</p>
-     */
     inline bool FloorplanCountHasBeenSet() const { return m_floorplanCountHasBeenSet; }
-
-    /**
-     * <p>The number of unique floorplans.</p>
-     */
     inline void SetFloorplanCount(int value) { m_floorplanCountHasBeenSet = true; m_floorplanCount = value; }
-
-    /**
-     * <p>The number of unique floorplans.</p>
-     */
     inline WorldCount& WithFloorplanCount(int value) { SetFloorplanCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of unique interiors per floorplan.</p>
      */
     inline int GetInteriorCountPerFloorplan() const{ return m_interiorCountPerFloorplan; }
-
-    /**
-     * <p>The number of unique interiors per floorplan.</p>
-     */
     inline bool InteriorCountPerFloorplanHasBeenSet() const { return m_interiorCountPerFloorplanHasBeenSet; }
-
-    /**
-     * <p>The number of unique interiors per floorplan.</p>
-     */
     inline void SetInteriorCountPerFloorplan(int value) { m_interiorCountPerFloorplanHasBeenSet = true; m_interiorCountPerFloorplan = value; }
-
-    /**
-     * <p>The number of unique interiors per floorplan.</p>
-     */
     inline WorldCount& WithInteriorCountPerFloorplan(int value) { SetInteriorCountPerFloorplan(value); return *this;}
-
+    ///@}
   private:
 
     int m_floorplanCount;

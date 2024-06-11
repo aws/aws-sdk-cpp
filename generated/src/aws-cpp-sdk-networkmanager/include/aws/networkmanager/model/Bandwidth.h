@@ -35,47 +35,25 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Upload speed in Mbps.</p>
      */
     inline int GetUploadSpeed() const{ return m_uploadSpeed; }
-
-    /**
-     * <p>Upload speed in Mbps.</p>
-     */
     inline bool UploadSpeedHasBeenSet() const { return m_uploadSpeedHasBeenSet; }
-
-    /**
-     * <p>Upload speed in Mbps.</p>
-     */
     inline void SetUploadSpeed(int value) { m_uploadSpeedHasBeenSet = true; m_uploadSpeed = value; }
-
-    /**
-     * <p>Upload speed in Mbps.</p>
-     */
     inline Bandwidth& WithUploadSpeed(int value) { SetUploadSpeed(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Download speed in Mbps.</p>
      */
     inline int GetDownloadSpeed() const{ return m_downloadSpeed; }
-
-    /**
-     * <p>Download speed in Mbps.</p>
-     */
     inline bool DownloadSpeedHasBeenSet() const { return m_downloadSpeedHasBeenSet; }
-
-    /**
-     * <p>Download speed in Mbps.</p>
-     */
     inline void SetDownloadSpeed(int value) { m_downloadSpeedHasBeenSet = true; m_downloadSpeed = value; }
-
-    /**
-     * <p>Download speed in Mbps.</p>
-     */
     inline Bandwidth& WithDownloadSpeed(int value) { SetDownloadSpeed(value); return *this;}
-
+    ///@}
   private:
 
     int m_uploadSpeed;

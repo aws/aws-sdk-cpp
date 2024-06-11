@@ -33,6 +33,7 @@ namespace Model
     AWS_GAMELIFT_API CreateGameServerGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The newly created game server group object, including the new ARN value for
      * the Amazon GameLift FleetIQ game server group and the object's status. The
@@ -41,65 +42,22 @@ namespace Model
      * <code>ACTIVE</code>. </p>
      */
     inline const GameServerGroup& GetGameServerGroup() const{ return m_gameServerGroup; }
-
-    /**
-     * <p>The newly created game server group object, including the new ARN value for
-     * the Amazon GameLift FleetIQ game server group and the object's status. The
-     * Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet
-     * been created. This value is added once the game server group status reaches
-     * <code>ACTIVE</code>. </p>
-     */
     inline void SetGameServerGroup(const GameServerGroup& value) { m_gameServerGroup = value; }
-
-    /**
-     * <p>The newly created game server group object, including the new ARN value for
-     * the Amazon GameLift FleetIQ game server group and the object's status. The
-     * Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet
-     * been created. This value is added once the game server group status reaches
-     * <code>ACTIVE</code>. </p>
-     */
     inline void SetGameServerGroup(GameServerGroup&& value) { m_gameServerGroup = std::move(value); }
-
-    /**
-     * <p>The newly created game server group object, including the new ARN value for
-     * the Amazon GameLift FleetIQ game server group and the object's status. The
-     * Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet
-     * been created. This value is added once the game server group status reaches
-     * <code>ACTIVE</code>. </p>
-     */
     inline CreateGameServerGroupResult& WithGameServerGroup(const GameServerGroup& value) { SetGameServerGroup(value); return *this;}
-
-    /**
-     * <p>The newly created game server group object, including the new ARN value for
-     * the Amazon GameLift FleetIQ game server group and the object's status. The
-     * Amazon EC2 Auto Scaling group ARN is initially null, since the group has not yet
-     * been created. This value is added once the game server group status reaches
-     * <code>ACTIVE</code>. </p>
-     */
     inline CreateGameServerGroupResult& WithGameServerGroup(GameServerGroup&& value) { SetGameServerGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateGameServerGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateGameServerGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateGameServerGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     GameServerGroup m_gameServerGroup;

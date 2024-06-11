@@ -38,24 +38,15 @@ namespace Model
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const SignInOptions& GetSignInOptions() const{ return m_signInOptions; }
-
-    
     inline bool SignInOptionsHasBeenSet() const { return m_signInOptionsHasBeenSet; }
-
-    
     inline void SetSignInOptions(const SignInOptions& value) { m_signInOptionsHasBeenSet = true; m_signInOptions = value; }
-
-    
     inline void SetSignInOptions(SignInOptions&& value) { m_signInOptionsHasBeenSet = true; m_signInOptions = std::move(value); }
-
-    
     inline UpdateApplicationPortalOptions& WithSignInOptions(const SignInOptions& value) { SetSignInOptions(value); return *this;}
-
-    
     inline UpdateApplicationPortalOptions& WithSignInOptions(SignInOptions&& value) { SetSignInOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SignInOptions m_signInOptions;

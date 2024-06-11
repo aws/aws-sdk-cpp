@@ -45,6 +45,7 @@ namespace Model
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The sampling rate of the data after post processing by Amazon Lookout for
      * Equipment. For example, if you provide data that has been collected at a 1
@@ -56,67 +57,12 @@ namespace Model
      * 1 hour rate is <i>PT1H</i> </p>
      */
     inline const TargetSamplingRate& GetTargetSamplingRate() const{ return m_targetSamplingRate; }
-
-    /**
-     * <p>The sampling rate of the data after post processing by Amazon Lookout for
-     * Equipment. For example, if you provide data that has been collected at a 1
-     * second level and you want the system to resample the data at a 1 minute rate
-     * before training, the <code>TargetSamplingRate</code> is 1 minute.</p> <p>When
-     * providing a value for the <code>TargetSamplingRate</code>, you must attach the
-     * prefix "PT" to the rate you want. The value for a 1 second rate is therefore
-     * <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a
-     * 1 hour rate is <i>PT1H</i> </p>
-     */
     inline bool TargetSamplingRateHasBeenSet() const { return m_targetSamplingRateHasBeenSet; }
-
-    /**
-     * <p>The sampling rate of the data after post processing by Amazon Lookout for
-     * Equipment. For example, if you provide data that has been collected at a 1
-     * second level and you want the system to resample the data at a 1 minute rate
-     * before training, the <code>TargetSamplingRate</code> is 1 minute.</p> <p>When
-     * providing a value for the <code>TargetSamplingRate</code>, you must attach the
-     * prefix "PT" to the rate you want. The value for a 1 second rate is therefore
-     * <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a
-     * 1 hour rate is <i>PT1H</i> </p>
-     */
     inline void SetTargetSamplingRate(const TargetSamplingRate& value) { m_targetSamplingRateHasBeenSet = true; m_targetSamplingRate = value; }
-
-    /**
-     * <p>The sampling rate of the data after post processing by Amazon Lookout for
-     * Equipment. For example, if you provide data that has been collected at a 1
-     * second level and you want the system to resample the data at a 1 minute rate
-     * before training, the <code>TargetSamplingRate</code> is 1 minute.</p> <p>When
-     * providing a value for the <code>TargetSamplingRate</code>, you must attach the
-     * prefix "PT" to the rate you want. The value for a 1 second rate is therefore
-     * <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a
-     * 1 hour rate is <i>PT1H</i> </p>
-     */
     inline void SetTargetSamplingRate(TargetSamplingRate&& value) { m_targetSamplingRateHasBeenSet = true; m_targetSamplingRate = std::move(value); }
-
-    /**
-     * <p>The sampling rate of the data after post processing by Amazon Lookout for
-     * Equipment. For example, if you provide data that has been collected at a 1
-     * second level and you want the system to resample the data at a 1 minute rate
-     * before training, the <code>TargetSamplingRate</code> is 1 minute.</p> <p>When
-     * providing a value for the <code>TargetSamplingRate</code>, you must attach the
-     * prefix "PT" to the rate you want. The value for a 1 second rate is therefore
-     * <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a
-     * 1 hour rate is <i>PT1H</i> </p>
-     */
     inline DataPreProcessingConfiguration& WithTargetSamplingRate(const TargetSamplingRate& value) { SetTargetSamplingRate(value); return *this;}
-
-    /**
-     * <p>The sampling rate of the data after post processing by Amazon Lookout for
-     * Equipment. For example, if you provide data that has been collected at a 1
-     * second level and you want the system to resample the data at a 1 minute rate
-     * before training, the <code>TargetSamplingRate</code> is 1 minute.</p> <p>When
-     * providing a value for the <code>TargetSamplingRate</code>, you must attach the
-     * prefix "PT" to the rate you want. The value for a 1 second rate is therefore
-     * <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a
-     * 1 hour rate is <i>PT1H</i> </p>
-     */
     inline DataPreProcessingConfiguration& WithTargetSamplingRate(TargetSamplingRate&& value) { SetTargetSamplingRate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TargetSamplingRate m_targetSamplingRate;

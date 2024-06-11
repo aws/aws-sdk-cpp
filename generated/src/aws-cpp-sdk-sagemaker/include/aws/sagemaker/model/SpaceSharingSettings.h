@@ -37,36 +37,17 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the sharing type of the space.</p>
      */
     inline const SharingType& GetSharingType() const{ return m_sharingType; }
-
-    /**
-     * <p>Specifies the sharing type of the space.</p>
-     */
     inline bool SharingTypeHasBeenSet() const { return m_sharingTypeHasBeenSet; }
-
-    /**
-     * <p>Specifies the sharing type of the space.</p>
-     */
     inline void SetSharingType(const SharingType& value) { m_sharingTypeHasBeenSet = true; m_sharingType = value; }
-
-    /**
-     * <p>Specifies the sharing type of the space.</p>
-     */
     inline void SetSharingType(SharingType&& value) { m_sharingTypeHasBeenSet = true; m_sharingType = std::move(value); }
-
-    /**
-     * <p>Specifies the sharing type of the space.</p>
-     */
     inline SpaceSharingSettings& WithSharingType(const SharingType& value) { SetSharingType(value); return *this;}
-
-    /**
-     * <p>Specifies the sharing type of the space.</p>
-     */
     inline SpaceSharingSettings& WithSharingType(SharingType&& value) { SetSharingType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SharingType m_sharingType;

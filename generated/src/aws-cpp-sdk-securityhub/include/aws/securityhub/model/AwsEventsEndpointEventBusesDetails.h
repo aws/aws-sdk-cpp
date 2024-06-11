@@ -38,54 +38,20 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
      * associated with.</p>
      */
     inline const Aws::String& GetEventBusArn() const{ return m_eventBusArn; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline void SetEventBusArn(const Aws::String& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = value; }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline void SetEventBusArn(Aws::String&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::move(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline void SetEventBusArn(const char* value) { m_eventBusArnHasBeenSet = true; m_eventBusArn.assign(value); }
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline AwsEventsEndpointEventBusesDetails& WithEventBusArn(const Aws::String& value) { SetEventBusArn(value); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline AwsEventsEndpointEventBusesDetails& WithEventBusArn(Aws::String&& value) { SetEventBusArn(std::move(value)); return *this;}
-
-    /**
-     * <p> The Amazon Resource Name (ARN) of the event bus that the endpoint is
-     * associated with.</p>
-     */
     inline AwsEventsEndpointEventBusesDetails& WithEventBusArn(const char* value) { SetEventBusArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_eventBusArn;

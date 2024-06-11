@@ -39,77 +39,31 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the slot.</p>
      */
     inline const Aws::String& GetSlotName() const{ return m_slotName; }
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline bool SlotNameHasBeenSet() const { return m_slotNameHasBeenSet; }
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline void SetSlotName(const Aws::String& value) { m_slotNameHasBeenSet = true; m_slotName = value; }
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline void SetSlotName(Aws::String&& value) { m_slotNameHasBeenSet = true; m_slotName = std::move(value); }
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline void SetSlotName(const char* value) { m_slotNameHasBeenSet = true; m_slotName.assign(value); }
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline SlotResolutionTestResultItem& WithSlotName(const Aws::String& value) { SetSlotName(value); return *this;}
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline SlotResolutionTestResultItem& WithSlotName(Aws::String&& value) { SetSlotName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the slot.</p>
-     */
     inline SlotResolutionTestResultItem& WithSlotName(const char* value) { SetSlotName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A result for slot resolution in the results of a test execution.</p>
      */
     inline const SlotResolutionTestResultItemCounts& GetResultCounts() const{ return m_resultCounts; }
-
-    /**
-     * <p>A result for slot resolution in the results of a test execution.</p>
-     */
     inline bool ResultCountsHasBeenSet() const { return m_resultCountsHasBeenSet; }
-
-    /**
-     * <p>A result for slot resolution in the results of a test execution.</p>
-     */
     inline void SetResultCounts(const SlotResolutionTestResultItemCounts& value) { m_resultCountsHasBeenSet = true; m_resultCounts = value; }
-
-    /**
-     * <p>A result for slot resolution in the results of a test execution.</p>
-     */
     inline void SetResultCounts(SlotResolutionTestResultItemCounts&& value) { m_resultCountsHasBeenSet = true; m_resultCounts = std::move(value); }
-
-    /**
-     * <p>A result for slot resolution in the results of a test execution.</p>
-     */
     inline SlotResolutionTestResultItem& WithResultCounts(const SlotResolutionTestResultItemCounts& value) { SetResultCounts(value); return *this;}
-
-    /**
-     * <p>A result for slot resolution in the results of a test execution.</p>
-     */
     inline SlotResolutionTestResultItem& WithResultCounts(SlotResolutionTestResultItemCounts&& value) { SetResultCounts(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_slotName;

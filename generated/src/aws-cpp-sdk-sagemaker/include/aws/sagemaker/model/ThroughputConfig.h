@@ -49,100 +49,42 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
      * <code>PROVISIONED</code>. </p>
      */
     inline const ThroughputMode& GetThroughputMode() const{ return m_throughputMode; }
-
-    /**
-     * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
-     * <code>PROVISIONED</code>. </p>
-     */
     inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
-
-    /**
-     * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
-     * <code>PROVISIONED</code>. </p>
-     */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
-
-    /**
-     * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
-     * <code>PROVISIONED</code>. </p>
-     */
     inline void SetThroughputMode(ThroughputMode&& value) { m_throughputModeHasBeenSet = true; m_throughputMode = std::move(value); }
-
-    /**
-     * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
-     * <code>PROVISIONED</code>. </p>
-     */
     inline ThroughputConfig& WithThroughputMode(const ThroughputMode& value) { SetThroughputMode(value); return *this;}
-
-    /**
-     * <p>The mode used for your feature group throughput: <code>ON_DEMAND</code> or
-     * <code>PROVISIONED</code>. </p>
-     */
     inline ThroughputConfig& WithThroughputMode(ThroughputMode&& value) { SetThroughputMode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> For provisioned feature groups with online store enabled, this indicates the
      * read throughput you are billed for and can consume without throttling. </p>
      * <p>This field is not applicable for on-demand feature groups. </p>
      */
     inline int GetProvisionedReadCapacityUnits() const{ return m_provisionedReadCapacityUnits; }
-
-    /**
-     * <p> For provisioned feature groups with online store enabled, this indicates the
-     * read throughput you are billed for and can consume without throttling. </p>
-     * <p>This field is not applicable for on-demand feature groups. </p>
-     */
     inline bool ProvisionedReadCapacityUnitsHasBeenSet() const { return m_provisionedReadCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p> For provisioned feature groups with online store enabled, this indicates the
-     * read throughput you are billed for and can consume without throttling. </p>
-     * <p>This field is not applicable for on-demand feature groups. </p>
-     */
     inline void SetProvisionedReadCapacityUnits(int value) { m_provisionedReadCapacityUnitsHasBeenSet = true; m_provisionedReadCapacityUnits = value; }
-
-    /**
-     * <p> For provisioned feature groups with online store enabled, this indicates the
-     * read throughput you are billed for and can consume without throttling. </p>
-     * <p>This field is not applicable for on-demand feature groups. </p>
-     */
     inline ThroughputConfig& WithProvisionedReadCapacityUnits(int value) { SetProvisionedReadCapacityUnits(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> For provisioned feature groups, this indicates the write throughput you are
      * billed for and can consume without throttling. </p> <p>This field is not
      * applicable for on-demand feature groups. </p>
      */
     inline int GetProvisionedWriteCapacityUnits() const{ return m_provisionedWriteCapacityUnits; }
-
-    /**
-     * <p> For provisioned feature groups, this indicates the write throughput you are
-     * billed for and can consume without throttling. </p> <p>This field is not
-     * applicable for on-demand feature groups. </p>
-     */
     inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
-
-    /**
-     * <p> For provisioned feature groups, this indicates the write throughput you are
-     * billed for and can consume without throttling. </p> <p>This field is not
-     * applicable for on-demand feature groups. </p>
-     */
     inline void SetProvisionedWriteCapacityUnits(int value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
-
-    /**
-     * <p> For provisioned feature groups, this indicates the write throughput you are
-     * billed for and can consume without throttling. </p> <p>This field is not
-     * applicable for on-demand feature groups. </p>
-     */
     inline ThroughputConfig& WithProvisionedWriteCapacityUnits(int value) { SetProvisionedWriteCapacityUnits(value); return *this;}
-
+    ///@}
   private:
 
     ThroughputMode m_throughputMode;

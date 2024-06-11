@@ -37,36 +37,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
      */
     inline const AttachedFileInvalidRequestExceptionReason& GetAttachedFileInvalidRequestExceptionReason() const{ return m_attachedFileInvalidRequestExceptionReason; }
-
-    /**
-     * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
-     */
     inline bool AttachedFileInvalidRequestExceptionReasonHasBeenSet() const { return m_attachedFileInvalidRequestExceptionReasonHasBeenSet; }
-
-    /**
-     * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
-     */
     inline void SetAttachedFileInvalidRequestExceptionReason(const AttachedFileInvalidRequestExceptionReason& value) { m_attachedFileInvalidRequestExceptionReasonHasBeenSet = true; m_attachedFileInvalidRequestExceptionReason = value; }
-
-    /**
-     * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
-     */
     inline void SetAttachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason&& value) { m_attachedFileInvalidRequestExceptionReasonHasBeenSet = true; m_attachedFileInvalidRequestExceptionReason = std::move(value); }
-
-    /**
-     * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
-     */
     inline InvalidRequestExceptionReason& WithAttachedFileInvalidRequestExceptionReason(const AttachedFileInvalidRequestExceptionReason& value) { SetAttachedFileInvalidRequestExceptionReason(value); return *this;}
-
-    /**
-     * <p>Reason why the StartAttachedFiledUpload request was invalid.</p>
-     */
     inline InvalidRequestExceptionReason& WithAttachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason&& value) { SetAttachedFileInvalidRequestExceptionReason(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AttachedFileInvalidRequestExceptionReason m_attachedFileInvalidRequestExceptionReason;

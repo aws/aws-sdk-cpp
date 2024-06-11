@@ -33,77 +33,31 @@ namespace Model
     AWS_WORKMAILMESSAGEFLOW_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the email message being updated.</p>
      */
     inline const Aws::String& GetMessageId() const{ return m_messageId; }
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline PutRawMessageContentRequest& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline PutRawMessageContentRequest& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the email message being updated.</p>
-     */
     inline PutRawMessageContentRequest& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the raw message content of the updated email message.</p>
      */
     inline const RawMessageContent& GetContent() const{ return m_content; }
-
-    /**
-     * <p>Describes the raw message content of the updated email message.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>Describes the raw message content of the updated email message.</p>
-     */
     inline void SetContent(const RawMessageContent& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>Describes the raw message content of the updated email message.</p>
-     */
     inline void SetContent(RawMessageContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>Describes the raw message content of the updated email message.</p>
-     */
     inline PutRawMessageContentRequest& WithContent(const RawMessageContent& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>Describes the raw message content of the updated email message.</p>
-     */
     inline PutRawMessageContentRequest& WithContent(RawMessageContent&& value) { SetContent(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_messageId;

@@ -37,36 +37,17 @@ namespace Model
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Error information about a project.</p>
      */
     inline const DefaultErrorDetails& GetDefaultErrorDetails() const{ return m_defaultErrorDetails; }
-
-    /**
-     * <p>Error information about a project.</p>
-     */
     inline bool DefaultErrorDetailsHasBeenSet() const { return m_defaultErrorDetailsHasBeenSet; }
-
-    /**
-     * <p>Error information about a project.</p>
-     */
     inline void SetDefaultErrorDetails(const DefaultErrorDetails& value) { m_defaultErrorDetailsHasBeenSet = true; m_defaultErrorDetails = value; }
-
-    /**
-     * <p>Error information about a project.</p>
-     */
     inline void SetDefaultErrorDetails(DefaultErrorDetails&& value) { m_defaultErrorDetailsHasBeenSet = true; m_defaultErrorDetails = std::move(value); }
-
-    /**
-     * <p>Error information about a project.</p>
-     */
     inline ErrorDetails& WithDefaultErrorDetails(const DefaultErrorDetails& value) { SetDefaultErrorDetails(value); return *this;}
-
-    /**
-     * <p>Error information about a project.</p>
-     */
     inline ErrorDetails& WithDefaultErrorDetails(DefaultErrorDetails&& value) { SetDefaultErrorDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DefaultErrorDetails m_defaultErrorDetails;

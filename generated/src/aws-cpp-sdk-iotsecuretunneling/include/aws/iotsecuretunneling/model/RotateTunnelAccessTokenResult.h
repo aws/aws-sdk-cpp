@@ -32,149 +32,57 @@ namespace Model
     AWS_IOTSECURETUNNELING_API RotateTunnelAccessTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name for the tunnel.</p>
      */
     inline const Aws::String& GetTunnelArn() const{ return m_tunnelArn; }
-
-    /**
-     * <p>The Amazon Resource Name for the tunnel.</p>
-     */
     inline void SetTunnelArn(const Aws::String& value) { m_tunnelArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name for the tunnel.</p>
-     */
     inline void SetTunnelArn(Aws::String&& value) { m_tunnelArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name for the tunnel.</p>
-     */
     inline void SetTunnelArn(const char* value) { m_tunnelArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name for the tunnel.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithTunnelArn(const Aws::String& value) { SetTunnelArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name for the tunnel.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithTunnelArn(Aws::String&& value) { SetTunnelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name for the tunnel.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithTunnelArn(const char* value) { SetTunnelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client access token that the source local proxy uses to connect to IoT
      * Secure Tunneling.</p>
      */
     inline const Aws::String& GetSourceAccessToken() const{ return m_sourceAccessToken; }
-
-    /**
-     * <p>The client access token that the source local proxy uses to connect to IoT
-     * Secure Tunneling.</p>
-     */
     inline void SetSourceAccessToken(const Aws::String& value) { m_sourceAccessToken = value; }
-
-    /**
-     * <p>The client access token that the source local proxy uses to connect to IoT
-     * Secure Tunneling.</p>
-     */
     inline void SetSourceAccessToken(Aws::String&& value) { m_sourceAccessToken = std::move(value); }
-
-    /**
-     * <p>The client access token that the source local proxy uses to connect to IoT
-     * Secure Tunneling.</p>
-     */
     inline void SetSourceAccessToken(const char* value) { m_sourceAccessToken.assign(value); }
-
-    /**
-     * <p>The client access token that the source local proxy uses to connect to IoT
-     * Secure Tunneling.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithSourceAccessToken(const Aws::String& value) { SetSourceAccessToken(value); return *this;}
-
-    /**
-     * <p>The client access token that the source local proxy uses to connect to IoT
-     * Secure Tunneling.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithSourceAccessToken(Aws::String&& value) { SetSourceAccessToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The client access token that the source local proxy uses to connect to IoT
-     * Secure Tunneling.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithSourceAccessToken(const char* value) { SetSourceAccessToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The client access token that the destination local proxy uses to connect to
      * IoT Secure Tunneling.</p>
      */
     inline const Aws::String& GetDestinationAccessToken() const{ return m_destinationAccessToken; }
-
-    /**
-     * <p>The client access token that the destination local proxy uses to connect to
-     * IoT Secure Tunneling.</p>
-     */
     inline void SetDestinationAccessToken(const Aws::String& value) { m_destinationAccessToken = value; }
-
-    /**
-     * <p>The client access token that the destination local proxy uses to connect to
-     * IoT Secure Tunneling.</p>
-     */
     inline void SetDestinationAccessToken(Aws::String&& value) { m_destinationAccessToken = std::move(value); }
-
-    /**
-     * <p>The client access token that the destination local proxy uses to connect to
-     * IoT Secure Tunneling.</p>
-     */
     inline void SetDestinationAccessToken(const char* value) { m_destinationAccessToken.assign(value); }
-
-    /**
-     * <p>The client access token that the destination local proxy uses to connect to
-     * IoT Secure Tunneling.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithDestinationAccessToken(const Aws::String& value) { SetDestinationAccessToken(value); return *this;}
-
-    /**
-     * <p>The client access token that the destination local proxy uses to connect to
-     * IoT Secure Tunneling.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithDestinationAccessToken(Aws::String&& value) { SetDestinationAccessToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The client access token that the destination local proxy uses to connect to
-     * IoT Secure Tunneling.</p>
-     */
     inline RotateTunnelAccessTokenResult& WithDestinationAccessToken(const char* value) { SetDestinationAccessToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline RotateTunnelAccessTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline RotateTunnelAccessTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline RotateTunnelAccessTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_tunnelArn;

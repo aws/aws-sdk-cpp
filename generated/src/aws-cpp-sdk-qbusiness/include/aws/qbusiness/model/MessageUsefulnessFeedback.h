@@ -41,147 +41,56 @@ namespace Model
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The usefulness value assigned by an end user to a message.</p>
      */
     inline const MessageUsefulness& GetUsefulness() const{ return m_usefulness; }
-
-    /**
-     * <p>The usefulness value assigned by an end user to a message.</p>
-     */
     inline bool UsefulnessHasBeenSet() const { return m_usefulnessHasBeenSet; }
-
-    /**
-     * <p>The usefulness value assigned by an end user to a message.</p>
-     */
     inline void SetUsefulness(const MessageUsefulness& value) { m_usefulnessHasBeenSet = true; m_usefulness = value; }
-
-    /**
-     * <p>The usefulness value assigned by an end user to a message.</p>
-     */
     inline void SetUsefulness(MessageUsefulness&& value) { m_usefulnessHasBeenSet = true; m_usefulness = std::move(value); }
-
-    /**
-     * <p>The usefulness value assigned by an end user to a message.</p>
-     */
     inline MessageUsefulnessFeedback& WithUsefulness(const MessageUsefulness& value) { SetUsefulness(value); return *this;}
-
-    /**
-     * <p>The usefulness value assigned by an end user to a message.</p>
-     */
     inline MessageUsefulnessFeedback& WithUsefulness(MessageUsefulness&& value) { SetUsefulness(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for a usefulness rating.</p>
      */
     inline const MessageUsefulnessReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>The reason for a usefulness rating.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>The reason for a usefulness rating.</p>
-     */
     inline void SetReason(const MessageUsefulnessReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>The reason for a usefulness rating.</p>
-     */
     inline void SetReason(MessageUsefulnessReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>The reason for a usefulness rating.</p>
-     */
     inline MessageUsefulnessFeedback& WithReason(const MessageUsefulnessReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>The reason for a usefulness rating.</p>
-     */
     inline MessageUsefulnessFeedback& WithReason(MessageUsefulnessReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A comment given by an end user on the usefulness of an AI-generated chat
      * message.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline MessageUsefulnessFeedback& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline MessageUsefulnessFeedback& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-
-    /**
-     * <p>A comment given by an end user on the usefulness of an AI-generated chat
-     * message.</p>
-     */
     inline MessageUsefulnessFeedback& WithComment(const char* value) { SetComment(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp for when the feedback was submitted.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedAt() const{ return m_submittedAt; }
-
-    /**
-     * <p>The timestamp for when the feedback was submitted.</p>
-     */
     inline bool SubmittedAtHasBeenSet() const { return m_submittedAtHasBeenSet; }
-
-    /**
-     * <p>The timestamp for when the feedback was submitted.</p>
-     */
     inline void SetSubmittedAt(const Aws::Utils::DateTime& value) { m_submittedAtHasBeenSet = true; m_submittedAt = value; }
-
-    /**
-     * <p>The timestamp for when the feedback was submitted.</p>
-     */
     inline void SetSubmittedAt(Aws::Utils::DateTime&& value) { m_submittedAtHasBeenSet = true; m_submittedAt = std::move(value); }
-
-    /**
-     * <p>The timestamp for when the feedback was submitted.</p>
-     */
     inline MessageUsefulnessFeedback& WithSubmittedAt(const Aws::Utils::DateTime& value) { SetSubmittedAt(value); return *this;}
-
-    /**
-     * <p>The timestamp for when the feedback was submitted.</p>
-     */
     inline MessageUsefulnessFeedback& WithSubmittedAt(Aws::Utils::DateTime&& value) { SetSubmittedAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MessageUsefulness m_usefulness;

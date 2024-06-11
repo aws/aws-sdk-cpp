@@ -38,36 +38,17 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Identifier of the read-only field.</p>
      */
     inline const TaskTemplateFieldIdentifier& GetId() const{ return m_id; }
-
-    /**
-     * <p>Identifier of the read-only field.</p>
-     */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-
-    /**
-     * <p>Identifier of the read-only field.</p>
-     */
     inline void SetId(const TaskTemplateFieldIdentifier& value) { m_idHasBeenSet = true; m_id = value; }
-
-    /**
-     * <p>Identifier of the read-only field.</p>
-     */
     inline void SetId(TaskTemplateFieldIdentifier&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-
-    /**
-     * <p>Identifier of the read-only field.</p>
-     */
     inline ReadOnlyFieldInfo& WithId(const TaskTemplateFieldIdentifier& value) { SetId(value); return *this;}
-
-    /**
-     * <p>Identifier of the read-only field.</p>
-     */
     inline ReadOnlyFieldInfo& WithId(TaskTemplateFieldIdentifier&& value) { SetId(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TaskTemplateFieldIdentifier m_id;

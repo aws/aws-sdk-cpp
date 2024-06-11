@@ -39,106 +39,43 @@ namespace Model
     AWS_GROUNDSTATION_API ListSatellitesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Next token that can be supplied in the next call to get the next page of
      * satellites.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * satellites.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * satellites.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * satellites.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * satellites.</p>
-     */
     inline ListSatellitesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * satellites.</p>
-     */
     inline ListSatellitesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Next token that can be supplied in the next call to get the next page of
-     * satellites.</p>
-     */
     inline ListSatellitesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of satellites.</p>
      */
     inline const Aws::Vector<SatelliteListItem>& GetSatellites() const{ return m_satellites; }
-
-    /**
-     * <p>List of satellites.</p>
-     */
     inline void SetSatellites(const Aws::Vector<SatelliteListItem>& value) { m_satellites = value; }
-
-    /**
-     * <p>List of satellites.</p>
-     */
     inline void SetSatellites(Aws::Vector<SatelliteListItem>&& value) { m_satellites = std::move(value); }
-
-    /**
-     * <p>List of satellites.</p>
-     */
     inline ListSatellitesResult& WithSatellites(const Aws::Vector<SatelliteListItem>& value) { SetSatellites(value); return *this;}
-
-    /**
-     * <p>List of satellites.</p>
-     */
     inline ListSatellitesResult& WithSatellites(Aws::Vector<SatelliteListItem>&& value) { SetSatellites(std::move(value)); return *this;}
-
-    /**
-     * <p>List of satellites.</p>
-     */
     inline ListSatellitesResult& AddSatellites(const SatelliteListItem& value) { m_satellites.push_back(value); return *this; }
-
-    /**
-     * <p>List of satellites.</p>
-     */
     inline ListSatellitesResult& AddSatellites(SatelliteListItem&& value) { m_satellites.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSatellitesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSatellitesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSatellitesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

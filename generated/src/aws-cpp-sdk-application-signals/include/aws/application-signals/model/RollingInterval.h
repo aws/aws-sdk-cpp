@@ -38,65 +38,29 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the rolling interval unit.</p>
      */
     inline const DurationUnit& GetDurationUnit() const{ return m_durationUnit; }
-
-    /**
-     * <p>Specifies the rolling interval unit.</p>
-     */
     inline bool DurationUnitHasBeenSet() const { return m_durationUnitHasBeenSet; }
-
-    /**
-     * <p>Specifies the rolling interval unit.</p>
-     */
     inline void SetDurationUnit(const DurationUnit& value) { m_durationUnitHasBeenSet = true; m_durationUnit = value; }
-
-    /**
-     * <p>Specifies the rolling interval unit.</p>
-     */
     inline void SetDurationUnit(DurationUnit&& value) { m_durationUnitHasBeenSet = true; m_durationUnit = std::move(value); }
-
-    /**
-     * <p>Specifies the rolling interval unit.</p>
-     */
     inline RollingInterval& WithDurationUnit(const DurationUnit& value) { SetDurationUnit(value); return *this;}
-
-    /**
-     * <p>Specifies the rolling interval unit.</p>
-     */
     inline RollingInterval& WithDurationUnit(DurationUnit&& value) { SetDurationUnit(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the duration of each rolling interval. For example, if
      * <code>Duration</code> is <code>7</code> and <code>DurationUnit</code> is
      * <code>DAY</code>, each rolling interval is seven days.</p>
      */
     inline int GetDuration() const{ return m_duration; }
-
-    /**
-     * <p>Specifies the duration of each rolling interval. For example, if
-     * <code>Duration</code> is <code>7</code> and <code>DurationUnit</code> is
-     * <code>DAY</code>, each rolling interval is seven days.</p>
-     */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
-
-    /**
-     * <p>Specifies the duration of each rolling interval. For example, if
-     * <code>Duration</code> is <code>7</code> and <code>DurationUnit</code> is
-     * <code>DAY</code>, each rolling interval is seven days.</p>
-     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
-
-    /**
-     * <p>Specifies the duration of each rolling interval. For example, if
-     * <code>Duration</code> is <code>7</code> and <code>DurationUnit</code> is
-     * <code>DAY</code>, each rolling interval is seven days.</p>
-     */
     inline RollingInterval& WithDuration(int value) { SetDuration(value); return *this;}
-
+    ///@}
   private:
 
     DurationUnit m_durationUnit;

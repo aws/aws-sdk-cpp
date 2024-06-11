@@ -39,6 +39,7 @@ namespace Model
     AWS_SUPPORT_API DescribeAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>This object includes the attachment content and file name.</p> <p>In the
      * previous response syntax, the value for the <code>data</code> parameter appears
@@ -47,65 +48,22 @@ namespace Model
      * <code>troubleshoot-screenshot.png</code>.</p>
      */
     inline const Attachment& GetAttachment() const{ return m_attachment; }
-
-    /**
-     * <p>This object includes the attachment content and file name.</p> <p>In the
-     * previous response syntax, the value for the <code>data</code> parameter appears
-     * as <code>blob</code>, which is represented as a base64-encoded string. The value
-     * for <code>fileName</code> is the name of the attachment, such as
-     * <code>troubleshoot-screenshot.png</code>.</p>
-     */
     inline void SetAttachment(const Attachment& value) { m_attachment = value; }
-
-    /**
-     * <p>This object includes the attachment content and file name.</p> <p>In the
-     * previous response syntax, the value for the <code>data</code> parameter appears
-     * as <code>blob</code>, which is represented as a base64-encoded string. The value
-     * for <code>fileName</code> is the name of the attachment, such as
-     * <code>troubleshoot-screenshot.png</code>.</p>
-     */
     inline void SetAttachment(Attachment&& value) { m_attachment = std::move(value); }
-
-    /**
-     * <p>This object includes the attachment content and file name.</p> <p>In the
-     * previous response syntax, the value for the <code>data</code> parameter appears
-     * as <code>blob</code>, which is represented as a base64-encoded string. The value
-     * for <code>fileName</code> is the name of the attachment, such as
-     * <code>troubleshoot-screenshot.png</code>.</p>
-     */
     inline DescribeAttachmentResult& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-
-    /**
-     * <p>This object includes the attachment content and file name.</p> <p>In the
-     * previous response syntax, the value for the <code>data</code> parameter appears
-     * as <code>blob</code>, which is represented as a base64-encoded string. The value
-     * for <code>fileName</code> is the name of the attachment, such as
-     * <code>troubleshoot-screenshot.png</code>.</p>
-     */
     inline DescribeAttachmentResult& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Attachment m_attachment;

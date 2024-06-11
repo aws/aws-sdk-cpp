@@ -32,46 +32,19 @@ namespace Model
     AWS_VPCLATTICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
      */
     inline const Aws::String& GetServiceNetworkIdentifier() const{ return m_serviceNetworkIdentifier; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline void SetServiceNetworkIdentifier(const Aws::String& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline void SetServiceNetworkIdentifier(Aws::String&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline void SetServiceNetworkIdentifier(const char* value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline DeleteServiceNetworkRequest& WithServiceNetworkIdentifier(const Aws::String& value) { SetServiceNetworkIdentifier(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline DeleteServiceNetworkRequest& WithServiceNetworkIdentifier(Aws::String&& value) { SetServiceNetworkIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) or ID of the service network.</p>
-     */
     inline DeleteServiceNetworkRequest& WithServiceNetworkIdentifier(const char* value) { SetServiceNetworkIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_serviceNetworkIdentifier;

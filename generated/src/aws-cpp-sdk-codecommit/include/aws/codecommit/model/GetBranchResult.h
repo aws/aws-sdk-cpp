@@ -39,53 +39,27 @@ namespace Model
     AWS_CODECOMMIT_API GetBranchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the branch.</p>
      */
     inline const BranchInfo& GetBranch() const{ return m_branch; }
-
-    /**
-     * <p>The name of the branch.</p>
-     */
     inline void SetBranch(const BranchInfo& value) { m_branch = value; }
-
-    /**
-     * <p>The name of the branch.</p>
-     */
     inline void SetBranch(BranchInfo&& value) { m_branch = std::move(value); }
-
-    /**
-     * <p>The name of the branch.</p>
-     */
     inline GetBranchResult& WithBranch(const BranchInfo& value) { SetBranch(value); return *this;}
-
-    /**
-     * <p>The name of the branch.</p>
-     */
     inline GetBranchResult& WithBranch(BranchInfo&& value) { SetBranch(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetBranchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetBranchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetBranchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     BranchInfo m_branch;

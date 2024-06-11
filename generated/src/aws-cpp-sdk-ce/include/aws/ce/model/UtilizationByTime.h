@@ -40,108 +40,43 @@ namespace Model
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The period of time that this utilization was used for.</p>
      */
     inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
-
-    /**
-     * <p>The period of time that this utilization was used for.</p>
-     */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-
-    /**
-     * <p>The period of time that this utilization was used for.</p>
-     */
     inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-
-    /**
-     * <p>The period of time that this utilization was used for.</p>
-     */
     inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-
-    /**
-     * <p>The period of time that this utilization was used for.</p>
-     */
     inline UtilizationByTime& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-
-    /**
-     * <p>The period of time that this utilization was used for.</p>
-     */
     inline UtilizationByTime& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The groups that this utilization result uses.</p>
      */
     inline const Aws::Vector<ReservationUtilizationGroup>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline void SetGroups(const Aws::Vector<ReservationUtilizationGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline void SetGroups(Aws::Vector<ReservationUtilizationGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline UtilizationByTime& WithGroups(const Aws::Vector<ReservationUtilizationGroup>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline UtilizationByTime& WithGroups(Aws::Vector<ReservationUtilizationGroup>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline UtilizationByTime& AddGroups(const ReservationUtilizationGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>The groups that this utilization result uses.</p>
-     */
     inline UtilizationByTime& AddGroups(ReservationUtilizationGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of reservation hours that were used.</p>
      */
     inline const ReservationAggregates& GetTotal() const{ return m_total; }
-
-    /**
-     * <p>The total number of reservation hours that were used.</p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p>The total number of reservation hours that were used.</p>
-     */
     inline void SetTotal(const ReservationAggregates& value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p>The total number of reservation hours that were used.</p>
-     */
     inline void SetTotal(ReservationAggregates&& value) { m_totalHasBeenSet = true; m_total = std::move(value); }
-
-    /**
-     * <p>The total number of reservation hours that were used.</p>
-     */
     inline UtilizationByTime& WithTotal(const ReservationAggregates& value) { SetTotal(value); return *this;}
-
-    /**
-     * <p>The total number of reservation hours that were used.</p>
-     */
     inline UtilizationByTime& WithTotal(ReservationAggregates&& value) { SetTotal(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DateInterval m_timePeriod;

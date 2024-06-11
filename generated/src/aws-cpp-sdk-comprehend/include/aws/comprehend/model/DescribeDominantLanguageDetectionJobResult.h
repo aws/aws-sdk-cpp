@@ -33,58 +33,28 @@ namespace Model
     AWS_COMPREHEND_API DescribeDominantLanguageDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object that contains the properties associated with a dominant language
      * detection job.</p>
      */
     inline const DominantLanguageDetectionJobProperties& GetDominantLanguageDetectionJobProperties() const{ return m_dominantLanguageDetectionJobProperties; }
-
-    /**
-     * <p>An object that contains the properties associated with a dominant language
-     * detection job.</p>
-     */
     inline void SetDominantLanguageDetectionJobProperties(const DominantLanguageDetectionJobProperties& value) { m_dominantLanguageDetectionJobProperties = value; }
-
-    /**
-     * <p>An object that contains the properties associated with a dominant language
-     * detection job.</p>
-     */
     inline void SetDominantLanguageDetectionJobProperties(DominantLanguageDetectionJobProperties&& value) { m_dominantLanguageDetectionJobProperties = std::move(value); }
-
-    /**
-     * <p>An object that contains the properties associated with a dominant language
-     * detection job.</p>
-     */
     inline DescribeDominantLanguageDetectionJobResult& WithDominantLanguageDetectionJobProperties(const DominantLanguageDetectionJobProperties& value) { SetDominantLanguageDetectionJobProperties(value); return *this;}
-
-    /**
-     * <p>An object that contains the properties associated with a dominant language
-     * detection job.</p>
-     */
     inline DescribeDominantLanguageDetectionJobResult& WithDominantLanguageDetectionJobProperties(DominantLanguageDetectionJobProperties&& value) { SetDominantLanguageDetectionJobProperties(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDominantLanguageDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDominantLanguageDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDominantLanguageDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     DominantLanguageDetectionJobProperties m_dominantLanguageDetectionJobProperties;

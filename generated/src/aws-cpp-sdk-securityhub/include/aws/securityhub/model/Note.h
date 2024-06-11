@@ -37,96 +37,36 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
      * 512.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline Note& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline Note& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The text of a note.</p> <p>Length Constraints: Minimum of 1. Maximum of
-     * 512.</p>
-     */
     inline Note& WithText(const char* value) { SetText(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The principal that created a note.</p>
      */
     inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline bool UpdatedByHasBeenSet() const { return m_updatedByHasBeenSet; }
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline void SetUpdatedBy(const Aws::String& value) { m_updatedByHasBeenSet = true; m_updatedBy = value; }
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline void SetUpdatedBy(Aws::String&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::move(value); }
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline void SetUpdatedBy(const char* value) { m_updatedByHasBeenSet = true; m_updatedBy.assign(value); }
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline Note& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline Note& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The principal that created a note.</p>
-     */
     inline Note& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A timestamp that indicates when the note was updated.</p> <p>This field
      * accepts only the specified formats. Timestamps can end with <code>Z</code> or
@@ -145,140 +85,14 @@ namespace Model
      * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
      */
     inline const Aws::String& GetUpdatedAt() const{ return m_updatedAt; }
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetUpdatedAt(const Aws::String& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetUpdatedAt(Aws::String&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline void SetUpdatedAt(const char* value) { m_updatedAtHasBeenSet = true; m_updatedAt.assign(value); }
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline Note& WithUpdatedAt(const Aws::String& value) { SetUpdatedAt(value); return *this;}
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline Note& WithUpdatedAt(Aws::String&& value) { SetUpdatedAt(std::move(value)); return *this;}
-
-    /**
-     * <p>A timestamp that indicates when the note was updated.</p> <p>This field
-     * accepts only the specified formats. Timestamps can end with <code>Z</code> or
-     * <code>("+" / "-") time-hour [":" time-minute]</code>. The time-secfrac after
-     * seconds is limited to a maximum of 9 digits. The offset is bounded by +/-18:00.
-     * Here are valid timestamp formats with examples:</p> <ul> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SSZ</code> (for example,
-     * <code>2019-01-31T23:00:00Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmmZ</code> (for example,
-     * <code>2019-01-31T23:00:00.123456789Z</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10+17:59</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS-HHMM</code> (for example,
-     * <code>2024-01-04T15:25:10-1759</code>)</p> </li> <li> <p>
-     * <code>YYYY-MM-DDTHH:MM:SS.mmmmmmmmm+HH:MM</code> (for example,
-     * <code>2024-01-04T15:25:10.123456789+17:59</code>)</p> </li> </ul>
-     */
     inline Note& WithUpdatedAt(const char* value) { SetUpdatedAt(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_text;

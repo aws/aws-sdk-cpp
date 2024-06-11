@@ -34,120 +34,45 @@ namespace Model
     AWS_REKOGNITION_API DescribeProjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of project descriptions. The list is sorted by the date and time the
      * projects are created.</p>
      */
     inline const Aws::Vector<ProjectDescription>& GetProjectDescriptions() const{ return m_projectDescriptions; }
-
-    /**
-     * <p>A list of project descriptions. The list is sorted by the date and time the
-     * projects are created.</p>
-     */
     inline void SetProjectDescriptions(const Aws::Vector<ProjectDescription>& value) { m_projectDescriptions = value; }
-
-    /**
-     * <p>A list of project descriptions. The list is sorted by the date and time the
-     * projects are created.</p>
-     */
     inline void SetProjectDescriptions(Aws::Vector<ProjectDescription>&& value) { m_projectDescriptions = std::move(value); }
-
-    /**
-     * <p>A list of project descriptions. The list is sorted by the date and time the
-     * projects are created.</p>
-     */
     inline DescribeProjectsResult& WithProjectDescriptions(const Aws::Vector<ProjectDescription>& value) { SetProjectDescriptions(value); return *this;}
-
-    /**
-     * <p>A list of project descriptions. The list is sorted by the date and time the
-     * projects are created.</p>
-     */
     inline DescribeProjectsResult& WithProjectDescriptions(Aws::Vector<ProjectDescription>&& value) { SetProjectDescriptions(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of project descriptions. The list is sorted by the date and time the
-     * projects are created.</p>
-     */
     inline DescribeProjectsResult& AddProjectDescriptions(const ProjectDescription& value) { m_projectDescriptions.push_back(value); return *this; }
-
-    /**
-     * <p>A list of project descriptions. The list is sorted by the date and time the
-     * projects are created.</p>
-     */
     inline DescribeProjectsResult& AddProjectDescriptions(ProjectDescription&& value) { m_projectDescriptions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous response was incomplete (because there is more results to
      * retrieve), Amazon Rekognition returns a pagination token in the response. You
      * can use this pagination token to retrieve the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of results. </p>
-     */
     inline DescribeProjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of results. </p>
-     */
     inline DescribeProjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was incomplete (because there is more results to
-     * retrieve), Amazon Rekognition returns a pagination token in the response. You
-     * can use this pagination token to retrieve the next set of results. </p>
-     */
     inline DescribeProjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeProjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeProjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeProjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ProjectDescription> m_projectDescriptions;

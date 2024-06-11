@@ -32,85 +32,40 @@ namespace Model
     AWS_WELLARCHITECTED_API CreateProfileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetShareId() const{ return m_shareId; }
-
-    
     inline void SetShareId(const Aws::String& value) { m_shareId = value; }
-
-    
     inline void SetShareId(Aws::String&& value) { m_shareId = std::move(value); }
-
-    
     inline void SetShareId(const char* value) { m_shareId.assign(value); }
-
-    
     inline CreateProfileShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-
-    
     inline CreateProfileShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-
-    
     inline CreateProfileShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The profile ARN.</p>
      */
     inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArn = value; }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(Aws::String&& value) { m_profileArn = std::move(value); }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline void SetProfileArn(const char* value) { m_profileArn.assign(value); }
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline CreateProfileShareResult& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline CreateProfileShareResult& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The profile ARN.</p>
-     */
     inline CreateProfileShareResult& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateProfileShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateProfileShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateProfileShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shareId;

@@ -38,67 +38,29 @@ namespace Model
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The store's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline DeleteVariantStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline DeleteVariantStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
     inline DeleteVariantStoreRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Whether to force deletion.</p>
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>Whether to force deletion.</p>
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>Whether to force deletion.</p>
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>Whether to force deletion.</p>
-     */
     inline DeleteVariantStoreRequest& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

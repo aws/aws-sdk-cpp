@@ -52,36 +52,17 @@ namespace Model
     AWS_WORKMAILMESSAGEFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The S3 reference of an email message.</p>
      */
     inline const S3Reference& GetS3Reference() const{ return m_s3Reference; }
-
-    /**
-     * <p>The S3 reference of an email message.</p>
-     */
     inline bool S3ReferenceHasBeenSet() const { return m_s3ReferenceHasBeenSet; }
-
-    /**
-     * <p>The S3 reference of an email message.</p>
-     */
     inline void SetS3Reference(const S3Reference& value) { m_s3ReferenceHasBeenSet = true; m_s3Reference = value; }
-
-    /**
-     * <p>The S3 reference of an email message.</p>
-     */
     inline void SetS3Reference(S3Reference&& value) { m_s3ReferenceHasBeenSet = true; m_s3Reference = std::move(value); }
-
-    /**
-     * <p>The S3 reference of an email message.</p>
-     */
     inline RawMessageContent& WithS3Reference(const S3Reference& value) { SetS3Reference(value); return *this;}
-
-    /**
-     * <p>The S3 reference of an email message.</p>
-     */
     inline RawMessageContent& WithS3Reference(S3Reference&& value) { SetS3Reference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3Reference m_s3Reference;

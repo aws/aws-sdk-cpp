@@ -38,83 +38,32 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total amount, in GiB, of the ephemeral storage to set for the task. The
      * minimum supported value is <code>20</code> GiB and the maximum supported value
      * is&#x2028; <code>200</code> GiB.</p>
      */
     inline int GetSizeInGiB() const{ return m_sizeInGiB; }
-
-    /**
-     * <p>The total amount, in GiB, of the ephemeral storage to set for the task. The
-     * minimum supported value is <code>20</code> GiB and the maximum supported value
-     * is&#x2028; <code>200</code> GiB.</p>
-     */
     inline bool SizeInGiBHasBeenSet() const { return m_sizeInGiBHasBeenSet; }
-
-    /**
-     * <p>The total amount, in GiB, of the ephemeral storage to set for the task. The
-     * minimum supported value is <code>20</code> GiB and the maximum supported value
-     * is&#x2028; <code>200</code> GiB.</p>
-     */
     inline void SetSizeInGiB(int value) { m_sizeInGiBHasBeenSet = true; m_sizeInGiB = value; }
-
-    /**
-     * <p>The total amount, in GiB, of the ephemeral storage to set for the task. The
-     * minimum supported value is <code>20</code> GiB and the maximum supported value
-     * is&#x2028; <code>200</code> GiB.</p>
-     */
     inline TaskEphemeralStorage& WithSizeInGiB(int value) { SetSizeInGiB(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
      * the task.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline TaskEphemeralStorage& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline TaskEphemeralStorage& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify an Key Management Service key ID to encrypt the ephemeral storage for
-     * the task.</p>
-     */
     inline TaskEphemeralStorage& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
-
+    ///@}
   private:
 
     int m_sizeInGiB;

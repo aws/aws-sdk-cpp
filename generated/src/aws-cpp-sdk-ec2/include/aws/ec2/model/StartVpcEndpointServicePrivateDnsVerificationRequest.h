@@ -36,6 +36,7 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -43,72 +44,24 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline StartVpcEndpointServicePrivateDnsVerificationRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the endpoint service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline void SetServiceId(Aws::String&& value) { m_serviceIdHasBeenSet = true; m_serviceId = std::move(value); }
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline void SetServiceId(const char* value) { m_serviceIdHasBeenSet = true; m_serviceId.assign(value); }
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline StartVpcEndpointServicePrivateDnsVerificationRequest& WithServiceId(const Aws::String& value) { SetServiceId(value); return *this;}
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline StartVpcEndpointServicePrivateDnsVerificationRequest& WithServiceId(Aws::String&& value) { SetServiceId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the endpoint service.</p>
-     */
     inline StartVpcEndpointServicePrivateDnsVerificationRequest& WithServiceId(const char* value) { SetServiceId(value); return *this;}
-
+    ///@}
   private:
 
     bool m_dryRun;

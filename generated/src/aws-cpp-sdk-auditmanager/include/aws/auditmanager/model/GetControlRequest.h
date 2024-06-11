@@ -32,46 +32,19 @@ namespace Model
     AWS_AUDITMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The identifier for the control. </p>
      */
     inline const Aws::String& GetControlId() const{ return m_controlId; }
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline bool ControlIdHasBeenSet() const { return m_controlIdHasBeenSet; }
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline void SetControlId(const Aws::String& value) { m_controlIdHasBeenSet = true; m_controlId = value; }
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline void SetControlId(Aws::String&& value) { m_controlIdHasBeenSet = true; m_controlId = std::move(value); }
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline void SetControlId(const char* value) { m_controlIdHasBeenSet = true; m_controlId.assign(value); }
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline GetControlRequest& WithControlId(const Aws::String& value) { SetControlId(value); return *this;}
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline GetControlRequest& WithControlId(Aws::String&& value) { SetControlId(std::move(value)); return *this;}
-
-    /**
-     * <p> The identifier for the control. </p>
-     */
     inline GetControlRequest& WithControlId(const char* value) { SetControlId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_controlId;

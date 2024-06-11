@@ -39,77 +39,31 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique name of the typed link attribute.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline TypedLinkAttributeRange& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline TypedLinkAttributeRange& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique name of the typed link attribute.</p>
-     */
     inline TypedLinkAttributeRange& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The range of attribute values that are being selected.</p>
      */
     inline const TypedAttributeValueRange& GetRange() const{ return m_range; }
-
-    /**
-     * <p>The range of attribute values that are being selected.</p>
-     */
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-
-    /**
-     * <p>The range of attribute values that are being selected.</p>
-     */
     inline void SetRange(const TypedAttributeValueRange& value) { m_rangeHasBeenSet = true; m_range = value; }
-
-    /**
-     * <p>The range of attribute values that are being selected.</p>
-     */
     inline void SetRange(TypedAttributeValueRange&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-
-    /**
-     * <p>The range of attribute values that are being selected.</p>
-     */
     inline TypedLinkAttributeRange& WithRange(const TypedAttributeValueRange& value) { SetRange(value); return *this;}
-
-    /**
-     * <p>The range of attribute values that are being selected.</p>
-     */
     inline TypedLinkAttributeRange& WithRange(TypedAttributeValueRange&& value) { SetRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attributeName;

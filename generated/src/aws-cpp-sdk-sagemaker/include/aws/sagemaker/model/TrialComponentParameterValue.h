@@ -41,79 +41,31 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The string value of a categorical hyperparameter. If you specify a value for
      * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline TrialComponentParameterValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline TrialComponentParameterValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The string value of a categorical hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
-     */
     inline TrialComponentParameterValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The numeric value of a numeric hyperparameter. If you specify a value for
      * this parameter, you can't specify the <code>StringValue</code> parameter.</p>
      */
     inline double GetNumberValue() const{ return m_numberValue; }
-
-    /**
-     * <p>The numeric value of a numeric hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>StringValue</code> parameter.</p>
-     */
     inline bool NumberValueHasBeenSet() const { return m_numberValueHasBeenSet; }
-
-    /**
-     * <p>The numeric value of a numeric hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>StringValue</code> parameter.</p>
-     */
     inline void SetNumberValue(double value) { m_numberValueHasBeenSet = true; m_numberValue = value; }
-
-    /**
-     * <p>The numeric value of a numeric hyperparameter. If you specify a value for
-     * this parameter, you can't specify the <code>StringValue</code> parameter.</p>
-     */
     inline TrialComponentParameterValue& WithNumberValue(double value) { SetNumberValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_stringValue;

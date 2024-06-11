@@ -34,106 +34,43 @@ namespace Model
     AWS_SAGEMAKER_API ListUserProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The list of user profiles.</p>
      */
     inline const Aws::Vector<UserProfileDetails>& GetUserProfiles() const{ return m_userProfiles; }
-
-    /**
-     * <p>The list of user profiles.</p>
-     */
     inline void SetUserProfiles(const Aws::Vector<UserProfileDetails>& value) { m_userProfiles = value; }
-
-    /**
-     * <p>The list of user profiles.</p>
-     */
     inline void SetUserProfiles(Aws::Vector<UserProfileDetails>&& value) { m_userProfiles = std::move(value); }
-
-    /**
-     * <p>The list of user profiles.</p>
-     */
     inline ListUserProfilesResult& WithUserProfiles(const Aws::Vector<UserProfileDetails>& value) { SetUserProfiles(value); return *this;}
-
-    /**
-     * <p>The list of user profiles.</p>
-     */
     inline ListUserProfilesResult& WithUserProfiles(Aws::Vector<UserProfileDetails>&& value) { SetUserProfiles(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of user profiles.</p>
-     */
     inline ListUserProfilesResult& AddUserProfiles(const UserProfileDetails& value) { m_userProfiles.push_back(value); return *this; }
-
-    /**
-     * <p>The list of user profiles.</p>
-     */
     inline ListUserProfilesResult& AddUserProfiles(UserProfileDetails&& value) { m_userProfiles.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the previous response was truncated, you will receive this token. Use it
      * in your next request to receive the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline ListUserProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline ListUserProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the previous response was truncated, you will receive this token. Use it
-     * in your next request to receive the next set of results.</p>
-     */
     inline ListUserProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListUserProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListUserProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListUserProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UserProfileDetails> m_userProfiles;

@@ -39,6 +39,7 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Set this parameter to <code>true</code> if values for this metric
      * consistently include spikes that should not be considered to be anomalies. With
@@ -47,34 +48,10 @@ namespace Model
      * similar spikes as anomalies.</p>
      */
     inline bool GetPeriodicSpikes() const{ return m_periodicSpikes; }
-
-    /**
-     * <p>Set this parameter to <code>true</code> if values for this metric
-     * consistently include spikes that should not be considered to be anomalies. With
-     * this set to <code>true</code>, CloudWatch will expect to see spikes that
-     * occurred consistently during the model training period, and won't flag future
-     * similar spikes as anomalies.</p>
-     */
     inline bool PeriodicSpikesHasBeenSet() const { return m_periodicSpikesHasBeenSet; }
-
-    /**
-     * <p>Set this parameter to <code>true</code> if values for this metric
-     * consistently include spikes that should not be considered to be anomalies. With
-     * this set to <code>true</code>, CloudWatch will expect to see spikes that
-     * occurred consistently during the model training period, and won't flag future
-     * similar spikes as anomalies.</p>
-     */
     inline void SetPeriodicSpikes(bool value) { m_periodicSpikesHasBeenSet = true; m_periodicSpikes = value; }
-
-    /**
-     * <p>Set this parameter to <code>true</code> if values for this metric
-     * consistently include spikes that should not be considered to be anomalies. With
-     * this set to <code>true</code>, CloudWatch will expect to see spikes that
-     * occurred consistently during the model training period, and won't flag future
-     * similar spikes as anomalies.</p>
-     */
     inline MetricCharacteristics& WithPeriodicSpikes(bool value) { SetPeriodicSpikes(value); return *this;}
-
+    ///@}
   private:
 
     bool m_periodicSpikes;

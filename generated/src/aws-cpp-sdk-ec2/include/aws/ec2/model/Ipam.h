@@ -49,252 +49,91 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline Ipam& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline Ipam& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID of the owner of the IPAM.</p>
-     */
     inline Ipam& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the IPAM.</p>
      */
     inline const Aws::String& GetIpamId() const{ return m_ipamId; }
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline bool IpamIdHasBeenSet() const { return m_ipamIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline void SetIpamId(const Aws::String& value) { m_ipamIdHasBeenSet = true; m_ipamId = value; }
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline void SetIpamId(Aws::String&& value) { m_ipamIdHasBeenSet = true; m_ipamId = std::move(value); }
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline void SetIpamId(const char* value) { m_ipamIdHasBeenSet = true; m_ipamId.assign(value); }
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline Ipam& WithIpamId(const Aws::String& value) { SetIpamId(value); return *this;}
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline Ipam& WithIpamId(Aws::String&& value) { SetIpamId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the IPAM.</p>
-     */
     inline Ipam& WithIpamId(const char* value) { SetIpamId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
      */
     inline const Aws::String& GetIpamArn() const{ return m_ipamArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline bool IpamArnHasBeenSet() const { return m_ipamArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline void SetIpamArn(const Aws::String& value) { m_ipamArnHasBeenSet = true; m_ipamArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline void SetIpamArn(Aws::String&& value) { m_ipamArnHasBeenSet = true; m_ipamArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline void SetIpamArn(const char* value) { m_ipamArnHasBeenSet = true; m_ipamArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline Ipam& WithIpamArn(const Aws::String& value) { SetIpamArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline Ipam& WithIpamArn(Aws::String&& value) { SetIpamArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the IPAM.</p>
-     */
     inline Ipam& WithIpamArn(const char* value) { SetIpamArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services Region of the IPAM.</p>
      */
     inline const Aws::String& GetIpamRegion() const{ return m_ipamRegion; }
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline bool IpamRegionHasBeenSet() const { return m_ipamRegionHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline void SetIpamRegion(const Aws::String& value) { m_ipamRegionHasBeenSet = true; m_ipamRegion = value; }
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline void SetIpamRegion(Aws::String&& value) { m_ipamRegionHasBeenSet = true; m_ipamRegion = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline void SetIpamRegion(const char* value) { m_ipamRegionHasBeenSet = true; m_ipamRegion.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline Ipam& WithIpamRegion(const Aws::String& value) { SetIpamRegion(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline Ipam& WithIpamRegion(Aws::String&& value) { SetIpamRegion(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services Region of the IPAM.</p>
-     */
     inline Ipam& WithIpamRegion(const char* value) { SetIpamRegion(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the IPAM's default public scope.</p>
      */
     inline const Aws::String& GetPublicDefaultScopeId() const{ return m_publicDefaultScopeId; }
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline bool PublicDefaultScopeIdHasBeenSet() const { return m_publicDefaultScopeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline void SetPublicDefaultScopeId(const Aws::String& value) { m_publicDefaultScopeIdHasBeenSet = true; m_publicDefaultScopeId = value; }
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline void SetPublicDefaultScopeId(Aws::String&& value) { m_publicDefaultScopeIdHasBeenSet = true; m_publicDefaultScopeId = std::move(value); }
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline void SetPublicDefaultScopeId(const char* value) { m_publicDefaultScopeIdHasBeenSet = true; m_publicDefaultScopeId.assign(value); }
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline Ipam& WithPublicDefaultScopeId(const Aws::String& value) { SetPublicDefaultScopeId(value); return *this;}
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline Ipam& WithPublicDefaultScopeId(Aws::String&& value) { SetPublicDefaultScopeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the IPAM's default public scope.</p>
-     */
     inline Ipam& WithPublicDefaultScopeId(const char* value) { SetPublicDefaultScopeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the IPAM's default private scope.</p>
      */
     inline const Aws::String& GetPrivateDefaultScopeId() const{ return m_privateDefaultScopeId; }
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline bool PrivateDefaultScopeIdHasBeenSet() const { return m_privateDefaultScopeIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline void SetPrivateDefaultScopeId(const Aws::String& value) { m_privateDefaultScopeIdHasBeenSet = true; m_privateDefaultScopeId = value; }
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline void SetPrivateDefaultScopeId(Aws::String&& value) { m_privateDefaultScopeIdHasBeenSet = true; m_privateDefaultScopeId = std::move(value); }
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline void SetPrivateDefaultScopeId(const char* value) { m_privateDefaultScopeIdHasBeenSet = true; m_privateDefaultScopeId.assign(value); }
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline Ipam& WithPrivateDefaultScopeId(const Aws::String& value) { SetPrivateDefaultScopeId(value); return *this;}
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline Ipam& WithPrivateDefaultScopeId(Aws::String&& value) { SetPrivateDefaultScopeId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the IPAM's default private scope.</p>
-     */
     inline Ipam& WithPrivateDefaultScopeId(const char* value) { SetPrivateDefaultScopeId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
      * on quotas, see <a
@@ -302,73 +141,26 @@ namespace Model
      * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
      */
     inline int GetScopeCount() const{ return m_scopeCount; }
-
-    /**
-     * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-     */
     inline bool ScopeCountHasBeenSet() const { return m_scopeCountHasBeenSet; }
-
-    /**
-     * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-     */
     inline void SetScopeCount(int value) { m_scopeCountHasBeenSet = true; m_scopeCount = value; }
-
-    /**
-     * <p>The number of scopes in the IPAM. The scope quota is 5. For more information
-     * on quotas, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/ipam/quotas-ipam.html">Quotas in
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>
-     */
     inline Ipam& WithScopeCount(int value) { SetScopeCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description for the IPAM.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline Ipam& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline Ipam& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description for the IPAM.</p>
-     */
     inline Ipam& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
      * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
@@ -378,109 +170,28 @@ namespace Model
      * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
      */
     inline const Aws::Vector<IpamOperatingRegion>& GetOperatingRegions() const{ return m_operatingRegions; }
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline bool OperatingRegionsHasBeenSet() const { return m_operatingRegionsHasBeenSet; }
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline void SetOperatingRegions(const Aws::Vector<IpamOperatingRegion>& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = value; }
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline void SetOperatingRegions(Aws::Vector<IpamOperatingRegion>&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions = std::move(value); }
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline Ipam& WithOperatingRegions(const Aws::Vector<IpamOperatingRegion>& value) { SetOperatingRegions(value); return *this;}
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline Ipam& WithOperatingRegions(Aws::Vector<IpamOperatingRegion>&& value) { SetOperatingRegions(std::move(value)); return *this;}
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline Ipam& AddOperatingRegions(const IpamOperatingRegion& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(value); return *this; }
-
-    /**
-     * <p>The operating Regions for an IPAM. Operating Regions are Amazon Web Services
-     * Regions where the IPAM is allowed to manage IP address CIDRs. IPAM only
-     * discovers and monitors resources in the Amazon Web Services Regions you select
-     * as operating Regions.</p> <p>For more information about operating Regions, see
-     * <a href="https://docs.aws.amazon.com/vpc/latest/ipam/create-ipam.html">Create an
-     * IPAM</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>
-     */
     inline Ipam& AddOperatingRegions(IpamOperatingRegion&& value) { m_operatingRegionsHasBeenSet = true; m_operatingRegions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the IPAM.</p>
      */
     inline const IpamState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the IPAM.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the IPAM.</p>
-     */
     inline void SetState(const IpamState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the IPAM.</p>
-     */
     inline void SetState(IpamState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the IPAM.</p>
-     */
     inline Ipam& WithState(const IpamState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the IPAM.</p>
-     */
     inline Ipam& WithState(IpamState&& value) { SetState(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The key/value combination of a tag assigned to the resource. Use the tag key
      * in the filter name and the tag value as the filter value. For example, to find
@@ -489,215 +200,68 @@ namespace Model
      * <code>TeamA</code> for the filter value.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline Ipam& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline Ipam& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline Ipam& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>The key/value combination of a tag assigned to the resource. Use the tag key
-     * in the filter name and the tag value as the filter value. For example, to find
-     * all resources that have a tag with the key <code>Owner</code> and the value
-     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
-     * <code>TeamA</code> for the filter value.</p>
-     */
     inline Ipam& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPAM's default resource discovery ID.</p>
      */
     inline const Aws::String& GetDefaultResourceDiscoveryId() const{ return m_defaultResourceDiscoveryId; }
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline bool DefaultResourceDiscoveryIdHasBeenSet() const { return m_defaultResourceDiscoveryIdHasBeenSet; }
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline void SetDefaultResourceDiscoveryId(const Aws::String& value) { m_defaultResourceDiscoveryIdHasBeenSet = true; m_defaultResourceDiscoveryId = value; }
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline void SetDefaultResourceDiscoveryId(Aws::String&& value) { m_defaultResourceDiscoveryIdHasBeenSet = true; m_defaultResourceDiscoveryId = std::move(value); }
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline void SetDefaultResourceDiscoveryId(const char* value) { m_defaultResourceDiscoveryIdHasBeenSet = true; m_defaultResourceDiscoveryId.assign(value); }
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline Ipam& WithDefaultResourceDiscoveryId(const Aws::String& value) { SetDefaultResourceDiscoveryId(value); return *this;}
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline Ipam& WithDefaultResourceDiscoveryId(Aws::String&& value) { SetDefaultResourceDiscoveryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPAM's default resource discovery ID.</p>
-     */
     inline Ipam& WithDefaultResourceDiscoveryId(const char* value) { SetDefaultResourceDiscoveryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPAM's default resource discovery association ID.</p>
      */
     inline const Aws::String& GetDefaultResourceDiscoveryAssociationId() const{ return m_defaultResourceDiscoveryAssociationId; }
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline bool DefaultResourceDiscoveryAssociationIdHasBeenSet() const { return m_defaultResourceDiscoveryAssociationIdHasBeenSet; }
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline void SetDefaultResourceDiscoveryAssociationId(const Aws::String& value) { m_defaultResourceDiscoveryAssociationIdHasBeenSet = true; m_defaultResourceDiscoveryAssociationId = value; }
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline void SetDefaultResourceDiscoveryAssociationId(Aws::String&& value) { m_defaultResourceDiscoveryAssociationIdHasBeenSet = true; m_defaultResourceDiscoveryAssociationId = std::move(value); }
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline void SetDefaultResourceDiscoveryAssociationId(const char* value) { m_defaultResourceDiscoveryAssociationIdHasBeenSet = true; m_defaultResourceDiscoveryAssociationId.assign(value); }
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline Ipam& WithDefaultResourceDiscoveryAssociationId(const Aws::String& value) { SetDefaultResourceDiscoveryAssociationId(value); return *this;}
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline Ipam& WithDefaultResourceDiscoveryAssociationId(Aws::String&& value) { SetDefaultResourceDiscoveryAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The IPAM's default resource discovery association ID.</p>
-     */
     inline Ipam& WithDefaultResourceDiscoveryAssociationId(const char* value) { SetDefaultResourceDiscoveryAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IPAM's resource discovery association count.</p>
      */
     inline int GetResourceDiscoveryAssociationCount() const{ return m_resourceDiscoveryAssociationCount; }
-
-    /**
-     * <p>The IPAM's resource discovery association count.</p>
-     */
     inline bool ResourceDiscoveryAssociationCountHasBeenSet() const { return m_resourceDiscoveryAssociationCountHasBeenSet; }
-
-    /**
-     * <p>The IPAM's resource discovery association count.</p>
-     */
     inline void SetResourceDiscoveryAssociationCount(int value) { m_resourceDiscoveryAssociationCountHasBeenSet = true; m_resourceDiscoveryAssociationCount = value; }
-
-    /**
-     * <p>The IPAM's resource discovery association count.</p>
-     */
     inline Ipam& WithResourceDiscoveryAssociationCount(int value) { SetResourceDiscoveryAssociationCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state message.</p>
      */
     inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
-
-    /**
-     * <p>The state message.</p>
-     */
     inline bool StateMessageHasBeenSet() const { return m_stateMessageHasBeenSet; }
-
-    /**
-     * <p>The state message.</p>
-     */
     inline void SetStateMessage(const Aws::String& value) { m_stateMessageHasBeenSet = true; m_stateMessage = value; }
-
-    /**
-     * <p>The state message.</p>
-     */
     inline void SetStateMessage(Aws::String&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::move(value); }
-
-    /**
-     * <p>The state message.</p>
-     */
     inline void SetStateMessage(const char* value) { m_stateMessageHasBeenSet = true; m_stateMessage.assign(value); }
-
-    /**
-     * <p>The state message.</p>
-     */
     inline Ipam& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
-
-    /**
-     * <p>The state message.</p>
-     */
     inline Ipam& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The state message.</p>
-     */
     inline Ipam& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
      * about the features available in each tier and the costs associated with the
@@ -705,47 +269,12 @@ namespace Model
      * IPAM tab</a>.</p>
      */
     inline const IpamTier& GetTier() const{ return m_tier; }
-
-    /**
-     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
-     * about the features available in each tier and the costs associated with the
-     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
-     * IPAM tab</a>.</p>
-     */
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-
-    /**
-     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
-     * about the features available in each tier and the costs associated with the
-     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
-     * IPAM tab</a>.</p>
-     */
     inline void SetTier(const IpamTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-
-    /**
-     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
-     * about the features available in each tier and the costs associated with the
-     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
-     * IPAM tab</a>.</p>
-     */
     inline void SetTier(IpamTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-
-    /**
-     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
-     * about the features available in each tier and the costs associated with the
-     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
-     * IPAM tab</a>.</p>
-     */
     inline Ipam& WithTier(const IpamTier& value) { SetTier(value); return *this;}
-
-    /**
-     * <p>IPAM is offered in a Free Tier and an Advanced Tier. For more information
-     * about the features available in each tier and the costs associated with the
-     * tiers, see <a href="http://aws.amazon.com/vpc/pricing/">Amazon VPC pricing &gt;
-     * IPAM tab</a>.</p>
-     */
     inline Ipam& WithTier(IpamTier&& value) { SetTier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ownerId;

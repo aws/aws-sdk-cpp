@@ -33,53 +33,27 @@ namespace Model
     AWS_LOOKOUTMETRICS_API GetAnomalyGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Details about the anomaly group.</p>
      */
     inline const AnomalyGroup& GetAnomalyGroup() const{ return m_anomalyGroup; }
-
-    /**
-     * <p>Details about the anomaly group.</p>
-     */
     inline void SetAnomalyGroup(const AnomalyGroup& value) { m_anomalyGroup = value; }
-
-    /**
-     * <p>Details about the anomaly group.</p>
-     */
     inline void SetAnomalyGroup(AnomalyGroup&& value) { m_anomalyGroup = std::move(value); }
-
-    /**
-     * <p>Details about the anomaly group.</p>
-     */
     inline GetAnomalyGroupResult& WithAnomalyGroup(const AnomalyGroup& value) { SetAnomalyGroup(value); return *this;}
-
-    /**
-     * <p>Details about the anomaly group.</p>
-     */
     inline GetAnomalyGroupResult& WithAnomalyGroup(AnomalyGroup&& value) { SetAnomalyGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAnomalyGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAnomalyGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAnomalyGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AnomalyGroup m_anomalyGroup;

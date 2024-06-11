@@ -33,53 +33,27 @@ namespace Model
     AWS_ORGANIZATIONS_API CreateOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the newly created organization.</p>
      */
     inline const Organization& GetOrganization() const{ return m_organization; }
-
-    /**
-     * <p>A structure that contains details about the newly created organization.</p>
-     */
     inline void SetOrganization(const Organization& value) { m_organization = value; }
-
-    /**
-     * <p>A structure that contains details about the newly created organization.</p>
-     */
     inline void SetOrganization(Organization&& value) { m_organization = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the newly created organization.</p>
-     */
     inline CreateOrganizationResult& WithOrganization(const Organization& value) { SetOrganization(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the newly created organization.</p>
-     */
     inline CreateOrganizationResult& WithOrganization(Organization&& value) { SetOrganization(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Organization m_organization;

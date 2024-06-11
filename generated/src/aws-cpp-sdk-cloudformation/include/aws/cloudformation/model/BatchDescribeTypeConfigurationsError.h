@@ -41,124 +41,46 @@ namespace Model
     AWS_CLOUDFORMATION_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The error code.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Identifying information for the configuration of a CloudFormation
      * extension.</p>
      */
     inline const TypeConfigurationIdentifier& GetTypeConfigurationIdentifier() const{ return m_typeConfigurationIdentifier; }
-
-    /**
-     * <p>Identifying information for the configuration of a CloudFormation
-     * extension.</p>
-     */
     inline bool TypeConfigurationIdentifierHasBeenSet() const { return m_typeConfigurationIdentifierHasBeenSet; }
-
-    /**
-     * <p>Identifying information for the configuration of a CloudFormation
-     * extension.</p>
-     */
     inline void SetTypeConfigurationIdentifier(const TypeConfigurationIdentifier& value) { m_typeConfigurationIdentifierHasBeenSet = true; m_typeConfigurationIdentifier = value; }
-
-    /**
-     * <p>Identifying information for the configuration of a CloudFormation
-     * extension.</p>
-     */
     inline void SetTypeConfigurationIdentifier(TypeConfigurationIdentifier&& value) { m_typeConfigurationIdentifierHasBeenSet = true; m_typeConfigurationIdentifier = std::move(value); }
-
-    /**
-     * <p>Identifying information for the configuration of a CloudFormation
-     * extension.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithTypeConfigurationIdentifier(const TypeConfigurationIdentifier& value) { SetTypeConfigurationIdentifier(value); return *this;}
-
-    /**
-     * <p>Identifying information for the configuration of a CloudFormation
-     * extension.</p>
-     */
     inline BatchDescribeTypeConfigurationsError& WithTypeConfigurationIdentifier(TypeConfigurationIdentifier&& value) { SetTypeConfigurationIdentifier(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_errorCode;

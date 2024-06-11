@@ -36,335 +36,124 @@ namespace Model
     AWS_SAGEMAKERGEOSPATIAL_API GetRasterDataCollectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the raster data collection.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>A description of the raster data collection.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>A description of the raster data collection.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>A description of the raster data collection.</p>
-     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>A description of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The URL of the description page.</p>
      */
     inline const Aws::String& GetDescriptionPageUrl() const{ return m_descriptionPageUrl; }
-
-    /**
-     * <p>The URL of the description page.</p>
-     */
     inline void SetDescriptionPageUrl(const Aws::String& value) { m_descriptionPageUrl = value; }
-
-    /**
-     * <p>The URL of the description page.</p>
-     */
     inline void SetDescriptionPageUrl(Aws::String&& value) { m_descriptionPageUrl = std::move(value); }
-
-    /**
-     * <p>The URL of the description page.</p>
-     */
     inline void SetDescriptionPageUrl(const char* value) { m_descriptionPageUrl.assign(value); }
-
-    /**
-     * <p>The URL of the description page.</p>
-     */
     inline GetRasterDataCollectionResult& WithDescriptionPageUrl(const Aws::String& value) { SetDescriptionPageUrl(value); return *this;}
-
-    /**
-     * <p>The URL of the description page.</p>
-     */
     inline GetRasterDataCollectionResult& WithDescriptionPageUrl(Aws::String&& value) { SetDescriptionPageUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>The URL of the description page.</p>
-     */
     inline GetRasterDataCollectionResult& WithDescriptionPageUrl(const char* value) { SetDescriptionPageUrl(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The list of image source bands in the raster data collection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageSourceBands() const{ return m_imageSourceBands; }
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline void SetImageSourceBands(const Aws::Vector<Aws::String>& value) { m_imageSourceBands = value; }
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline void SetImageSourceBands(Aws::Vector<Aws::String>&& value) { m_imageSourceBands = std::move(value); }
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithImageSourceBands(const Aws::Vector<Aws::String>& value) { SetImageSourceBands(value); return *this;}
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithImageSourceBands(Aws::Vector<Aws::String>&& value) { SetImageSourceBands(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& AddImageSourceBands(const Aws::String& value) { m_imageSourceBands.push_back(value); return *this; }
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& AddImageSourceBands(Aws::String&& value) { m_imageSourceBands.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The list of image source bands in the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& AddImageSourceBands(const char* value) { m_imageSourceBands.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the raster data collection.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the raster data collection.</p>
-     */
     inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The name of the raster data collection.</p>
-     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The name of the raster data collection.</p>
-     */
     inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The name of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The filters supported by the raster data collection.</p>
      */
     inline const Aws::Vector<Filter>& GetSupportedFilters() const{ return m_supportedFilters; }
-
-    /**
-     * <p>The filters supported by the raster data collection.</p>
-     */
     inline void SetSupportedFilters(const Aws::Vector<Filter>& value) { m_supportedFilters = value; }
-
-    /**
-     * <p>The filters supported by the raster data collection.</p>
-     */
     inline void SetSupportedFilters(Aws::Vector<Filter>&& value) { m_supportedFilters = std::move(value); }
-
-    /**
-     * <p>The filters supported by the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithSupportedFilters(const Aws::Vector<Filter>& value) { SetSupportedFilters(value); return *this;}
-
-    /**
-     * <p>The filters supported by the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& WithSupportedFilters(Aws::Vector<Filter>&& value) { SetSupportedFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>The filters supported by the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& AddSupportedFilters(const Filter& value) { m_supportedFilters.push_back(value); return *this; }
-
-    /**
-     * <p>The filters supported by the raster data collection.</p>
-     */
     inline GetRasterDataCollectionResult& AddSupportedFilters(Filter&& value) { m_supportedFilters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>Each tag consists of a key and a value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Each tag consists of a key and a value.</p>
-     */
     inline GetRasterDataCollectionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The raster data collection type.</p>
      */
     inline const DataCollectionType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The raster data collection type.</p>
-     */
     inline void SetType(const DataCollectionType& value) { m_type = value; }
-
-    /**
-     * <p>The raster data collection type.</p>
-     */
     inline void SetType(DataCollectionType&& value) { m_type = std::move(value); }
-
-    /**
-     * <p>The raster data collection type.</p>
-     */
     inline GetRasterDataCollectionResult& WithType(const DataCollectionType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The raster data collection type.</p>
-     */
     inline GetRasterDataCollectionResult& WithType(DataCollectionType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRasterDataCollectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRasterDataCollectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRasterDataCollectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

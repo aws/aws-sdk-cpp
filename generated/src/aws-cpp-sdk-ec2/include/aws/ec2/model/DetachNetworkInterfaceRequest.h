@@ -40,47 +40,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The ID of the attachment.</p>
      */
     inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline DetachNetworkInterfaceRequest& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline DetachNetworkInterfaceRequest& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the attachment.</p>
-     */
     inline DetachNetworkInterfaceRequest& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Checks whether you have the required permissions for the action, without
      * actually making the request, and provides an error response. If you have the
@@ -88,32 +62,12 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
-
-    /**
-     * <p>Checks whether you have the required permissions for the action, without
-     * actually making the request, and provides an error response. If you have the
-     * required permissions, the error response is <code>DryRunOperation</code>.
-     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
-     */
     inline DetachNetworkInterfaceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
      * <code>Force</code> parameter only as a last resort to detach a network interface
@@ -129,55 +83,10 @@ namespace Model
      * 
      */
     inline bool GetForce() const{ return m_force; }
-
-    /**
-     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
-     * <code>Force</code> parameter only as a last resort to detach a network interface
-     * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
-     * parameter to detach a network interface, you might not be able to attach a
-     * different network interface to the same index on the instance without first
-     * stopping and starting the instance.</p> </li> <li> <p>If you force the
-     * detachment of a network interface, the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
-     * metadata</a> might not get updated. This means that the attributes associated
-     * with the detached network interface might still be visible. The instance
-     * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * 
-     */
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
-     * <code>Force</code> parameter only as a last resort to detach a network interface
-     * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
-     * parameter to detach a network interface, you might not be able to attach a
-     * different network interface to the same index on the instance without first
-     * stopping and starting the instance.</p> </li> <li> <p>If you force the
-     * detachment of a network interface, the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
-     * metadata</a> might not get updated. This means that the attributes associated
-     * with the detached network interface might still be visible. The instance
-     * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * 
-     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
-
-    /**
-     * <p>Specifies whether to force a detachment.</p>  <ul> <li> <p>Use the
-     * <code>Force</code> parameter only as a last resort to detach a network interface
-     * from a failed instance. </p> </li> <li> <p>If you use the <code>Force</code>
-     * parameter to detach a network interface, you might not be able to attach a
-     * different network interface to the same index on the instance without first
-     * stopping and starting the instance.</p> </li> <li> <p>If you force the
-     * detachment of a network interface, the <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">instance
-     * metadata</a> might not get updated. This means that the attributes associated
-     * with the detached network interface might still be visible. The instance
-     * metadata will get updated when you stop and start the instance.</p> </li> </ul>
-     * 
-     */
     inline DetachNetworkInterfaceRequest& WithForce(bool value) { SetForce(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_attachmentId;

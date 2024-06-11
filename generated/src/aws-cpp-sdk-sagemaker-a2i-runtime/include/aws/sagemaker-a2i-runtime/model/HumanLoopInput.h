@@ -38,54 +38,20 @@ namespace Model
     AWS_AUGMENTEDAIRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Serialized input from the human loop. The input must be a string
      * representation of a file in JSON format.</p>
      */
     inline const Aws::String& GetInputContent() const{ return m_inputContent; }
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline bool InputContentHasBeenSet() const { return m_inputContentHasBeenSet; }
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline void SetInputContent(const Aws::String& value) { m_inputContentHasBeenSet = true; m_inputContent = value; }
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline void SetInputContent(Aws::String&& value) { m_inputContentHasBeenSet = true; m_inputContent = std::move(value); }
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline void SetInputContent(const char* value) { m_inputContentHasBeenSet = true; m_inputContent.assign(value); }
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline HumanLoopInput& WithInputContent(const Aws::String& value) { SetInputContent(value); return *this;}
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline HumanLoopInput& WithInputContent(Aws::String&& value) { SetInputContent(std::move(value)); return *this;}
-
-    /**
-     * <p>Serialized input from the human loop. The input must be a string
-     * representation of a file in JSON format.</p>
-     */
     inline HumanLoopInput& WithInputContent(const char* value) { SetInputContent(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_inputContent;

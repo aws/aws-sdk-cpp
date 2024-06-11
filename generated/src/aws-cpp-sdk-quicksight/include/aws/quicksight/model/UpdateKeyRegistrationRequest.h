@@ -34,103 +34,35 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account that contains the customer managed
      * key registration that you want to update.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline UpdateKeyRegistrationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline UpdateKeyRegistrationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account that contains the customer managed
-     * key registration that you want to update.</p>
-     */
     inline UpdateKeyRegistrationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
      * the Amazon QuickSight account.</p>
      */
     inline const Aws::Vector<RegisteredCustomerManagedKey>& GetKeyRegistration() const{ return m_keyRegistration; }
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline bool KeyRegistrationHasBeenSet() const { return m_keyRegistrationHasBeenSet; }
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline void SetKeyRegistration(const Aws::Vector<RegisteredCustomerManagedKey>& value) { m_keyRegistrationHasBeenSet = true; m_keyRegistration = value; }
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline void SetKeyRegistration(Aws::Vector<RegisteredCustomerManagedKey>&& value) { m_keyRegistrationHasBeenSet = true; m_keyRegistration = std::move(value); }
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline UpdateKeyRegistrationRequest& WithKeyRegistration(const Aws::Vector<RegisteredCustomerManagedKey>& value) { SetKeyRegistration(value); return *this;}
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline UpdateKeyRegistrationRequest& WithKeyRegistration(Aws::Vector<RegisteredCustomerManagedKey>&& value) { SetKeyRegistration(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline UpdateKeyRegistrationRequest& AddKeyRegistration(const RegisteredCustomerManagedKey& value) { m_keyRegistrationHasBeenSet = true; m_keyRegistration.push_back(value); return *this; }
-
-    /**
-     * <p>A list of <code>RegisteredCustomerManagedKey</code> objects to be updated to
-     * the Amazon QuickSight account.</p>
-     */
     inline UpdateKeyRegistrationRequest& AddKeyRegistration(RegisteredCustomerManagedKey&& value) { m_keyRegistrationHasBeenSet = true; m_keyRegistration.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_awsAccountId;

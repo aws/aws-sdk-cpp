@@ -48,67 +48,29 @@ namespace Model
     AWS_HEALTH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The starting date and time of a time range.</p>
      */
     inline const Aws::Utils::DateTime& GetFrom() const{ return m_from; }
-
-    /**
-     * <p>The starting date and time of a time range.</p>
-     */
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-
-    /**
-     * <p>The starting date and time of a time range.</p>
-     */
     inline void SetFrom(const Aws::Utils::DateTime& value) { m_fromHasBeenSet = true; m_from = value; }
-
-    /**
-     * <p>The starting date and time of a time range.</p>
-     */
     inline void SetFrom(Aws::Utils::DateTime&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-
-    /**
-     * <p>The starting date and time of a time range.</p>
-     */
     inline DateTimeRange& WithFrom(const Aws::Utils::DateTime& value) { SetFrom(value); return *this;}
-
-    /**
-     * <p>The starting date and time of a time range.</p>
-     */
     inline DateTimeRange& WithFrom(Aws::Utils::DateTime&& value) { SetFrom(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ending date and time of a time range.</p>
      */
     inline const Aws::Utils::DateTime& GetTo() const{ return m_to; }
-
-    /**
-     * <p>The ending date and time of a time range.</p>
-     */
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-
-    /**
-     * <p>The ending date and time of a time range.</p>
-     */
     inline void SetTo(const Aws::Utils::DateTime& value) { m_toHasBeenSet = true; m_to = value; }
-
-    /**
-     * <p>The ending date and time of a time range.</p>
-     */
     inline void SetTo(Aws::Utils::DateTime&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-
-    /**
-     * <p>The ending date and time of a time range.</p>
-     */
     inline DateTimeRange& WithTo(const Aws::Utils::DateTime& value) { SetTo(value); return *this;}
-
-    /**
-     * <p>The ending date and time of a time range.</p>
-     */
     inline DateTimeRange& WithTo(Aws::Utils::DateTime&& value) { SetTo(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_from;

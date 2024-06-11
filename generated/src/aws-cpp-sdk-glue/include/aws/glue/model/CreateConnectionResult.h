@@ -33,63 +33,29 @@ namespace Model
     AWS_GLUE_API CreateConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The status of the connection creation request. The request can take some time
      * for certain authentication types, for example when creating an OAuth connection
      * with token exchange over VPC.</p>
      */
     inline const ConnectionStatus& GetCreateConnectionStatus() const{ return m_createConnectionStatus; }
-
-    /**
-     * <p>The status of the connection creation request. The request can take some time
-     * for certain authentication types, for example when creating an OAuth connection
-     * with token exchange over VPC.</p>
-     */
     inline void SetCreateConnectionStatus(const ConnectionStatus& value) { m_createConnectionStatus = value; }
-
-    /**
-     * <p>The status of the connection creation request. The request can take some time
-     * for certain authentication types, for example when creating an OAuth connection
-     * with token exchange over VPC.</p>
-     */
     inline void SetCreateConnectionStatus(ConnectionStatus&& value) { m_createConnectionStatus = std::move(value); }
-
-    /**
-     * <p>The status of the connection creation request. The request can take some time
-     * for certain authentication types, for example when creating an OAuth connection
-     * with token exchange over VPC.</p>
-     */
     inline CreateConnectionResult& WithCreateConnectionStatus(const ConnectionStatus& value) { SetCreateConnectionStatus(value); return *this;}
-
-    /**
-     * <p>The status of the connection creation request. The request can take some time
-     * for certain authentication types, for example when creating an OAuth connection
-     * with token exchange over VPC.</p>
-     */
     inline CreateConnectionResult& WithCreateConnectionStatus(ConnectionStatus&& value) { SetCreateConnectionStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ConnectionStatus m_createConnectionStatus;

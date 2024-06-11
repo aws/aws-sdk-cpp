@@ -38,136 +38,47 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>One or more filters to scope the tags to return. The maximum number of
      * filters per filter type (for example, <code>auto-scaling-group</code>) is
      * 1000.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline DescribeTagsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline DescribeTagsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline DescribeTagsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-
-    /**
-     * <p>One or more filters to scope the tags to return. The maximum number of
-     * filters per filter type (for example, <code>auto-scaling-group</code>) is
-     * 1000.</p>
-     */
     inline DescribeTagsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline DescribeTagsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline DescribeTagsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a previous call.)</p>
-     */
     inline DescribeTagsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of items to return with this call. The default value is
      * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
-
-    /**
-     * <p>The maximum number of items to return with this call. The default value is
-     * <code>50</code> and the maximum value is <code>100</code>.</p>
-     */
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of items to return with this call. The default value is
-     * <code>50</code> and the maximum value is <code>100</code>.</p>
-     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
-
-    /**
-     * <p>The maximum number of items to return with this call. The default value is
-     * <code>50</code> and the maximum value is <code>100</code>.</p>
-     */
     inline DescribeTagsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Filter> m_filters;

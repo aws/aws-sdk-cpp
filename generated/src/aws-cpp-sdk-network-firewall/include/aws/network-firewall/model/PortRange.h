@@ -38,55 +38,27 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The lower limit of the port range. This must be less than or equal to the
      * <code>ToPort</code> specification. </p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
-
-    /**
-     * <p>The lower limit of the port range. This must be less than or equal to the
-     * <code>ToPort</code> specification. </p>
-     */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
-
-    /**
-     * <p>The lower limit of the port range. This must be less than or equal to the
-     * <code>ToPort</code> specification. </p>
-     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
-
-    /**
-     * <p>The lower limit of the port range. This must be less than or equal to the
-     * <code>ToPort</code> specification. </p>
-     */
     inline PortRange& WithFromPort(int value) { SetFromPort(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The upper limit of the port range. This must be greater than or equal to the
      * <code>FromPort</code> specification. </p>
      */
     inline int GetToPort() const{ return m_toPort; }
-
-    /**
-     * <p>The upper limit of the port range. This must be greater than or equal to the
-     * <code>FromPort</code> specification. </p>
-     */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
-
-    /**
-     * <p>The upper limit of the port range. This must be greater than or equal to the
-     * <code>FromPort</code> specification. </p>
-     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
-
-    /**
-     * <p>The upper limit of the port range. This must be greater than or equal to the
-     * <code>FromPort</code> specification. </p>
-     */
     inline PortRange& WithToPort(int value) { SetToPort(value); return *this;}
-
+    ///@}
   private:
 
     int m_fromPort;

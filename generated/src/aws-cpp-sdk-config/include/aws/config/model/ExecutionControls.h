@@ -38,36 +38,17 @@ namespace Model
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A SsmControls object.</p>
      */
     inline const SsmControls& GetSsmControls() const{ return m_ssmControls; }
-
-    /**
-     * <p>A SsmControls object.</p>
-     */
     inline bool SsmControlsHasBeenSet() const { return m_ssmControlsHasBeenSet; }
-
-    /**
-     * <p>A SsmControls object.</p>
-     */
     inline void SetSsmControls(const SsmControls& value) { m_ssmControlsHasBeenSet = true; m_ssmControls = value; }
-
-    /**
-     * <p>A SsmControls object.</p>
-     */
     inline void SetSsmControls(SsmControls&& value) { m_ssmControlsHasBeenSet = true; m_ssmControls = std::move(value); }
-
-    /**
-     * <p>A SsmControls object.</p>
-     */
     inline ExecutionControls& WithSsmControls(const SsmControls& value) { SetSsmControls(value); return *this;}
-
-    /**
-     * <p>A SsmControls object.</p>
-     */
     inline ExecutionControls& WithSsmControls(SsmControls&& value) { SetSsmControls(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SsmControls m_ssmControls;

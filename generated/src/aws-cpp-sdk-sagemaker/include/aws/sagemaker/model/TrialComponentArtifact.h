@@ -43,6 +43,7 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The media type of the artifact, which indicates the type of data in the
      * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
@@ -51,111 +52,28 @@ namespace Model
      * kind of data.</p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline void SetMediaType(const Aws::String& value) { m_mediaTypeHasBeenSet = true; m_mediaType = value; }
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline void SetMediaType(Aws::String&& value) { m_mediaTypeHasBeenSet = true; m_mediaType = std::move(value); }
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline void SetMediaType(const char* value) { m_mediaTypeHasBeenSet = true; m_mediaType.assign(value); }
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline TrialComponentArtifact& WithMediaType(const Aws::String& value) { SetMediaType(value); return *this;}
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline TrialComponentArtifact& WithMediaType(Aws::String&& value) { SetMediaType(std::move(value)); return *this;}
-
-    /**
-     * <p>The media type of the artifact, which indicates the type of data in the
-     * artifact file. The media type consists of a <i>type</i> and a <i>subtype</i>
-     * concatenated with a slash (/) character, for example, text/csv, image/jpeg, and
-     * s3/uri. The type specifies the category of the media. The subtype specifies the
-     * kind of data.</p>
-     */
     inline TrialComponentArtifact& WithMediaType(const char* value) { SetMediaType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The location of the artifact.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline TrialComponentArtifact& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline TrialComponentArtifact& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The location of the artifact.</p>
-     */
     inline TrialComponentArtifact& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_mediaType;

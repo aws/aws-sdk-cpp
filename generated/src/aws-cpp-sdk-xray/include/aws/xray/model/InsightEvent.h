@@ -44,192 +44,71 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A brief description of the event.</p>
      */
     inline const Aws::String& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline InsightEvent& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline InsightEvent& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
-
-    /**
-     * <p>A brief description of the event.</p>
-     */
     inline InsightEvent& WithSummary(const char* value) { SetSummary(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time, in Unix seconds, at which the event was recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
-
-    /**
-     * <p>The time, in Unix seconds, at which the event was recorded.</p>
-     */
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-
-    /**
-     * <p>The time, in Unix seconds, at which the event was recorded.</p>
-     */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-
-    /**
-     * <p>The time, in Unix seconds, at which the event was recorded.</p>
-     */
     inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-
-    /**
-     * <p>The time, in Unix seconds, at which the event was recorded.</p>
-     */
     inline InsightEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-
-    /**
-     * <p>The time, in Unix seconds, at which the event was recorded.</p>
-     */
     inline InsightEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The impact statistics of the client side service. This includes the number of
      * requests to the client service and whether the requests were faults or okay.</p>
      */
     inline const RequestImpactStatistics& GetClientRequestImpactStatistics() const{ return m_clientRequestImpactStatistics; }
-
-    /**
-     * <p>The impact statistics of the client side service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline bool ClientRequestImpactStatisticsHasBeenSet() const { return m_clientRequestImpactStatisticsHasBeenSet; }
-
-    /**
-     * <p>The impact statistics of the client side service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline void SetClientRequestImpactStatistics(const RequestImpactStatistics& value) { m_clientRequestImpactStatisticsHasBeenSet = true; m_clientRequestImpactStatistics = value; }
-
-    /**
-     * <p>The impact statistics of the client side service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline void SetClientRequestImpactStatistics(RequestImpactStatistics&& value) { m_clientRequestImpactStatisticsHasBeenSet = true; m_clientRequestImpactStatistics = std::move(value); }
-
-    /**
-     * <p>The impact statistics of the client side service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline InsightEvent& WithClientRequestImpactStatistics(const RequestImpactStatistics& value) { SetClientRequestImpactStatistics(value); return *this;}
-
-    /**
-     * <p>The impact statistics of the client side service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline InsightEvent& WithClientRequestImpactStatistics(RequestImpactStatistics&& value) { SetClientRequestImpactStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The impact statistics of the root cause service. This includes the number of
      * requests to the client service and whether the requests were faults or okay.</p>
      */
     inline const RequestImpactStatistics& GetRootCauseServiceRequestImpactStatistics() const{ return m_rootCauseServiceRequestImpactStatistics; }
-
-    /**
-     * <p>The impact statistics of the root cause service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline bool RootCauseServiceRequestImpactStatisticsHasBeenSet() const { return m_rootCauseServiceRequestImpactStatisticsHasBeenSet; }
-
-    /**
-     * <p>The impact statistics of the root cause service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline void SetRootCauseServiceRequestImpactStatistics(const RequestImpactStatistics& value) { m_rootCauseServiceRequestImpactStatisticsHasBeenSet = true; m_rootCauseServiceRequestImpactStatistics = value; }
-
-    /**
-     * <p>The impact statistics of the root cause service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline void SetRootCauseServiceRequestImpactStatistics(RequestImpactStatistics&& value) { m_rootCauseServiceRequestImpactStatisticsHasBeenSet = true; m_rootCauseServiceRequestImpactStatistics = std::move(value); }
-
-    /**
-     * <p>The impact statistics of the root cause service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline InsightEvent& WithRootCauseServiceRequestImpactStatistics(const RequestImpactStatistics& value) { SetRootCauseServiceRequestImpactStatistics(value); return *this;}
-
-    /**
-     * <p>The impact statistics of the root cause service. This includes the number of
-     * requests to the client service and whether the requests were faults or okay.</p>
-     */
     inline InsightEvent& WithRootCauseServiceRequestImpactStatistics(RequestImpactStatistics&& value) { SetRootCauseServiceRequestImpactStatistics(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The service during the event that is most impacted by the incident.</p>
      */
     inline const Aws::Vector<AnomalousService>& GetTopAnomalousServices() const{ return m_topAnomalousServices; }
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline bool TopAnomalousServicesHasBeenSet() const { return m_topAnomalousServicesHasBeenSet; }
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline void SetTopAnomalousServices(const Aws::Vector<AnomalousService>& value) { m_topAnomalousServicesHasBeenSet = true; m_topAnomalousServices = value; }
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline void SetTopAnomalousServices(Aws::Vector<AnomalousService>&& value) { m_topAnomalousServicesHasBeenSet = true; m_topAnomalousServices = std::move(value); }
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline InsightEvent& WithTopAnomalousServices(const Aws::Vector<AnomalousService>& value) { SetTopAnomalousServices(value); return *this;}
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline InsightEvent& WithTopAnomalousServices(Aws::Vector<AnomalousService>&& value) { SetTopAnomalousServices(std::move(value)); return *this;}
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline InsightEvent& AddTopAnomalousServices(const AnomalousService& value) { m_topAnomalousServicesHasBeenSet = true; m_topAnomalousServices.push_back(value); return *this; }
-
-    /**
-     * <p>The service during the event that is most impacted by the incident.</p>
-     */
     inline InsightEvent& AddTopAnomalousServices(AnomalousService&& value) { m_topAnomalousServicesHasBeenSet = true; m_topAnomalousServices.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_summary;

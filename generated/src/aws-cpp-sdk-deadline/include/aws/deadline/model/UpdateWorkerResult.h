@@ -33,53 +33,27 @@ namespace Model
     AWS_DEADLINE_API UpdateWorkerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The worker log to update.</p>
      */
     inline const LogConfiguration& GetLog() const{ return m_log; }
-
-    /**
-     * <p>The worker log to update.</p>
-     */
     inline void SetLog(const LogConfiguration& value) { m_log = value; }
-
-    /**
-     * <p>The worker log to update.</p>
-     */
     inline void SetLog(LogConfiguration&& value) { m_log = std::move(value); }
-
-    /**
-     * <p>The worker log to update.</p>
-     */
     inline UpdateWorkerResult& WithLog(const LogConfiguration& value) { SetLog(value); return *this;}
-
-    /**
-     * <p>The worker log to update.</p>
-     */
     inline UpdateWorkerResult& WithLog(LogConfiguration&& value) { SetLog(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateWorkerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateWorkerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateWorkerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LogConfiguration m_log;

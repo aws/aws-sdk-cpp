@@ -34,99 +34,42 @@ namespace Model
     AWS_CLOUDTRAIL_API ListImportFailuresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> Contains information about the import failures. </p>
      */
     inline const Aws::Vector<ImportFailureListItem>& GetFailures() const{ return m_failures; }
-
-    /**
-     * <p> Contains information about the import failures. </p>
-     */
     inline void SetFailures(const Aws::Vector<ImportFailureListItem>& value) { m_failures = value; }
-
-    /**
-     * <p> Contains information about the import failures. </p>
-     */
     inline void SetFailures(Aws::Vector<ImportFailureListItem>&& value) { m_failures = std::move(value); }
-
-    /**
-     * <p> Contains information about the import failures. </p>
-     */
     inline ListImportFailuresResult& WithFailures(const Aws::Vector<ImportFailureListItem>& value) { SetFailures(value); return *this;}
-
-    /**
-     * <p> Contains information about the import failures. </p>
-     */
     inline ListImportFailuresResult& WithFailures(Aws::Vector<ImportFailureListItem>&& value) { SetFailures(std::move(value)); return *this;}
-
-    /**
-     * <p> Contains information about the import failures. </p>
-     */
     inline ListImportFailuresResult& AddFailures(const ImportFailureListItem& value) { m_failures.push_back(value); return *this; }
-
-    /**
-     * <p> Contains information about the import failures. </p>
-     */
     inline ListImportFailuresResult& AddFailures(ImportFailureListItem&& value) { m_failures.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> A token you can use to get the next page of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> A token you can use to get the next page of results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> A token you can use to get the next page of results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> A token you can use to get the next page of results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> A token you can use to get the next page of results. </p>
-     */
     inline ListImportFailuresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> A token you can use to get the next page of results. </p>
-     */
     inline ListImportFailuresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> A token you can use to get the next page of results. </p>
-     */
     inline ListImportFailuresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListImportFailuresResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListImportFailuresResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListImportFailuresResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ImportFailureListItem> m_failures;

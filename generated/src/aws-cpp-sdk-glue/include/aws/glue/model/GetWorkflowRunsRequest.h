@@ -34,129 +34,53 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Name of the workflow whose metadata of runs should be returned.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline GetWorkflowRunsRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline GetWorkflowRunsRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>Name of the workflow whose metadata of runs should be returned.</p>
-     */
     inline GetWorkflowRunsRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies whether to include the workflow graph in response or not.</p>
      */
     inline bool GetIncludeGraph() const{ return m_includeGraph; }
-
-    /**
-     * <p>Specifies whether to include the workflow graph in response or not.</p>
-     */
     inline bool IncludeGraphHasBeenSet() const { return m_includeGraphHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to include the workflow graph in response or not.</p>
-     */
     inline void SetIncludeGraph(bool value) { m_includeGraphHasBeenSet = true; m_includeGraph = value; }
-
-    /**
-     * <p>Specifies whether to include the workflow graph in response or not.</p>
-     */
     inline GetWorkflowRunsRequest& WithIncludeGraph(bool value) { SetIncludeGraph(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum size of the response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline GetWorkflowRunsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline GetWorkflowRunsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum size of the response.</p>
-     */
     inline GetWorkflowRunsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of workflow runs to be included in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of workflow runs to be included in the response.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of workflow runs to be included in the response.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of workflow runs to be included in the response.</p>
-     */
     inline GetWorkflowRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

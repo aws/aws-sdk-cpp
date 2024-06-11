@@ -37,71 +37,38 @@ namespace Model
     AWS_WELLARCHITECTED_API CreateWorkloadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-
-    
     inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-
-    
     inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-
-    
     inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-
-    
     inline CreateWorkloadResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-
-    
     inline CreateWorkloadResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-
-    
     inline CreateWorkloadResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetWorkloadArn() const{ return m_workloadArn; }
-
-    
     inline void SetWorkloadArn(const Aws::String& value) { m_workloadArn = value; }
-
-    
     inline void SetWorkloadArn(Aws::String&& value) { m_workloadArn = std::move(value); }
-
-    
     inline void SetWorkloadArn(const char* value) { m_workloadArn.assign(value); }
-
-    
     inline CreateWorkloadResult& WithWorkloadArn(const Aws::String& value) { SetWorkloadArn(value); return *this;}
-
-    
     inline CreateWorkloadResult& WithWorkloadArn(Aws::String&& value) { SetWorkloadArn(std::move(value)); return *this;}
-
-    
     inline CreateWorkloadResult& WithWorkloadArn(const char* value) { SetWorkloadArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateWorkloadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateWorkloadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateWorkloadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workloadId;

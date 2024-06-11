@@ -39,71 +39,31 @@ namespace Model
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A parameter that is incompatible with the earlier request.</p>
      */
     inline const Aws::String& GetParameter() const{ return m_parameter; }
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline bool ParameterHasBeenSet() const { return m_parameterHasBeenSet; }
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline void SetParameter(const Aws::String& value) { m_parameterHasBeenSet = true; m_parameter = value; }
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline void SetParameter(Aws::String&& value) { m_parameterHasBeenSet = true; m_parameter = std::move(value); }
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline void SetParameter(const char* value) { m_parameterHasBeenSet = true; m_parameter.assign(value); }
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline IncompatibleParameterError& WithParameter(const Aws::String& value) { SetParameter(value); return *this;}
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline IncompatibleParameterError& WithParameter(Aws::String&& value) { SetParameter(std::move(value)); return *this;}
-
-    /**
-     * <p>A parameter that is incompatible with the earlier request.</p>
-     */
     inline IncompatibleParameterError& WithParameter(const char* value) { SetParameter(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline IncompatibleParameterError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline IncompatibleParameterError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline IncompatibleParameterError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_parameter;

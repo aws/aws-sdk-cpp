@@ -33,58 +33,28 @@ namespace Model
     AWS_OMICS_API GetShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A resource share details object. The object includes the status, the
      * resourceArn, and ownerId.</p>
      */
     inline const ShareDetails& GetShare() const{ return m_share; }
-
-    /**
-     * <p>A resource share details object. The object includes the status, the
-     * resourceArn, and ownerId.</p>
-     */
     inline void SetShare(const ShareDetails& value) { m_share = value; }
-
-    /**
-     * <p>A resource share details object. The object includes the status, the
-     * resourceArn, and ownerId.</p>
-     */
     inline void SetShare(ShareDetails&& value) { m_share = std::move(value); }
-
-    /**
-     * <p>A resource share details object. The object includes the status, the
-     * resourceArn, and ownerId.</p>
-     */
     inline GetShareResult& WithShare(const ShareDetails& value) { SetShare(value); return *this;}
-
-    /**
-     * <p>A resource share details object. The object includes the status, the
-     * resourceArn, and ownerId.</p>
-     */
     inline GetShareResult& WithShare(ShareDetails&& value) { SetShare(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ShareDetails m_share;

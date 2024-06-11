@@ -39,128 +39,47 @@ namespace Model
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Contains the average of all values analyzed.</p>
      */
     inline const Aws::String& GetAverage() const{ return m_average; }
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline bool AverageHasBeenSet() const { return m_averageHasBeenSet; }
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline void SetAverage(const Aws::String& value) { m_averageHasBeenSet = true; m_average = value; }
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline void SetAverage(Aws::String&& value) { m_averageHasBeenSet = true; m_average = std::move(value); }
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline void SetAverage(const char* value) { m_averageHasBeenSet = true; m_average.assign(value); }
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithAverage(const Aws::String& value) { SetAverage(value); return *this;}
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithAverage(Aws::String&& value) { SetAverage(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the average of all values analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithAverage(const char* value) { SetAverage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the maximum value analyzed.</p>
      */
     inline const Aws::String& GetMax() const{ return m_max; }
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline void SetMax(const Aws::String& value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline void SetMax(Aws::String&& value) { m_maxHasBeenSet = true; m_max = std::move(value); }
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline void SetMax(const char* value) { m_maxHasBeenSet = true; m_max.assign(value); }
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithMax(const Aws::String& value) { SetMax(value); return *this;}
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithMax(Aws::String&& value) { SetMax(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the maximum value analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithMax(const char* value) { SetMax(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains the minimum value analyzed.</p>
      */
     inline const Aws::String& GetMin() const{ return m_min; }
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline void SetMin(const Aws::String& value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline void SetMin(Aws::String&& value) { m_minHasBeenSet = true; m_min = std::move(value); }
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline void SetMin(const char* value) { m_minHasBeenSet = true; m_min.assign(value); }
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithMin(const Aws::String& value) { SetMin(value); return *this;}
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithMin(Aws::String&& value) { SetMin(std::move(value)); return *this;}
-
-    /**
-     * <p>Contains the minimum value analyzed.</p>
-     */
     inline ReportGroupTrendStats& WithMin(const char* value) { SetMin(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_average;

@@ -34,106 +34,43 @@ namespace Model
     AWS_APPSTREAM_API DescribeUserStackAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The UserStackAssociation objects.</p>
      */
     inline const Aws::Vector<UserStackAssociation>& GetUserStackAssociations() const{ return m_userStackAssociations; }
-
-    /**
-     * <p>The UserStackAssociation objects.</p>
-     */
     inline void SetUserStackAssociations(const Aws::Vector<UserStackAssociation>& value) { m_userStackAssociations = value; }
-
-    /**
-     * <p>The UserStackAssociation objects.</p>
-     */
     inline void SetUserStackAssociations(Aws::Vector<UserStackAssociation>&& value) { m_userStackAssociations = std::move(value); }
-
-    /**
-     * <p>The UserStackAssociation objects.</p>
-     */
     inline DescribeUserStackAssociationsResult& WithUserStackAssociations(const Aws::Vector<UserStackAssociation>& value) { SetUserStackAssociations(value); return *this;}
-
-    /**
-     * <p>The UserStackAssociation objects.</p>
-     */
     inline DescribeUserStackAssociationsResult& WithUserStackAssociations(Aws::Vector<UserStackAssociation>&& value) { SetUserStackAssociations(std::move(value)); return *this;}
-
-    /**
-     * <p>The UserStackAssociation objects.</p>
-     */
     inline DescribeUserStackAssociationsResult& AddUserStackAssociations(const UserStackAssociation& value) { m_userStackAssociations.push_back(value); return *this; }
-
-    /**
-     * <p>The UserStackAssociation objects.</p>
-     */
     inline DescribeUserStackAssociationsResult& AddUserStackAssociations(UserStackAssociation&& value) { m_userStackAssociations.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeUserStackAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeUserStackAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token to use to retrieve the next page of results for this
-     * operation. If there are no more pages, this value is null.</p>
-     */
     inline DescribeUserStackAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeUserStackAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeUserStackAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeUserStackAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<UserStackAssociation> m_userStackAssociations;

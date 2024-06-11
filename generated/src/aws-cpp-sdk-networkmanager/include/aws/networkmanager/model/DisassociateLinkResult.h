@@ -33,53 +33,27 @@ namespace Model
     AWS_NETWORKMANAGER_API DisassociateLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the link association.</p>
      */
     inline const LinkAssociation& GetLinkAssociation() const{ return m_linkAssociation; }
-
-    /**
-     * <p>Information about the link association.</p>
-     */
     inline void SetLinkAssociation(const LinkAssociation& value) { m_linkAssociation = value; }
-
-    /**
-     * <p>Information about the link association.</p>
-     */
     inline void SetLinkAssociation(LinkAssociation&& value) { m_linkAssociation = std::move(value); }
-
-    /**
-     * <p>Information about the link association.</p>
-     */
     inline DisassociateLinkResult& WithLinkAssociation(const LinkAssociation& value) { SetLinkAssociation(value); return *this;}
-
-    /**
-     * <p>Information about the link association.</p>
-     */
     inline DisassociateLinkResult& WithLinkAssociation(LinkAssociation&& value) { SetLinkAssociation(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisassociateLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisassociateLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisassociateLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     LinkAssociation m_linkAssociation;

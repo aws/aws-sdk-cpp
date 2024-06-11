@@ -35,36 +35,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The distribution's configuration information.</p>
      */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline void SetDistributionConfig(const DistributionConfig& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = value; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline void SetDistributionConfig(DistributionConfig&& value) { m_distributionConfigHasBeenSet = true; m_distributionConfig = std::move(value); }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline CreateDistribution2020_05_31Request& WithDistributionConfig(const DistributionConfig& value) { SetDistributionConfig(value); return *this;}
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline CreateDistribution2020_05_31Request& WithDistributionConfig(DistributionConfig&& value) { SetDistributionConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DistributionConfig m_distributionConfig;

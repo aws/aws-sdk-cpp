@@ -34,46 +34,19 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p> The ID of the vehicle to retrieve information about. </p>
      */
     inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline bool VehicleNameHasBeenSet() const { return m_vehicleNameHasBeenSet; }
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline void SetVehicleName(const Aws::String& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = value; }
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline void SetVehicleName(Aws::String&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::move(value); }
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline void SetVehicleName(const char* value) { m_vehicleNameHasBeenSet = true; m_vehicleName.assign(value); }
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline GetVehicleRequest& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline GetVehicleRequest& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-
-    /**
-     * <p> The ID of the vehicle to retrieve information about. </p>
-     */
     inline GetVehicleRequest& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_vehicleName;

@@ -32,46 +32,19 @@ namespace Model
     AWS_GROUNDSTATION_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The AWS Ground Station ephemeris ID.</p>
      */
     inline const Aws::String& GetEphemerisId() const{ return m_ephemerisId; }
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline bool EphemerisIdHasBeenSet() const { return m_ephemerisIdHasBeenSet; }
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline void SetEphemerisId(const Aws::String& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = value; }
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline void SetEphemerisId(Aws::String&& value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId = std::move(value); }
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline void SetEphemerisId(const char* value) { m_ephemerisIdHasBeenSet = true; m_ephemerisId.assign(value); }
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline DeleteEphemerisRequest& WithEphemerisId(const Aws::String& value) { SetEphemerisId(value); return *this;}
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline DeleteEphemerisRequest& WithEphemerisId(Aws::String&& value) { SetEphemerisId(std::move(value)); return *this;}
-
-    /**
-     * <p>The AWS Ground Station ephemeris ID.</p>
-     */
     inline DeleteEphemerisRequest& WithEphemerisId(const char* value) { SetEphemerisId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ephemerisId;

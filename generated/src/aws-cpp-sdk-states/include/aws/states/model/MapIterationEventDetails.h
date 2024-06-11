@@ -38,67 +38,29 @@ namespace Model
     AWS_SFN_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the iteration’s parent Map state.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline MapIterationEventDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline MapIterationEventDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the iteration’s parent Map state.</p>
-     */
     inline MapIterationEventDetails& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The index of the array belonging to the Map state iteration.</p>
      */
     inline int GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The index of the array belonging to the Map state iteration.</p>
-     */
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The index of the array belonging to the Map state iteration.</p>
-     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The index of the array belonging to the Map state iteration.</p>
-     */
     inline MapIterationEventDetails& WithIndex(int value) { SetIndex(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

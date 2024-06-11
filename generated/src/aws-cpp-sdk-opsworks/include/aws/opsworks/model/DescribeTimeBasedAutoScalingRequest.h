@@ -35,51 +35,20 @@ namespace Model
     AWS_OPSWORKS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>An array of instance IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline void SetInstanceIds(const Aws::Vector<Aws::String>& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = value; }
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline void SetInstanceIds(Aws::Vector<Aws::String>&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds = std::move(value); }
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(const Aws::Vector<Aws::String>& value) { SetInstanceIds(value); return *this;}
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline DescribeTimeBasedAutoScalingRequest& WithInstanceIds(Aws::Vector<Aws::String>&& value) { SetInstanceIds(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const Aws::String& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(Aws::String&& value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of instance IDs.</p>
-     */
     inline DescribeTimeBasedAutoScalingRequest& AddInstanceIds(const char* value) { m_instanceIdsHasBeenSet = true; m_instanceIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_instanceIds;

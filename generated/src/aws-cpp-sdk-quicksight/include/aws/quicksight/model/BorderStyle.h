@@ -36,26 +36,15 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The option to enable display of borders for visuals.</p>
      */
     inline bool GetShow() const{ return m_show; }
-
-    /**
-     * <p>The option to enable display of borders for visuals.</p>
-     */
     inline bool ShowHasBeenSet() const { return m_showHasBeenSet; }
-
-    /**
-     * <p>The option to enable display of borders for visuals.</p>
-     */
     inline void SetShow(bool value) { m_showHasBeenSet = true; m_show = value; }
-
-    /**
-     * <p>The option to enable display of borders for visuals.</p>
-     */
     inline BorderStyle& WithShow(bool value) { SetShow(value); return *this;}
-
+    ///@}
   private:
 
     bool m_show;

@@ -32,171 +32,68 @@ namespace Model
     AWS_CODECATALYST_API StartWorkflowRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The name of the space.</p>
      */
     inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline StartWorkflowRunResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline StartWorkflowRunResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the space.</p>
-     */
     inline StartWorkflowRunResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetProjectName(const Aws::String& value) { m_projectName = value; }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetProjectName(Aws::String&& value) { m_projectName = std::move(value); }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline void SetProjectName(const char* value) { m_projectName.assign(value); }
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline StartWorkflowRunResult& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline StartWorkflowRunResult& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the project in the space.</p>
-     */
     inline StartWorkflowRunResult& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The system-generated unique ID of the workflow run.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * <p>The system-generated unique ID of the workflow run.</p>
-     */
     inline void SetId(const Aws::String& value) { m_id = value; }
-
-    /**
-     * <p>The system-generated unique ID of the workflow run.</p>
-     */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-
-    /**
-     * <p>The system-generated unique ID of the workflow run.</p>
-     */
     inline void SetId(const char* value) { m_id.assign(value); }
-
-    /**
-     * <p>The system-generated unique ID of the workflow run.</p>
-     */
     inline StartWorkflowRunResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * <p>The system-generated unique ID of the workflow run.</p>
-     */
     inline StartWorkflowRunResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated unique ID of the workflow run.</p>
-     */
     inline StartWorkflowRunResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The system-generated unique ID of the workflow.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-
-    /**
-     * <p>The system-generated unique ID of the workflow.</p>
-     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowId = value; }
-
-    /**
-     * <p>The system-generated unique ID of the workflow.</p>
-     */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowId = std::move(value); }
-
-    /**
-     * <p>The system-generated unique ID of the workflow.</p>
-     */
     inline void SetWorkflowId(const char* value) { m_workflowId.assign(value); }
-
-    /**
-     * <p>The system-generated unique ID of the workflow.</p>
-     */
     inline StartWorkflowRunResult& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-
-    /**
-     * <p>The system-generated unique ID of the workflow.</p>
-     */
     inline StartWorkflowRunResult& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated unique ID of the workflow.</p>
-     */
     inline StartWorkflowRunResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartWorkflowRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartWorkflowRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartWorkflowRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_spaceName;

@@ -38,53 +38,27 @@ namespace Model
     AWS_ACCESSANALYZER_API GetFindingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>finding</code> object that contains finding details.</p>
      */
     inline const Finding& GetFinding() const{ return m_finding; }
-
-    /**
-     * <p>A <code>finding</code> object that contains finding details.</p>
-     */
     inline void SetFinding(const Finding& value) { m_finding = value; }
-
-    /**
-     * <p>A <code>finding</code> object that contains finding details.</p>
-     */
     inline void SetFinding(Finding&& value) { m_finding = std::move(value); }
-
-    /**
-     * <p>A <code>finding</code> object that contains finding details.</p>
-     */
     inline GetFindingResult& WithFinding(const Finding& value) { SetFinding(value); return *this;}
-
-    /**
-     * <p>A <code>finding</code> object that contains finding details.</p>
-     */
     inline GetFindingResult& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetFindingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetFindingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetFindingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Finding m_finding;

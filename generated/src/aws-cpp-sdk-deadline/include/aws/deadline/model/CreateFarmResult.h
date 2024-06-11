@@ -32,63 +32,29 @@ namespace Model
     AWS_DEADLINE_API CreateFarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The farm ID.</p>
      */
     inline const Aws::String& GetFarmId() const{ return m_farmId; }
-
-    /**
-     * <p>The farm ID.</p>
-     */
     inline void SetFarmId(const Aws::String& value) { m_farmId = value; }
-
-    /**
-     * <p>The farm ID.</p>
-     */
     inline void SetFarmId(Aws::String&& value) { m_farmId = std::move(value); }
-
-    /**
-     * <p>The farm ID.</p>
-     */
     inline void SetFarmId(const char* value) { m_farmId.assign(value); }
-
-    /**
-     * <p>The farm ID.</p>
-     */
     inline CreateFarmResult& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-
-    /**
-     * <p>The farm ID.</p>
-     */
     inline CreateFarmResult& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-
-    /**
-     * <p>The farm ID.</p>
-     */
     inline CreateFarmResult& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateFarmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateFarmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateFarmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_farmId;

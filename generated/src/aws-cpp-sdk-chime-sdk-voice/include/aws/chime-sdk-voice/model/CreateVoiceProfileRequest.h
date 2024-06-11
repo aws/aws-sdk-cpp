@@ -32,46 +32,19 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the speaker search task.</p>
      */
     inline const Aws::String& GetSpeakerSearchTaskId() const{ return m_speakerSearchTaskId; }
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline bool SpeakerSearchTaskIdHasBeenSet() const { return m_speakerSearchTaskIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline void SetSpeakerSearchTaskId(const Aws::String& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = value; }
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline void SetSpeakerSearchTaskId(Aws::String&& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = std::move(value); }
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline void SetSpeakerSearchTaskId(const char* value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId.assign(value); }
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline CreateVoiceProfileRequest& WithSpeakerSearchTaskId(const Aws::String& value) { SetSpeakerSearchTaskId(value); return *this;}
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline CreateVoiceProfileRequest& WithSpeakerSearchTaskId(Aws::String&& value) { SetSpeakerSearchTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the speaker search task.</p>
-     */
     inline CreateVoiceProfileRequest& WithSpeakerSearchTaskId(const char* value) { SetSpeakerSearchTaskId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_speakerSearchTaskId;

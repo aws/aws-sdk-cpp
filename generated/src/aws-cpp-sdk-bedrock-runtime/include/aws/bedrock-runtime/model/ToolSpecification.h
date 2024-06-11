@@ -38,118 +38,45 @@ namespace Model
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name for the tool.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline ToolSpecification& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline ToolSpecification& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name for the tool.</p>
-     */
     inline ToolSpecification& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description for the tool.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline ToolSpecification& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline ToolSpecification& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description for the tool.</p>
-     */
     inline ToolSpecification& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The input schema for the tool in JSON format.</p>
      */
     inline const ToolInputSchema& GetInputSchema() const{ return m_inputSchema; }
-
-    /**
-     * <p>The input schema for the tool in JSON format.</p>
-     */
     inline bool InputSchemaHasBeenSet() const { return m_inputSchemaHasBeenSet; }
-
-    /**
-     * <p>The input schema for the tool in JSON format.</p>
-     */
     inline void SetInputSchema(const ToolInputSchema& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = value; }
-
-    /**
-     * <p>The input schema for the tool in JSON format.</p>
-     */
     inline void SetInputSchema(ToolInputSchema&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::move(value); }
-
-    /**
-     * <p>The input schema for the tool in JSON format.</p>
-     */
     inline ToolSpecification& WithInputSchema(const ToolInputSchema& value) { SetInputSchema(value); return *this;}
-
-    /**
-     * <p>The input schema for the tool in JSON format.</p>
-     */
     inline ToolSpecification& WithInputSchema(ToolInputSchema&& value) { SetInputSchema(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

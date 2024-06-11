@@ -37,46 +37,19 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>The list of identifiers for the desired extension configurations.</p>
      */
     inline const Aws::Vector<TypeConfigurationIdentifier>& GetTypeConfigurationIdentifiers() const{ return m_typeConfigurationIdentifiers; }
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline bool TypeConfigurationIdentifiersHasBeenSet() const { return m_typeConfigurationIdentifiersHasBeenSet; }
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline void SetTypeConfigurationIdentifiers(const Aws::Vector<TypeConfigurationIdentifier>& value) { m_typeConfigurationIdentifiersHasBeenSet = true; m_typeConfigurationIdentifiers = value; }
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline void SetTypeConfigurationIdentifiers(Aws::Vector<TypeConfigurationIdentifier>&& value) { m_typeConfigurationIdentifiersHasBeenSet = true; m_typeConfigurationIdentifiers = std::move(value); }
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline BatchDescribeTypeConfigurationsRequest& WithTypeConfigurationIdentifiers(const Aws::Vector<TypeConfigurationIdentifier>& value) { SetTypeConfigurationIdentifiers(value); return *this;}
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline BatchDescribeTypeConfigurationsRequest& WithTypeConfigurationIdentifiers(Aws::Vector<TypeConfigurationIdentifier>&& value) { SetTypeConfigurationIdentifiers(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline BatchDescribeTypeConfigurationsRequest& AddTypeConfigurationIdentifiers(const TypeConfigurationIdentifier& value) { m_typeConfigurationIdentifiersHasBeenSet = true; m_typeConfigurationIdentifiers.push_back(value); return *this; }
-
-    /**
-     * <p>The list of identifiers for the desired extension configurations.</p>
-     */
     inline BatchDescribeTypeConfigurationsRequest& AddTypeConfigurationIdentifiers(TypeConfigurationIdentifier&& value) { m_typeConfigurationIdentifiersHasBeenSet = true; m_typeConfigurationIdentifiers.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<TypeConfigurationIdentifier> m_typeConfigurationIdentifiers;

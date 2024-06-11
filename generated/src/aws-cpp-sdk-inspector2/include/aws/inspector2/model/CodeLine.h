@@ -38,67 +38,29 @@ namespace Model
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The content of a line of code</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline CodeLine& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline CodeLine& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of a line of code</p>
-     */
     inline CodeLine& WithContent(const char* value) { SetContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The line number that a section of code is located at.</p>
      */
     inline int GetLineNumber() const{ return m_lineNumber; }
-
-    /**
-     * <p>The line number that a section of code is located at.</p>
-     */
     inline bool LineNumberHasBeenSet() const { return m_lineNumberHasBeenSet; }
-
-    /**
-     * <p>The line number that a section of code is located at.</p>
-     */
     inline void SetLineNumber(int value) { m_lineNumberHasBeenSet = true; m_lineNumber = value; }
-
-    /**
-     * <p>The line number that a section of code is located at.</p>
-     */
     inline CodeLine& WithLineNumber(int value) { SetLineNumber(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_content;

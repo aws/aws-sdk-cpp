@@ -37,36 +37,17 @@ namespace Model
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The version of the gateways that should receive the update.</p>
      */
     inline const LoRaWANGatewayVersion& GetCurrentVersion() const{ return m_currentVersion; }
-
-    /**
-     * <p>The version of the gateways that should receive the update.</p>
-     */
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-
-    /**
-     * <p>The version of the gateways that should receive the update.</p>
-     */
     inline void SetCurrentVersion(const LoRaWANGatewayVersion& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-
-    /**
-     * <p>The version of the gateways that should receive the update.</p>
-     */
     inline void SetCurrentVersion(LoRaWANGatewayVersion&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-
-    /**
-     * <p>The version of the gateways that should receive the update.</p>
-     */
     inline LoRaWANGatewayCurrentVersion& WithCurrentVersion(const LoRaWANGatewayVersion& value) { SetCurrentVersion(value); return *this;}
-
-    /**
-     * <p>The version of the gateways that should receive the update.</p>
-     */
     inline LoRaWANGatewayCurrentVersion& WithCurrentVersion(LoRaWANGatewayVersion&& value) { SetCurrentVersion(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoRaWANGatewayVersion m_currentVersion;

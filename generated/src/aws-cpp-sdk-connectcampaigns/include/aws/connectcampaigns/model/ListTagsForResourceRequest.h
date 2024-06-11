@@ -35,30 +35,17 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    
     inline ListTagsForResourceRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    
     inline ListTagsForResourceRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    
     inline ListTagsForResourceRequest& WithArn(const char* value) { SetArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

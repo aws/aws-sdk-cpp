@@ -39,73 +39,30 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The custom text content (value, font configuration) for the table link
      * content configuration.</p>
      */
     inline const TableFieldCustomTextContent& GetCustomTextContent() const{ return m_customTextContent; }
-
-    /**
-     * <p>The custom text content (value, font configuration) for the table link
-     * content configuration.</p>
-     */
     inline bool CustomTextContentHasBeenSet() const { return m_customTextContentHasBeenSet; }
-
-    /**
-     * <p>The custom text content (value, font configuration) for the table link
-     * content configuration.</p>
-     */
     inline void SetCustomTextContent(const TableFieldCustomTextContent& value) { m_customTextContentHasBeenSet = true; m_customTextContent = value; }
-
-    /**
-     * <p>The custom text content (value, font configuration) for the table link
-     * content configuration.</p>
-     */
     inline void SetCustomTextContent(TableFieldCustomTextContent&& value) { m_customTextContentHasBeenSet = true; m_customTextContent = std::move(value); }
-
-    /**
-     * <p>The custom text content (value, font configuration) for the table link
-     * content configuration.</p>
-     */
     inline TableFieldLinkContentConfiguration& WithCustomTextContent(const TableFieldCustomTextContent& value) { SetCustomTextContent(value); return *this;}
-
-    /**
-     * <p>The custom text content (value, font configuration) for the table link
-     * content configuration.</p>
-     */
     inline TableFieldLinkContentConfiguration& WithCustomTextContent(TableFieldCustomTextContent&& value) { SetCustomTextContent(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The custom icon content for the table link content configuration.</p>
      */
     inline const TableFieldCustomIconContent& GetCustomIconContent() const{ return m_customIconContent; }
-
-    /**
-     * <p>The custom icon content for the table link content configuration.</p>
-     */
     inline bool CustomIconContentHasBeenSet() const { return m_customIconContentHasBeenSet; }
-
-    /**
-     * <p>The custom icon content for the table link content configuration.</p>
-     */
     inline void SetCustomIconContent(const TableFieldCustomIconContent& value) { m_customIconContentHasBeenSet = true; m_customIconContent = value; }
-
-    /**
-     * <p>The custom icon content for the table link content configuration.</p>
-     */
     inline void SetCustomIconContent(TableFieldCustomIconContent&& value) { m_customIconContentHasBeenSet = true; m_customIconContent = std::move(value); }
-
-    /**
-     * <p>The custom icon content for the table link content configuration.</p>
-     */
     inline TableFieldLinkContentConfiguration& WithCustomIconContent(const TableFieldCustomIconContent& value) { SetCustomIconContent(value); return *this;}
-
-    /**
-     * <p>The custom icon content for the table link content configuration.</p>
-     */
     inline TableFieldLinkContentConfiguration& WithCustomIconContent(TableFieldCustomIconContent&& value) { SetCustomIconContent(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TableFieldCustomTextContent m_customTextContent;

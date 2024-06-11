@@ -39,77 +39,31 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
      */
     inline const Aws::String& GetListingId() const{ return m_listingId; }
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline bool ListingIdHasBeenSet() const { return m_listingIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline void SetListingId(const Aws::String& value) { m_listingIdHasBeenSet = true; m_listingId = value; }
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline void SetListingId(Aws::String&& value) { m_listingIdHasBeenSet = true; m_listingId = std::move(value); }
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline void SetListingId(const char* value) { m_listingIdHasBeenSet = true; m_listingId.assign(value); }
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline AssetListingDetails& WithListingId(const Aws::String& value) { SetListingId(value); return *this;}
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline AssetListingDetails& WithListingId(Aws::String&& value) { SetListingId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline AssetListingDetails& WithListingId(const char* value) { SetListingId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of an asset published in an Amazon DataZone catalog. </p>
      */
     inline const ListingStatus& GetListingStatus() const{ return m_listingStatus; }
-
-    /**
-     * <p>The status of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline bool ListingStatusHasBeenSet() const { return m_listingStatusHasBeenSet; }
-
-    /**
-     * <p>The status of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline void SetListingStatus(const ListingStatus& value) { m_listingStatusHasBeenSet = true; m_listingStatus = value; }
-
-    /**
-     * <p>The status of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline void SetListingStatus(ListingStatus&& value) { m_listingStatusHasBeenSet = true; m_listingStatus = std::move(value); }
-
-    /**
-     * <p>The status of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline AssetListingDetails& WithListingStatus(const ListingStatus& value) { SetListingStatus(value); return *this;}
-
-    /**
-     * <p>The status of an asset published in an Amazon DataZone catalog. </p>
-     */
     inline AssetListingDetails& WithListingStatus(ListingStatus&& value) { SetListingStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_listingId;

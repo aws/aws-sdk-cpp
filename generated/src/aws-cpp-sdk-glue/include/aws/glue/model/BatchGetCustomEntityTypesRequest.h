@@ -35,51 +35,20 @@ namespace Model
     AWS_GLUE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A list of names of the custom patterns that you want to retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNames() const{ return m_names; }
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline void SetNames(Aws::Vector<Aws::String>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline BatchGetCustomEntityTypesRequest& WithNames(const Aws::Vector<Aws::String>& value) { SetNames(value); return *this;}
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline BatchGetCustomEntityTypesRequest& WithNames(Aws::Vector<Aws::String>&& value) { SetNames(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline BatchGetCustomEntityTypesRequest& AddNames(const Aws::String& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline BatchGetCustomEntityTypesRequest& AddNames(Aws::String&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of names of the custom patterns that you want to retrieve.</p>
-     */
     inline BatchGetCustomEntityTypesRequest& AddNames(const char* value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_names;

@@ -36,149 +36,57 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The specified workgroup that will be updated.</p>
      */
     inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline UpdateWorkGroupRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline UpdateWorkGroupRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
-
-    /**
-     * <p>The specified workgroup that will be updated.</p>
-     */
     inline UpdateWorkGroupRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The workgroup description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline UpdateWorkGroupRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline UpdateWorkGroupRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The workgroup description.</p>
-     */
     inline UpdateWorkGroupRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Contains configuration updates for an Athena SQL workgroup.</p>
      */
     inline const WorkGroupConfigurationUpdates& GetConfigurationUpdates() const{ return m_configurationUpdates; }
-
-    /**
-     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
-     */
     inline bool ConfigurationUpdatesHasBeenSet() const { return m_configurationUpdatesHasBeenSet; }
-
-    /**
-     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
-     */
     inline void SetConfigurationUpdates(const WorkGroupConfigurationUpdates& value) { m_configurationUpdatesHasBeenSet = true; m_configurationUpdates = value; }
-
-    /**
-     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
-     */
     inline void SetConfigurationUpdates(WorkGroupConfigurationUpdates&& value) { m_configurationUpdatesHasBeenSet = true; m_configurationUpdates = std::move(value); }
-
-    /**
-     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
-     */
     inline UpdateWorkGroupRequest& WithConfigurationUpdates(const WorkGroupConfigurationUpdates& value) { SetConfigurationUpdates(value); return *this;}
-
-    /**
-     * <p>Contains configuration updates for an Athena SQL workgroup.</p>
-     */
     inline UpdateWorkGroupRequest& WithConfigurationUpdates(WorkGroupConfigurationUpdates&& value) { SetConfigurationUpdates(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The workgroup state that will be updated for the given workgroup.</p>
      */
     inline const WorkGroupState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The workgroup state that will be updated for the given workgroup.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The workgroup state that will be updated for the given workgroup.</p>
-     */
     inline void SetState(const WorkGroupState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The workgroup state that will be updated for the given workgroup.</p>
-     */
     inline void SetState(WorkGroupState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The workgroup state that will be updated for the given workgroup.</p>
-     */
     inline UpdateWorkGroupRequest& WithState(const WorkGroupState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The workgroup state that will be updated for the given workgroup.</p>
-     */
     inline UpdateWorkGroupRequest& WithState(WorkGroupState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workGroup;

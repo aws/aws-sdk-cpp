@@ -38,48 +38,19 @@ namespace Model
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The VPC subnets and security groups that are associated with a task.</p>
      *  <p>All specified subnets and security groups must be from the same
      * VPC.</p> 
      */
     inline const AwsVpcConfiguration& GetAwsvpcConfiguration() const{ return m_awsvpcConfiguration; }
-
-    /**
-     * <p>The VPC subnets and security groups that are associated with a task.</p>
-     *  <p>All specified subnets and security groups must be from the same
-     * VPC.</p> 
-     */
     inline bool AwsvpcConfigurationHasBeenSet() const { return m_awsvpcConfigurationHasBeenSet; }
-
-    /**
-     * <p>The VPC subnets and security groups that are associated with a task.</p>
-     *  <p>All specified subnets and security groups must be from the same
-     * VPC.</p> 
-     */
     inline void SetAwsvpcConfiguration(const AwsVpcConfiguration& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = value; }
-
-    /**
-     * <p>The VPC subnets and security groups that are associated with a task.</p>
-     *  <p>All specified subnets and security groups must be from the same
-     * VPC.</p> 
-     */
     inline void SetAwsvpcConfiguration(AwsVpcConfiguration&& value) { m_awsvpcConfigurationHasBeenSet = true; m_awsvpcConfiguration = std::move(value); }
-
-    /**
-     * <p>The VPC subnets and security groups that are associated with a task.</p>
-     *  <p>All specified subnets and security groups must be from the same
-     * VPC.</p> 
-     */
     inline NetworkConfiguration& WithAwsvpcConfiguration(const AwsVpcConfiguration& value) { SetAwsvpcConfiguration(value); return *this;}
-
-    /**
-     * <p>The VPC subnets and security groups that are associated with a task.</p>
-     *  <p>All specified subnets and security groups must be from the same
-     * VPC.</p> 
-     */
     inline NetworkConfiguration& WithAwsvpcConfiguration(AwsVpcConfiguration&& value) { SetAwsvpcConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsVpcConfiguration m_awsvpcConfiguration;

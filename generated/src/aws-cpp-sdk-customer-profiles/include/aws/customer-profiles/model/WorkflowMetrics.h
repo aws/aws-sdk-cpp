@@ -38,36 +38,17 @@ namespace Model
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
      */
     inline const AppflowIntegrationWorkflowMetrics& GetAppflowIntegration() const{ return m_appflowIntegration; }
-
-    /**
-     * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-     */
     inline bool AppflowIntegrationHasBeenSet() const { return m_appflowIntegrationHasBeenSet; }
-
-    /**
-     * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-     */
     inline void SetAppflowIntegration(const AppflowIntegrationWorkflowMetrics& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = value; }
-
-    /**
-     * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-     */
     inline void SetAppflowIntegration(AppflowIntegrationWorkflowMetrics&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::move(value); }
-
-    /**
-     * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-     */
     inline WorkflowMetrics& WithAppflowIntegration(const AppflowIntegrationWorkflowMetrics& value) { SetAppflowIntegration(value); return *this;}
-
-    /**
-     * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
-     */
     inline WorkflowMetrics& WithAppflowIntegration(AppflowIntegrationWorkflowMetrics&& value) { SetAppflowIntegration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AppflowIntegrationWorkflowMetrics m_appflowIntegration;

@@ -32,62 +32,21 @@ namespace Model
     AWS_DEADLINE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The unique identifier of the monitor to delete. This ID is returned by the
      * <code>CreateMonitor</code> operation, and is included in the response to the
      * <code>GetMonitor</code> operation.</p>
      */
     inline const Aws::String& GetMonitorId() const{ return m_monitorId; }
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline bool MonitorIdHasBeenSet() const { return m_monitorIdHasBeenSet; }
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline void SetMonitorId(const Aws::String& value) { m_monitorIdHasBeenSet = true; m_monitorId = value; }
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline void SetMonitorId(Aws::String&& value) { m_monitorIdHasBeenSet = true; m_monitorId = std::move(value); }
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline void SetMonitorId(const char* value) { m_monitorIdHasBeenSet = true; m_monitorId.assign(value); }
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline DeleteMonitorRequest& WithMonitorId(const Aws::String& value) { SetMonitorId(value); return *this;}
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline DeleteMonitorRequest& WithMonitorId(Aws::String&& value) { SetMonitorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique identifier of the monitor to delete. This ID is returned by the
-     * <code>CreateMonitor</code> operation, and is included in the response to the
-     * <code>GetMonitor</code> operation.</p>
-     */
     inline DeleteMonitorRequest& WithMonitorId(const char* value) { SetMonitorId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_monitorId;

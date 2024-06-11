@@ -36,26 +36,15 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The custom line item's fixed charge value in USD. </p>
      */
     inline double GetChargeValue() const{ return m_chargeValue; }
-
-    /**
-     * <p> The custom line item's fixed charge value in USD. </p>
-     */
     inline bool ChargeValueHasBeenSet() const { return m_chargeValueHasBeenSet; }
-
-    /**
-     * <p> The custom line item's fixed charge value in USD. </p>
-     */
     inline void SetChargeValue(double value) { m_chargeValueHasBeenSet = true; m_chargeValue = value; }
-
-    /**
-     * <p> The custom line item's fixed charge value in USD. </p>
-     */
     inline ListCustomLineItemFlatChargeDetails& WithChargeValue(double value) { SetChargeValue(value); return *this;}
-
+    ///@}
   private:
 
     double m_chargeValue;

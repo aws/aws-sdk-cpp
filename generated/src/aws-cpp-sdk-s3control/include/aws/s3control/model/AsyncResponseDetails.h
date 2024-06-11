@@ -39,67 +39,29 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The details for the Multi-Region Access Point.</p>
      */
     inline const MultiRegionAccessPointsAsyncResponse& GetMultiRegionAccessPointDetails() const{ return m_multiRegionAccessPointDetails; }
-
-    /**
-     * <p>The details for the Multi-Region Access Point.</p>
-     */
     inline bool MultiRegionAccessPointDetailsHasBeenSet() const { return m_multiRegionAccessPointDetailsHasBeenSet; }
-
-    /**
-     * <p>The details for the Multi-Region Access Point.</p>
-     */
     inline void SetMultiRegionAccessPointDetails(const MultiRegionAccessPointsAsyncResponse& value) { m_multiRegionAccessPointDetailsHasBeenSet = true; m_multiRegionAccessPointDetails = value; }
-
-    /**
-     * <p>The details for the Multi-Region Access Point.</p>
-     */
     inline void SetMultiRegionAccessPointDetails(MultiRegionAccessPointsAsyncResponse&& value) { m_multiRegionAccessPointDetailsHasBeenSet = true; m_multiRegionAccessPointDetails = std::move(value); }
-
-    /**
-     * <p>The details for the Multi-Region Access Point.</p>
-     */
     inline AsyncResponseDetails& WithMultiRegionAccessPointDetails(const MultiRegionAccessPointsAsyncResponse& value) { SetMultiRegionAccessPointDetails(value); return *this;}
-
-    /**
-     * <p>The details for the Multi-Region Access Point.</p>
-     */
     inline AsyncResponseDetails& WithMultiRegionAccessPointDetails(MultiRegionAccessPointsAsyncResponse&& value) { SetMultiRegionAccessPointDetails(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Error details for an asynchronous request.</p>
      */
     inline const AsyncErrorDetails& GetErrorDetails() const{ return m_errorDetails; }
-
-    /**
-     * <p>Error details for an asynchronous request.</p>
-     */
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
-
-    /**
-     * <p>Error details for an asynchronous request.</p>
-     */
     inline void SetErrorDetails(const AsyncErrorDetails& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
-
-    /**
-     * <p>Error details for an asynchronous request.</p>
-     */
     inline void SetErrorDetails(AsyncErrorDetails&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
-
-    /**
-     * <p>Error details for an asynchronous request.</p>
-     */
     inline AsyncResponseDetails& WithErrorDetails(const AsyncErrorDetails& value) { SetErrorDetails(value); return *this;}
-
-    /**
-     * <p>Error details for an asynchronous request.</p>
-     */
     inline AsyncResponseDetails& WithErrorDetails(AsyncErrorDetails&& value) { SetErrorDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     MultiRegionAccessPointsAsyncResponse m_multiRegionAccessPointDetails;

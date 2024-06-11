@@ -36,72 +36,36 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of data objects labeled by a human worker.</p>
      */
     inline int GetHumanLabeled() const{ return m_humanLabeled; }
-
-    /**
-     * <p>The total number of data objects labeled by a human worker.</p>
-     */
     inline bool HumanLabeledHasBeenSet() const { return m_humanLabeledHasBeenSet; }
-
-    /**
-     * <p>The total number of data objects labeled by a human worker.</p>
-     */
     inline void SetHumanLabeled(int value) { m_humanLabeledHasBeenSet = true; m_humanLabeled = value; }
-
-    /**
-     * <p>The total number of data objects labeled by a human worker.</p>
-     */
     inline LabelCountersForWorkteam& WithHumanLabeled(int value) { SetHumanLabeled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of data objects that need to be labeled by a human
      * worker.</p>
      */
     inline int GetPendingHuman() const{ return m_pendingHuman; }
-
-    /**
-     * <p>The total number of data objects that need to be labeled by a human
-     * worker.</p>
-     */
     inline bool PendingHumanHasBeenSet() const { return m_pendingHumanHasBeenSet; }
-
-    /**
-     * <p>The total number of data objects that need to be labeled by a human
-     * worker.</p>
-     */
     inline void SetPendingHuman(int value) { m_pendingHumanHasBeenSet = true; m_pendingHuman = value; }
-
-    /**
-     * <p>The total number of data objects that need to be labeled by a human
-     * worker.</p>
-     */
     inline LabelCountersForWorkteam& WithPendingHuman(int value) { SetPendingHuman(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The total number of tasks in the labeling job.</p>
      */
     inline int GetTotal() const{ return m_total; }
-
-    /**
-     * <p>The total number of tasks in the labeling job.</p>
-     */
     inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
-
-    /**
-     * <p>The total number of tasks in the labeling job.</p>
-     */
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
-
-    /**
-     * <p>The total number of tasks in the labeling job.</p>
-     */
     inline LabelCountersForWorkteam& WithTotal(int value) { SetTotal(value); return *this;}
-
+    ///@}
   private:
 
     int m_humanLabeled;

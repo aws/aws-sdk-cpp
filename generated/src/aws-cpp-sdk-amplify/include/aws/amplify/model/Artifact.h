@@ -37,87 +37,33 @@ namespace Model
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The file name for the artifact. </p>
      */
     inline const Aws::String& GetArtifactFileName() const{ return m_artifactFileName; }
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline bool ArtifactFileNameHasBeenSet() const { return m_artifactFileNameHasBeenSet; }
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline void SetArtifactFileName(const Aws::String& value) { m_artifactFileNameHasBeenSet = true; m_artifactFileName = value; }
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline void SetArtifactFileName(Aws::String&& value) { m_artifactFileNameHasBeenSet = true; m_artifactFileName = std::move(value); }
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline void SetArtifactFileName(const char* value) { m_artifactFileNameHasBeenSet = true; m_artifactFileName.assign(value); }
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline Artifact& WithArtifactFileName(const Aws::String& value) { SetArtifactFileName(value); return *this;}
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline Artifact& WithArtifactFileName(Aws::String&& value) { SetArtifactFileName(std::move(value)); return *this;}
-
-    /**
-     * <p>The file name for the artifact. </p>
-     */
     inline Artifact& WithArtifactFileName(const char* value) { SetArtifactFileName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The unique ID for the artifact. </p>
      */
     inline const Aws::String& GetArtifactId() const{ return m_artifactId; }
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline bool ArtifactIdHasBeenSet() const { return m_artifactIdHasBeenSet; }
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline void SetArtifactId(const Aws::String& value) { m_artifactIdHasBeenSet = true; m_artifactId = value; }
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline void SetArtifactId(Aws::String&& value) { m_artifactIdHasBeenSet = true; m_artifactId = std::move(value); }
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline void SetArtifactId(const char* value) { m_artifactIdHasBeenSet = true; m_artifactId.assign(value); }
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline Artifact& WithArtifactId(const Aws::String& value) { SetArtifactId(value); return *this;}
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline Artifact& WithArtifactId(Aws::String&& value) { SetArtifactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique ID for the artifact. </p>
-     */
     inline Artifact& WithArtifactId(const char* value) { SetArtifactId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_artifactFileName;

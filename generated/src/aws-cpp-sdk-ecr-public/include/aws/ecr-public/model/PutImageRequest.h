@@ -34,299 +34,95 @@ namespace Model
     AWS_ECRPUBLIC_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The Amazon Web Services account ID, or registry alias, that's associated with
      * the public registry that contains the repository where the image is put. If you
      * do not specify a registry, the default public registry is assumed.</p>
      */
     inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline PutImageRequest& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline PutImageRequest& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID, or registry alias, that's associated with
-     * the public registry that contains the repository where the image is put. If you
-     * do not specify a registry, the default public registry is assumed.</p>
-     */
     inline PutImageRequest& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the repository where the image is put.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline PutImageRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline PutImageRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the repository where the image is put.</p>
-     */
     inline PutImageRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image manifest that corresponds to the image to be uploaded.</p>
      */
     inline const Aws::String& GetImageManifest() const{ return m_imageManifest; }
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline bool ImageManifestHasBeenSet() const { return m_imageManifestHasBeenSet; }
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline void SetImageManifest(const Aws::String& value) { m_imageManifestHasBeenSet = true; m_imageManifest = value; }
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline void SetImageManifest(Aws::String&& value) { m_imageManifestHasBeenSet = true; m_imageManifest = std::move(value); }
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline void SetImageManifest(const char* value) { m_imageManifestHasBeenSet = true; m_imageManifest.assign(value); }
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline PutImageRequest& WithImageManifest(const Aws::String& value) { SetImageManifest(value); return *this;}
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline PutImageRequest& WithImageManifest(Aws::String&& value) { SetImageManifest(std::move(value)); return *this;}
-
-    /**
-     * <p>The image manifest that corresponds to the image to be uploaded.</p>
-     */
     inline PutImageRequest& WithImageManifest(const char* value) { SetImageManifest(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The media type of the image manifest. If you push an image manifest that
      * doesn't contain the <code>mediaType</code> field, you must specify the
      * <code>imageManifestMediaType</code> in the request.</p>
      */
     inline const Aws::String& GetImageManifestMediaType() const{ return m_imageManifestMediaType; }
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline bool ImageManifestMediaTypeHasBeenSet() const { return m_imageManifestMediaTypeHasBeenSet; }
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline void SetImageManifestMediaType(const Aws::String& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = value; }
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline void SetImageManifestMediaType(Aws::String&& value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType = std::move(value); }
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline void SetImageManifestMediaType(const char* value) { m_imageManifestMediaTypeHasBeenSet = true; m_imageManifestMediaType.assign(value); }
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline PutImageRequest& WithImageManifestMediaType(const Aws::String& value) { SetImageManifestMediaType(value); return *this;}
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline PutImageRequest& WithImageManifestMediaType(Aws::String&& value) { SetImageManifestMediaType(std::move(value)); return *this;}
-
-    /**
-     * <p>The media type of the image manifest. If you push an image manifest that
-     * doesn't contain the <code>mediaType</code> field, you must specify the
-     * <code>imageManifestMediaType</code> in the request.</p>
-     */
     inline PutImageRequest& WithImageManifestMediaType(const char* value) { SetImageManifestMediaType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tag to associate with the image. This parameter is required for images
      * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
      * (OCI) formats.</p>
      */
     inline const Aws::String& GetImageTag() const{ return m_imageTag; }
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline void SetImageTag(const Aws::String& value) { m_imageTagHasBeenSet = true; m_imageTag = value; }
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline void SetImageTag(Aws::String&& value) { m_imageTagHasBeenSet = true; m_imageTag = std::move(value); }
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline void SetImageTag(const char* value) { m_imageTagHasBeenSet = true; m_imageTag.assign(value); }
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline PutImageRequest& WithImageTag(const Aws::String& value) { SetImageTag(value); return *this;}
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline PutImageRequest& WithImageTag(Aws::String&& value) { SetImageTag(std::move(value)); return *this;}
-
-    /**
-     * <p>The tag to associate with the image. This parameter is required for images
-     * that use the Docker Image Manifest V2 Schema 2 or Open Container Initiative
-     * (OCI) formats.</p>
-     */
     inline PutImageRequest& WithImageTag(const char* value) { SetImageTag(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The image digest of the image manifest that corresponds to the image.</p>
      */
     inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline PutImageRequest& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline PutImageRequest& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
-
-    /**
-     * <p>The image digest of the image manifest that corresponds to the image.</p>
-     */
     inline PutImageRequest& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryId;

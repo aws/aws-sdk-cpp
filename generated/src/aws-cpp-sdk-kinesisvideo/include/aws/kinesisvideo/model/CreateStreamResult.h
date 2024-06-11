@@ -32,63 +32,29 @@ namespace Model
     AWS_KINESISVIDEO_API CreateStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the stream.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream.</p>
-     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARN = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream.</p>
-     */
     inline void SetStreamARN(Aws::String&& value) { m_streamARN = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream.</p>
-     */
     inline void SetStreamARN(const char* value) { m_streamARN.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream.</p>
-     */
     inline CreateStreamResult& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream.</p>
-     */
     inline CreateStreamResult& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the stream.</p>
-     */
     inline CreateStreamResult& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_streamARN;

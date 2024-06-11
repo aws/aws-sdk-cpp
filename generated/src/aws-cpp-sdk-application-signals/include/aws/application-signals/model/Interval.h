@@ -39,79 +39,31 @@ namespace Model
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If the interval is a rolling interval, this structure contains the interval
      * specifications.</p>
      */
     inline const RollingInterval& GetRollingInterval() const{ return m_rollingInterval; }
-
-    /**
-     * <p>If the interval is a rolling interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline bool RollingIntervalHasBeenSet() const { return m_rollingIntervalHasBeenSet; }
-
-    /**
-     * <p>If the interval is a rolling interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline void SetRollingInterval(const RollingInterval& value) { m_rollingIntervalHasBeenSet = true; m_rollingInterval = value; }
-
-    /**
-     * <p>If the interval is a rolling interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline void SetRollingInterval(RollingInterval&& value) { m_rollingIntervalHasBeenSet = true; m_rollingInterval = std::move(value); }
-
-    /**
-     * <p>If the interval is a rolling interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline Interval& WithRollingInterval(const RollingInterval& value) { SetRollingInterval(value); return *this;}
-
-    /**
-     * <p>If the interval is a rolling interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline Interval& WithRollingInterval(RollingInterval&& value) { SetRollingInterval(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the interval is a calendar interval, this structure contains the interval
      * specifications.</p>
      */
     inline const CalendarInterval& GetCalendarInterval() const{ return m_calendarInterval; }
-
-    /**
-     * <p>If the interval is a calendar interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline bool CalendarIntervalHasBeenSet() const { return m_calendarIntervalHasBeenSet; }
-
-    /**
-     * <p>If the interval is a calendar interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline void SetCalendarInterval(const CalendarInterval& value) { m_calendarIntervalHasBeenSet = true; m_calendarInterval = value; }
-
-    /**
-     * <p>If the interval is a calendar interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline void SetCalendarInterval(CalendarInterval&& value) { m_calendarIntervalHasBeenSet = true; m_calendarInterval = std::move(value); }
-
-    /**
-     * <p>If the interval is a calendar interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline Interval& WithCalendarInterval(const CalendarInterval& value) { SetCalendarInterval(value); return *this;}
-
-    /**
-     * <p>If the interval is a calendar interval, this structure contains the interval
-     * specifications.</p>
-     */
     inline Interval& WithCalendarInterval(CalendarInterval&& value) { SetCalendarInterval(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     RollingInterval m_rollingInterval;

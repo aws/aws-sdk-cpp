@@ -34,128 +34,47 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The SIP media application ID.</p>
      */
     inline const Aws::String& GetSipMediaApplicationId() const{ return m_sipMediaApplicationId; }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline bool SipMediaApplicationIdHasBeenSet() const { return m_sipMediaApplicationIdHasBeenSet; }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline void SetSipMediaApplicationId(const Aws::String& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = value; }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline void SetSipMediaApplicationId(Aws::String&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::move(value); }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline void SetSipMediaApplicationId(const char* value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId.assign(value); }
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithSipMediaApplicationId(const Aws::String& value) { SetSipMediaApplicationId(value); return *this;}
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithSipMediaApplicationId(Aws::String&& value) { SetSipMediaApplicationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The SIP media application ID.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new name for the specified SIP media application.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The new name for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The new set of endpoints for the specified SIP media application.</p>
      */
     inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const{ return m_endpoints; }
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline void SetEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline void SetEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { SetEndpoints(value); return *this;}
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& WithEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& AddEndpoints(const SipMediaApplicationEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-
-    /**
-     * <p>The new set of endpoints for the specified SIP media application.</p>
-     */
     inline UpdateSipMediaApplicationRequest& AddEndpoints(SipMediaApplicationEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_sipMediaApplicationId;

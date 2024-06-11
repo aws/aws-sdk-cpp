@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The cell conditional formatting option for a table.</p>
      */
     inline const TableCellConditionalFormatting& GetCell() const{ return m_cell; }
-
-    /**
-     * <p>The cell conditional formatting option for a table.</p>
-     */
     inline bool CellHasBeenSet() const { return m_cellHasBeenSet; }
-
-    /**
-     * <p>The cell conditional formatting option for a table.</p>
-     */
     inline void SetCell(const TableCellConditionalFormatting& value) { m_cellHasBeenSet = true; m_cell = value; }
-
-    /**
-     * <p>The cell conditional formatting option for a table.</p>
-     */
     inline void SetCell(TableCellConditionalFormatting&& value) { m_cellHasBeenSet = true; m_cell = std::move(value); }
-
-    /**
-     * <p>The cell conditional formatting option for a table.</p>
-     */
     inline TableConditionalFormattingOption& WithCell(const TableCellConditionalFormatting& value) { SetCell(value); return *this;}
-
-    /**
-     * <p>The cell conditional formatting option for a table.</p>
-     */
     inline TableConditionalFormattingOption& WithCell(TableCellConditionalFormatting&& value) { SetCell(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The row conditional formatting option for a table.</p>
      */
     inline const TableRowConditionalFormatting& GetRow() const{ return m_row; }
-
-    /**
-     * <p>The row conditional formatting option for a table.</p>
-     */
     inline bool RowHasBeenSet() const { return m_rowHasBeenSet; }
-
-    /**
-     * <p>The row conditional formatting option for a table.</p>
-     */
     inline void SetRow(const TableRowConditionalFormatting& value) { m_rowHasBeenSet = true; m_row = value; }
-
-    /**
-     * <p>The row conditional formatting option for a table.</p>
-     */
     inline void SetRow(TableRowConditionalFormatting&& value) { m_rowHasBeenSet = true; m_row = std::move(value); }
-
-    /**
-     * <p>The row conditional formatting option for a table.</p>
-     */
     inline TableConditionalFormattingOption& WithRow(const TableRowConditionalFormatting& value) { SetRow(value); return *this;}
-
-    /**
-     * <p>The row conditional formatting option for a table.</p>
-     */
     inline TableConditionalFormattingOption& WithRow(TableRowConditionalFormatting&& value) { SetRow(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TableCellConditionalFormatting m_cell;

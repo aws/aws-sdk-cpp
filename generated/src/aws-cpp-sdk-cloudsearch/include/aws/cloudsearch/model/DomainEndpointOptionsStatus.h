@@ -41,67 +41,29 @@ namespace Model
     AWS_CLOUDSEARCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The domain endpoint options configured for the domain.</p>
      */
     inline const DomainEndpointOptions& GetOptions() const{ return m_options; }
-
-    /**
-     * <p>The domain endpoint options configured for the domain.</p>
-     */
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-
-    /**
-     * <p>The domain endpoint options configured for the domain.</p>
-     */
     inline void SetOptions(const DomainEndpointOptions& value) { m_optionsHasBeenSet = true; m_options = value; }
-
-    /**
-     * <p>The domain endpoint options configured for the domain.</p>
-     */
     inline void SetOptions(DomainEndpointOptions&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-
-    /**
-     * <p>The domain endpoint options configured for the domain.</p>
-     */
     inline DomainEndpointOptionsStatus& WithOptions(const DomainEndpointOptions& value) { SetOptions(value); return *this;}
-
-    /**
-     * <p>The domain endpoint options configured for the domain.</p>
-     */
     inline DomainEndpointOptionsStatus& WithOptions(DomainEndpointOptions&& value) { SetOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the configured domain endpoint options.</p>
      */
     inline const OptionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the configured domain endpoint options.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the configured domain endpoint options.</p>
-     */
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the configured domain endpoint options.</p>
-     */
     inline void SetStatus(OptionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the configured domain endpoint options.</p>
-     */
     inline DomainEndpointOptionsStatus& WithStatus(const OptionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the configured domain endpoint options.</p>
-     */
     inline DomainEndpointOptionsStatus& WithStatus(OptionStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DomainEndpointOptions m_options;

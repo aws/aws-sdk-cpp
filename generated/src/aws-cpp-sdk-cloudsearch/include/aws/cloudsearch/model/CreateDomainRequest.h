@@ -41,62 +41,21 @@ namespace Model
 
   public:
 
+    ///@{
     /**
      * <p>A name for the domain you are creating. Allowed characters are a-z
      * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
      * or number and be at least 3 and no more than 28 characters long.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline CreateDomainRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline CreateDomainRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the domain you are creating. Allowed characters are a-z
-     * (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter
-     * or number and be at least 3 and no more than 28 characters long.</p>
-     */
     inline CreateDomainRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

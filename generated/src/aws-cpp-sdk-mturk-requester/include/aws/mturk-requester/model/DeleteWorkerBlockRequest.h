@@ -34,95 +34,34 @@ namespace Model
     AWS_MTURK_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the Worker to unblock.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline DeleteWorkerBlockRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline DeleteWorkerBlockRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Worker to unblock.</p>
-     */
     inline DeleteWorkerBlockRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message that explains the reason for unblocking the Worker. The Worker does
      * not see this message.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline DeleteWorkerBlockRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline DeleteWorkerBlockRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-
-    /**
-     * <p>A message that explains the reason for unblocking the Worker. The Worker does
-     * not see this message.</p>
-     */
     inline DeleteWorkerBlockRequest& WithReason(const char* value) { SetReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_workerId;

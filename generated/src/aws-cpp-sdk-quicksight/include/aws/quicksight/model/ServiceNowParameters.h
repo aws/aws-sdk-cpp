@@ -37,46 +37,19 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>URL of the base site.</p>
      */
     inline const Aws::String& GetSiteBaseUrl() const{ return m_siteBaseUrl; }
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline bool SiteBaseUrlHasBeenSet() const { return m_siteBaseUrlHasBeenSet; }
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline void SetSiteBaseUrl(const Aws::String& value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl = value; }
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline void SetSiteBaseUrl(Aws::String&& value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl = std::move(value); }
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline void SetSiteBaseUrl(const char* value) { m_siteBaseUrlHasBeenSet = true; m_siteBaseUrl.assign(value); }
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline ServiceNowParameters& WithSiteBaseUrl(const Aws::String& value) { SetSiteBaseUrl(value); return *this;}
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline ServiceNowParameters& WithSiteBaseUrl(Aws::String&& value) { SetSiteBaseUrl(std::move(value)); return *this;}
-
-    /**
-     * <p>URL of the base site.</p>
-     */
     inline ServiceNowParameters& WithSiteBaseUrl(const char* value) { SetSiteBaseUrl(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_siteBaseUrl;

@@ -39,125 +39,52 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The device position inferred by the provided position, IP address, cellular
      * signals, and Wi-Fi- access points.</p>
      */
     inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
-
-    /**
-     * <p>The device position inferred by the provided position, IP address, cellular
-     * signals, and Wi-Fi- access points.</p>
-     */
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-
-    /**
-     * <p>The device position inferred by the provided position, IP address, cellular
-     * signals, and Wi-Fi- access points.</p>
-     */
     inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-
-    /**
-     * <p>The device position inferred by the provided position, IP address, cellular
-     * signals, and Wi-Fi- access points.</p>
-     */
     inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-
-    /**
-     * <p>The device position inferred by the provided position, IP address, cellular
-     * signals, and Wi-Fi- access points.</p>
-     */
     inline InferredState& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-
-    /**
-     * <p>The device position inferred by the provided position, IP address, cellular
-     * signals, and Wi-Fi- access points.</p>
-     */
     inline InferredState& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-
-    /**
-     * <p>The device position inferred by the provided position, IP address, cellular
-     * signals, and Wi-Fi- access points.</p>
-     */
     inline InferredState& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The level of certainty of the inferred position.</p>
      */
     inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
-
-    /**
-     * <p>The level of certainty of the inferred position.</p>
-     */
     inline bool AccuracyHasBeenSet() const { return m_accuracyHasBeenSet; }
-
-    /**
-     * <p>The level of certainty of the inferred position.</p>
-     */
     inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracyHasBeenSet = true; m_accuracy = value; }
-
-    /**
-     * <p>The level of certainty of the inferred position.</p>
-     */
     inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::move(value); }
-
-    /**
-     * <p>The level of certainty of the inferred position.</p>
-     */
     inline InferredState& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
-
-    /**
-     * <p>The level of certainty of the inferred position.</p>
-     */
     inline InferredState& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The distance between the inferred position and the device's self-reported
      * position.</p>
      */
     inline double GetDeviationDistance() const{ return m_deviationDistance; }
-
-    /**
-     * <p>The distance between the inferred position and the device's self-reported
-     * position.</p>
-     */
     inline bool DeviationDistanceHasBeenSet() const { return m_deviationDistanceHasBeenSet; }
-
-    /**
-     * <p>The distance between the inferred position and the device's self-reported
-     * position.</p>
-     */
     inline void SetDeviationDistance(double value) { m_deviationDistanceHasBeenSet = true; m_deviationDistance = value; }
-
-    /**
-     * <p>The distance between the inferred position and the device's self-reported
-     * position.</p>
-     */
     inline InferredState& WithDeviationDistance(double value) { SetDeviationDistance(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates if a proxy was used.</p>
      */
     inline bool GetProxyDetected() const{ return m_proxyDetected; }
-
-    /**
-     * <p>Indicates if a proxy was used.</p>
-     */
     inline bool ProxyDetectedHasBeenSet() const { return m_proxyDetectedHasBeenSet; }
-
-    /**
-     * <p>Indicates if a proxy was used.</p>
-     */
     inline void SetProxyDetected(bool value) { m_proxyDetectedHasBeenSet = true; m_proxyDetected = value; }
-
-    /**
-     * <p>Indicates if a proxy was used.</p>
-     */
     inline InferredState& WithProxyDetected(bool value) { SetProxyDetected(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<double> m_position;

@@ -38,46 +38,19 @@ namespace Model
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The log types.</p>
      */
     inline const Aws::Vector<LogType>& GetLogTypes() const{ return m_logTypes; }
-
-    /**
-     * <p>The log types.</p>
-     */
     inline bool LogTypesHasBeenSet() const { return m_logTypesHasBeenSet; }
-
-    /**
-     * <p>The log types.</p>
-     */
     inline void SetLogTypes(const Aws::Vector<LogType>& value) { m_logTypesHasBeenSet = true; m_logTypes = value; }
-
-    /**
-     * <p>The log types.</p>
-     */
     inline void SetLogTypes(Aws::Vector<LogType>&& value) { m_logTypesHasBeenSet = true; m_logTypes = std::move(value); }
-
-    /**
-     * <p>The log types.</p>
-     */
     inline LogConfigurationForChannel& WithLogTypes(const Aws::Vector<LogType>& value) { SetLogTypes(value); return *this;}
-
-    /**
-     * <p>The log types.</p>
-     */
     inline LogConfigurationForChannel& WithLogTypes(Aws::Vector<LogType>&& value) { SetLogTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The log types.</p>
-     */
     inline LogConfigurationForChannel& AddLogTypes(const LogType& value) { m_logTypesHasBeenSet = true; m_logTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The log types.</p>
-     */
     inline LogConfigurationForChannel& AddLogTypes(LogType&& value) { m_logTypesHasBeenSet = true; m_logTypes.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<LogType> m_logTypes;

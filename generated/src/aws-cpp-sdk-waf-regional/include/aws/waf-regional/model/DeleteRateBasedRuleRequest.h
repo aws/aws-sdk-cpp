@@ -34,103 +34,35 @@ namespace Model
     AWS_WAFREGIONAL_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
      * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
      * <a>ListRateBasedRules</a>.</p>
      */
     inline const Aws::String& GetRuleId() const{ return m_ruleId; }
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline DeleteRateBasedRuleRequest& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline DeleteRateBasedRuleRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to delete.
-     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
-     * <a>ListRateBasedRules</a>.</p>
-     */
     inline DeleteRateBasedRuleRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline DeleteRateBasedRuleRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline DeleteRateBasedRuleRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
-     */
     inline DeleteRateBasedRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleId;

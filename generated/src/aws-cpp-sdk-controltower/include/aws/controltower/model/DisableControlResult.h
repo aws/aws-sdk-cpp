@@ -32,70 +32,30 @@ namespace Model
     AWS_CONTROLTOWER_API DisableControlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID of the asynchronous operation, which is used to track status. The
      * operation is available for 90 days.</p>
      */
     inline const Aws::String& GetOperationIdentifier() const{ return m_operationIdentifier; }
-
-    /**
-     * <p>The ID of the asynchronous operation, which is used to track status. The
-     * operation is available for 90 days.</p>
-     */
     inline void SetOperationIdentifier(const Aws::String& value) { m_operationIdentifier = value; }
-
-    /**
-     * <p>The ID of the asynchronous operation, which is used to track status. The
-     * operation is available for 90 days.</p>
-     */
     inline void SetOperationIdentifier(Aws::String&& value) { m_operationIdentifier = std::move(value); }
-
-    /**
-     * <p>The ID of the asynchronous operation, which is used to track status. The
-     * operation is available for 90 days.</p>
-     */
     inline void SetOperationIdentifier(const char* value) { m_operationIdentifier.assign(value); }
-
-    /**
-     * <p>The ID of the asynchronous operation, which is used to track status. The
-     * operation is available for 90 days.</p>
-     */
     inline DisableControlResult& WithOperationIdentifier(const Aws::String& value) { SetOperationIdentifier(value); return *this;}
-
-    /**
-     * <p>The ID of the asynchronous operation, which is used to track status. The
-     * operation is available for 90 days.</p>
-     */
     inline DisableControlResult& WithOperationIdentifier(Aws::String&& value) { SetOperationIdentifier(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the asynchronous operation, which is used to track status. The
-     * operation is available for 90 days.</p>
-     */
     inline DisableControlResult& WithOperationIdentifier(const char* value) { SetOperationIdentifier(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DisableControlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DisableControlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DisableControlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationIdentifier;

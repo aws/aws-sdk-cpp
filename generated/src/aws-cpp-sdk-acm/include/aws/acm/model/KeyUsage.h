@@ -38,36 +38,17 @@ namespace Model
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A string value that contains a Key Usage extension name.</p>
      */
     inline const KeyUsageName& GetName() const{ return m_name; }
-
-    /**
-     * <p>A string value that contains a Key Usage extension name.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A string value that contains a Key Usage extension name.</p>
-     */
     inline void SetName(const KeyUsageName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A string value that contains a Key Usage extension name.</p>
-     */
     inline void SetName(KeyUsageName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A string value that contains a Key Usage extension name.</p>
-     */
     inline KeyUsage& WithName(const KeyUsageName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A string value that contains a Key Usage extension name.</p>
-     */
     inline KeyUsage& WithName(KeyUsageName&& value) { SetName(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     KeyUsageName m_name;

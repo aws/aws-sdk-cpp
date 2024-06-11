@@ -35,175 +35,61 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The data source type of an assessment to be started.</p>
      */
     inline const AssessmentDataSourceType& GetAssessmentDataSourceType() const{ return m_assessmentDataSourceType; }
-
-    /**
-     * <p>The data source type of an assessment to be started.</p>
-     */
     inline bool AssessmentDataSourceTypeHasBeenSet() const { return m_assessmentDataSourceTypeHasBeenSet; }
-
-    /**
-     * <p>The data source type of an assessment to be started.</p>
-     */
     inline void SetAssessmentDataSourceType(const AssessmentDataSourceType& value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = value; }
-
-    /**
-     * <p>The data source type of an assessment to be started.</p>
-     */
     inline void SetAssessmentDataSourceType(AssessmentDataSourceType&& value) { m_assessmentDataSourceTypeHasBeenSet = true; m_assessmentDataSourceType = std::move(value); }
-
-    /**
-     * <p>The data source type of an assessment to be started.</p>
-     */
     inline StartAssessmentRequest& WithAssessmentDataSourceType(const AssessmentDataSourceType& value) { SetAssessmentDataSourceType(value); return *this;}
-
-    /**
-     * <p>The data source type of an assessment to be started.</p>
-     */
     inline StartAssessmentRequest& WithAssessmentDataSourceType(AssessmentDataSourceType&& value) { SetAssessmentDataSourceType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>List of criteria for assessment.</p>
      */
     inline const Aws::Vector<AssessmentTarget>& GetAssessmentTargets() const{ return m_assessmentTargets; }
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline bool AssessmentTargetsHasBeenSet() const { return m_assessmentTargetsHasBeenSet; }
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline void SetAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = value; }
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline void SetAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets = std::move(value); }
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline StartAssessmentRequest& WithAssessmentTargets(const Aws::Vector<AssessmentTarget>& value) { SetAssessmentTargets(value); return *this;}
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline StartAssessmentRequest& WithAssessmentTargets(Aws::Vector<AssessmentTarget>&& value) { SetAssessmentTargets(std::move(value)); return *this;}
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline StartAssessmentRequest& AddAssessmentTargets(const AssessmentTarget& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.push_back(value); return *this; }
-
-    /**
-     * <p>List of criteria for assessment.</p>
-     */
     inline StartAssessmentRequest& AddAssessmentTargets(AssessmentTarget&& value) { m_assessmentTargetsHasBeenSet = true; m_assessmentTargets.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> The S3 bucket used by the collectors to send analysis data to the service.
      * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
      */
     inline const Aws::String& GetS3bucketForAnalysisData() const{ return m_s3bucketForAnalysisData; }
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline bool S3bucketForAnalysisDataHasBeenSet() const { return m_s3bucketForAnalysisDataHasBeenSet; }
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline void SetS3bucketForAnalysisData(const Aws::String& value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData = value; }
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline void SetS3bucketForAnalysisData(Aws::String&& value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData = std::move(value); }
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline void SetS3bucketForAnalysisData(const char* value) { m_s3bucketForAnalysisDataHasBeenSet = true; m_s3bucketForAnalysisData.assign(value); }
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline StartAssessmentRequest& WithS3bucketForAnalysisData(const Aws::String& value) { SetS3bucketForAnalysisData(value); return *this;}
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline StartAssessmentRequest& WithS3bucketForAnalysisData(Aws::String&& value) { SetS3bucketForAnalysisData(std::move(value)); return *this;}
-
-    /**
-     * <p> The S3 bucket used by the collectors to send analysis data to the service.
-     * The bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline StartAssessmentRequest& WithS3bucketForAnalysisData(const char* value) { SetS3bucketForAnalysisData(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The S3 bucket where all the reports generated by the service are stored. The
      * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
      */
     inline const Aws::String& GetS3bucketForReportData() const{ return m_s3bucketForReportData; }
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline bool S3bucketForReportDataHasBeenSet() const { return m_s3bucketForReportDataHasBeenSet; }
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline void SetS3bucketForReportData(const Aws::String& value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData = value; }
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline void SetS3bucketForReportData(Aws::String&& value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData = std::move(value); }
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline void SetS3bucketForReportData(const char* value) { m_s3bucketForReportDataHasBeenSet = true; m_s3bucketForReportData.assign(value); }
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline StartAssessmentRequest& WithS3bucketForReportData(const Aws::String& value) { SetS3bucketForReportData(value); return *this;}
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline StartAssessmentRequest& WithS3bucketForReportData(Aws::String&& value) { SetS3bucketForReportData(std::move(value)); return *this;}
-
-    /**
-     * <p> The S3 bucket where all the reports generated by the service are stored. The
-     * bucket name must begin with <code>migrationhub-strategy-</code>. </p>
-     */
     inline StartAssessmentRequest& WithS3bucketForReportData(const char* value) { SetS3bucketForReportData(value); return *this;}
-
+    ///@}
   private:
 
     AssessmentDataSourceType m_assessmentDataSourceType;

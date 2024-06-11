@@ -34,6 +34,7 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The service principal name of the Amazon Web Services service for which you
      * want to disable integration with your organization. This is typically in the
@@ -41,63 +42,14 @@ namespace Model
      * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
      */
     inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline DisableAWSServiceAccessRequest& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline DisableAWSServiceAccessRequest& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-
-    /**
-     * <p>The service principal name of the Amazon Web Services service for which you
-     * want to disable integration with your organization. This is typically in the
-     * form of a URL, such as <code>
-     * <i>service-abbreviation</i>.amazonaws.com</code>.</p>
-     */
     inline DisableAWSServiceAccessRequest& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_servicePrincipal;

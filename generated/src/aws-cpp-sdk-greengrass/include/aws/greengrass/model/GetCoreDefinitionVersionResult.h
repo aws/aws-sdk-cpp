@@ -33,247 +33,94 @@ namespace Model
     AWS_GREENGRASS_API GetCoreDefinitionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * The ARN of the core definition version.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * The ARN of the core definition version.
-     */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * The ARN of the core definition version.
-     */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * The ARN of the core definition version.
-     */
     inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * The ARN of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * The ARN of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * The ARN of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The time, in milliseconds since the epoch, when the core definition version was
      * created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
-
-    /**
-     * The time, in milliseconds since the epoch, when the core definition version was
-     * created.
-     */
     inline void SetCreationTimestamp(const Aws::String& value) { m_creationTimestamp = value; }
-
-    /**
-     * The time, in milliseconds since the epoch, when the core definition version was
-     * created.
-     */
     inline void SetCreationTimestamp(Aws::String&& value) { m_creationTimestamp = std::move(value); }
-
-    /**
-     * The time, in milliseconds since the epoch, when the core definition version was
-     * created.
-     */
     inline void SetCreationTimestamp(const char* value) { m_creationTimestamp.assign(value); }
-
-    /**
-     * The time, in milliseconds since the epoch, when the core definition version was
-     * created.
-     */
     inline GetCoreDefinitionVersionResult& WithCreationTimestamp(const Aws::String& value) { SetCreationTimestamp(value); return *this;}
-
-    /**
-     * The time, in milliseconds since the epoch, when the core definition version was
-     * created.
-     */
     inline GetCoreDefinitionVersionResult& WithCreationTimestamp(Aws::String&& value) { SetCreationTimestamp(std::move(value)); return *this;}
-
-    /**
-     * The time, in milliseconds since the epoch, when the core definition version was
-     * created.
-     */
     inline GetCoreDefinitionVersionResult& WithCreationTimestamp(const char* value) { SetCreationTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * Information about the core definition version.
      */
     inline const CoreDefinitionVersion& GetDefinition() const{ return m_definition; }
-
-    /**
-     * Information about the core definition version.
-     */
     inline void SetDefinition(const CoreDefinitionVersion& value) { m_definition = value; }
-
-    /**
-     * Information about the core definition version.
-     */
     inline void SetDefinition(CoreDefinitionVersion&& value) { m_definition = std::move(value); }
-
-    /**
-     * Information about the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithDefinition(const CoreDefinitionVersion& value) { SetDefinition(value); return *this;}
-
-    /**
-     * Information about the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithDefinition(CoreDefinitionVersion&& value) { SetDefinition(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the core definition version.
      */
     inline const Aws::String& GetId() const{ return m_id; }
-
-    /**
-     * The ID of the core definition version.
-     */
     inline void SetId(const Aws::String& value) { m_id = value; }
-
-    /**
-     * The ID of the core definition version.
-     */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-
-    /**
-     * The ID of the core definition version.
-     */
     inline void SetId(const char* value) { m_id.assign(value); }
-
-    /**
-     * The ID of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-
-    /**
-     * The ID of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithId(const char* value) { SetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The token for the next set of results, or ''null'' if there are no additional
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline GetCoreDefinitionVersionResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline GetCoreDefinitionVersionResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * The token for the next set of results, or ''null'' if there are no additional
-     * results.
-     */
     inline GetCoreDefinitionVersionResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The version of the core definition version.
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
-
-    /**
-     * The version of the core definition version.
-     */
     inline void SetVersion(const Aws::String& value) { m_version = value; }
-
-    /**
-     * The version of the core definition version.
-     */
     inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-
-    /**
-     * The version of the core definition version.
-     */
     inline void SetVersion(const char* value) { m_version.assign(value); }
-
-    /**
-     * The version of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-
-    /**
-     * The version of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-
-    /**
-     * The version of the core definition version.
-     */
     inline GetCoreDefinitionVersionResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCoreDefinitionVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCoreDefinitionVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCoreDefinitionVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

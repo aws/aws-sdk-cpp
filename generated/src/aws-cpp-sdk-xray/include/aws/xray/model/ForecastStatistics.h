@@ -37,47 +37,25 @@ namespace Model
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The upper limit of fault counts for a service.</p>
      */
     inline long long GetFaultCountHigh() const{ return m_faultCountHigh; }
-
-    /**
-     * <p>The upper limit of fault counts for a service.</p>
-     */
     inline bool FaultCountHighHasBeenSet() const { return m_faultCountHighHasBeenSet; }
-
-    /**
-     * <p>The upper limit of fault counts for a service.</p>
-     */
     inline void SetFaultCountHigh(long long value) { m_faultCountHighHasBeenSet = true; m_faultCountHigh = value; }
-
-    /**
-     * <p>The upper limit of fault counts for a service.</p>
-     */
     inline ForecastStatistics& WithFaultCountHigh(long long value) { SetFaultCountHigh(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The lower limit of fault counts for a service.</p>
      */
     inline long long GetFaultCountLow() const{ return m_faultCountLow; }
-
-    /**
-     * <p>The lower limit of fault counts for a service.</p>
-     */
     inline bool FaultCountLowHasBeenSet() const { return m_faultCountLowHasBeenSet; }
-
-    /**
-     * <p>The lower limit of fault counts for a service.</p>
-     */
     inline void SetFaultCountLow(long long value) { m_faultCountLowHasBeenSet = true; m_faultCountLow = value; }
-
-    /**
-     * <p>The lower limit of fault counts for a service.</p>
-     */
     inline ForecastStatistics& WithFaultCountLow(long long value) { SetFaultCountLow(value); return *this;}
-
+    ///@}
   private:
 
     long long m_faultCountHigh;

@@ -39,42 +39,18 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The location that holds the data required to specify an Amazon Data Analytics
      * application.</p>
      */
     inline const S3ContentBaseLocationDescription& GetS3ContentLocationDescription() const{ return m_s3ContentLocationDescription; }
-
-    /**
-     * <p>The location that holds the data required to specify an Amazon Data Analytics
-     * application.</p>
-     */
     inline bool S3ContentLocationDescriptionHasBeenSet() const { return m_s3ContentLocationDescriptionHasBeenSet; }
-
-    /**
-     * <p>The location that holds the data required to specify an Amazon Data Analytics
-     * application.</p>
-     */
     inline void SetS3ContentLocationDescription(const S3ContentBaseLocationDescription& value) { m_s3ContentLocationDescriptionHasBeenSet = true; m_s3ContentLocationDescription = value; }
-
-    /**
-     * <p>The location that holds the data required to specify an Amazon Data Analytics
-     * application.</p>
-     */
     inline void SetS3ContentLocationDescription(S3ContentBaseLocationDescription&& value) { m_s3ContentLocationDescriptionHasBeenSet = true; m_s3ContentLocationDescription = std::move(value); }
-
-    /**
-     * <p>The location that holds the data required to specify an Amazon Data Analytics
-     * application.</p>
-     */
     inline DeployAsApplicationConfigurationDescription& WithS3ContentLocationDescription(const S3ContentBaseLocationDescription& value) { SetS3ContentLocationDescription(value); return *this;}
-
-    /**
-     * <p>The location that holds the data required to specify an Amazon Data Analytics
-     * application.</p>
-     */
     inline DeployAsApplicationConfigurationDescription& WithS3ContentLocationDescription(S3ContentBaseLocationDescription&& value) { SetS3ContentLocationDescription(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ContentBaseLocationDescription m_s3ContentLocationDescription;

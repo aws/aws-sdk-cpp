@@ -33,61 +33,23 @@ namespace Model
     AWS_SECURITYHUB_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>A list of custom action target ARNs for the custom action targets to
      * retrieve.</p>
      */
     inline const Aws::Vector<Aws::String>& GetActionTargetArns() const{ return m_actionTargetArns; }
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline bool ActionTargetArnsHasBeenSet() const { return m_actionTargetArnsHasBeenSet; }
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline void SetActionTargetArns(const Aws::Vector<Aws::String>& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns = value; }
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline void SetActionTargetArns(Aws::Vector<Aws::String>&& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns = std::move(value); }
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline DescribeActionTargetsRequest& WithActionTargetArns(const Aws::Vector<Aws::String>& value) { SetActionTargetArns(value); return *this;}
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline DescribeActionTargetsRequest& WithActionTargetArns(Aws::Vector<Aws::String>&& value) { SetActionTargetArns(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline DescribeActionTargetsRequest& AddActionTargetArns(const Aws::String& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.push_back(value); return *this; }
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline DescribeActionTargetsRequest& AddActionTargetArns(Aws::String&& value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>A list of custom action target ARNs for the custom action targets to
-     * retrieve.</p>
-     */
     inline DescribeActionTargetsRequest& AddActionTargetArns(const char* value) { m_actionTargetArnsHasBeenSet = true; m_actionTargetArns.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token that is required for pagination. On your first call to the
      * <code>DescribeActionTargets</code> operation, set the value of this parameter to
@@ -96,91 +58,24 @@ namespace Model
      * previous response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline DescribeActionTargetsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline DescribeActionTargetsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token that is required for pagination. On your first call to the
-     * <code>DescribeActionTargets</code> operation, set the value of this parameter to
-     * <code>NULL</code>.</p> <p>For subsequent calls to the operation, to continue
-     * listing data, set the value of this parameter to the value returned from the
-     * previous response.</p>
-     */
     inline DescribeActionTargetsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of results to return.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of results to return.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of results to return.</p>
-     */
     inline DescribeActionTargetsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_actionTargetArns;

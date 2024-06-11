@@ -39,73 +39,30 @@ namespace Model
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Lake Formation related configuration inputs for the security
      * configuration.</p>
      */
     inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
-
-    /**
-     * <p>Lake Formation related configuration inputs for the security
-     * configuration.</p>
-     */
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
-
-    /**
-     * <p>Lake Formation related configuration inputs for the security
-     * configuration.</p>
-     */
     inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
-
-    /**
-     * <p>Lake Formation related configuration inputs for the security
-     * configuration.</p>
-     */
     inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
-
-    /**
-     * <p>Lake Formation related configuration inputs for the security
-     * configuration.</p>
-     */
     inline AuthorizationConfiguration& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
-
-    /**
-     * <p>Lake Formation related configuration inputs for the security
-     * configuration.</p>
-     */
     inline AuthorizationConfiguration& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Encryption-related configuration input for the security configuration.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
-
-    /**
-     * <p>Encryption-related configuration input for the security configuration.</p>
-     */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-
-    /**
-     * <p>Encryption-related configuration input for the security configuration.</p>
-     */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-
-    /**
-     * <p>Encryption-related configuration input for the security configuration.</p>
-     */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-
-    /**
-     * <p>Encryption-related configuration input for the security configuration.</p>
-     */
     inline AuthorizationConfiguration& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-
-    /**
-     * <p>Encryption-related configuration input for the security configuration.</p>
-     */
     inline AuthorizationConfiguration& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LakeFormationConfiguration m_lakeFormationConfiguration;

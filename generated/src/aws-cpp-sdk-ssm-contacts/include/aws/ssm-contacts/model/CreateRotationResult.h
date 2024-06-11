@@ -32,63 +32,29 @@ namespace Model
     AWS_SSMCONTACTS_API CreateRotationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
      */
     inline const Aws::String& GetRotationArn() const{ return m_rotationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-     */
     inline void SetRotationArn(const Aws::String& value) { m_rotationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-     */
     inline void SetRotationArn(Aws::String&& value) { m_rotationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-     */
     inline void SetRotationArn(const char* value) { m_rotationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-     */
     inline CreateRotationResult& WithRotationArn(const Aws::String& value) { SetRotationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-     */
     inline CreateRotationResult& WithRotationArn(Aws::String&& value) { SetRotationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the created rotation.</p>
-     */
     inline CreateRotationResult& WithRotationArn(const char* value) { SetRotationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRotationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRotationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRotationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_rotationArn;

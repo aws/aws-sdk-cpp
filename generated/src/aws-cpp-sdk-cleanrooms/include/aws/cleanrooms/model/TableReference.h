@@ -38,42 +38,18 @@ namespace Model
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
     inline const GlueTableReference& GetGlue() const{ return m_glue; }
-
-    /**
-     * <p>If present, a reference to the Glue table referred to by this table
-     * reference.</p>
-     */
     inline bool GlueHasBeenSet() const { return m_glueHasBeenSet; }
-
-    /**
-     * <p>If present, a reference to the Glue table referred to by this table
-     * reference.</p>
-     */
     inline void SetGlue(const GlueTableReference& value) { m_glueHasBeenSet = true; m_glue = value; }
-
-    /**
-     * <p>If present, a reference to the Glue table referred to by this table
-     * reference.</p>
-     */
     inline void SetGlue(GlueTableReference&& value) { m_glueHasBeenSet = true; m_glue = std::move(value); }
-
-    /**
-     * <p>If present, a reference to the Glue table referred to by this table
-     * reference.</p>
-     */
     inline TableReference& WithGlue(const GlueTableReference& value) { SetGlue(value); return *this;}
-
-    /**
-     * <p>If present, a reference to the Glue table referred to by this table
-     * reference.</p>
-     */
     inline TableReference& WithGlue(GlueTableReference&& value) { SetGlue(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueTableReference m_glue;

@@ -40,35 +40,19 @@ namespace Model
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>When <code>true</code>, an observability configuration resource is associated
      * with the service, and an <code>ObservabilityConfigurationArn</code> is
      * specified.</p>
      */
     inline bool GetObservabilityEnabled() const{ return m_observabilityEnabled; }
-
-    /**
-     * <p>When <code>true</code>, an observability configuration resource is associated
-     * with the service, and an <code>ObservabilityConfigurationArn</code> is
-     * specified.</p>
-     */
     inline bool ObservabilityEnabledHasBeenSet() const { return m_observabilityEnabledHasBeenSet; }
-
-    /**
-     * <p>When <code>true</code>, an observability configuration resource is associated
-     * with the service, and an <code>ObservabilityConfigurationArn</code> is
-     * specified.</p>
-     */
     inline void SetObservabilityEnabled(bool value) { m_observabilityEnabledHasBeenSet = true; m_observabilityEnabled = value; }
-
-    /**
-     * <p>When <code>true</code>, an observability configuration resource is associated
-     * with the service, and an <code>ObservabilityConfigurationArn</code> is
-     * specified.</p>
-     */
     inline ServiceObservabilityConfiguration& WithObservabilityEnabled(bool value) { SetObservabilityEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the observability configuration that is
      * associated with the service. Specified only when
@@ -80,91 +64,14 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetObservabilityConfigurationArn() const{ return m_observabilityConfigurationArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline bool ObservabilityConfigurationArnHasBeenSet() const { return m_observabilityConfigurationArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline void SetObservabilityConfigurationArn(const Aws::String& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline void SetObservabilityConfigurationArn(Aws::String&& value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline void SetObservabilityConfigurationArn(const char* value) { m_observabilityConfigurationArnHasBeenSet = true; m_observabilityConfigurationArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(const Aws::String& value) { SetObservabilityConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(Aws::String&& value) { SetObservabilityConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the observability configuration that is
-     * associated with the service. Specified only when
-     * <code>ObservabilityEnabled</code> is <code>true</code>.</p> <p>Specify an ARN
-     * with a name and a revision number to associate that revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing/3</code>
-     * </p> <p>Specify just the name to associate the latest revision. For example:
-     * <code>arn:aws:apprunner:us-east-1:123456789012:observabilityconfiguration/xray-tracing</code>
-     * </p>
-     */
     inline ServiceObservabilityConfiguration& WithObservabilityConfigurationArn(const char* value) { SetObservabilityConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     bool m_observabilityEnabled;

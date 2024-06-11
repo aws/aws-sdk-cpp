@@ -36,51 +36,26 @@ namespace Model
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of storage space, in bytes, that's being used by deployment
      * packages and layer archives.</p>
      */
     inline long long GetTotalCodeSize() const{ return m_totalCodeSize; }
-
-    /**
-     * <p>The amount of storage space, in bytes, that's being used by deployment
-     * packages and layer archives.</p>
-     */
     inline bool TotalCodeSizeHasBeenSet() const { return m_totalCodeSizeHasBeenSet; }
-
-    /**
-     * <p>The amount of storage space, in bytes, that's being used by deployment
-     * packages and layer archives.</p>
-     */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
-
-    /**
-     * <p>The amount of storage space, in bytes, that's being used by deployment
-     * packages and layer archives.</p>
-     */
     inline AccountUsage& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of Lambda functions.</p>
      */
     inline long long GetFunctionCount() const{ return m_functionCount; }
-
-    /**
-     * <p>The number of Lambda functions.</p>
-     */
     inline bool FunctionCountHasBeenSet() const { return m_functionCountHasBeenSet; }
-
-    /**
-     * <p>The number of Lambda functions.</p>
-     */
     inline void SetFunctionCount(long long value) { m_functionCountHasBeenSet = true; m_functionCount = value; }
-
-    /**
-     * <p>The number of Lambda functions.</p>
-     */
     inline AccountUsage& WithFunctionCount(long long value) { SetFunctionCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_totalCodeSize;

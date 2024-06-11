@@ -41,70 +41,30 @@ namespace Model
     AWS_OPENSEARCHSERVICE_API ListDomainNamesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The names of all OpenSearch Service domains owned by the current user and
      * their respective engine types.</p>
      */
     inline const Aws::Vector<DomainInfo>& GetDomainNames() const{ return m_domainNames; }
-
-    /**
-     * <p>The names of all OpenSearch Service domains owned by the current user and
-     * their respective engine types.</p>
-     */
     inline void SetDomainNames(const Aws::Vector<DomainInfo>& value) { m_domainNames = value; }
-
-    /**
-     * <p>The names of all OpenSearch Service domains owned by the current user and
-     * their respective engine types.</p>
-     */
     inline void SetDomainNames(Aws::Vector<DomainInfo>&& value) { m_domainNames = std::move(value); }
-
-    /**
-     * <p>The names of all OpenSearch Service domains owned by the current user and
-     * their respective engine types.</p>
-     */
     inline ListDomainNamesResult& WithDomainNames(const Aws::Vector<DomainInfo>& value) { SetDomainNames(value); return *this;}
-
-    /**
-     * <p>The names of all OpenSearch Service domains owned by the current user and
-     * their respective engine types.</p>
-     */
     inline ListDomainNamesResult& WithDomainNames(Aws::Vector<DomainInfo>&& value) { SetDomainNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of all OpenSearch Service domains owned by the current user and
-     * their respective engine types.</p>
-     */
     inline ListDomainNamesResult& AddDomainNames(const DomainInfo& value) { m_domainNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of all OpenSearch Service domains owned by the current user and
-     * their respective engine types.</p>
-     */
     inline ListDomainNamesResult& AddDomainNames(DomainInfo&& value) { m_domainNames.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDomainNamesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDomainNamesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDomainNamesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DomainInfo> m_domainNames;

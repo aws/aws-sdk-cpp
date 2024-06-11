@@ -37,46 +37,19 @@ namespace Model
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An API key for an application.</p>
      */
     inline const Aws::String& GetApiKey() const{ return m_apiKey; }
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline ApiKeyCredential& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline ApiKeyCredential& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-
-    /**
-     * <p>An API key for an application.</p>
-     */
     inline ApiKeyCredential& WithApiKey(const char* value) { SetApiKey(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_apiKey;

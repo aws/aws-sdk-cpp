@@ -34,54 +34,20 @@ namespace Model
     AWS_SERVICECATALOG_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The token for the portfolio share operation. This token is returned either by
      * CreatePortfolioShare or by DeletePortfolioShare.</p>
      */
     inline const Aws::String& GetPortfolioShareToken() const{ return m_portfolioShareToken; }
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline bool PortfolioShareTokenHasBeenSet() const { return m_portfolioShareTokenHasBeenSet; }
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline void SetPortfolioShareToken(const Aws::String& value) { m_portfolioShareTokenHasBeenSet = true; m_portfolioShareToken = value; }
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline void SetPortfolioShareToken(Aws::String&& value) { m_portfolioShareTokenHasBeenSet = true; m_portfolioShareToken = std::move(value); }
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline void SetPortfolioShareToken(const char* value) { m_portfolioShareTokenHasBeenSet = true; m_portfolioShareToken.assign(value); }
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline DescribePortfolioShareStatusRequest& WithPortfolioShareToken(const Aws::String& value) { SetPortfolioShareToken(value); return *this;}
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline DescribePortfolioShareStatusRequest& WithPortfolioShareToken(Aws::String&& value) { SetPortfolioShareToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token for the portfolio share operation. This token is returned either by
-     * CreatePortfolioShare or by DeletePortfolioShare.</p>
-     */
     inline DescribePortfolioShareStatusRequest& WithPortfolioShareToken(const char* value) { SetPortfolioShareToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_portfolioShareToken;

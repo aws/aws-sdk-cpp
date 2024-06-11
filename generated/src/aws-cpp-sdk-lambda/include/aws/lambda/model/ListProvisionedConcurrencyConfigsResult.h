@@ -34,99 +34,42 @@ namespace Model
     AWS_LAMBDA_API ListProvisionedConcurrencyConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of provisioned concurrency configurations.</p>
      */
     inline const Aws::Vector<ProvisionedConcurrencyConfigListItem>& GetProvisionedConcurrencyConfigs() const{ return m_provisionedConcurrencyConfigs; }
-
-    /**
-     * <p>A list of provisioned concurrency configurations.</p>
-     */
     inline void SetProvisionedConcurrencyConfigs(const Aws::Vector<ProvisionedConcurrencyConfigListItem>& value) { m_provisionedConcurrencyConfigs = value; }
-
-    /**
-     * <p>A list of provisioned concurrency configurations.</p>
-     */
     inline void SetProvisionedConcurrencyConfigs(Aws::Vector<ProvisionedConcurrencyConfigListItem>&& value) { m_provisionedConcurrencyConfigs = std::move(value); }
-
-    /**
-     * <p>A list of provisioned concurrency configurations.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& WithProvisionedConcurrencyConfigs(const Aws::Vector<ProvisionedConcurrencyConfigListItem>& value) { SetProvisionedConcurrencyConfigs(value); return *this;}
-
-    /**
-     * <p>A list of provisioned concurrency configurations.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& WithProvisionedConcurrencyConfigs(Aws::Vector<ProvisionedConcurrencyConfigListItem>&& value) { SetProvisionedConcurrencyConfigs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of provisioned concurrency configurations.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& AddProvisionedConcurrencyConfigs(const ProvisionedConcurrencyConfigListItem& value) { m_provisionedConcurrencyConfigs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of provisioned concurrency configurations.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& AddProvisionedConcurrencyConfigs(ProvisionedConcurrencyConfigListItem&& value) { m_provisionedConcurrencyConfigs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The pagination token that's included if more results are available.</p>
-     */
     inline ListProvisionedConcurrencyConfigsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListProvisionedConcurrencyConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListProvisionedConcurrencyConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListProvisionedConcurrencyConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<ProvisionedConcurrencyConfigListItem> m_provisionedConcurrencyConfigs;

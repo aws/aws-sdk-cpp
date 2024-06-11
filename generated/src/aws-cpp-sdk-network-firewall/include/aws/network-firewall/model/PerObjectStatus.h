@@ -43,91 +43,33 @@ namespace Model
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Indicates whether this object is in sync with the version indicated in the
      * update token.</p>
      */
     inline const PerObjectSyncStatus& GetSyncStatus() const{ return m_syncStatus; }
-
-    /**
-     * <p>Indicates whether this object is in sync with the version indicated in the
-     * update token.</p>
-     */
     inline bool SyncStatusHasBeenSet() const { return m_syncStatusHasBeenSet; }
-
-    /**
-     * <p>Indicates whether this object is in sync with the version indicated in the
-     * update token.</p>
-     */
     inline void SetSyncStatus(const PerObjectSyncStatus& value) { m_syncStatusHasBeenSet = true; m_syncStatus = value; }
-
-    /**
-     * <p>Indicates whether this object is in sync with the version indicated in the
-     * update token.</p>
-     */
     inline void SetSyncStatus(PerObjectSyncStatus&& value) { m_syncStatusHasBeenSet = true; m_syncStatus = std::move(value); }
-
-    /**
-     * <p>Indicates whether this object is in sync with the version indicated in the
-     * update token.</p>
-     */
     inline PerObjectStatus& WithSyncStatus(const PerObjectSyncStatus& value) { SetSyncStatus(value); return *this;}
-
-    /**
-     * <p>Indicates whether this object is in sync with the version indicated in the
-     * update token.</p>
-     */
     inline PerObjectStatus& WithSyncStatus(PerObjectSyncStatus&& value) { SetSyncStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The current version of the object that is either in sync or pending
      * synchronization. </p>
      */
     inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline bool UpdateTokenHasBeenSet() const { return m_updateTokenHasBeenSet; }
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline void SetUpdateToken(const Aws::String& value) { m_updateTokenHasBeenSet = true; m_updateToken = value; }
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline void SetUpdateToken(Aws::String&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::move(value); }
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline void SetUpdateToken(const char* value) { m_updateTokenHasBeenSet = true; m_updateToken.assign(value); }
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline PerObjectStatus& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline PerObjectStatus& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The current version of the object that is either in sync or pending
-     * synchronization. </p>
-     */
     inline PerObjectStatus& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
-
+    ///@}
   private:
 
     PerObjectSyncStatus m_syncStatus;

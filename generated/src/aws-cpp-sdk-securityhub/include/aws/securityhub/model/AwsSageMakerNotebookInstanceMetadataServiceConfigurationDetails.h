@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
      */
     inline const Aws::String& GetMinimumInstanceMetadataServiceVersion() const{ return m_minimumInstanceMetadataServiceVersion; }
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline bool MinimumInstanceMetadataServiceVersionHasBeenSet() const { return m_minimumInstanceMetadataServiceVersionHasBeenSet; }
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline void SetMinimumInstanceMetadataServiceVersion(const Aws::String& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = value; }
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline void SetMinimumInstanceMetadataServiceVersion(Aws::String&& value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion = std::move(value); }
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline void SetMinimumInstanceMetadataServiceVersion(const char* value) { m_minimumInstanceMetadataServiceVersionHasBeenSet = true; m_minimumInstanceMetadataServiceVersion.assign(value); }
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(const Aws::String& value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(Aws::String&& value) { SetMinimumInstanceMetadataServiceVersion(std::move(value)); return *this;}
-
-    /**
-     * <p> Indicates the minimum IMDS version that the notebook instance supports. </p>
-     */
     inline AwsSageMakerNotebookInstanceMetadataServiceConfigurationDetails& WithMinimumInstanceMetadataServiceVersion(const char* value) { SetMinimumInstanceMetadataServiceVersion(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_minimumInstanceMetadataServiceVersion;

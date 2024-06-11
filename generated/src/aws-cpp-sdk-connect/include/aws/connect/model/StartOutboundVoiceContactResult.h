@@ -32,63 +32,29 @@ namespace Model
     AWS_CONNECT_API StartOutboundVoiceContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of this contact within the Amazon Connect instance.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
-
-    /**
-     * <p>The identifier of this contact within the Amazon Connect instance.</p>
-     */
     inline void SetContactId(const Aws::String& value) { m_contactId = value; }
-
-    /**
-     * <p>The identifier of this contact within the Amazon Connect instance.</p>
-     */
     inline void SetContactId(Aws::String&& value) { m_contactId = std::move(value); }
-
-    /**
-     * <p>The identifier of this contact within the Amazon Connect instance.</p>
-     */
     inline void SetContactId(const char* value) { m_contactId.assign(value); }
-
-    /**
-     * <p>The identifier of this contact within the Amazon Connect instance.</p>
-     */
     inline StartOutboundVoiceContactResult& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-
-    /**
-     * <p>The identifier of this contact within the Amazon Connect instance.</p>
-     */
     inline StartOutboundVoiceContactResult& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of this contact within the Amazon Connect instance.</p>
-     */
     inline StartOutboundVoiceContactResult& WithContactId(const char* value) { SetContactId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartOutboundVoiceContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartOutboundVoiceContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartOutboundVoiceContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_contactId;

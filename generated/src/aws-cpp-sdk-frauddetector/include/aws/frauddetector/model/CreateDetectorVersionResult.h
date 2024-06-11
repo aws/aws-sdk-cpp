@@ -33,125 +33,53 @@ namespace Model
     AWS_FRAUDDETECTOR_API CreateDetectorVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The ID for the created version's parent detector.</p>
      */
     inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-
-    /**
-     * <p>The ID for the created version's parent detector.</p>
-     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorId = value; }
-
-    /**
-     * <p>The ID for the created version's parent detector.</p>
-     */
     inline void SetDetectorId(Aws::String&& value) { m_detectorId = std::move(value); }
-
-    /**
-     * <p>The ID for the created version's parent detector.</p>
-     */
     inline void SetDetectorId(const char* value) { m_detectorId.assign(value); }
-
-    /**
-     * <p>The ID for the created version's parent detector.</p>
-     */
     inline CreateDetectorVersionResult& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-
-    /**
-     * <p>The ID for the created version's parent detector.</p>
-     */
     inline CreateDetectorVersionResult& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the created version's parent detector.</p>
-     */
     inline CreateDetectorVersionResult& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID for the created detector. </p>
      */
     inline const Aws::String& GetDetectorVersionId() const{ return m_detectorVersionId; }
-
-    /**
-     * <p>The ID for the created detector. </p>
-     */
     inline void SetDetectorVersionId(const Aws::String& value) { m_detectorVersionId = value; }
-
-    /**
-     * <p>The ID for the created detector. </p>
-     */
     inline void SetDetectorVersionId(Aws::String&& value) { m_detectorVersionId = std::move(value); }
-
-    /**
-     * <p>The ID for the created detector. </p>
-     */
     inline void SetDetectorVersionId(const char* value) { m_detectorVersionId.assign(value); }
-
-    /**
-     * <p>The ID for the created detector. </p>
-     */
     inline CreateDetectorVersionResult& WithDetectorVersionId(const Aws::String& value) { SetDetectorVersionId(value); return *this;}
-
-    /**
-     * <p>The ID for the created detector. </p>
-     */
     inline CreateDetectorVersionResult& WithDetectorVersionId(Aws::String&& value) { SetDetectorVersionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID for the created detector. </p>
-     */
     inline CreateDetectorVersionResult& WithDetectorVersionId(const char* value) { SetDetectorVersionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the detector version.</p>
      */
     inline const DetectorVersionStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the detector version.</p>
-     */
     inline void SetStatus(const DetectorVersionStatus& value) { m_status = value; }
-
-    /**
-     * <p>The status of the detector version.</p>
-     */
     inline void SetStatus(DetectorVersionStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The status of the detector version.</p>
-     */
     inline CreateDetectorVersionResult& WithStatus(const DetectorVersionStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the detector version.</p>
-     */
     inline CreateDetectorVersionResult& WithStatus(DetectorVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateDetectorVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateDetectorVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateDetectorVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detectorId;

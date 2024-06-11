@@ -39,37 +39,19 @@ namespace Model
     AWS_ELASTICTRANSCODER_API CreatePresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A section of the response body that provides information about the preset
      * that is created.</p>
      */
     inline const Preset& GetPreset() const{ return m_preset; }
-
-    /**
-     * <p>A section of the response body that provides information about the preset
-     * that is created.</p>
-     */
     inline void SetPreset(const Preset& value) { m_preset = value; }
-
-    /**
-     * <p>A section of the response body that provides information about the preset
-     * that is created.</p>
-     */
     inline void SetPreset(Preset&& value) { m_preset = std::move(value); }
-
-    /**
-     * <p>A section of the response body that provides information about the preset
-     * that is created.</p>
-     */
     inline CreatePresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
-
-    /**
-     * <p>A section of the response body that provides information about the preset
-     * that is created.</p>
-     */
     inline CreatePresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the preset settings don't comply with the standards for the video codec
      * but Elastic Transcoder created the preset, this message explains the reason the
@@ -77,77 +59,24 @@ namespace Model
      * because the settings might produce acceptable output.</p>
      */
     inline const Aws::String& GetWarning() const{ return m_warning; }
-
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
     inline void SetWarning(const Aws::String& value) { m_warning = value; }
-
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
     inline void SetWarning(Aws::String&& value) { m_warning = std::move(value); }
-
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
     inline void SetWarning(const char* value) { m_warning.assign(value); }
-
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
     inline CreatePresetResult& WithWarning(const Aws::String& value) { SetWarning(value); return *this;}
-
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
     inline CreatePresetResult& WithWarning(Aws::String&& value) { SetWarning(std::move(value)); return *this;}
-
-    /**
-     * <p>If the preset settings don't comply with the standards for the video codec
-     * but Elastic Transcoder created the preset, this message explains the reason the
-     * preset settings don't meet the standard. Elastic Transcoder created the preset
-     * because the settings might produce acceptable output.</p>
-     */
     inline CreatePresetResult& WithWarning(const char* value) { SetWarning(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreatePresetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreatePresetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreatePresetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Preset m_preset;

@@ -32,87 +32,33 @@ namespace Model
     AWS_NETWORKMANAGER_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the global network.</p>
      */
     inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DisassociateConnectPeerRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DisassociateConnectPeerRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the global network.</p>
-     */
     inline DisassociateConnectPeerRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Connect peer to disassociate from a device.</p>
      */
     inline const Aws::String& GetConnectPeerId() const{ return m_connectPeerId; }
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline bool ConnectPeerIdHasBeenSet() const { return m_connectPeerIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline void SetConnectPeerId(const Aws::String& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = value; }
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline void SetConnectPeerId(Aws::String&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::move(value); }
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline void SetConnectPeerId(const char* value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId.assign(value); }
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline DisassociateConnectPeerRequest& WithConnectPeerId(const Aws::String& value) { SetConnectPeerId(value); return *this;}
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline DisassociateConnectPeerRequest& WithConnectPeerId(Aws::String&& value) { SetConnectPeerId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Connect peer to disassociate from a device.</p>
-     */
     inline DisassociateConnectPeerRequest& WithConnectPeerId(const char* value) { SetConnectPeerId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_globalNetworkId;

@@ -39,110 +39,43 @@ namespace Model
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
      * detailed activity logging.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
-
-    /**
-     * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
-     * detailed activity logging.</p>
-     */
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-
-    /**
-     * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
-     * detailed activity logging.</p>
-     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-
-    /**
-     * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
-     * detailed activity logging.</p>
-     */
     inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-
-    /**
-     * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
-     * detailed activity logging.</p>
-     */
     inline LogConfigurationType& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-
-    /**
-     * <p>The <code>errorlevel</code> selection of logs that a user pool sends for
-     * detailed activity logging.</p>
-     */
     inline LogConfigurationType& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source of events that your user pool sends for detailed activity
      * logging.</p>
      */
     inline const EventSourceName& GetEventSource() const{ return m_eventSource; }
-
-    /**
-     * <p>The source of events that your user pool sends for detailed activity
-     * logging.</p>
-     */
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
-
-    /**
-     * <p>The source of events that your user pool sends for detailed activity
-     * logging.</p>
-     */
     inline void SetEventSource(const EventSourceName& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
-
-    /**
-     * <p>The source of events that your user pool sends for detailed activity
-     * logging.</p>
-     */
     inline void SetEventSource(EventSourceName&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
-
-    /**
-     * <p>The source of events that your user pool sends for detailed activity
-     * logging.</p>
-     */
     inline LogConfigurationType& WithEventSource(const EventSourceName& value) { SetEventSource(value); return *this;}
-
-    /**
-     * <p>The source of events that your user pool sends for detailed activity
-     * logging.</p>
-     */
     inline LogConfigurationType& WithEventSource(EventSourceName&& value) { SetEventSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CloudWatch logging destination of a user pool.</p>
      */
     inline const CloudWatchLogsConfigurationType& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
-
-    /**
-     * <p>The CloudWatch logging destination of a user pool.</p>
-     */
     inline bool CloudWatchLogsConfigurationHasBeenSet() const { return m_cloudWatchLogsConfigurationHasBeenSet; }
-
-    /**
-     * <p>The CloudWatch logging destination of a user pool.</p>
-     */
     inline void SetCloudWatchLogsConfiguration(const CloudWatchLogsConfigurationType& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
-
-    /**
-     * <p>The CloudWatch logging destination of a user pool.</p>
-     */
     inline void SetCloudWatchLogsConfiguration(CloudWatchLogsConfigurationType&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::move(value); }
-
-    /**
-     * <p>The CloudWatch logging destination of a user pool.</p>
-     */
     inline LogConfigurationType& WithCloudWatchLogsConfiguration(const CloudWatchLogsConfigurationType& value) { SetCloudWatchLogsConfiguration(value); return *this;}
-
-    /**
-     * <p>The CloudWatch logging destination of a user pool.</p>
-     */
     inline LogConfigurationType& WithCloudWatchLogsConfiguration(CloudWatchLogsConfigurationType&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LogLevel m_logLevel;

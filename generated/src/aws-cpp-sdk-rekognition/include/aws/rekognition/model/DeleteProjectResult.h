@@ -33,53 +33,27 @@ namespace Model
     AWS_REKOGNITION_API DeleteProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current status of the delete project operation.</p>
      */
     inline const ProjectStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The current status of the delete project operation.</p>
-     */
     inline void SetStatus(const ProjectStatus& value) { m_status = value; }
-
-    /**
-     * <p>The current status of the delete project operation.</p>
-     */
     inline void SetStatus(ProjectStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The current status of the delete project operation.</p>
-     */
     inline DeleteProjectResult& WithStatus(const ProjectStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The current status of the delete project operation.</p>
-     */
     inline DeleteProjectResult& WithStatus(ProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ProjectStatus m_status;

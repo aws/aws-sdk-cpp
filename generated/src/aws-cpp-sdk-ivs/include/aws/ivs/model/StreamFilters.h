@@ -38,36 +38,17 @@ namespace Model
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The stream’s health.</p>
      */
     inline const StreamHealth& GetHealth() const{ return m_health; }
-
-    /**
-     * <p>The stream’s health.</p>
-     */
     inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
-
-    /**
-     * <p>The stream’s health.</p>
-     */
     inline void SetHealth(const StreamHealth& value) { m_healthHasBeenSet = true; m_health = value; }
-
-    /**
-     * <p>The stream’s health.</p>
-     */
     inline void SetHealth(StreamHealth&& value) { m_healthHasBeenSet = true; m_health = std::move(value); }
-
-    /**
-     * <p>The stream’s health.</p>
-     */
     inline StreamFilters& WithHealth(const StreamHealth& value) { SetHealth(value); return *this;}
-
-    /**
-     * <p>The stream’s health.</p>
-     */
     inline StreamFilters& WithHealth(StreamHealth&& value) { SetHealth(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     StreamHealth m_health;

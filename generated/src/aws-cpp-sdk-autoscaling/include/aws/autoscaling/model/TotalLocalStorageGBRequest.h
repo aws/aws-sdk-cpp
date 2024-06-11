@@ -39,47 +39,25 @@ namespace Model
     AWS_AUTOSCALING_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The storage minimum in GB.</p>
      */
     inline double GetMin() const{ return m_min; }
-
-    /**
-     * <p>The storage minimum in GB.</p>
-     */
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
-
-    /**
-     * <p>The storage minimum in GB.</p>
-     */
     inline void SetMin(double value) { m_minHasBeenSet = true; m_min = value; }
-
-    /**
-     * <p>The storage minimum in GB.</p>
-     */
     inline TotalLocalStorageGBRequest& WithMin(double value) { SetMin(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The storage maximum in GB.</p>
      */
     inline double GetMax() const{ return m_max; }
-
-    /**
-     * <p>The storage maximum in GB.</p>
-     */
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
-
-    /**
-     * <p>The storage maximum in GB.</p>
-     */
     inline void SetMax(double value) { m_maxHasBeenSet = true; m_max = value; }
-
-    /**
-     * <p>The storage maximum in GB.</p>
-     */
     inline TotalLocalStorageGBRequest& WithMax(double value) { SetMax(value); return *this;}
-
+    ///@}
   private:
 
     double m_min;

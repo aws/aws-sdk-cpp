@@ -34,106 +34,43 @@ namespace Model
     AWS_FORECASTSERVICE_API ListDatasetImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An array of objects that summarize each dataset import job's properties.</p>
      */
     inline const Aws::Vector<DatasetImportJobSummary>& GetDatasetImportJobs() const{ return m_datasetImportJobs; }
-
-    /**
-     * <p>An array of objects that summarize each dataset import job's properties.</p>
-     */
     inline void SetDatasetImportJobs(const Aws::Vector<DatasetImportJobSummary>& value) { m_datasetImportJobs = value; }
-
-    /**
-     * <p>An array of objects that summarize each dataset import job's properties.</p>
-     */
     inline void SetDatasetImportJobs(Aws::Vector<DatasetImportJobSummary>&& value) { m_datasetImportJobs = std::move(value); }
-
-    /**
-     * <p>An array of objects that summarize each dataset import job's properties.</p>
-     */
     inline ListDatasetImportJobsResult& WithDatasetImportJobs(const Aws::Vector<DatasetImportJobSummary>& value) { SetDatasetImportJobs(value); return *this;}
-
-    /**
-     * <p>An array of objects that summarize each dataset import job's properties.</p>
-     */
     inline ListDatasetImportJobsResult& WithDatasetImportJobs(Aws::Vector<DatasetImportJobSummary>&& value) { SetDatasetImportJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of objects that summarize each dataset import job's properties.</p>
-     */
     inline ListDatasetImportJobsResult& AddDatasetImportJobs(const DatasetImportJobSummary& value) { m_datasetImportJobs.push_back(value); return *this; }
-
-    /**
-     * <p>An array of objects that summarize each dataset import job's properties.</p>
-     */
     inline ListDatasetImportJobsResult& AddDatasetImportJobs(DatasetImportJobSummary&& value) { m_datasetImportJobs.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
      * the next set of results, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
-     * the next set of results, use the token in the next request.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
-     * the next set of results, use the token in the next request.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
-     * the next set of results, use the token in the next request.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
-     * the next set of results, use the token in the next request.</p>
-     */
     inline ListDatasetImportJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
-     * the next set of results, use the token in the next request.</p>
-     */
     inline ListDatasetImportJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If the response is truncated, Amazon Forecast returns this token. To retrieve
-     * the next set of results, use the token in the next request.</p>
-     */
     inline ListDatasetImportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListDatasetImportJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListDatasetImportJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListDatasetImportJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DatasetImportJobSummary> m_datasetImportJobs;

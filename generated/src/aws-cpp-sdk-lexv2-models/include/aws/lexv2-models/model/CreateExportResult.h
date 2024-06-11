@@ -36,99 +36,43 @@ namespace Model
     AWS_LEXMODELSV2_API CreateExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An identifier for a specific request to create an export.</p>
      */
     inline const Aws::String& GetExportId() const{ return m_exportId; }
-
-    /**
-     * <p>An identifier for a specific request to create an export.</p>
-     */
     inline void SetExportId(const Aws::String& value) { m_exportId = value; }
-
-    /**
-     * <p>An identifier for a specific request to create an export.</p>
-     */
     inline void SetExportId(Aws::String&& value) { m_exportId = std::move(value); }
-
-    /**
-     * <p>An identifier for a specific request to create an export.</p>
-     */
     inline void SetExportId(const char* value) { m_exportId.assign(value); }
-
-    /**
-     * <p>An identifier for a specific request to create an export.</p>
-     */
     inline CreateExportResult& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
-
-    /**
-     * <p>An identifier for a specific request to create an export.</p>
-     */
     inline CreateExportResult& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
-
-    /**
-     * <p>An identifier for a specific request to create an export.</p>
-     */
     inline CreateExportResult& WithExportId(const char* value) { SetExportId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A description of the type of resource that was exported, either a bot or a
      * bot locale.</p>
      */
     inline const ExportResourceSpecification& GetResourceSpecification() const{ return m_resourceSpecification; }
-
-    /**
-     * <p>A description of the type of resource that was exported, either a bot or a
-     * bot locale.</p>
-     */
     inline void SetResourceSpecification(const ExportResourceSpecification& value) { m_resourceSpecification = value; }
-
-    /**
-     * <p>A description of the type of resource that was exported, either a bot or a
-     * bot locale.</p>
-     */
     inline void SetResourceSpecification(ExportResourceSpecification&& value) { m_resourceSpecification = std::move(value); }
-
-    /**
-     * <p>A description of the type of resource that was exported, either a bot or a
-     * bot locale.</p>
-     */
     inline CreateExportResult& WithResourceSpecification(const ExportResourceSpecification& value) { SetResourceSpecification(value); return *this;}
-
-    /**
-     * <p>A description of the type of resource that was exported, either a bot or a
-     * bot locale.</p>
-     */
     inline CreateExportResult& WithResourceSpecification(ExportResourceSpecification&& value) { SetResourceSpecification(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The file format used for the bot or bot locale definition files.</p>
      */
     inline const ImportExportFileFormat& GetFileFormat() const{ return m_fileFormat; }
-
-    /**
-     * <p>The file format used for the bot or bot locale definition files.</p>
-     */
     inline void SetFileFormat(const ImportExportFileFormat& value) { m_fileFormat = value; }
-
-    /**
-     * <p>The file format used for the bot or bot locale definition files.</p>
-     */
     inline void SetFileFormat(ImportExportFileFormat&& value) { m_fileFormat = std::move(value); }
-
-    /**
-     * <p>The file format used for the bot or bot locale definition files.</p>
-     */
     inline CreateExportResult& WithFileFormat(const ImportExportFileFormat& value) { SetFileFormat(value); return *this;}
-
-    /**
-     * <p>The file format used for the bot or bot locale definition files.</p>
-     */
     inline CreateExportResult& WithFileFormat(ImportExportFileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the export. When the status is <code>Completed</code>, you can
      * use the <a
@@ -137,91 +81,33 @@ namespace Model
      * locale.</p>
      */
     inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
-
-    /**
-     * <p>The status of the export. When the status is <code>Completed</code>, you can
-     * use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
-     * operation to get the pre-signed S3 URL link to your exported bot or bot
-     * locale.</p>
-     */
     inline void SetExportStatus(const ExportStatus& value) { m_exportStatus = value; }
-
-    /**
-     * <p>The status of the export. When the status is <code>Completed</code>, you can
-     * use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
-     * operation to get the pre-signed S3 URL link to your exported bot or bot
-     * locale.</p>
-     */
     inline void SetExportStatus(ExportStatus&& value) { m_exportStatus = std::move(value); }
-
-    /**
-     * <p>The status of the export. When the status is <code>Completed</code>, you can
-     * use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
-     * operation to get the pre-signed S3 URL link to your exported bot or bot
-     * locale.</p>
-     */
     inline CreateExportResult& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
-
-    /**
-     * <p>The status of the export. When the status is <code>Completed</code>, you can
-     * use the <a
-     * href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a>
-     * operation to get the pre-signed S3 URL link to your exported bot or bot
-     * locale.</p>
-     */
     inline CreateExportResult& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the request to export a bot was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-
-    /**
-     * <p>The date and time that the request to export a bot was created.</p>
-     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-
-    /**
-     * <p>The date and time that the request to export a bot was created.</p>
-     */
     inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-
-    /**
-     * <p>The date and time that the request to export a bot was created.</p>
-     */
     inline CreateExportResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-
-    /**
-     * <p>The date and time that the request to export a bot was created.</p>
-     */
     inline CreateExportResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exportId;

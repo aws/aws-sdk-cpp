@@ -33,53 +33,27 @@ namespace Model
     AWS_APPSYNC_API UpdateFunctionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The <code>Function</code> object.</p>
      */
     inline const FunctionConfiguration& GetFunctionConfiguration() const{ return m_functionConfiguration; }
-
-    /**
-     * <p>The <code>Function</code> object.</p>
-     */
     inline void SetFunctionConfiguration(const FunctionConfiguration& value) { m_functionConfiguration = value; }
-
-    /**
-     * <p>The <code>Function</code> object.</p>
-     */
     inline void SetFunctionConfiguration(FunctionConfiguration&& value) { m_functionConfiguration = std::move(value); }
-
-    /**
-     * <p>The <code>Function</code> object.</p>
-     */
     inline UpdateFunctionResult& WithFunctionConfiguration(const FunctionConfiguration& value) { SetFunctionConfiguration(value); return *this;}
-
-    /**
-     * <p>The <code>Function</code> object.</p>
-     */
     inline UpdateFunctionResult& WithFunctionConfiguration(FunctionConfiguration&& value) { SetFunctionConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateFunctionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateFunctionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateFunctionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     FunctionConfiguration m_functionConfiguration;

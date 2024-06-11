@@ -39,98 +39,41 @@ namespace Model
     AWS_BUDGETS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The amount of cost or usage that you created the budget for.</p>
      */
     inline const Spend& GetBudgetedAmount() const{ return m_budgetedAmount; }
-
-    /**
-     * <p>The amount of cost or usage that you created the budget for.</p>
-     */
     inline bool BudgetedAmountHasBeenSet() const { return m_budgetedAmountHasBeenSet; }
-
-    /**
-     * <p>The amount of cost or usage that you created the budget for.</p>
-     */
     inline void SetBudgetedAmount(const Spend& value) { m_budgetedAmountHasBeenSet = true; m_budgetedAmount = value; }
-
-    /**
-     * <p>The amount of cost or usage that you created the budget for.</p>
-     */
     inline void SetBudgetedAmount(Spend&& value) { m_budgetedAmountHasBeenSet = true; m_budgetedAmount = std::move(value); }
-
-    /**
-     * <p>The amount of cost or usage that you created the budget for.</p>
-     */
     inline BudgetedAndActualAmounts& WithBudgetedAmount(const Spend& value) { SetBudgetedAmount(value); return *this;}
-
-    /**
-     * <p>The amount of cost or usage that you created the budget for.</p>
-     */
     inline BudgetedAndActualAmounts& WithBudgetedAmount(Spend&& value) { SetBudgetedAmount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Your actual costs or usage for a budget period.</p>
      */
     inline const Spend& GetActualAmount() const{ return m_actualAmount; }
-
-    /**
-     * <p>Your actual costs or usage for a budget period.</p>
-     */
     inline bool ActualAmountHasBeenSet() const { return m_actualAmountHasBeenSet; }
-
-    /**
-     * <p>Your actual costs or usage for a budget period.</p>
-     */
     inline void SetActualAmount(const Spend& value) { m_actualAmountHasBeenSet = true; m_actualAmount = value; }
-
-    /**
-     * <p>Your actual costs or usage for a budget period.</p>
-     */
     inline void SetActualAmount(Spend&& value) { m_actualAmountHasBeenSet = true; m_actualAmount = std::move(value); }
-
-    /**
-     * <p>Your actual costs or usage for a budget period.</p>
-     */
     inline BudgetedAndActualAmounts& WithActualAmount(const Spend& value) { SetActualAmount(value); return *this;}
-
-    /**
-     * <p>Your actual costs or usage for a budget period.</p>
-     */
     inline BudgetedAndActualAmounts& WithActualAmount(Spend&& value) { SetActualAmount(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The time period that's covered by this budget comparison.</p>
      */
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
-
-    /**
-     * <p>The time period that's covered by this budget comparison.</p>
-     */
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-
-    /**
-     * <p>The time period that's covered by this budget comparison.</p>
-     */
     inline void SetTimePeriod(const TimePeriod& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-
-    /**
-     * <p>The time period that's covered by this budget comparison.</p>
-     */
     inline void SetTimePeriod(TimePeriod&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-
-    /**
-     * <p>The time period that's covered by this budget comparison.</p>
-     */
     inline BudgetedAndActualAmounts& WithTimePeriod(const TimePeriod& value) { SetTimePeriod(value); return *this;}
-
-    /**
-     * <p>The time period that's covered by this budget comparison.</p>
-     */
     inline BudgetedAndActualAmounts& WithTimePeriod(TimePeriod&& value) { SetTimePeriod(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Spend m_budgetedAmount;

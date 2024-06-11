@@ -34,49 +34,21 @@ namespace Model
     AWS_LIGHTSAIL_API GetRelationalDatabaseBundlesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>An object describing the result of your get relational database bundles
      * request.</p>
      */
     inline const Aws::Vector<RelationalDatabaseBundle>& GetBundles() const{ return m_bundles; }
-
-    /**
-     * <p>An object describing the result of your get relational database bundles
-     * request.</p>
-     */
     inline void SetBundles(const Aws::Vector<RelationalDatabaseBundle>& value) { m_bundles = value; }
-
-    /**
-     * <p>An object describing the result of your get relational database bundles
-     * request.</p>
-     */
     inline void SetBundles(Aws::Vector<RelationalDatabaseBundle>&& value) { m_bundles = std::move(value); }
-
-    /**
-     * <p>An object describing the result of your get relational database bundles
-     * request.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& WithBundles(const Aws::Vector<RelationalDatabaseBundle>& value) { SetBundles(value); return *this;}
-
-    /**
-     * <p>An object describing the result of your get relational database bundles
-     * request.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& WithBundles(Aws::Vector<RelationalDatabaseBundle>&& value) { SetBundles(std::move(value)); return *this;}
-
-    /**
-     * <p>An object describing the result of your get relational database bundles
-     * request.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& AddBundles(const RelationalDatabaseBundle& value) { m_bundles.push_back(value); return *this; }
-
-    /**
-     * <p>An object describing the result of your get relational database bundles
-     * request.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& AddBundles(RelationalDatabaseBundle&& value) { m_bundles.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The token to advance to the next page of results from your request.</p> <p>A
      * next page token is not returned if there are no more results to display.</p>
@@ -85,83 +57,24 @@ namespace Model
      * token using the <code>pageToken</code> parameter.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>A
-     * next page token is not returned if there are no more results to display.</p>
-     * <p>To get the next page of results, perform another
-     * <code>GetRelationalDatabaseBundles</code> request and specify the next page
-     * token using the <code>pageToken</code> parameter.</p>
-     */
     inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>A
-     * next page token is not returned if there are no more results to display.</p>
-     * <p>To get the next page of results, perform another
-     * <code>GetRelationalDatabaseBundles</code> request and specify the next page
-     * token using the <code>pageToken</code> parameter.</p>
-     */
     inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>A
-     * next page token is not returned if there are no more results to display.</p>
-     * <p>To get the next page of results, perform another
-     * <code>GetRelationalDatabaseBundles</code> request and specify the next page
-     * token using the <code>pageToken</code> parameter.</p>
-     */
     inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>A
-     * next page token is not returned if there are no more results to display.</p>
-     * <p>To get the next page of results, perform another
-     * <code>GetRelationalDatabaseBundles</code> request and specify the next page
-     * token using the <code>pageToken</code> parameter.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>A
-     * next page token is not returned if there are no more results to display.</p>
-     * <p>To get the next page of results, perform another
-     * <code>GetRelationalDatabaseBundles</code> request and specify the next page
-     * token using the <code>pageToken</code> parameter.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The token to advance to the next page of results from your request.</p> <p>A
-     * next page token is not returned if there are no more results to display.</p>
-     * <p>To get the next page of results, perform another
-     * <code>GetRelationalDatabaseBundles</code> request and specify the next page
-     * token using the <code>pageToken</code> parameter.</p>
-     */
     inline GetRelationalDatabaseBundlesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetRelationalDatabaseBundlesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetRelationalDatabaseBundlesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetRelationalDatabaseBundlesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RelationalDatabaseBundle> m_bundles;

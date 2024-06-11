@@ -39,67 +39,29 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines the options for uniform border.</p>
      */
     inline const TableBorderOptions& GetUniformBorder() const{ return m_uniformBorder; }
-
-    /**
-     * <p>Determines the options for uniform border.</p>
-     */
     inline bool UniformBorderHasBeenSet() const { return m_uniformBorderHasBeenSet; }
-
-    /**
-     * <p>Determines the options for uniform border.</p>
-     */
     inline void SetUniformBorder(const TableBorderOptions& value) { m_uniformBorderHasBeenSet = true; m_uniformBorder = value; }
-
-    /**
-     * <p>Determines the options for uniform border.</p>
-     */
     inline void SetUniformBorder(TableBorderOptions&& value) { m_uniformBorderHasBeenSet = true; m_uniformBorder = std::move(value); }
-
-    /**
-     * <p>Determines the options for uniform border.</p>
-     */
     inline GlobalTableBorderOptions& WithUniformBorder(const TableBorderOptions& value) { SetUniformBorder(value); return *this;}
-
-    /**
-     * <p>Determines the options for uniform border.</p>
-     */
     inline GlobalTableBorderOptions& WithUniformBorder(TableBorderOptions&& value) { SetUniformBorder(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Determines the options for side specific border.</p>
      */
     inline const TableSideBorderOptions& GetSideSpecificBorder() const{ return m_sideSpecificBorder; }
-
-    /**
-     * <p>Determines the options for side specific border.</p>
-     */
     inline bool SideSpecificBorderHasBeenSet() const { return m_sideSpecificBorderHasBeenSet; }
-
-    /**
-     * <p>Determines the options for side specific border.</p>
-     */
     inline void SetSideSpecificBorder(const TableSideBorderOptions& value) { m_sideSpecificBorderHasBeenSet = true; m_sideSpecificBorder = value; }
-
-    /**
-     * <p>Determines the options for side specific border.</p>
-     */
     inline void SetSideSpecificBorder(TableSideBorderOptions&& value) { m_sideSpecificBorderHasBeenSet = true; m_sideSpecificBorder = std::move(value); }
-
-    /**
-     * <p>Determines the options for side specific border.</p>
-     */
     inline GlobalTableBorderOptions& WithSideSpecificBorder(const TableSideBorderOptions& value) { SetSideSpecificBorder(value); return *this;}
-
-    /**
-     * <p>Determines the options for side specific border.</p>
-     */
     inline GlobalTableBorderOptions& WithSideSpecificBorder(TableSideBorderOptions&& value) { SetSideSpecificBorder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     TableBorderOptions m_uniformBorder;

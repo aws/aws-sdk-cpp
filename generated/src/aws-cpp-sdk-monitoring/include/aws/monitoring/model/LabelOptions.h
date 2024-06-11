@@ -46,6 +46,7 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The time zone to use for metric data return in this operation. The format is
      * <code>+</code> or <code>-</code> followed by four digits. The first two digits
@@ -54,70 +55,14 @@ namespace Model
      * hour and 30 minutes ahead of UTC. The default is +0000. </p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline LabelOptions& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline LabelOptions& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-
-    /**
-     * <p>The time zone to use for metric data return in this operation. The format is
-     * <code>+</code> or <code>-</code> followed by four digits. The first two digits
-     * indicate the number of hours ahead or behind of UTC, and the final two digits
-     * are the number of minutes. For example, +0130 indicates a time zone that is 1
-     * hour and 30 minutes ahead of UTC. The default is +0000. </p>
-     */
     inline LabelOptions& WithTimezone(const char* value) { SetTimezone(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_timezone;

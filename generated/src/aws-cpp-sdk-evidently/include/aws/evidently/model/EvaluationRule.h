@@ -38,103 +38,35 @@ namespace Model
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the experiment or launch.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline EvaluationRule& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline EvaluationRule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the experiment or launch.</p>
-     */
     inline EvaluationRule& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
      * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
      * evaluation rule for an experiment.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline EvaluationRule& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline EvaluationRule& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>This value is <code>aws.evidently.splits</code> if this is an evaluation rule
-     * for a launch, and it is <code>aws.evidently.onlineab</code> if this is an
-     * evaluation rule for an experiment.</p>
-     */
     inline EvaluationRule& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

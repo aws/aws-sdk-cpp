@@ -34,77 +34,31 @@ namespace Model
     AWS_IOTEVENTSDATA_API BatchAcknowledgeAlarmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of errors associated with the request, or <code>null</code> if there
      * are no errors. Each error entry contains an entry ID that helps you identify the
      * entry that failed.</p>
      */
     inline const Aws::Vector<BatchAlarmActionErrorEntry>& GetErrorEntries() const{ return m_errorEntries; }
-
-    /**
-     * <p>A list of errors associated with the request, or <code>null</code> if there
-     * are no errors. Each error entry contains an entry ID that helps you identify the
-     * entry that failed.</p>
-     */
     inline void SetErrorEntries(const Aws::Vector<BatchAlarmActionErrorEntry>& value) { m_errorEntries = value; }
-
-    /**
-     * <p>A list of errors associated with the request, or <code>null</code> if there
-     * are no errors. Each error entry contains an entry ID that helps you identify the
-     * entry that failed.</p>
-     */
     inline void SetErrorEntries(Aws::Vector<BatchAlarmActionErrorEntry>&& value) { m_errorEntries = std::move(value); }
-
-    /**
-     * <p>A list of errors associated with the request, or <code>null</code> if there
-     * are no errors. Each error entry contains an entry ID that helps you identify the
-     * entry that failed.</p>
-     */
     inline BatchAcknowledgeAlarmResult& WithErrorEntries(const Aws::Vector<BatchAlarmActionErrorEntry>& value) { SetErrorEntries(value); return *this;}
-
-    /**
-     * <p>A list of errors associated with the request, or <code>null</code> if there
-     * are no errors. Each error entry contains an entry ID that helps you identify the
-     * entry that failed.</p>
-     */
     inline BatchAcknowledgeAlarmResult& WithErrorEntries(Aws::Vector<BatchAlarmActionErrorEntry>&& value) { SetErrorEntries(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of errors associated with the request, or <code>null</code> if there
-     * are no errors. Each error entry contains an entry ID that helps you identify the
-     * entry that failed.</p>
-     */
     inline BatchAcknowledgeAlarmResult& AddErrorEntries(const BatchAlarmActionErrorEntry& value) { m_errorEntries.push_back(value); return *this; }
-
-    /**
-     * <p>A list of errors associated with the request, or <code>null</code> if there
-     * are no errors. Each error entry contains an entry ID that helps you identify the
-     * entry that failed.</p>
-     */
     inline BatchAcknowledgeAlarmResult& AddErrorEntries(BatchAlarmActionErrorEntry&& value) { m_errorEntries.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline BatchAcknowledgeAlarmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline BatchAcknowledgeAlarmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline BatchAcknowledgeAlarmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<BatchAlarmActionErrorEntry> m_errorEntries;

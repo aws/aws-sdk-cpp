@@ -34,161 +34,59 @@ namespace Model
     AWS_OPSWORKSCM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Describes a single backup. </p>
      */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline void SetBackupId(Aws::String&& value) { m_backupIdHasBeenSet = true; m_backupId = std::move(value); }
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline void SetBackupId(const char* value) { m_backupIdHasBeenSet = true; m_backupId.assign(value); }
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline DescribeBackupsRequest& WithBackupId(const Aws::String& value) { SetBackupId(value); return *this;}
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline DescribeBackupsRequest& WithBackupId(Aws::String&& value) { SetBackupId(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes a single backup. </p>
-     */
     inline DescribeBackupsRequest& WithBackupId(const char* value) { SetBackupId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Returns backups for the server with the specified ServerName. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline DescribeBackupsRequest& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline DescribeBackupsRequest& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns backups for the server with the specified ServerName. </p>
-     */
     inline DescribeBackupsRequest& WithServerName(const char* value) { SetServerName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is not currently implemented for <code>DescribeBackups</code>
      * requests.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline DescribeBackupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline DescribeBackupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline DescribeBackupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>This is not currently implemented for <code>DescribeBackups</code>
      * requests.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>This is not currently implemented for <code>DescribeBackups</code>
-     * requests.</p>
-     */
     inline DescribeBackupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_backupId;

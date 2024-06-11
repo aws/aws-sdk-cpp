@@ -38,30 +38,16 @@ namespace Model
     AWS_IAM_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Specifies whether the simulated operation is allowed by the Organizations
      * service control policies that impact the simulated user's account.</p>
      */
     inline bool GetAllowedByOrganizations() const{ return m_allowedByOrganizations; }
-
-    /**
-     * <p>Specifies whether the simulated operation is allowed by the Organizations
-     * service control policies that impact the simulated user's account.</p>
-     */
     inline bool AllowedByOrganizationsHasBeenSet() const { return m_allowedByOrganizationsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the simulated operation is allowed by the Organizations
-     * service control policies that impact the simulated user's account.</p>
-     */
     inline void SetAllowedByOrganizations(bool value) { m_allowedByOrganizationsHasBeenSet = true; m_allowedByOrganizations = value; }
-
-    /**
-     * <p>Specifies whether the simulated operation is allowed by the Organizations
-     * service control policies that impact the simulated user's account.</p>
-     */
     inline OrganizationsDecisionDetail& WithAllowedByOrganizations(bool value) { SetAllowedByOrganizations(value); return *this;}
-
+    ///@}
   private:
 
     bool m_allowedByOrganizations;

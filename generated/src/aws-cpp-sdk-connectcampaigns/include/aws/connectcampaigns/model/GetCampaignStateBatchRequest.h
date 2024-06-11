@@ -36,33 +36,18 @@ namespace Model
     AWS_CONNECTCAMPAIGNS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     
     inline const Aws::Vector<Aws::String>& GetCampaignIds() const{ return m_campaignIds; }
-
-    
     inline bool CampaignIdsHasBeenSet() const { return m_campaignIdsHasBeenSet; }
-
-    
     inline void SetCampaignIds(const Aws::Vector<Aws::String>& value) { m_campaignIdsHasBeenSet = true; m_campaignIds = value; }
-
-    
     inline void SetCampaignIds(Aws::Vector<Aws::String>&& value) { m_campaignIdsHasBeenSet = true; m_campaignIds = std::move(value); }
-
-    
     inline GetCampaignStateBatchRequest& WithCampaignIds(const Aws::Vector<Aws::String>& value) { SetCampaignIds(value); return *this;}
-
-    
     inline GetCampaignStateBatchRequest& WithCampaignIds(Aws::Vector<Aws::String>&& value) { SetCampaignIds(std::move(value)); return *this;}
-
-    
     inline GetCampaignStateBatchRequest& AddCampaignIds(const Aws::String& value) { m_campaignIdsHasBeenSet = true; m_campaignIds.push_back(value); return *this; }
-
-    
     inline GetCampaignStateBatchRequest& AddCampaignIds(Aws::String&& value) { m_campaignIdsHasBeenSet = true; m_campaignIds.push_back(std::move(value)); return *this; }
-
-    
     inline GetCampaignStateBatchRequest& AddCampaignIds(const char* value) { m_campaignIdsHasBeenSet = true; m_campaignIds.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_campaignIds;

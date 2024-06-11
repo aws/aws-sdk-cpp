@@ -39,118 +39,45 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the job definition that is used in the job run in question.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline BatchStopJobRunError& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline BatchStopJobRunError& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the job definition that is used in the job run in question.</p>
-     */
     inline BatchStopJobRunError& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The <code>JobRunId</code> of the job run in question.</p>
      */
     inline const Aws::String& GetJobRunId() const{ return m_jobRunId; }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline void SetJobRunId(Aws::String&& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = std::move(value); }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline void SetJobRunId(const char* value) { m_jobRunIdHasBeenSet = true; m_jobRunId.assign(value); }
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline BatchStopJobRunError& WithJobRunId(const Aws::String& value) { SetJobRunId(value); return *this;}
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline BatchStopJobRunError& WithJobRunId(Aws::String&& value) { SetJobRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The <code>JobRunId</code> of the job run in question.</p>
-     */
     inline BatchStopJobRunError& WithJobRunId(const char* value) { SetJobRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies details about the error that was encountered.</p>
      */
     inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
-
-    /**
-     * <p>Specifies details about the error that was encountered.</p>
-     */
     inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
-
-    /**
-     * <p>Specifies details about the error that was encountered.</p>
-     */
     inline void SetErrorDetail(const ErrorDetail& value) { m_errorDetailHasBeenSet = true; m_errorDetail = value; }
-
-    /**
-     * <p>Specifies details about the error that was encountered.</p>
-     */
     inline void SetErrorDetail(ErrorDetail&& value) { m_errorDetailHasBeenSet = true; m_errorDetail = std::move(value); }
-
-    /**
-     * <p>Specifies details about the error that was encountered.</p>
-     */
     inline BatchStopJobRunError& WithErrorDetail(const ErrorDetail& value) { SetErrorDetail(value); return *this;}
-
-    /**
-     * <p>Specifies details about the error that was encountered.</p>
-     */
     inline BatchStopJobRunError& WithErrorDetail(ErrorDetail&& value) { SetErrorDetail(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobName;

@@ -38,79 +38,31 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The individual tax registration number (NIP). Individual NIP is valid for
      * other taxes excluding VAT purposes. </p>
      */
     inline const Aws::String& GetIndividualRegistrationNumber() const{ return m_individualRegistrationNumber; }
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline bool IndividualRegistrationNumberHasBeenSet() const { return m_individualRegistrationNumberHasBeenSet; }
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline void SetIndividualRegistrationNumber(const Aws::String& value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber = value; }
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline void SetIndividualRegistrationNumber(Aws::String&& value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber = std::move(value); }
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline void SetIndividualRegistrationNumber(const char* value) { m_individualRegistrationNumberHasBeenSet = true; m_individualRegistrationNumber.assign(value); }
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline PolandAdditionalInfo& WithIndividualRegistrationNumber(const Aws::String& value) { SetIndividualRegistrationNumber(value); return *this;}
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline PolandAdditionalInfo& WithIndividualRegistrationNumber(Aws::String&& value) { SetIndividualRegistrationNumber(std::move(value)); return *this;}
-
-    /**
-     * <p> The individual tax registration number (NIP). Individual NIP is valid for
-     * other taxes excluding VAT purposes. </p>
-     */
     inline PolandAdditionalInfo& WithIndividualRegistrationNumber(const char* value) { SetIndividualRegistrationNumber(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> True if your business is a member of a VAT group with a NIP active for VAT
      * purposes. Otherwise, this is false. </p>
      */
     inline bool GetIsGroupVatEnabled() const{ return m_isGroupVatEnabled; }
-
-    /**
-     * <p> True if your business is a member of a VAT group with a NIP active for VAT
-     * purposes. Otherwise, this is false. </p>
-     */
     inline bool IsGroupVatEnabledHasBeenSet() const { return m_isGroupVatEnabledHasBeenSet; }
-
-    /**
-     * <p> True if your business is a member of a VAT group with a NIP active for VAT
-     * purposes. Otherwise, this is false. </p>
-     */
     inline void SetIsGroupVatEnabled(bool value) { m_isGroupVatEnabledHasBeenSet = true; m_isGroupVatEnabled = value; }
-
-    /**
-     * <p> True if your business is a member of a VAT group with a NIP active for VAT
-     * purposes. Otherwise, this is false. </p>
-     */
     inline PolandAdditionalInfo& WithIsGroupVatEnabled(bool value) { SetIsGroupVatEnabled(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_individualRegistrationNumber;

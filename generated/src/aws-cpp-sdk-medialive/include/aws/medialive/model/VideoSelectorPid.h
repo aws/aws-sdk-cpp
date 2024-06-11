@@ -35,26 +35,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Selects a specific PID from within a video source.
      */
     inline int GetPid() const{ return m_pid; }
-
-    /**
-     * Selects a specific PID from within a video source.
-     */
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
-
-    /**
-     * Selects a specific PID from within a video source.
-     */
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
-
-    /**
-     * Selects a specific PID from within a video source.
-     */
     inline VideoSelectorPid& WithPid(int value) { SetPid(value); return *this;}
-
+    ///@}
   private:
 
     int m_pid;

@@ -46,6 +46,7 @@ namespace Model
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the HTTP header to use for the IP address. For example, to use
      * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
@@ -53,64 +54,16 @@ namespace Model
      * apply the rule to the web request at all.</p> 
      */
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline void SetHeaderName(Aws::String&& value) { m_headerNameHasBeenSet = true; m_headerName = std::move(value); }
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline void SetHeaderName(const char* value) { m_headerNameHasBeenSet = true; m_headerName.assign(value); }
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline ForwardedIPConfig& WithHeaderName(const Aws::String& value) { SetHeaderName(value); return *this;}
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline ForwardedIPConfig& WithHeaderName(Aws::String&& value) { SetHeaderName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the HTTP header to use for the IP address. For example, to use
-     * the X-Forwarded-For (XFF) header, set this to <code>X-Forwarded-For</code>.</p>
-     *  <p>If the specified header isn't present in the request, WAF doesn't
-     * apply the rule to the web request at all.</p> 
-     */
     inline ForwardedIPConfig& WithHeaderName(const char* value) { SetHeaderName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The match status to assign to the web request if the request doesn't have a
      * valid IP address in the specified position.</p>  <p>If the specified
@@ -122,67 +75,12 @@ namespace Model
      * rule statement.</p> </li> </ul>
      */
     inline const FallbackBehavior& GetFallbackBehavior() const{ return m_fallbackBehavior; }
-
-    /**
-     * <p>The match status to assign to the web request if the request doesn't have a
-     * valid IP address in the specified position.</p>  <p>If the specified
-     * header isn't present in the request, WAF doesn't apply the rule to the web
-     * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
-     * matching the rule statement. WAF applies the rule action to the request.</p>
-     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
-     * rule statement.</p> </li> </ul>
-     */
     inline bool FallbackBehaviorHasBeenSet() const { return m_fallbackBehaviorHasBeenSet; }
-
-    /**
-     * <p>The match status to assign to the web request if the request doesn't have a
-     * valid IP address in the specified position.</p>  <p>If the specified
-     * header isn't present in the request, WAF doesn't apply the rule to the web
-     * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
-     * matching the rule statement. WAF applies the rule action to the request.</p>
-     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
-     * rule statement.</p> </li> </ul>
-     */
     inline void SetFallbackBehavior(const FallbackBehavior& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = value; }
-
-    /**
-     * <p>The match status to assign to the web request if the request doesn't have a
-     * valid IP address in the specified position.</p>  <p>If the specified
-     * header isn't present in the request, WAF doesn't apply the rule to the web
-     * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
-     * matching the rule statement. WAF applies the rule action to the request.</p>
-     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
-     * rule statement.</p> </li> </ul>
-     */
     inline void SetFallbackBehavior(FallbackBehavior&& value) { m_fallbackBehaviorHasBeenSet = true; m_fallbackBehavior = std::move(value); }
-
-    /**
-     * <p>The match status to assign to the web request if the request doesn't have a
-     * valid IP address in the specified position.</p>  <p>If the specified
-     * header isn't present in the request, WAF doesn't apply the rule to the web
-     * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
-     * matching the rule statement. WAF applies the rule action to the request.</p>
-     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
-     * rule statement.</p> </li> </ul>
-     */
     inline ForwardedIPConfig& WithFallbackBehavior(const FallbackBehavior& value) { SetFallbackBehavior(value); return *this;}
-
-    /**
-     * <p>The match status to assign to the web request if the request doesn't have a
-     * valid IP address in the specified position.</p>  <p>If the specified
-     * header isn't present in the request, WAF doesn't apply the rule to the web
-     * request at all.</p>  <p>You can specify the following fallback
-     * behaviors:</p> <ul> <li> <p> <code>MATCH</code> - Treat the web request as
-     * matching the rule statement. WAF applies the rule action to the request.</p>
-     * </li> <li> <p> <code>NO_MATCH</code> - Treat the web request as not matching the
-     * rule statement.</p> </li> </ul>
-     */
     inline ForwardedIPConfig& WithFallbackBehavior(FallbackBehavior&& value) { SetFallbackBehavior(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_headerName;

@@ -32,54 +32,20 @@ namespace Model
     AWS_MACIE2_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The nextToken string that specifies which page of results to return in a
      * paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline ListManagedDataIdentifiersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline ListManagedDataIdentifiersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The nextToken string that specifies which page of results to return in a
-     * paginated response.</p>
-     */
     inline ListManagedDataIdentifiersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

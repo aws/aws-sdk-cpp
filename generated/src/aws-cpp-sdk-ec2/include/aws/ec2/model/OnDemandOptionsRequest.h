@@ -42,6 +42,7 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The strategy that determines the order of the launch template overrides to
      * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
@@ -51,153 +52,51 @@ namespace Model
      * <p>Default: <code>lowest-price</code> </p>
      */
     inline const FleetOnDemandAllocationStrategy& GetAllocationStrategy() const{ return m_allocationStrategy; }
-
-    /**
-     * <p>The strategy that determines the order of the launch template overrides to
-     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
-     * Fleet uses price to determine the order, launching the lowest price first.</p>
-     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
-     * each launch template override, launching the highest priority first.</p>
-     * <p>Default: <code>lowest-price</code> </p>
-     */
     inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
-
-    /**
-     * <p>The strategy that determines the order of the launch template overrides to
-     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
-     * Fleet uses price to determine the order, launching the lowest price first.</p>
-     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
-     * each launch template override, launching the highest priority first.</p>
-     * <p>Default: <code>lowest-price</code> </p>
-     */
     inline void SetAllocationStrategy(const FleetOnDemandAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
-
-    /**
-     * <p>The strategy that determines the order of the launch template overrides to
-     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
-     * Fleet uses price to determine the order, launching the lowest price first.</p>
-     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
-     * each launch template override, launching the highest priority first.</p>
-     * <p>Default: <code>lowest-price</code> </p>
-     */
     inline void SetAllocationStrategy(FleetOnDemandAllocationStrategy&& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = std::move(value); }
-
-    /**
-     * <p>The strategy that determines the order of the launch template overrides to
-     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
-     * Fleet uses price to determine the order, launching the lowest price first.</p>
-     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
-     * each launch template override, launching the highest priority first.</p>
-     * <p>Default: <code>lowest-price</code> </p>
-     */
     inline OnDemandOptionsRequest& WithAllocationStrategy(const FleetOnDemandAllocationStrategy& value) { SetAllocationStrategy(value); return *this;}
-
-    /**
-     * <p>The strategy that determines the order of the launch template overrides to
-     * use in fulfilling On-Demand capacity.</p> <p> <code>lowest-price</code> - EC2
-     * Fleet uses price to determine the order, launching the lowest price first.</p>
-     * <p> <code>prioritized</code> - EC2 Fleet uses the priority that you assigned to
-     * each launch template override, launching the highest priority first.</p>
-     * <p>Default: <code>lowest-price</code> </p>
-     */
     inline OnDemandOptionsRequest& WithAllocationStrategy(FleetOnDemandAllocationStrategy&& value) { SetAllocationStrategy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
      * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
      */
     inline const CapacityReservationOptionsRequest& GetCapacityReservationOptions() const{ return m_capacityReservationOptions; }
-
-    /**
-     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
-     */
     inline bool CapacityReservationOptionsHasBeenSet() const { return m_capacityReservationOptionsHasBeenSet; }
-
-    /**
-     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
-     */
     inline void SetCapacityReservationOptions(const CapacityReservationOptionsRequest& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = value; }
-
-    /**
-     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
-     */
     inline void SetCapacityReservationOptions(CapacityReservationOptionsRequest&& value) { m_capacityReservationOptionsHasBeenSet = true; m_capacityReservationOptions = std::move(value); }
-
-    /**
-     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
-     */
     inline OnDemandOptionsRequest& WithCapacityReservationOptions(const CapacityReservationOptionsRequest& value) { SetCapacityReservationOptions(value); return *this;}
-
-    /**
-     * <p>The strategy for using unused Capacity Reservations for fulfilling On-Demand
-     * capacity.</p> <p>Supported only for fleets of type <code>instant</code>.</p>
-     */
     inline OnDemandOptionsRequest& WithCapacityReservationOptions(CapacityReservationOptionsRequest&& value) { SetCapacityReservationOptions(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
      * Instances in the fleet.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
     inline bool GetSingleInstanceType() const{ return m_singleInstanceType; }
-
-    /**
-     * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p> <p>Supported only for fleets of type
-     * <code>instant</code>.</p>
-     */
     inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
-
-    /**
-     * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p> <p>Supported only for fleets of type
-     * <code>instant</code>.</p>
-     */
     inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
-
-    /**
-     * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
-     * Instances in the fleet.</p> <p>Supported only for fleets of type
-     * <code>instant</code>.</p>
-     */
     inline OnDemandOptionsRequest& WithSingleInstanceType(bool value) { SetSingleInstanceType(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates that the fleet launches all On-Demand Instances into a single
      * Availability Zone.</p> <p>Supported only for fleets of type
      * <code>instant</code>.</p>
      */
     inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
-
-    /**
-     * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p> <p>Supported only for fleets of type
-     * <code>instant</code>.</p>
-     */
     inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
-
-    /**
-     * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p> <p>Supported only for fleets of type
-     * <code>instant</code>.</p>
-     */
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
-
-    /**
-     * <p>Indicates that the fleet launches all On-Demand Instances into a single
-     * Availability Zone.</p> <p>Supported only for fleets of type
-     * <code>instant</code>.</p>
-     */
     inline OnDemandOptionsRequest& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
@@ -206,35 +105,12 @@ namespace Model
      * <code>SingleInstanceType</code> </p>
      */
     inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
-
-    /**
-     * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
-     * minimum target capacity is not reached, the fleet launches no instances.</p>
-     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
-     * of the following must be specified: <code>SingleAvailabilityZone</code> |
-     * <code>SingleInstanceType</code> </p>
-     */
     inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
-
-    /**
-     * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
-     * minimum target capacity is not reached, the fleet launches no instances.</p>
-     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
-     * of the following must be specified: <code>SingleAvailabilityZone</code> |
-     * <code>SingleInstanceType</code> </p>
-     */
     inline void SetMinTargetCapacity(int value) { m_minTargetCapacityHasBeenSet = true; m_minTargetCapacity = value; }
-
-    /**
-     * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
-     * minimum target capacity is not reached, the fleet launches no instances.</p>
-     * <p>Supported only for fleets of type <code>instant</code>.</p> <p>At least one
-     * of the following must be specified: <code>SingleAvailabilityZone</code> |
-     * <code>SingleInstanceType</code> </p>
-     */
     inline OnDemandOptionsRequest& WithMinTargetCapacity(int value) { SetMinTargetCapacity(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum amount per hour for On-Demand Instances that you're willing to
      * pay.</p>  <p>If your fleet includes T instances that are configured as
@@ -247,98 +123,14 @@ namespace Model
      * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
      */
     inline const Aws::String& GetMaxTotalPrice() const{ return m_maxTotalPrice; }
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline bool MaxTotalPriceHasBeenSet() const { return m_maxTotalPriceHasBeenSet; }
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline void SetMaxTotalPrice(const Aws::String& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = value; }
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline void SetMaxTotalPrice(Aws::String&& value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice = std::move(value); }
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline void SetMaxTotalPrice(const char* value) { m_maxTotalPriceHasBeenSet = true; m_maxTotalPrice.assign(value); }
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline OnDemandOptionsRequest& WithMaxTotalPrice(const Aws::String& value) { SetMaxTotalPrice(value); return *this;}
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline OnDemandOptionsRequest& WithMaxTotalPrice(Aws::String&& value) { SetMaxTotalPrice(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum amount per hour for On-Demand Instances that you're willing to
-     * pay.</p>  <p>If your fleet includes T instances that are configured as
-     * <code>unlimited</code>, and if their average CPU usage exceeds the baseline
-     * utilization, you will incur a charge for surplus credits. The
-     * <code>MaxTotalPrice</code> does not account for surplus credits, and, if you use
-     * surplus credits, your final cost might be higher than what you specified for
-     * <code>MaxTotalPrice</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/burstable-performance-instances-unlimited-mode-concepts.html#unlimited-mode-surplus-credits">Surplus
-     * credits can incur charges</a> in the <i>EC2 User Guide</i>.</p> 
-     */
     inline OnDemandOptionsRequest& WithMaxTotalPrice(const char* value) { SetMaxTotalPrice(value); return *this;}
-
+    ///@}
   private:
 
     FleetOnDemandAllocationStrategy m_allocationStrategy;

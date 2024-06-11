@@ -34,77 +34,31 @@ namespace Model
     AWS_KAFKA_API GetCompatibleKafkaVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * 
             <p>A list of CompatibleKafkaVersion objects.</p>
             
      */
     inline const Aws::Vector<CompatibleKafkaVersion>& GetCompatibleKafkaVersions() const{ return m_compatibleKafkaVersions; }
-
-    /**
-     * 
-            <p>A list of CompatibleKafkaVersion objects.</p>
-            
-     */
     inline void SetCompatibleKafkaVersions(const Aws::Vector<CompatibleKafkaVersion>& value) { m_compatibleKafkaVersions = value; }
-
-    /**
-     * 
-            <p>A list of CompatibleKafkaVersion objects.</p>
-            
-     */
     inline void SetCompatibleKafkaVersions(Aws::Vector<CompatibleKafkaVersion>&& value) { m_compatibleKafkaVersions = std::move(value); }
-
-    /**
-     * 
-            <p>A list of CompatibleKafkaVersion objects.</p>
-            
-     */
     inline GetCompatibleKafkaVersionsResult& WithCompatibleKafkaVersions(const Aws::Vector<CompatibleKafkaVersion>& value) { SetCompatibleKafkaVersions(value); return *this;}
-
-    /**
-     * 
-            <p>A list of CompatibleKafkaVersion objects.</p>
-            
-     */
     inline GetCompatibleKafkaVersionsResult& WithCompatibleKafkaVersions(Aws::Vector<CompatibleKafkaVersion>&& value) { SetCompatibleKafkaVersions(std::move(value)); return *this;}
-
-    /**
-     * 
-            <p>A list of CompatibleKafkaVersion objects.</p>
-            
-     */
     inline GetCompatibleKafkaVersionsResult& AddCompatibleKafkaVersions(const CompatibleKafkaVersion& value) { m_compatibleKafkaVersions.push_back(value); return *this; }
-
-    /**
-     * 
-            <p>A list of CompatibleKafkaVersion objects.</p>
-            
-     */
     inline GetCompatibleKafkaVersionsResult& AddCompatibleKafkaVersions(CompatibleKafkaVersion&& value) { m_compatibleKafkaVersions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCompatibleKafkaVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCompatibleKafkaVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCompatibleKafkaVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CompatibleKafkaVersion> m_compatibleKafkaVersions;

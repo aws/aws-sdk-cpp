@@ -33,53 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API GetAgentVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about the version of the agent.</p>
      */
     inline const AgentVersion& GetAgentVersion() const{ return m_agentVersion; }
-
-    /**
-     * <p>Contains details about the version of the agent.</p>
-     */
     inline void SetAgentVersion(const AgentVersion& value) { m_agentVersion = value; }
-
-    /**
-     * <p>Contains details about the version of the agent.</p>
-     */
     inline void SetAgentVersion(AgentVersion&& value) { m_agentVersion = std::move(value); }
-
-    /**
-     * <p>Contains details about the version of the agent.</p>
-     */
     inline GetAgentVersionResult& WithAgentVersion(const AgentVersion& value) { SetAgentVersion(value); return *this;}
-
-    /**
-     * <p>Contains details about the version of the agent.</p>
-     */
     inline GetAgentVersionResult& WithAgentVersion(AgentVersion&& value) { SetAgentVersion(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAgentVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAgentVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAgentVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentVersion m_agentVersion;

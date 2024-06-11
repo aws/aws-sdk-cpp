@@ -32,46 +32,26 @@ namespace Model
     AWS_MACIE2_API GetInvitationsCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The total number of invitations that were received by the account, not
      * including the currently accepted invitation.</p>
      */
     inline long long GetInvitationsCount() const{ return m_invitationsCount; }
-
-    /**
-     * <p>The total number of invitations that were received by the account, not
-     * including the currently accepted invitation.</p>
-     */
     inline void SetInvitationsCount(long long value) { m_invitationsCount = value; }
-
-    /**
-     * <p>The total number of invitations that were received by the account, not
-     * including the currently accepted invitation.</p>
-     */
     inline GetInvitationsCountResult& WithInvitationsCount(long long value) { SetInvitationsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetInvitationsCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetInvitationsCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetInvitationsCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_invitationsCount;

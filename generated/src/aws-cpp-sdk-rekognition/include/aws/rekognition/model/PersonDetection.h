@@ -42,65 +42,29 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The time, in milliseconds from the start of the video, that the person's path
      * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
      * to the individual frame where the person's path first appears.</p>
      */
     inline long long GetTimestamp() const{ return m_timestamp; }
-
-    /**
-     * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
-     * to the individual frame where the person's path first appears.</p>
-     */
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-
-    /**
-     * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
-     * to the individual frame where the person's path first appears.</p>
-     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-
-    /**
-     * <p>The time, in milliseconds from the start of the video, that the person's path
-     * was tracked. Note that <code>Timestamp</code> is not guaranteed to be accurate
-     * to the individual frame where the person's path first appears.</p>
-     */
     inline PersonDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Details about a person whose path was tracked in a video.</p>
      */
     inline const PersonDetail& GetPerson() const{ return m_person; }
-
-    /**
-     * <p>Details about a person whose path was tracked in a video.</p>
-     */
     inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
-
-    /**
-     * <p>Details about a person whose path was tracked in a video.</p>
-     */
     inline void SetPerson(const PersonDetail& value) { m_personHasBeenSet = true; m_person = value; }
-
-    /**
-     * <p>Details about a person whose path was tracked in a video.</p>
-     */
     inline void SetPerson(PersonDetail&& value) { m_personHasBeenSet = true; m_person = std::move(value); }
-
-    /**
-     * <p>Details about a person whose path was tracked in a video.</p>
-     */
     inline PersonDetection& WithPerson(const PersonDetail& value) { SetPerson(value); return *this;}
-
-    /**
-     * <p>Details about a person whose path was tracked in a video.</p>
-     */
     inline PersonDetection& WithPerson(PersonDetail&& value) { SetPerson(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     long long m_timestamp;

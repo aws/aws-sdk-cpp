@@ -32,185 +32,63 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The provisioning template.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-
-    /**
-     * <p>The provisioning template.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The S3 bucket that contains the input file.</p>
      */
     inline const Aws::String& GetInputFileBucket() const{ return m_inputFileBucket; }
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline bool InputFileBucketHasBeenSet() const { return m_inputFileBucketHasBeenSet; }
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline void SetInputFileBucket(const Aws::String& value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket = value; }
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline void SetInputFileBucket(Aws::String&& value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket = std::move(value); }
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline void SetInputFileBucket(const char* value) { m_inputFileBucketHasBeenSet = true; m_inputFileBucket.assign(value); }
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithInputFileBucket(const Aws::String& value) { SetInputFileBucket(value); return *this;}
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithInputFileBucket(Aws::String&& value) { SetInputFileBucket(std::move(value)); return *this;}
-
-    /**
-     * <p>The S3 bucket that contains the input file.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithInputFileBucket(const char* value) { SetInputFileBucket(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of input file within the S3 bucket. This file contains a newline
      * delimited JSON file. Each line contains the parameter values to provision one
      * device (thing).</p>
      */
     inline const Aws::String& GetInputFileKey() const{ return m_inputFileKey; }
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline bool InputFileKeyHasBeenSet() const { return m_inputFileKeyHasBeenSet; }
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline void SetInputFileKey(const Aws::String& value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey = value; }
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline void SetInputFileKey(Aws::String&& value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey = std::move(value); }
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline void SetInputFileKey(const char* value) { m_inputFileKeyHasBeenSet = true; m_inputFileKey.assign(value); }
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline StartThingRegistrationTaskRequest& WithInputFileKey(const Aws::String& value) { SetInputFileKey(value); return *this;}
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline StartThingRegistrationTaskRequest& WithInputFileKey(Aws::String&& value) { SetInputFileKey(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of input file within the S3 bucket. This file contains a newline
-     * delimited JSON file. Each line contains the parameter values to provision one
-     * device (thing).</p>
-     */
     inline StartThingRegistrationTaskRequest& WithInputFileKey(const char* value) { SetInputFileKey(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The IAM role ARN that grants permission the input file.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The IAM role ARN that grants permission the input file.</p>
-     */
     inline StartThingRegistrationTaskRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateBody;

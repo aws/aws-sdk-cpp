@@ -32,46 +32,19 @@ namespace Model
     AWS_KAFKACONNECT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Returns information about a custom plugin.</p>
      */
     inline const Aws::String& GetCustomPluginArn() const{ return m_customPluginArn; }
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline bool CustomPluginArnHasBeenSet() const { return m_customPluginArnHasBeenSet; }
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline void SetCustomPluginArn(const Aws::String& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = value; }
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline void SetCustomPluginArn(Aws::String&& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = std::move(value); }
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline void SetCustomPluginArn(const char* value) { m_customPluginArnHasBeenSet = true; m_customPluginArn.assign(value); }
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline DescribeCustomPluginRequest& WithCustomPluginArn(const Aws::String& value) { SetCustomPluginArn(value); return *this;}
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline DescribeCustomPluginRequest& WithCustomPluginArn(Aws::String&& value) { SetCustomPluginArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns information about a custom plugin.</p>
-     */
     inline DescribeCustomPluginRequest& WithCustomPluginArn(const char* value) { SetCustomPluginArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_customPluginArn;

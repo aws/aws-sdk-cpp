@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
      */
     inline const PermissionGroup& GetGroup() const{ return m_group; }
-
-    /**
-     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-     */
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-
-    /**
-     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-     */
     inline void SetGroup(const PermissionGroup& value) { m_groupHasBeenSet = true; m_group = value; }
-
-    /**
-     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-     */
     inline void SetGroup(PermissionGroup&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-
-    /**
-     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-     */
     inline CreateVolumePermission& WithGroup(const PermissionGroup& value) { SetGroup(value); return *this;}
-
-    /**
-     * <p>The group to be added or removed. The possible value is <code>all</code>.</p>
-     */
     inline CreateVolumePermission& WithGroup(PermissionGroup&& value) { SetGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the Amazon Web Services account to be added or removed.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline CreateVolumePermission& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline CreateVolumePermission& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the Amazon Web Services account to be added or removed.</p>
-     */
     inline CreateVolumePermission& WithUserId(const char* value) { SetUserId(value); return *this;}
-
+    ///@}
   private:
 
     PermissionGroup m_group;

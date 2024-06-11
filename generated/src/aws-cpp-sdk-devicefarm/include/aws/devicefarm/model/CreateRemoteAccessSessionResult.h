@@ -39,58 +39,28 @@ namespace Model
     AWS_DEVICEFARM_API CreateRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A container that describes the remote access session when the request to
      * create a remote access session is sent.</p>
      */
     inline const RemoteAccessSession& GetRemoteAccessSession() const{ return m_remoteAccessSession; }
-
-    /**
-     * <p>A container that describes the remote access session when the request to
-     * create a remote access session is sent.</p>
-     */
     inline void SetRemoteAccessSession(const RemoteAccessSession& value) { m_remoteAccessSession = value; }
-
-    /**
-     * <p>A container that describes the remote access session when the request to
-     * create a remote access session is sent.</p>
-     */
     inline void SetRemoteAccessSession(RemoteAccessSession&& value) { m_remoteAccessSession = std::move(value); }
-
-    /**
-     * <p>A container that describes the remote access session when the request to
-     * create a remote access session is sent.</p>
-     */
     inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(const RemoteAccessSession& value) { SetRemoteAccessSession(value); return *this;}
-
-    /**
-     * <p>A container that describes the remote access session when the request to
-     * create a remote access session is sent.</p>
-     */
     inline CreateRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSession&& value) { SetRemoteAccessSession(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateRemoteAccessSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateRemoteAccessSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateRemoteAccessSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     RemoteAccessSession m_remoteAccessSession;

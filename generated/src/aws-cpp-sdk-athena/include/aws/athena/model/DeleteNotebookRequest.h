@@ -34,46 +34,19 @@ namespace Model
     AWS_ATHENA_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the notebook to delete.</p>
      */
     inline const Aws::String& GetNotebookId() const{ return m_notebookId; }
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline bool NotebookIdHasBeenSet() const { return m_notebookIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline void SetNotebookId(const Aws::String& value) { m_notebookIdHasBeenSet = true; m_notebookId = value; }
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline void SetNotebookId(Aws::String&& value) { m_notebookIdHasBeenSet = true; m_notebookId = std::move(value); }
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline void SetNotebookId(const char* value) { m_notebookIdHasBeenSet = true; m_notebookId.assign(value); }
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline DeleteNotebookRequest& WithNotebookId(const Aws::String& value) { SetNotebookId(value); return *this;}
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline DeleteNotebookRequest& WithNotebookId(Aws::String&& value) { SetNotebookId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the notebook to delete.</p>
-     */
     inline DeleteNotebookRequest& WithNotebookId(const char* value) { SetNotebookId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_notebookId;

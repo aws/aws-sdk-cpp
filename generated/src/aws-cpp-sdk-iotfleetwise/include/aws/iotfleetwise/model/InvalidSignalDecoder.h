@@ -38,118 +38,45 @@ namespace Model
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of a signal decoder that isn't valid.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline InvalidSignalDecoder& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline InvalidSignalDecoder& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of a signal decoder that isn't valid.</p>
-     */
     inline InvalidSignalDecoder& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A message about why the signal decoder isn't valid.</p>
      */
     inline const SignalDecoderFailureReason& GetReason() const{ return m_reason; }
-
-    /**
-     * <p>A message about why the signal decoder isn't valid.</p>
-     */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-
-    /**
-     * <p>A message about why the signal decoder isn't valid.</p>
-     */
     inline void SetReason(const SignalDecoderFailureReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-
-    /**
-     * <p>A message about why the signal decoder isn't valid.</p>
-     */
     inline void SetReason(SignalDecoderFailureReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-
-    /**
-     * <p>A message about why the signal decoder isn't valid.</p>
-     */
     inline InvalidSignalDecoder& WithReason(const SignalDecoderFailureReason& value) { SetReason(value); return *this;}
-
-    /**
-     * <p>A message about why the signal decoder isn't valid.</p>
-     */
     inline InvalidSignalDecoder& WithReason(SignalDecoderFailureReason&& value) { SetReason(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The possible cause for the invalid signal decoder.</p>
      */
     inline const Aws::String& GetHint() const{ return m_hint; }
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline bool HintHasBeenSet() const { return m_hintHasBeenSet; }
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline void SetHint(const Aws::String& value) { m_hintHasBeenSet = true; m_hint = value; }
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline void SetHint(Aws::String&& value) { m_hintHasBeenSet = true; m_hint = std::move(value); }
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline void SetHint(const char* value) { m_hintHasBeenSet = true; m_hint.assign(value); }
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline InvalidSignalDecoder& WithHint(const Aws::String& value) { SetHint(value); return *this;}
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline InvalidSignalDecoder& WithHint(Aws::String&& value) { SetHint(std::move(value)); return *this;}
-
-    /**
-     * <p>The possible cause for the invalid signal decoder.</p>
-     */
     inline InvalidSignalDecoder& WithHint(const char* value) { SetHint(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

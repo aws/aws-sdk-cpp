@@ -38,46 +38,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Overrides the rule evaluation result in the rule group. </p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline AwsWafRegionalWebAclRulesListOverrideActionDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline AwsWafRegionalWebAclRulesListOverrideActionDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>Overrides the rule evaluation result in the rule group. </p>
-     */
     inline AwsWafRegionalWebAclRulesListOverrideActionDetails& WithType(const char* value) { SetType(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_type;

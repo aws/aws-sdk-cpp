@@ -33,53 +33,27 @@ namespace Model
     AWS_FIS_API GetExperimentTargetAccountConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Information about the target account configuration.</p>
      */
     inline const ExperimentTargetAccountConfiguration& GetTargetAccountConfiguration() const{ return m_targetAccountConfiguration; }
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline void SetTargetAccountConfiguration(const ExperimentTargetAccountConfiguration& value) { m_targetAccountConfiguration = value; }
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline void SetTargetAccountConfiguration(ExperimentTargetAccountConfiguration&& value) { m_targetAccountConfiguration = std::move(value); }
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline GetExperimentTargetAccountConfigurationResult& WithTargetAccountConfiguration(const ExperimentTargetAccountConfiguration& value) { SetTargetAccountConfiguration(value); return *this;}
-
-    /**
-     * <p>Information about the target account configuration.</p>
-     */
     inline GetExperimentTargetAccountConfigurationResult& WithTargetAccountConfiguration(ExperimentTargetAccountConfiguration&& value) { SetTargetAccountConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetExperimentTargetAccountConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetExperimentTargetAccountConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetExperimentTargetAccountConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ExperimentTargetAccountConfiguration m_targetAccountConfiguration;

@@ -34,99 +34,42 @@ namespace Model
     AWS_PERSONALIZE_API ListRecommendersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list of the recommenders.</p>
      */
     inline const Aws::Vector<RecommenderSummary>& GetRecommenders() const{ return m_recommenders; }
-
-    /**
-     * <p>A list of the recommenders.</p>
-     */
     inline void SetRecommenders(const Aws::Vector<RecommenderSummary>& value) { m_recommenders = value; }
-
-    /**
-     * <p>A list of the recommenders.</p>
-     */
     inline void SetRecommenders(Aws::Vector<RecommenderSummary>&& value) { m_recommenders = std::move(value); }
-
-    /**
-     * <p>A list of the recommenders.</p>
-     */
     inline ListRecommendersResult& WithRecommenders(const Aws::Vector<RecommenderSummary>& value) { SetRecommenders(value); return *this;}
-
-    /**
-     * <p>A list of the recommenders.</p>
-     */
     inline ListRecommendersResult& WithRecommenders(Aws::Vector<RecommenderSummary>&& value) { SetRecommenders(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of the recommenders.</p>
-     */
     inline ListRecommendersResult& AddRecommenders(const RecommenderSummary& value) { m_recommenders.push_back(value); return *this; }
-
-    /**
-     * <p>A list of the recommenders.</p>
-     */
     inline ListRecommendersResult& AddRecommenders(RecommenderSummary&& value) { m_recommenders.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A token for getting the next set of recommenders (if they exist).</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A token for getting the next set of recommenders (if they exist).</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A token for getting the next set of recommenders (if they exist).</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A token for getting the next set of recommenders (if they exist).</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A token for getting the next set of recommenders (if they exist).</p>
-     */
     inline ListRecommendersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A token for getting the next set of recommenders (if they exist).</p>
-     */
     inline ListRecommendersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A token for getting the next set of recommenders (if they exist).</p>
-     */
     inline ListRecommendersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListRecommendersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListRecommendersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListRecommendersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<RecommenderSummary> m_recommenders;

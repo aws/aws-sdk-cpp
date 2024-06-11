@@ -43,77 +43,31 @@ namespace Model
     AWS_CLOUDFRONT_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>An ARN of a CloudFront resource.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline UntagResource2020_05_31Request& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline UntagResource2020_05_31Request& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-
-    /**
-     * <p>An ARN of a CloudFront resource.</p>
-     */
     inline UntagResource2020_05_31Request& WithResource(const char* value) { SetResource(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
      */
     inline const TagKeys& GetTagKeys() const{ return m_tagKeys; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-     */
     inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-     */
     inline void SetTagKeys(const TagKeys& value) { m_tagKeysHasBeenSet = true; m_tagKeys = value; }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-     */
     inline void SetTagKeys(TagKeys&& value) { m_tagKeysHasBeenSet = true; m_tagKeys = std::move(value); }
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-     */
     inline UntagResource2020_05_31Request& WithTagKeys(const TagKeys& value) { SetTagKeys(value); return *this;}
-
-    /**
-     * <p>A complex type that contains zero or more <code>Tag</code> key elements.</p>
-     */
     inline UntagResource2020_05_31Request& WithTagKeys(TagKeys&& value) { SetTagKeys(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resource;

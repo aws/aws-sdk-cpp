@@ -40,49 +40,21 @@ namespace Model
     AWS_SAGEMAKERRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A wrapper for pieces of the payload that's returned in response to a
      * streaming inference request. A streaming inference response consists of one or
      * more payload parts. </p>
      */
     inline const PayloadPart& GetPayloadPart() const{ return m_payloadPart; }
-
-    /**
-     * <p>A wrapper for pieces of the payload that's returned in response to a
-     * streaming inference request. A streaming inference response consists of one or
-     * more payload parts. </p>
-     */
     inline bool PayloadPartHasBeenSet() const { return m_payloadPartHasBeenSet; }
-
-    /**
-     * <p>A wrapper for pieces of the payload that's returned in response to a
-     * streaming inference request. A streaming inference response consists of one or
-     * more payload parts. </p>
-     */
     inline void SetPayloadPart(const PayloadPart& value) { m_payloadPartHasBeenSet = true; m_payloadPart = value; }
-
-    /**
-     * <p>A wrapper for pieces of the payload that's returned in response to a
-     * streaming inference request. A streaming inference response consists of one or
-     * more payload parts. </p>
-     */
     inline void SetPayloadPart(PayloadPart&& value) { m_payloadPartHasBeenSet = true; m_payloadPart = std::move(value); }
-
-    /**
-     * <p>A wrapper for pieces of the payload that's returned in response to a
-     * streaming inference request. A streaming inference response consists of one or
-     * more payload parts. </p>
-     */
     inline ResponseStream& WithPayloadPart(const PayloadPart& value) { SetPayloadPart(value); return *this;}
-
-    /**
-     * <p>A wrapper for pieces of the payload that's returned in response to a
-     * streaming inference request. A streaming inference response consists of one or
-     * more payload parts. </p>
-     */
     inline ResponseStream& WithPayloadPart(PayloadPart&& value) { SetPayloadPart(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An error occurred while streaming the response body. This error can have the
      * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
@@ -92,94 +64,25 @@ namespace Model
      * closed.</p> </dd> </dl>
      */
     inline const ModelStreamError& GetModelStreamError() const{ return m_modelStreamError; }
-
-    /**
-     * <p> An error occurred while streaming the response body. This error can have the
-     * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
-     * model failed to finish sending the response within the timeout period allowed by
-     * Amazon SageMaker.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
-     * Control Protocol (TCP) connection between the client and the model was reset or
-     * closed.</p> </dd> </dl>
-     */
     inline bool ModelStreamErrorHasBeenSet() const { return m_modelStreamErrorHasBeenSet; }
-
-    /**
-     * <p> An error occurred while streaming the response body. This error can have the
-     * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
-     * model failed to finish sending the response within the timeout period allowed by
-     * Amazon SageMaker.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
-     * Control Protocol (TCP) connection between the client and the model was reset or
-     * closed.</p> </dd> </dl>
-     */
     inline void SetModelStreamError(const ModelStreamError& value) { m_modelStreamErrorHasBeenSet = true; m_modelStreamError = value; }
-
-    /**
-     * <p> An error occurred while streaming the response body. This error can have the
-     * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
-     * model failed to finish sending the response within the timeout period allowed by
-     * Amazon SageMaker.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
-     * Control Protocol (TCP) connection between the client and the model was reset or
-     * closed.</p> </dd> </dl>
-     */
     inline void SetModelStreamError(ModelStreamError&& value) { m_modelStreamErrorHasBeenSet = true; m_modelStreamError = std::move(value); }
-
-    /**
-     * <p> An error occurred while streaming the response body. This error can have the
-     * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
-     * model failed to finish sending the response within the timeout period allowed by
-     * Amazon SageMaker.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
-     * Control Protocol (TCP) connection between the client and the model was reset or
-     * closed.</p> </dd> </dl>
-     */
     inline ResponseStream& WithModelStreamError(const ModelStreamError& value) { SetModelStreamError(value); return *this;}
-
-    /**
-     * <p> An error occurred while streaming the response body. This error can have the
-     * following error codes:</p> <dl> <dt>ModelInvocationTimeExceeded</dt> <dd> <p>The
-     * model failed to finish sending the response within the timeout period allowed by
-     * Amazon SageMaker.</p> </dd> <dt>StreamBroken</dt> <dd> <p>The Transmission
-     * Control Protocol (TCP) connection between the client and the model was reset or
-     * closed.</p> </dd> </dl>
-     */
     inline ResponseStream& WithModelStreamError(ModelStreamError&& value) { SetModelStreamError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The stream processing failed because of an unknown error, exception or
      * failure. Try your request again.</p>
      */
     inline const InternalStreamFailure& GetInternalStreamFailure() const{ return m_internalStreamFailure; }
-
-    /**
-     * <p>The stream processing failed because of an unknown error, exception or
-     * failure. Try your request again.</p>
-     */
     inline bool InternalStreamFailureHasBeenSet() const { return m_internalStreamFailureHasBeenSet; }
-
-    /**
-     * <p>The stream processing failed because of an unknown error, exception or
-     * failure. Try your request again.</p>
-     */
     inline void SetInternalStreamFailure(const InternalStreamFailure& value) { m_internalStreamFailureHasBeenSet = true; m_internalStreamFailure = value; }
-
-    /**
-     * <p>The stream processing failed because of an unknown error, exception or
-     * failure. Try your request again.</p>
-     */
     inline void SetInternalStreamFailure(InternalStreamFailure&& value) { m_internalStreamFailureHasBeenSet = true; m_internalStreamFailure = std::move(value); }
-
-    /**
-     * <p>The stream processing failed because of an unknown error, exception or
-     * failure. Try your request again.</p>
-     */
     inline ResponseStream& WithInternalStreamFailure(const InternalStreamFailure& value) { SetInternalStreamFailure(value); return *this;}
-
-    /**
-     * <p>The stream processing failed because of an unknown error, exception or
-     * failure. Try your request again.</p>
-     */
     inline ResponseStream& WithInternalStreamFailure(InternalStreamFailure&& value) { SetInternalStreamFailure(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PayloadPart m_payloadPart;

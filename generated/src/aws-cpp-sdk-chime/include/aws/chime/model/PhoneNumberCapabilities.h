@@ -37,131 +37,65 @@ namespace Model
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Allows or denies inbound calling for the specified phone number.</p>
      */
     inline bool GetInboundCall() const{ return m_inboundCall; }
-
-    /**
-     * <p>Allows or denies inbound calling for the specified phone number.</p>
-     */
     inline bool InboundCallHasBeenSet() const { return m_inboundCallHasBeenSet; }
-
-    /**
-     * <p>Allows or denies inbound calling for the specified phone number.</p>
-     */
     inline void SetInboundCall(bool value) { m_inboundCallHasBeenSet = true; m_inboundCall = value; }
-
-    /**
-     * <p>Allows or denies inbound calling for the specified phone number.</p>
-     */
     inline PhoneNumberCapabilities& WithInboundCall(bool value) { SetInboundCall(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies outbound calling for the specified phone number.</p>
      */
     inline bool GetOutboundCall() const{ return m_outboundCall; }
-
-    /**
-     * <p>Allows or denies outbound calling for the specified phone number.</p>
-     */
     inline bool OutboundCallHasBeenSet() const { return m_outboundCallHasBeenSet; }
-
-    /**
-     * <p>Allows or denies outbound calling for the specified phone number.</p>
-     */
     inline void SetOutboundCall(bool value) { m_outboundCallHasBeenSet = true; m_outboundCall = value; }
-
-    /**
-     * <p>Allows or denies outbound calling for the specified phone number.</p>
-     */
     inline PhoneNumberCapabilities& WithOutboundCall(bool value) { SetOutboundCall(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
      */
     inline bool GetInboundSMS() const{ return m_inboundSMS; }
-
-    /**
-     * <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
-     */
     inline bool InboundSMSHasBeenSet() const { return m_inboundSMSHasBeenSet; }
-
-    /**
-     * <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
-     */
     inline void SetInboundSMS(bool value) { m_inboundSMSHasBeenSet = true; m_inboundSMS = value; }
-
-    /**
-     * <p>Allows or denies inbound SMS messaging for the specified phone number.</p>
-     */
     inline PhoneNumberCapabilities& WithInboundSMS(bool value) { SetInboundSMS(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
      */
     inline bool GetOutboundSMS() const{ return m_outboundSMS; }
-
-    /**
-     * <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
-     */
     inline bool OutboundSMSHasBeenSet() const { return m_outboundSMSHasBeenSet; }
-
-    /**
-     * <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
-     */
     inline void SetOutboundSMS(bool value) { m_outboundSMSHasBeenSet = true; m_outboundSMS = value; }
-
-    /**
-     * <p>Allows or denies outbound SMS messaging for the specified phone number.</p>
-     */
     inline PhoneNumberCapabilities& WithOutboundSMS(bool value) { SetOutboundSMS(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
      */
     inline bool GetInboundMMS() const{ return m_inboundMMS; }
-
-    /**
-     * <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
-     */
     inline bool InboundMMSHasBeenSet() const { return m_inboundMMSHasBeenSet; }
-
-    /**
-     * <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
-     */
     inline void SetInboundMMS(bool value) { m_inboundMMSHasBeenSet = true; m_inboundMMS = value; }
-
-    /**
-     * <p>Allows or denies inbound MMS messaging for the specified phone number.</p>
-     */
     inline PhoneNumberCapabilities& WithInboundMMS(bool value) { SetInboundMMS(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
      */
     inline bool GetOutboundMMS() const{ return m_outboundMMS; }
-
-    /**
-     * <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
-     */
     inline bool OutboundMMSHasBeenSet() const { return m_outboundMMSHasBeenSet; }
-
-    /**
-     * <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
-     */
     inline void SetOutboundMMS(bool value) { m_outboundMMSHasBeenSet = true; m_outboundMMS = value; }
-
-    /**
-     * <p>Allows or denies outbound MMS messaging for the specified phone number.</p>
-     */
     inline PhoneNumberCapabilities& WithOutboundMMS(bool value) { SetOutboundMMS(value); return *this;}
-
+    ///@}
   private:
 
     bool m_inboundCall;

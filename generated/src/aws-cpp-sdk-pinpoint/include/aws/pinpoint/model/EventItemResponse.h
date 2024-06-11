@@ -38,83 +38,32 @@ namespace Model
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A custom message that's returned in the response as a result of processing
      * the event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline EventItemResponse& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline EventItemResponse& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A custom message that's returned in the response as a result of processing
-     * the event.</p>
-     */
     inline EventItemResponse& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status code that's returned in the response as a result of processing the
      * event. Possible values are: 202, for events that were accepted; and, 400, for
      * events that weren't valid.</p>
      */
     inline int GetStatusCode() const{ return m_statusCode; }
-
-    /**
-     * <p>The status code that's returned in the response as a result of processing the
-     * event. Possible values are: 202, for events that were accepted; and, 400, for
-     * events that weren't valid.</p>
-     */
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-
-    /**
-     * <p>The status code that's returned in the response as a result of processing the
-     * event. Possible values are: 202, for events that were accepted; and, 400, for
-     * events that weren't valid.</p>
-     */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-
-    /**
-     * <p>The status code that's returned in the response as a result of processing the
-     * event. Possible values are: 202, for events that were accepted; and, 400, for
-     * events that weren't valid.</p>
-     */
     inline EventItemResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

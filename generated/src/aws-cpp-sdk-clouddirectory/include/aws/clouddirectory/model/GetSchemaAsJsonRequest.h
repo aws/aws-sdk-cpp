@@ -34,46 +34,19 @@ namespace Model
     AWS_CLOUDDIRECTORY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ARN of the schema to retrieve.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline GetSchemaAsJsonRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline GetSchemaAsJsonRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the schema to retrieve.</p>
-     */
     inline GetSchemaAsJsonRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_schemaArn;

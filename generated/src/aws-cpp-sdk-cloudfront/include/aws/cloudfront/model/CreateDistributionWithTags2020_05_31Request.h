@@ -36,36 +36,17 @@ namespace Model
     AWS_CLOUDFRONT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The distribution's configuration information.</p>
      */
     inline const DistributionConfigWithTags& GetDistributionConfigWithTags() const{ return m_distributionConfigWithTags; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline bool DistributionConfigWithTagsHasBeenSet() const { return m_distributionConfigWithTagsHasBeenSet; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline void SetDistributionConfigWithTags(const DistributionConfigWithTags& value) { m_distributionConfigWithTagsHasBeenSet = true; m_distributionConfigWithTags = value; }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline void SetDistributionConfigWithTags(DistributionConfigWithTags&& value) { m_distributionConfigWithTagsHasBeenSet = true; m_distributionConfigWithTags = std::move(value); }
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline CreateDistributionWithTags2020_05_31Request& WithDistributionConfigWithTags(const DistributionConfigWithTags& value) { SetDistributionConfigWithTags(value); return *this;}
-
-    /**
-     * <p>The distribution's configuration information.</p>
-     */
     inline CreateDistributionWithTags2020_05_31Request& WithDistributionConfigWithTags(DistributionConfigWithTags&& value) { SetDistributionConfigWithTags(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     DistributionConfigWithTags m_distributionConfigWithTags;

@@ -38,71 +38,30 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the shadow variant.</p>
      */
     inline const Aws::String& GetShadowModelVariantName() const{ return m_shadowModelVariantName; }
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline bool ShadowModelVariantNameHasBeenSet() const { return m_shadowModelVariantNameHasBeenSet; }
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline void SetShadowModelVariantName(const Aws::String& value) { m_shadowModelVariantNameHasBeenSet = true; m_shadowModelVariantName = value; }
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline void SetShadowModelVariantName(Aws::String&& value) { m_shadowModelVariantNameHasBeenSet = true; m_shadowModelVariantName = std::move(value); }
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline void SetShadowModelVariantName(const char* value) { m_shadowModelVariantNameHasBeenSet = true; m_shadowModelVariantName.assign(value); }
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline ShadowModelVariantConfig& WithShadowModelVariantName(const Aws::String& value) { SetShadowModelVariantName(value); return *this;}
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline ShadowModelVariantConfig& WithShadowModelVariantName(Aws::String&& value) { SetShadowModelVariantName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the shadow variant.</p>
-     */
     inline ShadowModelVariantConfig& WithShadowModelVariantName(const char* value) { SetShadowModelVariantName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The percentage of inference requests that Amazon SageMaker replicates from
      * the production variant to the shadow variant. </p>
      */
     inline int GetSamplingPercentage() const{ return m_samplingPercentage; }
-
-    /**
-     * <p> The percentage of inference requests that Amazon SageMaker replicates from
-     * the production variant to the shadow variant. </p>
-     */
     inline bool SamplingPercentageHasBeenSet() const { return m_samplingPercentageHasBeenSet; }
-
-    /**
-     * <p> The percentage of inference requests that Amazon SageMaker replicates from
-     * the production variant to the shadow variant. </p>
-     */
     inline void SetSamplingPercentage(int value) { m_samplingPercentageHasBeenSet = true; m_samplingPercentage = value; }
-
-    /**
-     * <p> The percentage of inference requests that Amazon SageMaker replicates from
-     * the production variant to the shadow variant. </p>
-     */
     inline ShadowModelVariantConfig& WithSamplingPercentage(int value) { SetSamplingPercentage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_shadowModelVariantName;

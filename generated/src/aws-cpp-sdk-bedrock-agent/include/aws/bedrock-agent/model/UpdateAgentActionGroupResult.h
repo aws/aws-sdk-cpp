@@ -33,53 +33,27 @@ namespace Model
     AWS_BEDROCKAGENT_API UpdateAgentActionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Contains details about the action group that was updated.</p>
      */
     inline const AgentActionGroup& GetAgentActionGroup() const{ return m_agentActionGroup; }
-
-    /**
-     * <p>Contains details about the action group that was updated.</p>
-     */
     inline void SetAgentActionGroup(const AgentActionGroup& value) { m_agentActionGroup = value; }
-
-    /**
-     * <p>Contains details about the action group that was updated.</p>
-     */
     inline void SetAgentActionGroup(AgentActionGroup&& value) { m_agentActionGroup = std::move(value); }
-
-    /**
-     * <p>Contains details about the action group that was updated.</p>
-     */
     inline UpdateAgentActionGroupResult& WithAgentActionGroup(const AgentActionGroup& value) { SetAgentActionGroup(value); return *this;}
-
-    /**
-     * <p>Contains details about the action group that was updated.</p>
-     */
     inline UpdateAgentActionGroupResult& WithAgentActionGroup(AgentActionGroup&& value) { SetAgentActionGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateAgentActionGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateAgentActionGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateAgentActionGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     AgentActionGroup m_agentActionGroup;

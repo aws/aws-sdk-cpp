@@ -34,63 +34,29 @@ namespace Model
     AWS_MEDIASTORE_API GetCorsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The CORS policy assigned to the container.</p>
      */
     inline const Aws::Vector<CorsRule>& GetCorsPolicy() const{ return m_corsPolicy; }
-
-    /**
-     * <p>The CORS policy assigned to the container.</p>
-     */
     inline void SetCorsPolicy(const Aws::Vector<CorsRule>& value) { m_corsPolicy = value; }
-
-    /**
-     * <p>The CORS policy assigned to the container.</p>
-     */
     inline void SetCorsPolicy(Aws::Vector<CorsRule>&& value) { m_corsPolicy = std::move(value); }
-
-    /**
-     * <p>The CORS policy assigned to the container.</p>
-     */
     inline GetCorsPolicyResult& WithCorsPolicy(const Aws::Vector<CorsRule>& value) { SetCorsPolicy(value); return *this;}
-
-    /**
-     * <p>The CORS policy assigned to the container.</p>
-     */
     inline GetCorsPolicyResult& WithCorsPolicy(Aws::Vector<CorsRule>&& value) { SetCorsPolicy(std::move(value)); return *this;}
-
-    /**
-     * <p>The CORS policy assigned to the container.</p>
-     */
     inline GetCorsPolicyResult& AddCorsPolicy(const CorsRule& value) { m_corsPolicy.push_back(value); return *this; }
-
-    /**
-     * <p>The CORS policy assigned to the container.</p>
-     */
     inline GetCorsPolicyResult& AddCorsPolicy(CorsRule&& value) { m_corsPolicy.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetCorsPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetCorsPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetCorsPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<CorsRule> m_corsPolicy;

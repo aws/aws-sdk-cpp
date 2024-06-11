@@ -36,30 +36,16 @@ namespace Model
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The confidence level you plan to use to identify if unsafe content is present
      * during inference.</p>
      */
     inline double GetConfidenceThreshold() const{ return m_confidenceThreshold; }
-
-    /**
-     * <p>The confidence level you plan to use to identify if unsafe content is present
-     * during inference.</p>
-     */
     inline bool ConfidenceThresholdHasBeenSet() const { return m_confidenceThresholdHasBeenSet; }
-
-    /**
-     * <p>The confidence level you plan to use to identify if unsafe content is present
-     * during inference.</p>
-     */
     inline void SetConfidenceThreshold(double value) { m_confidenceThresholdHasBeenSet = true; m_confidenceThreshold = value; }
-
-    /**
-     * <p>The confidence level you plan to use to identify if unsafe content is present
-     * during inference.</p>
-     */
     inline CustomizationFeatureContentModerationConfig& WithConfidenceThreshold(double value) { SetConfidenceThreshold(value); return *this;}
-
+    ///@}
   private:
 
     double m_confidenceThreshold;

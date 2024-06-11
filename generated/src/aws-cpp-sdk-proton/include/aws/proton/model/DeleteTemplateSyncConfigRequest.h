@@ -35,77 +35,31 @@ namespace Model
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The template name.</p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
-
-    /**
-     * <p>The template name.</p>
-     */
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-
-    /**
-     * <p>The template name.</p>
-     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-
-    /**
-     * <p>The template name.</p>
-     */
     inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-
-    /**
-     * <p>The template name.</p>
-     */
     inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-
-    /**
-     * <p>The template name.</p>
-     */
     inline DeleteTemplateSyncConfigRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-
-    /**
-     * <p>The template name.</p>
-     */
     inline DeleteTemplateSyncConfigRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-
-    /**
-     * <p>The template name.</p>
-     */
     inline DeleteTemplateSyncConfigRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The template type.</p>
      */
     inline const TemplateType& GetTemplateType() const{ return m_templateType; }
-
-    /**
-     * <p>The template type.</p>
-     */
     inline bool TemplateTypeHasBeenSet() const { return m_templateTypeHasBeenSet; }
-
-    /**
-     * <p>The template type.</p>
-     */
     inline void SetTemplateType(const TemplateType& value) { m_templateTypeHasBeenSet = true; m_templateType = value; }
-
-    /**
-     * <p>The template type.</p>
-     */
     inline void SetTemplateType(TemplateType&& value) { m_templateTypeHasBeenSet = true; m_templateType = std::move(value); }
-
-    /**
-     * <p>The template type.</p>
-     */
     inline DeleteTemplateSyncConfigRequest& WithTemplateType(const TemplateType& value) { SetTemplateType(value); return *this;}
-
-    /**
-     * <p>The template type.</p>
-     */
     inline DeleteTemplateSyncConfigRequest& WithTemplateType(TemplateType&& value) { SetTemplateType(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_templateName;

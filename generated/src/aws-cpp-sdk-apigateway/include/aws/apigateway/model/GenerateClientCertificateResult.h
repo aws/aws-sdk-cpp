@@ -41,267 +41,97 @@ namespace Model
     AWS_APIGATEWAY_API GenerateClientCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The identifier of the client certificate.</p>
      */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
-
-    /**
-     * <p>The identifier of the client certificate.</p>
-     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateId = value; }
-
-    /**
-     * <p>The identifier of the client certificate.</p>
-     */
     inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateId = std::move(value); }
-
-    /**
-     * <p>The identifier of the client certificate.</p>
-     */
     inline void SetClientCertificateId(const char* value) { m_clientCertificateId.assign(value); }
-
-    /**
-     * <p>The identifier of the client certificate.</p>
-     */
     inline GenerateClientCertificateResult& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
-
-    /**
-     * <p>The identifier of the client certificate.</p>
-     */
     inline GenerateClientCertificateResult& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the client certificate.</p>
-     */
     inline GenerateClientCertificateResult& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The description of the client certificate.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The description of the client certificate.</p>
-     */
     inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The description of the client certificate.</p>
-     */
     inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The description of the client certificate.</p>
-     */
     inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The description of the client certificate.</p>
-     */
     inline GenerateClientCertificateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The description of the client certificate.</p>
-     */
     inline GenerateClientCertificateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The description of the client certificate.</p>
-     */
     inline GenerateClientCertificateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The PEM-encoded public key of the client certificate, which can be used to
      * configure certificate authentication in the integration endpoint .</p>
      */
     inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
-
-    /**
-     * <p>The PEM-encoded public key of the client certificate, which can be used to
-     * configure certificate authentication in the integration endpoint .</p>
-     */
     inline void SetPemEncodedCertificate(const Aws::String& value) { m_pemEncodedCertificate = value; }
-
-    /**
-     * <p>The PEM-encoded public key of the client certificate, which can be used to
-     * configure certificate authentication in the integration endpoint .</p>
-     */
     inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = std::move(value); }
-
-    /**
-     * <p>The PEM-encoded public key of the client certificate, which can be used to
-     * configure certificate authentication in the integration endpoint .</p>
-     */
     inline void SetPemEncodedCertificate(const char* value) { m_pemEncodedCertificate.assign(value); }
-
-    /**
-     * <p>The PEM-encoded public key of the client certificate, which can be used to
-     * configure certificate authentication in the integration endpoint .</p>
-     */
     inline GenerateClientCertificateResult& WithPemEncodedCertificate(const Aws::String& value) { SetPemEncodedCertificate(value); return *this;}
-
-    /**
-     * <p>The PEM-encoded public key of the client certificate, which can be used to
-     * configure certificate authentication in the integration endpoint .</p>
-     */
     inline GenerateClientCertificateResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(std::move(value)); return *this;}
-
-    /**
-     * <p>The PEM-encoded public key of the client certificate, which can be used to
-     * configure certificate authentication in the integration endpoint .</p>
-     */
     inline GenerateClientCertificateResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-
-    /**
-     * <p>The timestamp when the client certificate was created.</p>
-     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-
-    /**
-     * <p>The timestamp when the client certificate was created.</p>
-     */
     inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-
-    /**
-     * <p>The timestamp when the client certificate was created.</p>
-     */
     inline GenerateClientCertificateResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-
-    /**
-     * <p>The timestamp when the client certificate was created.</p>
-     */
     inline GenerateClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The timestamp when the client certificate will expire.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
-
-    /**
-     * <p>The timestamp when the client certificate will expire.</p>
-     */
     inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
-
-    /**
-     * <p>The timestamp when the client certificate will expire.</p>
-     */
     inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = std::move(value); }
-
-    /**
-     * <p>The timestamp when the client certificate will expire.</p>
-     */
     inline GenerateClientCertificateResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-
-    /**
-     * <p>The timestamp when the client certificate will expire.</p>
-     */
     inline GenerateClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The collection of tags. Each tag element is associated with a given
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The collection of tags. Each tag element is associated with a given
-     * resource.</p>
-     */
     inline GenerateClientCertificateResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GenerateClientCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GenerateClientCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GenerateClientCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_clientCertificateId;

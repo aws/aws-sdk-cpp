@@ -37,46 +37,19 @@ namespace Model
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Updating or deleting a resource can cause an inconsistent state.</p>
      */
     inline const Aws::String& GetExceptionMessage() const{ return m_exceptionMessage; }
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline bool ExceptionMessageHasBeenSet() const { return m_exceptionMessageHasBeenSet; }
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline void SetExceptionMessage(const Aws::String& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = value; }
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline void SetExceptionMessage(Aws::String&& value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage = std::move(value); }
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline void SetExceptionMessage(const char* value) { m_exceptionMessageHasBeenSet = true; m_exceptionMessage.assign(value); }
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline ConflictException& WithExceptionMessage(const Aws::String& value) { SetExceptionMessage(value); return *this;}
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline ConflictException& WithExceptionMessage(Aws::String&& value) { SetExceptionMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>Updating or deleting a resource can cause an inconsistent state.</p>
-     */
     inline ConflictException& WithExceptionMessage(const char* value) { SetExceptionMessage(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_exceptionMessage;

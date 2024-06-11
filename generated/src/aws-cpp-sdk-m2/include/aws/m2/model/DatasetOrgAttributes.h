@@ -42,129 +42,53 @@ namespace Model
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The generation data group of the data set.</p>
      */
     inline const GdgAttributes& GetGdg() const{ return m_gdg; }
-
-    /**
-     * <p>The generation data group of the data set.</p>
-     */
     inline bool GdgHasBeenSet() const { return m_gdgHasBeenSet; }
-
-    /**
-     * <p>The generation data group of the data set.</p>
-     */
     inline void SetGdg(const GdgAttributes& value) { m_gdgHasBeenSet = true; m_gdg = value; }
-
-    /**
-     * <p>The generation data group of the data set.</p>
-     */
     inline void SetGdg(GdgAttributes&& value) { m_gdgHasBeenSet = true; m_gdg = std::move(value); }
-
-    /**
-     * <p>The generation data group of the data set.</p>
-     */
     inline DatasetOrgAttributes& WithGdg(const GdgAttributes& value) { SetGdg(value); return *this;}
-
-    /**
-     * <p>The generation data group of the data set.</p>
-     */
     inline DatasetOrgAttributes& WithGdg(GdgAttributes&& value) { SetGdg(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of a PO type data set.</p>
      */
     inline const PoAttributes& GetPo() const{ return m_po; }
-
-    /**
-     * <p>The details of a PO type data set.</p>
-     */
     inline bool PoHasBeenSet() const { return m_poHasBeenSet; }
-
-    /**
-     * <p>The details of a PO type data set.</p>
-     */
     inline void SetPo(const PoAttributes& value) { m_poHasBeenSet = true; m_po = value; }
-
-    /**
-     * <p>The details of a PO type data set.</p>
-     */
     inline void SetPo(PoAttributes&& value) { m_poHasBeenSet = true; m_po = std::move(value); }
-
-    /**
-     * <p>The details of a PO type data set.</p>
-     */
     inline DatasetOrgAttributes& WithPo(const PoAttributes& value) { SetPo(value); return *this;}
-
-    /**
-     * <p>The details of a PO type data set.</p>
-     */
     inline DatasetOrgAttributes& WithPo(PoAttributes&& value) { SetPo(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of a PS type data set.</p>
      */
     inline const PsAttributes& GetPs() const{ return m_ps; }
-
-    /**
-     * <p>The details of a PS type data set.</p>
-     */
     inline bool PsHasBeenSet() const { return m_psHasBeenSet; }
-
-    /**
-     * <p>The details of a PS type data set.</p>
-     */
     inline void SetPs(const PsAttributes& value) { m_psHasBeenSet = true; m_ps = value; }
-
-    /**
-     * <p>The details of a PS type data set.</p>
-     */
     inline void SetPs(PsAttributes&& value) { m_psHasBeenSet = true; m_ps = std::move(value); }
-
-    /**
-     * <p>The details of a PS type data set.</p>
-     */
     inline DatasetOrgAttributes& WithPs(const PsAttributes& value) { SetPs(value); return *this;}
-
-    /**
-     * <p>The details of a PS type data set.</p>
-     */
     inline DatasetOrgAttributes& WithPs(PsAttributes&& value) { SetPs(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of a VSAM data set.</p>
      */
     inline const VsamAttributes& GetVsam() const{ return m_vsam; }
-
-    /**
-     * <p>The details of a VSAM data set.</p>
-     */
     inline bool VsamHasBeenSet() const { return m_vsamHasBeenSet; }
-
-    /**
-     * <p>The details of a VSAM data set.</p>
-     */
     inline void SetVsam(const VsamAttributes& value) { m_vsamHasBeenSet = true; m_vsam = value; }
-
-    /**
-     * <p>The details of a VSAM data set.</p>
-     */
     inline void SetVsam(VsamAttributes&& value) { m_vsamHasBeenSet = true; m_vsam = std::move(value); }
-
-    /**
-     * <p>The details of a VSAM data set.</p>
-     */
     inline DatasetOrgAttributes& WithVsam(const VsamAttributes& value) { SetVsam(value); return *this;}
-
-    /**
-     * <p>The details of a VSAM data set.</p>
-     */
     inline DatasetOrgAttributes& WithVsam(VsamAttributes&& value) { SetVsam(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GdgAttributes m_gdg;

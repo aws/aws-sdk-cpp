@@ -38,36 +38,17 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A datetime in the future when the data set will be deprecated.</p>
      */
     inline const Aws::Utils::DateTime& GetDeprecationAt() const{ return m_deprecationAt; }
-
-    /**
-     * <p>A datetime in the future when the data set will be deprecated.</p>
-     */
     inline bool DeprecationAtHasBeenSet() const { return m_deprecationAtHasBeenSet; }
-
-    /**
-     * <p>A datetime in the future when the data set will be deprecated.</p>
-     */
     inline void SetDeprecationAt(const Aws::Utils::DateTime& value) { m_deprecationAtHasBeenSet = true; m_deprecationAt = value; }
-
-    /**
-     * <p>A datetime in the future when the data set will be deprecated.</p>
-     */
     inline void SetDeprecationAt(Aws::Utils::DateTime&& value) { m_deprecationAtHasBeenSet = true; m_deprecationAt = std::move(value); }
-
-    /**
-     * <p>A datetime in the future when the data set will be deprecated.</p>
-     */
     inline DeprecationRequestDetails& WithDeprecationAt(const Aws::Utils::DateTime& value) { SetDeprecationAt(value); return *this;}
-
-    /**
-     * <p>A datetime in the future when the data set will be deprecated.</p>
-     */
     inline DeprecationRequestDetails& WithDeprecationAt(Aws::Utils::DateTime&& value) { SetDeprecationAt(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::DateTime m_deprecationAt;

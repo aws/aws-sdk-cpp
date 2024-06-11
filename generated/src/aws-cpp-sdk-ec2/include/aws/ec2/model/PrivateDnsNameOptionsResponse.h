@@ -39,86 +39,39 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The type of hostname to assign to an instance.</p>
      */
     inline const HostnameType& GetHostnameType() const{ return m_hostnameType; }
-
-    /**
-     * <p>The type of hostname to assign to an instance.</p>
-     */
     inline bool HostnameTypeHasBeenSet() const { return m_hostnameTypeHasBeenSet; }
-
-    /**
-     * <p>The type of hostname to assign to an instance.</p>
-     */
     inline void SetHostnameType(const HostnameType& value) { m_hostnameTypeHasBeenSet = true; m_hostnameType = value; }
-
-    /**
-     * <p>The type of hostname to assign to an instance.</p>
-     */
     inline void SetHostnameType(HostnameType&& value) { m_hostnameTypeHasBeenSet = true; m_hostnameType = std::move(value); }
-
-    /**
-     * <p>The type of hostname to assign to an instance.</p>
-     */
     inline PrivateDnsNameOptionsResponse& WithHostnameType(const HostnameType& value) { SetHostnameType(value); return *this;}
-
-    /**
-     * <p>The type of hostname to assign to an instance.</p>
-     */
     inline PrivateDnsNameOptionsResponse& WithHostnameType(HostnameType&& value) { SetHostnameType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
      * records.</p>
      */
     inline bool GetEnableResourceNameDnsARecord() const{ return m_enableResourceNameDnsARecord; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p>
-     */
     inline bool EnableResourceNameDnsARecordHasBeenSet() const { return m_enableResourceNameDnsARecordHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p>
-     */
     inline void SetEnableResourceNameDnsARecord(bool value) { m_enableResourceNameDnsARecordHasBeenSet = true; m_enableResourceNameDnsARecord = value; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS A
-     * records.</p>
-     */
     inline PrivateDnsNameOptionsResponse& WithEnableResourceNameDnsARecord(bool value) { SetEnableResourceNameDnsARecord(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
      * AAAA records.</p>
      */
     inline bool GetEnableResourceNameDnsAAAARecord() const{ return m_enableResourceNameDnsAAAARecord; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
-     * AAAA records.</p>
-     */
     inline bool EnableResourceNameDnsAAAARecordHasBeenSet() const { return m_enableResourceNameDnsAAAARecordHasBeenSet; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
-     * AAAA records.</p>
-     */
     inline void SetEnableResourceNameDnsAAAARecord(bool value) { m_enableResourceNameDnsAAAARecordHasBeenSet = true; m_enableResourceNameDnsAAAARecord = value; }
-
-    /**
-     * <p>Indicates whether to respond to DNS queries for instance hostnames with DNS
-     * AAAA records.</p>
-     */
     inline PrivateDnsNameOptionsResponse& WithEnableResourceNameDnsAAAARecord(bool value) { SetEnableResourceNameDnsAAAARecord(value); return *this;}
-
+    ///@}
   private:
 
     HostnameType m_hostnameType;

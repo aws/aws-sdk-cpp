@@ -39,67 +39,29 @@ namespace Model
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies any Cloud Map information for the virtual node.</p>
      */
     inline const AwsCloudMapServiceDiscovery& GetAwsCloudMap() const{ return m_awsCloudMap; }
-
-    /**
-     * <p>Specifies any Cloud Map information for the virtual node.</p>
-     */
     inline bool AwsCloudMapHasBeenSet() const { return m_awsCloudMapHasBeenSet; }
-
-    /**
-     * <p>Specifies any Cloud Map information for the virtual node.</p>
-     */
     inline void SetAwsCloudMap(const AwsCloudMapServiceDiscovery& value) { m_awsCloudMapHasBeenSet = true; m_awsCloudMap = value; }
-
-    /**
-     * <p>Specifies any Cloud Map information for the virtual node.</p>
-     */
     inline void SetAwsCloudMap(AwsCloudMapServiceDiscovery&& value) { m_awsCloudMapHasBeenSet = true; m_awsCloudMap = std::move(value); }
-
-    /**
-     * <p>Specifies any Cloud Map information for the virtual node.</p>
-     */
     inline ServiceDiscovery& WithAwsCloudMap(const AwsCloudMapServiceDiscovery& value) { SetAwsCloudMap(value); return *this;}
-
-    /**
-     * <p>Specifies any Cloud Map information for the virtual node.</p>
-     */
     inline ServiceDiscovery& WithAwsCloudMap(AwsCloudMapServiceDiscovery&& value) { SetAwsCloudMap(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies the DNS information for the virtual node.</p>
      */
     inline const DnsServiceDiscovery& GetDns() const{ return m_dns; }
-
-    /**
-     * <p>Specifies the DNS information for the virtual node.</p>
-     */
     inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
-
-    /**
-     * <p>Specifies the DNS information for the virtual node.</p>
-     */
     inline void SetDns(const DnsServiceDiscovery& value) { m_dnsHasBeenSet = true; m_dns = value; }
-
-    /**
-     * <p>Specifies the DNS information for the virtual node.</p>
-     */
     inline void SetDns(DnsServiceDiscovery&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
-
-    /**
-     * <p>Specifies the DNS information for the virtual node.</p>
-     */
     inline ServiceDiscovery& WithDns(const DnsServiceDiscovery& value) { SetDns(value); return *this;}
-
-    /**
-     * <p>Specifies the DNS information for the virtual node.</p>
-     */
     inline ServiceDiscovery& WithDns(DnsServiceDiscovery&& value) { SetDns(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     AwsCloudMapServiceDiscovery m_awsCloudMap;

@@ -34,46 +34,19 @@ namespace Model
     AWS_MAILMANAGER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>A unique relay identifier.</p>
      */
     inline const Aws::String& GetRelayId() const{ return m_relayId; }
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline bool RelayIdHasBeenSet() const { return m_relayIdHasBeenSet; }
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline void SetRelayId(const Aws::String& value) { m_relayIdHasBeenSet = true; m_relayId = value; }
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline void SetRelayId(Aws::String&& value) { m_relayIdHasBeenSet = true; m_relayId = std::move(value); }
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline void SetRelayId(const char* value) { m_relayIdHasBeenSet = true; m_relayId.assign(value); }
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline GetRelayRequest& WithRelayId(const Aws::String& value) { SetRelayId(value); return *this;}
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline GetRelayRequest& WithRelayId(Aws::String&& value) { SetRelayId(std::move(value)); return *this;}
-
-    /**
-     * <p>A unique relay identifier.</p>
-     */
     inline GetRelayRequest& WithRelayId(const char* value) { SetRelayId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_relayId;

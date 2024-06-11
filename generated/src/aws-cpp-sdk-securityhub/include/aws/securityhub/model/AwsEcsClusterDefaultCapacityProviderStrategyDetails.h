@@ -39,92 +39,40 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The minimum number of tasks to run on the specified capacity provider.</p>
      */
     inline int GetBase() const{ return m_base; }
-
-    /**
-     * <p>The minimum number of tasks to run on the specified capacity provider.</p>
-     */
     inline bool BaseHasBeenSet() const { return m_baseHasBeenSet; }
-
-    /**
-     * <p>The minimum number of tasks to run on the specified capacity provider.</p>
-     */
     inline void SetBase(int value) { m_baseHasBeenSet = true; m_base = value; }
-
-    /**
-     * <p>The minimum number of tasks to run on the specified capacity provider.</p>
-     */
     inline AwsEcsClusterDefaultCapacityProviderStrategyDetails& WithBase(int value) { SetBase(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the capacity provider.</p>
      */
     inline const Aws::String& GetCapacityProvider() const{ return m_capacityProvider; }
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline bool CapacityProviderHasBeenSet() const { return m_capacityProviderHasBeenSet; }
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline void SetCapacityProvider(const Aws::String& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = value; }
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline void SetCapacityProvider(Aws::String&& value) { m_capacityProviderHasBeenSet = true; m_capacityProvider = std::move(value); }
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline void SetCapacityProvider(const char* value) { m_capacityProviderHasBeenSet = true; m_capacityProvider.assign(value); }
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline AwsEcsClusterDefaultCapacityProviderStrategyDetails& WithCapacityProvider(const Aws::String& value) { SetCapacityProvider(value); return *this;}
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline AwsEcsClusterDefaultCapacityProviderStrategyDetails& WithCapacityProvider(Aws::String&& value) { SetCapacityProvider(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the capacity provider.</p>
-     */
     inline AwsEcsClusterDefaultCapacityProviderStrategyDetails& WithCapacityProvider(const char* value) { SetCapacityProvider(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The relative percentage of the total number of tasks launched that should use
      * the capacity provider.</p>
      */
     inline int GetWeight() const{ return m_weight; }
-
-    /**
-     * <p>The relative percentage of the total number of tasks launched that should use
-     * the capacity provider.</p>
-     */
     inline bool WeightHasBeenSet() const { return m_weightHasBeenSet; }
-
-    /**
-     * <p>The relative percentage of the total number of tasks launched that should use
-     * the capacity provider.</p>
-     */
     inline void SetWeight(int value) { m_weightHasBeenSet = true; m_weight = value; }
-
-    /**
-     * <p>The relative percentage of the total number of tasks launched that should use
-     * the capacity provider.</p>
-     */
     inline AwsEcsClusterDefaultCapacityProviderStrategyDetails& WithWeight(int value) { SetWeight(value); return *this;}
-
+    ///@}
   private:
 
     int m_base;

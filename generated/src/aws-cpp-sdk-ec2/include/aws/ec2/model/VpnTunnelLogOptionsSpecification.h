@@ -39,36 +39,17 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
      */
     inline const CloudWatchLogOptionsSpecification& GetCloudWatchLogOptions() const{ return m_cloudWatchLogOptions; }
-
-    /**
-     * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-     */
     inline bool CloudWatchLogOptionsHasBeenSet() const { return m_cloudWatchLogOptionsHasBeenSet; }
-
-    /**
-     * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-     */
     inline void SetCloudWatchLogOptions(const CloudWatchLogOptionsSpecification& value) { m_cloudWatchLogOptionsHasBeenSet = true; m_cloudWatchLogOptions = value; }
-
-    /**
-     * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-     */
     inline void SetCloudWatchLogOptions(CloudWatchLogOptionsSpecification&& value) { m_cloudWatchLogOptionsHasBeenSet = true; m_cloudWatchLogOptions = std::move(value); }
-
-    /**
-     * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-     */
     inline VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(const CloudWatchLogOptionsSpecification& value) { SetCloudWatchLogOptions(value); return *this;}
-
-    /**
-     * <p>Options for sending VPN tunnel logs to CloudWatch.</p>
-     */
     inline VpnTunnelLogOptionsSpecification& WithCloudWatchLogOptions(CloudWatchLogOptionsSpecification&& value) { SetCloudWatchLogOptions(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CloudWatchLogOptionsSpecification m_cloudWatchLogOptions;

@@ -34,87 +34,33 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the bundle.</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline UpdateWorkspaceBundleRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline UpdateWorkspaceBundleRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the bundle.</p>
-     */
     inline UpdateWorkspaceBundleRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The identifier of the image.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline UpdateWorkspaceBundleRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline UpdateWorkspaceBundleRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline UpdateWorkspaceBundleRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_bundleId;

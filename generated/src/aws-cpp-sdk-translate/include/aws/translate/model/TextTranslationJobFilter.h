@@ -40,163 +40,59 @@ namespace Model
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Filters the list of jobs by name.</p>
      */
     inline const Aws::String& GetJobName() const{ return m_jobName; }
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline TextTranslationJobFilter& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline TextTranslationJobFilter& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-
-    /**
-     * <p>Filters the list of jobs by name.</p>
-     */
     inline TextTranslationJobFilter& WithJobName(const char* value) { SetJobName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the list of jobs based by job status.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
-
-    /**
-     * <p>Filters the list of jobs based by job status.</p>
-     */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-
-    /**
-     * <p>Filters the list of jobs based by job status.</p>
-     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-
-    /**
-     * <p>Filters the list of jobs based by job status.</p>
-     */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-
-    /**
-     * <p>Filters the list of jobs based by job status.</p>
-     */
     inline TextTranslationJobFilter& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-
-    /**
-     * <p>Filters the list of jobs based by job status.</p>
-     */
     inline TextTranslationJobFilter& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the list of jobs based on the time that the job was submitted for
      * processing and returns only the jobs submitted before the specified time. Jobs
      * are returned in ascending order, oldest to newest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedBeforeTime() const{ return m_submittedBeforeTime; }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted before the specified time. Jobs
-     * are returned in ascending order, oldest to newest.</p>
-     */
     inline bool SubmittedBeforeTimeHasBeenSet() const { return m_submittedBeforeTimeHasBeenSet; }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted before the specified time. Jobs
-     * are returned in ascending order, oldest to newest.</p>
-     */
     inline void SetSubmittedBeforeTime(const Aws::Utils::DateTime& value) { m_submittedBeforeTimeHasBeenSet = true; m_submittedBeforeTime = value; }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted before the specified time. Jobs
-     * are returned in ascending order, oldest to newest.</p>
-     */
     inline void SetSubmittedBeforeTime(Aws::Utils::DateTime&& value) { m_submittedBeforeTimeHasBeenSet = true; m_submittedBeforeTime = std::move(value); }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted before the specified time. Jobs
-     * are returned in ascending order, oldest to newest.</p>
-     */
     inline TextTranslationJobFilter& WithSubmittedBeforeTime(const Aws::Utils::DateTime& value) { SetSubmittedBeforeTime(value); return *this;}
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted before the specified time. Jobs
-     * are returned in ascending order, oldest to newest.</p>
-     */
     inline TextTranslationJobFilter& WithSubmittedBeforeTime(Aws::Utils::DateTime&& value) { SetSubmittedBeforeTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Filters the list of jobs based on the time that the job was submitted for
      * processing and returns only the jobs submitted after the specified time. Jobs
      * are returned in descending order, newest to oldest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedAfterTime() const{ return m_submittedAfterTime; }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted after the specified time. Jobs
-     * are returned in descending order, newest to oldest.</p>
-     */
     inline bool SubmittedAfterTimeHasBeenSet() const { return m_submittedAfterTimeHasBeenSet; }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted after the specified time. Jobs
-     * are returned in descending order, newest to oldest.</p>
-     */
     inline void SetSubmittedAfterTime(const Aws::Utils::DateTime& value) { m_submittedAfterTimeHasBeenSet = true; m_submittedAfterTime = value; }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted after the specified time. Jobs
-     * are returned in descending order, newest to oldest.</p>
-     */
     inline void SetSubmittedAfterTime(Aws::Utils::DateTime&& value) { m_submittedAfterTimeHasBeenSet = true; m_submittedAfterTime = std::move(value); }
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted after the specified time. Jobs
-     * are returned in descending order, newest to oldest.</p>
-     */
     inline TextTranslationJobFilter& WithSubmittedAfterTime(const Aws::Utils::DateTime& value) { SetSubmittedAfterTime(value); return *this;}
-
-    /**
-     * <p>Filters the list of jobs based on the time that the job was submitted for
-     * processing and returns only the jobs submitted after the specified time. Jobs
-     * are returned in descending order, newest to oldest.</p>
-     */
     inline TextTranslationJobFilter& WithSubmittedAfterTime(Aws::Utils::DateTime&& value) { SetSubmittedAfterTime(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_jobName;

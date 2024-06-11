@@ -35,36 +35,17 @@ namespace Model
     AWS_IOT_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The logging options payload.</p>
      */
     inline const LoggingOptionsPayload& GetLoggingOptionsPayload() const{ return m_loggingOptionsPayload; }
-
-    /**
-     * <p>The logging options payload.</p>
-     */
     inline bool LoggingOptionsPayloadHasBeenSet() const { return m_loggingOptionsPayloadHasBeenSet; }
-
-    /**
-     * <p>The logging options payload.</p>
-     */
     inline void SetLoggingOptionsPayload(const LoggingOptionsPayload& value) { m_loggingOptionsPayloadHasBeenSet = true; m_loggingOptionsPayload = value; }
-
-    /**
-     * <p>The logging options payload.</p>
-     */
     inline void SetLoggingOptionsPayload(LoggingOptionsPayload&& value) { m_loggingOptionsPayloadHasBeenSet = true; m_loggingOptionsPayload = std::move(value); }
-
-    /**
-     * <p>The logging options payload.</p>
-     */
     inline SetLoggingOptionsRequest& WithLoggingOptionsPayload(const LoggingOptionsPayload& value) { SetLoggingOptionsPayload(value); return *this;}
-
-    /**
-     * <p>The logging options payload.</p>
-     */
     inline SetLoggingOptionsRequest& WithLoggingOptionsPayload(LoggingOptionsPayload&& value) { SetLoggingOptionsPayload(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoggingOptionsPayload m_loggingOptionsPayload;

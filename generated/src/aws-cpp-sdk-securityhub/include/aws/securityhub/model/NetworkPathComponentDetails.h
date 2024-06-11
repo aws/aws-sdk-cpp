@@ -40,92 +40,34 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The IP addresses of the destination.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline void SetAddress(const Aws::Vector<Aws::String>& value) { m_addressHasBeenSet = true; m_address = value; }
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline void SetAddress(Aws::Vector<Aws::String>&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline NetworkPathComponentDetails& WithAddress(const Aws::Vector<Aws::String>& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline NetworkPathComponentDetails& WithAddress(Aws::Vector<Aws::String>&& value) { SetAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline NetworkPathComponentDetails& AddAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address.push_back(value); return *this; }
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline NetworkPathComponentDetails& AddAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The IP addresses of the destination.</p>
-     */
     inline NetworkPathComponentDetails& AddAddress(const char* value) { m_addressHasBeenSet = true; m_address.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A list of port ranges for the destination.</p>
      */
     inline const Aws::Vector<PortRange>& GetPortRanges() const{ return m_portRanges; }
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline void SetPortRanges(const Aws::Vector<PortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline void SetPortRanges(Aws::Vector<PortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline NetworkPathComponentDetails& WithPortRanges(const Aws::Vector<PortRange>& value) { SetPortRanges(value); return *this;}
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline NetworkPathComponentDetails& WithPortRanges(Aws::Vector<PortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline NetworkPathComponentDetails& AddPortRanges(const PortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
-
-    /**
-     * <p>A list of port ranges for the destination.</p>
-     */
     inline NetworkPathComponentDetails& AddPortRanges(PortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_address;

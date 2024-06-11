@@ -32,63 +32,29 @@ namespace Model
     AWS_INSPECTOR2_API CreateCisScanConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The scan configuration ARN for the CIS scan configuration.</p>
      */
     inline const Aws::String& GetScanConfigurationArn() const{ return m_scanConfigurationArn; }
-
-    /**
-     * <p>The scan configuration ARN for the CIS scan configuration.</p>
-     */
     inline void SetScanConfigurationArn(const Aws::String& value) { m_scanConfigurationArn = value; }
-
-    /**
-     * <p>The scan configuration ARN for the CIS scan configuration.</p>
-     */
     inline void SetScanConfigurationArn(Aws::String&& value) { m_scanConfigurationArn = std::move(value); }
-
-    /**
-     * <p>The scan configuration ARN for the CIS scan configuration.</p>
-     */
     inline void SetScanConfigurationArn(const char* value) { m_scanConfigurationArn.assign(value); }
-
-    /**
-     * <p>The scan configuration ARN for the CIS scan configuration.</p>
-     */
     inline CreateCisScanConfigurationResult& WithScanConfigurationArn(const Aws::String& value) { SetScanConfigurationArn(value); return *this;}
-
-    /**
-     * <p>The scan configuration ARN for the CIS scan configuration.</p>
-     */
     inline CreateCisScanConfigurationResult& WithScanConfigurationArn(Aws::String&& value) { SetScanConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The scan configuration ARN for the CIS scan configuration.</p>
-     */
     inline CreateCisScanConfigurationResult& WithScanConfigurationArn(const char* value) { SetScanConfigurationArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline CreateCisScanConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline CreateCisScanConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline CreateCisScanConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_scanConfigurationArn;

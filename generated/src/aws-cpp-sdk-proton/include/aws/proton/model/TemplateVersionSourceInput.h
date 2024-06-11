@@ -37,42 +37,18 @@ namespace Model
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An S3 source object that includes the template bundle S3 path and name for a
      * template minor version.</p>
      */
     inline const S3ObjectSource& GetS3() const{ return m_s3; }
-
-    /**
-     * <p>An S3 source object that includes the template bundle S3 path and name for a
-     * template minor version.</p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p>An S3 source object that includes the template bundle S3 path and name for a
-     * template minor version.</p>
-     */
     inline void SetS3(const S3ObjectSource& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p>An S3 source object that includes the template bundle S3 path and name for a
-     * template minor version.</p>
-     */
     inline void SetS3(S3ObjectSource&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p>An S3 source object that includes the template bundle S3 path and name for a
-     * template minor version.</p>
-     */
     inline TemplateVersionSourceInput& WithS3(const S3ObjectSource& value) { SetS3(value); return *this;}
-
-    /**
-     * <p>An S3 source object that includes the template bundle S3 path and name for a
-     * template minor version.</p>
-     */
     inline TemplateVersionSourceInput& WithS3(S3ObjectSource&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ObjectSource m_s3;

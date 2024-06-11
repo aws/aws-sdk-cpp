@@ -39,85 +39,32 @@ namespace Model
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The status of the certificate-based authentication properties.</p>
      */
     inline const CertificateBasedAuthStatusEnum& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline void SetStatus(const CertificateBasedAuthStatusEnum& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline void SetStatus(CertificateBasedAuthStatusEnum&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline CertificateBasedAuthProperties& WithStatus(const CertificateBasedAuthStatusEnum& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the certificate-based authentication properties.</p>
-     */
     inline CertificateBasedAuthProperties& WithStatus(CertificateBasedAuthStatusEnum&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
      * Private CA resource.</p>
      */
     inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the Amazon Web Services Certificate Manager
-     * Private CA resource.</p>
-     */
     inline CertificateBasedAuthProperties& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
-
+    ///@}
   private:
 
     CertificateBasedAuthStatusEnum m_status;

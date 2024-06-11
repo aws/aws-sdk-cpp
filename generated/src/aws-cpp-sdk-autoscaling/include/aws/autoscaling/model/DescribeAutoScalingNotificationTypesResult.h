@@ -34,62 +34,28 @@ namespace Model
     AWS_AUTOSCALING_API DescribeAutoScalingNotificationTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>The notification types.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingNotificationTypes() const{ return m_autoScalingNotificationTypes; }
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline void SetAutoScalingNotificationTypes(const Aws::Vector<Aws::String>& value) { m_autoScalingNotificationTypes = value; }
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline void SetAutoScalingNotificationTypes(Aws::Vector<Aws::String>&& value) { m_autoScalingNotificationTypes = std::move(value); }
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline DescribeAutoScalingNotificationTypesResult& WithAutoScalingNotificationTypes(const Aws::Vector<Aws::String>& value) { SetAutoScalingNotificationTypes(value); return *this;}
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline DescribeAutoScalingNotificationTypesResult& WithAutoScalingNotificationTypes(Aws::Vector<Aws::String>&& value) { SetAutoScalingNotificationTypes(std::move(value)); return *this;}
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(const Aws::String& value) { m_autoScalingNotificationTypes.push_back(value); return *this; }
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(Aws::String&& value) { m_autoScalingNotificationTypes.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The notification types.</p>
-     */
     inline DescribeAutoScalingNotificationTypesResult& AddAutoScalingNotificationTypes(const char* value) { m_autoScalingNotificationTypes.push_back(value); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-
-    
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-
-    
     inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-
-    
     inline DescribeAutoScalingNotificationTypesResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-
-    
     inline DescribeAutoScalingNotificationTypesResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Aws::String> m_autoScalingNotificationTypes;

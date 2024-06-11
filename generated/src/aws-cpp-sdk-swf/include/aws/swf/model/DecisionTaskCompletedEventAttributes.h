@@ -39,172 +39,68 @@ namespace Model
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>User defined context for the workflow execution.</p>
      */
     inline const Aws::String& GetExecutionContext() const{ return m_executionContext; }
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline bool ExecutionContextHasBeenSet() const { return m_executionContextHasBeenSet; }
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline void SetExecutionContext(const Aws::String& value) { m_executionContextHasBeenSet = true; m_executionContext = value; }
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline void SetExecutionContext(Aws::String&& value) { m_executionContextHasBeenSet = true; m_executionContext = std::move(value); }
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline void SetExecutionContext(const char* value) { m_executionContextHasBeenSet = true; m_executionContext.assign(value); }
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(const Aws::String& value) { SetExecutionContext(value); return *this;}
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(Aws::String&& value) { SetExecutionContext(std::move(value)); return *this;}
-
-    /**
-     * <p>User defined context for the workflow execution.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithExecutionContext(const char* value) { SetExecutionContext(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
      * this decision task was scheduled. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
-
-    /**
-     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
-     * this decision task was scheduled. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
-     */
     inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
-     * this decision task was scheduled. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
-     */
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
-
-    /**
-     * <p>The ID of the <code>DecisionTaskScheduled</code> event that was recorded when
-     * this decision task was scheduled. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
      * decision task was started. This information can be useful for diagnosing
      * problems by tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetStartedEventId() const{ return m_startedEventId; }
-
-    /**
-     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
-     * decision task was started. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
-     */
     inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
-     * decision task was started. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
-     */
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
-
-    /**
-     * <p>The ID of the <code>DecisionTaskStarted</code> event recorded when this
-     * decision task was started. This information can be useful for diagnosing
-     * problems by tracing back the chain of events leading up to this event.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const TaskList& GetTaskList() const{ return m_taskList; }
-
-    
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
-
-    
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
-
-    
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
-
-    
     inline DecisionTaskCompletedEventAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
-
-    
     inline DecisionTaskCompletedEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum amount of time the decision task can wait to be assigned to a
      * worker.</p>
      */
     inline const Aws::String& GetTaskListScheduleToStartTimeout() const{ return m_taskListScheduleToStartTimeout; }
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline bool TaskListScheduleToStartTimeoutHasBeenSet() const { return m_taskListScheduleToStartTimeoutHasBeenSet; }
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline void SetTaskListScheduleToStartTimeout(const Aws::String& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = value; }
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline void SetTaskListScheduleToStartTimeout(Aws::String&& value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout = std::move(value); }
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline void SetTaskListScheduleToStartTimeout(const char* value) { m_taskListScheduleToStartTimeoutHasBeenSet = true; m_taskListScheduleToStartTimeout.assign(value); }
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithTaskListScheduleToStartTimeout(const Aws::String& value) { SetTaskListScheduleToStartTimeout(value); return *this;}
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithTaskListScheduleToStartTimeout(Aws::String&& value) { SetTaskListScheduleToStartTimeout(std::move(value)); return *this;}
-
-    /**
-     * <p>The maximum amount of time the decision task can wait to be assigned to a
-     * worker.</p>
-     */
     inline DecisionTaskCompletedEventAttributes& WithTaskListScheduleToStartTimeout(const char* value) { SetTaskListScheduleToStartTimeout(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_executionContext;

@@ -34,46 +34,19 @@ namespace Model
     AWS_WORKSPACES_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The identifier of the image.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline DeleteWorkspaceImageRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline DeleteWorkspaceImageRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier of the image.</p>
-     */
     inline DeleteWorkspaceImageRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_imageId;

@@ -34,149 +34,57 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The Voice Connector ID.</p>
      */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline UpdateProxySessionRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline UpdateProxySessionRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Voice Connector ID.</p>
-     */
     inline UpdateProxySessionRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The proxy session ID.</p>
      */
     inline const Aws::String& GetProxySessionId() const{ return m_proxySessionId; }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline bool ProxySessionIdHasBeenSet() const { return m_proxySessionIdHasBeenSet; }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline void SetProxySessionId(const Aws::String& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = value; }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline void SetProxySessionId(Aws::String&& value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId = std::move(value); }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline void SetProxySessionId(const char* value) { m_proxySessionIdHasBeenSet = true; m_proxySessionId.assign(value); }
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline UpdateProxySessionRequest& WithProxySessionId(const Aws::String& value) { SetProxySessionId(value); return *this;}
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline UpdateProxySessionRequest& WithProxySessionId(Aws::String&& value) { SetProxySessionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The proxy session ID.</p>
-     */
     inline UpdateProxySessionRequest& WithProxySessionId(const char* value) { SetProxySessionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The proxy session capabilities.</p>
      */
     inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline UpdateProxySessionRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline UpdateProxySessionRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline UpdateProxySessionRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-
-    /**
-     * <p>The proxy session capabilities.</p>
-     */
     inline UpdateProxySessionRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of minutes allowed for the proxy session.</p>
      */
     inline int GetExpiryMinutes() const{ return m_expiryMinutes; }
-
-    /**
-     * <p>The number of minutes allowed for the proxy session.</p>
-     */
     inline bool ExpiryMinutesHasBeenSet() const { return m_expiryMinutesHasBeenSet; }
-
-    /**
-     * <p>The number of minutes allowed for the proxy session.</p>
-     */
     inline void SetExpiryMinutes(int value) { m_expiryMinutesHasBeenSet = true; m_expiryMinutes = value; }
-
-    /**
-     * <p>The number of minutes allowed for the proxy session.</p>
-     */
     inline UpdateProxySessionRequest& WithExpiryMinutes(int value) { SetExpiryMinutes(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_voiceConnectorId;

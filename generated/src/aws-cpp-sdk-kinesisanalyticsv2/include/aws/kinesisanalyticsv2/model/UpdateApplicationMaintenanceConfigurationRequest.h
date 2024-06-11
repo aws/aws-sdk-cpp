@@ -35,85 +35,32 @@ namespace Model
     AWS_KINESISANALYTICSV2_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the application for which you want to update the maintenance
      * configuration.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the application for which you want to update the maintenance
-     * configuration.</p>
-     */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the application maintenance configuration update.</p>
      */
     inline const ApplicationMaintenanceConfigurationUpdate& GetApplicationMaintenanceConfigurationUpdate() const{ return m_applicationMaintenanceConfigurationUpdate; }
-
-    /**
-     * <p>Describes the application maintenance configuration update.</p>
-     */
     inline bool ApplicationMaintenanceConfigurationUpdateHasBeenSet() const { return m_applicationMaintenanceConfigurationUpdateHasBeenSet; }
-
-    /**
-     * <p>Describes the application maintenance configuration update.</p>
-     */
     inline void SetApplicationMaintenanceConfigurationUpdate(const ApplicationMaintenanceConfigurationUpdate& value) { m_applicationMaintenanceConfigurationUpdateHasBeenSet = true; m_applicationMaintenanceConfigurationUpdate = value; }
-
-    /**
-     * <p>Describes the application maintenance configuration update.</p>
-     */
     inline void SetApplicationMaintenanceConfigurationUpdate(ApplicationMaintenanceConfigurationUpdate&& value) { m_applicationMaintenanceConfigurationUpdateHasBeenSet = true; m_applicationMaintenanceConfigurationUpdate = std::move(value); }
-
-    /**
-     * <p>Describes the application maintenance configuration update.</p>
-     */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationMaintenanceConfigurationUpdate(const ApplicationMaintenanceConfigurationUpdate& value) { SetApplicationMaintenanceConfigurationUpdate(value); return *this;}
-
-    /**
-     * <p>Describes the application maintenance configuration update.</p>
-     */
     inline UpdateApplicationMaintenanceConfigurationRequest& WithApplicationMaintenanceConfigurationUpdate(ApplicationMaintenanceConfigurationUpdate&& value) { SetApplicationMaintenanceConfigurationUpdate(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_applicationName;

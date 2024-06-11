@@ -39,67 +39,29 @@ namespace Model
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the field on which to sort.</p>
      */
     inline const SortableFieldName& GetFieldName() const{ return m_fieldName; }
-
-    /**
-     * <p>The name of the field on which to sort.</p>
-     */
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-
-    /**
-     * <p>The name of the field on which to sort.</p>
-     */
     inline void SetFieldName(const SortableFieldName& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-
-    /**
-     * <p>The name of the field on which to sort.</p>
-     */
     inline void SetFieldName(SortableFieldName&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-
-    /**
-     * <p>The name of the field on which to sort.</p>
-     */
     inline Sort& WithFieldName(const SortableFieldName& value) { SetFieldName(value); return *this;}
-
-    /**
-     * <p>The name of the field on which to sort.</p>
-     */
     inline Sort& WithFieldName(SortableFieldName&& value) { SetFieldName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An ascending or descending sort.</p>
      */
     inline const SortOrder& GetOrder() const{ return m_order; }
-
-    /**
-     * <p>An ascending or descending sort.</p>
-     */
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-
-    /**
-     * <p>An ascending or descending sort.</p>
-     */
     inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-
-    /**
-     * <p>An ascending or descending sort.</p>
-     */
     inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-
-    /**
-     * <p>An ascending or descending sort.</p>
-     */
     inline Sort& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-
-    /**
-     * <p>An ascending or descending sort.</p>
-     */
     inline Sort& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SortableFieldName m_fieldName;

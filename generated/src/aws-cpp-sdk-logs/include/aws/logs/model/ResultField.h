@@ -41,87 +41,33 @@ namespace Model
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The log event field.</p>
      */
     inline const Aws::String& GetField() const{ return m_field; }
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline ResultField& WithField(const Aws::String& value) { SetField(value); return *this;}
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline ResultField& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-
-    /**
-     * <p>The log event field.</p>
-     */
     inline ResultField& WithField(const char* value) { SetField(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The value of this field.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline ResultField& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline ResultField& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of this field.</p>
-     */
     inline ResultField& WithValue(const char* value) { SetValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_field;

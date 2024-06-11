@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline SubnetAssociation& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline SubnetAssociation& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the subnet.</p>
-     */
     inline SubnetAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the subnet association.</p>
      */
     inline const TransitGatewayMulitcastDomainAssociationState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the subnet association.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the subnet association.</p>
-     */
     inline void SetState(const TransitGatewayMulitcastDomainAssociationState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the subnet association.</p>
-     */
     inline void SetState(TransitGatewayMulitcastDomainAssociationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the subnet association.</p>
-     */
     inline SubnetAssociation& WithState(const TransitGatewayMulitcastDomainAssociationState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the subnet association.</p>
-     */
     inline SubnetAssociation& WithState(TransitGatewayMulitcastDomainAssociationState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_subnetId;

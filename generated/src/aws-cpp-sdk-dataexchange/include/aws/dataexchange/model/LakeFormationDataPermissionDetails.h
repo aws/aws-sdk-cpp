@@ -38,36 +38,17 @@ namespace Model
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the LF-tag policy.</p>
      */
     inline const LFTagPolicyDetails& GetLFTagPolicy() const{ return m_lFTagPolicy; }
-
-    /**
-     * <p>Details about the LF-tag policy.</p>
-     */
     inline bool LFTagPolicyHasBeenSet() const { return m_lFTagPolicyHasBeenSet; }
-
-    /**
-     * <p>Details about the LF-tag policy.</p>
-     */
     inline void SetLFTagPolicy(const LFTagPolicyDetails& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = value; }
-
-    /**
-     * <p>Details about the LF-tag policy.</p>
-     */
     inline void SetLFTagPolicy(LFTagPolicyDetails&& value) { m_lFTagPolicyHasBeenSet = true; m_lFTagPolicy = std::move(value); }
-
-    /**
-     * <p>Details about the LF-tag policy.</p>
-     */
     inline LakeFormationDataPermissionDetails& WithLFTagPolicy(const LFTagPolicyDetails& value) { SetLFTagPolicy(value); return *this;}
-
-    /**
-     * <p>Details about the LF-tag policy.</p>
-     */
     inline LakeFormationDataPermissionDetails& WithLFTagPolicy(LFTagPolicyDetails&& value) { SetLFTagPolicy(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LFTagPolicyDetails m_lFTagPolicy;

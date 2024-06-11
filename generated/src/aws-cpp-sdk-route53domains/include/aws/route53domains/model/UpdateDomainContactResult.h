@@ -38,77 +38,31 @@ namespace Model
     AWS_ROUTE53DOMAINS_API UpdateDomainContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Identifier for tracking the progress of the request. To query the operation
      * status, use <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
-
-    /**
-     * <p>Identifier for tracking the progress of the request. To query the operation
-     * status, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-     */
     inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-
-    /**
-     * <p>Identifier for tracking the progress of the request. To query the operation
-     * status, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-     */
     inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-
-    /**
-     * <p>Identifier for tracking the progress of the request. To query the operation
-     * status, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-     */
     inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-
-    /**
-     * <p>Identifier for tracking the progress of the request. To query the operation
-     * status, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-     */
     inline UpdateDomainContactResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-
-    /**
-     * <p>Identifier for tracking the progress of the request. To query the operation
-     * status, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-     */
     inline UpdateDomainContactResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-
-    /**
-     * <p>Identifier for tracking the progress of the request. To query the operation
-     * status, use <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_GetOperationDetail.html">GetOperationDetail</a>.</p>
-     */
     inline UpdateDomainContactResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateDomainContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateDomainContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateDomainContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_operationId;

@@ -37,36 +37,17 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The percent range in the visible range.</p>
      */
     inline const PercentVisibleRange& GetPercentRange() const{ return m_percentRange; }
-
-    /**
-     * <p>The percent range in the visible range.</p>
-     */
     inline bool PercentRangeHasBeenSet() const { return m_percentRangeHasBeenSet; }
-
-    /**
-     * <p>The percent range in the visible range.</p>
-     */
     inline void SetPercentRange(const PercentVisibleRange& value) { m_percentRangeHasBeenSet = true; m_percentRange = value; }
-
-    /**
-     * <p>The percent range in the visible range.</p>
-     */
     inline void SetPercentRange(PercentVisibleRange&& value) { m_percentRangeHasBeenSet = true; m_percentRange = std::move(value); }
-
-    /**
-     * <p>The percent range in the visible range.</p>
-     */
     inline VisibleRangeOptions& WithPercentRange(const PercentVisibleRange& value) { SetPercentRange(value); return *this;}
-
-    /**
-     * <p>The percent range in the visible range.</p>
-     */
     inline VisibleRangeOptions& WithPercentRange(PercentVisibleRange&& value) { SetPercentRange(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PercentVisibleRange m_percentRange;

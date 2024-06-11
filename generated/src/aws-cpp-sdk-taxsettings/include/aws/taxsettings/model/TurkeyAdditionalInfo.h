@@ -39,6 +39,7 @@ namespace Model
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The industry information that tells the Tax Settings API if you're subject to
      * additional withholding taxes. This information required for business-to-business
@@ -46,48 +47,14 @@ namespace Model
      * who are subject to KDV tax.</p>
      */
     inline const Industries& GetIndustries() const{ return m_industries; }
-
-    /**
-     * <p>The industry information that tells the Tax Settings API if you're subject to
-     * additional withholding taxes. This information required for business-to-business
-     * (B2B) customers. This information is conditionally mandatory for B2B customers
-     * who are subject to KDV tax.</p>
-     */
     inline bool IndustriesHasBeenSet() const { return m_industriesHasBeenSet; }
-
-    /**
-     * <p>The industry information that tells the Tax Settings API if you're subject to
-     * additional withholding taxes. This information required for business-to-business
-     * (B2B) customers. This information is conditionally mandatory for B2B customers
-     * who are subject to KDV tax.</p>
-     */
     inline void SetIndustries(const Industries& value) { m_industriesHasBeenSet = true; m_industries = value; }
-
-    /**
-     * <p>The industry information that tells the Tax Settings API if you're subject to
-     * additional withholding taxes. This information required for business-to-business
-     * (B2B) customers. This information is conditionally mandatory for B2B customers
-     * who are subject to KDV tax.</p>
-     */
     inline void SetIndustries(Industries&& value) { m_industriesHasBeenSet = true; m_industries = std::move(value); }
-
-    /**
-     * <p>The industry information that tells the Tax Settings API if you're subject to
-     * additional withholding taxes. This information required for business-to-business
-     * (B2B) customers. This information is conditionally mandatory for B2B customers
-     * who are subject to KDV tax.</p>
-     */
     inline TurkeyAdditionalInfo& WithIndustries(const Industries& value) { SetIndustries(value); return *this;}
-
-    /**
-     * <p>The industry information that tells the Tax Settings API if you're subject to
-     * additional withholding taxes. This information required for business-to-business
-     * (B2B) customers. This information is conditionally mandatory for B2B customers
-     * who are subject to KDV tax.</p>
-     */
     inline TurkeyAdditionalInfo& WithIndustries(Industries&& value) { SetIndustries(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Registered Electronic Mail (REM) that is used to send notarized
      * communication. This parameter is optional for business-to-business (B2B) and
@@ -95,113 +62,31 @@ namespace Model
      * business-to-consumer (B2C) customers.</p>
      */
     inline const Aws::String& GetKepEmailId() const{ return m_kepEmailId; }
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline bool KepEmailIdHasBeenSet() const { return m_kepEmailIdHasBeenSet; }
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline void SetKepEmailId(const Aws::String& value) { m_kepEmailIdHasBeenSet = true; m_kepEmailId = value; }
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline void SetKepEmailId(Aws::String&& value) { m_kepEmailIdHasBeenSet = true; m_kepEmailId = std::move(value); }
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline void SetKepEmailId(const char* value) { m_kepEmailIdHasBeenSet = true; m_kepEmailId.assign(value); }
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline TurkeyAdditionalInfo& WithKepEmailId(const Aws::String& value) { SetKepEmailId(value); return *this;}
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline TurkeyAdditionalInfo& WithKepEmailId(Aws::String&& value) { SetKepEmailId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Registered Electronic Mail (REM) that is used to send notarized
-     * communication. This parameter is optional for business-to-business (B2B) and
-     * business-to-government (B2G) customers. It's not required for
-     * business-to-consumer (B2C) customers.</p>
-     */
     inline TurkeyAdditionalInfo& WithKepEmailId(const char* value) { SetKepEmailId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
      * use your VKN as the secondary ID. </p>
      */
     inline const Aws::String& GetSecondaryTaxId() const{ return m_secondaryTaxId; }
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline bool SecondaryTaxIdHasBeenSet() const { return m_secondaryTaxIdHasBeenSet; }
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline void SetSecondaryTaxId(const Aws::String& value) { m_secondaryTaxIdHasBeenSet = true; m_secondaryTaxId = value; }
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline void SetSecondaryTaxId(Aws::String&& value) { m_secondaryTaxIdHasBeenSet = true; m_secondaryTaxId = std::move(value); }
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline void SetSecondaryTaxId(const char* value) { m_secondaryTaxIdHasBeenSet = true; m_secondaryTaxId.assign(value); }
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline TurkeyAdditionalInfo& WithSecondaryTaxId(const Aws::String& value) { SetSecondaryTaxId(value); return *this;}
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline TurkeyAdditionalInfo& WithSecondaryTaxId(Aws::String&& value) { SetSecondaryTaxId(std::move(value)); return *this;}
-
-    /**
-     * <p> Secondary tax ID (“harcama birimi VKN”si”). If one isn't provided, we will
-     * use your VKN as the secondary ID. </p>
-     */
     inline TurkeyAdditionalInfo& WithSecondaryTaxId(const char* value) { SetSecondaryTaxId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The tax office where you're registered. You can enter this information as a
      * string. The Tax Settings API will add this information to your invoice. This
@@ -209,63 +94,14 @@ namespace Model
      * customers. It's not required for business-to-consumer (B2C) customers.</p>
      */
     inline const Aws::String& GetTaxOffice() const{ return m_taxOffice; }
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline bool TaxOfficeHasBeenSet() const { return m_taxOfficeHasBeenSet; }
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline void SetTaxOffice(const Aws::String& value) { m_taxOfficeHasBeenSet = true; m_taxOffice = value; }
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline void SetTaxOffice(Aws::String&& value) { m_taxOfficeHasBeenSet = true; m_taxOffice = std::move(value); }
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline void SetTaxOffice(const char* value) { m_taxOfficeHasBeenSet = true; m_taxOffice.assign(value); }
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline TurkeyAdditionalInfo& WithTaxOffice(const Aws::String& value) { SetTaxOffice(value); return *this;}
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline TurkeyAdditionalInfo& WithTaxOffice(Aws::String&& value) { SetTaxOffice(std::move(value)); return *this;}
-
-    /**
-     * <p>The tax office where you're registered. You can enter this information as a
-     * string. The Tax Settings API will add this information to your invoice. This
-     * parameter is required for business-to-business (B2B) and business-to-government
-     * customers. It's not required for business-to-consumer (B2C) customers.</p>
-     */
     inline TurkeyAdditionalInfo& WithTaxOffice(const char* value) { SetTaxOffice(value); return *this;}
-
+    ///@}
   private:
 
     Industries m_industries;

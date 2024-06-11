@@ -39,54 +39,20 @@ namespace Model
     AWS_CODEGURUSECURITY_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The identifier for the code file uploaded to the resource object. Returned by
      * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
      */
     inline const Aws::String& GetCodeArtifactId() const{ return m_codeArtifactId; }
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline bool CodeArtifactIdHasBeenSet() const { return m_codeArtifactIdHasBeenSet; }
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline void SetCodeArtifactId(const Aws::String& value) { m_codeArtifactIdHasBeenSet = true; m_codeArtifactId = value; }
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline void SetCodeArtifactId(Aws::String&& value) { m_codeArtifactIdHasBeenSet = true; m_codeArtifactId = std::move(value); }
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline void SetCodeArtifactId(const char* value) { m_codeArtifactIdHasBeenSet = true; m_codeArtifactId.assign(value); }
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline ResourceId& WithCodeArtifactId(const Aws::String& value) { SetCodeArtifactId(value); return *this;}
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline ResourceId& WithCodeArtifactId(Aws::String&& value) { SetCodeArtifactId(std::move(value)); return *this;}
-
-    /**
-     * <p>The identifier for the code file uploaded to the resource object. Returned by
-     * <code>CreateUploadUrl</code> when you upload resources to be scanned.</p>
-     */
     inline ResourceId& WithCodeArtifactId(const char* value) { SetCodeArtifactId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_codeArtifactId;

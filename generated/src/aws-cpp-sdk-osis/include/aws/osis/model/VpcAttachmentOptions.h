@@ -37,75 +37,30 @@ namespace Model
     AWS_OSIS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Whether a VPC is attached to the pipeline.</p>
      */
     inline bool GetAttachToVpc() const{ return m_attachToVpc; }
-
-    /**
-     * <p>Whether a VPC is attached to the pipeline.</p>
-     */
     inline bool AttachToVpcHasBeenSet() const { return m_attachToVpcHasBeenSet; }
-
-    /**
-     * <p>Whether a VPC is attached to the pipeline.</p>
-     */
     inline void SetAttachToVpc(bool value) { m_attachToVpcHasBeenSet = true; m_attachToVpc = value; }
-
-    /**
-     * <p>Whether a VPC is attached to the pipeline.</p>
-     */
     inline VpcAttachmentOptions& WithAttachToVpc(bool value) { SetAttachToVpc(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
      * network interfaces (ENIs).</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline VpcAttachmentOptions& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline VpcAttachmentOptions& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-
-    /**
-     * <p>The CIDR block to be reserved for OpenSearch Ingestion to create elastic
-     * network interfaces (ENIs).</p>
-     */
     inline VpcAttachmentOptions& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
-
+    ///@}
   private:
 
     bool m_attachToVpc;

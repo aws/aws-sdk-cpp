@@ -34,113 +34,44 @@ namespace Model
     AWS_REDSHIFTSERVERLESS_API ListScheduledActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>If nextToken is returned, there are more results available. The value of
      * nextToken is a unique pagination token for each page. Make the call again using
      * the returned token to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline ListScheduledActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline ListScheduledActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If nextToken is returned, there are more results available. The value of
-     * nextToken is a unique pagination token for each page. Make the call again using
-     * the returned token to retrieve the next page.</p>
-     */
     inline ListScheduledActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>All of the returned scheduled action association objects.</p>
      */
     inline const Aws::Vector<ScheduledActionAssociation>& GetScheduledActions() const{ return m_scheduledActions; }
-
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
     inline void SetScheduledActions(const Aws::Vector<ScheduledActionAssociation>& value) { m_scheduledActions = value; }
-
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
     inline void SetScheduledActions(Aws::Vector<ScheduledActionAssociation>&& value) { m_scheduledActions = std::move(value); }
-
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
     inline ListScheduledActionsResult& WithScheduledActions(const Aws::Vector<ScheduledActionAssociation>& value) { SetScheduledActions(value); return *this;}
-
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
     inline ListScheduledActionsResult& WithScheduledActions(Aws::Vector<ScheduledActionAssociation>&& value) { SetScheduledActions(std::move(value)); return *this;}
-
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
     inline ListScheduledActionsResult& AddScheduledActions(const ScheduledActionAssociation& value) { m_scheduledActions.push_back(value); return *this; }
-
-    /**
-     * <p>All of the returned scheduled action association objects.</p>
-     */
     inline ListScheduledActionsResult& AddScheduledActions(ScheduledActionAssociation&& value) { m_scheduledActions.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListScheduledActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListScheduledActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListScheduledActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_nextToken;

@@ -39,43 +39,25 @@ namespace Model
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Metric& GetName() const{ return m_name; }
-
-    
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    
     inline void SetName(const Metric& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    
     inline void SetName(Metric&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    
     inline ExportMetric& WithName(const Metric& value) { SetName(value); return *this;}
-
-    
     inline ExportMetric& WithName(Metric&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const MetricAggregation& GetAggregation() const{ return m_aggregation; }
-
-    
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-
-    
     inline void SetAggregation(const MetricAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-
-    
     inline void SetAggregation(MetricAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-
-    
     inline ExportMetric& WithAggregation(const MetricAggregation& value) { SetAggregation(value); return *this;}
-
-    
     inline ExportMetric& WithAggregation(MetricAggregation&& value) { SetAggregation(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Metric m_name;

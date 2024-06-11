@@ -34,89 +34,40 @@ namespace Model
     AWS_CODEARTIFACT_API GetAssociatedPackageGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The package group that is associated with the requested package.</p>
      */
     inline const PackageGroupDescription& GetPackageGroup() const{ return m_packageGroup; }
-
-    /**
-     * <p>The package group that is associated with the requested package.</p>
-     */
     inline void SetPackageGroup(const PackageGroupDescription& value) { m_packageGroup = value; }
-
-    /**
-     * <p>The package group that is associated with the requested package.</p>
-     */
     inline void SetPackageGroup(PackageGroupDescription&& value) { m_packageGroup = std::move(value); }
-
-    /**
-     * <p>The package group that is associated with the requested package.</p>
-     */
     inline GetAssociatedPackageGroupResult& WithPackageGroup(const PackageGroupDescription& value) { SetPackageGroup(value); return *this;}
-
-    /**
-     * <p>The package group that is associated with the requested package.</p>
-     */
     inline GetAssociatedPackageGroupResult& WithPackageGroup(PackageGroupDescription&& value) { SetPackageGroup(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Describes the strength of the association between the package and package
      * group. A strong match is also known as an exact match, and a weak match is known
      * as a relative match.</p>
      */
     inline const PackageGroupAssociationType& GetAssociationType() const{ return m_associationType; }
-
-    /**
-     * <p>Describes the strength of the association between the package and package
-     * group. A strong match is also known as an exact match, and a weak match is known
-     * as a relative match.</p>
-     */
     inline void SetAssociationType(const PackageGroupAssociationType& value) { m_associationType = value; }
-
-    /**
-     * <p>Describes the strength of the association between the package and package
-     * group. A strong match is also known as an exact match, and a weak match is known
-     * as a relative match.</p>
-     */
     inline void SetAssociationType(PackageGroupAssociationType&& value) { m_associationType = std::move(value); }
-
-    /**
-     * <p>Describes the strength of the association between the package and package
-     * group. A strong match is also known as an exact match, and a weak match is known
-     * as a relative match.</p>
-     */
     inline GetAssociatedPackageGroupResult& WithAssociationType(const PackageGroupAssociationType& value) { SetAssociationType(value); return *this;}
-
-    /**
-     * <p>Describes the strength of the association between the package and package
-     * group. A strong match is also known as an exact match, and a weak match is known
-     * as a relative match.</p>
-     */
     inline GetAssociatedPackageGroupResult& WithAssociationType(PackageGroupAssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetAssociatedPackageGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetAssociatedPackageGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetAssociatedPackageGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     PackageGroupDescription m_packageGroup;

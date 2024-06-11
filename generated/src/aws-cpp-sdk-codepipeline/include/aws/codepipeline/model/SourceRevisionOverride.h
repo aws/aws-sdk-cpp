@@ -44,132 +44,47 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the action where the override will be applied.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline SourceRevisionOverride& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline SourceRevisionOverride& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the action where the override will be applied.</p>
-     */
     inline SourceRevisionOverride& WithActionName(const char* value) { SetActionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of source revision, based on the source provider. For example, the
      * revision type for the CodeCommit action provider is the commit ID.</p>
      */
     inline const SourceRevisionType& GetRevisionType() const{ return m_revisionType; }
-
-    /**
-     * <p>The type of source revision, based on the source provider. For example, the
-     * revision type for the CodeCommit action provider is the commit ID.</p>
-     */
     inline bool RevisionTypeHasBeenSet() const { return m_revisionTypeHasBeenSet; }
-
-    /**
-     * <p>The type of source revision, based on the source provider. For example, the
-     * revision type for the CodeCommit action provider is the commit ID.</p>
-     */
     inline void SetRevisionType(const SourceRevisionType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
-
-    /**
-     * <p>The type of source revision, based on the source provider. For example, the
-     * revision type for the CodeCommit action provider is the commit ID.</p>
-     */
     inline void SetRevisionType(SourceRevisionType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = std::move(value); }
-
-    /**
-     * <p>The type of source revision, based on the source provider. For example, the
-     * revision type for the CodeCommit action provider is the commit ID.</p>
-     */
     inline SourceRevisionOverride& WithRevisionType(const SourceRevisionType& value) { SetRevisionType(value); return *this;}
-
-    /**
-     * <p>The type of source revision, based on the source provider. For example, the
-     * revision type for the CodeCommit action provider is the commit ID.</p>
-     */
     inline SourceRevisionOverride& WithRevisionType(SourceRevisionType&& value) { SetRevisionType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The source revision, or version of your source artifact, with the changes
      * that you want to run in the pipeline execution.</p>
      */
     inline const Aws::String& GetRevisionValue() const{ return m_revisionValue; }
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline bool RevisionValueHasBeenSet() const { return m_revisionValueHasBeenSet; }
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline void SetRevisionValue(const Aws::String& value) { m_revisionValueHasBeenSet = true; m_revisionValue = value; }
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline void SetRevisionValue(Aws::String&& value) { m_revisionValueHasBeenSet = true; m_revisionValue = std::move(value); }
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline void SetRevisionValue(const char* value) { m_revisionValueHasBeenSet = true; m_revisionValue.assign(value); }
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline SourceRevisionOverride& WithRevisionValue(const Aws::String& value) { SetRevisionValue(value); return *this;}
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline SourceRevisionOverride& WithRevisionValue(Aws::String&& value) { SetRevisionValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The source revision, or version of your source artifact, with the changes
-     * that you want to run in the pipeline execution.</p>
-     */
     inline SourceRevisionOverride& WithRevisionValue(const char* value) { SetRevisionValue(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_actionName;

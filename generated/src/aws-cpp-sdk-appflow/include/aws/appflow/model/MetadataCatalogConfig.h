@@ -39,42 +39,18 @@ namespace Model
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
      * data with the Glue Data Catalog.</p>
      */
     inline const GlueDataCatalogConfig& GetGlueDataCatalog() const{ return m_glueDataCatalog; }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
-     * data with the Glue Data Catalog.</p>
-     */
     inline bool GlueDataCatalogHasBeenSet() const { return m_glueDataCatalogHasBeenSet; }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
-     * data with the Glue Data Catalog.</p>
-     */
     inline void SetGlueDataCatalog(const GlueDataCatalogConfig& value) { m_glueDataCatalogHasBeenSet = true; m_glueDataCatalog = value; }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
-     * data with the Glue Data Catalog.</p>
-     */
     inline void SetGlueDataCatalog(GlueDataCatalogConfig&& value) { m_glueDataCatalogHasBeenSet = true; m_glueDataCatalog = std::move(value); }
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
-     * data with the Glue Data Catalog.</p>
-     */
     inline MetadataCatalogConfig& WithGlueDataCatalog(const GlueDataCatalogConfig& value) { SetGlueDataCatalog(value); return *this;}
-
-    /**
-     * <p>Specifies the configuration that Amazon AppFlow uses when it catalogs your
-     * data with the Glue Data Catalog.</p>
-     */
     inline MetadataCatalogConfig& WithGlueDataCatalog(GlueDataCatalogConfig&& value) { SetGlueDataCatalog(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GlueDataCatalogConfig m_glueDataCatalog;

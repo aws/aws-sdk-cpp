@@ -39,118 +39,45 @@ namespace Model
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The layer digest associated with the failure.</p>
      */
     inline const Aws::String& GetLayerDigest() const{ return m_layerDigest; }
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline bool LayerDigestHasBeenSet() const { return m_layerDigestHasBeenSet; }
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline void SetLayerDigest(const Aws::String& value) { m_layerDigestHasBeenSet = true; m_layerDigest = value; }
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline void SetLayerDigest(Aws::String&& value) { m_layerDigestHasBeenSet = true; m_layerDigest = std::move(value); }
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline void SetLayerDigest(const char* value) { m_layerDigestHasBeenSet = true; m_layerDigest.assign(value); }
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline LayerFailure& WithLayerDigest(const Aws::String& value) { SetLayerDigest(value); return *this;}
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline LayerFailure& WithLayerDigest(Aws::String&& value) { SetLayerDigest(std::move(value)); return *this;}
-
-    /**
-     * <p>The layer digest associated with the failure.</p>
-     */
     inline LayerFailure& WithLayerDigest(const char* value) { SetLayerDigest(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The failure code associated with the failure.</p>
      */
     inline const LayerFailureCode& GetFailureCode() const{ return m_failureCode; }
-
-    /**
-     * <p>The failure code associated with the failure.</p>
-     */
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-
-    /**
-     * <p>The failure code associated with the failure.</p>
-     */
     inline void SetFailureCode(const LayerFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-
-    /**
-     * <p>The failure code associated with the failure.</p>
-     */
     inline void SetFailureCode(LayerFailureCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-
-    /**
-     * <p>The failure code associated with the failure.</p>
-     */
     inline LayerFailure& WithFailureCode(const LayerFailureCode& value) { SetFailureCode(value); return *this;}
-
-    /**
-     * <p>The failure code associated with the failure.</p>
-     */
     inline LayerFailure& WithFailureCode(LayerFailureCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline LayerFailure& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline LayerFailure& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-
-    /**
-     * <p>The reason for the failure.</p>
-     */
     inline LayerFailure& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_layerDigest;

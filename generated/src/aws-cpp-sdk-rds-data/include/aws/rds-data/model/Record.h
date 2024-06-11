@@ -41,46 +41,19 @@ namespace Model
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The values returned in the record.</p>
      */
     inline const Aws::Vector<Value>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline void SetValues(const Aws::Vector<Value>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline void SetValues(Aws::Vector<Value>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline Record& WithValues(const Aws::Vector<Value>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline Record& WithValues(Aws::Vector<Value>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline Record& AddValues(const Value& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>The values returned in the record.</p>
-     */
     inline Record& AddValues(Value&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::Vector<Value> m_values;

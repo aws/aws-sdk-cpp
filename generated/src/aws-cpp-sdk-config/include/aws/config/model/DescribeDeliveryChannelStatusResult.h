@@ -40,63 +40,29 @@ namespace Model
     AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
      */
     inline const Aws::Vector<DeliveryChannelStatus>& GetDeliveryChannelsStatus() const{ return m_deliveryChannelsStatus; }
-
-    /**
-     * <p>A list that contains the status of a specified delivery channel.</p>
-     */
     inline void SetDeliveryChannelsStatus(const Aws::Vector<DeliveryChannelStatus>& value) { m_deliveryChannelsStatus = value; }
-
-    /**
-     * <p>A list that contains the status of a specified delivery channel.</p>
-     */
     inline void SetDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { m_deliveryChannelsStatus = std::move(value); }
-
-    /**
-     * <p>A list that contains the status of a specified delivery channel.</p>
-     */
     inline DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(const Aws::Vector<DeliveryChannelStatus>& value) { SetDeliveryChannelsStatus(value); return *this;}
-
-    /**
-     * <p>A list that contains the status of a specified delivery channel.</p>
-     */
     inline DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { SetDeliveryChannelsStatus(std::move(value)); return *this;}
-
-    /**
-     * <p>A list that contains the status of a specified delivery channel.</p>
-     */
     inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(const DeliveryChannelStatus& value) { m_deliveryChannelsStatus.push_back(value); return *this; }
-
-    /**
-     * <p>A list that contains the status of a specified delivery channel.</p>
-     */
     inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(DeliveryChannelStatus&& value) { m_deliveryChannelsStatus.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeDeliveryChannelStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeDeliveryChannelStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeDeliveryChannelStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<DeliveryChannelStatus> m_deliveryChannelsStatus;

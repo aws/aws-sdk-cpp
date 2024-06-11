@@ -38,129 +38,53 @@ namespace Model
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the domain that the summary information applies to.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline DomainSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline DomainSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the domain that the summary information applies to.</p>
-     */
     inline DomainSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
      */
     inline bool GetAutoRenew() const{ return m_autoRenew; }
-
-    /**
-     * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-     */
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
-
-    /**
-     * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-     */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
-
-    /**
-     * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
-     */
     inline DomainSummary& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
      * party.</p>
      */
     inline bool GetTransferLock() const{ return m_transferLock; }
-
-    /**
-     * <p>Indicates whether a domain is locked from unauthorized transfer to another
-     * party.</p>
-     */
     inline bool TransferLockHasBeenSet() const { return m_transferLockHasBeenSet; }
-
-    /**
-     * <p>Indicates whether a domain is locked from unauthorized transfer to another
-     * party.</p>
-     */
     inline void SetTransferLock(bool value) { m_transferLockHasBeenSet = true; m_transferLock = value; }
-
-    /**
-     * <p>Indicates whether a domain is locked from unauthorized transfer to another
-     * party.</p>
-     */
     inline DomainSummary& WithTransferLock(bool value) { SetTransferLock(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Expiration date of the domain in Unix time format and Coordinated Universal
      * Time (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetExpiry() const{ return m_expiry; }
-
-    /**
-     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
-     * Time (UTC).</p>
-     */
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-
-    /**
-     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
-     * Time (UTC).</p>
-     */
     inline void SetExpiry(const Aws::Utils::DateTime& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-
-    /**
-     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
-     * Time (UTC).</p>
-     */
     inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-
-    /**
-     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
-     * Time (UTC).</p>
-     */
     inline DomainSummary& WithExpiry(const Aws::Utils::DateTime& value) { SetExpiry(value); return *this;}
-
-    /**
-     * <p>Expiration date of the domain in Unix time format and Coordinated Universal
-     * Time (UTC).</p>
-     */
     inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

@@ -37,111 +37,36 @@ namespace Model
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>ARN of the channel to use for broadcasting. The channel and stage resources
      * must be in the same AWS account and region. The channel must be offline (not
      * broadcasting).</p>
      */
     inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline ChannelDestinationConfiguration& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline ChannelDestinationConfiguration& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the channel to use for broadcasting. The channel and stage resources
-     * must be in the same AWS account and region. The channel must be offline (not
-     * broadcasting).</p>
-     */
     inline ChannelDestinationConfiguration& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
      * and stage resources must be in the same AWS account and region.</p>
      */
     inline const Aws::String& GetEncoderConfigurationArn() const{ return m_encoderConfigurationArn; }
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline bool EncoderConfigurationArnHasBeenSet() const { return m_encoderConfigurationArnHasBeenSet; }
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline void SetEncoderConfigurationArn(const Aws::String& value) { m_encoderConfigurationArnHasBeenSet = true; m_encoderConfigurationArn = value; }
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline void SetEncoderConfigurationArn(Aws::String&& value) { m_encoderConfigurationArnHasBeenSet = true; m_encoderConfigurationArn = std::move(value); }
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline void SetEncoderConfigurationArn(const char* value) { m_encoderConfigurationArnHasBeenSet = true; m_encoderConfigurationArn.assign(value); }
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline ChannelDestinationConfiguration& WithEncoderConfigurationArn(const Aws::String& value) { SetEncoderConfigurationArn(value); return *this;}
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline ChannelDestinationConfiguration& WithEncoderConfigurationArn(Aws::String&& value) { SetEncoderConfigurationArn(std::move(value)); return *this;}
-
-    /**
-     * <p>ARN of the <a>EncoderConfiguration</a> resource. The encoder configuration
-     * and stage resources must be in the same AWS account and region.</p>
-     */
     inline ChannelDestinationConfiguration& WithEncoderConfigurationArn(const char* value) { SetEncoderConfigurationArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_channelArn;

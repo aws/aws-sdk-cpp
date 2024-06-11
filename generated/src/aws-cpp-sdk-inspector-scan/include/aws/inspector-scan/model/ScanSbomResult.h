@@ -33,53 +33,27 @@ namespace Model
     AWS_INSPECTORSCAN_API ScanSbomResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The vulnerability report for the scanned SBOM.</p>
      */
     inline Aws::Utils::DocumentView GetSbom() const{ return m_sbom; }
-
-    /**
-     * <p>The vulnerability report for the scanned SBOM.</p>
-     */
     inline void SetSbom(const Aws::Utils::Document& value) { m_sbom = value; }
-
-    /**
-     * <p>The vulnerability report for the scanned SBOM.</p>
-     */
     inline void SetSbom(Aws::Utils::Document&& value) { m_sbom = std::move(value); }
-
-    /**
-     * <p>The vulnerability report for the scanned SBOM.</p>
-     */
     inline ScanSbomResult& WithSbom(const Aws::Utils::Document& value) { SetSbom(value); return *this;}
-
-    /**
-     * <p>The vulnerability report for the scanned SBOM.</p>
-     */
     inline ScanSbomResult& WithSbom(Aws::Utils::Document&& value) { SetSbom(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ScanSbomResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ScanSbomResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ScanSbomResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Document m_sbom;

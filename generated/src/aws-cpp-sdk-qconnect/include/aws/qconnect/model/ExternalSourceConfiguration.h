@@ -39,67 +39,29 @@ namespace Model
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration information of the external data source.</p>
      */
     inline const Configuration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The configuration information of the external data source.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The configuration information of the external data source.</p>
-     */
     inline void SetConfiguration(const Configuration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The configuration information of the external data source.</p>
-     */
     inline void SetConfiguration(Configuration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The configuration information of the external data source.</p>
-     */
     inline ExternalSourceConfiguration& WithConfiguration(const Configuration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration information of the external data source.</p>
-     */
     inline ExternalSourceConfiguration& WithConfiguration(Configuration&& value) { SetConfiguration(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The type of the external data source.</p>
      */
     inline const ExternalSource& GetSource() const{ return m_source; }
-
-    /**
-     * <p>The type of the external data source.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>The type of the external data source.</p>
-     */
     inline void SetSource(const ExternalSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>The type of the external data source.</p>
-     */
     inline void SetSource(ExternalSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>The type of the external data source.</p>
-     */
     inline ExternalSourceConfiguration& WithSource(const ExternalSource& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>The type of the external data source.</p>
-     */
     inline ExternalSourceConfiguration& WithSource(ExternalSource&& value) { SetSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Configuration m_configuration;

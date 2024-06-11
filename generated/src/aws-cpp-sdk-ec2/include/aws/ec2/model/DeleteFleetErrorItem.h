@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The error.</p>
      */
     inline const DeleteFleetError& GetError() const{ return m_error; }
-
-    /**
-     * <p>The error.</p>
-     */
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-
-    /**
-     * <p>The error.</p>
-     */
     inline void SetError(const DeleteFleetError& value) { m_errorHasBeenSet = true; m_error = value; }
-
-    /**
-     * <p>The error.</p>
-     */
     inline void SetError(DeleteFleetError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-
-    /**
-     * <p>The error.</p>
-     */
     inline DeleteFleetErrorItem& WithError(const DeleteFleetError& value) { SetError(value); return *this;}
-
-    /**
-     * <p>The error.</p>
-     */
     inline DeleteFleetErrorItem& WithError(DeleteFleetError&& value) { SetError(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the EC2 Fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline DeleteFleetErrorItem& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline DeleteFleetErrorItem& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the EC2 Fleet.</p>
-     */
     inline DeleteFleetErrorItem& WithFleetId(const char* value) { SetFleetId(value); return *this;}
-
+    ///@}
   private:
 
     DeleteFleetError m_error;

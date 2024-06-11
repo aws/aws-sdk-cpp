@@ -32,87 +32,33 @@ namespace Model
     AWS_GREENGRASS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * The name of the definition.
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * The name of the definition.
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * The name of the definition.
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateResourceDefinitionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateResourceDefinitionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * The name of the definition.
-     */
     inline UpdateResourceDefinitionRequest& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * The ID of the resource definition.
      */
     inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
-
-    /**
-     * The ID of the resource definition.
-     */
     inline bool ResourceDefinitionIdHasBeenSet() const { return m_resourceDefinitionIdHasBeenSet; }
-
-    /**
-     * The ID of the resource definition.
-     */
     inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
-
-    /**
-     * The ID of the resource definition.
-     */
     inline void SetResourceDefinitionId(Aws::String&& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = std::move(value); }
-
-    /**
-     * The ID of the resource definition.
-     */
     inline void SetResourceDefinitionId(const char* value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId.assign(value); }
-
-    /**
-     * The ID of the resource definition.
-     */
     inline UpdateResourceDefinitionRequest& WithResourceDefinitionId(const Aws::String& value) { SetResourceDefinitionId(value); return *this;}
-
-    /**
-     * The ID of the resource definition.
-     */
     inline UpdateResourceDefinitionRequest& WithResourceDefinitionId(Aws::String&& value) { SetResourceDefinitionId(std::move(value)); return *this;}
-
-    /**
-     * The ID of the resource definition.
-     */
     inline UpdateResourceDefinitionRequest& WithResourceDefinitionId(const char* value) { SetResourceDefinitionId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

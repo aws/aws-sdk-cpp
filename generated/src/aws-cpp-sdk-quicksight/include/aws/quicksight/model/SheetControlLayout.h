@@ -38,42 +38,18 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration that determines the elements and canvas size options of
      * sheet control.</p>
      */
     inline const SheetControlLayoutConfiguration& GetConfiguration() const{ return m_configuration; }
-
-    /**
-     * <p>The configuration that determines the elements and canvas size options of
-     * sheet control.</p>
-     */
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-
-    /**
-     * <p>The configuration that determines the elements and canvas size options of
-     * sheet control.</p>
-     */
     inline void SetConfiguration(const SheetControlLayoutConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-
-    /**
-     * <p>The configuration that determines the elements and canvas size options of
-     * sheet control.</p>
-     */
     inline void SetConfiguration(SheetControlLayoutConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-
-    /**
-     * <p>The configuration that determines the elements and canvas size options of
-     * sheet control.</p>
-     */
     inline SheetControlLayout& WithConfiguration(const SheetControlLayoutConfiguration& value) { SetConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration that determines the elements and canvas size options of
-     * sheet control.</p>
-     */
     inline SheetControlLayout& WithConfiguration(SheetControlLayoutConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SheetControlLayoutConfiguration m_configuration;

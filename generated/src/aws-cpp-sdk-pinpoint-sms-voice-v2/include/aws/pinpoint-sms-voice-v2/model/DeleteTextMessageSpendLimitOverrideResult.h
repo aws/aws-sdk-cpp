@@ -32,43 +32,25 @@ namespace Model
     AWS_PINPOINTSMSVOICEV2_API DeleteTextMessageSpendLimitOverrideResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The current monthly limit, in US dollars.</p>
      */
     inline long long GetMonthlyLimit() const{ return m_monthlyLimit; }
-
-    /**
-     * <p>The current monthly limit, in US dollars.</p>
-     */
     inline void SetMonthlyLimit(long long value) { m_monthlyLimit = value; }
-
-    /**
-     * <p>The current monthly limit, in US dollars.</p>
-     */
     inline DeleteTextMessageSpendLimitOverrideResult& WithMonthlyLimit(long long value) { SetMonthlyLimit(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DeleteTextMessageSpendLimitOverrideResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DeleteTextMessageSpendLimitOverrideResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DeleteTextMessageSpendLimitOverrideResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_monthlyLimit;

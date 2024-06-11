@@ -32,54 +32,20 @@ namespace Model
     AWS_BRAKET_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>Specify the <code>resourceArn</code> for the resource whose tags to
      * display.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>Specify the <code>resourceArn</code> for the resource whose tags to
-     * display.</p>
-     */
     inline ListTagsForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_resourceArn;

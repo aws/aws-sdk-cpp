@@ -38,42 +38,18 @@ namespace Model
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
      * concatenation.</p>
      */
     inline const ArtifactsConcatenationConfiguration& GetArtifactsConfiguration() const{ return m_artifactsConfiguration; }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
-     * concatenation.</p>
-     */
     inline bool ArtifactsConfigurationHasBeenSet() const { return m_artifactsConfigurationHasBeenSet; }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
-     * concatenation.</p>
-     */
     inline void SetArtifactsConfiguration(const ArtifactsConcatenationConfiguration& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = value; }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
-     * concatenation.</p>
-     */
     inline void SetArtifactsConfiguration(ArtifactsConcatenationConfiguration&& value) { m_artifactsConfigurationHasBeenSet = true; m_artifactsConfiguration = std::move(value); }
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
-     * concatenation.</p>
-     */
     inline ChimeSdkMeetingConcatenationConfiguration& WithArtifactsConfiguration(const ArtifactsConcatenationConfiguration& value) { SetArtifactsConfiguration(value); return *this;}
-
-    /**
-     * <p>The configuration for the artifacts in an Amazon Chime SDK meeting
-     * concatenation.</p>
-     */
     inline ChimeSdkMeetingConcatenationConfiguration& WithArtifactsConfiguration(ArtifactsConcatenationConfiguration&& value) { SetArtifactsConfiguration(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ArtifactsConcatenationConfiguration m_artifactsConfiguration;

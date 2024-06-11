@@ -35,142 +35,56 @@ namespace Model
     AWS_WORKDOCS_API GetResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The folders in the specified folder.</p>
      */
     inline const Aws::Vector<FolderMetadata>& GetFolders() const{ return m_folders; }
-
-    /**
-     * <p>The folders in the specified folder.</p>
-     */
     inline void SetFolders(const Aws::Vector<FolderMetadata>& value) { m_folders = value; }
-
-    /**
-     * <p>The folders in the specified folder.</p>
-     */
     inline void SetFolders(Aws::Vector<FolderMetadata>&& value) { m_folders = std::move(value); }
-
-    /**
-     * <p>The folders in the specified folder.</p>
-     */
     inline GetResourcesResult& WithFolders(const Aws::Vector<FolderMetadata>& value) { SetFolders(value); return *this;}
-
-    /**
-     * <p>The folders in the specified folder.</p>
-     */
     inline GetResourcesResult& WithFolders(Aws::Vector<FolderMetadata>&& value) { SetFolders(std::move(value)); return *this;}
-
-    /**
-     * <p>The folders in the specified folder.</p>
-     */
     inline GetResourcesResult& AddFolders(const FolderMetadata& value) { m_folders.push_back(value); return *this; }
-
-    /**
-     * <p>The folders in the specified folder.</p>
-     */
     inline GetResourcesResult& AddFolders(FolderMetadata&& value) { m_folders.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The documents in the specified collection.</p>
      */
     inline const Aws::Vector<DocumentMetadata>& GetDocuments() const{ return m_documents; }
-
-    /**
-     * <p>The documents in the specified collection.</p>
-     */
     inline void SetDocuments(const Aws::Vector<DocumentMetadata>& value) { m_documents = value; }
-
-    /**
-     * <p>The documents in the specified collection.</p>
-     */
     inline void SetDocuments(Aws::Vector<DocumentMetadata>&& value) { m_documents = std::move(value); }
-
-    /**
-     * <p>The documents in the specified collection.</p>
-     */
     inline GetResourcesResult& WithDocuments(const Aws::Vector<DocumentMetadata>& value) { SetDocuments(value); return *this;}
-
-    /**
-     * <p>The documents in the specified collection.</p>
-     */
     inline GetResourcesResult& WithDocuments(Aws::Vector<DocumentMetadata>&& value) { SetDocuments(std::move(value)); return *this;}
-
-    /**
-     * <p>The documents in the specified collection.</p>
-     */
     inline GetResourcesResult& AddDocuments(const DocumentMetadata& value) { m_documents.push_back(value); return *this; }
-
-    /**
-     * <p>The documents in the specified collection.</p>
-     */
     inline GetResourcesResult& AddDocuments(DocumentMetadata&& value) { m_documents.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline GetResourcesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline GetResourcesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-
-    /**
-     * <p>The marker to use when requesting the next set of results. If there are no
-     * additional results, the string is empty.</p>
-     */
     inline GetResourcesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<FolderMetadata> m_folders;

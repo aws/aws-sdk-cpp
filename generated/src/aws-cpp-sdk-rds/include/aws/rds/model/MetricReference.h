@@ -40,77 +40,31 @@ namespace Model
     AWS_RDS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the metric reference.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline MetricReference& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline MetricReference& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the metric reference.</p>
-     */
     inline MetricReference& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The details of a performance issue.</p>
      */
     inline const ReferenceDetails& GetReferenceDetails() const{ return m_referenceDetails; }
-
-    /**
-     * <p>The details of a performance issue.</p>
-     */
     inline bool ReferenceDetailsHasBeenSet() const { return m_referenceDetailsHasBeenSet; }
-
-    /**
-     * <p>The details of a performance issue.</p>
-     */
     inline void SetReferenceDetails(const ReferenceDetails& value) { m_referenceDetailsHasBeenSet = true; m_referenceDetails = value; }
-
-    /**
-     * <p>The details of a performance issue.</p>
-     */
     inline void SetReferenceDetails(ReferenceDetails&& value) { m_referenceDetailsHasBeenSet = true; m_referenceDetails = std::move(value); }
-
-    /**
-     * <p>The details of a performance issue.</p>
-     */
     inline MetricReference& WithReferenceDetails(const ReferenceDetails& value) { SetReferenceDetails(value); return *this;}
-
-    /**
-     * <p>The details of a performance issue.</p>
-     */
     inline MetricReference& WithReferenceDetails(ReferenceDetails&& value) { SetReferenceDetails(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_name;

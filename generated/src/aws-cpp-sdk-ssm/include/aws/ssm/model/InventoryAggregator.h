@@ -40,144 +40,49 @@ namespace Model
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The inventory type and attribute name for aggregation.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline InventoryAggregator& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline InventoryAggregator& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-
-    /**
-     * <p>The inventory type and attribute name for aggregation.</p>
-     */
     inline InventoryAggregator& WithExpression(const char* value) { SetExpression(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
      */
     inline const Aws::Vector<InventoryAggregator>& GetAggregators() const{ return m_aggregators; }
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline void SetAggregators(const Aws::Vector<InventoryAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline void SetAggregators(Aws::Vector<InventoryAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline InventoryAggregator& WithAggregators(const Aws::Vector<InventoryAggregator>& value) { SetAggregators(value); return *this;}
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline InventoryAggregator& WithAggregators(Aws::Vector<InventoryAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline InventoryAggregator& AddAggregators(const InventoryAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
-
-    /**
-     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
-     */
     inline InventoryAggregator& AddAggregators(InventoryAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>A user-defined set of one or more filters on which to aggregate inventory
      * data. Groups return a count of resources that match and don't match the
      * specified criteria.</p>
      */
     inline const Aws::Vector<InventoryGroup>& GetGroups() const{ return m_groups; }
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline void SetGroups(const Aws::Vector<InventoryGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline void SetGroups(Aws::Vector<InventoryGroup>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline InventoryAggregator& WithGroups(const Aws::Vector<InventoryGroup>& value) { SetGroups(value); return *this;}
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline InventoryAggregator& WithGroups(Aws::Vector<InventoryGroup>&& value) { SetGroups(std::move(value)); return *this;}
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline InventoryAggregator& AddGroups(const InventoryGroup& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
-
-    /**
-     * <p>A user-defined set of one or more filters on which to aggregate inventory
-     * data. Groups return a count of resources that match and don't match the
-     * specified criteria.</p>
-     */
     inline InventoryAggregator& AddGroups(InventoryGroup&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_expression;

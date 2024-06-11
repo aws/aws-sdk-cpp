@@ -37,36 +37,17 @@ namespace Model
     AWS_NEPTUNEGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Options for importing data from a Neptune database.</p>
      */
     inline const NeptuneImportOptions& GetNeptune() const{ return m_neptune; }
-
-    /**
-     * <p>Options for importing data from a Neptune database.</p>
-     */
     inline bool NeptuneHasBeenSet() const { return m_neptuneHasBeenSet; }
-
-    /**
-     * <p>Options for importing data from a Neptune database.</p>
-     */
     inline void SetNeptune(const NeptuneImportOptions& value) { m_neptuneHasBeenSet = true; m_neptune = value; }
-
-    /**
-     * <p>Options for importing data from a Neptune database.</p>
-     */
     inline void SetNeptune(NeptuneImportOptions&& value) { m_neptuneHasBeenSet = true; m_neptune = std::move(value); }
-
-    /**
-     * <p>Options for importing data from a Neptune database.</p>
-     */
     inline ImportOptions& WithNeptune(const NeptuneImportOptions& value) { SetNeptune(value); return *this;}
-
-    /**
-     * <p>Options for importing data from a Neptune database.</p>
-     */
     inline ImportOptions& WithNeptune(NeptuneImportOptions&& value) { SetNeptune(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     NeptuneImportOptions m_neptune;

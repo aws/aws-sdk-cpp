@@ -37,169 +37,61 @@ namespace Model
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The content of the metadata form.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline FormOutput& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline FormOutput& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-
-    /**
-     * <p>The content of the metadata form.</p>
-     */
     inline FormOutput& WithContent(const char* value) { SetContent(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the metadata form.</p>
      */
     inline const Aws::String& GetFormName() const{ return m_formName; }
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline bool FormNameHasBeenSet() const { return m_formNameHasBeenSet; }
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline void SetFormName(const Aws::String& value) { m_formNameHasBeenSet = true; m_formName = value; }
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline void SetFormName(Aws::String&& value) { m_formNameHasBeenSet = true; m_formName = std::move(value); }
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline void SetFormName(const char* value) { m_formNameHasBeenSet = true; m_formName.assign(value); }
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline FormOutput& WithFormName(const Aws::String& value) { SetFormName(value); return *this;}
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline FormOutput& WithFormName(Aws::String&& value) { SetFormName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the metadata form.</p>
-     */
     inline FormOutput& WithFormName(const char* value) { SetFormName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the metadata form type.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline FormOutput& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline FormOutput& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the metadata form type.</p>
-     */
     inline FormOutput& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The revision of the metadata form type.</p>
      */
     inline const Aws::String& GetTypeRevision() const{ return m_typeRevision; }
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline bool TypeRevisionHasBeenSet() const { return m_typeRevisionHasBeenSet; }
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline void SetTypeRevision(const Aws::String& value) { m_typeRevisionHasBeenSet = true; m_typeRevision = value; }
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline void SetTypeRevision(Aws::String&& value) { m_typeRevisionHasBeenSet = true; m_typeRevision = std::move(value); }
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline void SetTypeRevision(const char* value) { m_typeRevisionHasBeenSet = true; m_typeRevision.assign(value); }
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline FormOutput& WithTypeRevision(const Aws::String& value) { SetTypeRevision(value); return *this;}
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline FormOutput& WithTypeRevision(Aws::String&& value) { SetTypeRevision(std::move(value)); return *this;}
-
-    /**
-     * <p>The revision of the metadata form type.</p>
-     */
     inline FormOutput& WithTypeRevision(const char* value) { SetTypeRevision(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_content;

@@ -35,96 +35,42 @@ namespace Model
     AWS_FSX_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The ID of the data repository association that you want to delete.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline DeleteDataRepositoryAssociationRequest& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline DeleteDataRepositoryAssociationRequest& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the data repository association that you want to delete.</p>
-     */
     inline DeleteDataRepositoryAssociationRequest& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-
-    
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-
-    
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-
-    
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-
-    
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-
-    
     inline DeleteDataRepositoryAssociationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-
-    
     inline DeleteDataRepositoryAssociationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-
-    
     inline DeleteDataRepositoryAssociationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Set to <code>true</code> to delete the data in the file system that
      * corresponds to the data repository association.</p>
      */
     inline bool GetDeleteDataInFileSystem() const{ return m_deleteDataInFileSystem; }
-
-    /**
-     * <p>Set to <code>true</code> to delete the data in the file system that
-     * corresponds to the data repository association.</p>
-     */
     inline bool DeleteDataInFileSystemHasBeenSet() const { return m_deleteDataInFileSystemHasBeenSet; }
-
-    /**
-     * <p>Set to <code>true</code> to delete the data in the file system that
-     * corresponds to the data repository association.</p>
-     */
     inline void SetDeleteDataInFileSystem(bool value) { m_deleteDataInFileSystemHasBeenSet = true; m_deleteDataInFileSystem = value; }
-
-    /**
-     * <p>Set to <code>true</code> to delete the data in the file system that
-     * corresponds to the data repository association.</p>
-     */
     inline DeleteDataRepositoryAssociationRequest& WithDeleteDataInFileSystem(bool value) { SetDeleteDataInFileSystem(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_associationId;

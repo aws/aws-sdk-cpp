@@ -32,46 +32,19 @@ namespace Model
     AWS_APPREGISTRY_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p> The name, ID, or ARN of the application. </p>
      */
     inline const Aws::String& GetApplication() const{ return m_application; }
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline bool ApplicationHasBeenSet() const { return m_applicationHasBeenSet; }
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline void SetApplication(const Aws::String& value) { m_applicationHasBeenSet = true; m_application = value; }
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline void SetApplication(Aws::String&& value) { m_applicationHasBeenSet = true; m_application = std::move(value); }
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline void SetApplication(const char* value) { m_applicationHasBeenSet = true; m_application.assign(value); }
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline DeleteApplicationRequest& WithApplication(const Aws::String& value) { SetApplication(value); return *this;}
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline DeleteApplicationRequest& WithApplication(Aws::String&& value) { SetApplication(std::move(value)); return *this;}
-
-    /**
-     * <p> The name, ID, or ARN of the application. </p>
-     */
     inline DeleteApplicationRequest& WithApplication(const char* value) { SetApplication(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_application;

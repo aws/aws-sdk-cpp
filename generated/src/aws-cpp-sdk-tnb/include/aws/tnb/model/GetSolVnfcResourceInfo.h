@@ -40,36 +40,17 @@ namespace Model
     AWS_TNB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The metadata of the network function compute.</p>
      */
     inline const GetSolVnfcResourceInfoMetadata& GetMetadata() const{ return m_metadata; }
-
-    /**
-     * <p>The metadata of the network function compute.</p>
-     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-
-    /**
-     * <p>The metadata of the network function compute.</p>
-     */
     inline void SetMetadata(const GetSolVnfcResourceInfoMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-
-    /**
-     * <p>The metadata of the network function compute.</p>
-     */
     inline void SetMetadata(GetSolVnfcResourceInfoMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-
-    /**
-     * <p>The metadata of the network function compute.</p>
-     */
     inline GetSolVnfcResourceInfo& WithMetadata(const GetSolVnfcResourceInfoMetadata& value) { SetMetadata(value); return *this;}
-
-    /**
-     * <p>The metadata of the network function compute.</p>
-     */
     inline GetSolVnfcResourceInfo& WithMetadata(GetSolVnfcResourceInfoMetadata&& value) { SetMetadata(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     GetSolVnfcResourceInfoMetadata m_metadata;

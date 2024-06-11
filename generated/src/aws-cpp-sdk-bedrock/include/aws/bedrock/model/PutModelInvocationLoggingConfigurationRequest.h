@@ -32,36 +32,17 @@ namespace Model
     AWS_BEDROCK_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The logging configuration values to set.</p>
      */
     inline const LoggingConfig& GetLoggingConfig() const{ return m_loggingConfig; }
-
-    /**
-     * <p>The logging configuration values to set.</p>
-     */
     inline bool LoggingConfigHasBeenSet() const { return m_loggingConfigHasBeenSet; }
-
-    /**
-     * <p>The logging configuration values to set.</p>
-     */
     inline void SetLoggingConfig(const LoggingConfig& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = value; }
-
-    /**
-     * <p>The logging configuration values to set.</p>
-     */
     inline void SetLoggingConfig(LoggingConfig&& value) { m_loggingConfigHasBeenSet = true; m_loggingConfig = std::move(value); }
-
-    /**
-     * <p>The logging configuration values to set.</p>
-     */
     inline PutModelInvocationLoggingConfigurationRequest& WithLoggingConfig(const LoggingConfig& value) { SetLoggingConfig(value); return *this;}
-
-    /**
-     * <p>The logging configuration values to set.</p>
-     */
     inline PutModelInvocationLoggingConfigurationRequest& WithLoggingConfig(LoggingConfig&& value) { SetLoggingConfig(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LoggingConfig m_loggingConfig;

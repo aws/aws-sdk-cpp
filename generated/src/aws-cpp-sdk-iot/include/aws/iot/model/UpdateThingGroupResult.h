@@ -32,43 +32,25 @@ namespace Model
     AWS_IOT_API UpdateThingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The version of the updated thing group.</p>
      */
     inline long long GetVersion() const{ return m_version; }
-
-    /**
-     * <p>The version of the updated thing group.</p>
-     */
     inline void SetVersion(long long value) { m_version = value; }
-
-    /**
-     * <p>The version of the updated thing group.</p>
-     */
     inline UpdateThingGroupResult& WithVersion(long long value) { SetVersion(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateThingGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateThingGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateThingGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     long long m_version;

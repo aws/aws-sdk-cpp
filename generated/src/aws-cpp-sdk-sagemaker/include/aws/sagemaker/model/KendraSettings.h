@@ -38,42 +38,18 @@ namespace Model
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Describes whether the document querying feature is enabled or disabled in the
      * Canvas application.</p>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Describes whether the document querying feature is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Describes whether the document querying feature is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Describes whether the document querying feature is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Describes whether the document querying feature is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline KendraSettings& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Describes whether the document querying feature is enabled or disabled in the
-     * Canvas application.</p>
-     */
     inline KendraSettings& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     FeatureStatus m_status;

@@ -33,53 +33,27 @@ namespace Model
     AWS_CHIMESDKMESSAGING_API DescribeChannelBanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The details of the ban.</p>
      */
     inline const ChannelBan& GetChannelBan() const{ return m_channelBan; }
-
-    /**
-     * <p>The details of the ban.</p>
-     */
     inline void SetChannelBan(const ChannelBan& value) { m_channelBan = value; }
-
-    /**
-     * <p>The details of the ban.</p>
-     */
     inline void SetChannelBan(ChannelBan&& value) { m_channelBan = std::move(value); }
-
-    /**
-     * <p>The details of the ban.</p>
-     */
     inline DescribeChannelBanResult& WithChannelBan(const ChannelBan& value) { SetChannelBan(value); return *this;}
-
-    /**
-     * <p>The details of the ban.</p>
-     */
     inline DescribeChannelBanResult& WithChannelBan(ChannelBan&& value) { SetChannelBan(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeChannelBanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeChannelBanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeChannelBanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     ChannelBan m_channelBan;

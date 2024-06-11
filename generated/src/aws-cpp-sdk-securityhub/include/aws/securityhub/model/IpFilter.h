@@ -37,46 +37,19 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A finding's CIDR value.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline IpFilter& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline IpFilter& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-
-    /**
-     * <p>A finding's CIDR value.</p>
-     */
     inline IpFilter& WithCidr(const char* value) { SetCidr(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_cidr;

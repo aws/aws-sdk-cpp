@@ -39,79 +39,31 @@ namespace Model
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the policy type.</p>
      */
     inline const PolicyType& GetType() const{ return m_type; }
-
-    /**
-     * <p>The name of the policy type.</p>
-     */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The name of the policy type.</p>
-     */
     inline void SetType(const PolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The name of the policy type.</p>
-     */
     inline void SetType(PolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The name of the policy type.</p>
-     */
     inline PolicyTypeSummary& WithType(const PolicyType& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The name of the policy type.</p>
-     */
     inline PolicyTypeSummary& WithType(PolicyType&& value) { SetType(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status of the policy type as it relates to the associated root. To attach
      * a policy of the specified type to a root or to an OU or account in that root, it
      * must be available in the organization and enabled for that root.</p>
      */
     inline const PolicyTypeStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status of the policy type as it relates to the associated root. To attach
-     * a policy of the specified type to a root or to an OU or account in that root, it
-     * must be available in the organization and enabled for that root.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status of the policy type as it relates to the associated root. To attach
-     * a policy of the specified type to a root or to an OU or account in that root, it
-     * must be available in the organization and enabled for that root.</p>
-     */
     inline void SetStatus(const PolicyTypeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status of the policy type as it relates to the associated root. To attach
-     * a policy of the specified type to a root or to an OU or account in that root, it
-     * must be available in the organization and enabled for that root.</p>
-     */
     inline void SetStatus(PolicyTypeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status of the policy type as it relates to the associated root. To attach
-     * a policy of the specified type to a root or to an OU or account in that root, it
-     * must be available in the organization and enabled for that root.</p>
-     */
     inline PolicyTypeSummary& WithStatus(const PolicyTypeStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status of the policy type as it relates to the associated root. To attach
-     * a policy of the specified type to a root or to an OU or account in that root, it
-     * must be available in the organization and enabled for that root.</p>
-     */
     inline PolicyTypeSummary& WithStatus(PolicyTypeStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     PolicyType m_type;

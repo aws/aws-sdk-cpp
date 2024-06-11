@@ -39,83 +39,32 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The field ID of the filled map shape.</p>
      */
     inline const Aws::String& GetFieldId() const{ return m_fieldId; }
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline FilledMapShapeConditionalFormatting& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline FilledMapShapeConditionalFormatting& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-
-    /**
-     * <p>The field ID of the filled map shape.</p>
-     */
     inline FilledMapShapeConditionalFormatting& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The conditional formatting that determines the background color of a filled
      * map's shape.</p>
      */
     inline const ShapeConditionalFormat& GetFormat() const{ return m_format; }
-
-    /**
-     * <p>The conditional formatting that determines the background color of a filled
-     * map's shape.</p>
-     */
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-
-    /**
-     * <p>The conditional formatting that determines the background color of a filled
-     * map's shape.</p>
-     */
     inline void SetFormat(const ShapeConditionalFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-
-    /**
-     * <p>The conditional formatting that determines the background color of a filled
-     * map's shape.</p>
-     */
     inline void SetFormat(ShapeConditionalFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-
-    /**
-     * <p>The conditional formatting that determines the background color of a filled
-     * map's shape.</p>
-     */
     inline FilledMapShapeConditionalFormatting& WithFormat(const ShapeConditionalFormat& value) { SetFormat(value); return *this;}
-
-    /**
-     * <p>The conditional formatting that determines the background color of a filled
-     * map's shape.</p>
-     */
     inline FilledMapShapeConditionalFormatting& WithFormat(ShapeConditionalFormat&& value) { SetFormat(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_fieldId;

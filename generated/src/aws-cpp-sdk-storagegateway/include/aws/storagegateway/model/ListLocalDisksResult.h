@@ -34,92 +34,41 @@ namespace Model
     AWS_STORAGEGATEWAY_API ListLocalDisksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-
-    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-
-    
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-
-    
     inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-
-    
     inline ListLocalDisksResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-
-    
     inline ListLocalDisksResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-
-    
     inline ListLocalDisksResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
      * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
      */
     inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
-
-    /**
-     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
-     */
     inline void SetDisks(const Aws::Vector<Disk>& value) { m_disks = value; }
-
-    /**
-     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
-     */
     inline void SetDisks(Aws::Vector<Disk>&& value) { m_disks = std::move(value); }
-
-    /**
-     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
-     */
     inline ListLocalDisksResult& WithDisks(const Aws::Vector<Disk>& value) { SetDisks(value); return *this;}
-
-    /**
-     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
-     */
     inline ListLocalDisksResult& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
-
-    /**
-     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
-     */
     inline ListLocalDisksResult& AddDisks(const Disk& value) { m_disks.push_back(value); return *this; }
-
-    /**
-     * <p>A JSON object containing the following fields:</p> <ul> <li> <p>
-     * <a>ListLocalDisksOutput$Disks</a> </p> </li> </ul>
-     */
     inline ListLocalDisksResult& AddDisks(Disk&& value) { m_disks.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListLocalDisksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListLocalDisksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListLocalDisksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_gatewayARN;

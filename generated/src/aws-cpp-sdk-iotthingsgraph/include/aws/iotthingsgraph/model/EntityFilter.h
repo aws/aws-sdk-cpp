@@ -43,103 +43,35 @@ namespace Model
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code>
      * filters on entities that are used by the entity in the result set. For example,
      * you can filter on the ID of a property that is used in a state.</p>
      */
     inline const EntityFilterName& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code>
-     * filters on entities that are used by the entity in the result set. For example,
-     * you can filter on the ID of a property that is used in a state.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code>
-     * filters on entities that are used by the entity in the result set. For example,
-     * you can filter on the ID of a property that is used in a state.</p>
-     */
     inline void SetName(const EntityFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code>
-     * filters on entities that are used by the entity in the result set. For example,
-     * you can filter on the ID of a property that is used in a state.</p>
-     */
     inline void SetName(EntityFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code>
-     * filters on entities that are used by the entity in the result set. For example,
-     * you can filter on the ID of a property that is used in a state.</p>
-     */
     inline EntityFilter& WithName(const EntityFilterName& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the entity search filter field. <code>REFERENCED_ENTITY_ID</code>
-     * filters on entities that are used by the entity in the result set. For example,
-     * you can filter on the ID of a property that is used in a state.</p>
-     */
     inline EntityFilter& WithName(EntityFilterName&& value) { SetName(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>An array of string values for the search filter field. Multiple values
      * function as AND criteria in the search.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValue() const{ return m_value; }
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline void SetValue(const Aws::Vector<Aws::String>& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline void SetValue(Aws::Vector<Aws::String>&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline EntityFilter& WithValue(const Aws::Vector<Aws::String>& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline EntityFilter& WithValue(Aws::Vector<Aws::String>&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline EntityFilter& AddValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline EntityFilter& AddValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>An array of string values for the search filter field. Multiple values
-     * function as AND criteria in the search.</p>
-     */
     inline EntityFilter& AddValue(const char* value) { m_valueHasBeenSet = true; m_value.push_back(value); return *this; }
-
+    ///@}
   private:
 
     EntityFilterName m_name;

@@ -34,63 +34,29 @@ namespace Model
     AWS_DIRECTCONNECT_API DescribeHostedConnectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The connections.</p>
      */
     inline const Aws::Vector<Connection>& GetConnections() const{ return m_connections; }
-
-    /**
-     * <p>The connections.</p>
-     */
     inline void SetConnections(const Aws::Vector<Connection>& value) { m_connections = value; }
-
-    /**
-     * <p>The connections.</p>
-     */
     inline void SetConnections(Aws::Vector<Connection>&& value) { m_connections = std::move(value); }
-
-    /**
-     * <p>The connections.</p>
-     */
     inline DescribeHostedConnectionsResult& WithConnections(const Aws::Vector<Connection>& value) { SetConnections(value); return *this;}
-
-    /**
-     * <p>The connections.</p>
-     */
     inline DescribeHostedConnectionsResult& WithConnections(Aws::Vector<Connection>&& value) { SetConnections(std::move(value)); return *this;}
-
-    /**
-     * <p>The connections.</p>
-     */
     inline DescribeHostedConnectionsResult& AddConnections(const Connection& value) { m_connections.push_back(value); return *this; }
-
-    /**
-     * <p>The connections.</p>
-     */
     inline DescribeHostedConnectionsResult& AddConnections(Connection&& value) { m_connections.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeHostedConnectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeHostedConnectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeHostedConnectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<Connection> m_connections;

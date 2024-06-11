@@ -33,58 +33,28 @@ namespace Model
     AWS_S3CONTROL_API DescribeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
+    ///@{
     /**
      * <p>Contains the configuration parameters and status for the job specified in the
      * <code>Describe Job</code> request.</p>
      */
     inline const JobDescriptor& GetJob() const{ return m_job; }
-
-    /**
-     * <p>Contains the configuration parameters and status for the job specified in the
-     * <code>Describe Job</code> request.</p>
-     */
     inline void SetJob(const JobDescriptor& value) { m_job = value; }
-
-    /**
-     * <p>Contains the configuration parameters and status for the job specified in the
-     * <code>Describe Job</code> request.</p>
-     */
     inline void SetJob(JobDescriptor&& value) { m_job = std::move(value); }
-
-    /**
-     * <p>Contains the configuration parameters and status for the job specified in the
-     * <code>Describe Job</code> request.</p>
-     */
     inline DescribeJobResult& WithJob(const JobDescriptor& value) { SetJob(value); return *this;}
-
-    /**
-     * <p>Contains the configuration parameters and status for the job specified in the
-     * <code>Describe Job</code> request.</p>
-     */
     inline DescribeJobResult& WithJob(JobDescriptor&& value) { SetJob(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     JobDescriptor m_job;

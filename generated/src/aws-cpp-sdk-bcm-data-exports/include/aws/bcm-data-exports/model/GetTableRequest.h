@@ -35,47 +35,21 @@ namespace Model
     AWS_BCMDATAEXPORTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>The name of the table.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline GetTableRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline GetTableRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the table.</p>
-     */
     inline GetTableRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>TableProperties are additional configurations you can provide to change the
      * data and schema of a table. Each table can have different TableProperties.
@@ -83,103 +57,19 @@ namespace Model
      * default value that it assumes if not specified.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTableProperties() const{ return m_tableProperties; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline bool TablePropertiesHasBeenSet() const { return m_tablePropertiesHasBeenSet; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline void SetTableProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties = value; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline void SetTableProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties = std::move(value); }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& WithTableProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetTableProperties(value); return *this;}
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& WithTableProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetTableProperties(std::move(value)); return *this;}
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(const Aws::String& key, const Aws::String& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, value); return *this; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(Aws::String&& key, const Aws::String& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(const Aws::String& key, Aws::String&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(Aws::String&& key, Aws::String&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(const char* key, Aws::String&& value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(Aws::String&& key, const char* value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>TableProperties are additional configurations you can provide to change the
-     * data and schema of a table. Each table can have different TableProperties.
-     * Tables are not required to have any TableProperties. Each table property has a
-     * default value that it assumes if not specified.</p>
-     */
     inline GetTableRequest& AddTableProperties(const char* key, const char* value) { m_tablePropertiesHasBeenSet = true; m_tableProperties.emplace(key, value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_tableName;

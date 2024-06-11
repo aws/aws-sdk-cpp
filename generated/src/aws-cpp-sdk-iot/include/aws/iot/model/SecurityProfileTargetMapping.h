@@ -39,73 +39,30 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Information that identifies the security profile.</p>
      */
     inline const SecurityProfileIdentifier& GetSecurityProfileIdentifier() const{ return m_securityProfileIdentifier; }
-
-    /**
-     * <p>Information that identifies the security profile.</p>
-     */
     inline bool SecurityProfileIdentifierHasBeenSet() const { return m_securityProfileIdentifierHasBeenSet; }
-
-    /**
-     * <p>Information that identifies the security profile.</p>
-     */
     inline void SetSecurityProfileIdentifier(const SecurityProfileIdentifier& value) { m_securityProfileIdentifierHasBeenSet = true; m_securityProfileIdentifier = value; }
-
-    /**
-     * <p>Information that identifies the security profile.</p>
-     */
     inline void SetSecurityProfileIdentifier(SecurityProfileIdentifier&& value) { m_securityProfileIdentifierHasBeenSet = true; m_securityProfileIdentifier = std::move(value); }
-
-    /**
-     * <p>Information that identifies the security profile.</p>
-     */
     inline SecurityProfileTargetMapping& WithSecurityProfileIdentifier(const SecurityProfileIdentifier& value) { SetSecurityProfileIdentifier(value); return *this;}
-
-    /**
-     * <p>Information that identifies the security profile.</p>
-     */
     inline SecurityProfileTargetMapping& WithSecurityProfileIdentifier(SecurityProfileIdentifier&& value) { SetSecurityProfileIdentifier(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Information about the target (thing group) associated with the security
      * profile.</p>
      */
     inline const SecurityProfileTarget& GetTarget() const{ return m_target; }
-
-    /**
-     * <p>Information about the target (thing group) associated with the security
-     * profile.</p>
-     */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-
-    /**
-     * <p>Information about the target (thing group) associated with the security
-     * profile.</p>
-     */
     inline void SetTarget(const SecurityProfileTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-
-    /**
-     * <p>Information about the target (thing group) associated with the security
-     * profile.</p>
-     */
     inline void SetTarget(SecurityProfileTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-
-    /**
-     * <p>Information about the target (thing group) associated with the security
-     * profile.</p>
-     */
     inline SecurityProfileTargetMapping& WithTarget(const SecurityProfileTarget& value) { SetTarget(value); return *this;}
-
-    /**
-     * <p>Information about the target (thing group) associated with the security
-     * profile.</p>
-     */
     inline SecurityProfileTargetMapping& WithTarget(SecurityProfileTarget&& value) { SetTarget(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     SecurityProfileIdentifier m_securityProfileIdentifier;

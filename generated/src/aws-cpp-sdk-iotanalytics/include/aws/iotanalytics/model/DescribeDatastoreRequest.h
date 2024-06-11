@@ -38,75 +38,31 @@ namespace Model
     AWS_IOTANALYTICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>The name of the data store</p>
      */
     inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline DescribeDatastoreRequest& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline DescribeDatastoreRequest& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the data store</p>
-     */
     inline DescribeDatastoreRequest& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If true, additional statistical information about the data store is included
      * in the response. This feature can't be used with a data store whose S3 storage
      * is customer-managed.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
-
-    /**
-     * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature can't be used with a data store whose S3 storage
-     * is customer-managed.</p>
-     */
     inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
-
-    /**
-     * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature can't be used with a data store whose S3 storage
-     * is customer-managed.</p>
-     */
     inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
-
-    /**
-     * <p>If true, additional statistical information about the data store is included
-     * in the response. This feature can't be used with a data store whose S3 storage
-     * is customer-managed.</p>
-     */
     inline DescribeDatastoreRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_datastoreName;

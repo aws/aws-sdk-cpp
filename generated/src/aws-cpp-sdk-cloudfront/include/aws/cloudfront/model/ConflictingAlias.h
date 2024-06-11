@@ -41,144 +41,49 @@ namespace Model
     AWS_CLOUDFRONT_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>An alias (also called a CNAME).</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline ConflictingAlias& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline ConflictingAlias& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-
-    /**
-     * <p>An alias (also called a CNAME).</p>
-     */
     inline ConflictingAlias& WithAlias(const char* value) { SetAlias(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The (partially hidden) ID of the CloudFront distribution associated with the
      * alias.</p>
      */
     inline const Aws::String& GetDistributionId() const{ return m_distributionId; }
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline bool DistributionIdHasBeenSet() const { return m_distributionIdHasBeenSet; }
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline void SetDistributionId(const Aws::String& value) { m_distributionIdHasBeenSet = true; m_distributionId = value; }
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline void SetDistributionId(Aws::String&& value) { m_distributionIdHasBeenSet = true; m_distributionId = std::move(value); }
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline void SetDistributionId(const char* value) { m_distributionIdHasBeenSet = true; m_distributionId.assign(value); }
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline ConflictingAlias& WithDistributionId(const Aws::String& value) { SetDistributionId(value); return *this;}
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline ConflictingAlias& WithDistributionId(Aws::String&& value) { SetDistributionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The (partially hidden) ID of the CloudFront distribution associated with the
-     * alias.</p>
-     */
     inline ConflictingAlias& WithDistributionId(const char* value) { SetDistributionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
      * distribution that's associated with the alias.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline ConflictingAlias& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline ConflictingAlias& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The (partially hidden) ID of the Amazon Web Services account that owns the
-     * distribution that's associated with the alias.</p>
-     */
     inline ConflictingAlias& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_alias;

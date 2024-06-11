@@ -41,77 +41,31 @@ namespace Model
     AWS_EC2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The error code.</p>
      */
     inline const DeleteQueuedReservedInstancesErrorCode& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetCode(const DeleteQueuedReservedInstancesErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline void SetCode(DeleteQueuedReservedInstancesErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The error code.</p>
-     */
     inline DeleteQueuedReservedInstancesError& WithCode(const DeleteQueuedReservedInstancesErrorCode& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The error code.</p>
-     */
     inline DeleteQueuedReservedInstancesError& WithCode(DeleteQueuedReservedInstancesErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    /**
-     * <p>The error message.</p>
-     */
     inline DeleteQueuedReservedInstancesError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline DeleteQueuedReservedInstancesError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The error message.</p>
-     */
     inline DeleteQueuedReservedInstancesError& WithMessage(const char* value) { SetMessage(value); return *this;}
-
+    ///@}
   private:
 
     DeleteQueuedReservedInstancesErrorCode m_code;

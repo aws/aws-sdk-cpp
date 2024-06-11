@@ -40,71 +40,31 @@ namespace Model
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const Aws::String& GetMessage() const{ return m_message; }
-
-    
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-
-    
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-
-    
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-
-    
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-
-    
     inline QuickSightUserNotFoundException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-
-    
     inline QuickSightUserNotFoundException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-
-    
     inline QuickSightUserNotFoundException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The Amazon Web Services request ID for this request.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline QuickSightUserNotFoundException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline QuickSightUserNotFoundException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services request ID for this request.</p>
-     */
     inline QuickSightUserNotFoundException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_message;

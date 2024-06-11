@@ -48,49 +48,21 @@ namespace Model
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
      * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
      * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
      */
     inline const ChangeAction& GetAction() const{ return m_action; }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
-     * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
-     * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-     */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
-     * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
-     * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
-     * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
-     * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-     */
     inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-
-    /**
-     * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
-     * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
-     * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-     */
     inline SizeConstraintSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-
-    /**
-     * <p>Specify <code>INSERT</code> to add a <a>SizeConstraintSetUpdate</a> to a
-     * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
-     * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
-     */
     inline SizeConstraintSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
      * the <code>Size</code>, <code>ComparisonOperator</code>, and
@@ -100,57 +72,12 @@ namespace Model
      * <code>SizeConstraint</code> is considered to match.</p>
      */
     inline const SizeConstraint& GetSizeConstraint() const{ return m_sizeConstraint; }
-
-    /**
-     * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
-     * the <code>Size</code>, <code>ComparisonOperator</code>, and
-     * <code>FieldToMatch</code> to build an expression in the form of
-     * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
-     * <code>FieldToMatch</code>". If that expression is true, the
-     * <code>SizeConstraint</code> is considered to match.</p>
-     */
     inline bool SizeConstraintHasBeenSet() const { return m_sizeConstraintHasBeenSet; }
-
-    /**
-     * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
-     * the <code>Size</code>, <code>ComparisonOperator</code>, and
-     * <code>FieldToMatch</code> to build an expression in the form of
-     * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
-     * <code>FieldToMatch</code>". If that expression is true, the
-     * <code>SizeConstraint</code> is considered to match.</p>
-     */
     inline void SetSizeConstraint(const SizeConstraint& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = value; }
-
-    /**
-     * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
-     * the <code>Size</code>, <code>ComparisonOperator</code>, and
-     * <code>FieldToMatch</code> to build an expression in the form of
-     * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
-     * <code>FieldToMatch</code>". If that expression is true, the
-     * <code>SizeConstraint</code> is considered to match.</p>
-     */
     inline void SetSizeConstraint(SizeConstraint&& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = std::move(value); }
-
-    /**
-     * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
-     * the <code>Size</code>, <code>ComparisonOperator</code>, and
-     * <code>FieldToMatch</code> to build an expression in the form of
-     * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
-     * <code>FieldToMatch</code>". If that expression is true, the
-     * <code>SizeConstraint</code> is considered to match.</p>
-     */
     inline SizeConstraintSetUpdate& WithSizeConstraint(const SizeConstraint& value) { SetSizeConstraint(value); return *this;}
-
-    /**
-     * <p>Specifies a constraint on the size of a part of the web request. AWS WAF uses
-     * the <code>Size</code>, <code>ComparisonOperator</code>, and
-     * <code>FieldToMatch</code> to build an expression in the form of
-     * "<code>Size</code> <code>ComparisonOperator</code> size in bytes of
-     * <code>FieldToMatch</code>". If that expression is true, the
-     * <code>SizeConstraint</code> is considered to match.</p>
-     */
     inline SizeConstraintSetUpdate& WithSizeConstraint(SizeConstraint&& value) { SetSizeConstraint(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ChangeAction m_action;

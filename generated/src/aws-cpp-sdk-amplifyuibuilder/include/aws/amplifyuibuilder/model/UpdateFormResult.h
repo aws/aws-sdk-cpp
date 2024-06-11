@@ -33,53 +33,27 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API UpdateFormResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>Describes the configuration of the updated form.</p>
      */
     inline const Form& GetEntity() const{ return m_entity; }
-
-    /**
-     * <p>Describes the configuration of the updated form.</p>
-     */
     inline void SetEntity(const Form& value) { m_entity = value; }
-
-    /**
-     * <p>Describes the configuration of the updated form.</p>
-     */
     inline void SetEntity(Form&& value) { m_entity = std::move(value); }
-
-    /**
-     * <p>Describes the configuration of the updated form.</p>
-     */
     inline UpdateFormResult& WithEntity(const Form& value) { SetEntity(value); return *this;}
-
-    /**
-     * <p>Describes the configuration of the updated form.</p>
-     */
     inline UpdateFormResult& WithEntity(Form&& value) { SetEntity(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline UpdateFormResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline UpdateFormResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline UpdateFormResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Form m_entity;

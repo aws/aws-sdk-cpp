@@ -39,77 +39,31 @@ namespace Model
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Specifies what output is prompting the agent to reprompt the input.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
-
-    /**
-     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
-     */
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-
-    /**
-     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
-     */
     inline void SetSource(const Source& value) { m_sourceHasBeenSet = true; m_source = value; }
-
-    /**
-     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
-     */
     inline void SetSource(Source&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-
-    /**
-     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
-     */
     inline RepromptResponse& WithSource(const Source& value) { SetSource(value); return *this;}
-
-    /**
-     * <p>Specifies what output is prompting the agent to reprompt the input.</p>
-     */
     inline RepromptResponse& WithSource(Source&& value) { SetSource(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The text reprompting the input.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline RepromptResponse& WithText(const Aws::String& value) { SetText(value); return *this;}
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline RepromptResponse& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-
-    /**
-     * <p>The text reprompting the input.</p>
-     */
     inline RepromptResponse& WithText(const char* value) { SetText(value); return *this;}
-
+    ///@}
   private:
 
     Source m_source;

@@ -38,120 +38,45 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The summary of the current status of the actions.</p>
      */
     inline const Aws::String& GetSummary() const{ return m_summary; }
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline void SetSummary(const Aws::String& value) { m_summaryHasBeenSet = true; m_summary = value; }
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline void SetSummary(Aws::String&& value) { m_summaryHasBeenSet = true; m_summary = std::move(value); }
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline void SetSummary(const char* value) { m_summaryHasBeenSet = true; m_summary.assign(value); }
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline ExecutionDetails& WithSummary(const Aws::String& value) { SetSummary(value); return *this;}
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline ExecutionDetails& WithSummary(Aws::String&& value) { SetSummary(std::move(value)); return *this;}
-
-    /**
-     * <p>The summary of the current status of the actions.</p>
-     */
     inline ExecutionDetails& WithSummary(const char* value) { SetSummary(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The system-generated unique ID of this action used to identify this job
      * worker in any external systems, such as CodeDeploy.</p>
      */
     inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline bool ExternalExecutionIdHasBeenSet() const { return m_externalExecutionIdHasBeenSet; }
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline void SetExternalExecutionId(const Aws::String& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = value; }
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline void SetExternalExecutionId(Aws::String&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = std::move(value); }
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline void SetExternalExecutionId(const char* value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId.assign(value); }
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline ExecutionDetails& WithExternalExecutionId(const Aws::String& value) { SetExternalExecutionId(value); return *this;}
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline ExecutionDetails& WithExternalExecutionId(Aws::String&& value) { SetExternalExecutionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The system-generated unique ID of this action used to identify this job
-     * worker in any external systems, such as CodeDeploy.</p>
-     */
     inline ExecutionDetails& WithExternalExecutionId(const char* value) { SetExternalExecutionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The percentage of work completed on the action, represented on a scale of 0
      * to 100 percent.</p>
      */
     inline int GetPercentComplete() const{ return m_percentComplete; }
-
-    /**
-     * <p>The percentage of work completed on the action, represented on a scale of 0
-     * to 100 percent.</p>
-     */
     inline bool PercentCompleteHasBeenSet() const { return m_percentCompleteHasBeenSet; }
-
-    /**
-     * <p>The percentage of work completed on the action, represented on a scale of 0
-     * to 100 percent.</p>
-     */
     inline void SetPercentComplete(int value) { m_percentCompleteHasBeenSet = true; m_percentComplete = value; }
-
-    /**
-     * <p>The percentage of work completed on the action, represented on a scale of 0
-     * to 100 percent.</p>
-     */
     inline ExecutionDetails& WithPercentComplete(int value) { SetPercentComplete(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_summary;

@@ -43,48 +43,19 @@ namespace Model
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object to describe a request to activate or deactivate the role that you
      * can use to grant an Amazon Lightsail container service access to Amazon Elastic
      * Container Registry (Amazon ECR) private repositories.</p>
      */
     inline const ContainerServiceECRImagePullerRoleRequest& GetEcrImagePullerRole() const{ return m_ecrImagePullerRole; }
-
-    /**
-     * <p>An object to describe a request to activate or deactivate the role that you
-     * can use to grant an Amazon Lightsail container service access to Amazon Elastic
-     * Container Registry (Amazon ECR) private repositories.</p>
-     */
     inline bool EcrImagePullerRoleHasBeenSet() const { return m_ecrImagePullerRoleHasBeenSet; }
-
-    /**
-     * <p>An object to describe a request to activate or deactivate the role that you
-     * can use to grant an Amazon Lightsail container service access to Amazon Elastic
-     * Container Registry (Amazon ECR) private repositories.</p>
-     */
     inline void SetEcrImagePullerRole(const ContainerServiceECRImagePullerRoleRequest& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = value; }
-
-    /**
-     * <p>An object to describe a request to activate or deactivate the role that you
-     * can use to grant an Amazon Lightsail container service access to Amazon Elastic
-     * Container Registry (Amazon ECR) private repositories.</p>
-     */
     inline void SetEcrImagePullerRole(ContainerServiceECRImagePullerRoleRequest&& value) { m_ecrImagePullerRoleHasBeenSet = true; m_ecrImagePullerRole = std::move(value); }
-
-    /**
-     * <p>An object to describe a request to activate or deactivate the role that you
-     * can use to grant an Amazon Lightsail container service access to Amazon Elastic
-     * Container Registry (Amazon ECR) private repositories.</p>
-     */
     inline PrivateRegistryAccessRequest& WithEcrImagePullerRole(const ContainerServiceECRImagePullerRoleRequest& value) { SetEcrImagePullerRole(value); return *this;}
-
-    /**
-     * <p>An object to describe a request to activate or deactivate the role that you
-     * can use to grant an Amazon Lightsail container service access to Amazon Elastic
-     * Container Registry (Amazon ECR) private repositories.</p>
-     */
     inline PrivateRegistryAccessRequest& WithEcrImagePullerRole(ContainerServiceECRImagePullerRoleRequest&& value) { SetEcrImagePullerRole(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ContainerServiceECRImagePullerRoleRequest m_ecrImagePullerRole;

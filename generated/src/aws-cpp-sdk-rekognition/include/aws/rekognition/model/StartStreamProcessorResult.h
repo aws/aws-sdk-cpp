@@ -32,63 +32,29 @@ namespace Model
     AWS_REKOGNITION_API StartStreamProcessorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> A unique identifier for the stream processing session. </p>
      */
     inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-
-    /**
-     * <p> A unique identifier for the stream processing session. </p>
-     */
     inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-
-    /**
-     * <p> A unique identifier for the stream processing session. </p>
-     */
     inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-
-    /**
-     * <p> A unique identifier for the stream processing session. </p>
-     */
     inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-
-    /**
-     * <p> A unique identifier for the stream processing session. </p>
-     */
     inline StartStreamProcessorResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-
-    /**
-     * <p> A unique identifier for the stream processing session. </p>
-     */
     inline StartStreamProcessorResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-
-    /**
-     * <p> A unique identifier for the stream processing session. </p>
-     */
     inline StartStreamProcessorResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline StartStreamProcessorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline StartStreamProcessorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline StartStreamProcessorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_sessionId;

@@ -42,120 +42,45 @@ namespace Model
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new
      * charge details of a flat custom line item. </p>
      */
     inline const UpdateCustomLineItemFlatChargeDetails& GetFlat() const{ return m_flat; }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new
-     * charge details of a flat custom line item. </p>
-     */
     inline bool FlatHasBeenSet() const { return m_flatHasBeenSet; }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new
-     * charge details of a flat custom line item. </p>
-     */
     inline void SetFlat(const UpdateCustomLineItemFlatChargeDetails& value) { m_flatHasBeenSet = true; m_flat = value; }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new
-     * charge details of a flat custom line item. </p>
-     */
     inline void SetFlat(UpdateCustomLineItemFlatChargeDetails&& value) { m_flatHasBeenSet = true; m_flat = std::move(value); }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new
-     * charge details of a flat custom line item. </p>
-     */
     inline UpdateCustomLineItemChargeDetails& WithFlat(const UpdateCustomLineItemFlatChargeDetails& value) { SetFlat(value); return *this;}
-
-    /**
-     * <p> An <code>UpdateCustomLineItemFlatChargeDetails</code> that describes the new
-     * charge details of a flat custom line item. </p>
-     */
     inline UpdateCustomLineItemChargeDetails& WithFlat(UpdateCustomLineItemFlatChargeDetails&& value) { SetFlat(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes
      * the new charge details of a percentage custom line item. </p>
      */
     inline const UpdateCustomLineItemPercentageChargeDetails& GetPercentage() const{ return m_percentage; }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes
-     * the new charge details of a percentage custom line item. </p>
-     */
     inline bool PercentageHasBeenSet() const { return m_percentageHasBeenSet; }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes
-     * the new charge details of a percentage custom line item. </p>
-     */
     inline void SetPercentage(const UpdateCustomLineItemPercentageChargeDetails& value) { m_percentageHasBeenSet = true; m_percentage = value; }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes
-     * the new charge details of a percentage custom line item. </p>
-     */
     inline void SetPercentage(UpdateCustomLineItemPercentageChargeDetails&& value) { m_percentageHasBeenSet = true; m_percentage = std::move(value); }
-
-    /**
-     * <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes
-     * the new charge details of a percentage custom line item. </p>
-     */
     inline UpdateCustomLineItemChargeDetails& WithPercentage(const UpdateCustomLineItemPercentageChargeDetails& value) { SetPercentage(value); return *this;}
-
-    /**
-     * <p> An <code>UpdateCustomLineItemPercentageChargeDetails</code> that describes
-     * the new charge details of a percentage custom line item. </p>
-     */
     inline UpdateCustomLineItemChargeDetails& WithPercentage(UpdateCustomLineItemPercentageChargeDetails&& value) { SetPercentage(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>A representation of the line item filter.</p>
      */
     inline const Aws::Vector<LineItemFilter>& GetLineItemFilters() const{ return m_lineItemFilters; }
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline bool LineItemFiltersHasBeenSet() const { return m_lineItemFiltersHasBeenSet; }
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline void SetLineItemFilters(const Aws::Vector<LineItemFilter>& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters = value; }
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline void SetLineItemFilters(Aws::Vector<LineItemFilter>&& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters = std::move(value); }
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline UpdateCustomLineItemChargeDetails& WithLineItemFilters(const Aws::Vector<LineItemFilter>& value) { SetLineItemFilters(value); return *this;}
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline UpdateCustomLineItemChargeDetails& WithLineItemFilters(Aws::Vector<LineItemFilter>&& value) { SetLineItemFilters(std::move(value)); return *this;}
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline UpdateCustomLineItemChargeDetails& AddLineItemFilters(const LineItemFilter& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters.push_back(value); return *this; }
-
-    /**
-     * <p>A representation of the line item filter.</p>
-     */
     inline UpdateCustomLineItemChargeDetails& AddLineItemFilters(LineItemFilter&& value) { m_lineItemFiltersHasBeenSet = true; m_lineItemFilters.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     UpdateCustomLineItemFlatChargeDetails m_flat;

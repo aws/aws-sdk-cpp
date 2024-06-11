@@ -41,139 +41,55 @@ namespace Model
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The unique run identifier associated with this run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique run identifier associated with this run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithRunId(const char* value) { SetRunId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The status for this run.</p>
      */
     inline const TaskStatusType& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline void SetStatus(const TaskStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline void SetStatus(TaskStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithStatus(const TaskStatusType& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The status for this run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithStatus(TaskStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time when this run started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
-
-    /**
-     * <p>The date and time when this run started.</p>
-     */
     inline bool StartedOnHasBeenSet() const { return m_startedOnHasBeenSet; }
-
-    /**
-     * <p>The date and time when this run started.</p>
-     */
     inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOnHasBeenSet = true; m_startedOn = value; }
-
-    /**
-     * <p>The date and time when this run started.</p>
-     */
     inline void SetStartedOn(Aws::Utils::DateTime&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::move(value); }
-
-    /**
-     * <p>The date and time when this run started.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithStartedOn(const Aws::Utils::DateTime& value) { SetStartedOn(value); return *this;}
-
-    /**
-     * <p>The date and time when this run started.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The data source (Glue table) associated with the recommendation run.</p>
      */
     inline const DataSource& GetDataSource() const{ return m_dataSource; }
-
-    /**
-     * <p>The data source (Glue table) associated with the recommendation run.</p>
-     */
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-
-    /**
-     * <p>The data source (Glue table) associated with the recommendation run.</p>
-     */
     inline void SetDataSource(const DataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-
-    /**
-     * <p>The data source (Glue table) associated with the recommendation run.</p>
-     */
     inline void SetDataSource(DataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-
-    /**
-     * <p>The data source (Glue table) associated with the recommendation run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithDataSource(const DataSource& value) { SetDataSource(value); return *this;}
-
-    /**
-     * <p>The data source (Glue table) associated with the recommendation run.</p>
-     */
     inline DataQualityRuleRecommendationRunDescription& WithDataSource(DataSource&& value) { SetDataSource(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_runId;

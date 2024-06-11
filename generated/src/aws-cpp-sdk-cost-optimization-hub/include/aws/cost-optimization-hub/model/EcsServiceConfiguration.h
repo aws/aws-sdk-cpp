@@ -38,36 +38,17 @@ namespace Model
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Details about the compute configuration.</p>
      */
     inline const ComputeConfiguration& GetCompute() const{ return m_compute; }
-
-    /**
-     * <p>Details about the compute configuration.</p>
-     */
     inline bool ComputeHasBeenSet() const { return m_computeHasBeenSet; }
-
-    /**
-     * <p>Details about the compute configuration.</p>
-     */
     inline void SetCompute(const ComputeConfiguration& value) { m_computeHasBeenSet = true; m_compute = value; }
-
-    /**
-     * <p>Details about the compute configuration.</p>
-     */
     inline void SetCompute(ComputeConfiguration&& value) { m_computeHasBeenSet = true; m_compute = std::move(value); }
-
-    /**
-     * <p>Details about the compute configuration.</p>
-     */
     inline EcsServiceConfiguration& WithCompute(const ComputeConfiguration& value) { SetCompute(value); return *this;}
-
-    /**
-     * <p>Details about the compute configuration.</p>
-     */
     inline EcsServiceConfiguration& WithCompute(ComputeConfiguration&& value) { SetCompute(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     ComputeConfiguration m_compute;

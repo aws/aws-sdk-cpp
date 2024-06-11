@@ -32,63 +32,29 @@ namespace Model
     AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The HTTPS URL to use when cloning the source repository.</p>
      */
     inline const Aws::String& GetHttps() const{ return m_https; }
-
-    /**
-     * <p>The HTTPS URL to use when cloning the source repository.</p>
-     */
     inline void SetHttps(const Aws::String& value) { m_https = value; }
-
-    /**
-     * <p>The HTTPS URL to use when cloning the source repository.</p>
-     */
     inline void SetHttps(Aws::String&& value) { m_https = std::move(value); }
-
-    /**
-     * <p>The HTTPS URL to use when cloning the source repository.</p>
-     */
     inline void SetHttps(const char* value) { m_https.assign(value); }
-
-    /**
-     * <p>The HTTPS URL to use when cloning the source repository.</p>
-     */
     inline GetSourceRepositoryCloneUrlsResult& WithHttps(const Aws::String& value) { SetHttps(value); return *this;}
-
-    /**
-     * <p>The HTTPS URL to use when cloning the source repository.</p>
-     */
     inline GetSourceRepositoryCloneUrlsResult& WithHttps(Aws::String&& value) { SetHttps(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTPS URL to use when cloning the source repository.</p>
-     */
     inline GetSourceRepositoryCloneUrlsResult& WithHttps(const char* value) { SetHttps(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline GetSourceRepositoryCloneUrlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline GetSourceRepositoryCloneUrlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline GetSourceRepositoryCloneUrlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_https;

@@ -38,36 +38,17 @@ namespace Model
     AWS_S3CONTROL_API void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
+    ///@{
     /**
      * <p>The S3 job ManifestGenerator's configuration details.</p>
      */
     inline const S3JobManifestGenerator& GetS3JobManifestGenerator() const{ return m_s3JobManifestGenerator; }
-
-    /**
-     * <p>The S3 job ManifestGenerator's configuration details.</p>
-     */
     inline bool S3JobManifestGeneratorHasBeenSet() const { return m_s3JobManifestGeneratorHasBeenSet; }
-
-    /**
-     * <p>The S3 job ManifestGenerator's configuration details.</p>
-     */
     inline void SetS3JobManifestGenerator(const S3JobManifestGenerator& value) { m_s3JobManifestGeneratorHasBeenSet = true; m_s3JobManifestGenerator = value; }
-
-    /**
-     * <p>The S3 job ManifestGenerator's configuration details.</p>
-     */
     inline void SetS3JobManifestGenerator(S3JobManifestGenerator&& value) { m_s3JobManifestGeneratorHasBeenSet = true; m_s3JobManifestGenerator = std::move(value); }
-
-    /**
-     * <p>The S3 job ManifestGenerator's configuration details.</p>
-     */
     inline JobManifestGenerator& WithS3JobManifestGenerator(const S3JobManifestGenerator& value) { SetS3JobManifestGenerator(value); return *this;}
-
-    /**
-     * <p>The S3 job ManifestGenerator's configuration details.</p>
-     */
     inline JobManifestGenerator& WithS3JobManifestGenerator(S3JobManifestGenerator&& value) { SetS3JobManifestGenerator(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3JobManifestGenerator m_s3JobManifestGenerator;

@@ -39,102 +39,42 @@ namespace Model
     AWS_AUDITMANAGER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p> The current status of the assessment.</p>
      */
     inline const AssessmentStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p> The current status of the assessment.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p> The current status of the assessment.</p>
-     */
     inline void SetStatus(const AssessmentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p> The current status of the assessment.</p>
-     */
     inline void SetStatus(AssessmentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p> The current status of the assessment.</p>
-     */
     inline ListAssessmentsRequest& WithStatus(const AssessmentStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p> The current status of the assessment.</p>
-     */
     inline ListAssessmentsRequest& WithStatus(AssessmentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The pagination token that's used to fetch the next set of results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline ListAssessmentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline ListAssessmentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> The pagination token that's used to fetch the next set of results. </p>
-     */
     inline ListAssessmentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> Represents the maximum number of results on a page or for an API request
      * call. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p> Represents the maximum number of results on a page or for an API request
-     * call. </p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p> Represents the maximum number of results on a page or for an API request
-     * call. </p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p> Represents the maximum number of results on a page or for an API request
-     * call. </p>
-     */
     inline ListAssessmentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     AssessmentStatus m_status;

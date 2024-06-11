@@ -45,42 +45,18 @@ namespace Model
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>You can opt out of certificate transparency logging by specifying the
      * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
      */
     inline const CertificateTransparencyLoggingPreference& GetCertificateTransparencyLoggingPreference() const{ return m_certificateTransparencyLoggingPreference; }
-
-    /**
-     * <p>You can opt out of certificate transparency logging by specifying the
-     * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-     */
     inline bool CertificateTransparencyLoggingPreferenceHasBeenSet() const { return m_certificateTransparencyLoggingPreferenceHasBeenSet; }
-
-    /**
-     * <p>You can opt out of certificate transparency logging by specifying the
-     * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-     */
     inline void SetCertificateTransparencyLoggingPreference(const CertificateTransparencyLoggingPreference& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = value; }
-
-    /**
-     * <p>You can opt out of certificate transparency logging by specifying the
-     * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-     */
     inline void SetCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference&& value) { m_certificateTransparencyLoggingPreferenceHasBeenSet = true; m_certificateTransparencyLoggingPreference = std::move(value); }
-
-    /**
-     * <p>You can opt out of certificate transparency logging by specifying the
-     * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-     */
     inline CertificateOptions& WithCertificateTransparencyLoggingPreference(const CertificateTransparencyLoggingPreference& value) { SetCertificateTransparencyLoggingPreference(value); return *this;}
-
-    /**
-     * <p>You can opt out of certificate transparency logging by specifying the
-     * <code>DISABLED</code> option. Opt in by specifying <code>ENABLED</code>. </p>
-     */
     inline CertificateOptions& WithCertificateTransparencyLoggingPreference(CertificateTransparencyLoggingPreference&& value) { SetCertificateTransparencyLoggingPreference(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CertificateTransparencyLoggingPreference m_certificateTransparencyLoggingPreference;

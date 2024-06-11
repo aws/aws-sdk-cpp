@@ -33,58 +33,28 @@ namespace Model
     AWS_ORGANIZATIONS_API InviteAccountToOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A structure that contains details about the handshake that is created to
      * support this invitation request.</p>
      */
     inline const Handshake& GetHandshake() const{ return m_handshake; }
-
-    /**
-     * <p>A structure that contains details about the handshake that is created to
-     * support this invitation request.</p>
-     */
     inline void SetHandshake(const Handshake& value) { m_handshake = value; }
-
-    /**
-     * <p>A structure that contains details about the handshake that is created to
-     * support this invitation request.</p>
-     */
     inline void SetHandshake(Handshake&& value) { m_handshake = std::move(value); }
-
-    /**
-     * <p>A structure that contains details about the handshake that is created to
-     * support this invitation request.</p>
-     */
     inline InviteAccountToOrganizationResult& WithHandshake(const Handshake& value) { SetHandshake(value); return *this;}
-
-    /**
-     * <p>A structure that contains details about the handshake that is created to
-     * support this invitation request.</p>
-     */
     inline InviteAccountToOrganizationResult& WithHandshake(Handshake&& value) { SetHandshake(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline InviteAccountToOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline InviteAccountToOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline InviteAccountToOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Handshake m_handshake;

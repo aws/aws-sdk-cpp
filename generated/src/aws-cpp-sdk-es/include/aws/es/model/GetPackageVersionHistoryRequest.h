@@ -42,116 +42,44 @@ namespace Model
     AWS_ELASTICSEARCHSERVICE_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
+    ///@{
     /**
      * <p>Returns an audit history of versions of the package.</p>
      */
     inline const Aws::String& GetPackageID() const{ return m_packageID; }
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-
-    /**
-     * <p>Returns an audit history of versions of the package.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Limits results to a maximum number of versions.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>Limits results to a maximum number of versions.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>Limits results to a maximum number of versions.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>Limits results to a maximum number of versions.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Used for pagination. Only necessary if a previous API call includes a
      * non-null NextToken value. If provided, returns results for the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>Used for pagination. Only necessary if a previous API call includes a
-     * non-null NextToken value. If provided, returns results for the next page.</p>
-     */
     inline GetPackageVersionHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_packageID;

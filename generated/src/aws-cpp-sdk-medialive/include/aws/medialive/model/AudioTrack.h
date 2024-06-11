@@ -35,26 +35,15 @@ namespace Model
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * 1-based integer value that maps to a specific audio track
      */
     inline int GetTrack() const{ return m_track; }
-
-    /**
-     * 1-based integer value that maps to a specific audio track
-     */
     inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
-
-    /**
-     * 1-based integer value that maps to a specific audio track
-     */
     inline void SetTrack(int value) { m_trackHasBeenSet = true; m_track = value; }
-
-    /**
-     * 1-based integer value that maps to a specific audio track
-     */
     inline AudioTrack& WithTrack(int value) { SetTrack(value); return *this;}
-
+    ///@}
   private:
 
     int m_track;

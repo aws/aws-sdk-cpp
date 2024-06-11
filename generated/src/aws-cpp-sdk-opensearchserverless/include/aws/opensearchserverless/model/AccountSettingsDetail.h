@@ -38,24 +38,15 @@ namespace Model
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     
     inline const CapacityLimits& GetCapacityLimits() const{ return m_capacityLimits; }
-
-    
     inline bool CapacityLimitsHasBeenSet() const { return m_capacityLimitsHasBeenSet; }
-
-    
     inline void SetCapacityLimits(const CapacityLimits& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = value; }
-
-    
     inline void SetCapacityLimits(CapacityLimits&& value) { m_capacityLimitsHasBeenSet = true; m_capacityLimits = std::move(value); }
-
-    
     inline AccountSettingsDetail& WithCapacityLimits(const CapacityLimits& value) { SetCapacityLimits(value); return *this;}
-
-    
     inline AccountSettingsDetail& WithCapacityLimits(CapacityLimits&& value) { SetCapacityLimits(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     CapacityLimits m_capacityLimits;

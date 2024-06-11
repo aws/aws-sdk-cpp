@@ -39,58 +39,28 @@ namespace Model
     AWS_OPSWORKS_API DescribeMyUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>A <code>UserProfile</code> object that describes the user's SSH
      * information.</p>
      */
     inline const SelfUserProfile& GetUserProfile() const{ return m_userProfile; }
-
-    /**
-     * <p>A <code>UserProfile</code> object that describes the user's SSH
-     * information.</p>
-     */
     inline void SetUserProfile(const SelfUserProfile& value) { m_userProfile = value; }
-
-    /**
-     * <p>A <code>UserProfile</code> object that describes the user's SSH
-     * information.</p>
-     */
     inline void SetUserProfile(SelfUserProfile&& value) { m_userProfile = std::move(value); }
-
-    /**
-     * <p>A <code>UserProfile</code> object that describes the user's SSH
-     * information.</p>
-     */
     inline DescribeMyUserProfileResult& WithUserProfile(const SelfUserProfile& value) { SetUserProfile(value); return *this;}
-
-    /**
-     * <p>A <code>UserProfile</code> object that describes the user's SSH
-     * information.</p>
-     */
     inline DescribeMyUserProfileResult& WithUserProfile(SelfUserProfile&& value) { SetUserProfile(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline DescribeMyUserProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline DescribeMyUserProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline DescribeMyUserProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     SelfUserProfile m_userProfile;

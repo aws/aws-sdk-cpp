@@ -46,63 +46,23 @@ namespace Model
     AWS_CLOUDWATCH_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
      * contain only ASCII printable characters (ASCII range 32 through 126). It must
      * contain at least one non-whitespace character.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the metric namespace for this filter.</p> <p>The namespace can
-     * contain only ASCII printable characters (ASCII range 32 through 126). It must
-     * contain at least one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The names of the metrics to either include or exclude from the metric stream.
      * </p> <p>If you omit this parameter, all metrics in the namespace are included or
@@ -112,87 +72,15 @@ namespace Model
      * one non-whitespace character.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMetricNames() const{ return m_metricNames; }
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline bool MetricNamesHasBeenSet() const { return m_metricNamesHasBeenSet; }
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline void SetMetricNames(const Aws::Vector<Aws::String>& value) { m_metricNamesHasBeenSet = true; m_metricNames = value; }
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline void SetMetricNames(Aws::Vector<Aws::String>&& value) { m_metricNamesHasBeenSet = true; m_metricNames = std::move(value); }
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& WithMetricNames(const Aws::Vector<Aws::String>& value) { SetMetricNames(value); return *this;}
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& WithMetricNames(Aws::Vector<Aws::String>&& value) { SetMetricNames(std::move(value)); return *this;}
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& AddMetricNames(const Aws::String& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& AddMetricNames(Aws::String&& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>The names of the metrics to either include or exclude from the metric stream.
-     * </p> <p>If you omit this parameter, all metrics in the namespace are included or
-     * excluded, depending on whether this filter is specified as an exclude filter or
-     * an include filter.</p> <p>Each metric name can contain only ASCII printable
-     * characters (ASCII range 32 through 126). Each metric name must contain at least
-     * one non-whitespace character.</p>
-     */
     inline MetricStreamFilter& AddMetricNames(const char* value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_namespace;

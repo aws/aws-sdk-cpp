@@ -42,197 +42,74 @@ namespace Model
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The ARN of the event source.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline EventSource& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline EventSource& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the event source.</p>
-     */
     inline EventSource& WithArn(const char* value) { SetArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the partner that created the event source.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline EventSource& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline EventSource& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the partner that created the event source.</p>
-     */
     inline EventSource& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time the event source was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The date and time the event source was created.</p>
-     */
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time the event source was created.</p>
-     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The date and time the event source was created.</p>
-     */
     inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>The date and time the event source was created.</p>
-     */
     inline EventSource& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The date and time the event source was created.</p>
-     */
     inline EventSource& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The date and time that the event source will expire, if the Amazon Web
      * Services account doesn't create a matching event bus for it.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
-
-    /**
-     * <p>The date and time that the event source will expire, if the Amazon Web
-     * Services account doesn't create a matching event bus for it.</p>
-     */
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
-
-    /**
-     * <p>The date and time that the event source will expire, if the Amazon Web
-     * Services account doesn't create a matching event bus for it.</p>
-     */
     inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
-
-    /**
-     * <p>The date and time that the event source will expire, if the Amazon Web
-     * Services account doesn't create a matching event bus for it.</p>
-     */
     inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
-
-    /**
-     * <p>The date and time that the event source will expire, if the Amazon Web
-     * Services account doesn't create a matching event bus for it.</p>
-     */
     inline EventSource& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
-
-    /**
-     * <p>The date and time that the event source will expire, if the Amazon Web
-     * Services account doesn't create a matching event bus for it.</p>
-     */
     inline EventSource& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the event source.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline EventSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline EventSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the event source.</p>
-     */
     inline EventSource& WithName(const char* value) { SetName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The state of the event source. If it is ACTIVE, you have already created a
      * matching event bus for this event source, and that event bus is active. If it is
@@ -241,52 +118,12 @@ namespace Model
      * event source has since been deleted.</p>
      */
     inline const EventSourceState& GetState() const{ return m_state; }
-
-    /**
-     * <p>The state of the event source. If it is ACTIVE, you have already created a
-     * matching event bus for this event source, and that event bus is active. If it is
-     * PENDING, either you haven't yet created a matching event bus, or that event bus
-     * is deactivated. If it is DELETED, you have created a matching event bus, but the
-     * event source has since been deleted.</p>
-     */
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-
-    /**
-     * <p>The state of the event source. If it is ACTIVE, you have already created a
-     * matching event bus for this event source, and that event bus is active. If it is
-     * PENDING, either you haven't yet created a matching event bus, or that event bus
-     * is deactivated. If it is DELETED, you have created a matching event bus, but the
-     * event source has since been deleted.</p>
-     */
     inline void SetState(const EventSourceState& value) { m_stateHasBeenSet = true; m_state = value; }
-
-    /**
-     * <p>The state of the event source. If it is ACTIVE, you have already created a
-     * matching event bus for this event source, and that event bus is active. If it is
-     * PENDING, either you haven't yet created a matching event bus, or that event bus
-     * is deactivated. If it is DELETED, you have created a matching event bus, but the
-     * event source has since been deleted.</p>
-     */
     inline void SetState(EventSourceState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-
-    /**
-     * <p>The state of the event source. If it is ACTIVE, you have already created a
-     * matching event bus for this event source, and that event bus is active. If it is
-     * PENDING, either you haven't yet created a matching event bus, or that event bus
-     * is deactivated. If it is DELETED, you have created a matching event bus, but the
-     * event source has since been deleted.</p>
-     */
     inline EventSource& WithState(const EventSourceState& value) { SetState(value); return *this;}
-
-    /**
-     * <p>The state of the event source. If it is ACTIVE, you have already created a
-     * matching event bus for this event source, and that event bus is active. If it is
-     * PENDING, either you haven't yet created a matching event bus, or that event bus
-     * is deactivated. If it is DELETED, you have created a matching event bus, but the
-     * event source has since been deleted.</p>
-     */
     inline EventSource& WithState(EventSourceState&& value) { SetState(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_arn;

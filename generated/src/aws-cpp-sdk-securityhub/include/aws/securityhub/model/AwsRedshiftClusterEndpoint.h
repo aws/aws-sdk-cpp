@@ -38,67 +38,29 @@ namespace Model
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The DNS address of the cluster.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline AwsRedshiftClusterEndpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline AwsRedshiftClusterEndpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-
-    /**
-     * <p>The DNS address of the cluster.</p>
-     */
     inline AwsRedshiftClusterEndpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The port that the database engine listens on.</p>
      */
     inline int GetPort() const{ return m_port; }
-
-    /**
-     * <p>The port that the database engine listens on.</p>
-     */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
-
-    /**
-     * <p>The port that the database engine listens on.</p>
-     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
-
-    /**
-     * <p>The port that the database engine listens on.</p>
-     */
     inline AwsRedshiftClusterEndpoint& WithPort(int value) { SetPort(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_address;

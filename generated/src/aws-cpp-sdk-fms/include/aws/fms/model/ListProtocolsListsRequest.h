@@ -34,31 +34,18 @@ namespace Model
     AWS_FMS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
+    ///@{
     /**
      * <p>Specifies whether the lists to retrieve are default lists owned by Firewall
      * Manager.</p>
      */
     inline bool GetDefaultLists() const{ return m_defaultLists; }
-
-    /**
-     * <p>Specifies whether the lists to retrieve are default lists owned by Firewall
-     * Manager.</p>
-     */
     inline bool DefaultListsHasBeenSet() const { return m_defaultListsHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the lists to retrieve are default lists owned by Firewall
-     * Manager.</p>
-     */
     inline void SetDefaultLists(bool value) { m_defaultListsHasBeenSet = true; m_defaultLists = value; }
-
-    /**
-     * <p>Specifies whether the lists to retrieve are default lists owned by Firewall
-     * Manager.</p>
-     */
     inline ListProtocolsListsRequest& WithDefaultLists(bool value) { SetDefaultLists(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>If you specify a value for <code>MaxResults</code> in your list request, and
      * you have more objects than the maximum, Firewall Manager returns this token in
@@ -67,71 +54,16 @@ namespace Model
      * objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline ListProtocolsListsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline ListProtocolsListsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If you specify a value for <code>MaxResults</code> in your list request, and
-     * you have more objects than the maximum, Firewall Manager returns this token in
-     * the response. For all but the first request, you provide the token returned by
-     * the prior request in the request parameters, to retrieve the next batch of
-     * objects.</p>
-     */
     inline ListProtocolsListsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The maximum number of objects that you want Firewall Manager to return for
      * this request. If more objects are available, in the response, Firewall Manager
@@ -140,34 +72,10 @@ namespace Model
      * Manager returns all available objects.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of objects that you want Firewall Manager to return for
-     * this request. If more objects are available, in the response, Firewall Manager
-     * provides a <code>NextToken</code> value that you can use in a subsequent call to
-     * get the next batch of objects.</p> <p>If you don't specify this, Firewall
-     * Manager returns all available objects.</p>
-     */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of objects that you want Firewall Manager to return for
-     * this request. If more objects are available, in the response, Firewall Manager
-     * provides a <code>NextToken</code> value that you can use in a subsequent call to
-     * get the next batch of objects.</p> <p>If you don't specify this, Firewall
-     * Manager returns all available objects.</p>
-     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of objects that you want Firewall Manager to return for
-     * this request. If more objects are available, in the response, Firewall Manager
-     * provides a <code>NextToken</code> value that you can use in a subsequent call to
-     * get the next batch of objects.</p> <p>If you don't specify this, Firewall
-     * Manager returns all available objects.</p>
-     */
     inline ListProtocolsListsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
+    ///@}
   private:
 
     bool m_defaultLists;

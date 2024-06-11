@@ -34,120 +34,45 @@ namespace Model
     AWS_CODEARTIFACT_API ListPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p> The list of returned <a
      * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
      * objects. </p>
      */
     inline const Aws::Vector<PackageSummary>& GetPackages() const{ return m_packages; }
-
-    /**
-     * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-     * objects. </p>
-     */
     inline void SetPackages(const Aws::Vector<PackageSummary>& value) { m_packages = value; }
-
-    /**
-     * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-     * objects. </p>
-     */
     inline void SetPackages(Aws::Vector<PackageSummary>&& value) { m_packages = std::move(value); }
-
-    /**
-     * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-     * objects. </p>
-     */
     inline ListPackagesResult& WithPackages(const Aws::Vector<PackageSummary>& value) { SetPackages(value); return *this;}
-
-    /**
-     * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-     * objects. </p>
-     */
     inline ListPackagesResult& WithPackages(Aws::Vector<PackageSummary>&& value) { SetPackages(std::move(value)); return *this;}
-
-    /**
-     * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-     * objects. </p>
-     */
     inline ListPackagesResult& AddPackages(const PackageSummary& value) { m_packages.push_back(value); return *this; }
-
-    /**
-     * <p> The list of returned <a
-     * href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageSummary.html">PackageSummary</a>
-     * objects. </p>
-     */
     inline ListPackagesResult& AddPackages(PackageSummary&& value) { m_packages.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p> If there are additional results, this is the token for the next set of
      * results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline ListPackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline ListPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p> If there are additional results, this is the token for the next set of
-     * results. </p>
-     */
     inline ListPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListPackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListPackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListPackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<PackageSummary> m_packages;

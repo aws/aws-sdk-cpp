@@ -40,67 +40,29 @@ namespace Model
     AWS_ELASTICLOADBALANCINGV2_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
+    ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the rule.</p>
      */
     inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline void SetRuleArn(const char* value) { m_ruleArnHasBeenSet = true; m_ruleArn.assign(value); }
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline RulePriorityPair& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline RulePriorityPair& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Resource Name (ARN) of the rule.</p>
-     */
     inline RulePriorityPair& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The rule priority.</p>
      */
     inline int GetPriority() const{ return m_priority; }
-
-    /**
-     * <p>The rule priority.</p>
-     */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-
-    /**
-     * <p>The rule priority.</p>
-     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
-
-    /**
-     * <p>The rule priority.</p>
-     */
     inline RulePriorityPair& WithPriority(int value) { SetPriority(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_ruleArn;

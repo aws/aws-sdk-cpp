@@ -38,66 +38,35 @@ namespace Model
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Determines whether conversation logs should be stored for an alias.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
-
-    /**
-     * <p>Determines whether conversation logs should be stored for an alias.</p>
-     */
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
-
-    /**
-     * <p>Determines whether conversation logs should be stored for an alias.</p>
-     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
-
-    /**
-     * <p>Determines whether conversation logs should be stored for an alias.</p>
-     */
     inline TextLogSetting& WithEnabled(bool value) { SetEnabled(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const TextLogDestination& GetDestination() const{ return m_destination; }
-
-    
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-
-    
     inline void SetDestination(const TextLogDestination& value) { m_destinationHasBeenSet = true; m_destination = value; }
-
-    
     inline void SetDestination(TextLogDestination&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-
-    
     inline TextLogSetting& WithDestination(const TextLogDestination& value) { SetDestination(value); return *this;}
-
-    
     inline TextLogSetting& WithDestination(TextLogDestination&& value) { SetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The option to enable selective conversation log capture for text.</p>
      */
     inline bool GetSelectiveLoggingEnabled() const{ return m_selectiveLoggingEnabled; }
-
-    /**
-     * <p>The option to enable selective conversation log capture for text.</p>
-     */
     inline bool SelectiveLoggingEnabledHasBeenSet() const { return m_selectiveLoggingEnabledHasBeenSet; }
-
-    /**
-     * <p>The option to enable selective conversation log capture for text.</p>
-     */
     inline void SetSelectiveLoggingEnabled(bool value) { m_selectiveLoggingEnabledHasBeenSet = true; m_selectiveLoggingEnabled = value; }
-
-    /**
-     * <p>The option to enable selective conversation log capture for text.</p>
-     */
     inline TextLogSetting& WithSelectiveLoggingEnabled(bool value) { SetSelectiveLoggingEnabled(value); return *this;}
-
+    ///@}
   private:
 
     bool m_enabled;

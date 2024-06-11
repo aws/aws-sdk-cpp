@@ -39,73 +39,30 @@ namespace Model
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>An object containing information regarding the initiation of the last launch
      * of a Source Server.</p>
      */
     inline const LifeCycleLastLaunchInitiated& GetInitiated() const{ return m_initiated; }
-
-    /**
-     * <p>An object containing information regarding the initiation of the last launch
-     * of a Source Server.</p>
-     */
     inline bool InitiatedHasBeenSet() const { return m_initiatedHasBeenSet; }
-
-    /**
-     * <p>An object containing information regarding the initiation of the last launch
-     * of a Source Server.</p>
-     */
     inline void SetInitiated(const LifeCycleLastLaunchInitiated& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
-
-    /**
-     * <p>An object containing information regarding the initiation of the last launch
-     * of a Source Server.</p>
-     */
     inline void SetInitiated(LifeCycleLastLaunchInitiated&& value) { m_initiatedHasBeenSet = true; m_initiated = std::move(value); }
-
-    /**
-     * <p>An object containing information regarding the initiation of the last launch
-     * of a Source Server.</p>
-     */
     inline LifeCycleLastLaunch& WithInitiated(const LifeCycleLastLaunchInitiated& value) { SetInitiated(value); return *this;}
-
-    /**
-     * <p>An object containing information regarding the initiation of the last launch
-     * of a Source Server.</p>
-     */
     inline LifeCycleLastLaunch& WithInitiated(LifeCycleLastLaunchInitiated&& value) { SetInitiated(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Status of Source Server's last launch.</p>
      */
     inline const LaunchStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>Status of Source Server's last launch.</p>
-     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>Status of Source Server's last launch.</p>
-     */
     inline void SetStatus(const LaunchStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>Status of Source Server's last launch.</p>
-     */
     inline void SetStatus(LaunchStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Status of Source Server's last launch.</p>
-     */
     inline LifeCycleLastLaunch& WithStatus(const LaunchStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Status of Source Server's last launch.</p>
-     */
     inline LifeCycleLastLaunch& WithStatus(LaunchStatus&& value) { SetStatus(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     LifeCycleLastLaunchInitiated m_initiated;

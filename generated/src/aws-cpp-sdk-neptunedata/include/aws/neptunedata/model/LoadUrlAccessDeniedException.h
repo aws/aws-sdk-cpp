@@ -38,128 +38,47 @@ namespace Model
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>A detailed message describing the problem.</p>
      */
     inline const Aws::String& GetDetailedMessage() const{ return m_detailedMessage; }
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline bool DetailedMessageHasBeenSet() const { return m_detailedMessageHasBeenSet; }
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline void SetDetailedMessage(const Aws::String& value) { m_detailedMessageHasBeenSet = true; m_detailedMessage = value; }
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline void SetDetailedMessage(Aws::String&& value) { m_detailedMessageHasBeenSet = true; m_detailedMessage = std::move(value); }
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline void SetDetailedMessage(const char* value) { m_detailedMessageHasBeenSet = true; m_detailedMessage.assign(value); }
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline LoadUrlAccessDeniedException& WithDetailedMessage(const Aws::String& value) { SetDetailedMessage(value); return *this;}
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline LoadUrlAccessDeniedException& WithDetailedMessage(Aws::String&& value) { SetDetailedMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>A detailed message describing the problem.</p>
-     */
     inline LoadUrlAccessDeniedException& WithDetailedMessage(const char* value) { SetDetailedMessage(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The ID of the request in question.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline LoadUrlAccessDeniedException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline LoadUrlAccessDeniedException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the request in question.</p>
-     */
     inline LoadUrlAccessDeniedException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The HTTP status code returned with the exception.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline LoadUrlAccessDeniedException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline LoadUrlAccessDeniedException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The HTTP status code returned with the exception.</p>
-     */
     inline LoadUrlAccessDeniedException& WithCode(const char* value) { SetCode(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_detailedMessage;

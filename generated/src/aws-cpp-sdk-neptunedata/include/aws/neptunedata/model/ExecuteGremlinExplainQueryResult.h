@@ -37,42 +37,27 @@ namespace Model
 
 
 
+    ///@{
     /**
      * <p>A text blob containing the Gremlin explain result, as described in <a
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-traversal-tuning.html">Tuning
      * Gremlin queries</a>.</p>
      */
     inline Aws::IOStream& GetOutput() const { return m_output.GetUnderlyingStream(); }
-
-    /**
-     * <p>A text blob containing the Gremlin explain result, as described in <a
-     * href="https://docs.aws.amazon.com/neptune/latest/userguide/gremlin-traversal-tuning.html">Tuning
-     * Gremlin queries</a>.</p>
-     */
     inline void ReplaceBody(Aws::IOStream* body) { m_output = Aws::Utils::Stream::ResponseStream(body); }
 
+    ///@}
 
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ExecuteGremlinExplainQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ExecuteGremlinExplainQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ExecuteGremlinExplainQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Utils::Stream::ResponseStream m_output;

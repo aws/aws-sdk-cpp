@@ -37,126 +37,59 @@ namespace Model
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The total number of findings to which a task is being applied.</p>
      */
     inline long long GetTotalFindingsCount() const{ return m_totalFindingsCount; }
-
-    /**
-     * <p>The total number of findings to which a task is being applied.</p>
-     */
     inline bool TotalFindingsCountHasBeenSet() const { return m_totalFindingsCountHasBeenSet; }
-
-    /**
-     * <p>The total number of findings to which a task is being applied.</p>
-     */
     inline void SetTotalFindingsCount(long long value) { m_totalFindingsCountHasBeenSet = true; m_totalFindingsCount = value; }
-
-    /**
-     * <p>The total number of findings to which a task is being applied.</p>
-     */
     inline TaskStatisticsForAuditCheck& WithTotalFindingsCount(long long value) { SetTotalFindingsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of findings for which at least one of the actions failed when
      * applied.</p>
      */
     inline long long GetFailedFindingsCount() const{ return m_failedFindingsCount; }
-
-    /**
-     * <p>The number of findings for which at least one of the actions failed when
-     * applied.</p>
-     */
     inline bool FailedFindingsCountHasBeenSet() const { return m_failedFindingsCountHasBeenSet; }
-
-    /**
-     * <p>The number of findings for which at least one of the actions failed when
-     * applied.</p>
-     */
     inline void SetFailedFindingsCount(long long value) { m_failedFindingsCountHasBeenSet = true; m_failedFindingsCount = value; }
-
-    /**
-     * <p>The number of findings for which at least one of the actions failed when
-     * applied.</p>
-     */
     inline TaskStatisticsForAuditCheck& WithFailedFindingsCount(long long value) { SetFailedFindingsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of findings for which all mitigation actions succeeded when
      * applied.</p>
      */
     inline long long GetSucceededFindingsCount() const{ return m_succeededFindingsCount; }
-
-    /**
-     * <p>The number of findings for which all mitigation actions succeeded when
-     * applied.</p>
-     */
     inline bool SucceededFindingsCountHasBeenSet() const { return m_succeededFindingsCountHasBeenSet; }
-
-    /**
-     * <p>The number of findings for which all mitigation actions succeeded when
-     * applied.</p>
-     */
     inline void SetSucceededFindingsCount(long long value) { m_succeededFindingsCountHasBeenSet = true; m_succeededFindingsCount = value; }
-
-    /**
-     * <p>The number of findings for which all mitigation actions succeeded when
-     * applied.</p>
-     */
     inline TaskStatisticsForAuditCheck& WithSucceededFindingsCount(long long value) { SetSucceededFindingsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of findings skipped because of filter conditions provided in the
      * parameters to the command.</p>
      */
     inline long long GetSkippedFindingsCount() const{ return m_skippedFindingsCount; }
-
-    /**
-     * <p>The number of findings skipped because of filter conditions provided in the
-     * parameters to the command.</p>
-     */
     inline bool SkippedFindingsCountHasBeenSet() const { return m_skippedFindingsCountHasBeenSet; }
-
-    /**
-     * <p>The number of findings skipped because of filter conditions provided in the
-     * parameters to the command.</p>
-     */
     inline void SetSkippedFindingsCount(long long value) { m_skippedFindingsCountHasBeenSet = true; m_skippedFindingsCount = value; }
-
-    /**
-     * <p>The number of findings skipped because of filter conditions provided in the
-     * parameters to the command.</p>
-     */
     inline TaskStatisticsForAuditCheck& WithSkippedFindingsCount(long long value) { SetSkippedFindingsCount(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The number of findings to which the mitigation action task was canceled when
      * applied.</p>
      */
     inline long long GetCanceledFindingsCount() const{ return m_canceledFindingsCount; }
-
-    /**
-     * <p>The number of findings to which the mitigation action task was canceled when
-     * applied.</p>
-     */
     inline bool CanceledFindingsCountHasBeenSet() const { return m_canceledFindingsCountHasBeenSet; }
-
-    /**
-     * <p>The number of findings to which the mitigation action task was canceled when
-     * applied.</p>
-     */
     inline void SetCanceledFindingsCount(long long value) { m_canceledFindingsCountHasBeenSet = true; m_canceledFindingsCount = value; }
-
-    /**
-     * <p>The number of findings to which the mitigation action task was canceled when
-     * applied.</p>
-     */
     inline TaskStatisticsForAuditCheck& WithCanceledFindingsCount(long long value) { SetCanceledFindingsCount(value); return *this;}
-
+    ///@}
   private:
 
     long long m_totalFindingsCount;

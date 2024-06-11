@@ -44,6 +44,7 @@ namespace Model
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>The name of the pipeline source action where the trigger configuration, such
      * as Git tags, is specified. The trigger configuration will start the pipeline
@@ -51,161 +52,44 @@ namespace Model
      * configuration per source action.</p> 
      */
     inline const Aws::String& GetSourceActionName() const{ return m_sourceActionName; }
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline bool SourceActionNameHasBeenSet() const { return m_sourceActionNameHasBeenSet; }
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline void SetSourceActionName(const Aws::String& value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName = value; }
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline void SetSourceActionName(Aws::String&& value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName = std::move(value); }
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline void SetSourceActionName(const char* value) { m_sourceActionNameHasBeenSet = true; m_sourceActionName.assign(value); }
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline GitConfiguration& WithSourceActionName(const Aws::String& value) { SetSourceActionName(value); return *this;}
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline GitConfiguration& WithSourceActionName(Aws::String&& value) { SetSourceActionName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the pipeline source action where the trigger configuration, such
-     * as Git tags, is specified. The trigger configuration will start the pipeline
-     * upon the specified change only.</p>  <p>You can only specify one trigger
-     * configuration per source action.</p> 
-     */
     inline GitConfiguration& WithSourceActionName(const char* value) { SetSourceActionName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field where the repository event that will start the pipeline, such as
      * pushing Git tags, is specified with details.</p>
      */
     inline const Aws::Vector<GitPushFilter>& GetPush() const{ return m_push; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline bool PushHasBeenSet() const { return m_pushHasBeenSet; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline void SetPush(const Aws::Vector<GitPushFilter>& value) { m_pushHasBeenSet = true; m_push = value; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline void SetPush(Aws::Vector<GitPushFilter>&& value) { m_pushHasBeenSet = true; m_push = std::move(value); }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline GitConfiguration& WithPush(const Aws::Vector<GitPushFilter>& value) { SetPush(value); return *this;}
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline GitConfiguration& WithPush(Aws::Vector<GitPushFilter>&& value) { SetPush(std::move(value)); return *this;}
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline GitConfiguration& AddPush(const GitPushFilter& value) { m_pushHasBeenSet = true; m_push.push_back(value); return *this; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline, such as
-     * pushing Git tags, is specified with details.</p>
-     */
     inline GitConfiguration& AddPush(GitPushFilter&& value) { m_pushHasBeenSet = true; m_push.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>The field where the repository event that will start the pipeline is
      * specified as pull requests.</p>
      */
     inline const Aws::Vector<GitPullRequestFilter>& GetPullRequest() const{ return m_pullRequest; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline bool PullRequestHasBeenSet() const { return m_pullRequestHasBeenSet; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline void SetPullRequest(const Aws::Vector<GitPullRequestFilter>& value) { m_pullRequestHasBeenSet = true; m_pullRequest = value; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline void SetPullRequest(Aws::Vector<GitPullRequestFilter>&& value) { m_pullRequestHasBeenSet = true; m_pullRequest = std::move(value); }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline GitConfiguration& WithPullRequest(const Aws::Vector<GitPullRequestFilter>& value) { SetPullRequest(value); return *this;}
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline GitConfiguration& WithPullRequest(Aws::Vector<GitPullRequestFilter>&& value) { SetPullRequest(std::move(value)); return *this;}
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline GitConfiguration& AddPullRequest(const GitPullRequestFilter& value) { m_pullRequestHasBeenSet = true; m_pullRequest.push_back(value); return *this; }
-
-    /**
-     * <p>The field where the repository event that will start the pipeline is
-     * specified as pull requests.</p>
-     */
     inline GitConfiguration& AddPullRequest(GitPullRequestFilter&& value) { m_pullRequestHasBeenSet = true; m_pullRequest.push_back(std::move(value)); return *this; }
-
+    ///@}
   private:
 
     Aws::String m_sourceActionName;

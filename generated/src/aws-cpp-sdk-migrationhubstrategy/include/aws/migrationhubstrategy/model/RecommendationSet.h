@@ -39,98 +39,41 @@ namespace Model
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The recommended strategy. </p>
      */
     inline const Strategy& GetStrategy() const{ return m_strategy; }
-
-    /**
-     * <p> The recommended strategy. </p>
-     */
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-
-    /**
-     * <p> The recommended strategy. </p>
-     */
     inline void SetStrategy(const Strategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-
-    /**
-     * <p> The recommended strategy. </p>
-     */
     inline void SetStrategy(Strategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-
-    /**
-     * <p> The recommended strategy. </p>
-     */
     inline RecommendationSet& WithStrategy(const Strategy& value) { SetStrategy(value); return *this;}
-
-    /**
-     * <p> The recommended strategy. </p>
-     */
     inline RecommendationSet& WithStrategy(Strategy&& value) { SetStrategy(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The recommended target destination. </p>
      */
     inline const TargetDestination& GetTargetDestination() const{ return m_targetDestination; }
-
-    /**
-     * <p> The recommended target destination. </p>
-     */
     inline bool TargetDestinationHasBeenSet() const { return m_targetDestinationHasBeenSet; }
-
-    /**
-     * <p> The recommended target destination. </p>
-     */
     inline void SetTargetDestination(const TargetDestination& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = value; }
-
-    /**
-     * <p> The recommended target destination. </p>
-     */
     inline void SetTargetDestination(TargetDestination&& value) { m_targetDestinationHasBeenSet = true; m_targetDestination = std::move(value); }
-
-    /**
-     * <p> The recommended target destination. </p>
-     */
     inline RecommendationSet& WithTargetDestination(const TargetDestination& value) { SetTargetDestination(value); return *this;}
-
-    /**
-     * <p> The recommended target destination. </p>
-     */
     inline RecommendationSet& WithTargetDestination(TargetDestination&& value) { SetTargetDestination(std::move(value)); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p> The target destination for the recommendation set. </p>
      */
     inline const TransformationTool& GetTransformationTool() const{ return m_transformationTool; }
-
-    /**
-     * <p> The target destination for the recommendation set. </p>
-     */
     inline bool TransformationToolHasBeenSet() const { return m_transformationToolHasBeenSet; }
-
-    /**
-     * <p> The target destination for the recommendation set. </p>
-     */
     inline void SetTransformationTool(const TransformationTool& value) { m_transformationToolHasBeenSet = true; m_transformationTool = value; }
-
-    /**
-     * <p> The target destination for the recommendation set. </p>
-     */
     inline void SetTransformationTool(TransformationTool&& value) { m_transformationToolHasBeenSet = true; m_transformationTool = std::move(value); }
-
-    /**
-     * <p> The target destination for the recommendation set. </p>
-     */
     inline RecommendationSet& WithTransformationTool(const TransformationTool& value) { SetTransformationTool(value); return *this;}
-
-    /**
-     * <p> The target destination for the recommendation set. </p>
-     */
     inline RecommendationSet& WithTransformationTool(TransformationTool&& value) { SetTransformationTool(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     Strategy m_strategy;

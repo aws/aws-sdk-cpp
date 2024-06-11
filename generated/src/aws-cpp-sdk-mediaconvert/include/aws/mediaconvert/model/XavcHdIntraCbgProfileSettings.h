@@ -38,48 +38,19 @@ namespace Model
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs
      * of the same class have similar image quality over the operating points that are
      * valid for that class.
      */
     inline const XavcHdIntraCbgProfileClass& GetXavcClass() const{ return m_xavcClass; }
-
-    /**
-     * Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline bool XavcClassHasBeenSet() const { return m_xavcClassHasBeenSet; }
-
-    /**
-     * Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline void SetXavcClass(const XavcHdIntraCbgProfileClass& value) { m_xavcClassHasBeenSet = true; m_xavcClass = value; }
-
-    /**
-     * Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline void SetXavcClass(XavcHdIntraCbgProfileClass&& value) { m_xavcClassHasBeenSet = true; m_xavcClass = std::move(value); }
-
-    /**
-     * Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline XavcHdIntraCbgProfileSettings& WithXavcClass(const XavcHdIntraCbgProfileClass& value) { SetXavcClass(value); return *this;}
-
-    /**
-     * Specify the XAVC Intra HD (CBG) Class to set the bitrate of your output. Outputs
-     * of the same class have similar image quality over the operating points that are
-     * valid for that class.
-     */
     inline XavcHdIntraCbgProfileSettings& WithXavcClass(XavcHdIntraCbgProfileClass&& value) { SetXavcClass(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     XavcHdIntraCbgProfileClass m_xavcClass;

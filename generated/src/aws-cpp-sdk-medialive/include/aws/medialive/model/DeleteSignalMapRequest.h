@@ -35,46 +35,19 @@ namespace Model
     AWS_MEDIALIVE_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * A signal map's identifier. Can be either be its id or current name.
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline DeleteSignalMapRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline DeleteSignalMapRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-
-    /**
-     * A signal map's identifier. Can be either be its id or current name.
-     */
     inline DeleteSignalMapRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_identifier;

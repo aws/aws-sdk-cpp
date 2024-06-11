@@ -32,87 +32,33 @@ namespace Model
     AWS_SCHEMAS_API Aws::String SerializePayload() const override;
 
 
+    ///@{
     /**
      * <p>The name of the registry.</p>
      */
     inline const Aws::String& GetRegistryName() const{ return m_registryName; }
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline DeleteSchemaRequest& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline DeleteSchemaRequest& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the registry.</p>
-     */
     inline DeleteSchemaRequest& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>The name of the schema.</p>
      */
     inline const Aws::String& GetSchemaName() const{ return m_schemaName; }
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline void SetSchemaName(Aws::String&& value) { m_schemaNameHasBeenSet = true; m_schemaName = std::move(value); }
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline void SetSchemaName(const char* value) { m_schemaNameHasBeenSet = true; m_schemaName.assign(value); }
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline DeleteSchemaRequest& WithSchemaName(const Aws::String& value) { SetSchemaName(value); return *this;}
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline DeleteSchemaRequest& WithSchemaName(Aws::String&& value) { SetSchemaName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the schema.</p>
-     */
     inline DeleteSchemaRequest& WithSchemaName(const char* value) { SetSchemaName(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_registryName;

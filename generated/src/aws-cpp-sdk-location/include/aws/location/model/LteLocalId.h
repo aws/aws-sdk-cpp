@@ -36,51 +36,26 @@ namespace Model
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>E-UTRA (Evolved Universal Terrestrial Radio Access) absolute radio frequency
      * channel number (EARFCN).</p>
      */
     inline int GetEarfcn() const{ return m_earfcn; }
-
-    /**
-     * <p>E-UTRA (Evolved Universal Terrestrial Radio Access) absolute radio frequency
-     * channel number (EARFCN).</p>
-     */
     inline bool EarfcnHasBeenSet() const { return m_earfcnHasBeenSet; }
-
-    /**
-     * <p>E-UTRA (Evolved Universal Terrestrial Radio Access) absolute radio frequency
-     * channel number (EARFCN).</p>
-     */
     inline void SetEarfcn(int value) { m_earfcnHasBeenSet = true; m_earfcn = value; }
-
-    /**
-     * <p>E-UTRA (Evolved Universal Terrestrial Radio Access) absolute radio frequency
-     * channel number (EARFCN).</p>
-     */
     inline LteLocalId& WithEarfcn(int value) { SetEarfcn(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>Physical Cell ID (PCI).</p>
      */
     inline int GetPci() const{ return m_pci; }
-
-    /**
-     * <p>Physical Cell ID (PCI).</p>
-     */
     inline bool PciHasBeenSet() const { return m_pciHasBeenSet; }
-
-    /**
-     * <p>Physical Cell ID (PCI).</p>
-     */
     inline void SetPci(int value) { m_pciHasBeenSet = true; m_pci = value; }
-
-    /**
-     * <p>Physical Cell ID (PCI).</p>
-     */
     inline LteLocalId& WithPci(int value) { SetPci(value); return *this;}
-
+    ///@}
   private:
 
     int m_earfcn;

@@ -36,6 +36,7 @@ namespace Model
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
      * this time, the resize workflow will stop provisioning of Spot instances. Minimum
@@ -47,43 +48,10 @@ namespace Model
      * Reclamation.</p>
      */
     inline int GetTimeoutDurationMinutes() const{ return m_timeoutDurationMinutes; }
-
-    /**
-     * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
-     * this time, the resize workflow will stop provisioning of Spot instances. Minimum
-     * value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout
-     * applies to all resize workflows on the Instance Fleet. The resize could be
-     * triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR
-     * Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK
-     * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
-     * Reclamation.</p>
-     */
     inline bool TimeoutDurationMinutesHasBeenSet() const { return m_timeoutDurationMinutesHasBeenSet; }
-
-    /**
-     * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
-     * this time, the resize workflow will stop provisioning of Spot instances. Minimum
-     * value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout
-     * applies to all resize workflows on the Instance Fleet. The resize could be
-     * triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR
-     * Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK
-     * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
-     * Reclamation.</p>
-     */
     inline void SetTimeoutDurationMinutes(int value) { m_timeoutDurationMinutesHasBeenSet = true; m_timeoutDurationMinutes = value; }
-
-    /**
-     * <p>Spot resize timeout in minutes. If Spot Instances are not provisioned within
-     * this time, the resize workflow will stop provisioning of Spot instances. Minimum
-     * value is 5 minutes and maximum value is 10,080 minutes (7 days). The timeout
-     * applies to all resize workflows on the Instance Fleet. The resize could be
-     * triggered by Amazon EMR Managed Scaling or by the customer (via Amazon EMR
-     * Console, Amazon EMR CLI modify-instance-fleet or Amazon EMR SDK
-     * ModifyInstanceFleet API) or by Amazon EMR due to Amazon EC2 Spot
-     * Reclamation.</p>
-     */
     inline SpotResizingSpecification& WithTimeoutDurationMinutes(int value) { SetTimeoutDurationMinutes(value); return *this;}
-
+    ///@}
   private:
 
     int m_timeoutDurationMinutes;

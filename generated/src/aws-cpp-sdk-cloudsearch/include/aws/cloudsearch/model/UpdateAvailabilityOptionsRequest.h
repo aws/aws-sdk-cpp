@@ -42,31 +42,19 @@ namespace Model
 
   public:
 
+    ///@{
     
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
-
-    
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-
-    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-
-    
     inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-
-    
     inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-
-    
     inline UpdateAvailabilityOptionsRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-
-    
     inline UpdateAvailabilityOptionsRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-
-    
     inline UpdateAvailabilityOptionsRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    ///@}
 
-
+    ///@{
     /**
      * <p>You expand an existing search domain to a second Availability Zone by setting
      * the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to
@@ -74,31 +62,10 @@ namespace Model
      * option to <code>false</code>. </p>
      */
     inline bool GetMultiAZ() const{ return m_multiAZ; }
-
-    /**
-     * <p>You expand an existing search domain to a second Availability Zone by setting
-     * the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to
-     * downgrade the domain to a single Availability Zone by setting the Multi-AZ
-     * option to <code>false</code>. </p>
-     */
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
-
-    /**
-     * <p>You expand an existing search domain to a second Availability Zone by setting
-     * the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to
-     * downgrade the domain to a single Availability Zone by setting the Multi-AZ
-     * option to <code>false</code>. </p>
-     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
-
-    /**
-     * <p>You expand an existing search domain to a second Availability Zone by setting
-     * the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to
-     * downgrade the domain to a single Availability Zone by setting the Multi-AZ
-     * option to <code>false</code>. </p>
-     */
     inline UpdateAvailabilityOptionsRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
-
+    ///@}
   private:
 
     Aws::String m_domainName;

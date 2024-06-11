@@ -37,36 +37,17 @@ namespace Model
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
+    ///@{
     /**
      * <p> The source S3 bucket. </p>
      */
     inline const S3ImportSource& GetS3() const{ return m_s3; }
-
-    /**
-     * <p> The source S3 bucket. </p>
-     */
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-
-    /**
-     * <p> The source S3 bucket. </p>
-     */
     inline void SetS3(const S3ImportSource& value) { m_s3HasBeenSet = true; m_s3 = value; }
-
-    /**
-     * <p> The source S3 bucket. </p>
-     */
     inline void SetS3(S3ImportSource&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-
-    /**
-     * <p> The source S3 bucket. </p>
-     */
     inline ImportSource& WithS3(const S3ImportSource& value) { SetS3(value); return *this;}
-
-    /**
-     * <p> The source S3 bucket. </p>
-     */
     inline ImportSource& WithS3(S3ImportSource&& value) { SetS3(std::move(value)); return *this;}
-
+    ///@}
   private:
 
     S3ImportSource m_s3;

@@ -34,106 +34,43 @@ namespace Model
     AWS_CONNECT_API ListSecurityKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
+    ///@{
     /**
      * <p>The security keys.</p>
      */
     inline const Aws::Vector<SecurityKey>& GetSecurityKeys() const{ return m_securityKeys; }
-
-    /**
-     * <p>The security keys.</p>
-     */
     inline void SetSecurityKeys(const Aws::Vector<SecurityKey>& value) { m_securityKeys = value; }
-
-    /**
-     * <p>The security keys.</p>
-     */
     inline void SetSecurityKeys(Aws::Vector<SecurityKey>&& value) { m_securityKeys = std::move(value); }
-
-    /**
-     * <p>The security keys.</p>
-     */
     inline ListSecurityKeysResult& WithSecurityKeys(const Aws::Vector<SecurityKey>& value) { SetSecurityKeys(value); return *this;}
-
-    /**
-     * <p>The security keys.</p>
-     */
     inline ListSecurityKeysResult& WithSecurityKeys(Aws::Vector<SecurityKey>&& value) { SetSecurityKeys(std::move(value)); return *this;}
-
-    /**
-     * <p>The security keys.</p>
-     */
     inline ListSecurityKeysResult& AddSecurityKeys(const SecurityKey& value) { m_securityKeys.push_back(value); return *this; }
-
-    /**
-     * <p>The security keys.</p>
-     */
     inline ListSecurityKeysResult& AddSecurityKeys(SecurityKey&& value) { m_securityKeys.push_back(std::move(value)); return *this; }
+    ///@}
 
-
+    ///@{
     /**
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListSecurityKeysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListSecurityKeysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>If there are additional results, this is the token for the next set of
-     * results.</p>
-     */
     inline ListSecurityKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    ///@}
 
-
+    ///@{
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
     inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
     inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
     inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
     inline ListSecurityKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
     inline ListSecurityKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
     inline ListSecurityKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
+    ///@}
   private:
 
     Aws::Vector<SecurityKey> m_securityKeys;
