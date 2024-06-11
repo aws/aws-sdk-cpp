@@ -961,6 +961,7 @@ namespace
         ss.str("");
         ss << getObjectOutcome.GetResult().GetBody().rdbuf();
         ASSERT_STREQ("Test Object", ss.str().c_str());
+        EXPECT_TRUE(getObjectOutcome.GetResult().GetCacheControl().empty());
 
         HeadObjectRequest headObjectRequest;
         headObjectRequest.SetBucket(fullBucketName);
