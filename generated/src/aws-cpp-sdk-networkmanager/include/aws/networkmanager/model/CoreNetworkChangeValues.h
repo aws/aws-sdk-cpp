@@ -7,6 +7,7 @@
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/networkmanager/model/ServiceInsertionAction.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,55 @@ namespace Model
      * <p>The names of the segments in a core network.</p>
      */
     inline CoreNetworkChangeValues& WithSegmentName(const char* value) { SetSegmentName(value); return *this;}
+
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline const Aws::String& GetNetworkFunctionGroupName() const{ return m_networkFunctionGroupName; }
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline bool NetworkFunctionGroupNameHasBeenSet() const { return m_networkFunctionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const Aws::String& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = value; }
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline void SetNetworkFunctionGroupName(Aws::String&& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = std::move(value); }
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const char* value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName.assign(value); }
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline CoreNetworkChangeValues& WithNetworkFunctionGroupName(const Aws::String& value) { SetNetworkFunctionGroupName(value); return *this;}
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline CoreNetworkChangeValues& WithNetworkFunctionGroupName(Aws::String&& value) { SetNetworkFunctionGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The network function group name if the change event is associated with a
+     * network function group.</p>
+     */
+    inline CoreNetworkChangeValues& WithNetworkFunctionGroupName(const char* value) { SetNetworkFunctionGroupName(value); return *this;}
 
 
     /**
@@ -319,10 +369,54 @@ namespace Model
      */
     inline CoreNetworkChangeValues& AddSharedSegments(const char* value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments.push_back(value); return *this; }
 
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline const Aws::Vector<ServiceInsertionAction>& GetServiceInsertionActions() const{ return m_serviceInsertionActions; }
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline bool ServiceInsertionActionsHasBeenSet() const { return m_serviceInsertionActionsHasBeenSet; }
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline void SetServiceInsertionActions(const Aws::Vector<ServiceInsertionAction>& value) { m_serviceInsertionActionsHasBeenSet = true; m_serviceInsertionActions = value; }
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline void SetServiceInsertionActions(Aws::Vector<ServiceInsertionAction>&& value) { m_serviceInsertionActionsHasBeenSet = true; m_serviceInsertionActions = std::move(value); }
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline CoreNetworkChangeValues& WithServiceInsertionActions(const Aws::Vector<ServiceInsertionAction>& value) { SetServiceInsertionActions(value); return *this;}
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline CoreNetworkChangeValues& WithServiceInsertionActions(Aws::Vector<ServiceInsertionAction>&& value) { SetServiceInsertionActions(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline CoreNetworkChangeValues& AddServiceInsertionActions(const ServiceInsertionAction& value) { m_serviceInsertionActionsHasBeenSet = true; m_serviceInsertionActions.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the service insertion action. </p>
+     */
+    inline CoreNetworkChangeValues& AddServiceInsertionActions(ServiceInsertionAction&& value) { m_serviceInsertionActionsHasBeenSet = true; m_serviceInsertionActions.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_segmentName;
     bool m_segmentNameHasBeenSet = false;
+
+    Aws::String m_networkFunctionGroupName;
+    bool m_networkFunctionGroupNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_edgeLocations;
     bool m_edgeLocationsHasBeenSet = false;
@@ -341,6 +435,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_sharedSegments;
     bool m_sharedSegmentsHasBeenSet = false;
+
+    Aws::Vector<ServiceInsertionAction> m_serviceInsertionActions;
+    bool m_serviceInsertionActionsHasBeenSet = false;
   };
 
 } // namespace Model

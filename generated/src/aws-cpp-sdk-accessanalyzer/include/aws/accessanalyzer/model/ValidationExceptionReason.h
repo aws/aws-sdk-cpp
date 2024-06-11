@@ -19,7 +19,8 @@ namespace Model
     unknownOperation,
     cannotParse,
     fieldValidationFailed,
-    other
+    other,
+    notSupported
   };
 
 namespace ValidationExceptionReasonMapper

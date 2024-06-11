@@ -161,6 +161,47 @@ namespace Model
 
 
     /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline const Aws::String& GetNetworkFunctionGroupName() const{ return m_networkFunctionGroupName; }
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline bool NetworkFunctionGroupNameHasBeenSet() const { return m_networkFunctionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const Aws::String& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = value; }
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline void SetNetworkFunctionGroupName(Aws::String&& value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName = std::move(value); }
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline void SetNetworkFunctionGroupName(const char* value) { m_networkFunctionGroupNameHasBeenSet = true; m_networkFunctionGroupName.assign(value); }
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline NetworkRouteDestination& WithNetworkFunctionGroupName(const Aws::String& value) { SetNetworkFunctionGroupName(value); return *this;}
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline NetworkRouteDestination& WithNetworkFunctionGroupName(Aws::String&& value) { SetNetworkFunctionGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The network function group name associated with the destination.</p>
+     */
+    inline NetworkRouteDestination& WithNetworkFunctionGroupName(const char* value) { SetNetworkFunctionGroupName(value); return *this;}
+
+
+    /**
      * <p>The edge location for the network destination.</p>
      */
     inline const Aws::String& GetEdgeLocation() const{ return m_edgeLocation; }
@@ -292,6 +333,9 @@ namespace Model
 
     Aws::String m_segmentName;
     bool m_segmentNameHasBeenSet = false;
+
+    Aws::String m_networkFunctionGroupName;
+    bool m_networkFunctionGroupNameHasBeenSet = false;
 
     Aws::String m_edgeLocation;
     bool m_edgeLocationHasBeenSet = false;

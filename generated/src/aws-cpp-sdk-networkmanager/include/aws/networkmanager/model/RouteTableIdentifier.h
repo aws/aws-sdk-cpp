@@ -7,6 +7,7 @@
 #include <aws/networkmanager/NetworkManager_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/networkmanager/model/CoreNetworkSegmentEdgeIdentifier.h>
+#include <aws/networkmanager/model/CoreNetworkNetworkFunctionGroupIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -125,6 +126,37 @@ namespace Model
      */
     inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { SetCoreNetworkSegmentEdge(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline const CoreNetworkNetworkFunctionGroupIdentifier& GetCoreNetworkNetworkFunctionGroup() const{ return m_coreNetworkNetworkFunctionGroup; }
+
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline bool CoreNetworkNetworkFunctionGroupHasBeenSet() const { return m_coreNetworkNetworkFunctionGroupHasBeenSet; }
+
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline void SetCoreNetworkNetworkFunctionGroup(const CoreNetworkNetworkFunctionGroupIdentifier& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = value; }
+
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline void SetCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupIdentifier&& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = std::move(value); }
+
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(const CoreNetworkNetworkFunctionGroupIdentifier& value) { SetCoreNetworkNetworkFunctionGroup(value); return *this;}
+
+    /**
+     * <p>The route table identifier associated with the network function group.</p>
+     */
+    inline RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupIdentifier&& value) { SetCoreNetworkNetworkFunctionGroup(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_transitGatewayRouteTableArn;
@@ -132,6 +164,9 @@ namespace Model
 
     CoreNetworkSegmentEdgeIdentifier m_coreNetworkSegmentEdge;
     bool m_coreNetworkSegmentEdgeHasBeenSet = false;
+
+    CoreNetworkNetworkFunctionGroupIdentifier m_coreNetworkNetworkFunctionGroup;
+    bool m_coreNetworkNetworkFunctionGroupHasBeenSet = false;
   };
 
 } // namespace Model

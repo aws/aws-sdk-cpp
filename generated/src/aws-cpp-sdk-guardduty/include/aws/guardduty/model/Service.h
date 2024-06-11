@@ -12,6 +12,7 @@
 #include <aws/guardduty/model/EbsVolumeScanDetails.h>
 #include <aws/guardduty/model/RuntimeDetails.h>
 #include <aws/guardduty/model/Detection.h>
+#include <aws/guardduty/model/MalwareScanDetails.h>
 #include <utility>
 
 namespace Aws
@@ -588,6 +589,37 @@ namespace Model
      */
     inline Service& WithDetection(Detection&& value) { SetDetection(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Returns details from the malware scan that generated a GuardDuty finding.</p>
+     */
+    inline const MalwareScanDetails& GetMalwareScanDetails() const{ return m_malwareScanDetails; }
+
+    /**
+     * <p>Returns details from the malware scan that generated a GuardDuty finding.</p>
+     */
+    inline bool MalwareScanDetailsHasBeenSet() const { return m_malwareScanDetailsHasBeenSet; }
+
+    /**
+     * <p>Returns details from the malware scan that generated a GuardDuty finding.</p>
+     */
+    inline void SetMalwareScanDetails(const MalwareScanDetails& value) { m_malwareScanDetailsHasBeenSet = true; m_malwareScanDetails = value; }
+
+    /**
+     * <p>Returns details from the malware scan that generated a GuardDuty finding.</p>
+     */
+    inline void SetMalwareScanDetails(MalwareScanDetails&& value) { m_malwareScanDetailsHasBeenSet = true; m_malwareScanDetails = std::move(value); }
+
+    /**
+     * <p>Returns details from the malware scan that generated a GuardDuty finding.</p>
+     */
+    inline Service& WithMalwareScanDetails(const MalwareScanDetails& value) { SetMalwareScanDetails(value); return *this;}
+
+    /**
+     * <p>Returns details from the malware scan that generated a GuardDuty finding.</p>
+     */
+    inline Service& WithMalwareScanDetails(MalwareScanDetails&& value) { SetMalwareScanDetails(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
@@ -634,6 +666,9 @@ namespace Model
 
     Detection m_detection;
     bool m_detectionHasBeenSet = false;
+
+    MalwareScanDetails m_malwareScanDetails;
+    bool m_malwareScanDetailsHasBeenSet = false;
   };
 
 } // namespace Model

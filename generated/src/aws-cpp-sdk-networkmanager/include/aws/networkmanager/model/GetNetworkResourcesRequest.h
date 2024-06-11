@@ -245,313 +245,153 @@ namespace Model
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline GetNetworkResourcesRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline GetNetworkResourcesRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The resource type.</p> <p>The following are the supported resource types for
-     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>dx-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p>
-     * </li> <li> <p> <code>dx-vif</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Network
-     * Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p>
-     * </li> <li> <p> <code>device</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p>
-     * </li> <li> <p> <code>link</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p>
-     * </li> <li> <p> <code>site</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is
-     * <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p>
-     * </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model
-     * is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p>
-     * </li> <li> <p> <code>vpn-connection</code> - The definition model is <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p>
-     * </li> </ul>
+     * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
+     * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
+     * <p>The following are the supported resource types for Network Manager:</p> <ul>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
+     * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
+     * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
+     * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
+     * <code>vpn-connection</code> </p> </li> </ul>
      */
     inline GetNetworkResourcesRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

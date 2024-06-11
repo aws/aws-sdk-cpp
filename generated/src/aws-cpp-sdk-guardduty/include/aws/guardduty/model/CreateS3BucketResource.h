@@ -1,0 +1,148 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/guardduty/GuardDuty_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <utility>
+
+namespace Aws
+{
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+  class JsonView;
+} // namespace Json
+} // namespace Utils
+namespace GuardDuty
+{
+namespace Model
+{
+
+  /**
+   * <p>Information about the protected S3 bucket resource.</p><p><h3>See Also:</h3> 
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/CreateS3BucketResource">AWS
+   * API Reference</a></p>
+   */
+  class CreateS3BucketResource
+  {
+  public:
+    AWS_GUARDDUTY_API CreateS3BucketResource();
+    AWS_GUARDDUTY_API CreateS3BucketResource(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API CreateS3BucketResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline CreateS3BucketResource& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline CreateS3BucketResource& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
+    inline CreateS3BucketResource& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const{ return m_objectPrefixes; }
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline bool ObjectPrefixesHasBeenSet() const { return m_objectPrefixesHasBeenSet; }
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline void SetObjectPrefixes(const Aws::Vector<Aws::String>& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = value; }
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline void SetObjectPrefixes(Aws::Vector<Aws::String>&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::move(value); }
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline CreateS3BucketResource& WithObjectPrefixes(const Aws::Vector<Aws::String>& value) { SetObjectPrefixes(value); return *this;}
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline CreateS3BucketResource& WithObjectPrefixes(Aws::Vector<Aws::String>&& value) { SetObjectPrefixes(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline CreateS3BucketResource& AddObjectPrefixes(const Aws::String& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline CreateS3BucketResource& AddObjectPrefixes(Aws::String&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Information about the specified object prefixes. The S3 object will be
+     * scanned only if it belongs to any of the specified object prefixes.</p>
+     */
+    inline CreateS3BucketResource& AddObjectPrefixes(const char* value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
+
+  private:
+
+    Aws::String m_bucketName;
+    bool m_bucketNameHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_objectPrefixes;
+    bool m_objectPrefixesHasBeenSet = false;
+  };
+
+} // namespace Model
+} // namespace GuardDuty
+} // namespace Aws

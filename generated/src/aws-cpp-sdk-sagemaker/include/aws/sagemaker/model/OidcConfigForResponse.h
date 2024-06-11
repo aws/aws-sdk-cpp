@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -347,6 +348,134 @@ namespace Model
      */
     inline OidcConfigForResponse& WithJwksUri(const char* value) { SetJwksUri(value); return *this;}
 
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline const Aws::String& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline void SetScope(const Aws::String& value) { m_scopeHasBeenSet = true; m_scope = value; }
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline void SetScope(Aws::String&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline void SetScope(const char* value) { m_scopeHasBeenSet = true; m_scope.assign(value); }
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline OidcConfigForResponse& WithScope(const Aws::String& value) { SetScope(value); return *this;}
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline OidcConfigForResponse& WithScope(Aws::String&& value) { SetScope(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of string identifiers used to refer to the specific pieces of user
+     * data or claims that the client application wants to access.</p>
+     */
+    inline OidcConfigForResponse& WithScope(const char* value) { SetScope(value); return *this;}
+
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAuthenticationRequestExtraParams() const{ return m_authenticationRequestExtraParams; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline bool AuthenticationRequestExtraParamsHasBeenSet() const { return m_authenticationRequestExtraParamsHasBeenSet; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline void SetAuthenticationRequestExtraParams(const Aws::Map<Aws::String, Aws::String>& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams = value; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline void SetAuthenticationRequestExtraParams(Aws::Map<Aws::String, Aws::String>&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams = std::move(value); }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& WithAuthenticationRequestExtraParams(const Aws::Map<Aws::String, Aws::String>& value) { SetAuthenticationRequestExtraParams(value); return *this;}
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& WithAuthenticationRequestExtraParams(Aws::Map<Aws::String, Aws::String>&& value) { SetAuthenticationRequestExtraParams(std::move(value)); return *this;}
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(const Aws::String& key, const Aws::String& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, value); return *this; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(Aws::String&& key, const Aws::String& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(const Aws::String& key, Aws::String&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(Aws::String&& key, Aws::String&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(const char* key, Aws::String&& value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(Aws::String&& key, const char* value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A string to string map of identifiers specific to the custom identity
+     * provider (IdP) being used.</p>
+     */
+    inline OidcConfigForResponse& AddAuthenticationRequestExtraParams(const char* key, const char* value) { m_authenticationRequestExtraParamsHasBeenSet = true; m_authenticationRequestExtraParams.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_clientId;
@@ -369,6 +498,12 @@ namespace Model
 
     Aws::String m_jwksUri;
     bool m_jwksUriHasBeenSet = false;
+
+    Aws::String m_scope;
+    bool m_scopeHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_authenticationRequestExtraParams;
+    bool m_authenticationRequestExtraParamsHasBeenSet = false;
   };
 
 } // namespace Model

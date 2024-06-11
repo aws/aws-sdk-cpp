@@ -21,6 +21,7 @@ namespace Model
 CoreNetworkChangeEventValues::CoreNetworkChangeEventValues() : 
     m_edgeLocationHasBeenSet(false),
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_attachmentIdHasBeenSet(false),
     m_cidrHasBeenSet(false)
 {
@@ -29,6 +30,7 @@ CoreNetworkChangeEventValues::CoreNetworkChangeEventValues() :
 CoreNetworkChangeEventValues::CoreNetworkChangeEventValues(JsonView jsonValue) : 
     m_edgeLocationHasBeenSet(false),
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_attachmentIdHasBeenSet(false),
     m_cidrHasBeenSet(false)
 {
@@ -49,6 +51,13 @@ CoreNetworkChangeEventValues& CoreNetworkChangeEventValues::operator =(JsonView 
     m_segmentName = jsonValue.GetString("SegmentName");
 
     m_segmentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFunctionGroupName"))
+  {
+    m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
+
+    m_networkFunctionGroupNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AttachmentId"))
@@ -81,6 +90,12 @@ JsonValue CoreNetworkChangeEventValues::Jsonize() const
   if(m_segmentNameHasBeenSet)
   {
    payload.WithString("SegmentName", m_segmentName);
+
+  }
+
+  if(m_networkFunctionGroupNameHasBeenSet)
+  {
+   payload.WithString("NetworkFunctionGroupName", m_networkFunctionGroupName);
 
   }
 

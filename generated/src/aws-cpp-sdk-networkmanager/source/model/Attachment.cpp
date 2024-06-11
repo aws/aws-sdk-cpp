@@ -32,8 +32,10 @@ Attachment::Attachment() :
     m_attachmentPolicyRuleNumber(0),
     m_attachmentPolicyRuleNumberHasBeenSet(false),
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_proposedSegmentChangeHasBeenSet(false),
+    m_proposedNetworkFunctionGroupChangeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
@@ -53,8 +55,10 @@ Attachment::Attachment(JsonView jsonValue) :
     m_attachmentPolicyRuleNumber(0),
     m_attachmentPolicyRuleNumberHasBeenSet(false),
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_proposedSegmentChangeHasBeenSet(false),
+    m_proposedNetworkFunctionGroupChangeHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
@@ -133,6 +137,13 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     m_segmentNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NetworkFunctionGroupName"))
+  {
+    m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
+
+    m_networkFunctionGroupNameHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -148,6 +159,13 @@ Attachment& Attachment::operator =(JsonView jsonValue)
     m_proposedSegmentChange = jsonValue.GetObject("ProposedSegmentChange");
 
     m_proposedSegmentChangeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ProposedNetworkFunctionGroupChange"))
+  {
+    m_proposedNetworkFunctionGroupChange = jsonValue.GetObject("ProposedNetworkFunctionGroupChange");
+
+    m_proposedNetworkFunctionGroupChangeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("CreatedAt"))
@@ -229,6 +247,12 @@ JsonValue Attachment::Jsonize() const
 
   }
 
+  if(m_networkFunctionGroupNameHasBeenSet)
+  {
+   payload.WithString("NetworkFunctionGroupName", m_networkFunctionGroupName);
+
+  }
+
   if(m_tagsHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
@@ -243,6 +267,12 @@ JsonValue Attachment::Jsonize() const
   if(m_proposedSegmentChangeHasBeenSet)
   {
    payload.WithObject("ProposedSegmentChange", m_proposedSegmentChange.Jsonize());
+
+  }
+
+  if(m_proposedNetworkFunctionGroupChangeHasBeenSet)
+  {
+   payload.WithObject("ProposedNetworkFunctionGroupChange", m_proposedNetworkFunctionGroupChange.Jsonize());
 
   }
 

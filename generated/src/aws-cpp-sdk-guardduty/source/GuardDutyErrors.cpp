@@ -7,6 +7,7 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/guardduty/GuardDutyErrors.h>
 #include <aws/guardduty/model/ConflictException.h>
+#include <aws/guardduty/model/ResourceNotFoundException.h>
 #include <aws/guardduty/model/AccessDeniedException.h>
 #include <aws/guardduty/model/BadRequestException.h>
 #include <aws/guardduty/model/InternalServerErrorException.h>
@@ -24,6 +25,12 @@ template<> AWS_GUARDDUTY_API ConflictException GuardDutyError::GetModeledError()
 {
   assert(this->GetErrorType() == GuardDutyErrors::CONFLICT);
   return ConflictException(this->GetJsonPayload().View());
+}
+
+template<> AWS_GUARDDUTY_API ResourceNotFoundException GuardDutyError::GetModeledError()
+{
+  assert(this->GetErrorType() == GuardDutyErrors::RESOURCE_NOT_FOUND);
+  return ResourceNotFoundException(this->GetJsonPayload().View());
 }
 
 template<> AWS_GUARDDUTY_API AccessDeniedException GuardDutyError::GetModeledError()

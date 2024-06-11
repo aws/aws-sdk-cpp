@@ -20,25 +20,29 @@ namespace Model
 
 CoreNetworkChangeValues::CoreNetworkChangeValues() : 
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_edgeLocationsHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
     m_cidrHasBeenSet(false),
     m_destinationIdentifierHasBeenSet(false),
     m_insideCidrBlocksHasBeenSet(false),
-    m_sharedSegmentsHasBeenSet(false)
+    m_sharedSegmentsHasBeenSet(false),
+    m_serviceInsertionActionsHasBeenSet(false)
 {
 }
 
 CoreNetworkChangeValues::CoreNetworkChangeValues(JsonView jsonValue) : 
     m_segmentNameHasBeenSet(false),
+    m_networkFunctionGroupNameHasBeenSet(false),
     m_edgeLocationsHasBeenSet(false),
     m_asn(0),
     m_asnHasBeenSet(false),
     m_cidrHasBeenSet(false),
     m_destinationIdentifierHasBeenSet(false),
     m_insideCidrBlocksHasBeenSet(false),
-    m_sharedSegmentsHasBeenSet(false)
+    m_sharedSegmentsHasBeenSet(false),
+    m_serviceInsertionActionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     m_segmentName = jsonValue.GetString("SegmentName");
 
     m_segmentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("NetworkFunctionGroupName"))
+  {
+    m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
+
+    m_networkFunctionGroupNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("EdgeLocations"))
@@ -103,6 +114,16 @@ CoreNetworkChangeValues& CoreNetworkChangeValues::operator =(JsonView jsonValue)
     m_sharedSegmentsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServiceInsertionActions"))
+  {
+    Aws::Utils::Array<JsonView> serviceInsertionActionsJsonList = jsonValue.GetArray("ServiceInsertionActions");
+    for(unsigned serviceInsertionActionsIndex = 0; serviceInsertionActionsIndex < serviceInsertionActionsJsonList.GetLength(); ++serviceInsertionActionsIndex)
+    {
+      m_serviceInsertionActions.push_back(serviceInsertionActionsJsonList[serviceInsertionActionsIndex].AsObject());
+    }
+    m_serviceInsertionActionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +134,12 @@ JsonValue CoreNetworkChangeValues::Jsonize() const
   if(m_segmentNameHasBeenSet)
   {
    payload.WithString("SegmentName", m_segmentName);
+
+  }
+
+  if(m_networkFunctionGroupNameHasBeenSet)
+  {
+   payload.WithString("NetworkFunctionGroupName", m_networkFunctionGroupName);
 
   }
 
@@ -164,6 +191,17 @@ JsonValue CoreNetworkChangeValues::Jsonize() const
      sharedSegmentsJsonList[sharedSegmentsIndex].AsString(m_sharedSegments[sharedSegmentsIndex]);
    }
    payload.WithArray("SharedSegments", std::move(sharedSegmentsJsonList));
+
+  }
+
+  if(m_serviceInsertionActionsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> serviceInsertionActionsJsonList(m_serviceInsertionActions.size());
+   for(unsigned serviceInsertionActionsIndex = 0; serviceInsertionActionsIndex < serviceInsertionActionsJsonList.GetLength(); ++serviceInsertionActionsIndex)
+   {
+     serviceInsertionActionsJsonList[serviceInsertionActionsIndex].AsObject(m_serviceInsertionActions[serviceInsertionActionsIndex].Jsonize());
+   }
+   payload.WithArray("ServiceInsertionActions", std::move(serviceInsertionActionsJsonList));
 
   }
 

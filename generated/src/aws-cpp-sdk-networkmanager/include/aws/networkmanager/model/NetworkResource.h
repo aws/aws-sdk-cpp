@@ -210,11 +210,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -227,11 +229,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -244,11 +248,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -261,11 +267,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -278,11 +286,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -295,11 +305,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -312,11 +324,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
@@ -329,11 +343,13 @@ namespace Model
      * Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p>
      * <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul>
      * <p>The following are the supported resource types for Network Manager:</p> <ul>
-     * <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p>
-     * </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p>
-     * </li> </ul> <p>The following are the supported resource types for Amazon
-     * VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p>
-     * <code>transit-gateway</code> </p> </li> <li> <p>
+     * <li> <p> <code>attachment</code> </p> </li> <li> <p> <code>connect-peer</code>
+     * </p> </li> <li> <p> <code>connection</code> </p> </li> <li> <p>
+     * <code>core-network</code> </p> </li> <li> <p> <code>device</code> </p> </li>
+     * <li> <p> <code>link</code> </p> </li> <li> <p> <code>peering</code> </p> </li>
+     * <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported
+     * resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code>
+     * </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p>
      * <code>transit-gateway-attachment</code> </p> </li> <li> <p>
      * <code>transit-gateway-connect-peer</code> </p> </li> <li> <p>
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>

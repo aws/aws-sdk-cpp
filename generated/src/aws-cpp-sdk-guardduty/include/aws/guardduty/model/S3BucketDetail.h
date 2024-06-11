@@ -12,6 +12,7 @@
 #include <aws/guardduty/model/DefaultServerSideEncryption.h>
 #include <aws/guardduty/model/PublicAccess.h>
 #include <aws/guardduty/model/Tag.h>
+#include <aws/guardduty/model/S3ObjectDetail.h>
 #include <utility>
 
 namespace Aws
@@ -330,6 +331,47 @@ namespace Model
      */
     inline S3BucketDetail& WithPublicAccess(PublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline const Aws::Vector<S3ObjectDetail>& GetS3ObjectDetails() const{ return m_s3ObjectDetails; }
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline bool S3ObjectDetailsHasBeenSet() const { return m_s3ObjectDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline void SetS3ObjectDetails(const Aws::Vector<S3ObjectDetail>& value) { m_s3ObjectDetailsHasBeenSet = true; m_s3ObjectDetails = value; }
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline void SetS3ObjectDetails(Aws::Vector<S3ObjectDetail>&& value) { m_s3ObjectDetailsHasBeenSet = true; m_s3ObjectDetails = std::move(value); }
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline S3BucketDetail& WithS3ObjectDetails(const Aws::Vector<S3ObjectDetail>& value) { SetS3ObjectDetails(value); return *this;}
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline S3BucketDetail& WithS3ObjectDetails(Aws::Vector<S3ObjectDetail>&& value) { SetS3ObjectDetails(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline S3BucketDetail& AddS3ObjectDetails(const S3ObjectDetail& value) { m_s3ObjectDetailsHasBeenSet = true; m_s3ObjectDetails.push_back(value); return *this; }
+
+    /**
+     * <p>Information about the S3 object that was scanned.</p>
+     */
+    inline S3BucketDetail& AddS3ObjectDetails(S3ObjectDetail&& value) { m_s3ObjectDetailsHasBeenSet = true; m_s3ObjectDetails.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_arn;
@@ -355,6 +397,9 @@ namespace Model
 
     PublicAccess m_publicAccess;
     bool m_publicAccessHasBeenSet = false;
+
+    Aws::Vector<S3ObjectDetail> m_s3ObjectDetails;
+    bool m_s3ObjectDetailsHasBeenSet = false;
   };
 
 } // namespace Model
